@@ -12,13 +12,13 @@ This is my Nix flake, containing three system configurations:
 ### Installation 💽
 ```
 # Desktop
-sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles .#desktop
+sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#desktop
 
 # Laptop
-sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles .#laptop
+sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#laptop
 
 # Server
-sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles .#server
+sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#server
 ```
 
 ### Desktop Packages 🖥️
