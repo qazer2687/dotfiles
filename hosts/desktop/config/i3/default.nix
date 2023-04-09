@@ -12,7 +12,7 @@
   bindsym $mod+space floating toggle
   bindsym $mod+q kill
   bindsym $mod+e exec --no-startup-id dmenu_run -b -i -nb "#111111" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"
-  exec_always --no-startup-id feh --bg-fill /etc/nixos/config/feh/wallpaper.png
+  exec_always --no-startup-id feh --bg-fill ../feh/wallpaper.png
   exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
   # exec_always --no-startup-id redshift -PO 4000
   bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
