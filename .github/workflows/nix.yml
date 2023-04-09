@@ -1,4 +1,4 @@
-name: "Nix Evaluation Test"
+name: "Nix Evaluation"
 on:
   pull_request:
   push:
