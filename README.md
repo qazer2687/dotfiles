@@ -5,7 +5,21 @@ This is my Nix flake, containing three system configurations:
 - #laptop
 - #server
 
-### <b> Warning: All configurations are using the Colemak keyboard layout, this can be changed in 'default.nix'.
+#### <b> Warning: All configurations are using the Colemak keyboard layout, this can be changed in 'default.nix'.
+
+---
+
+### Installation 💽
+```
+# Desktop
+sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles .#desktop
+
+# Laptop
+sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles .#laptop
+
+# Server
+sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles .#server
+```
 
 ### Desktop Packages 🖥️
 ```
