@@ -1,4 +1,4 @@
-# NixOS Dotfiles
+# NixOS Dotfiles [![Nix Evaluation](https://github.com/alexvasilkovski/dotfiles/actions/workflows/nix.yml/badge.svg)](https://github.com/alexvasilkovski/dotfiles/actions/workflows/nix.yml)
 
 This is my Nix flake, containing three system configurations:
 - #desktop
