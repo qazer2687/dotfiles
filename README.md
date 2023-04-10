@@ -1,6 +1,6 @@
 # NixOS Dotfiles [![Nix Evaluation](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml/badge.svg)](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml)
 
-This is my Nix flake, containing three system configurations:
+This is my Nix Flake, containing three system configurations:
 - #desktop
 - #laptop
 - #server
