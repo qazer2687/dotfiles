@@ -106,14 +106,21 @@
       discord
       neofetch
 
-      # Programming
+      # Programming (Languages)
       vscodium
-      ghc
-      dotnet-sdk_7
+      ghc          # Haskell
+      dotnet-sdk_7 # C#
+      gcc          # C
+      gcl          # Common Lisp
+      rustup       # Rust
+      php          # Php
+
+      # Programming (Extras)
       dotnetPackages.Nuget
 
       # Gaming
       grapejuice
+#     osu-lazer
 
       # Environment
       polybarFull
