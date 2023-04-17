@@ -39,6 +39,9 @@
       enable = true;
       package = pkgs.i3-rounded;
     };
+    
+    # Input Drivers
+    libinput.enable = true;
   };
 
   # Audio
