@@ -83,13 +83,11 @@
       dotnet-sdk_7
       dotnetPackages.Nuget
       ghc
-      ncmpcpp
+#     ncmpcpp
       anki-bin
-      discord
       vscodium
       polybarFull
       dmenu
-      dunst
       scrot
       redshift
       brightnessctl
@@ -112,7 +110,7 @@
 
     # MPD
     services.mpd = {
-      enable = true;
+      enable = false;
       musicDirectory = "/home/alex/Music";
       extraConfig = ''
         audio_output {
