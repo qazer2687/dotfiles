@@ -22,6 +22,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  
+  # ZRam
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 25;
+  };
 
   # Networking
   networking.hostName = "desktop";
@@ -105,6 +112,7 @@
       firefox
       discord
       neofetch
+      obs-studio
 
       # Programming (Languages)
       vscodium
