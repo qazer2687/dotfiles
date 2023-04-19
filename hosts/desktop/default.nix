@@ -113,6 +113,7 @@
       discord
       neofetch
       obs-studio
+      vlc
 
       # Programming (Languages)
       vscodium
