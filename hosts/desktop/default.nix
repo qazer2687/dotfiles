@@ -120,9 +120,9 @@
       ghc          # Haskell
       dotnet-sdk_7 # C#
       gcc          # C
-      gcl          # Common Lisp
       rustup       # Rust
-      php          # Php
+      php          # PHP
+      clisp        # Common Lisp
 
       # Programming (Extras)
       dotnetPackages.Nuget
