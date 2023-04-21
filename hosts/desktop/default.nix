@@ -27,7 +27,7 @@
   zramSwap = {
     enable = true;
     algorithm = "zstd";
-    memoryPercent = 25;
+    memoryPercent = 50;
   };
 
   # Networking
@@ -129,7 +129,7 @@
 
       # Gaming
       grapejuice
-#     osu-lazer
+      osu-lazer
 
       # Environment
       polybarFull
