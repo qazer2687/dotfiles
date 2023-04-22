@@ -14,8 +14,8 @@ let
 in {
   # Define a rule to create and accept EULA file and a rule to create and write to the server.properties file.
   systemd.tmpfiles.rules = [
-    "w /opt/minecraftserver/eula.txt 0644 minecraft minecraft - - eula=true"
-    "w /opt/minecraftserver/server.properties 0644 minecraft minecraft - - ${serverProperties}"
+    "w /opt/minecraftserver/eula.txt 0644 minecraft - - - eula=true"
+    "w /opt/minecraftserver/server.properties 0644 minecraft - - - ${serverProperties}"
   ];
   
   # Install Java 11 & Unzip
