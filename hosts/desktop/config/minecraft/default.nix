@@ -11,6 +11,14 @@ let
     server-port=25565
   '';
 in {
+  
+  # Create and Accept EULA File
+  builtins.writeTextFile "${enigmatica6Dir}/eula.txt" "eula=true";
+
+  # Create Server Properties File
+  builtins.writeTextFile "${enigmatica6Dir}/server.properties" serverProperties;
+  
+  # Install Java 11 & Unzip
   environment.systemPackages = with pkgs; [ jdk11 unzip ];
 
   users.users.enigmatica6 = {
