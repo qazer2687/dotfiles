@@ -4,18 +4,22 @@ let
   enigmatica6Dir = "/opt/minecraftserver";
   enigmatica6ZipUrl = "https://mediafilez.forgecdn.net/files/4437/692/Enigmatica6Server-1.8.0.zip";
   enigmatica6Zip = "$/opt/minecraftserver/Enigmatica6Server-1.8.0.zip";
-  serverProperties = ''
-    gamemode=survival
-    difficulty=peaceful
-    max-players=2
-    server-port=25565
-  '';
+
 in {
   
   # Create and Accept EULA File
-  builtins.writeTextFile "/opt/minecraftserver/eula.txt" "eula=true";
+  pkgs.writeText "/opt/minecraftserver/eula.txt" ''
+  eula=true
+  '';
 
   # Create Server Properties File
+  pkgs.writeText "/opt/minecraftserver/server.properties" ''
+  gamemode=survival
+  difficulty=peaceful
+  max-players=2
+  server-port=25565
+  '';
+  
   builtins.writeTextFile "/opt/minecraftserver}/server.properties" serverProperties;
   
   # Install Java 11 & Unzip
