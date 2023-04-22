@@ -37,7 +37,7 @@ in {
     script = ''
       set -euxo pipefail
       mkdir -p /opt/minecraftserver
-      chown minecraftserve /opt/minecraftserver
+      chown minecraftserver /opt/minecraftserver
       chmod 700 /opt/minecraftserver
       curl -L -o /opt/minecraftserver ${minecraftUrl}
       unzip ${minecraftZip} -d /opt/minecraftserver
