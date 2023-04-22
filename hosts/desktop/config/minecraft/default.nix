@@ -50,10 +50,10 @@ in {
     };
     after = [ "network.target" "enigmatica6-prep.service" ];
   };
+  
+# Create and Accept EULA File
+builtins.writeTextFile "${enigmatica6Dir}/eula.txt" "eula=true";
 
-  eula = "${enigmatica6Dir}/eula.txt";
-  text = "eula=true";
-
-  serverProperties = "${enigmatica6Dir}/server.properties";
-  text = serverProperties;
+# Create Server Properties File
+builtins.writeTextFile "${enigmatica6Dir}/server.properties" serverProperties;
 }
