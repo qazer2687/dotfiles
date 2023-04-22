@@ -3,10 +3,16 @@
 {
   # Imports
   imports = [
-    ./hardware-configuration.nix
+    # Minecraft
+    ./config/minecraft/default.nix
+   
+    # Package Configuration
     ./config/polybar/default.nix
     ./config/i3/default.nix
     ./config/alacritty/default.nix
+    
+    # Hardware Configuration
+    ./hardware-configuration.nix
   ];
 
   # State Version
