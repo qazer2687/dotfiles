@@ -136,7 +136,7 @@
       # Gaming
       grapejuice
       osu-lazer
-      minecraft
+      prismlauncher
 
       # Environment
       polybarFull
