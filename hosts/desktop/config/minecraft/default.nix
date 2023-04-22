@@ -51,9 +51,9 @@ in {
     after = [ "network.target" "enigmatica6-prep.service" ];
   };
 
-  file = "${enigmatica6Dir}/eula.txt";
+  eula = "${enigmatica6Dir}/eula.txt";
   text = "eula=true";
 
-  file = "${enigmatica6Dir}/server.properties";
+  serverProperties = "${enigmatica6Dir}/server.properties";
   text = serverProperties;
 }
