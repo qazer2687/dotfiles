@@ -12,13 +12,9 @@ let
   '';
 
 in {
-  # Create & Accept EULA File
+  # Define a rule to create and accept EULA file and a rule to create and write to the server.properties file.
   systemd.tmpfiles.rules = [
     "w /opt/minecraftserver/eula.txt 0644 minecraft minecraft - - eula=true"
-  ];
-  
-  # Create & Write Server.Properties File
-  systemd.tmpfiles.rules = [
     "w /opt/minecraftserver/server.properties 0644 minecraft minecraft - - ${serverProperties}"
   ];
   
