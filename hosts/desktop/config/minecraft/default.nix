@@ -19,7 +19,7 @@ in {
   ];
   
   # Install Java 11 & Unzip
-  environment.systemPackages = with pkgs; [ jdk11 unzip ];
+  environment.systemPackages = with pkgs; [ jdk11 unzip curl ];
 
   # Minecraft Service User Group
   users.groups.minecraftserver = {};
