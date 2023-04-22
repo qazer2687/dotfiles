@@ -5,13 +5,12 @@ let
   enigmatica6ZipUrl = "https://mediafilez.forgecdn.net/files/4437/692/Enigmatica6Server-1.8.0.zip";
   enigmatica6Zip = "$/opt/minecraftserver/Enigmatica6Server-1.8.0.zip";
 
-in {
-  
-  # Create and Accept EULA File
-  pkgs.writeText "/opt/minecraftserver/eula.txt" ''
-  eula=true
-  '';
+in {  
 
+  # Create and Accept EULA File
+  systemd.tmpfiles.rules = [
+  "w ${minecraftDir}/eula.txt 0644 minecraft minecraft - - eula=true"
+  
   # Create Server Properties File
   pkgs.writeText "/opt/minecraftserver/server.properties" ''
   gamemode=survival
