@@ -8,9 +8,6 @@
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    
-    # Modded Minecraft Servers
-    mms.url = "github:mkaito/nixos-modded-minecraft-servers";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
