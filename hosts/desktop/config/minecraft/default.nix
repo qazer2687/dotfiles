@@ -14,16 +14,20 @@ let
 in {
   # Define a rule to create and accept EULA file and a rule to create and write to the server.properties file.
   systemd.tmpfiles.rules = [
-    "w /opt/minecraftserver/eula.txt 0644 minecraft - - - eula=true"
-    "w /opt/minecraftserver/server.properties 0644 minecraft - - - ${serverProperties}"
+    "w /opt/minecraftserver/eula.txt 0644 minecraftserver minecraftserver - - eula=true"
+    "w /opt/minecraftserver/server.properties 0644 minecraftserver minecraftserver - - ${serverProperties}"
   ];
   
   # Install Java 11 & Unzip
   environment.systemPackages = with pkgs; [ jdk11 unzip ];
 
+  # Minecraft Service User Group
+  users.groups.minecraftserver = {};
+
   # Minecraft Service User
   users.users.minecraftserver = {
     isSystemUser = true;
+    group = "minecraftserver";
     home = "/opt/minecraftserver";
     extraGroups = [ "networking" ];
   };
