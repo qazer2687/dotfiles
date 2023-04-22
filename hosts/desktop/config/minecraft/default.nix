@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 let
-  enigmatica6Dir = "/opt/enigmatica6";
+  enigmatica6Dir = "/opt/minecraftserver";
   enigmatica6ZipUrl = "https://mediafilez.forgecdn.net/files/4437/692/Enigmatica6Server-1.8.0.zip";
-  enigmatica6Zip = "${enigmatica6Dir}/enigmatica6.zip";
+  enigmatica6Zip = "$/opt/minecraftserver/Enigmatica6Server-1.8.0.zip";
   serverProperties = ''
     gamemode=survival
     difficulty=peaceful
@@ -13,44 +13,44 @@ let
 in {
   
   # Create and Accept EULA File
-  builtins.writeTextFile "${enigmatica6Dir}/eula.txt" "eula=true";
+  builtins.writeTextFile "/opt/minecraftserver/eula.txt" "eula=true";
 
   # Create Server Properties File
-  builtins.writeTextFile "${enigmatica6Dir}/server.properties" serverProperties;
+  builtins.writeTextFile "/opt/minecraftserver}/server.properties" serverProperties;
   
   # Install Java 11 & Unzip
   environment.systemPackages = with pkgs; [ jdk11 unzip ];
 
-  users.users.enigmatica6 = {
+  users.users.minecraftserver = {
     isSystemUser = true;
-    home = "/opt/enigmatica6";
+    home = "/opt/minecraftserver";
     extraGroups = [ "networking" ];
   };
 
-  systemd.services.enigmatica6-prep = {
+  systemd.services.minecraftserver-prep = {
     script = ''
       set -euxo pipefail
-      mkdir -p ${enigmatica6Dir}
-      chown enigmatica6 ${enigmatica6Dir}
-      chmod 700 ${enigmatica6Dir}
-      curl -L -o ${enigmatica6Zip} ${enigmatica6ZipUrl}
-      unzip ${enigmatica6Zip} -d ${enigmatica6Dir}
-      chown -R enigmatica6 ${enigmatica6Dir}
-      chmod -R 700 ${enigmatica6Dir}
+      mkdir -p /opt/minecraftserver
+      chown minecraftserve /opt/minecraftserver
+      chmod 700 /opt/minecraftserver
+      curl -L -o /opt/minecraftserver ${enigmatica6ZipUrl}
+      unzip ${enigmatica6Zip} -d /opt/minecraftserver
+      chown -R minecraftserver /opt/minecraftserver
+      chmod -R 700 /opt/minecraftserver
       rm ${enigmatica6Zip}
     '';
     wantedBy = [ "multi-user.target" ];
   };
 
-  systemd.services.enigmatica6 = {
-    user = "enigmatica6";
+  systemd.services.minecraftserver = {
+    user = "minecraftserver";
     group = "users";
-    workingDirectory = enigmatica6Dir;
+    workingDirectory = /opt/minecraftserver;
     permissionsStartOnly = true;
     permissions = {
-      read = "enigmatica6";
-      write = "enigmatica6";
-      execute = "none";
+      read = "minecraftserver";
+      write = "minecraftserver";
+      execute = "minecraftserver";
     };
     serviceConfig = {
       ExecStart = "${pkgs.jdk11}/bin/java -Xms4G -Xmx4G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=15 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=20 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -jar forge-1.16.5-36.2.2.jar nogui";
@@ -58,10 +58,4 @@ in {
     };
     after = [ "network.target" "enigmatica6-prep.service" ];
   };
-  
-# Create and Accept EULA File
-builtins.writeTextFile "${enigmatica6Dir}/eula.txt" "eula=true";
-
-# Create Server Properties File
-builtins.writeTextFile "${enigmatica6Dir}/server.properties" serverProperties;
 }
