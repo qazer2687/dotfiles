@@ -136,6 +136,7 @@
       # Gaming
       grapejuice
       osu-lazer
+      minecraft
 
       # Environment
       polybarFull
