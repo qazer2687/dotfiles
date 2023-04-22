@@ -4,18 +4,12 @@ let
   minecraftDir = "/opt/minecraftserver";
   minecraftUrl = "https://mediafilez.forgecdn.net/files/4437/692/Enigmatica6Server-1.8.0.zip";
   minecraftZip = "$/opt/minecraftserver/Enigmatica6Server-1.8.0.zip";
-  serverProperties = ''
-  gamemode=survival
-  difficulty=peaceful
-  max-players=2
-  server-port=25565
-  '';
-
+  
 in {
   # Define a rule to create and accept EULA file and a rule to create and write to the server.properties file.
   systemd.tmpfiles.rules = [
     "w /opt/minecraftserver/eula.txt 0755 minecraftserver minecraftserver - eula=true"
-    "w /opt/minecraftserver/server.properties 0755 minecraftserver minecraftserver - ${serverProperties}"
+    "w /opt/minecraftserver/server.properties 0755 minecraftserver minecraftserver - ${./server.properties}"
   ];
   
   # Install Java 11 & Unzip
