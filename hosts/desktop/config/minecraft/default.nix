@@ -47,7 +47,6 @@ in {
   # Minecraft Runner Service
   systemd.services.minecraftserver = {
     user = "minecraftserver";
-    group = "users";
     workingDirectory = /opt/minecraftserver;
     permissionsStartOnly = true;
     permissions = {
