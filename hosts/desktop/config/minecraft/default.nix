@@ -19,7 +19,7 @@ in {
   ];
   
   # Install Java 11 & Unzip
-  environment.systemPackages = with pkgs; [ jdk11 unzip curl ];
+  environment.systemPackages = with pkgs; [ jdk11 unzip];
 
   # Minecraft Service User Group
   users.groups.minecraftserver = {};
@@ -39,7 +39,7 @@ in {
       mkdir -p /opt/minecraftserver
       chown minecraftserver /opt/minecraftserver
       chmod 700 /opt/minecraftserver
-      curl -L -o /opt/minecraftserver ${minecraftUrl}
+      ${pkgs.curl}/bin/curl -L -o /opt/minecraftserver ${minecraftUrl}
       unzip ${minecraftZip} -d /opt/minecraftserver
       chown -R minecraftserver /opt/minecraftserver
       chmod -R 700 /opt/minecraftserver
