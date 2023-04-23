@@ -50,6 +50,6 @@ in {
       Type = "simple";
       WorkingDirectory = "/opt/minecraftserver";
     };
-    after = [ "network.target" "installminecraftserver.service" ];
+    after = [ "network.target" ];
   };
 }
