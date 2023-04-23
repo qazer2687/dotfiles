@@ -48,8 +48,8 @@ in {
     serviceConfig = {
       ExecStart = "/opt/minecraftserver/start.sh";
       Type = "simple";
-      User=minecraftserver
-      Group=minecraftserver
+      User="minecraftserver";
+      Group="minecraftserver";
       WorkingDirectory = "/opt/minecraftserver";
     };
     after = [ "network.target" ];
