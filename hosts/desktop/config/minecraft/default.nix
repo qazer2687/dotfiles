@@ -46,7 +46,7 @@ in {
   systemd.services.minecraftserver = {
 
     serviceConfig = {
-      ExecStart = "/opt/minecraft/start.sh";
+      ExecStart = "/opt/minecraftserver/start.sh";
       Type = "simple";
       WorkingDirectory = "/opt/minecraftserver";
     };
