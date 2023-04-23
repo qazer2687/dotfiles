@@ -12,8 +12,8 @@ in {
     "L+ /opt/minecraftserver/server.properties 0755 minecraftserver minecraftserver - ${./server.properties}"
   ];
   
-  # Install Java 8 & Unzip
-  environment.systemPackages = with pkgs; [ jdk8 unzip];
+  # Install Deps
+  environment.systemPackages = with pkgs; [ jdk8 unzip awk];
 
   # Minecraft Service User Group
   users.groups.minecraftserver = {};
@@ -48,6 +48,8 @@ in {
     serviceConfig = {
       ExecStart = "/opt/minecraftserver/start.sh";
       Type = "simple";
+      User=minecraftserver
+      Group=minecraftserver
       WorkingDirectory = "/opt/minecraftserver";
     };
     after = [ "network.target" ];
