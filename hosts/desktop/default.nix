@@ -98,12 +98,6 @@
   # Org.Freedesktop.Secrets (For Git)
   services.gnome.gnome-keyring.enable = true;
 
-  # Other Root Packages
-  environment.systemPackages = with pkgs; [
-    premid
-    discord-rpc
-  ];
-
   # Fonts
   fonts.fonts = with pkgs; [( nerdfonts.override {
     fonts = [
