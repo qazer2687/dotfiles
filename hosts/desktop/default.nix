@@ -146,6 +146,7 @@
       pavucontrol
       alacritty
       gnome.nautilus
+      premid
 
     ];
 
