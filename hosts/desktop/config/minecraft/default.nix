@@ -48,7 +48,7 @@ in {
     serviceConfig = {
       ExecStart = "${pkgs.jdk8}/bin/java -jar server.jar";
       Type = "simple";
-      WorkingDirectory= "/opt/minecraftserver";
+      WorkingDirectory = "/opt/minecraftserver";
     };
     after = [ "network.target" "installminecraftserver.service" ];
   };
