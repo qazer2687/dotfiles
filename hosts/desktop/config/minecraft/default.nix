@@ -46,7 +46,7 @@ in {
   systemd.services.minecraftserver = {
 
     serviceConfig = {
-      ExecStart = "${pkgs.jdk8}/bin/java -jar server.jar";
+      ExecStart = "./opt/minecraft/start.sh";
       Type = "simple";
       WorkingDirectory = "/opt/minecraftserver";
     };
