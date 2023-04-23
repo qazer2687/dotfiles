@@ -13,7 +13,7 @@ in {
   ];
   
   # Install Deps
-  environment.systemPackages = with pkgs; [ jdk8 unzip awk];
+  environment.systemPackages = with pkgs; [ jdk8 unzip gawk];
 
   # Minecraft Service User Group
   users.groups.minecraftserver = {};
