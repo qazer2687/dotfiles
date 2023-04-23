@@ -11,9 +11,6 @@ in {
     "L+ /opt/minecraftserver/eula.txt 0755 minecraftserver minecraftserver - ${./eula.txt}"
     "L+ /opt/minecraftserver/server.properties 0755 minecraftserver minecraftserver - ${./server.properties}"
   ];
-  
-  # Install Deps
-  environment.systemPackages = with pkgs; [ jdk8 unzip gawk];
 
   # Minecraft Service User Group
   users.groups.minecraftserver = {};
@@ -44,7 +41,12 @@ in {
 
   # Minecraft Runner Service
   systemd.services.minecraftserver = {
-
+      
+    path = with pkgs; [
+      jdk8
+      gawk
+    ];
+    
     serviceConfig = {
       ExecStart = "/opt/minecraftserver/start.sh";
       Type = "simple";
