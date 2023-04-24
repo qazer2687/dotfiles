@@ -4,19 +4,12 @@
   home-manager.users.alex.xdg.configFile."i3/config".text = ''
   set $mod Mod4
   exec --no-startup-id dex --autostart --environment i3
-  bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
-  bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
-  bindsym XF86AudioMute exec --no-startup-id pamixer -t
-  bindsym XF86AudioMicMute exec --no-startup-id pamixer --default-source -t
   bindsym $mod+Return exec alacritty
   bindsym $mod+space floating toggle
   bindsym $mod+q kill
   bindsym $mod+e exec --no-startup-id dmenu_run -b -i -nb "#111111" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"
-  exec_always --no-startup-id feh --bg-fill ../feh/wallpaper.png
+  exec_always --no-startup-id feh --bg-fill $HOME/.config/feh/wallpaper.png
   exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
-  # exec_always --no-startup-id redshift -PO 4000
-  bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
-  bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
   bindsym $mod+Left move left
   bindsym $mod+Down move down
   bindsym $mod+Up move up
