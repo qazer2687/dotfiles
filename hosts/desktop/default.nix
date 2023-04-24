@@ -3,14 +3,12 @@
 {
   # Imports
   imports = [
-    # Minecraft
-    ./config/minecraft/default.nix
-   
+
     # Package Configuration
     ./config/polybar/default.nix
+    ./config/minecraft/default.nix
     ./config/i3/default.nix
     ./config/alacritty/default.nix
-    ./config/feh/default.nix
     
     # Hardware Configuration
     ./hardware-configuration.nix
