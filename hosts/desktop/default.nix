@@ -72,8 +72,18 @@
   };
 
   # Audio
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  ## Pulseaudio [NOT IN USE]
+  #sound.enable = true;
+  #hardware.pulseaudio.enable = true;
+  
+  ## Pipewire
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
   
   # Users
   users.users.alex = {
