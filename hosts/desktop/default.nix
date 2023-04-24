@@ -153,6 +153,7 @@
       pavucontrol
       alacritty
       gnome.nautilus
+      easyeffects
       
     ];
 
