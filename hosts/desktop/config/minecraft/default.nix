@@ -6,7 +6,7 @@ let
   minecraftZip = "$/opt/minecraftserver/Enigmatica6Server-1.8.0.zip";
   
 in {
-  # Define a rule to create and accept EULA file and a rule to create and write to the server.properties file.
+  # Tmpfiles rules to symlink some minecraft files
   systemd.tmpfiles.rules = [
     "L+ /opt/minecraftserver/eula.txt 0755 minecraftserver minecraftserver - ${./eula.txt}"
     "L+ /opt/minecraftserver/server.properties 0755 minecraftserver minecraftserver - ${./server.properties}"
