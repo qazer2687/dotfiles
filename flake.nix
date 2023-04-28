@@ -20,7 +20,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          (import ./hosts/desktop inputs)
+          ./hosts/desktop
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -33,7 +33,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          (import ./hosts/laptop inputs)
+          ./hosts/laptop
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
