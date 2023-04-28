@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, ... }:
+{ nixpkgs, lib, config, pkgs, inputs, ... }:
 let
 useHostResolvConf = config.networking.resolvconf.enable && config.networking.useHostResolvConf;
 
