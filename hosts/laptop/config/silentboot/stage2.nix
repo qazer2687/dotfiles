@@ -1,10 +1,10 @@
-{ nixpkgs, lib, config, pkgs, inputs, ... }:
+{ inputs, lib, config, pkgs, inputs, ... }:
 let
 useHostResolvConf = config.networking.resolvconf.enable && config.networking.useHostResolvConf;
 
 bootStage2 = pkgs.substituteAll {
   src = pkgs.runCommand "stage-2-init.sh" {} ''
-    sed '2i exec 1<>/dev/null' ${nixpkgs}/nixos/modules/system/boot/stage-2-init.sh > $out
+    sed '2i exec 1<>/dev/null' ${inputs.nixpkgs}/nixos/modules/system/boot/stage-2-init.sh > $out
   '';
   shellDebug = "${pkgs.bashInteractive}/bin/bash";
   shell = "${pkgs.bash}/bin/bash";
