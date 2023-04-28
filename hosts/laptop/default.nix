@@ -23,8 +23,9 @@
   # Bootloader
   boot.loader.systemd-boot = {
   enable = true;
-  timeout = 0;
+  default = "nixos";
   timeoutKey = "shift";
+};
   };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
