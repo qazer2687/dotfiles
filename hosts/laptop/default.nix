@@ -7,6 +7,8 @@
     ./config/polybar/default.nix
     ./config/i3/default.nix
     ./config/alacritty/default.nix
+    (import ./this-file inputs)
+    (import ./this-file inputs)
   ];
 
   # State Version
