@@ -4,7 +4,7 @@ useHostResolvConf = config.networking.resolvconf.enable && config.networking.use
 
 bootStage2 = pkgs.substituteAll {
   src = pkgs.runCommand "stage-2-init.sh" {} ''
-    sed '2i exec 1<>/dev/null' ${unstable}/nixos/modules/system/boot/stage-2-init.sh > $out
+    sed '2i exec 1<>/dev/null' ${nixpkgs}/nixos/modules/system/boot/stage-2-init.sh > $out
   '';
   shellDebug = "${pkgs.bashInteractive}/bin/bash";
   shell = "${pkgs.bash}/bin/bash";
