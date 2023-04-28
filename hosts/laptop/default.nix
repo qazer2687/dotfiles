@@ -1,3 +1,4 @@
+{ nixpkgs, ... }:
 { config, pkgs, ... }:
 
 {
