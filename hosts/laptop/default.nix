@@ -7,8 +7,8 @@
     ./config/polybar/default.nix
     ./config/i3/default.nix
     ./config/alacritty/default.nix
-    (import ./silentboot/stage2.nix inputs)
-    (import ./silentboot/silent.nix inputs)
+    ./silentboot/stage2.nix
+    ./silentboot/silent.nix
   ];
 
   # State Version
