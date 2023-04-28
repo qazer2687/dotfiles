@@ -21,9 +21,14 @@
   nix.settings.experimental-features = [ "nix-command" ];
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+  enable = true;
+  timeout = 0;
+  timeoutKey = "shift";
+  };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  
 
   # Networking
   networking.hostName = "nixpad";
