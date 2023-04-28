@@ -18,6 +18,7 @@
       # Desktop Configuration
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; }
         modules = [
           (import ./hosts/desktop inputs)
           home-manager.nixosModules.home-manager {
@@ -30,6 +31,7 @@
       # Laptop Configuration
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; }
         modules = [
           (import ./hosts/laptop inputs)
           home-manager.nixosModules.home-manager {
