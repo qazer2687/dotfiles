@@ -25,7 +25,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.plymouth.enable = true;
-  boot.plymouth.theme = "glow";
+  boot.plymouth.theme = "bgrt";
   
 
   # Networking
