@@ -155,6 +155,7 @@
       grapejuice
       osu-lazer
       prismlauncher
+      lunar-client
 
       # Environment
       polybarFull
