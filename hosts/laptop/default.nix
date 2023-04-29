@@ -21,13 +21,11 @@
   nix.settings.experimental-features = [ "nix-command" ];
 
   # Bootloader
-  boot.loader.systemd-boot = {
-  enable = true;
-  default = "nixos";
-  timeoutKey = "shift";
-  };
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.plymouth.enable = true;
+  boot.plymouth.theme = "glow";
   
 
   # Networking
