@@ -156,6 +156,7 @@
       osu-lazer
       prismlauncher
       lunar-client
+      lutris
 
       # Environment
       polybarFull
