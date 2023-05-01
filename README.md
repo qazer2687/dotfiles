@@ -7,6 +7,10 @@ This is my Nix Flake, containing three system configurations:
 
 #### <b> Warning: All configurations are using the Colemak keyboard layout, this can be changed in 'default.nix'.
 
+---  
+  
+![alt text](https://i.imgur.com/TGR86qw.png)
+  
 ---
 
 ### Installation 💽
