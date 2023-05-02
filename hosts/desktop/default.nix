@@ -169,6 +169,7 @@
       alacritty
       gnome.nautilus
       easyeffects
+      usbmuxd
       
     ];
 
