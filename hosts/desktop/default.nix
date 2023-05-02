@@ -122,6 +122,10 @@
       "FiraCode" 
     ];
   })];
+  
+  environment.systemPackages = [
+    pkgs.linuxKernel.packages.linux_6_1.v4l2loopback
+  ];
 
   # Home Manager
   home-manager.users.alex = {
@@ -140,7 +144,6 @@
       vlc
       droidcam
       obs-studio-plugins.droidcam-obs
-      v4l2-relayd
 
       # Programming (Languages)
       vscodium
