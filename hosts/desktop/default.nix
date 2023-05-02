@@ -137,7 +137,6 @@
       discord
       neofetch
       obs-studio
-      obs-studio-plugins.obs-ndi
       vlc
 
       # Programming (Languages)
