@@ -157,6 +157,7 @@
       alacritty       # Terminal Emulator
       gnome.nautilus  # File Browser
       easyeffects     # Audio Equaliser
+      dxvk_2          # Vulkan Translation Layer
       
     ];
 
@@ -175,5 +176,18 @@
     userName = "***REMOVED***";
     userEmail = "***REMOVED***@outlook.com";
     };
+    
+    programs.gtk3.enable = true;
+    programs.gtk3.package = pkgs.gtk3.adwaita-dark;
+    
+    programs.qt5.enable = true;
+    programs.qt5.package = pkgs.qt5.qtbasePlugins.breeze-icons;
+    
+    environment.variables = {
+      GTK_THEME = "Adwaita-dark";
+      QT_QPA_PLATFORMTHEME = "qt5ct";
+      QT_STYLE_OVERRIDE = "Breeze-dark";
+    };
   };
 }
+
