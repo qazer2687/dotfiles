@@ -140,6 +140,7 @@
       vlc
       droidcam
       obs-studio-plugins.droidcam-obs
+      v4l2-relayd
 
       # Programming (Languages)
       vscodium
