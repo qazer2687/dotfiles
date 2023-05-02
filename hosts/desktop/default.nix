@@ -138,6 +138,7 @@
       neofetch
       obs-studio
       vlc
+      droidcam
 
       # Programming (Languages)
       vscodium
