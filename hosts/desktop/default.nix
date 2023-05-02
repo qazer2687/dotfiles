@@ -139,6 +139,7 @@
       obs-studio
       vlc
       droidcam
+      obs-studio-plugins.droidcam-obs
 
       # Programming (Languages)
       vscodium
