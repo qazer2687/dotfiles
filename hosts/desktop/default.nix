@@ -183,11 +183,11 @@
     programs.qt5.enable = true;
     programs.qt5.package = pkgs.qt5.qtbasePlugins.breeze-icons;
     
-    environment.variables = {
-      GTK_THEME = "Adwaita-dark";
-      QT_QPA_PLATFORMTHEME = "qt5ct";
-      QT_STYLE_OVERRIDE = "Breeze-dark";
-    };
+    home.file.".profile".text = ''
+      export QT_QPA_PLATFORMTHEME=qt5ct
+      export QT_STYLE_OVERRIDE=Breeze-dark
+      export GTK_THEME=Adwaita-dark
+    '';
   };
 }
 
