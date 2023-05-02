@@ -40,7 +40,7 @@
   networking.networkmanager.enable = true;
   networking.firewall = {
   enable = true;
-  allowedTCPPorts = [ 80 443 25565 ];
+  allowedTCPPorts = [ 80 443 25565 ]; # HTTP, HTTPS, Minecraft
   allowedUDPPortRanges = [
     { from = 4000; to = 4007; }
     { from = 8000; to = 8010; }
@@ -66,17 +66,12 @@
     # Input Drivers
     libinput = {
       enable = true;
-      mouse.accelProfile = "flat";
-      mouse.accelSpeed = "0";
+      mouse.accelProfile = "flat"; # Remove Mouse Accel
+      mouse.accelSpeed = "0"; # Remove Mouse Accel
     };
   };
 
   # Audio
-  ## Pulseaudio [NOT IN USE]
-  #sound.enable = true;
-  #hardware.pulseaudio.enable = true;
-  
-  ## Pipewire
   sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -103,17 +98,15 @@
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 
-  # System-Wide Steam (Required)
+  # Steam
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
-
-  # OpenGL Libraries (For Steam)
   hardware.opengl.enable = true;
 
-  # Org.Freedesktop.Secrets (For Git)
+  # Secrets
   services.gnome.gnome-keyring.enable = true;
 
   # Fonts
@@ -122,10 +115,6 @@
       "FiraCode" 
     ];
   })];
-  
-  environment.systemPackages = [
-    pkgs.linuxKernel.packages.linux_6_1.v4l2loopback
-  ];
 
   # Home Manager
   home-manager.users.alex = {
@@ -137,47 +126,41 @@
     home.packages = with pkgs; [
 
       # General
-      firefox
-      discord
-      neofetch
-      obs-studio
-      vlc
-      droidcam
-      obs-studio-plugins.droidcam-obs
+      firefox         # Web Browser
+      discord         # Communication Platform
+      neofetch        # System Stats
+      obs-studio      # Recording Software
+      vlc             # Video Player
 
-      # Programming (Languages)
+      # Programming
       vscodium
-      ghc          # Haskell
-      dotnet-sdk_7 # C#
-      gcc          # C
-      rustup       # Rust
-      php          # PHP
-      clisp        # Common Lisp
-
-      # Programming (Extras)
-      dotnetPackages.Nuget
+      ghc             # Haskell
+      dotnet-sdk_7    # C#
+      gcc             # C
+      rustup          # Rust
+      php             # PHP
+      clisp           # Common Lisp
 
       # Gaming
-      grapejuice
-      osu-lazer
-      prismlauncher
-      lunar-client
-      lutris
+      grapejuice      # Roblox
+      osu-lazer       # OSU
+      prismlauncher   # Minecraft (Modded)
+      lunar-client    # Minecraft (Hypixel)
+      lutris          # Overwatch
 
       # Environment
-      polybarFull
-      dmenu
-      scrot
-      feh
-      pavucontrol
-      alacritty
-      gnome.nautilus
-      easyeffects
-      usbmuxd
+      polybarFull     # System Bar
+      dmenu           # System Search
+      scrot           # Screenshot Utility
+      feh             # Wallpaper Utility
+      pavucontrol     # Audio Interface
+      alacritty       # Terminal Emulator
+      gnome.nautilus  # File Browser
+      easyeffects     # Audio Equaliser
       
     ];
 
-    # Neovim
+    # Neovim Text Editor
     programs.neovim = {
       enable = true;
       vimAlias = true;
@@ -186,7 +169,7 @@
       ];
     };
     
-    # Git
+    # Git Version Control
     programs.git = {
     enable = true;
     userName = "***REMOVED***";
