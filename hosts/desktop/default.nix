@@ -126,38 +126,39 @@
     home.packages = with pkgs; [
 
       # General
-      firefox         # Web Browser
-      discord         # Communication Platform
-      neofetch        # System Stats
-      obs-studio      # Recording Software
-      vlc             # Video Player
+      firefox           # Web Browser
+      discord           # Communication Platform
+      betterdiscordctl  # Discord Tweaks
+      neofetch          # System Stats
+      obs-studio        # Recording Software
+      vlc               # Video Player
 
       # Programming
       vscodium
-      ghc             # Haskell
-      dotnet-sdk_7    # C#
-      gcc             # C
-      rustup          # Rust
-      php             # PHP
-      clisp           # Common Lisp
+      ghc               # Haskell
+      dotnet-sdk_7      # C#
+      gcc               # C
+      rustup            # Rust
+      php               # PHP
+      clisp             # Common Lisp
 
       # Gaming
-      grapejuice      # Roblox
-      osu-lazer       # OSU
-      prismlauncher   # Minecraft (Modded)
-      lunar-client    # Minecraft (Hypixel)
-      lutris          # Overwatch
+      grapejuice        # Roblox
+      osu-lazer         # OSU
+      prismlauncher     # Minecraft (Modded)
+      lunar-client      # Minecraft (Hypixel)
+      lutris            # Overwatch
 
       # Environment
-      polybarFull     # System Bar
-      dmenu           # System Search
-      scrot           # Screenshot Utility
-      feh             # Wallpaper Utility
-      pavucontrol     # Audio Interface
-      alacritty       # Terminal Emulator
-      gnome.nautilus  # File Browser
-      easyeffects     # Audio Equaliser
-      dxvk_2          # Vulkan Translation Layer
+      polybarFull       # System Bar
+      dmenu             # System Search
+      scrot             # Screenshot Utility
+      feh               # Wallpaper Utility
+      pavucontrol       # Audio Interface
+      alacritty         # Terminal Emulator
+      gnome.nautilus    # File Browser
+      easyeffects       # Audio Equaliser
+      dxvk_2            # Vulkan Translation Layer
       
     ];
 
@@ -176,18 +177,6 @@
     userName = "alexvasilkovski";
     userEmail = "alexvasilkovski@outlook.com";
     };
-    
-    programs.gtk3.enable = true;
-    programs.gtk3.package = pkgs.gtk3.adwaita-dark;
-    
-    programs.qt5.enable = true;
-    programs.qt5.package = pkgs.qt5.qtbasePlugins.breeze-icons;
-    
-    home.file.".profile".text = ''
-      export QT_QPA_PLATFORMTHEME=qt5ct
-      export QT_STYLE_OVERRIDE=Breeze-dark
-      export GTK_THEME=Adwaita-dark
-    '';
   };
 }
 
