@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Imports
@@ -118,6 +118,10 @@
       "FiraCode" 
     ];
   })];
+  
+  environment.systemPackages = [
+    inputs.nixpkgs-stable.packages.${pkgs.system}.wine
+  ];
 
   # Home Manager
   home-manager.users.alex = {
