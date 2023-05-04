@@ -121,7 +121,6 @@
   
   environment.systemPackages = with pkgs; [
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.wineWowPackages.full
-    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.grapejuice
   ];
 
   # Home Manager
@@ -151,6 +150,7 @@
       clisp             # Common Lisp
 
       # Gaming
+      grapejuice        # Roblox
       osu-lazer         # OSU
       prismlauncher     # Minecraft (Modded)
       lunar-client      # Minecraft (Hypixel)
