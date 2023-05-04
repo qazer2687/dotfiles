@@ -104,7 +104,10 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+  
+  # OpenGL
   hardware.opengl.enable = true;
+  hardware.opengl.driSupport32Bit = true;
 
   # Secrets
   services.gnome.gnome-keyring.enable = true;
