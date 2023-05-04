@@ -121,6 +121,7 @@
   
   environment.systemPackages = with pkgs; [
     wine-staging
+    protonup-qt
   ];
 
   # Home Manager
