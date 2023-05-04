@@ -2,15 +2,16 @@
   description = "NixOS configuration";
 
   inputs = {
-    # NixPkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Packages
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable.url = "github:nixos/nixpkgs/nixos-22.11"
 
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "unstable";
   };
 
-  outputs = {self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = {self, unstable, stable, home-manager, ... }@inputs: {
     
     # Hosts
     nixosConfigurations = {
