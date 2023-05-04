@@ -17,7 +17,7 @@
     nixosConfigurations = {
 
       # Desktop Configuration
-      desktop = nixpkgs.lib.nixosSystem {
+      desktop = unstable.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -30,7 +30,7 @@
       };
 
       # Laptop Configuration
-      laptop = nixpkgs.lib.nixosSystem {
+      laptop = unstable.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
