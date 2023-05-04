@@ -119,7 +119,7 @@
     ];
   })];
   
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     inputs.nixpkgs-stable.packages.${pkgs.system}.wine
   ];
 
