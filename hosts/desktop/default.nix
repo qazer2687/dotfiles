@@ -165,7 +165,6 @@
       alacritty         # Terminal Emulator
       gnome.nautilus    # File Browser
       easyeffects       # Audio Equaliser
-      dxvk_2            # Vulkan Translation Layer
       
     ];
 
