@@ -119,9 +119,9 @@
     ];
   })];
   
-  environment.systemPackages = with pkgs; [
-    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.wineWowPackages.full
-  ];
+  # environment.systemPackages = with pkgs; [
+  #    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.wineWowPackages.full
+  # ];
 
   # Home Manager
   home-manager.users.alex = {
