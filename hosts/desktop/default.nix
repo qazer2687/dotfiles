@@ -120,7 +120,7 @@
   })];
   
   environment.systemPackages = with pkgs; [
-      inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.wineWowPackages.stagingFull
+      inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.wine-staging
   ];
 
   # Home Manager
