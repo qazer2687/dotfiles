@@ -118,10 +118,6 @@
       "FiraCode" 
     ];
   })];
-  
-  environment.systemPackages = with pkgs; [
-      inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.wine-staging
-  ];
 
   # Home Manager
   home-manager.users.alex = {
@@ -150,7 +146,6 @@
       clisp             # Common Lisp
 
       # Gaming
-      grapejuice        # Roblox
       osu-lazer         # OSU
       prismlauncher     # Minecraft (Modded)
       lunar-client      # Minecraft (Hypixel)
