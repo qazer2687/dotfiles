@@ -150,7 +150,7 @@
       clisp             # Common Lisp
 
       # Gaming
-      grapejuice        # Roblox
+      #        # Roblox
       osu-lazer         # OSU
       prismlauncher     # Minecraft (Modded)
       lunar-client      # Minecraft (Hypixel)
