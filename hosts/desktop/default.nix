@@ -118,6 +118,10 @@
       "FiraCode" 
     ];
   })];
+  
+  environment.systemPackages = with pkgs; [
+    wine-staging
+  ];
 
   # Home Manager
   home-manager.users.alex = {
