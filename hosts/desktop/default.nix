@@ -120,7 +120,7 @@
   })];
   
   environment.systemPackages = with pkgs; [
-    inputs.nixpkgs-stable.packages.${pkgs.system}.wine
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.wine
   ];
 
   # Home Manager
