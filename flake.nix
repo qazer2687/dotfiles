@@ -3,21 +3,21 @@
 
   inputs = {
     # Packages
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    stable.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-22.11";
 
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "unstable";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, unstable, stable, home-manager, ... }@inputs: {
+  outputs = {self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs: {
     
     # Hosts
     nixosConfigurations = {
 
       # Desktop Configuration
-      desktop = unstable.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -30,7 +30,7 @@
       };
 
       # Laptop Configuration
-      laptop = unstable.lib.nixosSystem {
+      laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
