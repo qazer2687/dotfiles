@@ -22,7 +22,7 @@ sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#server
 - 🌿 Includes a SystemD service for running Minecraft servers.
 
 
-<img src="https://i.imgur.com/CxRS9gI.png" alt="My Image" width="50%">
+<img src="https://i.imgur.com/CxRS9gI.png" alt="My Image" width="75%">
 
 ## Laptop ~ 💻
 - 🪶 Lightweight, with additional tweaks to booting and shutdown.
@@ -32,4 +32,4 @@ sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#server
 - 💡 Redshift and Nautilus for convenience.
 - 🌟 Keybindings for brightness and volume with BrightnessCTL and PaMixer.
 
-<img src="https://media.istockphoto.com/id/1309023728/video/cinematic-intro-of-the-coming-soon-lettering-from-the-dark.jpg?s=640x640&k=20&c=6ywPVAi06d-ODrrEYERKmgC7CBbGeZeLaJXhwklfzDk=" alt="My Image" width="50%">
+<img src="https://i.imgur.com/8TexLL7.png" alt="My Image" width="75%">
