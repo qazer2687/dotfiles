@@ -3,8 +3,17 @@
 
 These are my NixOS dotfiles for configuring my desktop and laptop. They include configurations for various tools and programs that I use for development, productivity, and entertainment.
 
-# Features
+## Installation 💽
+```
+# Desktop
+sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#desktop
 
+# Laptop
+sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#laptop
+
+# Server (Coming soon...)
+sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#server
+```
 ## Desktop ~ 🖥️
 - 🚀 With i3 and DMenu for a fast and responsive UX.
 - 🎨 Using Alacritty and __Bash__ for customization. (Fish coming soon...)
