@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, nixos-06cb-009a-fingerprint-sensor, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Imports
