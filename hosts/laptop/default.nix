@@ -34,7 +34,7 @@
   # Pam Authentication
   security.pam.services.sudo.text = ''
     account required pam_unix.so
-    auth sufficient ${nixos-06cb-009a-fingerprint-sensor.localPackages.fprintd-clients}/lib/security/pam_fprintd.so
+    auth sufficient ${inputs.nixos-06cb-009a-fingerprint-sensor.localPackages.fprintd-clients}/lib/security/pam_fprintd.so
     auth sufficient pam_unix.so   likeauth try_first_pass nullok
     auth required pam_deny.so
     password sufficient pam_unix.so nullok sha512
