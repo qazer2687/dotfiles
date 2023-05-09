@@ -12,6 +12,7 @@
     
     # Fingerprint Drivers  
     nixos-06cb-009a-fingerprint-sensor.url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor";
+  };
 
   outputs = {self, nixpkgs, nixpkgs-stable, home-manager, nixos-06cb-009a-fingerprint-sensor, ... }@inputs: {
     
