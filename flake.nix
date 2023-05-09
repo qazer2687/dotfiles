@@ -38,8 +38,6 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/laptop
-          nixos-06cb-009a-fingerprint-sensor.nixosModules.open-fprintd
-          nixos-06cb-009a-fingerprint-sensor.nixosModules.python-validity
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
