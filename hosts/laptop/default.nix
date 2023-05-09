@@ -27,6 +27,9 @@
   boot.plymouth.enable = true;
   boot.plymouth.theme = "bgrt";
   
+  # Fingerprint Drivers
+  services.open-fprintd.enable = true;
+  services.python-validity.enable = true;
 
   # Networking
   networking.hostName = "nixpad";
