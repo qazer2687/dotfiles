@@ -19,7 +19,7 @@ sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#server
 - 🎨 Using Alacritty and __Bash__ for customization. (Fish coming soon...)
 - 🎮 Configured with Steam, Lutris, Wine and Proton-GE for running games.
 - ⚡ Mouse acceleration is disabled for accuracy.
-- 🌿 Includes a SystemD service for running Minecraft servers.
+- 🌿 Includes a Systemd service for running Minecraft servers.
 
 
 <img src="https://i.imgur.com/CxRS9gI.png" alt="My Image" width="75%">
