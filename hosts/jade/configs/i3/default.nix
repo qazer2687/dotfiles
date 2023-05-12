@@ -14,10 +14,10 @@
   bindsym $mod+Down move down
   bindsym $mod+Up move up
   bindsym $mod+Right move right
-  bindsym $mod+Shift+Right resize shrink width 2 px or 2 ppt
-  bindsym $mod+Shift+Up resize grow height 2 px or 2 ppt
-  bindsym $mod+Shift+Down resize shrink height 2 px or 2 ppt
-  bindsym $mod+Shift+Left resize grow width 2 px or 2 ppt
+  bindsym $mod+Shift+Right resize shrink width 5 px or 5 ppt
+  bindsym $mod+Shift+Up resize grow height 5 px or 5 ppt
+  bindsym $mod+Shift+Down resize shrink height 5 px or 5 ppt
+  bindsym $mod+Shift+Left resize grow width 5 px or 5 ppt
   bindsym $mod+1 workspace number 1
   bindsym $mod+2 workspace number 2
   bindsym $mod+3 workspace number 3
@@ -40,9 +40,9 @@
   bindsym $mod+Shift+0 move container to workspace number 10
   bindsym $mod+Shift+r restart
   default_border pixel 0
-  gaps inner 10
+  gaps inner 5
   gaps outer 0
-  border_radius 10
+  border_radius 5
   bar {
           mode invisible
   }
