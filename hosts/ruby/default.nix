@@ -3,12 +3,19 @@
 {
   # Imports
   imports = [
+    
+    # Hardware
     ./hardware-configuration.nix
-    ./config/polybar/default.nix
-    ./config/i3/default.nix
-    ./config/alacritty/default.nix
-    ./config/silentboot/stage2.nix
-    ./config/silentboot/silent.nix
+
+    # Configs
+    ./configs/polybar/default.nix
+    ./configs/i3/default.nix
+    ./configs/alacritty/default.nix
+
+    # Tweaks
+    ./tweaks/silent/stage2.nix
+    ./tweaks/silent/default.nix
+
   ];
 
   # State Version
@@ -25,6 +32,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  # ZRam
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+  };
+
+  # Fingerprint
   services.fprintd = {
     enable = true;
     tod = {
@@ -37,9 +52,12 @@
   
 
   # Networking
-  networking.hostName = "nixpad";
+  networking.hostName = "ruby";
   networking.networkmanager.enable = true;
   
+  # XWayland Support
+  programs.xwayland.enable = true;
+
   # Xorg
   services.xserver = {
     enable = true;
@@ -93,35 +111,48 @@
 
     # Packages
     home.packages = with pkgs; [
-      obsidian
-      neofetch
-      firefox
-      dotnet-sdk_7
-      dotnetPackages.Nuget
-      ghc
-#     ncmpcpp
-      anki-bin
-      vscodium
-      polybarFull
-      dmenu
-      scrot
-      redshift
-      brightnessctl
-      feh
-      networkmanagerapplet
-      pavucontrol
-      pamixer
-      alacritty
-      gnome.nautilus
+
+      # General
+      firefox           # Web Browser
+      
+      # Programming
+      vscodium          # Code IDE
+      ghc               # Haskell
+      dotnet-sdk_7      # C#
+
+      # Productivity
+      obsidian          # Note-Taking App
+      anki-bin          # Flashcard App
+
+      # Environment
+      polybarFull       # System Bar
+      dmenu             # System Search
+      scrot             # Screenshot Utility
+      feh               # Wallpaper Utility
+      pavucontrol       # Audio Interface
+      alacritty         # Terminal Emulator
+      gnome.nautilus    # File Manager
+      redshift          # Blue Light Filter
+      brightnessctl     # Brightness Control
+      pamixer           # Volume Control
+      neofetch          # System Stats
+
     ];
 
-    # Neovim
+    # Text Editor
     programs.neovim = {
       enable = true;
       vimAlias = true;
       plugins = with pkgs.vimPlugins; [
         vim-nix
       ];
+    };
+
+    # Git Version Control
+    programs.git = {
+    enable = true;
+    userName = "alexvasilkovski";
+    userEmail = "alexvasilkovski@outlook.com";
     };
 
     # MPD
