@@ -9,7 +9,6 @@
 
     # Configs
     ./configs/polybar/default.nix
-    ./configs/minecraft/default.nix
     ./configs/i3/default.nix
     ./configs/alacritty/default.nix
 
