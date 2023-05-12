@@ -19,12 +19,12 @@
     # Hosts
     nixosConfigurations = {
 
-      # Desktop Configuration
+      # Desktop Configuration ~ Jade
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/desktop
+          ./hosts/jade
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -32,12 +32,12 @@
         ];
       };
 
-      # Laptop Configuration
+      # Laptop Configuration ~ Ruby
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/laptop
+          ./hosts/ruby
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

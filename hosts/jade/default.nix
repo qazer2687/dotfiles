@@ -4,14 +4,22 @@
   # Imports
   imports = [
 
-    # Package Configuration
-    ./config/polybar/default.nix
-    ./config/minecraft/default.nix
-    ./config/i3/default.nix
-    ./config/alacritty/default.nix
-    
-    # Hardware Configuration
+    # Hardware
     ./hardware-configuration.nix
+
+    # Configs
+    ./configs/polybar/default.nix
+    ./configs/minecraft/default.nix
+    ./configs/i3/default.nix
+    ./configs/alacritty/default.nix
+
+    # Tweaks
+    ./tweaks/silent/stage2.nix
+    ./tweaks/silent/default.nix
+
+    # Services
+    ./services/minecraft/default.nix
+
   ];
 
   # State Version
@@ -30,22 +38,25 @@
   
   # ZRam
   zramSwap = {
-    enable = false;
+    enable = true;
     algorithm = "zstd";
-    memoryPercent = 50;
+    memoryPercent = 20;
   };
 
   # Networking
-  networking.hostName = "desktop";
+  networking.hostName = "jade";
   networking.networkmanager.enable = true;
   networking.firewall = {
   enable = true;
-  allowedTCPPorts = [ 80 443 25565 ]; # HTTP, HTTPS, Minecraft
+  allowedTCPPorts = [ 22 80 443 25565 ]; # SSH, HTTP, HTTPS, MC
   allowedUDPPortRanges = [
     { from = 4000; to = 4007; }
     { from = 8000; to = 8010; }
   ];
 };
+
+  # XWayland Support
+  programs.xwayland.enable = true;
 
   # Xorg
   services.xserver = {
@@ -99,11 +110,11 @@
   i18n.defaultLocale = "en_GB.UTF-8";
 
   # Steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
+ # programs.steam = {
+  #  enable = true;
+  #  remotePlay.openFirewall = true;
+  #  dedicatedServer.openFirewall = true;
+  #};
   
   # OpenGL
   hardware.opengl.enable = true;
@@ -119,11 +130,6 @@
     ];
   })];
   
-  environment.systemPackages = with pkgs; [
-    wine-staging
-    protonup-qt
-  ];
-
   # Home Manager
   home-manager.users.alex = {
 
@@ -137,24 +143,27 @@
       firefox           # Web Browser
       discord           # Communication Platform
       betterdiscordctl  # Discord Tweaks
-      neofetch          # System Stats
       obs-studio        # Recording Software
       vlc               # Video Player
 
       # Programming
-      vscodium
+      vscodium          # Code IDE
       ghc               # Haskell
       dotnet-sdk_7      # C#
       gcc               # C
       rustup            # Rust
       php               # PHP
       clisp             # Common Lisp
+      jdk8              # Java
 
       # Gaming
+      steam             # Game Launcher
       osu-lazer         # OSU
       prismlauncher     # Minecraft (Modded)
       lunar-client      # Minecraft (Hypixel)
       lutris            # Overwatch
+      wine-staging      # Latest Wine Version
+      protonup-qt       # Tweaked Wine Version
 
       # Environment
       polybarFull       # System Bar
@@ -163,12 +172,14 @@
       feh               # Wallpaper Utility
       pavucontrol       # Audio Interface
       alacritty         # Terminal Emulator
-      gnome.nautilus    # File Browser
+      cinnamon.nemo     # File Manager
       easyeffects       # Audio Equaliser
+      speex             # Noise Cancellation
+      neofetch          # System Stats
       
     ];
 
-    # Neovim Text Editor
+    # Text Editor
     programs.neovim = {
       enable = true;
       vimAlias = true;
@@ -185,4 +196,3 @@
     };
   };
 }
-
