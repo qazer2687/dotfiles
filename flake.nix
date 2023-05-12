@@ -20,7 +20,7 @@
     nixosConfigurations = {
 
       # Desktop Configuration ~ Jade
-      desktop = nixpkgs.lib.nixosSystem {
+      jade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -33,7 +33,7 @@
       };
 
       # Laptop Configuration ~ Ruby
-      laptop = nixpkgs.lib.nixosSystem {
+      ruby = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
