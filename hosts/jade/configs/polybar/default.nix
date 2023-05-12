@@ -53,8 +53,8 @@
   font-2 = FiraCode Nerd Font:style=Regular:pixelsize=15:antialias=true;3
 
   modules-left = i3
-  modules-center = date
-  modules-right = audio wlan battery
+  modules-center = 
+  modules-right = date
 
   cursor-click = pointer
   cursor-scroll = ns-resize
