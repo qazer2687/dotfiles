@@ -35,7 +35,7 @@
 
   height = 40
   radius = 0.0
-  bottom = false
+  bottom = true
 
   override-redirect = false
   wm-restack = i3
