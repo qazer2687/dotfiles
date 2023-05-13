@@ -1,5 +1,4 @@
 { config, pkgs, inputs, ... }:
-
 {
   # Imports
   imports = [
@@ -15,6 +14,8 @@
     # Tweaks
     ./tweaks/silent/stage2.nix
     ./tweaks/silent/default.nix
+    ./tweaks/zram/default.nix
+    ./tweaks/fingerprint/default.nix
 
   ];
 
@@ -31,25 +32,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-
-  # ZRam
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-    memoryPercent = 50;
-  };
-
-  # Fingerprint
-  services.fprintd = {
-    enable = true;
-    tod = {
-      enable = true;
-      driver = inputs.nixos-06cb-009a-fingerprint-sensor.lib.libfprint-2-tod1-vfs0090-bingch {
-        calib-data-file = ./tweaks/fingerprint/calib-data.bin;
-      };
-    };
-  };
-  
 
   # Networking
   networking.hostName = "ruby";

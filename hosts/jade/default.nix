@@ -15,6 +15,7 @@
     # Tweaks
     ./tweaks/silent/stage2.nix
     ./tweaks/silent/default.nix
+    ./tweaks/zram/default.nix
 
     # Services
     ./services/minecraft/default.nix
@@ -35,27 +36,17 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   
-  # ZRam
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-    memoryPercent = 20;
-  };
-
   # Networking
   networking.hostName = "jade";
   networking.networkmanager.enable = true;
   networking.firewall = {
-  enable = true;
-  allowedTCPPorts = [ 22 80 443 25565 ]; # SSH, HTTP, HTTPS, MC
-  allowedUDPPortRanges = [
-    { from = 4000; to = 4007; }
-    { from = 8000; to = 8010; }
-  ];
-};
-
-  # XWayland Support
-  programs.xwayland.enable = true;
+    enable = true;
+    allowedTCPPorts = [ 22 80 443 25565 ]; # SSH, HTTP, HTTPS, MC
+    allowedUDPPortRanges = [
+      { from = 4000; to = 4007; }
+      { from = 8000; to = 8010; }
+    ];
+  };
 
   # Xorg
   services.xserver = {
