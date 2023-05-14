@@ -1,35 +1,35 @@
 # Qazer's Dotfiles 
 [![Nix Evaluation](https://github.com/alexvasilkovski/dotfiles/actions/workflows/nix.yml/badge.svg)](https://github.com/alexvasilkovski/dotfiles/actions/workflows/nix.yml)
 
-These are my NixOS dotfiles for configuring my desktop and laptop. They include configurations for various tools and programs that I use for development, productivity, and entertainment.
+These are my NixOS dotfiles for configuring my desktop and laptop and server. They include configurations for various tools and programs that I use for development, productivity, and entertainment.
+
 
 ## Installation 💽
 ```
-# Desktop
-sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#desktop
+# Jade ~ Desktop Configuration
+sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#jade
 
-# Laptop
+# Ruby ~ Laptop Configuration
 sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#laptop
 
-# Server (Coming soon...)
-sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#server
+# Opal ~ Server Configuration (Coming Soon...)
+sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#opal
 ```
-## Desktop ~ 🖥️
-- 🚀 With i3 and DMenu for a fast and responsive UX.
-- 🎨 Using Alacritty and __Bash__ for customization. (Fish coming soon...)
-- 🎮 Configured with Steam, Lutris, Wine and Proton-GE for running games.
+## Jade 🟩
+- 🚀 i3 and DMenu for a fast and responsive UX.
+- 🎨 Alacritty and __Bash__ for customization. (Fish coming soon...)
+- 🎮 Steam, Lutris, Wine and Proton-GE for running games.
 - ⚡ Mouse acceleration is disabled for accuracy.
-- 🌿 Includes a Systemd service for running Minecraft servers.
+- 🌿 Systemd service for running Minecraft servers.
 
+<img src="https://i.imgur.com/W4zwxRy.png" alt="Jade" width="100%">
 
-<img src="https://i.imgur.com/CxRS9gI.png" alt="My Image" width="75%">
-
-## Laptop ~ 💻
+## Ruby 🟥
 - 🪶 Lightweight, with additional tweaks to booting and shutdown.
 - 🔋 Battery saving features such as TLP and Powertop.
 - 📶 Networkmanager for configuring Wi-Fi on campus.
 - 📊 Includes tools such as NVim, Obsidian, Anki and VSCodium for productivity.
-- 💡 Redshift and Nautilus for convenience.
+- 💡 Redshift and Nemo for convenience.
 - 🌟 Keybindings for brightness and volume with BrightnessCTL and PaMixer.
 
-<img src="https://i.imgur.com/8TexLL7.png" alt="My Image" width="75%">
+<img src="https://i.imgur.com/8TexLL7.png" alt="Ruby" width="100%">
