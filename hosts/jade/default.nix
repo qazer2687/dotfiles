@@ -134,6 +134,7 @@
       discord           # Communication Platform
       betterdiscordctl  # Discord Tweaks
       obs-studio        # Recording Software
+      obs-studio-plugins.input-overlay # OBS Plugin
       vlc               # Video Player
 
       # Programming
