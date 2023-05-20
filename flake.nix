@@ -19,7 +19,7 @@
     # Development Environments
     devShells.x86_64-linux.r = let pkgs = nixpkgs.legacyPackages.x86_64-linux; in pkgs.mkShellNoCC {
       packages = [
-        (pkgs.rWrapper.override { packages = with rPackages; [ ggplot2 stringr ]; })
+        (pkgs.rWrapper.override { packages = with pkgs.rPackages; [ ggplot2 stringr ]; })
       ];
     };
     
