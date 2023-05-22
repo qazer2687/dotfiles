@@ -134,8 +134,8 @@
       discord           # Communication Platform
       betterdiscordctl  # Discord Tweaks
       obs-studio        # Recording Software
-      obs-studio-plugins.input-overlay # OBS Plugin
       vlc               # Video Player
+      espanso           # Text Expander
 
       # Programming
       vscodium          # Code IDE
@@ -146,6 +146,7 @@
       php               # PHP
       clisp             # Common Lisp
       jdk8              # Java
+      R                 # Rlang
 
       # Gaming
       steam             # Game Launcher
