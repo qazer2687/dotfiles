@@ -118,6 +118,7 @@
       brightnessctl     # Brightness Control
       pamixer           # Volume Control
       neofetch          # System Stats
+      image-roll        # Image Viewer
 
       # Miscellaneous
       heif-gdk-pixbuf   # HEIF Support
