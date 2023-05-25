@@ -121,7 +121,7 @@
       image-roll        # Image Viewer
 
       # Miscellaneous
-      heif-gdk-pixbuf   # HEIF Support
+      libheif   # HEIF Support
 
     ];
 
