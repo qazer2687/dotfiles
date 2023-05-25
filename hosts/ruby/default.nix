@@ -119,6 +119,9 @@
       pamixer           # Volume Control
       neofetch          # System Stats
 
+      # Miscellaneous
+      heif-gdk-pixbuf   # HEIF Support
+
     ];
 
     # Text Editor
