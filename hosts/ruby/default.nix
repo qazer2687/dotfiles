@@ -35,7 +35,7 @@
   boot.kernelPackages = pkgs.linuxPackages_6_2;
   boot.extraModulePackages = with config.boot.kernelPackages; [
     rtl8812au
-];
+  ];
 
   # Networking
   networking.hostName = "ruby";
@@ -81,6 +81,9 @@
   # Locale
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
+
+  # Secrets
+  services.gnome.gnome-keyring.enable = true;
 
   # Fonts
   fonts.fonts = with pkgs; [( nerdfonts.override {
