@@ -184,7 +184,7 @@
       enable = true;
       nix-direnv.enable = true;
       nix-direnv.enableFlakes = true;
-    }
+    };
     
     # Git Version Control
     programs.git = {
