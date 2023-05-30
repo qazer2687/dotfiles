@@ -98,13 +98,6 @@
   # Locale
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
-
-  # Steam
- # programs.steam = {
-  #  enable = true;
-  #  remotePlay.openFirewall = true;
-  #  dedicatedServer.openFirewall = true;
-  #};
   
   # OpenGL
   hardware.opengl.enable = true;
