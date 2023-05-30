@@ -118,6 +118,8 @@
 
     # State Version (HM)
     home.stateVersion = "22.11";
+    
+    
 
     # Packages
     home.packages = with pkgs; [
@@ -172,6 +174,13 @@
         vim-nix
       ];
     };
+    
+    # nix-direnv
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      nix-direnv.enableFlakes = true;
+    }
     
     # Git Version Control
     programs.git = {
