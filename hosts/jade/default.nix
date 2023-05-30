@@ -179,11 +179,14 @@
       ];
     };
     
-    # nix-direnv
+    # Direnv
     programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
     };
+    
+    # Bash
+    programs.bash.enable = true;
     
     # Git Version Control
     programs.git = {
