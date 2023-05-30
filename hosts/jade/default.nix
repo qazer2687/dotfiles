@@ -188,6 +188,13 @@
     # Bash
     programs.bash.enable = true;
     
+    # Automount
+    services.udiskie = {
+      enable = true;
+      notify = false;
+    };
+
+    
     # Git Version Control
     programs.git = {
       enable = true;
