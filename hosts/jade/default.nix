@@ -28,8 +28,14 @@
   # Unfree Software
   nixpkgs.config.allowUnfree = true;
 
-  # Nix Experimental Commands
-  nix.settings.experimental-features = [ "nix-command" ];
+  # Nix Experimental Options
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  # Nix Other Options
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
