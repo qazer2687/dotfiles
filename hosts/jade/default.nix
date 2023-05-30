@@ -125,8 +125,6 @@
     # State Version (HM)
     home.stateVersion = "22.11";
     
-    
-
     # Packages
     home.packages = with pkgs; [
 
@@ -190,9 +188,9 @@
     
     # Git Version Control
     programs.git = {
-    enable = true;
-    userName = "***REMOVED***";
-    userEmail = "***REMOVED***@outlook.com";
+      enable = true;
+      userName = "***REMOVED***";
+      userEmail = "***REMOVED***@outlook.com";
     };
   };
 }
