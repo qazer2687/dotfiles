@@ -89,7 +89,7 @@
   fonts.fonts = with pkgs; [( nerdfonts.override {
     fonts = [
       "FiraCode"
-      "FiraSans"
+      "Inconsolata"
     ];
   })];
 
