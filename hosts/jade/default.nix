@@ -137,7 +137,7 @@
       espanso           # Text Expander
 
       # Programming
-      vscodium          # Code IDE
+      vscode         # Code IDE
       ghc               # Haskell
       dotnet-sdk_7      # C#
       gcc               # C
