@@ -129,44 +129,54 @@
     home.packages = with pkgs; [
 
       # General
-      firefox           # Web Browser
-      discord           # Communication Platform
-      betterdiscordctl  # Discord Tweaks
-      obs-studio        # Recording Software
-      vlc               # Video Player
-      espanso           # Text Expander
+      firefox               # Web Browser
+      discord               # Communication Platform
+      betterdiscordctl      # Discord Tweaks
+      obs-studio            # Recording Software
+      vlc                   # Video Player
+      espanso               # Text Expander
 
       # Programming
-      vscodium          # Code IDE
-      ghc               # Haskell
-      dotnet-sdk_7      # C#
-      gcc               # C
-      rustup            # Rust
-      php               # PHP
-      clisp             # Common Lisp
-      jdk8              # Java
-      R                 # Rlang
+      vscodium              # Code IDE
+      ghc                   # Haskell
+      dotnet-sdk_7          # C#
+      gcc                   # C
+#     rustup                # Rust
+      php                   # PHP
+      clisp                 # Common Lisp
+      jdk8                  # Java
+      R                     # Rlang
+      cargo                 # Rust
 
       # Gaming
-      steam             # Game Launcher
-      osu-lazer         # OSU
-      prismlauncher     # Minecraft (Modded)
-      lunar-client      # Minecraft (Hypixel)
-      lutris            # Overwatch
-      wine-staging      # Latest Wine Version
-      protonup-qt       # Tweaked Wine Version
+      steam                 # Game Launcher
+      osu-lazer             # OSU
+      prismlauncher         # Minecraft (Modded)
+      lunar-client          # Minecraft (Hypixel)
+      lutris                # Overwatch
+      wine-staging          # Latest Wine Version
+      protonup-qt           # Tweaked Wine Version
 
       # Environment
-      polybarFull       # System Bar
-      dmenu             # System Search
-      scrot             # Screenshot Utility
-      feh               # Wallpaper Utility
-      pavucontrol       # Audio Interface
-      alacritty         # Terminal Emulator
-      cinnamon.nemo     # File Manager
-      easyeffects       # Audio Equaliser
-      speex             # Noise Cancellation
-      neofetch          # System Stats
+      polybarFull           # System Bar
+      dmenu                 # System Search
+      scrot                 # Screenshot Utility
+      feh                   # Wallpaper Utility
+      pavucontrol           # Audio Interface
+      alacritty             # Terminal Emulator
+      cinnamon.nemo         # File Manager
+      easyeffects           # Audio Equaliser
+      speex                 # Noise Cancellation
+      neofetch              # System Stats
+      networkmanagerapplet  # Network Configuration
+      
+      # Security
+      protonvpn-cli
+      wireshark
+      nmap
+      openvpn
+      librewolf
+      protonvpn-gui
       
     ];
 
