@@ -88,7 +88,7 @@
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = false;
+    pulse.enable = true;
   };
   
   # Users
