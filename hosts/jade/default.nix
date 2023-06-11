@@ -150,7 +150,7 @@
 
       # Gaming
       steam                 # Game Launcher
-      osu-lazer             # OSU
+      osu-lazer-bin         # OSU
       prismlauncher         # Minecraft (Modded)
       lunar-client          # Minecraft (Hypixel)
       lutris                # Overwatch
