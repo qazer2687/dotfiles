@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 {
   environment.etc = let
-    json = pkgs.format.json {};
+    json = pkgs.formats.json {};
   in {
     "pipewire/pipewire.d/92-low-latency.conf".source = json.generate "92-low-latency.conf" {
       context.properties = {
