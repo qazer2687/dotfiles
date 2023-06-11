@@ -19,6 +19,7 @@
 
     # Services
     ./services/minecraft/default.nix
+    ./services/pipewire/default.nix
 
   ];
 
@@ -85,7 +86,7 @@
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = true;
+    pulse.enable = false;
   };
   
   # Users
@@ -169,6 +170,7 @@
       speex                 # Noise Cancellation
       neofetch              # System Stats
       networkmanagerapplet  # Network Configuration
+      qpwgraph              # Virtual Patchbay
       
       # Security
       protonvpn-cli
