@@ -2,7 +2,7 @@
 {
   environment.etc = {
     # Creates /etc/nanorc
-    nanorc = {
+    "pipewire/pipewire.conf.d/pipewire.conf" = {
       text = ''
         context.properties = {
         default.clock.rate        = 48000
