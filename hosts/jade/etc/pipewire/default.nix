@@ -9,7 +9,7 @@
           default.clock.min-quantum = 32;
           default.clock.max-quantum = 32;
         };
-      ''
+      '';
     };
   };
 }
