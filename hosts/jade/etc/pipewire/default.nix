@@ -1,28 +1,15 @@
 { config, pkgs, inputs, ... }:
 {
-  environment.etc = {
-    # Creates /etc/nanorc
-    "pipewire/pipewire.conf.d/pipewire.conf" = {
-      text = ''
-        context.properties = {
-        default.clock.rate        = 48000
-        default.clock.quantum     = 32
-        default.clock.min-quantum = 32
-      
-
-        { name = libpipewire-module-rtkit
-          args = {
-            nice.level   = -15
-            rt.prio      = 88
-            rt.time.soft = 2000000
-            rt.time.hard = 2000000
-          }
-          flags = [ ifexists nofail ]
-        }
-      '';
-
-      # The UNIX file mode bits
-      mode = "0440";
+  environment.etc = let
+    json = pkgs.generators.json {};
+  in {
+    "pipewire/pipewire.d/92-low-latency.conf".source = json.generate "92-low-latency.conf" {
+      context.properties = {
+        default.clock.rate = 48000;
+        default.clock.quantum = 32;
+        default.clock.min-quantum = 32;
+        default.clock.max-quantum = 32;
+      };
     };
   };
 }
