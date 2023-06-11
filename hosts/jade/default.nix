@@ -19,7 +19,9 @@
 
     # Services
     ./services/minecraft/default.nix
-    ./services/pipewire/default.nix
+    
+    # Etc
+    ./etc/pipewire/default.nix
 
   ];
 
