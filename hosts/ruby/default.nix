@@ -16,6 +16,7 @@
     ./tweaks/silent/default.nix
     ./tweaks/zram/default.nix
     ./tweaks/fingerprint/default.nix
+    ./tweaks/tlp/default.nix
 
   ];
 
@@ -32,10 +33,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.kernelPackages = pkgs.linuxPackages_6_2;
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    rtl8812au
-  ];
+# boot.kernelPackages = pkgs.linuxPackages_6_2;
+# boot.extraModulePackages = with config.boot.kernelPackages; [
+#   rtl8812au
+# ];
 
   # Networking
   networking.hostName = "ruby";
