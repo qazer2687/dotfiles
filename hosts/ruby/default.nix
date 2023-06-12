@@ -110,6 +110,7 @@
       vscodium          # Code IDE
       ghc               # Haskell
       dotnet-sdk_7      # C#
+      cargo             # Rust
 
       # Productivity
       obsidian          # Note-Taking App
