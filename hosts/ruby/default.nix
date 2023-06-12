@@ -111,6 +111,7 @@
       ghc               # Haskell
       dotnet-sdk_7      # C#
       cargo             # Rust
+      rustup            # Rust Toolchain
 
       # Productivity
       obsidian          # Note-Taking App
