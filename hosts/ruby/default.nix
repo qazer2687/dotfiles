@@ -16,7 +16,7 @@
     ./tweaks/silent/default.nix
     ./tweaks/zram/default.nix
     ./tweaks/fingerprint/default.nix
-    ./tweaks/tlp/default.nix
+   # ./tweaks/tlp/default.nix
 
   ];
 
