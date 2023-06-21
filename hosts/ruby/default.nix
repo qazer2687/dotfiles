@@ -93,12 +93,6 @@
     ];
   })];
 
-  # Direnv
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
   # Home Manager
   home-manager.users.alex = {
 
