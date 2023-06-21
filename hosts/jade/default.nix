@@ -141,15 +141,6 @@
 
       # Programming
       vscodium              # Code IDE
-      ghc                   # Haskell
-      dotnet-sdk_7          # C#
-      gcc                   # C
-#     rustup                # Rust
-      php                   # PHP
-      clisp                 # Common Lisp
-      jdk8                  # Java
-      R                     # Rlang
-      cargo                 # Rust
 
       # Gaming
       steam                 # Game Launcher
@@ -167,7 +158,7 @@
       feh                   # Wallpaper Utility
       pavucontrol           # Audio Interface
       alacritty             # Terminal Emulator
-      cinnamon.nemo         # File Manager
+      gnome.nautilus        # File Manager
       easyeffects           # Audio Equaliser
       speex                 # Noise Cancellation
       neofetch              # System Stats

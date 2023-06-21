@@ -16,7 +16,7 @@
     ./tweaks/silent/default.nix
     ./tweaks/zram/default.nix
     ./tweaks/fingerprint/default.nix
-   # ./tweaks/tlp/default.nix
+    ./tweaks/tlp/default.nix
 
   ];
 
@@ -92,6 +92,12 @@
       "FiraCode"
     ];
   })];
+
+  # Direnv
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
   # Home Manager
   home-manager.users.alex = {
