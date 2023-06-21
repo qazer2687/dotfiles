@@ -112,12 +112,12 @@
       rustc
       cargo
 
-
       # Productivity
       obsidian          # Note-Taking App
       anki-bin          # Flashcard App
 
       # Environment
+      dunst             # Notification Daemon
       polybarFull       # System Bar
       dmenu             # System Search
       scrot             # Screenshot Utility
