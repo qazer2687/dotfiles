@@ -104,6 +104,7 @@
 
       # General
       firefox           # Web Browser
+      discord           # Communication Client
       
       # Programming
       vscodium          # Code IDE
