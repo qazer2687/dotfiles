@@ -1,11 +1,10 @@
 { config, pkgs, inputs, ... }:
-
 {
   # Imports
   imports = [
 
-    # Configs
-    ./configs/hardware/hardware-configuration.nix
+    # Configurations
+    ./hardware-configuration.nix
     ./configs/polybar/default.nix
     ./configs/i3/default.nix
     ./configs/alacritty/default.nix
@@ -45,7 +44,7 @@
   };
 
   # State Version
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.05";
 
   # Unfree Software
   nixpkgs.config.allowUnfree = true;
@@ -76,7 +75,7 @@
   home-manager.users.alex = {
 
     # State Version (HM)
-    home.stateVersion = "22.11";
+    home.stateVersion = "23.05";
     
     # Packages
     home.packages = with pkgs; [
@@ -114,6 +113,7 @@
       neofetch              # System Stats
       networkmanagerapplet  # Network Configuration
       qpwgraph              # Virtual Patchbay
+      redshift              # Blue Light Filter
       
       # Security
       protonvpn-cli         # Virtual Private Network Client
