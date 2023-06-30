@@ -12,18 +12,40 @@
     ./configs/i3/default.nix
     ./configs/alacritty/default.nix
 
-    # Tweaks
-    ./tweaks/silent/stage2.nix
-    ./tweaks/silent/default.nix
-    ./tweaks/zram/default.nix
-
-    # Services
-    ./services/minecraft/default.nix
-    
-    # Etc
-    ./etc/pipewire/default.nix
+    # Modules
+    ../../modules/default.nix
 
   ];
+
+  modules = {
+    boot = {
+      silentboot.enable = true;
+      stage2patch.enable = true;
+    };
+    desktop = {
+      gdm.enable = true;
+      i3.enable = true;
+    };
+    network = {
+      networkmanager.enable = true;
+    };
+    audio = {
+      pipewire.enable = true;
+    };
+    video = {
+      nvidia.enable = true;
+    };
+    gaming = {
+      steam.enable = true;
+    };
+    misc = {
+      colemak.enable = true;
+      fonts.enable = true;
+      keyring.enable = true;
+      mouseaccel.enable = true;
+      zram.enable = true;
+    };
+  };
 
   # State Version
   system.stateVersion = "22.11";
@@ -39,88 +61,19 @@
     keep-outputs = true
     keep-derivations = true
   '';
-
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
   
-  # Networking
+  # Hostname
   networking.hostName = "jade";
-  networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 22 80 443 25565 ]; # SSH, HTTP, HTTPS, MC
-    allowedUDPPortRanges = [
-      { from = 4000; to = 4007; }
-      { from = 8000; to = 8010; }
-    ];
-  };
 
-  # Xorg
-  services.xserver = {
-    enable = true;
-    
-    # Graphics Drivers
-    videoDrivers = [ "nvidia" ];
-
-    # Login Manager
-    displayManager.gdm.enable = true;
-
-    # Window Manager
-    windowManager.i3 = {
-      enable = true;
-      package = pkgs.i3-rounded;
-    };
-
-    # Input Drivers
-    libinput = {
-      enable = true;
-      mouse.accelProfile = "flat"; # Remove Mouse Accel
-      mouse.accelSpeed = "0"; # Remove Mouse Accel
-    };
-  };
-
-  # Audio
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-  
   # Users
   users.users.alex = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  # Keyboard
-  console.keyMap = "colemak";
-  services.xserver = {
-    layout = "gb";
-    xkbVariant = "colemak";
-  };
-
   # Locale
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
-  
-  # OpenGL
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport32Bit = true;
-
-  # Secrets
-  services.gnome.gnome-keyring.enable = true;
-
-  # Fonts
-  fonts.fonts = with pkgs; [( nerdfonts.override {
-    fonts = [
-      "FiraCode" 
-    ];
-  })];
   
   # Home Manager
   home-manager.users.alex = {
@@ -166,12 +119,12 @@
       qpwgraph              # Virtual Patchbay
       
       # Security
-      protonvpn-cli
-      wireshark
-      nmap
-      openvpn
-      librewolf
-      protonvpn-gui
+      protonvpn-cli         # Virtual Private Network Client
+      wireshark             # Packet Analysis Utility
+      nmap                  # Port Scanning Utility
+      openvpn               # Another VPN Client
+      librewolf             # Hardened Firefox Browser
+      protonvpn-gui         # GUI for ProtonVPN
       
     ];
 
