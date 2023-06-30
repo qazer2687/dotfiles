@@ -13,14 +13,4 @@
     consoleLogLevel = 3;
     initrd.verbose = false;
   };
-  loader = {
-    systemd-boot = {
-        configurationLimit = 10;
-        enable = lib.mkDefault true;
-        consoleMode = "max";
-        editor = false;
-      };
-      efi.canTouchEfiVariables = lib.mkDefault true;
-      timeout = 0;
-  };
 }

@@ -16,6 +16,9 @@
   ];
 
   modules = {
+    boot = {
+      systemd-boot.enable = true;
+    };
     desktop = {
       gdm.enable = true;
       i3.enable = true;
