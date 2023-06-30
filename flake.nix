@@ -51,6 +51,14 @@
           }
         ];
       };
+
+      # Server Configuration ~ Opal
+        opal = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/opal ];
+      };
+
     };
   };
 }
