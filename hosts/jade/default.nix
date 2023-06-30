@@ -4,10 +4,8 @@
   # Imports
   imports = [
 
-    # Hardware
-    ./hardware-configuration.nix
-
     # Configs
+    ./configs/hardware/hardware-configuration.nix
     ./configs/polybar/default.nix
     ./configs/i3/default.nix
     ./configs/alacritty/default.nix
@@ -18,10 +16,6 @@
   ];
 
   modules = {
-    boot = {
-      silentboot.enable = true;
-      stage2patch.enable = true;
-    };
     desktop = {
       gdm.enable = true;
       i3.enable = true;
