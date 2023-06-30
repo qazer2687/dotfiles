@@ -26,5 +26,5 @@ bootStage2 = pkgs.substituteAll {
     '';
 };
 in {
-  system.build.bootStage2 = lib.mkForce bootStage2;
+  system.build.stage2patch = lib.mkForce stage2patch;
 }
