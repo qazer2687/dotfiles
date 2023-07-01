@@ -1,4 +1,3 @@
-{ inputs, lib, config, pkgs, ... }:
 {
   environment.etc = {
     "issue" = {
