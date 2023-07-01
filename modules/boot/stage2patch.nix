@@ -2,7 +2,7 @@
 let
   useHostResolvConf = config.networking.resolvconf.enable && config.networking.useHostResolvConf;
 
-  stage2patch = pkgs.substituteAll {
+  bootStage2 = pkgs.substituteAll {
     src = pkgs.runCommand "stage-2-init.sh" {} ''
       sed '2i exec 1<>/dev/null' ${inputs.nixpkgs}/nixos/modules/system/boot/stage-2-init.sh > $out
     '';
@@ -26,5 +26,5 @@ let
       '';
   };
 in {
-  system.build.stage2patch = lib.mkForce stage2patch;
+  system.build.bootStage2 = lib.mkForce bootStage2;
 }
