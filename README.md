@@ -29,7 +29,7 @@ sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#opal
 - 🔋 Battery saving features such as TLP and Powertop.
 - 📶 Networkmanager for configuring Wi-Fi on campus.
 - 📊 Includes tools such as NVim, Obsidian, Anki and VSCodium for productivity.
-- 💡 Redshift and Nemo for convenience.
+- 💡 Redshift and Nautilus for convenience.
 - 🌟 Keybindings for brightness and volume with BrightnessCTL and PaMixer.
 
 <img src="https://i.imgur.com/8TexLL7.png" alt="Ruby" width="100%">
