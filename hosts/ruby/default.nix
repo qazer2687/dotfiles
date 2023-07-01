@@ -14,6 +14,29 @@
 
   ];
 
+  modules = {
+    boot = {
+      systemd-boot.enable = true;
+    };
+    desktop = {
+      gdm.enable = true;
+      i3.enable = true;
+    };
+    network = {
+      networkmanager.enable = true;
+    };
+    audio = {
+      pipewire.enable = true;
+    };
+    misc = {
+      colemak.enable = true;
+      fonts.enable = true;
+      keyring.enable = true;
+      mouseaccel.enable = true;
+      zram.enable = true;
+    };
+  };
+
   # State Version
   system.stateVersion = "23.05";
 
