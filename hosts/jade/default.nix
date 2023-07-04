@@ -99,6 +99,7 @@
       lutris                # Overwatch
       wine-staging          # Latest Wine Version
       protonup-qt           # Tweaked Wine Version
+      minecraft             # Minecraft (Vanilla)
 
       # Environment
       polybarFull           # System Bar
