@@ -3,6 +3,8 @@
   options.modules.network.networkmanager.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.network.networkmanager.enable {
     networking.networkmanager.enable = true;
+    systemd.services.NetworkManager-wait-online.enable = false;
+    systemd.network.wait-online.enable = false;
     networking.firewall = {
       enable = true;
       allowedTCPPorts = [ 22 80 443 25565 ]; # SSH, HTTP, HTTPS, MC
