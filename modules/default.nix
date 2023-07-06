@@ -10,6 +10,7 @@
   # Desktop
   ./desktop/gdm.nix
   ./desktop/i3.nix
+  ./desktop/autologin.nix
 
   # Network
   ./network/networkmanager.nix
