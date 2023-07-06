@@ -17,13 +17,16 @@
   modules = {
     boot = {
       systemd-boot.enable = true;
+      systemd-boot.silentboot.enable = true
     };
     desktop = {
       gdm.enable = true;
+      gdm.autologin.enable = true;
       i3.enable = true;
     };
     network = {
       networkmanager.enable = true;
+      networkmanager.firewall.enable = true;
     };
     audio = {
       pipewire.enable = true;
