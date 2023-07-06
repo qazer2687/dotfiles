@@ -35,7 +35,7 @@
       nvidia.enable = true;
     };
     gaming = {
-      steam.enable = true;
+      steam.enable = false;
     };
     misc = {
       colemak.enable = true;
