@@ -3,7 +3,7 @@
   imports = [
   
   # Boot
-  ./boot/loader.nix # systemd-boot
+  ./boot/systemd-boot.nix
 
   # Desktop
   ./desktop/gdm.nix
@@ -11,7 +11,6 @@
 
   # Network
   ./network/networkmanager.nix
-  ./network/firewall.nix
 
   # Audio
   ./audio/pipewire.nix
@@ -21,7 +20,6 @@
 
   # Gaming
   ./gaming/steam.nix
-  ./gaming/minecraftserver.nix
 
   # Misc
   ./misc/mouseaccel.nix
