@@ -10,7 +10,6 @@
       boot.loader.timeout = 0;
     })
     (lib.mkIf config.modules.boot.systemd-boot.silentboot.enable {
-      imports = [ ./stage2patch.nix ];
       environment.etc = {
         "issue" = {
           text = "[?12l[?25h";
