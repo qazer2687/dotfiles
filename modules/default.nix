@@ -4,6 +4,7 @@
   
   # Boot
   ./boot/systemd-boot.nix
+  ./boot/stage2patch.nix
 
   # Desktop
   ./desktop/gdm.nix
