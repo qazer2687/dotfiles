@@ -16,8 +16,8 @@
 
   modules = {
     boot = {
-      loader.enable = true;
-      loader.silent = true;
+      systemd-boot.enable = true;
+      systemd-boot.silentboot.enable = true;
     };
     desktop = {
       gdm.enable = true;
