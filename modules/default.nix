@@ -3,14 +3,11 @@
   imports = [
   
   # Boot
-  ./boot/silentboot.nix
-  ./boot/stage2patch.nix
-  ./boot/systemd-boot.nix
+  ./boot/loader.nix # systemd-boot
 
   # Desktop
   ./desktop/gdm.nix
   ./desktop/i3.nix
-  ./desktop/autologin.nix
 
   # Network
   ./network/networkmanager.nix

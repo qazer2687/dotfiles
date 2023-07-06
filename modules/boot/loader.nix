@@ -1,7 +1,17 @@
 { inputs, lib, config, pkgs, ... }:
 {
-  options.modules.boot.silentboot.enable = lib.mkEnableOption "";
-  config = lib.mkIf config.modules.boot.silentboot.enable {
+  options.modules.boot.loader.enable = lib.mkEnableOption "";
+  config = lib.mkIf config.modules.boot.loader.enable {
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.efi.efiSysMountPoint = "/boot/efi";
+    boot.loader.timeout = 0;
+  };
+
+  options.modules.boot.loader.silent = lib.mkEnableOption "";
+  config = lib.mkIf config.modules.boot.loader.silent {
+    imports = [ ./stage2patch.nix ];
+
     environment.etc = {
       "issue" = {
         text = "[?12l[?25h";
@@ -23,4 +33,3 @@
     };
   };
 }
-
