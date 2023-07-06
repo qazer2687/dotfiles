@@ -4,7 +4,7 @@
   config = lib.mkIf config.modules.desktop.autologin.enable {
     services.xserver = {
       enable = true;
-      displayManager.lightdm.enable = true;
+      displayManager.gdm.enable = true;
       displayManager.autoLogin.enable = true;
       displayManager.autoLogin.user = "alex";
       displayManager.defaultSession = "none+i3";
