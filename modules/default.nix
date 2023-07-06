@@ -14,6 +14,7 @@
 
   # Network
   ./network/networkmanager.nix
+  ./network/firewall.nix
 
   # Audio
   ./audio/pipewire.nix
