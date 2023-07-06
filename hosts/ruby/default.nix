@@ -16,11 +16,11 @@
 
   modules = {
     boot = {
-      systemd-boot.enable = true;
-      silentboot.enable = true;
+      loader.enable = true;
+      loader.silent = true;
     };
     desktop = {
-      autologin.enable = true;
+      gdm.enable = true;
       i3.enable = true;
     };
     network = {
