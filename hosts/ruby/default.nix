@@ -20,7 +20,7 @@
       silentboot.enable = true;
     };
     desktop = {
-      gdm.enable = true;
+      autologin.enable = true;
       i3.enable = true;
     };
     network = {
