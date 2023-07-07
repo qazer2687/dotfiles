@@ -7,5 +7,14 @@
       remotePlay.openFirewall = false; 
       dedicatedServer.openFirewall = false; 
     };
+    nixpkgs.config.packageOverrides = pkgs: {
+      steam = pkgs.steam.override {
+        extraPkgs = pkgs: with pkgs; [
+          pango
+          libthai
+          harfbuzz
+        ];
+      };
+    };
   };
 }
