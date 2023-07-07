@@ -35,7 +35,7 @@
       nvidia.enable = true;
     };
     gaming = {
-      steam.enable = false;
+      steam.enable = true;
     };
     misc = {
       colemak.enable = true;
@@ -95,7 +95,6 @@
       vscodium              # Code IDE
 
       # Gaming
-      steam                 # Game Launcher
       osu-lazer-bin         # OSU
       prismlauncher         # Minecraft (Modded)
       lunar-client          # Minecraft (Hypixel)
