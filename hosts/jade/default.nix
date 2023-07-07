@@ -21,12 +21,12 @@
     };
     desktop = {
       gdm.enable = true;
-      gdm.autologin.enable = true;
+      gdm.autologin.enable = false;
       i3.enable = true;
     };
     network = {
       networkmanager.enable = true;
-      networkmanager.firewall.enable = true;
+      networkmanager.firewall.enable = false;
     };
     audio = {
       pipewire.enable = true;
