@@ -1,6 +1,7 @@
-{ inputs, lib, config, pkgs, ... }:
-{
+{ inputs, lib, config, pkgs, ... }: {
+
   options.modules.misc.mouseaccel.enable = lib.mkEnableOption "";
+  
   config = lib.mkIf config.modules.misc.mouseaccel.enable {
     services.xserver = {
       libinput = {
