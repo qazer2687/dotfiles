@@ -1,7 +1,8 @@
 { inputs, lib, config, pkgs, ... }: {
+
   options.modules.network.networkmanager.enable = lib.mkEnableOption "";
   options.modules.network.networkmanager.firewall.enable = lib.mkEnableOption "";
-
+  
   config = lib.mkMerge [
     (lib.mkIf config.modules.network.networkmanager.enable {
       networking.networkmanager.enable = true;

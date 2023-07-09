@@ -1,4 +1,5 @@
 { inputs, lib, config, pkgs, ... }: {
+  
   options.modules.desktop.gdm.enable = lib.mkEnableOption "";
   options.modules.desktop.gdm.autologin.enable = lib.mkEnableOption "";
 

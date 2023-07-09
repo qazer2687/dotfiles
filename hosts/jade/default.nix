@@ -17,7 +17,6 @@
   modules = {
     boot = {
       systemd-boot.enable = true;
-      systemd-boot.silentboot.enable = true;
     };
     desktop = {
       gdm.enable = true;
@@ -43,6 +42,7 @@
       keyring.enable = true;
       mouseaccel.enable = true;
       zram.enable = true;
+      tlp.enable = false;
     };
   };
 
@@ -89,7 +89,7 @@
       betterdiscordctl      # Discord Tweaks
       obs-studio            # Recording Software
       vlc                   # Video Player
-      espanso               # Text Expander
+#      espanso               # Text Expander
 
       # Programming
       vscodium              # Code IDE
@@ -99,7 +99,7 @@
       prismlauncher         # Minecraft (Modded)
       lunar-client          # Minecraft (Hypixel)
       lutris                # Overwatch
-      wine-staging          # Latest Wine Version
+#      wine-staging          # Latest Wine Version
       protonup-qt           # Tweaked Wine Version
       minecraft             # Minecraft (Vanilla)
 
@@ -111,20 +111,20 @@
       pavucontrol           # Audio Interface
       alacritty             # Terminal Emulator
       gnome.nautilus        # File Manager
-      easyeffects           # Audio Equaliser
-      speex                 # Noise Cancellation
+#      easyeffects           # Audio Equaliser
+#      speex                 # Noise Cancellation
       neofetch              # System Stats
-      networkmanagerapplet  # Network Configuration
-      qpwgraph              # Virtual Patchbay
+#      networkmanagerapplet  # Network Configuration
+#      qpwgraph              # Virtual Patchbay
       redshift              # Blue Light Filter
       
       # Security
-      protonvpn-cli         # Virtual Private Network Client
-      wireshark             # Packet Analysis Utility
-      nmap                  # Port Scanning Utility
-      openvpn               # Another VPN Client
-      librewolf             # Hardened Firefox Browser
-      protonvpn-gui         # GUI for ProtonVPN
+#      protonvpn-cli         # Virtual Private Network Client
+#      wireshark             # Packet Analysis Utility
+#      nmap                  # Port Scanning Utility
+#      openvpn               # Another VPN Client
+#      librewolf             # Hardened Firefox Browser
+#      protonvpn-gui         # GUI for ProtonVPN
       
     ];
 
