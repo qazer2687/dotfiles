@@ -1,6 +1,7 @@
-{ inputs, lib, config, pkgs, ... }:
-{
+{ inputs, lib, config, pkgs, ... }: {
+
   options.modules.audio.pipewire.enable = lib.mkEnableOption "";
+  
   config = lib.mkIf config.modules.audio.pipewire.enable {
     sound.enable = true;
     security.rtkit.enable = true;
