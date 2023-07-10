@@ -13,21 +13,29 @@
     ../../modules/default.nix
 
   ];
-
+  
+  # Modules
   modules = {
     boot = {
       systemd-boot.enable = true;
-      systemd-boot.silentboot.enable = true;
     };
     desktop = {
       gdm.enable = true;
+      gdm.autologin.enable = false;
       i3.enable = true;
     };
     network = {
       networkmanager.enable = true;
+      networkmanager.firewall.enable = false;
     };
     audio = {
       pipewire.enable = true;
+    };
+    video = {
+      nvidia.enable = false;
+    };
+    gaming = {
+      steam.enable = false;
     };
     misc = {
       colemak.enable = true;
@@ -35,6 +43,7 @@
       keyring.enable = true;
       mouseaccel.enable = true;
       zram.enable = true;
+      tlp.enable = true;
     };
   };
 
@@ -45,7 +54,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Nix Experimental Commands
-  nix.settings.experimental-features = [ "nix-command" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes"];
 
   # Hostname
   networking.hostName = "ruby";

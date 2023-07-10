@@ -1,35 +1,20 @@
 # Qazer's Dotfiles 
-[![Nix Evaluation](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml/badge.svg)](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml)
+This means it's working! -> [![Nix Evaluation](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml/badge.svg)](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml)
 
-These are my NixOS dotfiles for configuring my desktop and laptop and server. They include configurations for various tools and programs that I use for development, productivity, and entertainment.
+These are my NixOS dotfiles for my desktop and laptop. They include configurations for various tools and programs that I use for development, productivity, and entertainment.
 
-
-## Installation 💽
+## Installation
 ```
-# Jade ~ Desktop Configuration
-sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#jade
+# <output> = jade/ruby
+sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#<output>
 
-# Ruby ~ Laptop Configuration
-sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#laptop
-
-# Opal ~ Server Configuration (Coming Soon...)
-sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#opal
 ```
-## Jade 🟩
-- 🚀 i3 and DMenu for a fast and responsive UX.
-- 🎨 Alacritty and __Bash__ for customization. (Fish coming soon...)
-- 🎮 Steam, Lutris, Wine and Proton-GE for running games.
-- ⚡ Mouse acceleration is disabled for accuracy.
-- 🌿 Systemd service for running Minecraft servers.
+## Information 
+These are my hosts:
 
-<img src="https://i.imgur.com/W4zwxRy.png" alt="Jade" width="100%">
+`jade` - Desktop configuration for programming and gaming.
+`ruby` - Laptop configuration for note-taking, study and general productivity.
+`opal` - Server configuration for minecraft servers and nix experiments.
 
-## Ruby 🟥
-- 🪶 Lightweight, with additional tweaks to booting and shutdown.
-- 🔋 Battery saving features such as TLP and Powertop.
-- 📶 Networkmanager for configuring Wi-Fi on campus.
-- 📊 Includes tools such as NVim, Obsidian, Anki and VSCodium for productivity.
-- 💡 Redshift and Nautilus for convenience.
-- 🌟 Keybindings for brightness and volume with BrightnessCTL and PaMixer.
 
-<img src="https://i.imgur.com/8TexLL7.png" alt="Ruby" width="100%">
+
