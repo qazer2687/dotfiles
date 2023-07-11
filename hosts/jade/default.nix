@@ -71,7 +71,7 @@
       # General
       firefox               # Web Browser
       discord               # Communication Platform
-      betterdiscordctl      # Discord Tweaks
+#      betterdiscordctl      # Discord Tweaks
       obs-studio            # Recording Software
       vlc                   # Video Player
 #      espanso               # Text Expander
