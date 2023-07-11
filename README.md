@@ -19,6 +19,8 @@ This is my personal [Nix flake](https://nixos.wiki/wiki/Flakes) for my desktop, 
 - Has a full-fledged i3 environment.
 - Comes with Github Actions for flake validation.
 - Nix-Direnv for programming dependencies and tools.
+- A module disabling mouse-acceleration for precision.
+- Integration with gnome-keyring for storing user secrets.
 
 ## Structure 🧱
 
@@ -26,8 +28,6 @@ This is my personal [Nix flake](https://nixos.wiki/wiki/Flakes) for my desktop, 
   devshell for boostrapping (`nix develop` or `nix-shell`).
 - `hosts`: NixOS Configurations, accessible via `nixos-rebuild --flake`.
   - `common`: Shared configurations consumed by the machine-specific ones.
-    - `global`: Configurations that are globally applied to all my machines.
-    - `optional`: Opt-in configurations my machines can use.
   - `jade`: Desktop - 16GB RAM, R9 3900x, RTX 2070S
     - `configs`: Specific configuration files for packages unique to this machine. (Moving to common/optional soon...)
   - `ruby`: Laptop - 8GB RAM, I5 8350u
@@ -71,6 +71,7 @@ For deployment secrets I'm using [`sops-nix`](https://github.com/Mic92/sops-nix)
 - Bash + Starship
 - BacklightCTL
 - Redshift
+- NCMPCPP + MPD
 
 **GUI:**
 

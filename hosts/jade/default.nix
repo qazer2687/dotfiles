@@ -1,10 +1,14 @@
-{ config, pkgs, inputs, ... }:
-{
+{ config, pkgs, inputs, ... }: {
   # Imports
   imports = [
 
-    # Configurations
+    # Common
+    ../common/default.nix
+
+    # Hardware Configuration
     ./hardware-configuration.nix
+
+    # Software Configuration
     ./configs/polybar/default.nix
     ./configs/i3/default.nix
     ./configs/alacritty/default.nix
@@ -46,21 +50,6 @@
     };
   };
 
-  # State Version
-  system.stateVersion = "23.05";
-
-  # Unfree Software
-  nixpkgs.config.allowUnfree = true;
-
-  # Nix Experimental Options
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
-  # Nix Other Options
-  nix.extraOptions = ''
-    keep-outputs = true
-    keep-derivations = true
-  '';
-  
   # Hostname
   networking.hostName = "jade";
 
@@ -70,10 +59,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  # Locale
-  time.timeZone = "Europe/London";
-  i18n.defaultLocale = "en_GB.UTF-8";
-  
   # Home Manager
   home-manager.users.alex = {
 
