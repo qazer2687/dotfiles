@@ -76,14 +76,14 @@
       
       # Programming
       vscodium          # Code IDE
-      ghc               # Haskell
+#      ghc               # Haskell
       dotnet-sdk_7      # C#
-      rustc
-      cargo
+#      rustc
+#      cargo
 
       # Productivity
       obsidian          # Note-Taking App
-      anki-bin          # Flashcard App
+#      anki-bin          # Flashcard App
 
       # Environment
       dunst             # Notification Daemon
@@ -98,10 +98,10 @@
       brightnessctl     # Brightness Control
       pamixer           # Volume Control
       neofetch          # System Stats
-      image-roll        # Image Viewer
+#      image-roll        # Image Viewer
 
       # Miscellaneous
-      libheif   # HEIF Support
+#      libheif   # HEIF Support
 
     ];
 
@@ -112,6 +112,12 @@
       plugins = with pkgs.vimPlugins; [
         vim-nix
       ];
+    };
+
+    # Direnv
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
     };
 
     # Git Version Control
