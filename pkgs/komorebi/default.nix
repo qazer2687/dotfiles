@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "komorebi";
-  version = "2.1";
+  version = "2.2.1";
 
   src = fetchFromGitHub {
-    owner = "cheesecakeufo";
+    owner = "Komorebi-Fork";
     repo = "komorebi";
-    rev = "994725d147674bf7fe9392ccc1460cc41df1f8fb";
-    sha256 = "1fdawd13v9z19ycbkv62h34msd0mdqm0bdml05ydjfm6dsi0zw6d";
+    rev = "e752d26e21ebc0129bffb61e0da9516c3f29b1e7";
+    sha256 = "06gks28zhjbdff2ryhi1wf6g6kqw66chw06hb1p85fxiskspli5w";
   };
 
   buildInputs = with pkgs; [
@@ -17,28 +17,36 @@ stdenv.mkDerivation rec {
     clutter-gst
     vala
     webkitgtk
-    cmake
+    meson
     pkg-config
     libgee
+    ninja
+    gtk3
+    glib
+    gst_all_1.gstreamer # not sure if i need all these but i will figure out after i fix the other thing
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-base
+    makeWrapper
   ];
 
- # preConfigure = ''
- ##   substituteInPlace /cmake_install.cmake \
- #     --replace "\''${RUNTIME DESTINATION}" "$out/System/Applications" \
- # '';
-
   buildPhase = ''
-    cmake && ls && make install
+    meson build .. --prefix=$out
+    cd build
+    meson compile
   '';
 
   installPhase = ''
-    mkdir -p $out/bin
-    mv komorebi $out/bin
+    meson install 
+    mkdir -p $out/share/glib-2.0/schemas
+    glib-compile-schemas $out/share/glib-2.0/schemas
   '';
+
+#  postFixup = ''
+# '';
 
   meta = with lib; {
     description = "A beautiful and customizable wallpaper manager for Linux.";
-    homepage = "https://github.com/cheesecakeufo/komorebi";
+    homepage = "https://github.com/Komorebi-Fork/komorebi";
     license = with licenses; [ gpl3Plus ];
     maintainers = [ maintainers.alexvasilkovski ];
     platforms = platforms.linux;
