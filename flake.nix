@@ -5,12 +5,15 @@
 
     # Unstable Packages
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.inputs.nixpkgs.follows = "nixpkgs";
     
     # Home-Manager
     home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Sops-Nix
     sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.follows.nixpkgs = "nixpkgs";
   };
 
   outputs = {self, nixpkgs, home-manager, sops-nix, ... }@inputs: {
@@ -25,6 +28,9 @@
         modules = [
           ./hosts/jade
           sops-nix.nixosModules.sops
+          {
+            nix.registry.nixpkgs.flake = nixpkgs;
+          }
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -47,4 +53,4 @@
       };
     };
   };
-}
+};
