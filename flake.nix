@@ -13,7 +13,6 @@
 
     # Sops-Nix
     sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.follows.nixpkgs = "nixpkgs";
   };
 
   outputs = {self, nixpkgs, home-manager, sops-nix, ... }@inputs: {
@@ -30,6 +29,8 @@
           sops-nix.nixosModules.sops
           {
             nix.registry.nixpkgs.flake = nixpkgs;
+            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
+
           }
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
@@ -53,4 +54,4 @@
       };
     };
   };
-};
+}
