@@ -31,7 +31,6 @@
           {
             nix.registry.nixpkgs.flake = nixpkgs;
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
-
           }
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
