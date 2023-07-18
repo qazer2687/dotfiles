@@ -28,6 +28,9 @@
       gdm.autologin.enable = false;
       i3.enable = true;
     };
+    system = {
+      udev.viaRule.enable = true;
+    };
     network = {
       networkmanager.enable = true;
       networkmanager.firewall.enable = false;
