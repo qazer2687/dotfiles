@@ -11,6 +11,9 @@
   ./desktop/gdm.nix
   ./desktop/i3.nix
 
+  # System
+  ./system/udev.nix
+
   # Network
   ./network/networkmanager.nix
 
