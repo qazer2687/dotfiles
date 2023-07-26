@@ -84,7 +84,8 @@
       vscodium
 
       # Gaming
-      osu-lazer-bin
+      osu-lazer-bin`
+      jdk8
       prismlauncher
       lunar-client
       lutris
