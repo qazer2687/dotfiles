@@ -1,38 +1,42 @@
 { inputs, lib, config, pkgs, ... }:
 {
   imports = [
-  
+
+  # Audio
+  ./audio/pipewire.nix
+
   # Boot
-  ./boot/systemd-boot.nix
+  ./boot/silent.nix
   ./boot/stage2patch.nix
-  ./boot/silent-boot.nix
+  ./boot/loader.nix
 
   # Desktop
   ./desktop/gdm.nix
   ./desktop/i3.nix
 
-  # System
-  ./system/udev.nix
-
-  # Network
-  ./network/networkmanager.nix
-
-  # Audio
-  ./audio/pipewire.nix
-
-  # Video
-  ./video/nvidia.nix
-
   # Gaming
   ./gaming/steam.nix
 
   # Misc
+  ./misc/colemak.nix
+  ./misc/fonts.nix
+  ./misc/keyring.nix
   ./misc/mouseaccel.nix
   ./misc/tlp.nix
   ./misc/zram.nix
-  ./misc/colemak.nix
-  ./misc/keyring.nix
-  ./misc/fonts.nix
+  
+  # Network
+  ./network/networkmanager.nix
+ 
+  # System
+  ./system/udev.nix
+  ./system/kernel.nix
+
+  # Video
+  ./video/nvidia.nix
+
+
+
 
   ];
 }
