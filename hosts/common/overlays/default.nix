@@ -2,7 +2,7 @@
   nixpkgs.overlays =
     let
       myOverlay = self: super: {
-        # Include Packages Here...
+        discord = super.discord.override { withOpenASAR = true; withVencord = true; };
       };
     in
     [ myOverlay ];
