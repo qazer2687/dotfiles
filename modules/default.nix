@@ -30,7 +30,7 @@
  
   # System
   ./system/udev.nix
-  ./system/kernel.nix
+  ./system/kernelConfig.nix
 
   # Video
   ./video/nvidia.nix

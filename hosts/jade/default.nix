@@ -30,7 +30,7 @@
     };
     system = {
       udev.via.enable = true;
-      kernel.enable = true;
+      kernelConfig.desktop.enable = true;
     };
     network = {
       networkmanager.enable = true;
