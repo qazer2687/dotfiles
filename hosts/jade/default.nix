@@ -14,7 +14,6 @@
     ./configs/i3
     ./configs/alacritty
     ./configs/dunst
-    ./configs/picom
 
     # Modules
     ../../modules
