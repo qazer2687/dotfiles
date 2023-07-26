@@ -3,7 +3,7 @@
   options.modules.video.nvidia.enable = lib.mkEnableOption "";
   
   config = lib.mkIf config.modules.video.nvidia.enable {
-#    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia = {
       modesetting.enable = false;
       open = false;
