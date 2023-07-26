@@ -14,6 +14,7 @@
     ./configs/i3
     ./configs/alacritty
     ./configs/dunst
+    ./configs/picom
 
     # Modules
     ../../modules
@@ -114,6 +115,9 @@
         vim-nix
       ];
     };
+
+    # Picom
+    services.picom.enable = true;
     
     # Direnv
     programs.direnv = {
