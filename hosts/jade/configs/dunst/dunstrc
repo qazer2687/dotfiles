@@ -165,15 +165,12 @@
 [urgency_low]
     background = "#000000"
     highlight = "#6fa6e7"
-    frame_color = "#272f57"
     foreground = "#ffffff"
     timeout = 8
 
 [urgency_normal]
     background = "#000000"
     highlight = "#5ca1ff"
-
-    frame_color = "#272f57"
     foreground = "#ffffff"
     timeout = 8
 
@@ -181,7 +178,6 @@
     background = "#000000"
     highlight = "#fe6c5a"
     foreground = "#ffffff"
-    frame_color = "#52426e"
     timeout = 0
     icon = battery-ac-adapter
 
