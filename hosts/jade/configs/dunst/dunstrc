@@ -8,8 +8,8 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 300
-    height = 300
+    width = 350
+    height = 250
     origin = top-right
     offset = 24x24
 
@@ -31,9 +31,11 @@
     transparency = 1
 
     # Draw a line between multiple notifications
-    separator_height = 6
+    separator_height = 4
 
     separator_color = "#00000000"
+
+    notification_limit = 1
 
     # Set notification padding
     padding = 16
@@ -53,7 +55,7 @@
 
     # Set the font
     # font = "Noto Sans 11"
-    font = "FiraCode Nerd Font 11"
+    font = "FiraCode Nerd Font 10"
 
     # Set line height to font height
     line_height = 0
@@ -112,17 +114,17 @@
     icon_position = left
 
     # Scale small icons up to this size, set to 0 to disable.
-    min_icon_size = 70
+    min_icon_size = 50
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 70
+    max_icon_size = 50
 
 
     # Avoid timing out hidden notifications
     sticky_history = yes
 
     # Maximum amount of notifications kept in history
-    history_length = 100
+    history_length = 1
 
 
     # --- Misc/Advanced --- #
