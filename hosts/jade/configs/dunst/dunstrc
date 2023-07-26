@@ -74,7 +74,7 @@
     #  %% Literal %
 
     markup = full
-    format = "<b>%a</b>\n%s"
+    format = "<b>%s</b>\n%b"
 
     # Left align the text
     alignment = left
@@ -101,7 +101,7 @@
     # hide_duplicate_count = false
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     
     # ---- Icons ---- #
@@ -144,7 +144,7 @@
     class = Dunst
 
     # Define the corner radius of the notification window
-    corner_radius = 0
+    corner_radius = 10
 
     # Don't gnore the dbus closeNotification message.
     ignore_dbusclose = false
