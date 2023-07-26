@@ -3,25 +3,25 @@
   imports = [
 
     # Common
-    ../common/default.nix
-    ../common/overlays/default.nix
+    ../common
+#   ../common/overlays
 
     # Hardware Configuration
     ./hardware-configuration.nix
 
     # Software Configuration
-    ./configs/polybar/default.nix
-    ./configs/i3/default.nix
-    ./configs/alacritty/default.nix
+    ./configs/polybar
+    ./configs/i3
+    ./configs/alacritty
 
     # Modules
-    ../../modules/default.nix
+    ../../modules
 
   ];
 
   modules = {
     boot = {
-      systemd-boot.enable = true;
+      loader.systemd-boot.enable = true;
     };
     desktop = {
       gdm.enable = true;
@@ -29,7 +29,8 @@
       i3.enable = true;
     };
     system = {
-      udev.viaRule.enable = true;
+      udev.via.enable = true;
+      kernel.enable = true;
     };
     network = {
       networkmanager.enable = true;
@@ -73,47 +74,31 @@
     home.packages = with pkgs; [
 
       # General
-      firefox               # Web Browser
-      discord               # Communication Platform
-#      betterdiscordctl      # Discord Tweaks
-      obs-studio            # Recording Software
-      vlc                   # Video Player
-#      espanso               # Text Expander
+      firefox
+      obs-studio
+      vlc
+      webcord-vencord
 
       # Programming
-      vscodium              # Code IDE
+      vscodium
 
       # Gaming
-      osu-lazer-bin         # OSU
-      prismlauncher         # Minecraft (Modded)
-      lunar-client          # Minecraft (Hypixel)
-      lutris                # Overwatch
-#      wine-staging          # Latest Wine Version
-      protonup-qt           # Tweaked Wine Version
-      minecraft             # Minecraft (Vanilla)
+      osu-lazer-bin
+      prismlauncher
+      lunar-client
+      lutris
+      protonup-qt
 
       # Environment
-      polybarFull           # System Bar
-      dmenu                 # System Search
-      scrot                 # Screenshot Utility
-      feh                   # Wallpaper Utility
-      pavucontrol           # Audio Interface
-      alacritty             # Terminal Emulator
-      gnome.nautilus        # File Manager
-#      easyeffects           # Audio Equaliser
-#      speex                 # Noise Cancellation
-      neofetch              # System Stats
-#      networkmanagerapplet  # Network Configuration
-#      qpwgraph              # Virtual Patchbay
-      redshift              # Blue Light Filter
-      
-      # Security
-#      protonvpn-cli         # Virtual Private Network Client
-#      wireshark             # Packet Analysis Utility
-#      nmap                  # Port Scanning Utility
-#      openvpn               # Another VPN Client
-#      librewolf             # Hardened Firefox Browser
-#      protonvpn-gui         # GUI for ProtonVPN
+      polybarFull
+      dmenu
+      scrot
+      feh
+      pavucontrol
+      alacritty
+      gnome.nautilus
+      neofetch
+      redshift
       
     ];
 
@@ -131,17 +116,16 @@
       enable = true;
       nix-direnv.enable = true;
     };
-    
+
     # Bash
     programs.bash.enable = true;
     
     # Automount
     services.udiskie = {
       enable = true;
-      notify = false;
+      notify = true;
     };
 
-    
     # Git Version Control
     programs.git = {
       enable = true;
