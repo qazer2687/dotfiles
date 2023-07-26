@@ -33,6 +33,9 @@
       networkmanager.enable = true;
       networkmanager.firewall.enable = false;
     };
+    system = {
+      kernelConfig.laptop.enable = true;
+    };
     audio = {
       pipewire.enable = true;
     };
