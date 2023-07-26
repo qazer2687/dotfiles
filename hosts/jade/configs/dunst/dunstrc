@@ -1,13 +1,13 @@
 [global]
     monitor = 0
     follow = mouse
-    width = 300
+    width = 350
     height = 300
     origin = top-right
     offset = 10x70
     scale = 0
     notification_limit = 0
-    progress_bar = true
+    progress_bar = false
     progress_bar_height = 18
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
@@ -19,7 +19,7 @@
     padding = 8
     horizontal_padding = 8
     text_icon_padding = 0
-    frame_width = 1 
+    frame_width = 0 
     frame_color = "#3c3c47"
     separator_color = auto 
     sort = yes
