@@ -33,7 +33,7 @@
     # Draw a line between multiple notifications
     separator_height = 6
 
-    separator_color = "#272f57"
+    separator_color = "#00000000"
 
     # Set notification padding
     padding = 8
@@ -164,7 +164,6 @@
 
 [urgency_low]
     background = "#000000"
-    highlight = "#6fa6e7"
     foreground = "#ffffff"
     timeout = 8
 
@@ -176,7 +175,6 @@
 
 [urgency_critical]
     background = "#000000"
-    highlight = "#fe6c5a"
     foreground = "#ffffff"
     timeout = 0
     icon = battery-ac-adapter
