@@ -4,7 +4,7 @@
 
     # Common
     ../common
-#   ../common/overlays
+    ../common/overlays
 
     # Hardware Configuration
     ./hardware-configuration.nix
@@ -92,6 +92,7 @@
       # Environment
       polybarFull
       dmenu
+      dunst
       scrot
       feh
       pavucontrol
