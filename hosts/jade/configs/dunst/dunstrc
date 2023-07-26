@@ -164,18 +164,18 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#0f0f0f"
+    background = "#0a0a0a"
     foreground = "#ffffff"
     timeout = 8
 
 [urgency_normal]
-    background = "#0f0f0f"
+    background = "#0a0a0a"
     highlight = "#5ca1ff"
     foreground = "#ffffff"
     timeout = 8
 
 [urgency_critical]
-    background = "#0f0f0f"
+    background = "#0a0a0a"
     foreground = "#ffffff"
     timeout = 0
     icon = battery-ac-adapter
