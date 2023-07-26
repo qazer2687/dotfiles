@@ -13,7 +13,7 @@
       general: Alacritty
 
   scrolling:
-    history: 10000
+    history: 100000
 
   font:
     normal:

@@ -4,7 +4,7 @@
  
      # Common
     ../common
-#   ../common/overlays
+    ../common/overlays
 
     # Hardware Configuration
     ./hardware-configuration.nix
