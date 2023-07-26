@@ -13,6 +13,7 @@
     ./configs/polybar
     ./configs/i3
     ./configs/alacritty
+    ./configs/dunst
 
     # Modules
     ../../modules
