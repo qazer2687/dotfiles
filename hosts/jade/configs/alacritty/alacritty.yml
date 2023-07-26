@@ -35,7 +35,7 @@
 
   colors:
     primary:
-      background: '0x0f0f0f'
+      background: '0x0a0a0a'
       foreground: '0xffffff'
     normal:
       black:   '0x1e2127'
