@@ -8,8 +8,8 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 300
-    # height = 260
+    width = 600
+    height = 300
     origin = top-right
     offset = 24x24
 
@@ -36,8 +36,8 @@
     separator_color = "#272f57"
 
     # Set notification padding
-    padding = 16
-    horizontal_padding = 16
+    padding = 8
+    horizontal_padding = 8
 
     # Disable frame (border)
     frame_width = 0
@@ -46,7 +46,7 @@
     sort = no
 
     # Disable idle time
-    idle_threshold = 0
+    idle_threshold = 0 
 
    
     # --- Text --- #
@@ -90,6 +90,7 @@
 
     # Where to place ellipses if word wrap is disabled
     # ellipsize = middle
+    icon_corner_radius = 5
 
     # Use newlines '\n' in notifications.
     ignore_newline = no
@@ -115,10 +116,6 @@
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 60
 
-    # Paths to default icons.
-    icon_path = /usr/share/icons/kora/apps/scalable:/usr/share/icons/kora/status/scalable:/usr/share/icons/kora/actions/scalable:/usr/share/icons/kora/emblems/scalable:/usr/share/icons/kora/devices/scalable
- 
-    # --- History --- #
 
     # Avoid timing out hidden notifications
     sticky_history = yes
@@ -166,24 +163,24 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#141929fe"
+    background = "#000000"
     highlight = "#6fa6e7"
     frame_color = "#272f57"
-    foreground = "#dae1f2"
+    foreground = "#ffffff"
     timeout = 8
 
 [urgency_normal]
-    background = "#141929fe"
+    background = "#000000"
     highlight = "#5ca1ff"
 
     frame_color = "#272f57"
-    foreground = "#dae1f2"
+    foreground = "#ffffff"
     timeout = 8
 
 [urgency_critical]
-    background = "#5ca1ffff"
+    background = "#000000"
     highlight = "#fe6c5a"
-    foreground = "#1c2138"
+    foreground = "#ffffff"
     frame_color = "#52426e"
     timeout = 0
     icon = battery-ac-adapter
