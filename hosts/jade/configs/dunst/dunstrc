@@ -8,7 +8,7 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 600
+    width = 300
     height = 300
     origin = top-right
     offset = 24x24
@@ -36,8 +36,8 @@
     separator_color = "#00000000"
 
     # Set notification padding
-    padding = 8
-    horizontal_padding = 8
+    padding = 16
+    horizontal_padding = 16
 
     # Disable frame (border)
     frame_width = 0
@@ -53,7 +53,7 @@
 
     # Set the font
     # font = "Noto Sans 11"
-    font = "Hack Nerd Font 11"
+    font = "FiraCode Nerd Font 11"
 
     # Set line height to font height
     line_height = 0
@@ -74,7 +74,8 @@
     #  %% Literal %
 
     markup = full
-    format = "<b>%s</b>\n%b"
+    #format = "<b>%s</b>\n%b"
+    format = "%b"
 
     # Left align the text
     alignment = left
@@ -90,7 +91,7 @@
 
     # Where to place ellipses if word wrap is disabled
     # ellipsize = middle
-    icon_corner_radius = 5
+    icon_corner_radius = 10
 
     # Use newlines '\n' in notifications.
     ignore_newline = no
@@ -163,18 +164,18 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#000000"
+    background = "#111111"
     foreground = "#ffffff"
     timeout = 8
 
 [urgency_normal]
-    background = "#000000"
+    background = "#111111"
     highlight = "#5ca1ff"
     foreground = "#ffffff"
     timeout = 8
 
 [urgency_critical]
-    background = "#000000"
+    background = "#111111"
     foreground = "#ffffff"
     timeout = 0
     icon = battery-ac-adapter
