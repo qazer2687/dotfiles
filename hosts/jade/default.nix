@@ -99,6 +99,7 @@
       gnome.nautilus
       neofetch
       redshift
+      easyeffects
       
     ];
 
