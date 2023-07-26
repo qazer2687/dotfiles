@@ -3,27 +3,26 @@
   imports = [
  
      # Common
-    ../common/default.nix
-    ../common/overlays/default.nix
+    ../common
+#   ../common/overlays
 
     # Hardware Configuration
     ./hardware-configuration.nix
 
     # Software Configuration
-    ./configs/polybar/default.nix
-    ./configs/i3/default.nix
-    ./configs/alacritty/default.nix
-    ./hardware-configuration.nix
+    ./configs/polybar
+    ./configs/i3
+    ./configs/alacritty
 
     # Modules
-    ../../modules/default.nix
+    ../../modules
 
   ];
   
   # Modules
   modules = {
     boot = {
-      systemd-boot.enable = true;
+      loader.systemd-boot.enable = true;
     };
     desktop = {
       gdm.enable = true;
@@ -72,37 +71,28 @@
     home.packages = with pkgs; [
 
       # General
-      firefox           # Web Browser
-      discord           # Communication Client
+      firefox
+      webcord-vencord
       
       # Programming
-      vscodium          # Code IDE
-#      ghc               # Haskell
-      dotnet-sdk_7      # C#
-#      rustc
-#      cargo
+      vscodium
 
       # Productivity
-      obsidian          # Note-Taking App
-#      anki-bin          # Flashcard App
+      obsidian
 
       # Environment
-      dunst             # Notification Daemon
-      polybarFull       # System Bar
-      dmenu             # System Search
-      scrot             # Screenshot Utility
-      feh               # Wallpaper Utility
-      pavucontrol       # Audio Interface
-      alacritty         # Terminal Emulator
-      gnome.nautilus    # File Manager
-      redshift          # Blue Light Filter
-      brightnessctl     # Brightness Control
-      pamixer           # Volume Control
-      neofetch          # System Stats
-#      image-roll        # Image Viewer
-
-      # Miscellaneous
-#      libheif   # HEIF Support
+      dunst
+      polybarFull
+      dmenu
+      scrot
+      feh
+      pavucontrol
+      alacritty
+      gnome.nautilus
+      redshift
+      brightnessctl
+      pamixer
+      neofetch
 
     ];
 
@@ -120,6 +110,9 @@
       enable = true;
       nix-direnv.enable = true;
     };
+
+    # Bash
+    programs.bash.enable = true;
 
     # Git Version Control
     programs.git = {
