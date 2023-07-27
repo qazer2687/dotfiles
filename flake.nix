@@ -36,7 +36,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              users.alex = ./home/configurations/ruby;
+              users.alex = ./home/configurations/jade;
               useGlobalPkgs = true;
               useUserPackages = true;
             };
