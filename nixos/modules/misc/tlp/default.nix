@@ -1,8 +1,6 @@
 {
-  inputs,
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.systemModules.misc.tlp.enable = lib.mkEnableOption "";

@@ -1,8 +1,6 @@
 {
-  inputs,
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.systemModules.video.nvidia.enable = lib.mkEnableOption "";

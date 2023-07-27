@@ -1,8 +1,6 @@
 {
-  inputs,
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.systemModules.system.udev.via.enable = lib.mkEnableOption "";

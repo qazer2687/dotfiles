@@ -1,8 +1,6 @@
 {
-  inputs,
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.systemModules.boot.loader.systemd-boot.enable = lib.mkEnableOption "";
