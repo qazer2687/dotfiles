@@ -10,7 +10,6 @@
     ../../modules
   ];
 
-  home-manager.users.alex = {
     home.packages = with pkgs; [
 
       # General
@@ -42,5 +41,7 @@
       redshift
       easyeffects
     ];
-  };
+
+    home.stateVersion = "23.05";
+
 }
