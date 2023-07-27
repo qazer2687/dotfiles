@@ -24,7 +24,7 @@
     ../../modules
   ];
 
-  modules = {
+  systemModules = {
     boot = {
       loader.systemd-boot.enable = true;
     };
