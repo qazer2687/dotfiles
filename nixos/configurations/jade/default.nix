@@ -8,12 +8,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules
-
-    # Software Configuration
-    ./configs/polybar
-    ./configs/i3
-    ./configs/alacritty
-    ./configs/dunst
   ];
 
   systemModules = {
