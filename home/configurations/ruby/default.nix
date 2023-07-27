@@ -6,7 +6,7 @@
     ../../modules
   ];
 
-  home-manager.sharedModules = [
+  sharedModules = [
     {
       homeModules = {
         programs = {
