@@ -12,7 +12,7 @@
     # Boot
     ./boot/silentboot
     ./boot/stage2patch
-    ./boot/bootloader
+    ./boot/loader
 
     # Desktop
     ./desktop/gdm

@@ -50,7 +50,12 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./nixos/configurations/ruby
+          ./home/configurations/ruby
           sops-nix.nixosModules.sops
+          {
+            nix.registry.nixpkgs.flake = nixpkgs;
+            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
+          }
           home-manager.nixosModules.home-manager
           {
             home-manager.users.alex.home.stateVersion = "23.05";
