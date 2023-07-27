@@ -5,8 +5,6 @@
   lib,
   ...
 }: {
-  # Home Manager
-  home-manager.users.alex = {
     # Packages
     home.packages = with pkgs; [
       # General
@@ -33,5 +31,7 @@
       pamixer
       neofetch
     ];
-  };
+
+    home.stateVersion = "23.05";
+
 }
