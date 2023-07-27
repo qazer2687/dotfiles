@@ -1,8 +1,6 @@
 {
-  inputs,
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.homeModules.programs.mpd.enable = lib.mkEnableOption "";
