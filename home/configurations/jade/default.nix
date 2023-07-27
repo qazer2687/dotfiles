@@ -6,23 +6,20 @@
     ../../modules
   ];
 
-  sharedModules = [
-    {
-      homeModules = {
-        programs = {
-          bash.enable = true;
-          direnv.enable = true;
-          git.enable = true;
-          mpd.enable = true;
-          neovim.enable = true;
-          alacritty.desktopConfig.enable = true;
-          polybar.desktopConfig.enable = true;
-          dunst.desktopConfig.enable = true;
-          i3.desktopConfig.enable = true;
-        };
-      };
-    }
-  ];
+  homeModules = {
+    programs = {
+      bash.enable = true;
+      direnv.enable = true;
+      git.enable = true;
+      mpd.enable = true;
+      neovim.enable = true;
+      alacritty.desktopConfig.enable = true;
+      polybar.desktopConfig.enable = true;
+      dunst.desktopConfig.enable = true;
+      i3.desktopConfig.enable = true;
+    };
+  };
+
 
   home.packages = with pkgs; [
     # General
