@@ -5,33 +5,50 @@
   lib,
   ...
 }: {
-    # Packages
-    home.packages = with pkgs; [
-      # General
-      firefox
-      webcord-vencord
+  imports = [
+    ../../modules
+  ];
 
-      # Programming
-      vscodium
+  home-manager.sharedModules = [
+    {
+      homeModules = {
+        programs = {
+          bash.enable = true;
+          direnv.enable = true;
+          git.enable = true;
+          mpd.enable = true;
+          neovim.enable = true;
+          alacritty.laptopConfig.enable = true;
+          polybar.laptopConfig.enable = true;
+          dunst.laptopConfig.enable = true;
+          i3.laptopConfig.enable = true;
+        };
+      };
+    }
+  ];
 
-      # Productivity
-      obsidian
+  home.packages = with pkgs; [
+    # General
+    firefox
+    webcord-vencord
 
-      # Environment
-      dunst
-      polybarFull
-      dmenu
-      scrot
-      feh
-      pavucontrol
-      alacritty
-      gnome.nautilus
-      redshift
-      brightnessctl
-      pamixer
-      neofetch
-    ];
+    # Programming
+    vscodium
 
-    home.stateVersion = "23.05";
+    # Productivity
+    obsidian
 
+    # Environment
+    dmenu
+    scrot
+    feh
+    pavucontrol
+    gnome.nautilus
+    redshift
+    brightnessctl
+    pamixer
+    neofetch
+  ];
+
+  home.stateVersion = "23.05";
 }

@@ -5,43 +5,55 @@
   lib,
   ...
 }: {
-
   imports = [
     ../../modules
   ];
 
-    home.packages = with pkgs; [
+  home-manager.sharedModules = [
+    {
+      homeModules = {
+        programs = {
+          bash.enable = true;
+          direnv.enable = true;
+          git.enable = true;
+          mpd.enable = true;
+          neovim.enable = true;
+          alacritty.desktopConfig.enable = true;
+          polybar.desktopConfig.enable = true;
+          dunst.desktopConfig.enable = true;
+          i3.desktopConfig.enable = true;
+        };
+      };
+    }
+  ];
 
-      # General
-      firefox
-      obs-studio
-      vlc
-      webcord-vencord
+  home.packages = with pkgs; [
+    # General
+    firefox
+    obs-studio
+    vlc
+    webcord-vencord
 
-      # Programming
-      vscodium
+    # Programming
+    vscodium
 
-      # Gaming
-      osu-lazer-bin
-      prismlauncher
-      lunar-client
-      lutris
-      protonup-qt
+    # Gaming
+    osu-lazer-bin
+    prismlauncher
+    lunar-client
+    lutris
+    protonup-qt
 
-      # Environment
-      polybarFull
-      dmenu
-      dunst
-      scrot
-      feh
-      pavucontrol
-      alacritty
-      gnome.nautilus
-      neofetch
-      redshift
-      easyeffects
-    ];
+    # Environment
+    dmenu
+    scrot
+    feh
+    pavucontrol
+    gnome.nautilus
+    neofetch
+    redshift
+    easyeffects
+  ];
 
-    home.stateVersion = "23.05";
-
+  home.stateVersion = "23.05";
 }

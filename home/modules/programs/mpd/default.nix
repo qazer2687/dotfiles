@@ -6,7 +6,7 @@
   ...
 }: {
   options.homeModules.programs.mpd.enable = lib.mkEnableOption "";
-    
+
   config = lib.mkIf config.homeModules.programs.mpd.enable {
     services.mpd = {
       enable = false;
