@@ -28,7 +28,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./nixos/configurations/jade
-          ./mixed
           sops-nix.nixosModules.sops
           {
             nix.registry.nixpkgs.flake = nixpkgs;
@@ -51,7 +50,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./nixos/configurations/ruby
-          ./mixed
           sops-nix.nixosModules.sops
           {
             nix.registry.nixpkgs.flake = nixpkgs;
