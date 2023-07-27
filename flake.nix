@@ -30,6 +30,7 @@
         modules = [
           ./nixos/configurations/jade
           ./home/configurations/jade
+          ./mixed
           sops-nix.nixosModules.sops
           {
             nix.registry.nixpkgs.flake = nixpkgs;
@@ -51,6 +52,7 @@
         modules = [
           ./nixos/configurations/ruby
           ./home/configurations/ruby
+          ./mixed
           sops-nix.nixosModules.sops
           {
             nix.registry.nixpkgs.flake = nixpkgs;
