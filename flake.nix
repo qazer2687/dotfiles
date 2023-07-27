@@ -29,7 +29,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./nixos/configurations/jade
-          ./home/configurations/jade
           ./mixed
           sops-nix.nixosModules.sops
           {
@@ -38,9 +37,11 @@
           }
           home-manager.nixosModules.home-manager
           {
-            home-manager.users.alex.home.stateVersion = "23.05";
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            home-manager = {
+              users.alex = ./home/configurations/ruby;
+              useGlobalPkgs = true;
+              useUserPackages = true;
+            };
           }
         ];
       };
@@ -51,7 +52,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./nixos/configurations/ruby
-          ./home/configurations/ruby
           ./mixed
           sops-nix.nixosModules.sops
           {
@@ -60,9 +60,11 @@
           }
           home-manager.nixosModules.home-manager
           {
-            home-manager.users.alex.home.stateVersion = "23.05";
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            home-manager = {
+              users.alex = ./home/configurations/ruby;
+              useGlobalPkgs = true;
+              useUserPackages = true;
+            };
           }
         ];
       };
