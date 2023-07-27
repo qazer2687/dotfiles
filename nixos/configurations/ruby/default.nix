@@ -2,25 +2,19 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   # Imports
   imports = [
-    # Common
-    ../common
-    ../common/overlays
-
-    # Hardware Configuration
     ./hardware-configuration.nix
+    ../../modules
 
     # Software Configuration
     ./configs/polybar
     ./configs/i3
     ./configs/alacritty
     ./configs/dunst
-
-    # Modules
-    ../../modules
   ];
 
   # Modules
@@ -66,76 +60,5 @@
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel"];
-  };
-
-  # Home Manager
-  home-manager.users.alex = {
-    # Packages
-    home.packages = with pkgs; [
-      # General
-      firefox
-      webcord-vencord
-
-      # Programming
-      vscodium
-
-      # Productivity
-      obsidian
-
-      # Environment
-      dunst
-      polybarFull
-      dmenu
-      scrot
-      feh
-      pavucontrol
-      alacritty
-      gnome.nautilus
-      redshift
-      brightnessctl
-      pamixer
-      neofetch
-    ];
-
-    # Text Editor
-    programs.neovim = {
-      enable = true;
-      vimAlias = true;
-      plugins = with pkgs.vimPlugins; [
-        vim-nix
-      ];
-    };
-
-    # Direnv
-    programs.direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-
-    # Bash
-    programs.bash.enable = true;
-
-    # Git Version Control
-    programs.git = {
-      enable = true;
-      userName = "***REMOVED***";
-      userEmail = "***REMOVED***@outlook.com";
-    };
-
-    # MPD
-    services.mpd = {
-      enable = false;
-      musicDirectory = "/home/alex/Music";
-      extraConfig = ''
-        audio_output {
-          type            "pulse"
-          name            "pulse"
-          mixer_type      "hardware"
-          mixer_device    "default"
-          mixer_control   "PCM"
-          mixer_index     "0"
-        }
-      '';
-    };
   };
 }
