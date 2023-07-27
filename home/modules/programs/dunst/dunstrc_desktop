@@ -8,10 +8,10 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 350
+    width = 400
     height = 250
     origin = top-right
-    offset = 24x24
+    offset = 74x0
 
 
     progress_bar = true
@@ -31,11 +31,11 @@
     transparency = 1
 
     # Draw a line between multiple notifications
-    separator_height = 4
+    separator_height = 0
 
     separator_color = "#00000000"
 
-    notification_limit = 1
+    notification_limit = 5
 
     # Set notification padding
     padding = 16
