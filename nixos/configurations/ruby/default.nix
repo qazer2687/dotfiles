@@ -24,7 +24,7 @@
   ];
 
   # Modules
-  modules = {
+  systemModules = {
     boot = {
       loader.systemd-boot.enable = true;
     };
@@ -38,7 +38,7 @@
       networkmanager.firewall.enable = false;
     };
     system = {
-      kernelConfig.laptop.enable = true;
+      kernel.laptop.enable = true;
     };
     audio = {
       pipewire.enable = true;
