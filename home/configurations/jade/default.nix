@@ -10,19 +10,6 @@
     ../../modules
   ];
 
-  home-manager.sharedModules = {
-    homeModules = {
-      programs = {
-        bash.enable = true;
-        direnv.enable = true;
-        git.enable = true;
-        mpd.enable = true;
-        neovim.enable = true;
-        udiskie.enable = false;
-      };
-    };
-  };
-
   home-manager.users.alex = {
     home.packages = with pkgs; [
 
