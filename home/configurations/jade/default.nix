@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../modules
   ];
@@ -19,7 +16,6 @@
       i3.desktopConfig.enable = true;
     };
   };
-
 
   home.packages = with pkgs; [
     # General

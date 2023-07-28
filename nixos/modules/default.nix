@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   imports = [
     # Audio
     ./audio/pipewire
