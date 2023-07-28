@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   imports = [
     # Programs
     ./programs/bash
