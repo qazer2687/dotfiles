@@ -8,10 +8,10 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 350
-    height = 250
+    width = 450
+    height = 300
     origin = top-right
-    offset = 24x24
+    offset = 10x60
 
 
     progress_bar = true
@@ -28,14 +28,14 @@
     shrink = no
 
     # The transparency of the window.
-    transparency = 1
+    transparency = 0
 
     # Draw a line between multiple notifications
-    separator_height = 4
+    separator_height = 2
 
-    separator_color = "#00000000"
+    separator_color = "#010101"
 
-    notification_limit = 1
+    notification_limit = 8
 
     # Set notification padding
     padding = 16
@@ -114,10 +114,10 @@
     icon_position = left
 
     # Scale small icons up to this size, set to 0 to disable.
-    min_icon_size = 50
+    min_icon_size = 60
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 50
+    max_icon_size = 60
 
 
     # Avoid timing out hidden notifications
