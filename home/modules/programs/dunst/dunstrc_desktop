@@ -114,10 +114,10 @@
     icon_position = left
 
     # Scale small icons up to this size, set to 0 to disable.
-    min_icon_size = 50
+    min_icon_size = 60
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 50
+    max_icon_size = 60
 
 
     # Avoid timing out hidden notifications
