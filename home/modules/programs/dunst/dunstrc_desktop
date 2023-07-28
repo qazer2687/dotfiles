@@ -31,9 +31,9 @@
     transparency = 1
 
     # Draw a line between multiple notifications
-    separator_height = 0
+    separator_height = 1
 
-    separator_color = "#00000000"
+    separator_color = "#010101"
 
     notification_limit = 8
 
