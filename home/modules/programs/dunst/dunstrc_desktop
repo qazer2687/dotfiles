@@ -38,8 +38,8 @@
     notification_limit = 8
 
     # Set notification padding
-    padding = 14
-    horizontal_padding = 14
+    padding = 16
+    horizontal_padding = 16
 
     # Disable frame (border)
     frame_width = 0
@@ -55,7 +55,7 @@
 
     # Set the font
     # font = "Noto Sans 11"
-    font = "FiraCode Nerd Font 10"
+    font = "FiraCode Nerd Font 11"
 
     # Set line height to font height
     line_height = 0
