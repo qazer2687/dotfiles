@@ -38,8 +38,8 @@
     notification_limit = 8
 
     # Set notification padding
-    padding = 8
-    horizontal_padding = 8
+    padding = 14
+    horizontal_padding = 14
 
     # Disable frame (border)
     frame_width = 0
