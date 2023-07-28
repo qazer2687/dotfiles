@@ -39,7 +39,7 @@ bindsym $mod+Shift+r restart
 default_border pixel 0
 gaps inner 10
 gaps outer 0
-border_radius 10
+border_radius 6
 bar {
         mode invisible
 }
