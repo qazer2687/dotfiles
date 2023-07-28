@@ -28,7 +28,7 @@
     shrink = no
 
     # The transparency of the window.
-    transparency = 1
+    transparency = 0
 
     # Draw a line between multiple notifications
     separator_height = 2
@@ -55,7 +55,7 @@
 
     # Set the font
     # font = "Noto Sans 11"
-    font = "FiraCode Nerd Font 11"
+    font = "FiraCode Nerd Font 10"
 
     # Set line height to font height
     line_height = 0
@@ -114,10 +114,10 @@
     icon_position = left
 
     # Scale small icons up to this size, set to 0 to disable.
-    min_icon_size = 60
+    min_icon_size = 50
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 60
+    max_icon_size = 50
 
 
     # Avoid timing out hidden notifications
