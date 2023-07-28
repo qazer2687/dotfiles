@@ -8,8 +8,8 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 450
-    height = 300
+    width = 400
+    height = 400
     origin = top-right
     offset = 10x60
 
@@ -22,7 +22,7 @@
 
 
     # Show how many messages are hidden
-    indicate_hidden = yes
+    indicate_hidden = no
 
     # Shrink window if it's smaller than the width.
     shrink = no
@@ -31,9 +31,9 @@
     transparency = 0
 
     # Draw a line between multiple notifications
-    separator_height = 2
+    separator_height = 4
 
-    separator_color = "#010101"
+    separator_color = "#1a1a1a"
 
     notification_limit = 8
 
