@@ -27,7 +27,6 @@ This is my personal [Nix flake](https://nixos.wiki/wiki/Flakes) for my desktop, 
 - `flake.nix`: Entrypoint for hosts and home configurations. Also exposes a
   devshell for boostrapping (`nix develop` or `nix-shell`).
 - `hosts`: NixOS Configurations, accessible via `nixos-rebuild --flake`.
-  - `common`: Shared configurations consumed by the machine-specific ones.
   - `jade`: Desktop - 16GB RAM, R9 3900x, RTX 2070S
     - `configs`: Specific configuration files for packages unique to this machine. (Moving to common/optional soon...)
   - `ruby`: Laptop - 8GB RAM, I5 8350u
