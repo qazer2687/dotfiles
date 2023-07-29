@@ -32,7 +32,6 @@ This is my personal [Nix flake](https://nixos.wiki/wiki/Flakes) for my desktop, 
     - `configs`: Specific configuration files for packages unique to this machine. (Moving to common/optional soon...)
   - `ruby`: Laptop - 8GB RAM, I5 8350u
     - `configs`: Specific configuration files for packages unique to this machine. (Moving to common/optional soon...)
-  - `opal`: Server - Coming Soon...
 - `modules`: Many modules (with options) which are used in my configurations.
 
 ## About 📕
