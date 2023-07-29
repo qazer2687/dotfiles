@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.systemModules.security.keepassxc.enable = lib.mkEnableOption "";
