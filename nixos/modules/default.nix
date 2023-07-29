@@ -18,10 +18,13 @@
     # Misc
     ./misc/colemak
     ./misc/fonts
-    ./misc/keyring
     ./misc/mouseaccel
     ./misc/tlp
     ./misc/zram
+
+    # Security
+    ./security/keepassxc
+    ./security/gnome-keyring
 
     # Network
     ./network/networkmanager

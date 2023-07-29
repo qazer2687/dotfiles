@@ -34,10 +34,12 @@
     misc = {
       colemak.enable = true;
       fonts.enable = true;
-      keyring.enable = true;
       mouseaccel.enable = true;
       zram.enable = true;
       tlp.enable = true;
+    };
+    security = {
+      keepassxc.enable = true;
     };
   };
 
