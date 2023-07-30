@@ -1,6 +1,7 @@
 {pkgs, config, ...}: {
   imports = [
     ../../modules
+    <sops-nix/modules/home-manager/sops.nix>
   ];
 
   homeModules = {
