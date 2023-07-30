@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
   imports = [
     ../../modules
   ];
@@ -40,4 +40,6 @@
   ];
 
   home.stateVersion = "23.05";
+  home.homeDirectory = "/home/alex";
+  sops.age.sshKeyPaths = ["${config.home.homeDirectory}/.ssh/id_ed25519"];
 }

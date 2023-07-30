@@ -14,7 +14,5 @@
 
     # Configuration
     xdg.configFile."spotifyd/spotifyd.conf".text = builtins.readFile ./spotifyd.conf;
-
-    
   };
 }
