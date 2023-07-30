@@ -1,4 +1,4 @@
-{pkgs, self, ...}: {
+{pkgs, ...}: {
   imports = [
     ../../modules
   ];
@@ -51,5 +51,5 @@
   home.homeDirectory = "/home/alex";
   sops.age.sshKeyPaths = ["$HOME/.ssh/id_ed25519"];
   sops.secrets.spotify-password.path = "$HOME/spotifyd/password";
-  sops.defaultSopsFile = "${self}/secrets/default.yaml";
+  sops.defaultSopsFile = "../../../secrets/default.yaml";
 }
