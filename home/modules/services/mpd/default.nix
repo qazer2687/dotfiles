@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.homeModules.programs.mpd.enable = lib.mkEnableOption "";
+  options.homeModules.services.mpd.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.programs.mpd.enable {
+  config = lib.mkIf config.homeModules.services.mpd.enable {
     services.mpd = {
       enable = false;
       musicDirectory = "/home/alex/Music";

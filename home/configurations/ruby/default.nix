@@ -8,7 +8,6 @@
       bash.enable = true;
       direnv.enable = true;
       git.enable = true;
-      mpd.enable = true;
       neovim.enable = true;
       alacritty.laptopConfig.enable = true;
       polybar.laptopConfig.enable = true;
