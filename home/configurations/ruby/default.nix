@@ -1,6 +1,10 @@
 {pkgs, config, ...}: {
   imports = [
     ../../modules
+  ];
+
+  # NixOS system-wide home-manager configuration
+  home-manager.sharedModules = [
     <sops-nix/modules/home-manager/sops.nix>
   ];
 
