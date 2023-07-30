@@ -39,7 +39,7 @@
               users.alex = ./home/configurations/jade;
               useGlobalPkgs = true;
               useUserPackages = true;
-              sharedModules = [ <sops-nix/modules/home-manager/sops.nix> ];
+              sharedModules = [ inputs.sops-nix ];
             };
           }
         ];
