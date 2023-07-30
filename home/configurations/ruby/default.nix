@@ -42,5 +42,5 @@
 
   home.stateVersion = "23.05";
   home.homeDirectory = "/home/alex";
-  config.sops.age.sshKeyPaths = ["$HOME/.ssh/id_ed25519"];
+  sops.age.sshKeyPaths = ["$HOME/.ssh/id_ed25519"];
 }
