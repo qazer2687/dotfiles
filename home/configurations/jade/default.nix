@@ -2,12 +2,7 @@
   imports = [
     ../../modules
   ];
-
-  sharedModules = [
-    <sops-nix/modules/home-manager/sops.nix>
-  ];
  
-
   homeModules = {
     programs = {
       bash.enable = true;

@@ -39,6 +39,7 @@
               users.alex = ./home/configurations/jade;
               useGlobalPkgs = true;
               useUserPackages = true;
+              sharedModules = [ <sops-nix/modules/home-manager/sops.nix> ];
             };
           }
         ];
@@ -61,6 +62,7 @@
               users.alex = ./home/configurations/ruby;
               useGlobalPkgs = true;
               useUserPackages = true;
+              sharedModules = [ <sops-nix/modules/home-manager/sops.nix> ];
             };
           }
         ];
