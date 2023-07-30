@@ -3,8 +3,7 @@
     ../../modules
   ];
 
-  # NixOS system-wide home-manager configuration
-  home-manager.sharedModules = [
+  sharedModules = [
     <sops-nix/modules/home-manager/sops.nix>
   ];
 
