@@ -1,2 +1,1 @@
-#!/bin/sh
-cat ./password
+cat /home/alex/.config/spotifyd/password
