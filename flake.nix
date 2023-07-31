@@ -40,6 +40,7 @@
           {
             home-manager = {
               users.alex = ./home/configurations/jade;
+              extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [inputs.sops-nix.homeManagerModules.sops];
