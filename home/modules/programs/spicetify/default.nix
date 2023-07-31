@@ -14,7 +14,7 @@
     # Configuration
     imports = [inputs.spicetify-nix.homeManagerModule];
 
-    programs.spicetify = let spicePkgs = spicetify-nix.packages.${pkgs.system}.default; in {
+    programs.spicetify = let spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default; in {
       enable = true;
       theme = spicePkgs.themes.catppuccin-mocha;
       colorScheme = "flamingo";
