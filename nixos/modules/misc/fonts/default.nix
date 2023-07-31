@@ -7,7 +7,7 @@
   options.systemModules.misc.fonts.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.systemModules.misc.fonts.enable {
-    fonts.fonts = with pkgs; [
+    fonts.packages = with pkgs; [
       (nerdfonts.override {
         fonts = [
           "FiraCode"
