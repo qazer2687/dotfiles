@@ -13,4 +13,5 @@ creation_rules:
     key_groups:
     - age:
       - *jade_root
+      - *jade_user
 
