@@ -12,7 +12,7 @@
       settings = {
         global = {
           username = "3fl3wvehzpuudbzovifsyndbp";
-          password_cmd = "$HOME/.config/spotifyd/read_password.sh";
+          password_cmd = "/home/alex/.config/spotifyd/read_password.sh";
           use_keyring = false;
           use_mpris = true;
           dbus_type = "session";
@@ -22,17 +22,16 @@
           mixer = "PCM";
           volume_controller = "alsa";
           device_name = "SpotifyD";
-          bitrate = 320;
+          bitrate = "320";
           cache_path = "/home/alex/.cache/spotifyd";
-          max_cache_size = 5000000000;
+          max_cache_size = "5000000000";
           no_audio_cache = false;
           initial_volume = "60";
           volume_normalisation = false;
-          normalisation_pregain = -10;
           autoplay = true;
           device_type = "speaker";
         };
-      }
+      };
     };
 
     # Configuration
