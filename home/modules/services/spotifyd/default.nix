@@ -32,7 +32,7 @@
           autoplay = true;
           device_type = "speaker";
         };
-      };
+      }
     };
 
     # Configuration
