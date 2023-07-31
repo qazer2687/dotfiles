@@ -30,7 +30,7 @@
       customColorScheme = {
         text = "ffffff";
         subtext = "F0F0F0";
-        sidebar-text = "e0def4";1
+        sidebar-text = "e0def4";
         main = "191724";
         sidebar = "0a0a0a";
         player = "0f0f0f";
