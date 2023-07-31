@@ -2,7 +2,7 @@
   imports = [
     ../../modules
   ];
- 
+
   homeModules = {
     programs = {
       bash.enable = true;
@@ -32,7 +32,6 @@
     deadnix
     statix
 
-
     # Gaming
     osu-lazer-bin
     prismlauncher
@@ -55,5 +54,5 @@
   home.homeDirectory = "/home/alex";
   sops.secrets.spotify_password.path = "/home/alex/.config/spotifyd/password";
   sops.defaultSopsFile = ../../../secrets/default.yaml;
-  sops.age.sshKeyPaths = [ "/home/alex/.ssh/id_ed25519" ];
+  sops.age.sshKeyPaths = ["/home/alex/.ssh/id_ed25519"];
 }
