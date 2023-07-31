@@ -3,6 +3,7 @@
   lib,
   inputs,
   config,
+  spicetify-nix,
   ...
 }: {
   options.homeModules.programs.spicetify.enable = lib.mkEnableOption "";
