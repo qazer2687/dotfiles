@@ -5,7 +5,7 @@
 keys:
   - &jade_root age1x2t55uu60pkjsmggep284a4pvx05w7jyrxdnd503k26vp8ecnf2qk8zede
   - &jade_user age1xqfk33phztpmuxefzmgm9rhew320hj5rd0389hcf682z7nfvhs2shdrwxj
-  - &ruby_root age1x2t55uu60pkjsmggep284a4pvx05w7jyrxdnd503k26vp8ecnf2qk8zede
+#  - &ruby_root age1x2t55uu60pkjsmggep284a4pvx05w7jyrxdnd503k26vp8ecnf2qk8zede
 #  - &ruby_user 
 
 creation_rules:
@@ -13,5 +13,4 @@ creation_rules:
     key_groups:
     - age:
       - *jade_root
-      - *ruby_root
 
