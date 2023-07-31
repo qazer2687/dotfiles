@@ -1,7 +1,7 @@
 {
   pkgs,
-  inpugs,
   lib,
+  inputs,
   config,
   ...
 }: {
@@ -9,10 +9,10 @@
 
   config = lib.mkIf config.homeModules.programs.spicetify.enable {
     # Installation
-    home.packages = with pkgs; [ spotify ];
+    home.packages = with pkgs; [spotify];
 
     # Configuration
-    imports = [ inputs.spicetify-nix.homeManagerModule ];
+    imports = [inputs.spicetify-nix.homeManagerModule];
 
     # configure spicetify :)
     programs.spicetify = {
