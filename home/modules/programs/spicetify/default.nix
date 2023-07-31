@@ -3,7 +3,6 @@
   lib,
   inputs,
   config,
-  spicetify-nix,
   ...
 }: {
   options.homeModules.programs.spicetify.enable = lib.mkEnableOption "";
@@ -13,9 +12,9 @@
     home.packages = with pkgs; [spotify];
 
     # Configuration
-    imports = [spicetify-nix.homeManagerModule];
+    imports = [inputs.spicetify-nix.homeManagerModule];
 
-    programs.spicetify = let spicePkgs = spicetify-nix.packages.${pkgs.system}.default; in {
+    programs.spicetify = let spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default; in {
       enable = true;
       theme = spicePkgs.themes.catppuccin-mocha;
       colorScheme = "flamingo";
