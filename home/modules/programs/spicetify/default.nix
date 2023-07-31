@@ -18,7 +18,7 @@
     # Configuration
     programs.spicetify = let spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default; in {
       enable = true;
-      theme = spicePkgs.themes.dribbblish;
+      theme = spicePkgs.themes.Dribbblish;
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
         shuffle
