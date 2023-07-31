@@ -13,23 +13,6 @@
         global = {
           username = "3fl3wvehzpuudbzovifsyndbp";
           password_cmd = "/home/alex/.config/spotifyd/read_password.sh";
-          use_keyring = false;
-          use_mpris = true;
-          dbus_type = "session";
-          backend = "pipewire";
-          device = "default";
-          audio_format = "S16";
-          mixer = "PCM";
-          volume_controller = "alsa";
-          device_name = "SpotifyD";
-          bitrate = "320";
-          cache_path = "/home/alex/.cache/spotifyd";
-          max_cache_size = "5000000000";
-          no_audio_cache = false;
-          initial_volume = "60";
-          volume_normalisation = false;
-          autoplay = true;
-          device_type = "speaker";
         };
       };
     };
