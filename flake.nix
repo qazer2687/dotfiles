@@ -12,6 +12,9 @@
     # Sops-Nix
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Spicetify-Nix
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
   };
 
   outputs = {
