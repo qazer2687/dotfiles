@@ -5,6 +5,9 @@
   config,
   ...
 }: {
+
+  imports = [inputs.spicetify-nix.homeManagerModule];
+  
   options.homeModules.programs.spicetify.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.homeModules.programs.spicetify.enable {
@@ -12,7 +15,7 @@
     home.packages = with pkgs; [spotify];
 
     # Configuration
-    imports = [inputs.spicetify-nix.homeManagerModule];
+
 
     programs.spicetify = let spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default; in {
       enable = true;
