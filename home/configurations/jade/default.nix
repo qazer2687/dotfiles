@@ -9,6 +9,7 @@
       direnv.enable = true;
       git.enable = true;
       neovim.enable = true;
+      spicetify.enable = true;
       alacritty.desktopConfig.enable = true;
       polybar.desktopConfig.enable = true;
       dunst.desktopConfig.enable = true;

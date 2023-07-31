@@ -9,6 +9,7 @@
     ./programs/dunst
     ./programs/i3
     ./programs/polybar
+    ./programs/spicetify
 
     # Services
     ./services/mpd
