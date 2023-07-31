@@ -53,7 +53,7 @@
 
   home.stateVersion = "23.05";
   home.homeDirectory = "/home/alex";
-  sops.secrets.spotify_password.path = "/home/alex/.config/spotifyd/password";
+  sops.secrets.spotify_password.path = "/home/alex/.config/spotifyd";
   sops.defaultSopsFile = ../../../secrets/default.yaml;
   sops.age.sshKeyPaths = [ "/home/alex/.ssh/id_ed25519" ];
 }
