@@ -12,7 +12,7 @@
     home.packages = with pkgs; [spotify];
 
     # Configuration
-    imports = [inputs.spicetify-nix.homeManagerModule];
+    imports = [spicetify-nix.homeManagerModule];
 
     programs.spicetify = let spicePkgs = spicetify-nix.packages.${pkgs.system}.default; in {
       enable = true;
