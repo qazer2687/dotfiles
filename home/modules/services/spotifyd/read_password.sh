@@ -1,1 +1,1 @@
-cat /home/alex/.config/spotifyd/password
+/run/current-system/sw/bin/cat /home/alex/.config/spotifyd/password
