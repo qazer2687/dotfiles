@@ -7,6 +7,7 @@
 
     # Custom NUR
     nur.url = "https://github.com/***REMOVED***/nur-combined";
+    nur.flake = false;
 
     # Home-Manager
     home-manager.url = "github:nix-community/home-manager";
