@@ -9,8 +9,8 @@
     programs.firefox = {
       enable = true;
       profiles.custom = {
-        isDefault = true;
         name = "custom";
+        isDefault = true;
         userChrome = builtins.readFile ./userChrome.css;
         settings = {
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
