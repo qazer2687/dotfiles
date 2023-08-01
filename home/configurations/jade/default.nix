@@ -10,6 +10,7 @@
       git.enable = true;
       neovim.enable = true;
       spicetify.enable = true;
+      firefox.enable = true;
       alacritty.desktopConfig.enable = true;
       polybar.desktopConfig.enable = true;
       dunst.desktopConfig.enable = true;
@@ -22,7 +23,6 @@
 
   home.packages = with pkgs; [
     # General
-    firefox
     obs-studio
     vlc
     webcord-vencord

@@ -10,6 +10,7 @@
     ./programs/i3
     ./programs/polybar
     ./programs/spicetify
+    ./programs/firefox
 
     # Services
     ./services/mpd

@@ -12,6 +12,7 @@
       direnv.enable = true;
       git.enable = true;
       neovim.enable = true;
+      firefox.enable = true;
       alacritty.laptopConfig.enable = true;
       polybar.laptopConfig.enable = true;
       dunst.laptopConfig.enable = true;
@@ -21,7 +22,6 @@
 
   home.packages = with pkgs; [
     # General
-    firefox
     webcord-vencord
 
     # Programming
