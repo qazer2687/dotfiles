@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  inputs,
+  pkgs,
   ...
 }: {
   options.homeModules.programs.firefox.enable = lib.mkEnableOption "";
