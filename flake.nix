@@ -5,10 +5,6 @@
     # Unstable Packages
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Custom NUR
-    nur.url = "https://github.com/alexvasilkovski/nur-combined";
-    nur.flake = false;
-
     # Home-Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
