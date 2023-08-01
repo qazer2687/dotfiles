@@ -5,6 +5,9 @@
     # Unstable Packages
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # NUR
+    nur.url = "github:nix-community/NUR";
+
     # Home-Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +24,7 @@
     nixpkgs,
     home-manager,
     sops-nix,
+    nur,
     ...
   } @ inputs: {
     # Hosts

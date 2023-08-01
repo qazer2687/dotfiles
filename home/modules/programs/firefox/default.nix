@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs,
+  inputs,
   ...
 }: {
   options.homeModules.programs.firefox.enable = lib.mkEnableOption "";
@@ -16,7 +16,7 @@
         settings = {
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions = with inputs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           decentraleyes
           dark-reader
