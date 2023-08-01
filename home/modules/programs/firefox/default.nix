@@ -11,10 +11,15 @@
       profiles.custom = {
         name = "custom";
         isDefault = true;
-        userChrome = builtins.readFile ./userChrome.css;
+        #userChrome = builtins.readFile ./userChrome.css;
         settings = {
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
+        extensions = [
+          catppuccin-mocha-rosewater-git
+          ublock-origin
+          decentraleyes
+        ];
       };
     };
   };
