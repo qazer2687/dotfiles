@@ -11,6 +11,7 @@
     ./programs/polybar
     ./programs/spicetify
     ./programs/firefox
+    ./programs/discord
 
     # Services
     ./services/mpd
