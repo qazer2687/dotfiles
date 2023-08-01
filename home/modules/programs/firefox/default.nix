@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  inputs,
   ...
 }: {
   options.homeModules.programs.firefox.enable = lib.mkEnableOption "";
@@ -15,10 +16,10 @@
         settings = {
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
-        extensions = [
-          catppuccin-mocha-rosewater-git
+        extensions = with inputs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           decentraleyes
+          catpuccin-mocha-rosewater
         ];
       };
     };
