@@ -87,15 +87,17 @@
       }
     },
     "nur": {
-      "flake": false,
       "locked": {
-        "narHash": "sha256-jjDaHGhEd5Eczz7FeGklbVh46qfmidfwdtRNZdYFo1g=",
-        "type": "file",
-        "url": "https://github.com/alexvasilkovski/nur-combined"
+        "lastModified": 1690894712,
+        "narHash": "sha256-THgErV4TIWDtvgaMgkx3B2yAaqegokCwxuZ3Qq3hKjA=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "0982ef7216827190b6b9455925d5e347093af5ab",
+        "type": "github"
       },
       "original": {
-        "type": "file",
-        "url": "https://github.com/alexvasilkovski/nur-combined"
+        "id": "nur",
+        "type": "indirect"
       }
     },
     "root": {

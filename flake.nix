@@ -21,7 +21,6 @@
     nixpkgs,
     home-manager,
     sops-nix,
-    nur,
     ...
   } @ inputs: {
     # Hosts
