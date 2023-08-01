@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.homeModules.programs.discord.enable = lib.mkEnableOption "";
