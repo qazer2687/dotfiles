@@ -1,0 +1,87 @@
+:root[uidensity="compact"]{
+  --tab-block-margin: 2px !important;
+}
+
+/* Modify these to change relative widths or default height */
+#nav-bar:not(:-moz-lwtheme) {height: 33px !important; margin-top: -37px !important;}
+#navigator-toolbox{
+  --uc-navigationbar-width: 40vw;
+  --uc-toolbar-height: 40px;
+  --uc-urlbar-min-width: 50vw; /* minimum width for opened urlbar */
+}
+#scrollbutton-up,
+#scrollbutton-down{ border-block-width: 2px !important; }
+
+
+
+/* prevent urlbar overflow on narrow windows */
+/* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
+@media screen and (max-width: 1500px){
+  #urlbar-container{ min-width:unset !important }
+}
+
+#TabsToolbar{
+  margin-left: var(--uc-navigationbar-width);
+  --tabs-navbar-shadow-size: 0px;
+}
+#tabbrowser-tabs{
+  --tab-min-height: calc(var(--uc-toolbar-height) - 2 * var(--tab-block-margin,0px)) !important;
+}
+
+/* This isn't useful when tabs start in the middle of the window */
+
+.titlebar-spacer[type="pre-tabs"]{ display: none }
+
+#navigator-toolbox > #nav-bar{
+  margin-right:calc(100vw - var(--uc-navigationbar-width));
+  margin-top: calc(0px - var(--uc-toolbar-height));
+}
+
+/* Window drag space  */
+:root[tabsintitlebar="true"] #nav-bar{ padding-left: 0px !important }
+
+/* Rules specific to window controls on right layout */
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+  .titlebar-buttonbox-container{ display:none }
+  :root[tabsintitlebar="true"] #nav-bar{ display:none }
+}
+
+/* 1px margin on touch density causes tabs to be too high */
+.tab-close-button{ display:none!important }
+
+/* Make opened urlbar overlay the toolbar */
+#urlbar[open]:focus-within{ min-width: var(--uc-urlbar-min-width,none) !important; }
+
+/* Hide dropdown placeholder */
+#urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: 0px; }
+
+
+
+
+
+#tabbrowser-arrowscrollbox:not([overflowing]) .tab-content[pinned] {
+  padding: 0px !important;
+  -moz-box-pack: center;
+}
+
+.tab-label-container[pinned] {
+  display: none;
+}
+
+.scrollbutton-up[orient="horizontal"]~spacer{ display: none }
+
+.scrollbutton-up[orient="horizontal"]~scrollbox{
+  -moz-box-direction: inherit;
+  -moz-box-pack: end;
+}
+
+.scrollbutton-up[orient="horizontal"]~scrollbox::after{
+  display: -moz-box;
+  content: "";
+  -moz-box-flex: 1;
+  -moz-box-ordinal-group: 2;
+}
+
+
+#back-button, #forward-button, #reload-button, #titlebar-close { display:none!important; }
+
