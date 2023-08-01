@@ -86,10 +86,23 @@
         "type": "github"
       }
     },
+    "nur": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-jjDaHGhEd5Eczz7FeGklbVh46qfmidfwdtRNZdYFo1g=",
+        "type": "file",
+        "url": "https://github.com/***REMOVED***/nur-combined"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/***REMOVED***/nur-combined"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nur": "nur",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix"
       }

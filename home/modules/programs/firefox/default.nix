@@ -12,14 +12,14 @@
       profiles.custom = {
         name = "custom";
         isDefault = true;
-        #userChrome = builtins.readFile ./userChrome.css;
+        userChrome = builtins.readFile ./userChrome.css;
         settings = {
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
-        extensions = with inputs.nur.repos.rycee.firefox-addons; [
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           decentraleyes
-          catpuccin-mocha-rosewater
+          dark-reader
         ];
       };
     };

@@ -1,175 +1,107 @@
-/*=============================================================================*
- *                               ONELINE PROTON                                *
- *                                                                             *
- * description    : An oneline userChrome.css theme for Firefox, which aims to *
- *                  keep the Proton experience.                                *
- * compatibility  : Firefox 89+                                                *
- * repository     : https://github.com/lr-tech/OnelineProton/                  *
- *                                                                             *
- * THANKS FOR USING MY USERCHROME! <3                                          *
- *============================================================================*/
+/*---+---+---+---+---+---+---+
+ | C | O | L | O | U | R | S |
+ +---+---+---+---+---+---+---*/
 
 
-/* S E T T I N G S */
+ @media (prefers-color-scheme: dark) { :root {
+
+  /* These colours are (mainly) used by the
+     Container Tabs Plugin */
+  --uc-identity-colour-blue:      #89B4FA;
+  --uc-identity-colour-turquoise: #94E2D5;
+  --uc-identity-colour-green:     #A6E3A1;
+  --uc-identity-colour-yellow:    #F9E2AF;
+  --uc-identity-colour-orange:    #FAB387;
+  --uc-identity-colour-red:       #F38BA8;
+  --uc-identity-colour-pink:      #F5C2E7;
+  --uc-identity-colour-purple:    #CBA6F7;
+
+  /*  Cascades main Colour Scheme */
+  --uc-base-colour:               #1E1E2E;
+  --uc-highlight-colour:          #181825;
+  --uc-inverted-colour:           #CDD6F4;
+  --uc-muted-colour:              #6C7086;
+  --uc-accent-colour:             var(--uc-identity-colour-purple);
+
+}}
+
+
+@media (prefers-color-scheme: light) { :root {
+
+  /* These colours are (mainly) used by the
+     Container Tabs Plugin */
+  --uc-identity-colour-blue:      #1E66F5;
+  --uc-identity-colour-turquoise: #179299;
+  --uc-identity-colour-green:     #40A02B;
+  --uc-identity-colour-yellow:    #DF8E1D;
+  --uc-identity-colour-orange:    #FE640B;
+  --uc-identity-colour-red:       #D20F39;
+  --uc-identity-colour-pink:      #D20F39;
+  --uc-identity-colour-purple:    #8839EF;
+
+  /*  Cascades main Colour Scheme */
+  --uc-base-colour:               #EFF1F5;
+  --uc-highlight-colour:          #DCE0E8;
+  --uc-inverted-colour:           #4C4F69;
+  --uc-muted-colour:              #9CA0B0;
+  --uc-accent-colour:             var(--uc-identity-colour-purple);
+
+}}
+
+
+
+
+
+
+/* Down here I'm just reassigning variables based on the colours set above.
+   Feel free to play around with these but there is no editing necessary below this line. c:
+   */
 
 :root {
-  --navbarWidth     : 360px; /* Set width of navbar. Use px for a fixed width 
-                                or vw for a percentage of your window. */
-  --animationSpeed  : 0.15s;
+
+  --lwt-frame: var(--uc-base-colour) !important;
+  --lwt-accent-color: var(--lwt-frame) !important;
+  --lwt-text-color: var(--uc-inverted-colour) !important;
+
+  --toolbar-field-color: var(--uc-inverted-colour) !important;
+
+  --toolbar-field-focus-color: var(--uc-inverted-colour) !important;
+  --toolbar-field-focus-background-color: var(--uc-highlight-colour) !important;
+  --toolbar-field-focus-border-color: transparent !important;
+
+  --toolbar-field-background-color: var(--lwt-frame) !important;
+  --lwt-toolbar-field-highlight: var(--uc-inverted-colour) !important;
+  --lwt-toolbar-field-highlight-text: var(--uc-highlight-colour) !important;
+  --urlbar-popup-url-color: var(--uc-accent-colour) !important;
+
+  --lwt-tab-text: var(--lwt-text-colour) !important;
+
+  --lwt-selected-tab-background-color: var(--uc-highlight-colour) !important;
+
+  --toolbar-bgcolor: var(--lwt-frame) !important;
+  --toolbar-color: var(--lwt-text-color) !important;
+  --toolbarseparator-color: var(--uc-accent-colour) !important;
+  --toolbarbutton-hover-background: var(--uc-highlight-colour) !important;
+  --toolbarbutton-active-background: var(--toolbarbutton-hover-background) !important;
+
+  --lwt-sidebar-background-color: var(--lwt-frame) !important;
+  --sidebar-background-color: var(--lwt-sidebar-background-color) !important;
+
+  --urlbar-box-bgcolor: var(--uc-highlight-colour) !important;
+  --urlbar-box-text-color: var(--uc-muted-colour) !important;
+  --urlbar-box-hover-bgcolor: var(--uc-highlight-colour) !important;
+  --urlbar-box-hover-text-color: var(--uc-inverted-colour) !important;
+  --urlbar-box-focus-bgcolor: var(--uc-highlight-colour) !important;
+
 }
 
 
-/* H I D I N G   E L E M E N T S */
-/* Comment or uncomment depending of what elements you want to hide */
 
-/* Back button */
-/* #back-button { display: none !important } */
-
-/* Hide back button only when disabled */
-#back-button[disabled="true"] { display: none !important }
-
-/* Forward button */
-/* #forward-button { display: none !important } */
-
-/* Hide forward button only when disabled */
-#forward-button[disabled="true"] { display: none !important }
-
-/* "Shield" icon */
-#tracking-protection-icon-container { display: none !important }
-
-/* Site information button */
-#identity-box { display: none !important }
-
-/* This is the "Search with" indicator on the urlbar */
-/* #urlbar-search-mode-indicator { display: none !important } */
-
-/* Zoom button */
-/* #urlbar-zoom-button { display: none !important } */
-
-/* Page action (right three dash button) */
-/* #pageActionButton { display: none !important } */
-
-/* These are the buttons on the right of the urlbar */
-/* #page-action-buttons { display: none !important } */
-
-/* #urlbar-label-box { display: none !important } */
-
-/* This one is the hamburger menu! */
-/* CAUTION: if you hide this some popups may be bugged */
-/* #PanelUI-button { display: none !important } */
-
-/* Tab close button */
-/* .tab-close-button { display: none !important } */
-
-/* Enable this to show the tab close button when hovering the tab */
-/* .tabbrowser-tab:hover .tab-close-button { display: -moz-inline-box !important } */
-
-/*============================================================================*/
-
-
-/* Oneline tweak */
-
-#TabsToolbar {
-  margin-left : var(--navbarWidth) !important;
-}
-
-#unified-extensions-button, #unified-extensions-button > .toolbarbutton-icon{
-  width: 0px !important;
-  padding: 0px !important;
-  }
-
-#nav-bar {
-  margin-right: calc(100vw - var(--navbarWidth)) !important;
-}
-
-#urlbar-container {
-  min-width   : 0px !important;
-}
-
-:root[uidensity="compact"] #nav-bar {
-  margin-top  : -37px !important;
-  height      : 37px !important;
-}
-
-:root:not([uidensity="compact"]):not([uidensity="touch"]) #nav-bar {
-  margin-top  : -44px !important;
-  height      : 44px !important;
-}
-
-:root[uidensity="touch"] #nav-bar {
-  margin-top  : -49px !important;
-  height      : 49px !important;
-}
-
-
-/* Dragging space */
-:root[sizemode="maximized"] #TabsToolbar {
-  margin-top: 1px;
-}
-
-#TabsToolbar {
-  margin-top: 5px;
-}
-
-
-/* Simplifying interface */
-
-#nav-bar {
-  background  : none !important;
-  box-shadow  : none !important;
-}
-
-#navigator-toolbox {
-  border      : none !important;
-}
-
-.titlebar-spacer {
-  display     : none !important;
-}
-
-#urlbar-background {
-  border      : none !important;
-}
-
-#urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
-  box-shadow  : none !important;
-  background  : none !important;
-}
-
-
-/* Hide urlbar elements when not active */
-
-.urlbar-icon, #userContext-indicator, #userContext-label {
-  fill        : transparent !important;
-  background  : transparent !important;
-  color       : transparent !important;
-}
-
-#urlbar:hover .urlbar-icon,
-#urlbar:active .urlbar-icon, 
-#urlbar[focused] .urlbar-icon {
-  fill        : var(--toolbar-color) !important;
-}
-
-
-/* animations */
-.subviewbutton,
-#urlbar-background,
-.urlbar-icon,
-#userContext-indicator,
-#userContext-label,
-.urlbar-input-box, 
-#identity-box,
-#tracking-protection-icon-container,
-[anonid=urlbar-go-button],
-.urlbar-icon-wrapper,
-#tracking-protection-icon,
-#identity-box image,
-stack,
-tab:not(:active) .tab-background,
-tab:not([beforeselected-visible])::after,
-tab[visuallyselected] .tab-background::before,
-tab[visuallyselected] .tab-background::before,
-.tab-close-button {
-  transition  : var(--animationSpeed) !important;
-}
+.identity-color-blue      { --identity-tab-color: var(--uc-identity-colour-blue)      !important; --identity-icon-color: var(--uc-identity-colour-blue)      !important;  }
+.identity-color-turquoise { --identity-tab-color: var(--uc-identity-colour-turquoise) !important; --identity-icon-color: var(--uc-identity-colour-turquoise) !important; }
+.identity-color-green     { --identity-tab-color: var(--uc-identity-colour-green)     !important; --identity-icon-color: var(--uc-identity-colour-green)     !important; }
+.identity-color-yellow    { --identity-tab-color: var(--uc-identity-colour-yellow)    !important; --identity-icon-color: var(--uc-identity-colour-yellow)    !important; }
+.identity-color-orange    { --identity-tab-color: var(--uc-identity-colour-orange)    !important; --identity-icon-color: var(--uc-identity-colour-orange)    !important; }
+.identity-color-red       { --identity-tab-color: var(--uc-identity-colour-red)       !important; --identity-icon-color: var(--uc-identity-colour-red)       !important; }
+.identity-color-pink      { --identity-tab-color: var(--uc-identity-colour-pink)      !important; --identity-icon-color: var(--uc-identity-colour-pink)      !important; }
+.identity-color-purple    { --identity-tab-color: var(--uc-identity-colour-purple)    !important; --identity-icon-color: var(--uc-identity-colour-purple)    !important; }
