@@ -15,7 +15,7 @@
         lualine-nvim
         nvim-cmp
         nvim-tree-lua
-        vimPlugins.vim-colemak
+        vim-colemak
       ];
     };
   };
