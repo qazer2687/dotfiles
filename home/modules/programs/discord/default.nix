@@ -11,6 +11,6 @@
     home.packages = with pkgs; [webcord-vencord];
 
     # Configuration
-    xdg.configFile."WebCord/Themes/catpuccin-mocha-rosewater.theme.css".text = builtins.readFile ./catpuccin-mocha-rosewater.theme.css;
+    xdg.configFile."WebCord/Themes/catpuccin-mocha-rosewater.theme.css".text = builtins.readFile ./config/desktop;
   };
 }

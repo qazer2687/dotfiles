@@ -13,9 +13,9 @@
       home.packages = with pkgs; [polybarFull];
 
       # Configuration
-      xdg.configFile."polybar/launch.sh".text = builtins.readFile ./launch.sh;
+      xdg.configFile."polybar/launch.sh".text = builtins.readFile ./scripts/launch.sh;
       xdg.configFile."polybar/launch.sh".executable = true;
-      xdg.configFile."polybar/config.ini".text = builtins.readFile ./config_desktop.ini;
+      xdg.configFile."polybar/config.ini".text = builtins.readFile ./config/desktop;
     })
 
     (lib.mkIf config.homeModules.programs.polybar.laptopConfig.enable {
@@ -23,9 +23,9 @@
       home.packages = with pkgs; [polybarFull];
 
       # Configuration
-      xdg.configFile."polybar/launch.sh".text = builtins.readFile ./launch.sh;
+      xdg.configFile."polybar/launch.sh".text = builtins.readFile ./scripts/launch.sh;
       xdg.configFile."polybar/launch.sh".executable = true;
-      xdg.configFile."polybar/config.ini".text = builtins.readFile ./config_laptop.ini;
+      xdg.configFile."polybar/config.ini".text = builtins.readFile ./config/laptop;
 
       # Scripts
       xdg.configFile."polybar/scripts/battery-notification.sh".executable = true;

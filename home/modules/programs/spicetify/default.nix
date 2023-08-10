@@ -15,13 +15,12 @@
     # Configuration
     programs.spicetify = let spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default; in {
       enable = true;
-      theme = spicePkgs.themes.catppuccin-mocha;
-      colorScheme = "rosewater";
+      theme = spicePkgs.themes.catppuccin-macchiato;
       enabledExtensions = with spicePkgs.extensions; [
-        fullAppDisplay
-        shuffle
         hidePodcasts
+        genre
         songStats
+        volumePercentage
       ];
     };
   };

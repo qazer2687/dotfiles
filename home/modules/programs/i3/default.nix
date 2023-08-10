@@ -9,18 +9,24 @@
   config = lib.mkMerge [
     (lib.mkIf config.homeModules.programs.i3.desktopConfig.enable {
       # Installation
-      ## DONE VIA SYSTEM MODULE
+      xsession.windowManager.i3 = {
+        enable = true;
+        package = pkgs.i3-rounded;
+      };
 
       # Configuration
-      xdg.configFile."i3/config".text = builtins.readFile ./config_desktop;
+      xdg.configFile."i3/config".text = builtins.readFile ./config/desktop;
     })
 
     (lib.mkIf config.homeModules.programs.i3.laptopConfig.enable {
       # Installation
-      ## DONE VIA SYSTEM MODULE
+      xsession.windowManager.i3 = {
+        enable = true;
+        package = pkgs.i3-rounded;
+      };
 
       # Configuration
-      xdg.configFile."i3/config".text = builtins.readFile ./config_laptop;
+      xdg.configFile."i3/config".text = builtins.readFile ./config/laptop;
     })
   ];
 }
