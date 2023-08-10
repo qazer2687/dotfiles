@@ -12,6 +12,7 @@
     ./programs/spicetify
     ./programs/firefox
     ./programs/discord
+    ./programs/vscode
 
     # Services
     ./services/mpd

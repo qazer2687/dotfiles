@@ -13,7 +13,7 @@
       home.packages = with pkgs; [alacritty];
 
       # Configuration
-      xdg.configFile."alacritty/alacritty.yml".text = builtins.readFile ./alacritty_desktop.yml;
+      xdg.configFile."alacritty/alacritty.yml".text = builtins.readFile ./config/desktop;
     })
 
     (lib.mkIf config.homeModules.programs.alacritty.laptopConfig.enable {
@@ -21,7 +21,7 @@
       home.packages = with pkgs; [alacritty];
 
       # Configuration
-      xdg.configFile."alacritty/alacritty.yml".text = builtins.readFile ./alacritty_laptop.yml;
+      xdg.configFile."alacritty/alacritty.yml".text = builtins.readFile ./config/laptop;
     })
   ];
 }

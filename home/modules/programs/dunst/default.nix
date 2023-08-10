@@ -13,7 +13,7 @@
       home.packages = with pkgs; [dunst];
 
       # Configuration
-      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./dunstrc_desktop;
+      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/desktop;
     })
 
     (lib.mkIf config.homeModules.programs.dunst.laptopConfig.enable {
@@ -21,7 +21,7 @@
       home.packages = with pkgs; [dunst];
 
       # Configuration
-      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./dunstrc_laptop;
+      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/laptop;
     })
   ];
 }

@@ -19,7 +19,7 @@
 
     # Configuration
     #xdg.configFile."spotifyd/spotifyd.conf".text = builtins.readFile ./spotifyd.conf;
-    xdg.configFile."spotifyd/read_password.sh".text = builtins.readFile ./read_password.sh;
+    xdg.configFile."spotifyd/read_password.sh".text = builtins.readFile ./scripts/read_password.sh;
     xdg.configFile."spotifyd/read_password.sh".executable = true;
   };
 }
