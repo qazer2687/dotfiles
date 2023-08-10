@@ -17,7 +17,7 @@
     desktop = {
       gdm.enable = true;
       gdm.autologin.enable = false;
-      i3.enable = true;
+      i3.enable = false;
     };
     system = {
       udev.via.enable = true;

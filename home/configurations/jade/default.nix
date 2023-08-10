@@ -12,6 +12,7 @@
       neovim.enable = true;
       spicetify.enable = true;
       firefox.enable = true;
+      vscode.desktopConfig.enable = true;
       alacritty.desktopConfig.enable = true;
       polybar.desktopConfig.enable = true;
       dunst.desktopConfig.enable = true;
