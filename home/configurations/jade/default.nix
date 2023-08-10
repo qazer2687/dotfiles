@@ -12,7 +12,7 @@
       neovim.enable = true;
       spicetify.enable = true;
       firefox.enable = true;
-      vscode.desktopConfig.enable = true;
+      vscode.desktopConfig.enable =
       alacritty.desktopConfig.enable = true;
       polybar.desktopConfig.enable = true;
       dunst.desktopConfig.enable = true;
@@ -30,7 +30,6 @@
     webcord-vencord
 
     # Programming
-    vscodium
     alejandra
     deadnix
     statix

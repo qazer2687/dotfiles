@@ -25,9 +25,6 @@
     # General
     webcord-vencord
 
-    # Programming
-    vscodium
-
     # Productivity
     obsidian
 
