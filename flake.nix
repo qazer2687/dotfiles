@@ -43,7 +43,10 @@
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
-              sharedModules = [inputs.sops-nix.homeManagerModules.sops];
+              sharedModules = [
+                inputs.sops-nix.homeManagerModules.sops
+                inputs.spicetify-nix.homeManagerModule
+              ];
             };
           }
         ];
@@ -66,7 +69,10 @@
               users.alex = ./home/configurations/ruby;
               useGlobalPkgs = true;
               useUserPackages = true;
-              sharedModules = [inputs.sops-nix.homeManagerModules.sops];
+              sharedModules = [
+                inputs.sops-nix.homeManagerModules.sops
+                inputs.spicetify-nix.homeManagerModule
+              ];
             };
           }
         ];
