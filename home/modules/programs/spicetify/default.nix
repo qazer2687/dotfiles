@@ -13,10 +13,11 @@
 
   config = lib.mkIf config.homeModules.programs.spicetify.enable {
     # Configuration
-    programs.spicetify = let spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default; in {
+    programs.spicetify = {
       enable = true;
-      theme = spicePkgs.themes.catppuccin-macchiato;
-      enabledExtensions = with spicePkgs.extensions; [
+      theme = inputs.spicetify-nix.packages.${pkgs.system}.default.themes.catppuccin-macchiato;
+      colorScheme = "flamingo";
+      enabledExtensions = with inputs.spicetify-nix.packages.${pkgs.system}.default.extensions; [
         hidePodcasts
         genre
         songStats
