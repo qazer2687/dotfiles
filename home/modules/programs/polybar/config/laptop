@@ -94,15 +94,15 @@
   format = <label-state>
 
   label-focused = %icon%
-  label-focused-foreground = ${colors.text}
+  label-focused-foreground = ${colors.lavender}
   label-focused-padding = 6px
 
   label-unfocused = %icon%
-  label-unfocused-foreground = ${colors.mauve}
+  label-unfocused-foreground = ${colors.surface0}
   label-unfocused-padding = ${self.label-focused-padding}
 
   label-visible = ${self.label-focused}
-  label-visible-foreground = ${colors.text}
+  label-visible-foreground = ${colors.lavender}
   label-visible-padding = ${self.label-focused-padding}
 
   label-urgent = ${self.label-focused}
@@ -126,7 +126,7 @@
   ramp-signal-2 = 󰤢
   ramp-signal-3 = 󰤥
   ramp-signal-4 = 󰤨
-  ramp-foreground = ${colors.text}
+  ramp-foreground = ${colors.lavender}
 
 
   [module/temperature]
@@ -141,7 +141,7 @@
   ramp-2 = 
   ramp-3 = 
   ramp-4 = 
-  ramp-foreground = ${colors.text}
+  ramp-foreground = ${colors.lavender}
  
   [module/date]
   type = internal/date
@@ -152,15 +152,15 @@
   time = "%I:%M"
   time-alt = "%H:%M:%S"
 
-  format-prefix-foreground = ${colors.text}
+  format-prefix-foreground = ${colors.lavender}
   label = %date%%time%
 
   [module/audio]
   type = internal/pulseaudio
 
   format-volume = <ramp-volume>
-  label-volume-foreground = ${colors.text}
-  ramp-volume-foreground = ${colors.text}
+  label-volume-foreground = ${colors.lavender}
+  ramp-volume-foreground = ${colors.lavender}
   label-volume =
 
   ramp-volume-0 = 
@@ -193,10 +193,10 @@
   ramp-capacity-7 = 󰂀
   ramp-capacity-8 = 󰂁
   ramp-capacity-9 = 󰂂
-  ramp-capacity-foreground = ${colors.text}
+  ramp-capacity-foreground = ${colors.lavender}
 
   label-discharging =
-  label-discharging-foreground = ${colors.text}
+  label-discharging-foreground = ${colors.lavender}
   label-charging-foreground = ${colors.green}
 
   [settings]
