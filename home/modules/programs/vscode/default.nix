@@ -13,7 +13,7 @@
       # Installation & Configuration
       programs.vscode = {
         enable = true;
-        package = pkgs.vscode-fhs;
+#        package = pkgs.vscode-fhs;
         extensions = with pkgs.vscode-extensions; [
           ms-dotnettools.csharp
           catppuccin.catppuccin-vsc
