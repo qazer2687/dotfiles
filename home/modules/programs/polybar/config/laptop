@@ -47,7 +47,7 @@
   wm-restack = i3
 
   background = ${colors.base}
-  foreground = ${colors.flamingo}
+  foreground = ${colors.text}
 
   padding-left = 2
   padding-right = 3
@@ -94,7 +94,7 @@
   format = <label-state>
 
   label-focused = %icon%
-  label-focused-foreground = ${colors.flamingo}
+  label-focused-foreground = ${colors.text}
   label-focused-padding = 6px
 
   label-unfocused = %icon%
@@ -102,7 +102,7 @@
   label-unfocused-padding = ${self.label-focused-padding}
 
   label-visible = ${self.label-focused}
-  label-visible-foreground = ${colors.flamingo}
+  label-visible-foreground = ${colors.text}
   label-visible-padding = ${self.label-focused-padding}
 
   label-urgent = ${self.label-focused}
@@ -115,7 +115,7 @@
   interval = 1
 
   format-connected = "%{A1:exec ~/.config/polybar/scripts/signal-notification.sh:}<ramp-signal>%{A}"
-  label-connected-foreground = ${colors.mauve}
+  label-connected-foreground = ${colors.text}
 
   format-disconnected = <label-disconnected>
   label-disconnected = 󰤭
@@ -126,6 +126,7 @@
   ramp-signal-2 = 󰤢
   ramp-signal-3 = 󰤥
   ramp-signal-4 = 󰤨
+  ramp-foreground = ${colors.text}
 
 
   [module/temperature]
@@ -140,7 +141,7 @@
   ramp-2 = 
   ramp-3 = 
   ramp-4 = 
-  ramp-foreground = ${colors.mauve}
+  ramp-foreground = ${colors.text}
  
   [module/date]
   type = internal/date
@@ -151,15 +152,15 @@
   time = "%I:%M"
   time-alt = "%H:%M:%S"
 
-  format-prefix-foreground = ${colors.foreground}
+  format-prefix-foreground = ${colors.text}
   label = %date%%time%
 
   [module/audio]
   type = internal/pulseaudio
 
   format-volume = <ramp-volume>
-  label-volume-foreground = ${colors.mauve}
-  ramp-volume-foreground = ${colors.mauve}
+  label-volume-foreground = ${colors.text}
+  ramp-volume-foreground = ${colors.text}
   label-volume =
 
   ramp-volume-0 = 
@@ -192,10 +193,10 @@
   ramp-capacity-7 = 󰂀
   ramp-capacity-8 = 󰂁
   ramp-capacity-9 = 󰂂
-  ramp-capacity-foreground = ${colors.mauve}
+  ramp-capacity-foreground = ${colors.text}
 
   label-discharging =
-  label-discharging-foreground = ${colors.flamingo}
+  label-discharging-foreground = ${colors.text}
   label-charging-foreground = ${colors.green}
 
   [settings]
