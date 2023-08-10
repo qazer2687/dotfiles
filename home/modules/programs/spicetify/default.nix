@@ -6,9 +6,6 @@
   ...
 }: {
 
-  # Imports
-  imports = [inputs.spicetify-nix.homeManagerModule];
-
   options.homeModules.programs.spicetify.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.homeModules.programs.spicetify.enable {
