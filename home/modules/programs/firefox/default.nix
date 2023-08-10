@@ -11,7 +11,7 @@
       profiles.custom = {
         name = "custom";
         isDefault = true;
-        userChrome = builtins.readFile ./config/desktop;
+#        userChrome = builtins.readFile ./config/desktop;
         settings = {
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
