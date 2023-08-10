@@ -71,7 +71,7 @@
 
   [module/i3]
   type = internal/i3
-  pin-workspaces = false
+  pin-workspaces = true
   strip-wsnumbers = true
   index-sort = true
   enable-click = true
@@ -79,7 +79,7 @@
   wrapping-scroll = false
   reverse-scroll = false
   fuzzy-match = true
-
+  
   ws-icon-0 = 0;󰈹
   ws-icon-1 = 1;󰨞
   ws-icon-2 = 2;󰙯
@@ -93,11 +93,11 @@
 
   format = <label-state>
 
-  label-focused = 
+  label-focused = %icon%
   label-focused-foreground = ${colors.flamingo}
   label-focused-padding = 6px
 
-  label-unfocused = 
+  label-unfocused = %icon%
   label-unfocused-foreground = ${colors.mauve}
   label-unfocused-padding = ${self.label-focused-padding}
 
@@ -115,7 +115,7 @@
   interval = 1
 
   format-connected = "%{A1:exec ~/.config/polybar/scripts/signal-notification.sh:}<ramp-signal>%{A}"
-  label-connected-foreground = ${colors.yellow}
+  label-connected-foreground = ${colors.mauve}
 
   format-disconnected = <label-disconnected>
   label-disconnected = 󰤭
@@ -140,7 +140,7 @@
   ramp-2 = 
   ramp-3 = 
   ramp-4 = 
-  ramp-foreground = ${colors.peach}
+  ramp-foreground = ${colors.mauve}
  
   [module/date]
   type = internal/date
@@ -158,8 +158,8 @@
   type = internal/pulseaudio
 
   format-volume = <ramp-volume>
-  label-volume-foreground = ${colors.green}
-  ramp-volume-foreground = ${colors.green}
+  label-volume-foreground = ${colors.mauve}
+  ramp-volume-foreground = ${colors.mauve}
   label-volume =
 
   ramp-volume-0 = 
@@ -192,7 +192,7 @@
   ramp-capacity-7 = 󰂀
   ramp-capacity-8 = 󰂁
   ramp-capacity-9 = 󰂂
-  ramp-capacity-foreground = ${colors.maroon}
+  ramp-capacity-foreground = ${colors.mauve}
 
   label-discharging =
   label-discharging-foreground = ${colors.flamingo}
