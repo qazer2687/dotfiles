@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.homeModules.programs.i3.desktopConfig.enable = lib.mkEnableOption "";
