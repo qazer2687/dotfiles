@@ -13,7 +13,7 @@
     # Configuration
     programs.spicetify = let spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default; in {
       enable = true;
-      theme = spicePkgs.themes.catppuccin-mocha;
+      theme = spicePkgs.themes.catppuccin-macchiato;
       colorScheme = "flamingo";
       enabledExtensions = with spicePkgs.extensions; [
         hidePodcasts
