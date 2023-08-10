@@ -13,7 +13,7 @@
     desktop = {
       gdm.enable = true;
       gdm.autologin.enable = false;
-      i3.enable = false;
+      i3.enable = true;
     };
     network = {
       networkmanager.enable = true;
