@@ -43,10 +43,10 @@
           rust-lang.rust-analyzer
           naumovs.color-highlight
         ];
-        userSettings = {
-          "files.autoSave" = "on";
-          "editor.tabSize" = 2;
-        };
+#        userSettings = {
+#          "files.autoSave" = "on";
+#          "editor.tabSize" = 2;
+#        };
       };
     })
   ];
