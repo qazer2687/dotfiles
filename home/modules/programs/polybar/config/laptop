@@ -118,7 +118,6 @@
   label-connected-foreground = ${colors.flamingo}
 
   format-disconnected = <label-disconnected>
-  format-disconnected-underline = ${self.format-connected-underline}
   label-disconnected = 󰤭
   label-disconnected-foreground = ${colors.red}
 
