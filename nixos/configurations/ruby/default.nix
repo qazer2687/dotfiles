@@ -39,7 +39,8 @@
       tlp.enable = true;
     };
     security = {
-      keepassxc.enable = true;
+      keepassxc.enable = false;
+      gnome-keyring.enable = true;
     };
   };
 
