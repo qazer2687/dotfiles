@@ -13,6 +13,7 @@
       git.enable = true;
       neovim.enable = true;
       firefox.enable = true;
+      discord.laptopConfig.enable = true;
       vscode.laptopConfig.enable = true;
       alacritty.laptopConfig.enable = true;
       polybar.laptopConfig.enable = true;

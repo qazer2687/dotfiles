@@ -8,10 +8,10 @@
       bash.enable = true;
       direnv.enable = true;
       git.enable = true;
-      discord.enable = true;
       neovim.enable = true;
       spicetify.enable = true;
       firefox.enable = true;
+      discord.desktopConfig.enable = true;
       vscode.desktopConfig.enable = true;
       alacritty.desktopConfig.enable = true;
       polybar.desktopConfig.enable = true;
