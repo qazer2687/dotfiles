@@ -12,7 +12,6 @@
         TLP_ENABLE = 1;
         TLP_DEFAULT_MODE = "BAT";
         USB_AUTOSUSPEND = 1;
-        TLP_DEFAULT_MODE = "BAT";
         TLP_PERSISTENT_DEFAULT = 1;
         RUNTIME_PM_ALL = 1;
         CPU_SCALING_GOVERNOR_ON_AC = "powersave";
