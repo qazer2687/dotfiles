@@ -174,7 +174,7 @@
   type = internal/battery
   battery = BAT1
   adapter = AC
-  full-at = 98
+  full-at = 99
   poll-interval = 1
 
   format-charging = "%{A1:exec ~/.config/polybar/scripts/battery-notification.sh:}󰂄%{A}"
