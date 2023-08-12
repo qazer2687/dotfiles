@@ -13,12 +13,12 @@
       git.enable = true;
       neovim.enable = true;
       firefox.enable = true;
-      discord.laptopConfig.enable = true;
-      vscode.laptopConfig.enable = true;
-      alacritty.laptopConfig.enable = true;
-      polybar.laptopConfig.enable = true;
-      dunst.laptopConfig.enable = true;
-      i3.laptopConfig.enable = true;
+      discord.ruby.enable = true;
+      vscode.ruby.enable = true;
+      alacritty.ruby.enable = true;
+      polybar.ruby.enable = true;
+      dunst.ruby.enable = true;
+      i3.ruby.enable = true;
     };
   };
 

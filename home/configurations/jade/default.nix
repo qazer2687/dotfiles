@@ -11,12 +11,12 @@
       neovim.enable = true;
       spicetify.enable = true;
       firefox.enable = true;
-      discord.desktopConfig.enable = true;
-      vscode.desktopConfig.enable = true;
-      alacritty.desktopConfig.enable = true;
-      polybar.desktopConfig.enable = true;
-      dunst.desktopConfig.enable = true;
-      i3.desktopConfig.enable = true;
+      discord.jade.enable = true;
+      vscode.jade.enable = true;
+      alacritty.jade.enable = true;
+      polybar.jade.enable = true;
+      dunst.jade.enable = true;
+      i3.jade.enable = true;
     };
     services = {
       spotifyd.enable = true;
@@ -27,7 +27,6 @@
     # General
     obs-studio
     vlc
-    webcord-vencord
 
     # Programming
     alejandra
@@ -49,7 +48,6 @@
     gnome.nautilus
     neofetch
     redshift
-    easyeffects
   ];
 
   home.stateVersion = "23.05";

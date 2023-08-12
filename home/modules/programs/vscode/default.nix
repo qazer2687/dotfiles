@@ -4,11 +4,11 @@
   pkgs,
   ...
 }: {
-  options.homeModules.programs.vscode.desktopConfig.enable = lib.mkEnableOption "";
-  options.homeModules.programs.vscode.laptopConfig.enable = lib.mkEnableOption "";
+  options.homeModules.programs.vscode.jade.enable = lib.mkEnableOption "";
+  options.homeModules.programs.vscode.ruby.enable = lib.mkEnableOption "";
 
   config = lib.mkMerge [
-    (lib.mkIf config.homeModules.programs.vscode.desktopConfig.enable {
+    (lib.mkIf config.homeModules.programs.vscode.jade.enable {
       
       # Installation & Configuration
       programs.vscode = {
@@ -29,7 +29,7 @@
       };
     })
 
-    (lib.mkIf config.homeModules.programs.vscode.laptopConfig.enable {
+    (lib.mkIf config.homeModules.programs.vscode.ruby.enable {
 
       # Installation & Configuration
       programs.vscode = {

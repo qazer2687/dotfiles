@@ -2,6 +2,7 @@
   imports = [
     # Audio
     ./audio/pipewire
+    ./audio/easyeffects
 
     # Boot
     ./boot/silentboot

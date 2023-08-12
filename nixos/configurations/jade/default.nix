@@ -30,6 +30,7 @@
     };
     audio = {
       pipewire.enable = true;
+      easyeffects.enable = true;
     };
     video = {
       nvidia.enable = true;

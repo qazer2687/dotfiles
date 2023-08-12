@@ -4,11 +4,11 @@
   pkgs,
   ...
 }: {
-  options.homeModules.programs.dunst.desktopConfig.enable = lib.mkEnableOption "";
-  options.homeModules.programs.dunst.laptopConfig.enable = lib.mkEnableOption "";
+  options.homeModules.programs.dunst.jade.enable = lib.mkEnableOption "";
+  options.homeModules.programs.dunst.ruby.enable = lib.mkEnableOption "";
 
   config = lib.mkMerge [
-    (lib.mkIf config.homeModules.programs.dunst.desktopConfig.enable {
+    (lib.mkIf config.homeModules.programs.dunst.jade.enable {
       # Installation
       home.packages = with pkgs; [dunst];
 
@@ -16,7 +16,7 @@
       xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/desktop;
     })
 
-    (lib.mkIf config.homeModules.programs.dunst.laptopConfig.enable {
+    (lib.mkIf config.homeModules.programs.dunst.ruby.enable {
       # Installation
       home.packages = with pkgs; [dunst];
 
