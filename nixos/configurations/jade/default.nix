@@ -22,6 +22,7 @@
     system = {
       udev.via.enable = true;
       kernel.desktop.enable = true;
+      fstrim.enable = true;
     };
     network = {
       networkmanager.enable = true;
