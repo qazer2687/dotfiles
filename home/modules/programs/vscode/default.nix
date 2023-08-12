@@ -22,10 +22,10 @@
           rust-lang.rust-analyzer
           naumovs.color-highlight
         ];
-        userSettings = {
-          "files.autoSave" = "on";
-          "editor.tabSize" = 2;
-        };
+#        userSettings = {
+#          "files.autoSave" = "on";
+#          "editor.tabSize" = 2;
+#        };
       };
     })
 
@@ -34,7 +34,7 @@
       # Installation & Configuration
       programs.vscode = {
         enable = true;
-        package = pkgs.vscode-fhs;
+#        package = pkgs.vscode-fhs;
         extensions = with pkgs.vscode-extensions; [
           ms-dotnettools.csharp
           catppuccin.catppuccin-vsc

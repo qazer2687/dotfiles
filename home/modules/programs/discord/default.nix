@@ -13,7 +13,7 @@
     home.packages = with pkgs; [webcord-vencord];
 
     # Configuration
-    xdg.configFile."WebCord/Themes/catpuccin-mocha-rosewater.theme.css".text = builtins.readFile ./config/desktop;
+    xdg.configFile."WebCord/Themes/desktop.theme.css".text = builtins.readFile ./config/desktop;
     })
 
     (lib.mkIf config.homeModules.programs.discord.laptopConfig.enable {
@@ -21,7 +21,7 @@
     home.packages = with pkgs; [webcord-vencord];
 
     # Configuration
-    xdg.configFile."WebCord/Themes/catpuccin-macchiato.theme.css".text = builtins.readFile ./config/laptop;
+    xdg.configFile."WebCord/Themes/laptop.theme.css".text = builtins.readFile ./config/laptop;
     })
   ];
 }
