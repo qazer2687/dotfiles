@@ -32,6 +32,7 @@
     # System
     ./system/udev/via
     ./system/kernel
+    ./system/fstrim
 
     # Video
     ./video/nvidia

@@ -21,6 +21,7 @@
     };
     system = {
       kernel.laptop.enable = true;
+      fstrim.enable = true;
     };
     audio = {
       pipewire.enable = true;
