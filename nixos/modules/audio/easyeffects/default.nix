@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.systemModules.audio.easyeffects.enable = lib.mkEnableOption "";
