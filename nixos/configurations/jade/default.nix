@@ -11,44 +11,23 @@
   ];
 
   systemModules = {
-    boot = {
-      loader.systemd-boot.enable = true;
-    };
-    desktop = {
-      gdm.enable = true;
-      gdm.autologin.enable = false;
-      i3.enable = true;
-    };
-    system = {
-      udev.via.enable = true;
-      kernel.desktop.enable = true;
-      fstrim.enable = true;
-    };
-    network = {
-      networkmanager.enable = true;
-      networkmanager.firewall.enable = false;
-    };
-    audio = {
-      pipewire.enable = true;
-      easyeffects.enable = true;
-    };
-    video = {
-      nvidia.enable = true;
-    };
-    gaming = {
-      steam.enable = true;
-    };
-    misc = {
-      colemak.enable = true;
-      fonts.enable = true;
-      mouseaccel.enable = true;
-      zram.enable = true;
-      tlp.enable = false;
-    };
-    security = {
-      keepassxc.enable = false;
-      gnome-keyring.enable = true;
-    };
+    pipewire.enable = true;
+    easyeffects.enable = true;
+    systemd-boot.enable = true;
+    gdm.enable = true;
+    i3.enable = true;
+    steam.enable = true;
+    colemak.enable = true;
+    fonts.enable = true;
+    libinput.enable = true;
+    zram.enable = true;
+    keepassxc.enable = true;
+    gnome-keyring.enable = true;
+    networkmanager.enable = true;
+    udev.enable = true;
+    kernel.jade.enable = true;
+    fstrim.enable = true;
+    nvidia.enable = true;
   };
 
   # Hostname
