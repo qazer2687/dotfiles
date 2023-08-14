@@ -7,19 +7,17 @@
   ];
 
   homeModules = {
-    programs = {
-      bash.enable = true;
-      direnv.enable = true;
-      git.enable = true;
-      neovim.enable = true;
-      firefox.enable = true;
-      discord.ruby.enable = true;
-      vscode.ruby.enable = true;
-      alacritty.ruby.enable = true;
-      polybar.ruby.enable = true;
-      dunst.ruby.enable = true;
-      i3.ruby.enable = true;
-    };
+    bash.enable = true;
+    direnv.enable = true;
+    git.enable = true;
+    neovim.enable = true;
+    firefox.enable = true;
+    discord.ruby.enable = true;
+    vscode.ruby.enable = true;
+    alacritty.ruby.enable = true;
+    polybar.ruby.enable = true;
+    dunst.ruby.enable = true;
+    i3.ruby.enable = true;
   };
 
   home.packages = with pkgs; [
