@@ -8,7 +8,7 @@
   options.homeModules.vscode.ruby.enable = lib.mkEnableOption "";
 
   config = lib.mkMerge [
-    (lib.mkIf config.homeModules.programs.vscode.jade.enable {
+    (lib.mkIf config.homeModules.vscode.jade.enable {
       
       # Installation & Configuration
       programs.vscode = {
@@ -29,7 +29,7 @@
       };
     })
 
-    (lib.mkIf config.homeModules.programs.vscode.ruby.enable {
+    (lib.mkIf config.homeModules.vscode.ruby.enable {
 
       # Installation & Configuration
       programs.vscode = {
