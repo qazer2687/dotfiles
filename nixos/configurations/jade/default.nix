@@ -28,6 +28,7 @@
     kernel.jade.enable = true;
     fstrim.enable = true;
     nvidia.enable = true;
+    opendrop.enable = true;
   };
 
   # Hostname

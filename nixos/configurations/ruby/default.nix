@@ -20,6 +20,7 @@
     fstrim.enable = true;
     polkit.enable = true;
     auto-cpufreq.enable = true;
+    opendrop.enable = true;
   };
 
   # Hostname
