@@ -10,7 +10,6 @@
     (lib.mkIf config.systemModules.gdm.enable {
       services.xserver = {
         enable = true;
-        displayManager.gdm.wayland = true;
       };
     })
     (lib.mkIf config.systemModules.gdm.autologin.enable {
