@@ -19,6 +19,7 @@
     ./fstrim
     ./nvidia
     ./polkit
-    ./cpu-autofreq
+    ./auto-cpufreq
+    ./opendrop
   ];
 }
