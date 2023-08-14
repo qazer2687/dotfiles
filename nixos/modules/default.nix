@@ -18,5 +18,7 @@
     ./kernel
     ./fstrim
     ./nvidia
+    ./polkit
+    ./cpu-autofreq
   ];
 }
