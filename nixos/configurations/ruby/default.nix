@@ -18,6 +18,8 @@
     networkmanager.enable = true;
     kernel.ruby.enable = true;
     fstrim.enable = true;
+    polkit.enable = true;
+    auto-cpufreq.enable = true;
   };
 
   # Hostname
