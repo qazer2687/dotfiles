@@ -8,7 +8,7 @@
   options.homeModules.polybar.ruby.enable = lib.mkEnableOption "";
 
   config = lib.mkMerge [
-    (lib.mkIf config.homeModules..polybar.jade.enable {
+    (lib.mkIf config.homeModules.polybar.jade.enable {
       # Installation
       home.packages = with pkgs; [polybarFull];
 
