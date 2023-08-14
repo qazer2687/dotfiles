@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.systemModules.opendrop.enable = lib.mkEnableOption "";
