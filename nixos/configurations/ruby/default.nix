@@ -5,44 +5,19 @@
     ../../modules
   ];
 
-  # Modules
   systemModules = {
-    boot = {
-      loader.systemd-boot.enable = true;
-    };
-    desktop = {
-      gdm.enable = true;
-      gdm.autologin.enable = false;
-      i3.enable = true;
-    };
-    network = {
-      networkmanager.enable = true;
-      networkmanager.firewall.enable = false;
-    };
-    system = {
-      kernel.laptop.enable = true;
-      fstrim.enable = true;
-    };
-    audio = {
-      pipewire.enable = true;
-    };
-    video = {
-      nvidia.enable = false;
-    };
-    gaming = {
-      steam.enable = false;
-    };
-    misc = {
-      colemak.enable = true;
-      fonts.enable = true;
-      mouseaccel.enable = true;
-      zram.enable = true;
-      tlp.enable = true;
-    };
-    security = {
-      keepassxc.enable = false;
-      gnome-keyring.enable = true;
-    };
+    pipewire.enable = true;
+    systemd-boot.enable = true;
+    gdm.enable = true;
+    i3.enable = true;
+    colemak.enable = true;
+    fonts.enable = true;
+    libinput.enable = true;
+    zram.enable = true;
+    gnome-keyring.enable = true;
+    networkmanager.enable = true;
+    kernel.ruby.enable = true;
+    fstrim.enable = true;
   };
 
   # Hostname
