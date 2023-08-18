@@ -8,22 +8,23 @@
   ...
 }: {
 
-  options.homeModules.spicetify.enable = lib.mkEnableOption "";
+  options.homeModules.sway.ruby.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.spicetify.enable {
+  config = lib.mkIf config.homeModules.sway.ruby.enable {
     wayland.windowManager.sway = {
       enable = true;
       systemd.enable = true;
       xwayland = false;
-      config = rec {
-        modifier = "Mod4";
-        terminal = "foot"; 
-        fonts.size = lib.mkForce 0.0;
-        floating.border = 1;
-        window.border = 0;
-        # tbc
-
-
+      extraPackages = with pkgs; [
+        swayidle
+        waybar
+        mako 
+        kanshi
+        swaybg
+        wofi
+      ];
     };
+
+    xdg.configFile."sway/config".text = builtins.readFile ./config/laptop;
   };
 }
