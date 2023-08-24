@@ -21,7 +21,7 @@
           rust-lang.rust-analyzer
           naumovs.color-highlight
           tamasfe.even-better-toml
-          ms-dotnettools.csdevkit
+          ms-dotnettools.csharp
         ];
 #        userSettings = {
 #          "files.autoSave" = "on";
@@ -42,7 +42,7 @@
           rust-lang.rust-analyzer
           naumovs.color-highlight
           tamasfe.even-better-toml
-          ms-dotnettools.csdevkit
+          ms-dotnettools.csharp
           zhuangtongfa.material-theme
         ];
 #        userSettings = {
