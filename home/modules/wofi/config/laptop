@@ -1,0 +1,9 @@
+#wofi {
+    background-color: #000000;
+    color: #ffffff;
+}
+#wofi > textbox {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+}

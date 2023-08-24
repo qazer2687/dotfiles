@@ -8,7 +8,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Launch Terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec foot
 
 # Toggle Floating
 bindsym $mod+space floating toggle
@@ -17,7 +17,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+q kill
 
 # Application Launcher
-bindsym $mod+e exec --no-startup-id wofi --show drun
+bindsym $mod+e exec wofi --show drun --style /home/alex/.config/wofi/style.css --xoffset 0 --yoffset 100 && swaymsg -t command nop
 
 # Wallpaper
 exec_always --no-startup-id swaymsg "output * bg /home/alex/.config/feh/wallpaper.png fill"
