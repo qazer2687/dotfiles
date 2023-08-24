@@ -8,8 +8,7 @@
   systemModules = {
     pipewire.enable = true;
     systemd-boot.enable = true;
-    gdm.enable = true;
-    i3.enable = true;
+    gdm.ruby.enable = true;
     colemak.enable = true;
     fonts.enable = true;
     libinput.enable = true;

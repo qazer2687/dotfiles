@@ -10,10 +10,12 @@
     ./polybar
     ./spicetify
     ./firefox
-    ./discord
+    ./webcord
     ./vscode
     ./mpd
     ./udiskie
     ./spotifyd
+    ./sway
+    ./wluma
   ];
 }

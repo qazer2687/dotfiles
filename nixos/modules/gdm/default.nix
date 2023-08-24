@@ -3,11 +3,18 @@
   config,
   ...
 }: {
-  options.systemModules.gdm.enable = lib.mkEnableOption "";
+  options.systemModules.gdm.jade.enable = lib.mkEnableOption "";
+  options.systemModules.gdm.ruby.enable = lib.mkEnableOption "";
   options.systemModules.gdm.autologin.enable = lib.mkEnableOption "";
 
   config = lib.mkMerge [
-    (lib.mkIf config.systemModules.gdm.enable {
+    (lib.mkIf config.systemModules.gdm.jade.enable {
+      services.xserver = {
+        enable = true;
+        displayManager.gdm.enable = true;
+      };
+    })
+    (lib.mkIf config.systemModules.gdm.ruby.enable {
       services.xserver = {
         enable = true;
         displayManager.gdm.enable = true;

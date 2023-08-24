@@ -1,26 +1,69 @@
+# Modifier Key
 set $mod Mod4
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
-bindsym XF86AudioMute exec --no-startup-id pamixer -t
-bindsym XF86AudioMicMute exec --no-startup-id pamixer --default-source -t
+
+# Volume Controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Launch Terminal
 bindsym $mod+Return exec alacritty
+
+# Toggle Floating
 bindsym $mod+space floating toggle
+
+# Close Window
 bindsym $mod+q kill
-bindsym $mod+e exec --no-startup-id wofi --show=dmenu -c /home/alex/wofi/config
-exec_always --no-startup-id feh --bg-fill $HOME/.config/feh/wallpaper.png
-exec_always --no-startup-id dunst
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
-exec_always --no-startup-id redshift -PO 4000
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
-bindsym $mod+Left move left
-bindsym $mod+Down move down
-bindsym $mod+Up move up
-bindsym $mod+Right move right
-bindsym $mod+Shift+Right resize shrink width 2 px or 2 ppt
-bindsym $mod+Shift+Up resize grow height 2 px or 2 ppt
-bindsym $mod+Shift+Down resize shrink height 2 px or 2 ppt
-bindsym $mod+Shift+Left resize grow width 2 px or 2 ppt
+
+# Application Launcher
+bindsym $mod+e exec --no-startup-id wofi --show drun
+
+# Wallpaper
+exec_always --no-startup-id swaymsg "output * bg /home/alex/feh/wallpaper.png fill"
+
+# Notification Daemon
+exec_always --no-startup-id mako
+# Modifier Key
+set $mod Mod4
+
+# Screenshot WIP
+# $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+
+# Volume Controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Launch Terminal
+bindsym $mod+Return exec foot
+
+# Toggle Floating
+bindsym $mod+space floating toggle
+
+# Close Window
+bindsym $mod+q kill
+
+# Application Launcher
+bindsym $mod+e exec --no-startup-id wofi --show drun
+
+# Wallpaper
+exec_always --no-startup-id swaymsg "output * bg /path/to/wallpaper.png fill"
+
+# Notification Daemon
+exec_always --no-startup-id mako
+
+# System Bar
+exec_always --no-startup-id waybar
+
+# Brightness Control
+bindsym XF86MonBrightnessUp exec --no-startup-id wluma up
+bindsym XF86MonBrightnessDown exec --no-startup-id wluma down
+
+# Workspace Navigation
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -31,6 +74,8 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+
+# Container Manipulation
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -41,11 +86,19 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
+
+# Restart Sway
 bindsym $mod+Shift+r restart
-default_border pixel 0
+
+# Gaps & Border
+default_border none
 gaps inner 10
-gaps outer 0
-border_radius 10
+gaps outer current set 0
+
+# Radius
+swaymsg border_radius 10
+
+# Hide Bar
 bar {
-        mode invisible
+    mode hide
 }

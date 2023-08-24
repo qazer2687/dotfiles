@@ -4,11 +4,11 @@
   pkgs,
   ...
 }: {
-  options.homeModules.discord.jade.enable = lib.mkEnableOption "";
-  options.homeModules.discord.ruby.enable = lib.mkEnableOption "";
+  options.homeModules.webcord.jade.enable = lib.mkEnableOption "";
+  options.homeModules.webcord.ruby.enable = lib.mkEnableOption "";
 
   config = lib.mkMerge [
-    (lib.mkIf config.homeModules.discord.jade.enable {
+    (lib.mkIf config.homeModules.webcord.jade.enable {
     # Installation
     home.packages = with pkgs; [webcord-vencord];
 
@@ -16,7 +16,7 @@
     xdg.configFile."WebCord/Themes/desktop.theme.css".text = builtins.readFile ./config/desktop;
     })
 
-    (lib.mkIf config.homeModules.discord.ruby.enable {
+    (lib.mkIf config.homeModules.webcord.ruby.enable {
     # Installation
     home.packages = with pkgs; [webcord-vencord];
 
