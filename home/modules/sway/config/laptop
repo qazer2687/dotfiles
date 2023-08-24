@@ -32,7 +32,7 @@ exec_always --no-startup-id gammastep -xO 2700
 exec_always --no-startup-id killall .waybar-wrapped && waybar
 
 # Brightness Control
-XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Workspace Navigation

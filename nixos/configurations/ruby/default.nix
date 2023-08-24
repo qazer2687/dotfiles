@@ -29,6 +29,16 @@
   # Users
   users.users.alex = {
     isNormalUser = true;
+    motd = ''
+                  _           
+                 | |          
+       _ __ _   _| |__  _   _ 
+      | '__| | | | '_ \| | | |
+      | |  | |_| | |_) | |_| |
+      |_|   \__,_|_.__/ \__, |
+                         __/ |
+                        |___/ 
+    '';
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
