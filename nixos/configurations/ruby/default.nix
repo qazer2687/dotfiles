@@ -20,6 +20,7 @@
     auto-cpufreq.enable = true;
     opendrop.enable = true;
     opengl.enable = true;
+    gdm.ruby.enable = true;
   };
 
   # Hostname
@@ -51,7 +52,7 @@
   '';
   
   # No Login Manager
-  environment.loginShellInit = '' 
-    [[ "$(tty)" == /dev/tty1 ]] && sway
-  '';
+  #environment.loginShellInit = '' 
+  #  [[ "$(tty)" == /dev/tty1 ]] && sway
+  #'';
 }
