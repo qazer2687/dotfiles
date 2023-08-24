@@ -64,10 +64,7 @@ bindsym $mod+Shift+r restart
 # Gaps & Border
 default_border none
 gaps inner 10
-gaps outer current set 0
-
-# Radius
-swaymsg border_radius 10
+gaps outer 0
 
 # Hide Bar
 bar {
