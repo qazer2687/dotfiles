@@ -27,8 +27,7 @@
   networking.hostName = "ruby";
 
   # Users
-  users.users.alex = {
-    isNormalUser = true;
+  users = {
     motd = ''
                   _           
                  | |          
@@ -39,7 +38,11 @@
                          __/ |
                         |___/ 
     '';
-    extraGroups = ["networkmanager" "wheel" "video"];
+  
+    users.alex = {
+      isNormalUser = true;
+      extraGroups = ["networkmanager" "wheel" "video"];
+    };
   };
 
   # System State Version
