@@ -21,5 +21,7 @@
     ./polkit
     ./auto-cpufreq
     ./opendrop
+    ./opengl
+    ./sway
   ];
 }

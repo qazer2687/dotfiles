@@ -8,7 +8,6 @@
   systemModules = {
     pipewire.enable = true;
     systemd-boot.enable = true;
-    gdm.ruby.enable = true;
     colemak.enable = true;
     fonts.enable = true;
     libinput.enable = true;
@@ -20,6 +19,9 @@
     polkit.enable = true;
     auto-cpufreq.enable = true;
     opendrop.enable = true;
+    opengl.enable = true;
+    gdm.ruby.enable = true;
+    sway.ruby.enable = true;
   };
 
   # Hostname
@@ -49,4 +51,9 @@
     keep-outputs = true
     keep-derivations = true
   '';
+  
+  # No Login Manager
+  #environment.loginShellInit = '' 
+  #  [[ "$(tty)" == /dev/tty1 ]] && sway
+  #'';
 }
