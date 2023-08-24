@@ -7,7 +7,7 @@
   ];
 
   homeModules = {
-    bash.enable = true;
+    bash.ruby.enable = true;
     direnv.enable = true;
     git.enable = true;
     neovim.enable = true;
