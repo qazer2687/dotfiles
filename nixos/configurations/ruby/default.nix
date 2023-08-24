@@ -19,6 +19,7 @@
     polkit.enable = true;
     auto-cpufreq.enable = true;
     opendrop.enable = true;
+    opengl.enable = true;
   };
 
   # Hostname
@@ -50,8 +51,7 @@
   '';
   
   # No Login Manager
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty? ]] && sudo /run/current-system/sw/bin/lock this 
+  environment.loginShellInit = '' 
     [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
 }
