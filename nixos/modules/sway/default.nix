@@ -1,9 +1,4 @@
-wayland.windowManager.sway = {
-      package = pkgs.swayfx;
-      enable = true;
-    };
-
-    {
+{
   lib,
   config,
   pkgs,
