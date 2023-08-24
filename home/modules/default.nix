@@ -18,5 +18,6 @@
     ./sway
     ./wluma
     ./foot
+    ./wofi
   ];
 }
