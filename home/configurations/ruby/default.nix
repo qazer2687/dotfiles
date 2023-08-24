@@ -12,14 +12,14 @@
     git.enable = true;
     neovim.enable = true;
     firefox.enable = true;
-    discord.ruby.enable = true;
+    webcord.ruby.enable = true;
     vscode.ruby.enable = true;
     alacritty.ruby.enable = true;
     polybar.ruby.enable = true;
     dunst.ruby.enable = true;
-    i3.ruby.enable = true;
+    sway.ruby.enable = true;
   };
-
+   
   home.packages = with pkgs; [
     # General
     webcord-vencord
@@ -30,7 +30,9 @@
     # Environment
     dmenu
     scrot
-    feh
+    wl-clipboard
+    slurp
+    grim
     pavucontrol
     gnome.nautilus
     redshift

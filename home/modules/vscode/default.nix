@@ -15,12 +15,13 @@
         enable = true;
 #        package = pkgs.vscode-fhs;
         extensions = with pkgs.vscode-extensions; [
-          ms-dotnettools.csharp
           catppuccin.catppuccin-vsc
           pkief.material-icon-theme
           jnoortheen.nix-ide
           rust-lang.rust-analyzer
           naumovs.color-highlight
+          tamasfe.even-better-toml
+          ms-dotnettools.csdevkit
         ];
 #        userSettings = {
 #          "files.autoSave" = "on";
@@ -36,12 +37,13 @@
         enable = true;
 #        package = pkgs.vscode-fhs;
         extensions = with pkgs.vscode-extensions; [
-          ms-dotnettools.csharp
-          catppuccin.catppuccin-vsc
           pkief.material-icon-theme
           jnoortheen.nix-ide
           rust-lang.rust-analyzer
           naumovs.color-highlight
+          tamasfe.even-better-toml
+          ms-dotnettools.csdevkit
+          zhuangtongfa.material-theme
         ];
 #        userSettings = {
 #          "files.autoSave" = "on";
