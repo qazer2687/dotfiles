@@ -14,9 +14,7 @@
     firefox.enable = true;
     webcord.ruby.enable = true;
     vscode.ruby.enable = true;
-    alacritty.ruby.enable = true;
-    polybar.ruby.enable = true;
-    dunst.ruby.enable = true;
+    foot.ruby.enable = true;
     sway.ruby.enable = true;
   };
    
