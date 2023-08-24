@@ -8,7 +8,6 @@
   # Configuration
   config = lib.mkIf config.systemModules.sway.ruby.enable {
     programs.sway = {
-      package = pkgs.swayfx;
       enable = true;
     };
   };
