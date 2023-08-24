@@ -8,7 +8,6 @@
   systemModules = {
     pipewire.enable = true;
     systemd-boot.enable = true;
-    gdm.ruby.enable = true;
     colemak.enable = true;
     fonts.enable = true;
     libinput.enable = true;
@@ -48,5 +47,11 @@
   nix.extraOptions = ''
     keep-outputs = true
     keep-derivations = true
+  '';
+  
+  # No Login Manager
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty? ]] && sudo /run/current-system/sw/bin/lock this 
+    [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
 }
