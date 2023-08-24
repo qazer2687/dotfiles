@@ -27,26 +27,33 @@
   networking.hostName = "ruby";
 
   # Users
-  users = {
-    motd = ''
-                  _           
-                 | |          
-       _ __ _   _| |__  _   _ 
-      | '__| | | | '_ \| | | |
-      | |  | |_| | |_) | |_| |
-      |_|   \__,_|_.__/ \__, |
-                         __/ |
-                        |___/ 
-    '';
-  
-    users.alex = {
-      isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "video"];
-    };
+  users.users.alex = {
+    isNormalUser = true;
+    extraGroups = ["networkmanager" "wheel" "video"];
   };
 
   # System State Version
   system.stateVersion = "23.05";
+
+  # Issue/MOTD
+  environment.etc = {
+    issue = {
+      text = ''
+                \e[31m_           
+                    | |          
+          _ __ _   _| |__  _   _ 
+          | '__| | | | '_ \| | | |
+          | |  | |_| | |_) | |_| |
+          |_|   \__,_|_.__/ \__, |
+                            __/ |
+                            |___/!\e[0m
+      '';
+
+      # The UNIX file mode bits
+      mode = "0440";
+    };
+  };
+
 
   # Allow Unfree Software
   nixpkgs.config.allowUnfree = true;
