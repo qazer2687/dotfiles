@@ -66,6 +66,13 @@ default_border none
 gaps inner 10
 gaps outer 0
 
+# Keyboard Layout
+input * {
+    xkb_layout "gb"
+    xkb_variant "colemak"
+}
+input 3 xkb_model "pc101"
+
 # Hide Bar
 bar {
     mode hide

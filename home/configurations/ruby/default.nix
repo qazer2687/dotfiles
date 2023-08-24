@@ -42,6 +42,7 @@
     mako 
     kanshi
     wofi
+    fltk
   ];
 
   home.stateVersion = "23.05";
