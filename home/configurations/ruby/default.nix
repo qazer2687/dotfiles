@@ -46,6 +46,7 @@
     wofi
     fltk
     killall
+    gammastep
   ];
 
   home.stateVersion = "23.05";
