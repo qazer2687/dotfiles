@@ -8,7 +8,7 @@
   config = lib.mkIf config.systemModules.auto-cpufreq.enable {
     services.auto-cpufreq = {
       enable = true;
-      settings = builtins.readFile ./config/laptop;
+      #settings = builtins.readFile ./config/laptop;
     };
   };
 }
