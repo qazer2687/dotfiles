@@ -25,12 +25,15 @@ exec_always --no-startup-id swaymsg "output * bg /home/alex/.config/feh/wallpape
 # Notification Daemon
 exec_always --no-startup-id mako
 
+# Eye Comfort
+exec_always --no-startup-id gammastep -xO 2700
+
 # System Bar
 exec_always --no-startup-id killall .waybar-wrapped && waybar
 
 # Brightness Control
-bindsym XF86MonBrightnessUp exec --no-startup-id wluma up
-bindsym XF86MonBrightnessDown exec --no-startup-id wluma down
+XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Workspace Navigation
 bindsym $mod+Left workspace prev
@@ -75,5 +78,5 @@ input 3 xkb_model "pc101"
 
 # Hide Bar
 bar {
-    mode hide
+    mode invisible
 }
