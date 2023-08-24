@@ -30,7 +30,7 @@
   # Users
   users.users.alex = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "video"];
   };
 
   # System State Version
