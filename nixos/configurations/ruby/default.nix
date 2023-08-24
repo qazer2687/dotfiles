@@ -21,6 +21,7 @@
     opendrop.enable = true;
     opengl.enable = true;
     gdm.ruby.enable = true;
+    sway.ruby.enable = true;
   };
 
   # Hostname

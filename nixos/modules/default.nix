@@ -22,5 +22,6 @@
     ./auto-cpufreq
     ./opendrop
     ./opengl
+    ./sway
   ];
 }
