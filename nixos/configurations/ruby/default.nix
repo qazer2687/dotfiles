@@ -48,9 +48,6 @@
                             __/ |
                             |___/!\e[0m
       '';
-
-      # The UNIX file mode bits
-      mode = "0440";
     };
   };
 
