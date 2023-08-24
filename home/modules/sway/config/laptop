@@ -20,36 +20,7 @@ bindsym $mod+q kill
 bindsym $mod+e exec --no-startup-id wofi --show drun
 
 # Wallpaper
-exec_always --no-startup-id swaymsg "output * bg /home/alex/feh/wallpaper.png fill"
-
-# Notification Daemon
-exec_always --no-startup-id mako
-# Modifier Key
-set $mod Mod4
-
-# Screenshot WIP
-# $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
-
-# Volume Controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-# Launch Terminal
-bindsym $mod+Return exec foot
-
-# Toggle Floating
-bindsym $mod+space floating toggle
-
-# Close Window
-bindsym $mod+q kill
-
-# Application Launcher
-bindsym $mod+e exec --no-startup-id wofi --show drun
-
-# Wallpaper
-exec_always --no-startup-id swaymsg "output * bg /path/to/wallpaper.png fill"
+exec_always --no-startup-id swaymsg "output * bg /home/alex/.config/feh/wallpaper.png fill"
 
 # Notification Daemon
 exec_always --no-startup-id mako
