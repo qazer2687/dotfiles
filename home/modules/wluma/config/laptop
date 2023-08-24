@@ -1,6 +1,6 @@
-[als.iio]
-path = "/sys/bus/iio/devices"
-thresholds = { 0 = "night", 20 = "dark", 80 = "dim", 250 = "normal", 500 = "bright", 800 = "outdoors" }
+#[als.iio]
+#path = "/sys/bus/iio/devices"
+#thresholds = { 0 = "night", 20 = "dark", 80 = "dim", 250 = "normal", 500 = "bright", 800 = "outdoors" }
 
 # [als.webcam]
 # video = 0
@@ -9,7 +9,7 @@ thresholds = { 0 = "night", 20 = "dark", 80 = "dim", 250 = "normal", 500 = "brig
 # [als.time]
 # thresholds = { 0 = "night", 7 = "dark", 9 = "dim", 11 = "normal", 13 = "bright", 16 = "normal", 18 = "dark", 20 = "night" }
 
-# [als.none]
+[als.none]
 
 [[output.backlight]]
 name = "eDP-1"
