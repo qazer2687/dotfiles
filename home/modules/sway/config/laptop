@@ -26,7 +26,7 @@ exec_always --no-startup-id swaymsg "output * bg /home/alex/.config/feh/wallpape
 exec_always --no-startup-id mako
 
 # System Bar
-exec_always --no-startup-id waybar
+exec_always --no-startup-id killall .waybar-wrapped && waybar
 
 # Brightness Control
 bindsym XF86MonBrightnessUp exec --no-startup-id wluma up

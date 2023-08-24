@@ -43,6 +43,7 @@
     kanshi
     wofi
     fltk
+    killall
   ];
 
   home.stateVersion = "23.05";
