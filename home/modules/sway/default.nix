@@ -16,13 +16,6 @@
       enable = true;
       systemd.enable = true;
       xwayland = false;
-      extraPackages = with pkgs; [
-        swayidle
-        waybar
-        mako 
-        kanshi
-        wofi
-      ];
     };
 
     xdg.configFile."sway/config".text = builtins.readFile ./config/laptop;

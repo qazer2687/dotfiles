@@ -37,6 +37,11 @@
     brightnessctl
     pamixer
     neofetch
+    swayidle
+    waybar
+    mako 
+    kanshi
+    wofi
   ];
 
   home.stateVersion = "23.05";
