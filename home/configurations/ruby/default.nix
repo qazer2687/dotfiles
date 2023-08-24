@@ -46,7 +46,6 @@
     wofi
     fltk
     killall
-    pactl
   ];
 
   home.stateVersion = "23.05";
