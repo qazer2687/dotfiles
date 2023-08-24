@@ -21,5 +21,6 @@
     ./polkit
     ./auto-cpufreq
     ./opendrop
+    ./opengl
   ];
 }
