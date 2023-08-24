@@ -16,6 +16,8 @@
     vscode.ruby.enable = true;
     foot.ruby.enable = true;
     sway.ruby.enable = true;
+    wluma.ruby.enable = true;
+    wofi.ruby.enable = true;
   };
    
   home.packages = with pkgs; [
@@ -44,6 +46,7 @@
     wofi
     fltk
     killall
+    pactl
   ];
 
   home.stateVersion = "23.05";
