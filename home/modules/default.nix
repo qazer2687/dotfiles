@@ -17,5 +17,6 @@
     ./spotifyd
     ./sway
     ./wluma
+    ./foot
   ];
 }
