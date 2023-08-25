@@ -21,32 +21,7 @@
   };
    
   home.packages = with pkgs; [
-    # General
-    webcord-vencord
-
-    # Productivity
-    obsidian
-
-    # Environment
-    dmenu
-    scrot
-    wl-clipboard
-    slurp
-    grim
-    pavucontrol
-    gnome.nautilus
-    redshift
-    brightnessctl
-    pamixer
-    neofetch
-    swayidle
-    waybar
-    mako 
-    kanshi
-    wofi
-    fltk
-    killall
-    gammastep
+    obsidian # Notes App
   ];
 
   home.stateVersion = "23.05";
