@@ -17,7 +17,6 @@
         height = 40;
         layer = "top";
         position = "top";
-        tray = { spacing = 10; };
         modules-center = [ "sway/window" ];
         modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-right = [
@@ -51,7 +50,7 @@
         };
         memory = {
           interval = 2;
-          format = "{}% ";
+          format = "󰍛";
         };
         network = {
           interval = 1;
@@ -80,6 +79,15 @@
           format-icons = [ "󱃃" "󰔏" "󱃂" ];
         };
       }];
+      style = ''
+        #waybar {
+          background-color: #000000;
+          color: #ffffff;
+        }
+        #waybar * {
+          background-color: transparent;
+        }
+      '';
     };
   };
 }
