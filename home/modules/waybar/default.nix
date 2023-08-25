@@ -79,14 +79,14 @@
           format-icons = [ "󱃃" "󰔏" "󱃂" ];
         };
       }];
-      style = ''
-        #waybar * {
-          background-color: #000000;
-          color: #ffffff;
-          font-size: 14px;
-          font-family: 'FiraCode Nerd Font';
-        }
-      '';
+      #style = ''
+      #  #waybar * {
+      #    background-color: #000000;
+      #    color: #ffffff;
+      #    font-size: 14px;
+      #    font-family: 'FiraCode Nerd Font';
+      #  }
+      #'';
     };
   };
 }
