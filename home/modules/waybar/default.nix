@@ -86,12 +86,6 @@
           font-size: 14px;
           font-family: 'FiraCode Nerd Font';
         }
-        #waybar .module-class {
-          margin-right: 8px;  /* Adjust the value as needed */
-        }
-        #waybar .sway--workspaces--button {
-          margin-right: 5px; /* Adjust the value to bring workspaces closer */
-        }
       '';
     };
   };
