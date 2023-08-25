@@ -88,6 +88,12 @@
         }
         #waybar * {
           background-color: transparent;
+          color: #ffffff;
+        }
+
+        # * {
+          padding-right: 2px;
+          padding-left: 2px;
         }
       '';
     };
