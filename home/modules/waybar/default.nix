@@ -16,7 +16,7 @@
       settings = [{
         height = 15;
         layer = "top";
-        modules-left = ["sway/workspaces"];
+        modules-left = ["sway/workspaces" "mpris"];
         modules-center = [];
         modules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "battery" "clock"];
         pulseaudio = {
@@ -40,10 +40,13 @@
           };
           interval = 10;
         };
+        mpris = {
+          
+        };
         network = {
           tooltip = false;
-          format-wifi = "󰤨 {essid}";
-          format-disconnected = "󰤮 Disconnected";
+          format-wifi = " {essid}";
+          format-disconnected = " Disconnected";
           format-wifi-alt = "{ipaddr}";
           format-ethernet = "󰈁";
         };
@@ -122,7 +125,7 @@
           color: #ffffff;
         }
 
-        #mpd {
+        #mpris {
           margin-top: 8px;
           margin-left: 8px;
           padding-left: 16px;
