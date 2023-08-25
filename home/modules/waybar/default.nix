@@ -30,7 +30,7 @@
           "tray"
         ];
         battery = {
-          format = " {icon} ";
+          format = "{icon}";
           format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
           format-plugged = "󰂄";
           states = {
@@ -40,38 +40,38 @@
           interval = 10;
         };
         clock = {
-          format = " 󰥔 ";
+          format = "󰥔";
           tooltip-format = "{:%Y-%m-%d | %H:%M}";
         };
         cpu = {
-          format = " 󰘚 ";
+          format = "󰘚";
           tooltip = true;
           interval = 2;
         };
         memory = {
           interval = 2;
-          format = " 󰍛 ";
+          format = "󰍛";
         };
         network = {
           interval = 1;
-          format = " 󰤨 ";
+          format = "󰤨";
           format-disconnected = "󰤭";
           format-ethernet = "󰈀";
         };
         pulseaudio = {
-          format = " {icon} ";
+          format = "{icon}";
           format-icons = {
             default = [ "󰕿" "󰖀" "󰕾" ];
             headphones = "󰋋";
           };
           format-muted = "󰝟";
-          format-source = " | 󰍬";
-          format-source-muted = " | 󰍭";
+          format-source = "󰍬";
+          format-source-muted = "󰍭";
           on-click = "pavucontrol";
         };
         temperature = {
           critical-threshold = 50;
-          format = " {icon} ";
+          format = "{icon}";
           tooltip-format = "{temperatureC}°C";
           format-icons = [ "󱃃" "󰔏" "󱃂" ];
         };
@@ -81,11 +81,20 @@
         #waybar {
           background-color: black;
         }
-
         #waybar * {
           font-family: 'FiraCode Nerd Font', monospace;
-          font-size: 20px;
+          font-size: 16px;
           color: white;
+        }
+        #waybar battery,
+        #waybar clock,
+        #waybar cpu,
+        #waybar memory,
+        #waybar network,
+        #waybar pulseaudio,
+        #waybar temperature {
+          padding-left: 4px;
+          padding-right: 4px;
         }
       '';
     };
