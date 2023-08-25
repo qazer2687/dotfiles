@@ -29,7 +29,7 @@ exec_always --no-startup-id mako
 exec_always --no-startup-id gammastep -xO 2700
 
 # System Bar   
-exec_always --no-startup-id killall .waybar-wrapped && waybar
+exec_always --no-startup-id killall .waybar-wrapped -q; waybar
 
 # Brightness Control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
