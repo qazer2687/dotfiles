@@ -91,7 +91,7 @@
           color: #ffffff;
         }
 
-        # * {
+        #temperature, #pulseaudio, #network, #memory, #cpu, #clock, #battery {
           padding-right: 2px;
           padding-left: 2px;
         }
