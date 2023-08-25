@@ -79,14 +79,58 @@
           format-icons = [ "󱃃" "󰔏" "󱃂" ];
         };
       }];
-      #style = ''
-      #  #waybar * {
-      #    background-color: #000000;
-      #    color: #ffffff;
-      #    font-size: 14px;
-      #    font-family: 'FiraCode Nerd Font';
-      #  }
-      #'';
+      style = ''
+        /* Global styles */
+        #waybar {
+          background-color: black;
+        }
+
+        #waybar * {
+          font-family: 'FiraCode Nerd Font', monospace;
+          color: white;
+        }
+
+        /* Battery module styles */
+        #waybar battery {
+          font-size: 18px;
+        }
+
+        /* Clock module styles */
+        #waybar clock {
+          font-size: 18px;
+        }
+
+        /* CPU module styles */
+        #waybar cpu {
+          font-size: 18px;
+        }
+
+        /* Memory module styles */
+        #waybar memory {
+          font-size: 18px;
+        }
+
+        /* Network module styles */
+        #waybar network {
+          font-size: 18px;
+        }
+
+        /* PulseAudio module styles */
+        #waybar pulseaudio {
+          font-size: 18px;
+        }
+
+        /* Temperature module styles */
+        #waybar temperature {
+          font-size: 18px;
+        }
+
+        /* Sway mode module styles */
+        #waybar sway_mode {
+          font-size: 18px;
+          font-style: italic;
+        }
+      '';
     };
   };
 }
