@@ -24,7 +24,7 @@
           scroll-step =  5;
           format = "{icon} {volume}%";
           format-icons = {
-            default = ["奄", "奔", "墳"];
+            default = ["奄" "奔" "墳"];
           };
         };
         network = {
