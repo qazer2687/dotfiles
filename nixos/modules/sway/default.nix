@@ -9,7 +9,7 @@
   config = lib.mkIf config.systemModules.sway.ruby.enable {
     programs.sway = {
       enable = true;
-      package = pkgs.swayfx;
+      package = package = (pkgs.swayfx.overrideAttrs (old: { passthru.providedSessions = [ "sway" ]; }));
       extraPackages = with pkgs; [
         gammastep # Eye Comfort
         killall # Kill Programs
