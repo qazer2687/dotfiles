@@ -14,11 +14,11 @@
     programs.waybar = {
       enable = true;
       settings = [{
-        height = 40;
+        height = 20;
         layer = "top";
         position = "top";
         modules-center = [ "sway/window" ];
-        modules-left = [ "sway/workspaces" "sway/mode" ];
+        modules-left = [ "sway/workspaces"];
         modules-right = [
           "pulseaudio"
           "network"
@@ -30,7 +30,7 @@
           "tray"
         ];
         battery = {
-          format = "{icon}";
+          format = " {icon} ";
           format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
           format-plugged = "󰂄";
           states = {
@@ -40,26 +40,26 @@
           interval = 10;
         };
         clock = {
-          format = "󰥔";
+          format = " 󰥔 ";
           tooltip-format = "{:%Y-%m-%d | %H:%M}";
         };
         cpu = {
-          format = "󰘚";
+          format = " 󰘚 ";
           tooltip = true;
           interval = 2;
         };
         memory = {
           interval = 2;
-          format = "󰍛";
+          format = " 󰍛 ";
         };
         network = {
           interval = 1;
-          format = "󰤨";
+          format = " 󰤨 ";
           format-disconnected = "󰤭";
           format-ethernet = "󰈀";
         };
         pulseaudio = {
-          format = "{icon}";
+          format = " {icon} ";
           format-icons = {
             default = [ "󰕿" "󰖀" "󰕾" ];
             headphones = "󰋋";
@@ -69,12 +69,9 @@
           format-source-muted = " | 󰍭";
           on-click = "pavucontrol";
         };
-        "sway/mode" = {
-          format = ''<span style="italic">{}</span>'';
-        };
         temperature = {
           critical-threshold = 50;
-          format = "{icon}";
+          format = " {icon} ";
           tooltip-format = "{temperatureC}°C";
           format-icons = [ "󱃃" "󰔏" "󱃂" ];
         };
@@ -87,48 +84,8 @@
 
         #waybar * {
           font-family: 'FiraCode Nerd Font', monospace;
+          font-size: 20px;
           color: white;
-        }
-
-        /* Battery module styles */
-        #waybar battery {
-          font-size: 18px;
-        }
-
-        /* Clock module styles */
-        #waybar clock {
-          font-size: 18px;
-        }
-
-        /* CPU module styles */
-        #waybar cpu {
-          font-size: 18px;
-        }
-
-        /* Memory module styles */
-        #waybar memory {
-          font-size: 18px;
-        }
-
-        /* Network module styles */
-        #waybar network {
-          font-size: 18px;
-        }
-
-        /* PulseAudio module styles */
-        #waybar pulseaudio {
-          font-size: 18px;
-        }
-
-        /* Temperature module styles */
-        #waybar temperature {
-          font-size: 18px;
-        }
-
-        /* Sway mode module styles */
-        #waybar sway_mode {
-          font-size: 18px;
-          font-style: italic;
         }
       '';
     };
