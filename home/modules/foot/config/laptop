@@ -25,7 +25,7 @@ font-bold=FiraCode Nerd Font:size=12
 # initial-window-size-pixels=700x500  # Or,
 # initial-window-size-chars=<COLSxROWS>
 # initial-window-mode=windowed
-pad=6x6                             # optionally append 'center'
+pad=16x16                             # optionally append 'center'
 # resize-delay-ms=100
 
 # notify=notify-send -a ${app-id} -i ${app-id} ${title} ${body}
@@ -74,9 +74,10 @@ hide-when-typing=no
 # long-press-delay=400
 
 [colors]
+[colors]
 foreground=ffffff # Text
 background=000000 # Base
-regular0=eeeeee   # Surface 1
+regular0=494d64   # Surface 1
 regular1=ed8796   # red
 regular2=a6da95   # green
 regular3=eed49f   # yellow
@@ -84,7 +85,7 @@ regular4=8aadf4   # blue
 regular5=f5bde6   # pink
 regular6=8bd5ca   # teal
 regular7=b8c0e0   # Subtext 1
-bright0=eeeeee    # Surface 2
+bright0=5b6078    # Surface 2
 bright1=ed8796    # red
 bright2=a6da95    # green
 bright3=eed49f    # yellow
