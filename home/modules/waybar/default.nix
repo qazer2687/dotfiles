@@ -54,7 +54,7 @@
         };
         network = {
           interval = 1;
-          format-connected = "󰤨";
+          format = "󰤨";
           format-disconnected = "󰤭";
           format-ethernet = "󰈀";
         };
