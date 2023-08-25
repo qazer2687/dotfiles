@@ -14,7 +14,7 @@
     programs.waybar = {
       enable = true;
       settings = [{
-        height = 30;
+        height = 40;
         layer = "top";
         position = "top";
         tray = { spacing = 10; };
@@ -31,56 +31,53 @@
           "tray"
         ];
         battery = {
-          format = "{capacity}% {icon}";
-          format-alt = "{time} {icon}";
-          format-charging = "{capacity}% ";
-          format-icons = [ "" "" "" "" "" ];
-          format-plugged = "{capacity}% ";
+          format = "{icon}";
+          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          format-plugged = "󰂄";
           states = {
-            critical = 15;
-            warning = 30;
+            critical = 10;
+            warning = 20;
           };
+          interval = 10;
         };
         clock = {
-          format-alt = "{:%Y-%m-%d}";
+          format = "󰥔";
           tooltip-format = "{:%Y-%m-%d | %H:%M}";
         };
         cpu = {
-          format = "{usage}% ";
-          tooltip = false;
+          format = "󰘚";
+          tooltip = true;
+          interval = 2;
         };
-        memory = { format = "{}% "; };
+        memory = {
+          interval = 2;
+          format = "{}% ";
+        };
         network = {
           interval = 1;
-          format-alt = "{ifname}: {ipaddr}/{cidr}";
-          format-disconnected = "Disconnected ⚠";
-          format-ethernet = "{ifname}: {ipaddr}/{cidr}   up: {bandwidthUpBits} down: {bandwidthDownBits}";
-          format-linked = "{ifname} (No IP) ";
-          format-wifi = "{essid} ({signalStrength}%) ";
+          format-connected = "󰤨";
+          format-disconnected = "󰤭";
+          format-ethernet = "󰈀";
         };
         pulseaudio = {
-          format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
+          format = "{icon}";
           format-icons = {
-            car = "";
-            default = [ "" "" "" ];
-            handsfree = "";
-            headphones = "";
-            headset = "";
-            phone = "";
-            portable = "";
+            default = [ "󰕿" "󰖀" "󰕾" ];
+            headphones = "󰋋";
           };
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
-          format-source-muted = "";
+          format-muted = "󰝟";
+          format-source = " | 󰍬";
+          format-source-muted = " | 󰍭";
           on-click = "pavucontrol";
         };
-        "sway/mode" = { format = ''<span style="italic">{}</span>''; };
+        "sway/mode" = {
+          format = ''<span style="italic">{}</span>'';
+        };
         temperature = {
-          critical-threshold = 80;
-          format = "{temperatureC}°C {icon}";
-          format-icons = [ "" "" "" ];
+          critical-threshold = 50;
+          format = "{icon}";
+          tooltip-format = "{temperatureC}°C";
+          format-icons = [ "󱃃" "󰔏" "󱃂" ];
         };
       }];
     };
