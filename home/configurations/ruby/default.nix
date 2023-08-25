@@ -21,6 +21,7 @@
    
   home.packages = with pkgs; [
     obsidian # Notes App
+    playerctl # MPRIS Integration
   ];
 
   home.stateVersion = "23.05";
