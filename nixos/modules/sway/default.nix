@@ -9,7 +9,7 @@
   config = lib.mkIf config.systemModules.sway.ruby.enable {
     programs.sway = {
       enable = true;
-      package = with pkgs; [swayfx];
+      package = pkgs.swayfx;
       extraPackages = with pkgs; [
         gammastep # Eye Comfort
         killall # Kill Programs
