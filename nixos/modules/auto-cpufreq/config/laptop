@@ -1,4 +1,3 @@
-
 [charger]
 governor = performance
 scaling_min_freq = 1700000
