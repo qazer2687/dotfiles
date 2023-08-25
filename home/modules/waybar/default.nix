@@ -14,20 +14,28 @@
     programs.waybar = {
       enable = true;
       settings = [{
-        height = 20;
+        height = 15;
         layer = "top";
         position = "top";
         modules-center = [ "sway/window" ];
         modules-left = [ "sway/workspaces"];
         modules-right = [
           "pulseaudio"
+          "custom/seperator-beam"
           "network"
+          "custom/seperator-beam"
           "cpu"
+          "custom/seperator-beam"
           "memory"
+          "custom/seperator-beam"
           "temperature"
+          "custom/seperator-beam"
           "battery"
+          "custom/seperator-beam"
           "clock"
+          "custom/seperator-beam"
           "tray"
+          "custom/seperator-blank"
         ];
         battery = {
           format = "{icon}";
@@ -75,6 +83,12 @@
           tooltip-format = "{temperatureC}°C";
           format-icons = [ "󱃃" "󰔏" "󱃂" ];
         };
+        "custom/seperator-blank" = {
+          format = " ";
+        };
+        "custom/seperator-beam" = {
+          format = " | ";
+        };
       }];
       style = ''
         /* Global styles */
@@ -83,18 +97,8 @@
         }
         #waybar * {
           font-family: 'FiraCode Nerd Font', monospace;
-          font-size: 16px;
+          font-size: 12px;
           color: white;
-        }
-        #waybar battery,
-        #waybar clock,
-        #waybar cpu,
-        #waybar memory,
-        #waybar network,
-        #waybar pulseaudio,
-        #waybar temperature {
-          padding-left: 4px;
-          padding-right: 4px;
         }
       '';
     };
