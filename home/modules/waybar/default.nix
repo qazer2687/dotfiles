@@ -41,14 +41,13 @@
           interval = 10;
         };
         mpris = {
-          format = "DEFAULT: {player_icon} {dynamic}";
-          format-paused = "DEFAULT: {status_icon} <i>{dynamic}</i>";
+          format = "{player_icon} {artist} - {title}";
+          format-paused = "{status_icon} {artist} - {title}";
           player-icons = {
-            default = "▶";
-            mpv = "🎵";
+            default = "";
           };
           status-icons = {
-            paused = "⏸";
+            paused = "";
           };
         };
         network = {
