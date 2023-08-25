@@ -42,7 +42,7 @@
         };
         mpris = {
           format = "{player_icon} {artist} - {title}";
-          format-paused = "{status_icon} <s>{artist} - {title}</s>";
+          format-paused = "{status_icon} {artist} - {title}";
           player-icons = {
             default = "󰐊";
           };
