@@ -38,7 +38,7 @@
   # Issue/MOTD
   environment.etc = {
     issue = {
-      text = ''\e[31mWelcome to Ruby!\e[0m\n'';
+      text = ''\e[31mWelcome to Ruby!\e[0m'';
     };
   };
 
