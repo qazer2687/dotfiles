@@ -17,7 +17,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+q kill
 
 # Application Launcher
-bindsym $mod+e exec wofi --show drun --style /home/alex/.config/wofi/style.css --xoffset 0 --yoffset 100 && swaymsg -t command nop
+bindsym $mod+e exec dmenu-wayland_run -b -i -nb "#000000" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"
 
 # Wallpaper
 exec_always --no-startup-id swaymsg "output * bg /home/alex/.config/feh/wallpaper.png fill"
@@ -28,7 +28,7 @@ exec_always --no-startup-id mako
 # Eye Comfort
 exec_always --no-startup-id gammastep -xO 2700
 
-# System Bar
+# System Bar   
 exec_always --no-startup-id killall .waybar-wrapped && waybar
 
 # Brightness Control
@@ -80,3 +80,11 @@ input 3 xkb_model "pc101"
 bar {
     mode invisible
 }
+
+# SwayFX
+corner_radius 5
+shadows enable
+shadow_color #0000007F
+default_dim_inactive 0.9
+dim_inactive_colors.unfocused #000000FF
+
