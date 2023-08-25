@@ -16,92 +16,187 @@
       settings = [{
         height = 15;
         layer = "top";
-        position = "top";
-        modules-center = [ "sway/window" ];
-        modules-left = [ "sway/workspaces"];
-        modules-right = [
-          "pulseaudio"
-          "custom/seperator-beam"
-          "network"
-          "custom/seperator-beam"
-          "cpu"
-          "custom/seperator-beam"
-          "memory"
-          "custom/seperator-beam"
-          "temperature"
-          "custom/seperator-beam"
-          "battery"
-          "custom/seperator-beam"
-          "clock"
-          "custom/seperator-beam"
-          "tray"
-          "custom/seperator-blank"
-        ];
-        "sway/workspaces" = {
-          format = " {name} ";
-        };
-        battery = {
-          format = " {icon} ";
-          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-          format-plugged = "󰂄";
-          states = {
-            critical = 10;
-            warning = 20;
+        modules-left = ["sway/workspaces"];
+        modules-center = [];
+        modules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "clock"];
+        pulseaudio = {
+          tooltip = false;
+          scroll-step =  5;
+          format = "{icon} {volume}%";
+          format-icons = {
+            default = ["奄", "奔", "墳"];
           };
-          interval = 10;
-        };
-        clock = {
-          format = " 󰥔 ";
-          tooltip-format = "{:%Y-%m-%d | %H:%M}";
-        };
-        cpu = {
-          format = " 󰘚 ";
-          tooltip = true;
-          interval = 2;
-        };
-        memory = {
-          interval = 2;
-          format = " 󰍛 ";
         };
         network = {
-          interval = 1;
-          format = " 󰤨 ";
-          format-disconnected = "󰤭";
-          format-ethernet = "󰈀";
+          tooltip = false;
+          format-wifi = " {essid} {ipaddr}";
+          format-ethernet = " {ipaddr}";
         };
-        pulseaudio = {
-          format = " {icon} ";
-          format-icons = {
-            default = [ "󰕿" "󰖀" "󰕾" ];
-            headphones = "󰋋";
-          };
-          format-muted = "󰝟";
-          format-source = "󰍬";
-          format-source-muted = "󰍭";
-          on-click = "pavucontrol";
+        cpu = {
+          tooltip = false;
+          format = " {}%";
         };
-        temperature = {
-          critical-threshold = 50;
-          format = " {icon} ";
-          tooltip-format = "{temperatureC}°C";
-          format-icons = [ "󱃃" "󰔏" "󱃂" ];
-        };
-        "custom/seperator-blank" = {
-          format = " ";
-        };
-        "custom/seperator-beam" = {
-          format = "|";
+        memory = {
+          tooltip = false;
+          format = " {}%";
         };
       }];
       style = ''
-        /* Global styles */
-        #waybar {
-          background-color: black;
+        * {
+          border: none;
+          border-radius: 0;
+          font-family: FiraCode Nerd Font;
+          font-size: 14px;
+          min-height: 24px;
         }
-        #waybar * {
-          font-family: 'FiraCode Nerd Font', monospace;
-          font-size: 15px;
-          color: white;
+
+        window#waybar {
+          background: transparent;
+        }
+
+        window#waybar.hidden {
+          opacity: 0.2;
+        }
+
+        #window {
+          margin-top: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          border-radius: 26px;
+          transition: none;
+          /*
+            color: #f8f8f2;
+          background: #282a36;
+            */
+            color: transparent;
+          background: transparent;
+        }
+
+        window#waybar.termite #window,
+        window#waybar.Firefox #window,
+        window#waybar.Navigator #window,
+        window#waybar.PCSX2 #window {
+            color: #4d4d4d;
+          background: #e6e6e6;
+        }
+
+        #workspaces {
+          margin-top: 8px;
+          margin-left: 12px;
+          margin-bottom: 0;
+          border-radius: 26px;
+          background: #282a36;
+          transition: none;
+        }
+
+        #workspaces button {
+          transition: none;
+          color: #f8f8f2;
+          background: transparent;
+          font-size: 16px;
+        }
+
+        #workspaces button.focused {
+          color: #9aedfe;
+        }
+
+        #workspaces button:hover {
+          transition: none;
+          box-shadow: inherit;
+          text-shadow: inherit;
+          color: #ff79c6;
+        }
+
+        #mpd {
+          margin-top: 8px;
+          margin-left: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          border-radius: 26px;
+          background: #282a36;
+          transition: none;
+          color: #4d4d4d;
+          background: #5af78e;
+        }
+
+        #mpd.disconnected,
+        #mpd.stopped {
+          color: #f8f8f2;
+          background: #282a36;
+        }
+
+        #network {
+          margin-top: 8px;
+          margin-left: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          border-radius: 26px;
+          transition: none;
+          color: #4d4d4d;
+          background: #bd93f9;
+        }
+
+        #pulseaudio {
+          margin-top: 8px;
+          margin-left: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          border-radius: 26px;
+          transition: none;
+          color: #4d4d4d;
+          background: #9aedfe;
+        }
+
+        #temperature {
+          margin-top: 8px;
+          margin-left: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          border-radius: 26px;
+          transition: none;
+          color: #4d4d4d;
+          background: #5af78e;
+        }
+
+        #cpu {
+          margin-top: 8px;
+          margin-left: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          border-radius: 26px;
+          transition: none;
+          color: #4d4d4d;
+          background: #f1fa8c;
+        }
+
+        #memory {
+          margin-top: 8px;
+          margin-left: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          border-radius: 26px;
+          transition: none;
+          color: #4d4d4d;
+          background: #ff6e67;
+        }
+
+        #clock {
+          margin-top: 8px;
+          margin-left: 8px;
+          margin-right: 12px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          border-radius: 26px;
+          transition: none;
+          color: #f8f8f2;
+          background: #282a36;
         }
       '';
     };
