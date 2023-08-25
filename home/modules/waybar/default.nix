@@ -18,27 +18,42 @@
         layer = "top";
         modules-left = ["sway/workspaces"];
         modules-center = [];
-        modules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "clock"];
+        modules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "battery" "clock"];
         pulseaudio = {
           tooltip = false;
           scroll-step =  5;
           format = "{icon} {volume}%";
           format-icons = {
-            default = ["奄" "奔" "墳"];
+            default = ["" "" ""];
           };
+        };
+        clock = {
+          format-alt = "{:%Y/%m/%d | %H:%M:%S}"
+        };
+        battery = {
+          format = "{icon} {}%";
+          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          format-plugged = "󰂄";
+          states = {
+            critical = 10;
+            warning = 20;
+          };
+          interval = 10;
         };
         network = {
           tooltip = false;
-          format-wifi = " {essid} {ipaddr}";
-          format-ethernet = " {ipaddr}";
+          format-wifi = "󰤨 {essid}";
+          format-disconnected = "󰤮 Disconnected";
+          format-wifi-alt = "{ipaddr}";
+          format-ethernet = "󰈁";
         };
         cpu = {
           tooltip = false;
-          format = " {}%";
+          format = "󰘚 {}%";
         };
         memory = {
           tooltip = false;
-          format = " {}%";
+          format = "󰍛 {}%";
         };
       }];
       style = ''
@@ -85,7 +100,7 @@
           margin-left: 12px;
           margin-bottom: 0;
           border-radius: 5px;
-          background: #282a36;
+          background: #000000;
           transition: none;
         }
 
@@ -104,7 +119,7 @@
           transition: none;
           box-shadow: inherit;
           text-shadow: inherit;
-          color: #ff79c6;
+          color: #ffffff;
         }
 
         #mpd {
@@ -177,6 +192,19 @@
         #memory {
           margin-top: 8px;
           margin-left: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          border-radius: 5px;
+          transition: none;
+          color: #ffffff;
+          background: #000000;
+        }
+
+        #battery {
+          margin-top: 8px;
+          margin-left: 8px;
+          margin-right: 12px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
