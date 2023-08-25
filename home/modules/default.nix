@@ -19,5 +19,6 @@
     ./wluma
     ./foot
     ./wofi
+    ./waybar
   ];
 }

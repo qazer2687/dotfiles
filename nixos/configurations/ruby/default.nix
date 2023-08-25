@@ -17,7 +17,6 @@
     tlp.enable = true;
     fstrim.enable = true;
     polkit.enable = true;
-    auto-cpufreq.enable = true;
     opendrop.enable = true;
     opengl.enable = true;
     sway.ruby.enable = true;
