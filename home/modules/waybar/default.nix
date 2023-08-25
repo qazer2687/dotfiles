@@ -62,11 +62,11 @@
           margin-top: 8px;
           padding-left: 16px;
           padding-right: 16px;
-          border-radius: 26px;
+          border-radius: 5px;
           transition: none;
           /*
-            color: #f8f8f2;
-          background: #282a36;
+            color: #ffffff;
+          background: #000000;
             */
             color: transparent;
           background: transparent;
@@ -76,28 +76,28 @@
         window#waybar.Firefox #window,
         window#waybar.Navigator #window,
         window#waybar.PCSX2 #window {
-            color: #4d4d4d;
-          background: #e6e6e6;
+            color: #000000;
+          background: #ffffff;
         }
 
         #workspaces {
           margin-top: 8px;
           margin-left: 12px;
           margin-bottom: 0;
-          border-radius: 26px;
+          border-radius: 5px;
           background: #282a36;
           transition: none;
         }
 
         #workspaces button {
           transition: none;
-          color: #f8f8f2;
+          color: #ffffff;
           background: transparent;
           font-size: 16px;
         }
 
         #workspaces button.focused {
-          color: #9aedfe;
+          color: #ffffff;
         }
 
         #workspaces button:hover {
@@ -113,17 +113,17 @@
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
-          border-radius: 26px;
+          border-radius: 5px;
           background: #282a36;
           transition: none;
-          color: #4d4d4d;
-          background: #5af78e;
+          color: #ffffff;
+          background: #000000;
         }
 
         #mpd.disconnected,
         #mpd.stopped {
-          color: #f8f8f2;
-          background: #282a36;
+          color: #ffffff;
+          background: #000000;
         }
 
         #network {
@@ -132,10 +132,10 @@
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
-          border-radius: 26px;
+          border-radius: 5px;
           transition: none;
-          color: #4d4d4d;
-          background: #bd93f9;
+          color: #ffffff;
+          background: #000000;
         }
 
         #pulseaudio {
@@ -144,10 +144,10 @@
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
-          border-radius: 26px;
+          border-radius: 5px;
           transition: none;
-          color: #4d4d4d;
-          background: #9aedfe;
+          color: #ffffff;
+          background: #000000;
         }
 
         #temperature {
@@ -156,10 +156,10 @@
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
-          border-radius: 26px;
+          border-radius: 5px;
           transition: none;
-          color: #4d4d4d;
-          background: #5af78e;
+          color: #ffffff;
+          background: #000000;
         }
 
         #cpu {
@@ -168,10 +168,10 @@
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
-          border-radius: 26px;
+          border-radius: 5px;
           transition: none;
-          color: #4d4d4d;
-          background: #f1fa8c;
+          color: #ffffff;
+          background: #000000;
         }
 
         #memory {
@@ -180,10 +180,10 @@
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
-          border-radius: 26px;
+          border-radius: 5px;
           transition: none;
-          color: #4d4d4d;
-          background: #ff6e67;
+          color: #ffffff;
+          background: #000000;
         }
 
         #clock {
@@ -193,10 +193,10 @@
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
-          border-radius: 26px;
+          border-radius: 5px;
           transition: none;
-          color: #f8f8f2;
-          background: #282a36;
+          color: #ffffff;
+          background: #000000;
         }
       '';
     };
