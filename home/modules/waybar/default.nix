@@ -204,7 +204,7 @@
         #battery {
           margin-top: 8px;
           margin-left: 8px;
-          margin-right: 12px;
+          margin-right: 16px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
@@ -217,7 +217,7 @@
         #clock {
           margin-top: 8px;
           margin-left: 8px;
-          margin-right: 12px;
+          margin-right: 16px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
