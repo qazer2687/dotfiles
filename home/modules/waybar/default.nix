@@ -80,20 +80,17 @@
         };
       }];
       style = ''
-        #waybar {
+        #waybar * {
           background-color: #000000;
           color: #ffffff;
-          font-size: 14px; /* Font size */
-          font-family: 'FiraCode Nerd Font', monospace; /* Font family */
+          font-size: 14px;
+          font-family: 'FiraCode Nerd Font';
         }
-        #waybar * {
-          background-color: transparent;
-          color: #ffffff;
+        #waybar .module-class {
+          margin-right: 8px;  /* Adjust the value as needed */
         }
-
-        #temperature, #pulseaudio, #network, #memory, #cpu, #clock, #battery {
-          padding-right: 2px;
-          padding-left: 2px;
+        #waybar .sway--workspaces--button {
+          margin-right: 5px; /* Adjust the value to bring workspaces closer */
         }
       '';
     };
