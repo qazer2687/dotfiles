@@ -83,6 +83,8 @@
         #waybar {
           background-color: #000000;
           color: #ffffff;
+          font-size: 14px; /* Font size */
+          font-family: 'FiraCode Nerd Font', monospace; /* Font family */
         }
         #waybar * {
           background-color: transparent;
