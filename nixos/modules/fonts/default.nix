@@ -11,6 +11,7 @@
       (nerdfonts.override {
         fonts = [
           "FiraCode"
+          "FiraMono"
           "Iosevka"
         ];
       })
