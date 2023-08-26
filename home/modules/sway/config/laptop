@@ -29,6 +29,9 @@ exec_always --no-startup-id mako
 # System Bar   
 #exec_always --no-startup-id killall .waybar-wrapped -q; waybar
 
+# Eye Comfort \\ EXPERIMENTAL
+exec --no-startup-id nohup gammashift -xO 4000
+
 # Brightness Control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
