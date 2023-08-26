@@ -17,13 +17,18 @@
     tlp.enable = true;
     fstrim.enable = true;
     polkit.enable = true;
-    opendrop.enable = true;
     opengl.enable = true;
     sway.ruby.enable = true;
   };
 
   # Hostname
   networking.hostName = "ruby";
+
+  # Disable XWayland
+  programs.xwayland.enable = false;
+
+  # Electron Wayland Support
+  environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
 
   # Users
   users.users.alex = {
