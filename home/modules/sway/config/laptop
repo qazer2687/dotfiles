@@ -20,16 +20,14 @@ bindsym $mod+q kill
 bindsym $mod+e exec dmenu-wl_run -b -i -nb "#000000" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"
 
 # Wallpaper
-exec_always --no-startup-id swaymsg "output * bg /home/alex/.config/feh/wallpaper.png fill"
+#exec_always --no-startup-id swaymsg "output * bg /home/alex/.config/feh/wallpaper.png fill"
+output * bg /home/alex/.config/feh/wallpaper.png fill
 
 # Notification Daemon
 exec_always --no-startup-id mako
 
-# Eye Comfort
-exec_always --no-startup-id gammastep -xO 2700
-
 # System Bar   
-exec_always --no-startup-id killall .waybar-wrapped -q; waybar
+#exec_always --no-startup-id killall .waybar-wrapped -q; waybar
 
 # Brightness Control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
@@ -64,27 +62,28 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Restart Sway
 bindsym $mod+Shift+r restart
 
-# Gaps & Border
+# Gaps
 default_border none
 gaps inner 10
 gaps outer 0
 
 # Keyboard Layout
 input * {
-    xkb_layout "gb"
-    xkb_variant "colemak"
+  xkb_layout "gb"
+  xkb_variant "colemak"
 }
 input 3 xkb_model "pc101"
 
-# Hide Bar
+# Hide Bar 
 bar {
-    mode invisible
+  #mode invisible
+  swaybar_command waybar
 }
 
 # SwayFX
 corner_radius 5
 shadows enable
 shadow_color #0000007F
-default_dim_inactive 0.1
-dim_inactive_colors.unfocused #000000FF
+#default_dim_inactive 0.1
+#dim_inactive_colors.unfocused #000000FF
 

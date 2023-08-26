@@ -1,27 +1,27 @@
 {...}: {
   imports = [
-    ./pipewire
-    ./easyeffects
-    ./systemd-boot
-    ./gdm
-    ./i3
-    ./steam
-    ./colemak
-    ./fonts
-    ./libinput
-    ./tlp
-    ./zram
-    ./keepassxc
-    ./gnome-keyring
-    ./networkmanager
-    ./udev
-    ./kernel
-    ./fstrim
-    ./nvidia
-    ./polkit
     ./auto-cpufreq
+    ./colemak
+    ./easyeffects
+    ./fonts
+    ./fstrim
+    ./gdm
+    ./gnome-keyring
+    ./i3
+    ./keepassxc
+    ./kernel
+    ./libinput
+    ./networkmanager
+    ./nvidia
     ./opendrop
     ./opengl
+    ./pipewire
+    ./polkit
+    ./steam
     ./sway
+    ./systemd-boot
+    ./tlp
+    ./udev
+    ./zram
   ];
 }
