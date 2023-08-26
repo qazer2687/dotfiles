@@ -24,8 +24,10 @@
   # Hostname
   networking.hostName = "ruby";
 
-  # Disable XWayland
+  # Disable XWayland & Xorg
   programs.xwayland.enable = false;
+  services.xserver.enable = false;
+
 
   # Electron Wayland Support
   environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
