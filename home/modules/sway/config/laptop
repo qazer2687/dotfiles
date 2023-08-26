@@ -60,7 +60,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Restart Sway
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec swaymsg reload
 
 # Gaps
 default_border none
