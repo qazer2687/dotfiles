@@ -89,11 +89,7 @@
           padding-right: 16px;
           border-radius: 5px;
           transition: none;
-          /*
-            color: #ffffff;
-          background: #000000;
-            */
-            color: transparent;
+          color: transparent;
           background: transparent;
         }
 
