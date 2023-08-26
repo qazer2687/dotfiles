@@ -11,6 +11,7 @@
     direnv.enable = true;
     git.enable = true;
     neovim.enable = true;
+    gammastep.enable = true;
     firefox.enable = true;
     webcord.ruby.enable = true;
     vscode.ruby.enable = true;

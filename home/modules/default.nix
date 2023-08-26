@@ -1,24 +1,25 @@
 {...}: {
   imports = [
+    ./alacritty
     ./bash
     ./direnv
-    ./git
-    ./neovim
-    ./alacritty
     ./dunst
+    ./firefox
+    ./foot
+    ./gammastep
+    ./git
     ./i3
+    ./mpd
+    ./neovim
     ./polybar
     ./spicetify
-    ./firefox
-    ./webcord
-    ./vscode
-    ./mpd
-    ./udiskie
     ./spotifyd
     ./sway
-    ./wluma
-    ./foot
+    ./udiskie
+    ./vscode
     ./wofi
     ./waybar
+    ./webcord
+    ./wluma
   ];
 }
