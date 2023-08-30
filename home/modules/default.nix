@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./alacritty
+    ./armcord
     ./bash
     ./direnv
     ./dunst
@@ -11,6 +12,7 @@
     ./i3
     ./mpd
     ./neovim
+    ./obsidian
     ./polybar
     ./spicetify
     ./spotifyd
