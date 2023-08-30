@@ -30,7 +30,10 @@
 
 
   # Electron Wayland Support
-  environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    XDG_DATA_DIRS = "${HOME}/.local/bin/${USER}:${HOME}/.local/bin:${XDG_DATA_DIRS}:/usr/local/share/:/usr/share/";
+  };
 
   # Users
   users.users.alex = {

@@ -10,7 +10,7 @@
     neovim.enable = true;
     spicetify.enable = true;
     firefox.enable = true;
-    webcord.jade.enable = true;
+    armcord.enable = true;
     vscode.jade.enable = true;
     alacritty.jade.enable = true;
     polybar.jade.enable = true;

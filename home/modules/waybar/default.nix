@@ -11,6 +11,12 @@
   options.homeModules.waybar.ruby.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.homeModules.waybar.ruby.enable {
+    # Dependencies
+    home.packages = with pkgs; [
+      playerctl
+    ];
+
+    # Config
     programs.waybar = {
       enable = true;
       settings = [{
