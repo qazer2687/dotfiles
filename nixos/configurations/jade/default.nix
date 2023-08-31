@@ -14,7 +14,7 @@
     pipewire.enable = true;
     easyeffects.enable = true;
     systemd-boot.enable = true;
-    gdm.enable = true;
+    gdm.jade.enable = true;
     i3.enable = true;
     steam.enable = true;
     colemak.enable = true;
