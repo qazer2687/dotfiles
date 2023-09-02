@@ -12,11 +12,9 @@
   programs.xwayland.enable = false;
   services.xserver.enable = false;
 
-
-  # Electron Wayland Support
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    GTK_USE_PORTAL = "0";
+    NIXOS_OZONE_WL = "1"; # Wayland Electron Support
+    GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
   };
 
   # Users
