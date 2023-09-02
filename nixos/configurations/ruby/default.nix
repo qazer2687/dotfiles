@@ -12,8 +12,12 @@
   programs.xwayland.enable = false;
   services.xserver.enable = false;
 
+  # Disable XDG Portal
+  xdg.portal.enable = false;
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Wayland Electron Support
+    MOZ_ENABLE_WAYLAND = "1";
     GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
   };
 
