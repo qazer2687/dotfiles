@@ -1,4 +1,48 @@
+<<<<<<< HEAD
  
+=======
+{config, ...}: {
+  # Imports
+  imports = [
+    ./hardware-configuration.nix
+    ./modules.nix
+  ];
+
+  # Hostname
+  networking.hostName = "ruby";
+
+  # Disable XWayland & Xorg
+  programs.xwayland.enable = false;
+  services.xserver.enable = false;
+
+  # Disable XDG Portal
+  xdg.portal.enable = false;
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Wayland Electron Support
+    MOZ_ENABLE_WAYLAND = "1";
+    GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
+  };
+
+  # Users
+  users.users.alex = {
+    isNormalUser = true;
+    extraGroups = ["networkmanager" "wheel" "video"];
+  };
+
+  # System State Version
+  system.stateVersion = "23.05";
+
+  # Issue/MOTD
+  environment.etc = {
+    issue = {
+      text = ''\e[31mWelcome to Ruby!\e[0m'';
+    };
+  };
+
+  # Allow Unfree Software
+  nixpkgs.config.allowUnfree = true;
+>>>>>>> c439b6846ac585f3aa8a52cb76fca4591cb5abb4
 
   # Nix Experimental Features
   nix.settings.experimental-features = ["nix-command" "flakes"];
