@@ -11,6 +11,12 @@
   options.homeModules.waybar.ruby.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.homeModules.waybar.ruby.enable {
+    # Dependencies
+    home.packages = with pkgs; [
+      playerctl
+    ];
+
+    # Config
     programs.waybar = {
       enable = true;
       settings = [{
@@ -89,11 +95,7 @@
           padding-right: 16px;
           border-radius: 5px;
           transition: none;
-          /*
-            color: #ffffff;
-          background: #000000;
-            */
-            color: transparent;
+          color: transparent;
           background: transparent;
         }
 
