@@ -1,7 +1,7 @@
-<<<<<<< HEAD
- 
-=======
-{config, ...}: {
+{
+  config,
+  ...
+}: {
   # Imports
   imports = [
     ./hardware-configuration.nix
