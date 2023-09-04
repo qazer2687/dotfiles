@@ -7,7 +7,7 @@
   # Imports
   imports = [
     ./hardware-configuration.nix
-    ../../modules
+    ./modules
   ];
 
   systemModules = {

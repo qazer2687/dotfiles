@@ -42,7 +42,6 @@
 
   # Allow Unfree Software
   nixpkgs.config.allowUnfree = true;
->>>>>>> c439b6846ac585f3aa8a52cb76fca4591cb5abb4
 
   # Nix Experimental Features
   nix.settings.experimental-features = ["nix-command" "flakes"];
