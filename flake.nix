@@ -31,6 +31,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./nixos/configurations/jade
+          ./nixos/configurations/shared
           sops-nix.nixosModules.sops
           {
             nix.registry.nixpkgs.flake = nixpkgs;
@@ -39,7 +40,10 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              users.alex = ./home/configurations/jade;
+              users.alex = [
+                ./home/configurations/jade
+                ./home/configurations/shared
+              ];
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
@@ -58,6 +62,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./nixos/configurations/ruby
+          ./nixos/configurations/shared
           sops-nix.nixosModules.sops
           {
             nix.registry.nixpkgs.flake = nixpkgs;
@@ -66,7 +71,10 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              users.alex = ./home/configurations/ruby;
+              users.alex = [
+                ./home/configurations/ruby
+                ./home/configurations/shared
+              ];
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
