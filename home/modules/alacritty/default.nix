@@ -13,7 +13,7 @@
       home.packages = with pkgs; [alacritty];
 
       # Configuration
-      xdg.configFile."alacritty/alacritty.yml".text = builtins.readFile ./config/desktop;
+      xdg.configFile."alacritty/alacritty.yml".text = builtins.readFile ./config/jade;
     })
 
     (lib.mkIf config.homeModules.alacritty.ruby.enable {
@@ -21,7 +21,7 @@
       home.packages = with pkgs; [alacritty];
 
       # Configuration
-      xdg.configFile."alacritty/alacritty.yml".text = builtins.readFile ./config/laptop;
+      xdg.configFile."alacritty/alacritty.yml".text = builtins.readFile ./config/ruby;
     })
   ];
 }

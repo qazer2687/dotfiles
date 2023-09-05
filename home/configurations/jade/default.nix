@@ -8,11 +8,6 @@
     obs-studio
     vlc
 
-    # Programming
-    alejandra
-    deadnix
-    statix
-
     # Gaming
     osu-lazer-bin
     prismlauncher

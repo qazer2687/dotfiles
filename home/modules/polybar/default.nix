@@ -15,7 +15,7 @@
       # Configuration
       xdg.configFile."polybar/launch.sh".text = builtins.readFile ./scripts/launch.sh;
       xdg.configFile."polybar/launch.sh".executable = true;
-      xdg.configFile."polybar/config.ini".text = builtins.readFile ./config/desktop;
+      xdg.configFile."polybar/config.ini".text = builtins.readFile ./config/jade;
 
       # Scripts
       xdg.configFile."polybar/scripts/battery-notification.sh".executable = true;
@@ -35,7 +35,7 @@
       # Configuration
       xdg.configFile."polybar/launch.sh".text = builtins.readFile ./scripts/launch.sh;
       xdg.configFile."polybar/launch.sh".executable = true;
-      xdg.configFile."polybar/config.ini".text = builtins.readFile ./config/laptop;
+      xdg.configFile."polybar/config.ini".text = builtins.readFile ./config/ruby
 
       # Scripts
       xdg.configFile."polybar/scripts/battery-notification.sh".executable = true;

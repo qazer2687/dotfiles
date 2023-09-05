@@ -13,7 +13,7 @@
       home.packages = with pkgs; [webcord-vencord];
 
       # Configuration
-      xdg.configFile."WebCord/Themes/desktop.theme.css".text = builtins.readFile ./config/desktop;
+      xdg.configFile."WebCord/Themes/jade.theme.css".text = builtins.readFile ./config/jade;
     })
 
     (lib.mkIf config.homeModules.webcord.ruby.enable {
@@ -21,7 +21,7 @@
       home.packages = with pkgs; [webcord-vencord];
 
       # Configuration
-      xdg.configFile."WebCord/Themes/laptop.theme.css".text = builtins.readFile ./config/laptop;
+      xdg.configFile."WebCord/Themes/ruby.theme.css".text = builtins.readFile ./config/ruby;
     })
   ];
 }
