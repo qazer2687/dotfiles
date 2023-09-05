@@ -1,7 +1,9 @@
 {
   lib,
   ...
-}: {
+}: let
+  inherit (lib) mkDefault;
+in {
   imports = [
     ./modules.nix
   ];

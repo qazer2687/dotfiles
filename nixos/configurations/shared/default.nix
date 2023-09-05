@@ -1,8 +1,10 @@
 {
+  pkgs,
   lib,
   ...
-}: {
-
+}: let
+  inherit (lib) mkDefault;
+in {
   # Users
   users.users.alex = {
     isNormalUser = true;

@@ -40,14 +40,12 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              users.alex = [
-                ./home/configurations/jade
-                ./home/configurations/shared
-              ];
+              users.alex = ./home/configurations/jade;
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
+                ./home/configurations/shared
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.spicetify-nix.homeManagerModule
               ];
@@ -71,13 +69,11 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              users.alex = [
-                ./home/configurations/ruby
-                ./home/configurations/shared
-              ];
+              users.alex = ./home/configurations/ruby;
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
+                ./home/configurations/shared
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.spicetify-nix.homeManagerModule
               ];
