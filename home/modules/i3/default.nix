@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.homeModules.i3.jade.enable = lib.mkEnableOption "";
@@ -9,13 +8,11 @@
 
   config = lib.mkMerge [
     (lib.mkIf config.homeModules.i3.jade.enable {
-
       # Configuration
       xdg.configFile."i3/config".text = builtins.readFile ./config/desktop;
     })
 
     (lib.mkIf config.homeModules.i3.ruby.enable {
-
       # Configuration
       xdg.configFile."i3/config".text = builtins.readFile ./config/laptop;
     })

@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./modules.nix
   ];
@@ -34,5 +31,4 @@
   ];
 
   sops.secrets.spotify_password.path = "/home/alex/.config/spotifyd/password";
-
 }

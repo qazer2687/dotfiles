@@ -9,15 +9,15 @@
 
   config = lib.mkMerge [
     (lib.mkIf config.homeModules.wofi.jade.enable {
-    # Installation
-    home.packages = with pkgs; [wofi];
+      # Installation
+      home.packages = with pkgs; [wofi];
     })
     (lib.mkIf config.homeModules.wofi.ruby.enable {
-    # Installation
-    home.packages = with pkgs; [wofi];
+      # Installation
+      home.packages = with pkgs; [wofi];
 
-    # Configuration
-    xdg.configFile."wofi/style.css".text = builtins.readFile ./config/laptop;
+      # Configuration
+      xdg.configFile."wofi/style.css".text = builtins.readFile ./config/laptop;
     })
   ];
 }

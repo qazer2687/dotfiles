@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.homeModules.foot.jade.enable = lib.mkEnableOption "";

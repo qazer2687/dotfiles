@@ -9,7 +9,7 @@
   config = lib.mkIf config.systemModules.sway.ruby.enable {
     programs.sway = {
       enable = true;
-      package = (pkgs.swayfx.overrideAttrs (old: { passthru.providedSessions = [ "sway" ]; }));
+      package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       extraPackages = with pkgs; [
         brightnessctl # Backlight Control
         dmenu-wayland # Application Launcher
@@ -19,9 +19,6 @@
         pavucontrol # Audio GUI
         grim # Screenshot Tool
         wl-clipboard # Clipboard Tool
-        #kanshi # Display Configuration
-        #wofi # Application Launcher
-        #swayidle # Lock Screen
         waybar # System Bar
         gnome.nautilus # File Explorer
         pamixer # Volume Bindings

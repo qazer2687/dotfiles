@@ -9,11 +9,10 @@
 
   config = lib.mkMerge [
     (lib.mkIf config.homeModules.vscode.jade.enable {
-      
       # Installation & Configuration
       programs.vscode = {
         enable = true;
-#        package = pkgs.vscode-fhs;
+        #        package = pkgs.vscode-fhs;
         extensions = with pkgs.vscode-extensions; [
           catppuccin.catppuccin-vsc
           pkief.material-icon-theme
@@ -23,19 +22,18 @@
           tamasfe.even-better-toml
           ms-dotnettools.csharp
         ];
-#        userSettings = {
-#          "files.autoSave" = "on";
-#          "editor.tabSize" = 2;
-#        };
+        #        userSettings = {
+        #          "files.autoSave" = "on";
+        #          "editor.tabSize" = 2;
+        #        };
       };
     })
 
     (lib.mkIf config.homeModules.vscode.ruby.enable {
-
       # Installation & Configuration
       programs.vscode = {
         enable = true;
-#        package = pkgs.vscode-fhs;
+        #        package = pkgs.vscode-fhs;
         extensions = with pkgs.vscode-extensions; [
           pkief.material-icon-theme
           jnoortheen.nix-ide
@@ -45,10 +43,10 @@
           ms-dotnettools.csharp
           zhuangtongfa.material-theme
         ];
-#        userSettings = {
-#          "files.autoSave" = "on";
-#          "editor.tabSize" = 2;
-#        };
+        #        userSettings = {
+        #          "files.autoSave" = "on";
+        #          "editor.tabSize" = 2;
+        #        };
       };
     })
   ];
