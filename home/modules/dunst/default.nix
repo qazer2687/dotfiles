@@ -13,7 +13,7 @@
       home.packages = with pkgs; [dunst];
 
       # Configuration
-      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/desktop;
+      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/jade;
     })
 
     (lib.mkIf config.homeModules.dunst.ruby.enable {
@@ -21,7 +21,7 @@
       home.packages = with pkgs; [dunst];
 
       # Configuration
-      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/laptop;
+      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/ruby;
     })
   ];
 }

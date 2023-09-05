@@ -17,7 +17,7 @@
       home.packages = with pkgs; [wofi];
 
       # Configuration
-      xdg.configFile."wofi/style.css".text = builtins.readFile ./config/laptop;
+      xdg.configFile."wofi/style.css".text = builtins.readFile ./config/ruby;
     })
   ];
 }

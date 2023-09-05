@@ -18,7 +18,7 @@
       };
 
       # Configuration
-      xdg.configFile."foot/foot.ini".text = builtins.readFile ./config/laptop;
+      xdg.configFile."foot/foot.ini".text = builtins.readFile ./config/ruby;
     })
   ];
 }
