@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: {
+{...}: {
   # Imports
   imports = [
     ./hardware-configuration.nix
@@ -29,9 +26,9 @@
       text = ''\e[31mWelcome to Ruby!\e[0m'';
     };
   };
-  
+
   # No Login Manager
-  environment.loginShellInit = '' 
+  environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
 }

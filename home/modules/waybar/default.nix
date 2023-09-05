@@ -1,13 +1,9 @@
-
-
 {
   pkgs,
   lib,
-  inputs,
   config,
   ...
 }: {
-
   options.homeModules.waybar.ruby.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.homeModules.waybar.ruby.enable {
@@ -19,59 +15,61 @@
     # Config
     programs.waybar = {
       enable = true;
-      settings = [{
-        height = 15;
-        layer = "top";
-        modules-left = ["sway/workspaces" "mpris"];
-        modules-center = [];
-        modules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "battery" "clock"];
-        pulseaudio = {
-          tooltip = false;
-          scroll-step =  5;
-          format = "{icon} {volume}%";
-          format-icons = {
-            default = ["" "" ""];
+      settings = [
+        {
+          height = 15;
+          layer = "top";
+          modules-left = ["sway/workspaces" "mpris"];
+          modules-center = [];
+          modules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "battery" "clock"];
+          pulseaudio = {
+            tooltip = false;
+            scroll-step = 5;
+            format = "{icon} {volume}%";
+            format-icons = {
+              default = ["" "" ""];
+            };
           };
-        };
-        clock = {
-          format-alt = "{:%Y/%m/%d | %H:%M:%S}";
-        };
-        battery = {
-          format = "{icon} {}%";
-          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-          format-plugged = "󰂄";
-          states = {
-            critical = 10;
-            warning = 20;
+          clock = {
+            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
           };
-          interval = 10;
-        };
-        mpris = {
-          format = "{player_icon} {artist} - {title}";
-          format-paused = "{status_icon} {artist} - {title}";
-          player-icons = {
-            default = "󰐊";
+          battery = {
+            format = "{icon} {}%";
+            format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            format-plugged = "󰂄";
+            states = {
+              critical = 10;
+              warning = 20;
+            };
+            interval = 10;
           };
-          status-icons = {
-            paused = "󰏤";
+          mpris = {
+            format = "{player_icon} {artist} - {title}";
+            format-paused = "{status_icon} {artist} - {title}";
+            player-icons = {
+              default = "󰐊";
+            };
+            status-icons = {
+              paused = "󰏤";
+            };
           };
-        };
-        network = {
-          tooltip = false;
-          format-wifi = " {essid}";
-          format-disconnected = " Disconnected";
-          format-wifi-alt = "{ipaddr}";
-          format-ethernet = "󰈁";
-        };
-        cpu = {
-          tooltip = false;
-          format = "󰘚 {}%";
-        };
-        memory = {
-          tooltip = false;
-          format = "󰍛 {}%";
-        };
-      }];
+          network = {
+            tooltip = false;
+            format-wifi = " {essid}";
+            format-disconnected = " Disconnected";
+            format-wifi-alt = "{ipaddr}";
+            format-ethernet = "󰈁";
+          };
+          cpu = {
+            tooltip = false;
+            format = "󰘚 {}%";
+          };
+          memory = {
+            tooltip = false;
+            format = "󰍛 {}%";
+          };
+        }
+      ];
       style = ''
         * {
           border: none;
