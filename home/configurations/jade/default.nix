@@ -14,15 +14,6 @@
     lunar-client
     lutris
     protonup-qt
-
-    # Environment
-    dmenu
-    scrot
-    feh
-    pavucontrol
-    gnome.nautilus
-    neofetch
-    redshift
   ];
 
   sops.secrets.spotify_password.path = "/home/alex/.config/spotifyd/password";
