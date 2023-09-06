@@ -8,8 +8,11 @@ in {
     statix
   ];
 
-  home.stateVersion = "23.05";
+  # Default Settings
+  home.stateVersion = mkDefault "23.05";
   home.homeDirectory = mkDefault "/home/alex";
+
+  # SOPS
   sops.defaultSopsFile = ../../../secrets/default.yaml;
   sops.age.sshKeyPaths = ["/home/alex/.ssh/id_ed25519"];
 }

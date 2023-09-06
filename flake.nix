@@ -25,7 +25,7 @@
   } @ inputs: {
     # Hosts
     nixosConfigurations = {
-      # Desktop Configuration
+      # Jade Configuration
       jade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
@@ -54,7 +54,7 @@
         ];
       };
 
-      # Laptop Configuration
+      # Ruby Configuration
       ruby = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
