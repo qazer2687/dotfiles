@@ -17,12 +17,12 @@ This is my personal [Nix flake](https://nixos.wiki/wiki/Flakes) for my different
 ├── flake.lock
 ├── home
 │   ├── configurations
-│   │   ├── <output>
+│   │   ├── <hosts>
 │   │   └── shared
 │   └── modules
 ├── nixos
 │   ├── configurations
-│   │   ├── <output>
+│   │   ├── <hosts>
 │   │   └── shared
 │   └── modules
 └── secrets
