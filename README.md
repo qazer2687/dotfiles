@@ -25,6 +25,7 @@ This is my personal [Nix flake](https://nixos.wiki/wiki/Flakes) for my different
 │   │   ├── <hosts>
 │   │   └── shared
 │   └── modules
+├── .sops.yaml
 └── secrets
 ```
 
