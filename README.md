@@ -4,13 +4,13 @@ This is my personal [Nix flake](https://nixos.wiki/wiki/Flakes) for my different
 
 ## Hosts & Structure 💾
 
-🟩 `jade`    : Desktop
-🟥 `ruby`    : Laptop
-⬛ `opal`    : Server
-🟪 `kunzite` : Phone
-🟦 `topaz`   : Brother's Desktop
-🟨 `citrine` : x86-64 VM
-⬜ `quartz`  : AArch64 VM
+- 🟩 `jade`    : Desktop
+- 🟥 `ruby`    : Laptop
+- ⬛ `opal`    : Server
+- 🟪 `kunzite` : Phone
+- 🟦 `topaz`   : Brother's Desktop
+- 🟨 `citrine` : x86-64 VM
+- ⬜ `quartz`  : AArch64 VM
 
 ```
 ┌── flake.nix
