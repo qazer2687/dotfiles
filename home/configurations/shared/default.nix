@@ -1,7 +1,7 @@
 {lib, ...}: let
   inherit (lib) mkDefault;
 in {
-  # Global Tools
+  # Global HM Packages
   home.packages = with pkgs; [
     alejandra
     deadnix

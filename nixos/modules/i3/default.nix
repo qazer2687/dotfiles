@@ -11,7 +11,7 @@
       windowManager.i3 = {
         enable = true;
         package = pkgs.i3-rounded;
-        extraPackages = [
+        extraPackages = with pkgs; [
           dmenu
           scrot
           feh
