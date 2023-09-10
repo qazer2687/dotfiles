@@ -1,14 +1,23 @@
 {
   pkgs,
+  config,
   lib,
   ...
 }: let
   inherit (lib) mkDefault;
 in {
   # Users
-  users.users.alex = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "video"];
+  users.users ={
+    alex = {
+      isNormalUser = true;
+      extraGroups = ["networkmanager" "wheel" "video"];
+      passwordFile = config.sops.secrets.users_alex_password.path;
+    };
+    oli = {
+      isNormalUser = true;
+      extraGroups = ["networkmanager" "wheel" "video"];
+      passwordFile = config.sops.secrets.users_oli_password.path;
+    };
   };
 
   # System State Version
