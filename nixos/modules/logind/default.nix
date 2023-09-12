@@ -10,6 +10,6 @@
       extraConfig = ''
       HandlePowerKey=ignore
     '';
-    }
+    };
   };
 }
