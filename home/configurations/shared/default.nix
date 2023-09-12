@@ -1,4 +1,8 @@
-{lib, ...}: let
+{
+  lib,
+  pkgs,
+ ...
+}: let
   inherit (lib) mkDefault;
 in {
   # Global Tools
