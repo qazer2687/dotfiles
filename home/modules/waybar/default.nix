@@ -55,7 +55,7 @@
           };
           network = {
             tooltip = false;
-            format-wifi = " {essid}";
+            format-wifi = " {essid} 󱐋 {frequency}";
             format-disconnected = " Disconnected";
             format-wifi-alt = "{ipaddr}";
             format-ethernet = "󰈁";
