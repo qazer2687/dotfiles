@@ -30,9 +30,9 @@
               default = ["" "" ""];
             };
           };
-          clock = {
-            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
-          };
+#          clock = {
+#            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
+#          };
           battery = {
             format = "{icon} {}%";
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
@@ -55,7 +55,7 @@
           };
           network = {
             tooltip = false;
-            format-wifi = " {essid} 󱐋 {frequency}";
+            format-wifi = " {essid}"; # 󱐋 {frequency}
             format-disconnected = " Disconnected";
             format-wifi-alt = "{ipaddr}";
             format-ethernet = "󰈁";
