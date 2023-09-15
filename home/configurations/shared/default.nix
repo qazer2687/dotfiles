@@ -7,9 +7,10 @@
 in {
   # Global HM Packages
   home.packages = with pkgs; [
+    statix
     alejandra
     deadnix
-    statix
+    nil
   ];
 
   # Default Settings

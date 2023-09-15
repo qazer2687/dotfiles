@@ -24,5 +24,6 @@
     ./tlp
     ./udev
     ./zram
+    ./user
   ];
 }

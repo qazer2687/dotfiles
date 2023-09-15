@@ -1,25 +1,9 @@
 {
-  pkgs,
-  config,
   lib,
   ...
 }: let
   inherit (lib) mkDefault;
 in {
-  # Users
-  users.users ={
-    alex = {
-      isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "video"];
-      passwordFile = config.sops.secrets.users_alex_password.path;
-    };
-    oli = {
-      isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "video"];
-      passwordFile = config.sops.secrets.users_oli_password.path;
-    };
-  };
-
   # System State Version
   system.stateVersion = mkDefault "23.05";
 
@@ -44,9 +28,12 @@ in {
   time.timeZone = mkDefault "Europe/London";
   i18n.defaultLocale = mkDefault "en_GB.UTF-8";
 
-  # Multimc Java Pinning
-  environment.etc = {
-    "jdks/17".source = lib.getBin pkgs.openjdk17;
-    "jdks/8".source = lib.getBin pkgs.openjdk8;
+  # Environment
+  environment = {
+    defaultPackages = lib.mkForce [];
+    variables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
   };
 }
