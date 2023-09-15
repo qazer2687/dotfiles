@@ -23,5 +23,6 @@
     ./waybar
     ./webcord
     ./wluma
+    ./chromium
   ];
 }

@@ -4,10 +4,11 @@
   ];
 
   systemModules = {
+    user.alex.enable = true;
     pipewire.enable = true;
     easyeffects.enable = true;
     systemd-boot.enable = true;
-    gdm.jade.enable = true;
+    gdm.xorg.enable = true;
     i3.enable = true;
     steam.enable = true;
     colemak.enable = true;
