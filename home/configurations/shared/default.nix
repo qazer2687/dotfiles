@@ -19,5 +19,5 @@ in {
   # SOPS
   sops.defaultSopsFile = ../../../secrets/default.yaml;
   sops.age.sshKeyPaths = ["/home/alex/.ssh/id_ed25519"];
-  sops.secrets.defaultUserPassword.neededForUsers = true;
+#  sops.secrets.defaultUserPassword.neededForUsers = true;
 }
