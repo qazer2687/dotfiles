@@ -16,5 +16,6 @@
     foot.ruby.enable = true;
     sway.ruby.enable = true;
     waybar.ruby.enable = true;
+    rider.enable = true;
   };
 }
