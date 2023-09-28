@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.homeModules.rider.enable = lib.mkEnableOption "";

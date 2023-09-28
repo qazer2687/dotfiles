@@ -11,12 +11,12 @@ in {
     alex = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "video"];
-      passwordFile = config.sops.secrets.users_alex_password.path;
+      #passwordFile = config.sops.secrets.users_alex_password.path;
     };
     oli = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "video"];
-      passwordFile = config.sops.secrets.users_oli_password.path;
+      #passwordFile = config.sops.secrets.users_oli_password.path;
     };
   };
 
