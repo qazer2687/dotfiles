@@ -20,7 +20,6 @@ bindsym $mod+q kill
 bindsym $mod+e exec dmenu-wl_run -b -i -nb "#000000" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"
 
 # Wallpaper
-#exec_always --no-startup-id swaymsg "output * bg /home/alex/.config/feh/wallpaper.png fill"
 output * bg /home/alex/.config/feh/wallpaper.png fill
 
 # Notification Daemon
@@ -28,13 +27,6 @@ exec_always --no-startup-id mako
 
 # System Bar   
 #exec_always --no-startup-id killall .waybar-wrapped -q; waybar
-
-# Eye Comfort \\ EXPERIMENTAL
-exec --no-startup-id nohup gammastep -xO 4000
-
-# Brightness Control
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 # Workspace Navigation
 bindsym $mod+Left workspace prev

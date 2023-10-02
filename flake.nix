@@ -82,6 +82,34 @@
         ];
       };
 
+      # Opal Configuration
+      opal = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./nixos/configurations/opal
+          ./nixos/configurations/shared
+          sops-nix.nixosModules.sops
+          {
+            nix.registry.nixpkgs.flake = nixpkgs;
+            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
+          }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              users.alex = ./home/configurations/opal;
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = [
+                ./home/configurations/shared
+                inputs.sops-nix.homeManagerModules.sops
+                inputs.spicetify-nix.homeManagerModule
+              ];
+            };
+          }
+        ];
+      };
+
       # Topaz Configuration
       topaz = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -109,10 +137,6 @@
           }
         ];
       };
-
-
-
-
     };
   };
 }
