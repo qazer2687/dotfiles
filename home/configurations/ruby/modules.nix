@@ -14,10 +14,7 @@
     foot.ruby.enable = true;
     sway.ruby.enable = true;
     waybar.ruby.enable = true;
-<<<<<<< HEAD
     rider.enable = true;
-=======
     bash.ruby.enable = true;
->>>>>>> 769be3dfdc635b2af4ac9ea0bdfae6ae4352910b
   };
 }
