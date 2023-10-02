@@ -12,7 +12,7 @@
     spotifyd.enable = true;
     obsidian.enable = true;
     foot.ruby.enable = true;
-    sway.ruby.enable = true;
+    sway.jade.enable = true;
     waybar.ruby.enable = true;
   };
 }
