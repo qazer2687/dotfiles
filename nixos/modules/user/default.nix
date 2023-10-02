@@ -12,7 +12,7 @@
         isNormalUser = true;
         home = "/home/alex";
         extraGroups = ["networkmanager" "wheel" "video"];
-        passwordFile = config.sops.secrets.users_alex_password.path;
+        #passwordFile = config.sops.secrets.users_alex_password.path;
       };
     })
     (lib.mkIf config.systemModules.user.oli.enable {
@@ -20,7 +20,7 @@
         isNormalUser = true;
         home = "/home/oli";
         extraGroups = ["networkmanager" "wheel" "video"];
-        passwordFile = config.sops.secrets.users_oli_password.path;
+        #passwordFile = config.sops.secrets.users_oli_password.path;
       };
     })
   ];
