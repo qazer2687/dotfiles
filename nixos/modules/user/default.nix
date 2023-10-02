@@ -16,12 +16,12 @@
       };
     })
     (lib.mkIf config.systemModules.user.oli.enable {
-      users.users.oli = {
-        isNormalUser = true;
+      #users.users.oli = {
+       # isNormalUser = true;
         #home = "/home/oli";
-        extraGroups = ["networkmanager" "wheel" "video"];
+        #extraGroups = ["networkmanager" "wheel" "video"];
         #passwordFile = config.sops.secrets.users_oli_password.path;
-      };
+      #};
     })
   ];
 }
