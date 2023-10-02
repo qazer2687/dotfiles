@@ -24,5 +24,6 @@
     ./webcord
     ./wluma
     ./rider
+    ./chromium
   ];
 }

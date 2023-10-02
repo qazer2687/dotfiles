@@ -4,6 +4,7 @@
   ];
 
   systemModules = {
+    user.alex.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
     colemak.enable = true;

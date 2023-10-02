@@ -5,19 +5,29 @@
 }: let
   inherit (lib) mkDefault;
 in {
-  # Global HM Packages
-  home.packages = with pkgs; [
-    alejandra
-    deadnix
-    statix
+  
+  imports = [
+    ./modules.nix
   ];
 
-  # Default Settings
+  home.packages = with pkgs; [
+    statix
+    alejandra
+    deadnix
+    nil
+    comma
+    ncdu
+    bash
+  ];
+
   home.stateVersion = mkDefault "23.05";
   home.homeDirectory = mkDefault "/home/alex";
 
-  # SOPS
   sops.defaultSopsFile = ../../../secrets/default.yaml;
   sops.age.sshKeyPaths = ["/home/alex/.ssh/id_ed25519"];
+<<<<<<< HEAD
 #  sops.secrets.defaultUserPassword.neededForUsers = true;
+=======
+  #sops.secrets.defaultUserPassword.neededForUsers = true;
+>>>>>>> 769be3dfdc635b2af4ac9ea0bdfae6ae4352910b
 }
