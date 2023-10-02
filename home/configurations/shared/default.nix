@@ -17,6 +17,7 @@ in {
     nil
     comma
     ncdu
+    bash
   ];
 
   home.stateVersion = mkDefault "23.05";
