@@ -10,7 +10,7 @@
     (lib.mkIf config.systemModules.user.alex.enable {
       users.users.alex = {
         isNormalUser = true;
-        home = "/home/alex";
+        #home = "/home/alex";
         extraGroups = ["networkmanager" "wheel" "video"];
         #passwordFile = config.sops.secrets.users_alex_password.path;
       };
@@ -18,7 +18,7 @@
     (lib.mkIf config.systemModules.user.oli.enable {
       users.users.oli = {
         isNormalUser = true;
-        home = "/home/oli";
+        #home = "/home/oli";
         extraGroups = ["networkmanager" "wheel" "video"];
         #passwordFile = config.sops.secrets.users_oli_password.path;
       };
