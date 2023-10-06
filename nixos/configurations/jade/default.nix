@@ -28,9 +28,4 @@
       text = ''\e[32mWelcome to Jade!\e[0m'';
     };
   };
-
-  # No Login Manager
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway
-  '';
 }
