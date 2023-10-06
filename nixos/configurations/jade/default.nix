@@ -10,7 +10,7 @@
 
   # Disable XWayland & Xorg
   programs.xwayland.enable = false;
-  services.xserver.enable = false;
+  #services.xserver.enable = false;
 
   # Disable XDG Portal
   xdg.portal.enable = false;
