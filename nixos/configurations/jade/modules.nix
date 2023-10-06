@@ -22,6 +22,6 @@
     sway.ruby.enable = true;
     opengl.enable = true;
     polkit.enable = true;
-    systemModules.gdm.wayland.enable = true;
+    gdm.wayland.enable = true;
   };
 }
