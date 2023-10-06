@@ -5,7 +5,7 @@
 }: {
   options.systemModules.nvidia.enable = lib.mkEnableOption "";
   config = lib.mkIf config.systemModules.nvidia.enable {
-    services.xserver.videoDrivers = ["nouveau"];
+    services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia = {
       modesetting.enable = true;
       open = true;
