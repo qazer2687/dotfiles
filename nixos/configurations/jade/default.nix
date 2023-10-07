@@ -13,7 +13,7 @@
   #services.xserver.enable = false;
 
   # Disable XDG Portal
-  xdg.portal.enable = false;
+  xdg.portal.enable = true;
 
   # Environment Variables
   environment.sessionVariables = {
