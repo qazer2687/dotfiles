@@ -12,14 +12,19 @@
   programs.xwayland.enable = false;
   #services.xserver.enable = false;
 
-  # Disable XDG Portal
-  xdg.portal.enable = true;
+  # XDG Portal
+  xdg.portal = {
+    enable = true;
+    gtkUsePortal = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
+  };
 
-  # Environment Variables
+  services.xserver.displayManager.sessionPackages = [ swayPackage ];
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Wayland Electron Support
     MOZ_ENABLE_WAYLAND = "1";
-    GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
+  # GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
     WLR_NO_HARDWARE_CURSORS = "1"; # Invisible Cursor Fix
   };
 
@@ -32,6 +37,6 @@
 
   # No Login Manager
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
+    [[ "$(tty)" == /dev/tty2 ]] && sway --unsupported-gpu
   '';
 }
