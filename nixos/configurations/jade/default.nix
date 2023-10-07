@@ -20,6 +20,7 @@
     NIXOS_OZONE_WL = "1"; # Wayland Electron Support
     MOZ_ENABLE_WAYLAND = "1";
     GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
+    WLR_NO_HARDWARE_CURSORS = "1"; # Invisible Cursor Fix
   };
 
   # Startup Message
@@ -28,4 +29,9 @@
       text = ''\e[32mWelcome to Jade!\e[0m'';
     };
   };
+
+  # No Login Manager
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
+  '';
 }
