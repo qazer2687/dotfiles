@@ -16,5 +16,5 @@
     #protonup-qt
   ];
 
-  sops.secrets.spotify_password.path = "/home/alex/.config/spotifyd/password";
+  sops.secrets.spotify_password.path = "/home/alext/.config/spotifyd/password";
 }
