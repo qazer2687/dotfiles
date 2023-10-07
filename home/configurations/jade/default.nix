@@ -5,7 +5,7 @@
 
   home.packages = with pkgs; [
     # General
-    #obs-studio
+    obs-studio
     #vlc
 
     # Gaming
