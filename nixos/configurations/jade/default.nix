@@ -15,13 +15,6 @@
   programs.xwayland.enable = false;
   #services.xserver.enable = false;
 
-  # XDG Portal
-  xdg.portal = {
-    enable = false;
-    gtkUsePortal = true;
-    #extraPortals = [ pkgs.obs-xdg-portal pkgs.xdg-desktop-portal-wlr ];
-  };
-
   services.xserver.displayManager.sessionPackages = [ pkgs.sway ];
 
   environment.sessionVariables = {
@@ -31,7 +24,7 @@
     
 
     # Fixes
-    #GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
+    GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
     WLR_NO_HARDWARE_CURSORS = "1"; # Invisible Cursor Fix
     #ELECTRON_DISABLE_GPU = "1"; # Display Flickering Fix
   };
