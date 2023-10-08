@@ -25,5 +25,6 @@
     ./wluma
     ./rider
     ./chromium
+    ./obs
   ];
 }
