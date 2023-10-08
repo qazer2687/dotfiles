@@ -1,4 +1,7 @@
-{...}: {
+{
+  pkgs,
+  ...
+}: {
   # Imports
   imports = [
     ./hardware-configuration.nix
@@ -16,16 +19,21 @@
   xdg.portal = {
     enable = true;
     gtkUsePortal = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = [ pkgs.obs-xdg-portal pkgs.xdg-desktop-portal-wlr ];
   };
 
-  services.xserver.displayManager.sessionPackages = [ swayPackage ];
+  services.xserver.displayManager.sessionPackages = [ pkgs.swayfx ];
 
   environment.sessionVariables = {
+    # General
     NIXOS_OZONE_WL = "1"; # Wayland Electron Support
-    MOZ_ENABLE_WAYLAND = "1";
-  # GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
+    MOZ_ENABLE_WAYLAND = "1"; # Wayland Firefox Support
+    
+
+    # Fixes
+    GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
     WLR_NO_HARDWARE_CURSORS = "1"; # Invisible Cursor Fix
+    ELECTRON_DISABLE_GPU = "1" # Display Flickering Fix
   };
 
   # Startup Message
