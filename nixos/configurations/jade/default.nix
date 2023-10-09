@@ -10,7 +10,7 @@
 
   # Disable XWayland & Xorg
   programs.xwayland.enable = false;
-  services.xserver.enable = false;
+  #services.xserver.enable = false;
 
   # Disable XDG Portal
   xdg.portal.enable = false;
@@ -20,6 +20,7 @@
     NIXOS_OZONE_WL = "1"; # Wayland Electron Support
     MOZ_ENABLE_WAYLAND = "1";
     GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
+    WLR_NO_HARDWARE_CURSORS = "1"; # Invisible Cursor Fix
   };
 
   # Startup Message
@@ -31,6 +32,6 @@
 
   # No Login Manager
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway
+    [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
   '';
 }
