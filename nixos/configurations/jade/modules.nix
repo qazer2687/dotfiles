@@ -17,7 +17,7 @@
     udev.via.enable = true;
     kernel.jade.enable = true;
     fstrim.enable = true;
-    #nvidia.enable = true;
+    nvidia.enable = true;
     sway.ruby.enable = true;
     opengl.enable = true;
     polkit.enable = true;
