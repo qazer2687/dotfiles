@@ -8,7 +8,6 @@
     pipewire.enable = true;
     easyeffects.enable = true;
     systemd-boot.enable = true;
-    i3.enable = true;
     colemak.enable = true;
     fonts.enable = true;
     libinput.enable = true;
@@ -22,5 +21,6 @@
     sway.ruby.enable = true;
     opengl.enable = true;
     polkit.enable = true;
+    gdm.wayland.enable = true;
   };
 }
