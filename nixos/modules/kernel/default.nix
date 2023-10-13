@@ -19,7 +19,7 @@
         initrd.verbose = false;
 
         # Zen Kernel
-        kernelPackages = pkgs.linuxPackages_zen;
+        kernelPackages = pkgs.linuxPackages_latest;
       };
     })
     (lib.mkIf config.systemModules.kernel.ruby.enable {

@@ -11,22 +11,18 @@
   # Hostname
   networking.hostName = "jade";
 
-  # Disable XWayland & Xorg
+  # Disable XWayland & Xorg & XDG Portal
   programs.xwayland.enable = false;
-  #services.xserver.enable = false;
+  services.xserver.enable = false;
+  xdg.portal.enable = false;
 
-  services.xserver.displayManager.sessionPackages = [ pkgs.sway ];
-
+  # Environment Variables
   environment.sessionVariables = {
-    # General
+    WLR_NO_HARDWARE_CURSORS = "1"; # Invisible Cursor Fix
     NIXOS_OZONE_WL = "1"; # Wayland Electron Support
     MOZ_ENABLE_WAYLAND = "1"; # Wayland Firefox Support
-    
-
-    # Fixes
     GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
-    WLR_NO_HARDWARE_CURSORS = "1"; # Invisible Cursor Fix
-    #ELECTRON_DISABLE_GPU = "1"; # Display Flickering Fix
+    
   };
 
   # Startup Message
@@ -38,6 +34,6 @@
 
   # No Login Manager
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty2 ]] && sway --unsupported-gpu
+    [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
   '';
 }
