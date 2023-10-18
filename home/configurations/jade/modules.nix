@@ -16,6 +16,5 @@
     foot.ruby.enable = true;
     sway.jade.enable = true;
     waybar.ruby.enable = true;
-    bash.jade.enable = true;
   };
 }

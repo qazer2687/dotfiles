@@ -15,11 +15,15 @@
     gnome-keyring.enable = true;
     networkmanager.enable = true;
     udev.via.enable = false;
-    kernel.jade.enable = true;
     fstrim.enable = true;
     nvidia.enable = true;
     sway.ruby.enable = true;
     opengl.enable = true;
     polkit.enable = true;
+
+    kernel = {
+      enable = true;
+      type = "zen";
+    };
   };
 }
