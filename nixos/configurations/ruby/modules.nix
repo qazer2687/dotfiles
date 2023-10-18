@@ -17,7 +17,6 @@
     fstrim.enable = true;
     polkit.enable = true;
     opengl.enable = true;
-    sway.ruby.enable = true;
 
     kernel = {
       enable = true;
@@ -27,6 +26,11 @@
     zram = {
       enable = true;
       percentage = 20;
+    };
+
+    sway = {
+      enable = true;
+      host = "ruby";
     };
   };
 }
