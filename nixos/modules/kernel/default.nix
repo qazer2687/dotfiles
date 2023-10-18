@@ -10,7 +10,7 @@
   options.systemModules.kernel.type = lib.mkOption {
     default = "stable";
     type = lib.types.str;
-    description = "Choose the kernel type. ('stable', 'zen' or 'lts')";
+    description = "Choose the kernel type. ('latest', 'zen' or 'lts')";
   };
 
   config = lib.mkIf config.systemModules.kernel.enable {
