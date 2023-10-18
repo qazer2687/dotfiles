@@ -2,31 +2,27 @@
   lib,
   config,
   ...
-}: {
-  options.systemModules.gdm.xorg.enable = lib.mkEnableOption "";
-  options.systemModules.gdm.wayland.enable = lib.mkEnableOption "";
-  options.systemModules.gdm.autologin.enable = lib.mkEnableOption "";
+}: { 
 
-  config = lib.mkMerge [
-    (lib.mkIf config.systemModules.gdm.xorg.enable {
+  options.systemModules.gdm.enable = lib.mkEnableOption "";
+
+  options.systemModules.gdm.backend = lib.mkOption {
+    default = "xorg";
+    type = lib.types.str;
+    description = "Choose the GDM backend. ('xorg' or 'wayland')";
+  };
+
+  config = {
+    systemModules.gdm.enable = {
       services.xserver = {
         enable = true;
         displayManager.gdm.enable = true;
       };
-    })
-    (lib.mkIf config.systemModules.gdm.wayland.enable {
-      services.xserver = {
-        enable = true;
-        displayManager.gdm.enable = true;
-        displayManager.gdm.wayland = true;
+    };
+    systemModules.gdm.backend = {
+      services.xserver.displayManager = {
+        wayland.enable = if config.systemModules.gdm.backend == "wayland" then true else false;
       };
-    })
-    (lib.mkIf config.systemModules.gdm.autologin.enable {
-      services.xserver = {
-        displayManager.autoLogin.enable = true;
-        displayManager.autoLogin.user = "alex";
-        displayManager.defaultSession = "none+i3";
-      };
-    })
-  ];
+    };
+  };
 }

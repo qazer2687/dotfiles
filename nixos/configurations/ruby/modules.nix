@@ -13,11 +13,20 @@
     logind.enable = true;
     gnome-keyring.enable = true;
     networkmanager.enable = true;
-    kernel.ruby.enable = true;
     tlp.enable = true;
     fstrim.enable = true;
     polkit.enable = true;
     opengl.enable = true;
     sway.ruby.enable = true;
+
+    kernel = {
+      enable = true;
+      type = "zen";
+    };
+
+    zram = {
+      enable = true;
+      percentage = 20;
+    };
   };
 }

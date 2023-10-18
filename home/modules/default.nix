@@ -2,7 +2,6 @@
   imports = [
     ./alacritty
     ./armcord
-    ./bash
     ./direnv
     ./dunst
     ./firefox
@@ -25,5 +24,6 @@
     ./wluma
     ./rider
     ./chromium
+    ./obs
   ];
 }
