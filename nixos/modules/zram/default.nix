@@ -16,7 +16,7 @@
     zramSwap = {
       enable = true;
       algorithm = "zstd";
-      memoryPercent = "${config.systemModules.zram.percentage}";
+      memoryPercent = config.systemModules.zram.percentage;
     };
   };
 }

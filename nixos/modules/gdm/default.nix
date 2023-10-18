@@ -17,7 +17,7 @@
       enable = true;
       displayManager.gdm = {
         enable = true;
-        wayland.enable = config.systemModules.gdm.backend == "wayland";
+        wayland = config.systemModules.gdm.backend == "wayland";
       };
     };
   };
