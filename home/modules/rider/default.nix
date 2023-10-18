@@ -1,14 +1,15 @@
 {
   lib,
-  config,
   pkgs,
   ...
 }: {
-  options.homeModules.rider.enable = lib.mkEnableOption "";
+  options.homeModules.rider.enable = lib.mkEnableOption "Enable Jetbrains Rider.";
 
-  config = lib.mkIf config.homeModules.rider.enable {
-    home.packages = with pkgs; [
-      jetbrains.rider
-    ];
+  config = {
+    homeModules.rider.enable = {
+      home.packages = with pkgs; [
+        jetbrains.rider
+      ];
+    };
   };
 }

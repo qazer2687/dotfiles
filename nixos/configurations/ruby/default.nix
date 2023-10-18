@@ -8,18 +8,17 @@
   # Hostname
   networking.hostName = "ruby";
 
-  # Disable XWayland & Xorg
+  # Disable XWayland & Xorg & XDG Portal
   programs.xwayland.enable = false;
   services.xserver.enable = false;
-
-  # Disable XDG Portal
   xdg.portal.enable = false;
 
   # Environment Variables
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Wayland Electron Support
-    MOZ_ENABLE_WAYLAND = "1";
+    MOZ_ENABLE_WAYLAND = "1"; # Wayland Firefox Support
     GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
+    NIXPKGS_ALLOW_UNFREE = "1"; # Allow Unfree 'nix-shell' Packages
   };
 
   # Startup Message

@@ -15,6 +15,5 @@
     sway.ruby.enable = true;
     waybar.ruby.enable = true;
     rider.enable = true;
-    bash.ruby.enable = true;
   };
 }
