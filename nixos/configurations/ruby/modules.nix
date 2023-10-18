@@ -20,7 +20,7 @@
 
     kernel = {
       enable = true;
-      type = "zen";
+      type = "stable";
     };
 
     zram = {

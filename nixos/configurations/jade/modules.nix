@@ -19,7 +19,7 @@
 
     kernel = {
       enable = true;
-      type = "zen";
+      type = "stable";
     };
 
     zram = {
@@ -38,11 +38,6 @@
 
     opengl = {
       enable = true;
-    };
-    
-    gdm = {
-      enable = true;
-      backend = "wayland";
     };
 
   };

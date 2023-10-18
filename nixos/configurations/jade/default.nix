@@ -23,7 +23,7 @@
     MOZ_ENABLE_WAYLAND = "1"; # Wayland Firefox Support
     GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
     NIXPKGS_ALLOW_UNFREE = "1"; # Allow Unfree 'nix-shell' Packages
-    WLR_RENDERER= "vulkan"; # Wayland Flickering Fix
+    #WLR_RENDERER= "vulkan"; # Wayland Flickering Fix
     
   };
 
@@ -36,6 +36,6 @@
 
   # No Login Manager
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
+    [[ "$(tty)" == /dev/tty1 ]] && WLR_RENDERER=vulkan sway --unsupported-gpu
   '';
 }
