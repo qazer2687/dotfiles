@@ -1,4 +1,7 @@
-{...}: {
+{
+  lib,
+  ...
+}: {
   # Imports
   imports = [
     ./hardware-configuration.nix
@@ -10,7 +13,7 @@
 
   # Disable XWayland & Xorg & XDG Portal
   programs.xwayland.enable = false;
-  services.xserver.enable = false;
+  services.xserver.enable = lib.mkDefault false;
   xdg.portal.enable = false;
 
   # Environment Variables

@@ -15,12 +15,10 @@
   config = lib.mkIf config.systemModules.gdm.enable {
     services.xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
-    };
-  };
-  systemModules.gdm.backend = {
-    services.xserver.displayManager = {
-      wayland.enable = if config.systemModules.gdm.backend == "wayland" then true else false;
+      displayManager.gdm = {
+        enable = true;
+        wayland.enable = config.systemModules.gdm.backend == "wayland";
+      };
     };
   };
 }
