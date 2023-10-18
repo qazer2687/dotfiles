@@ -83,7 +83,7 @@
       };
 
       # Opal Configuration
-      opal = nixpkgs.lib.nixosSystem {
+      /*opal = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
@@ -136,7 +136,7 @@
             };
           }
         ];
-      };
+      };*/
     };
   };
 }
