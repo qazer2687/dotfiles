@@ -16,7 +16,9 @@
   config = lib.mkIf config.systemModules.sway.enable {
     programs.sway = {
       enable = true;
-      #package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+
+      # Use SwayFX Package
+      package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
 
       # Install Additional Packages
       extraPackages = with pkgs; [
