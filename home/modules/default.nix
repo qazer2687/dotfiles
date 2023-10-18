@@ -15,7 +15,6 @@
     ./polybar
     ./spicetify
     ./spotifyd
-    ./sway
     ./udiskie
     ./vscode
     ./wofi
@@ -25,5 +24,6 @@
     ./rider
     ./chromium
     ./obs
+    ./vlc
   ];
 }
