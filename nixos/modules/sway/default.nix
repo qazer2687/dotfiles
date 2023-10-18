@@ -17,6 +17,8 @@
     programs.sway = {
       enable = true;
       package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+
+      # Install Additional Packages
       extraPackages = with pkgs; [
         brightnessctl # Backlight Control
         dmenu-wayland # Application Launcher
@@ -31,9 +33,10 @@
         pamixer # Volume Bindings
       ];
     };
-  };
-  systemModules.sway.host = {
-    environment.etc."sway/conf".text = builtins.readFile "./config/${config.systemModules.sway.host}";
+
+    # Copy Sway Configuration Into /etc
+    environment.etc."sway/config".source = ./config/${config.systemModules.sway.host};
+  
   };
 }
 
