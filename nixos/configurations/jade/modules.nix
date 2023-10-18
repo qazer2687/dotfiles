@@ -19,7 +19,7 @@
 
     kernel = {
       enable = true;
-      type = "stable";
+      type = "latest";
     };
 
     zram = {
