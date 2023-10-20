@@ -3,22 +3,19 @@
   config,
   ...
 }: {
-  options.homeModules.foot.jade.enable = lib.mkEnableOption "";
-  options.homeModules.foot.ruby.enable = lib.mkEnableOption "";
+  options.homeModules.foot.enable = lib.mkEnableOption "";
 
-  config = lib.mkMerge [
-    (lib.mkIf config.homeModules.foot.jade.enable {
-      # Placeholder
-    })
+  options.homeModules.foot.host = lib.mkOption {
+    default = "";
+    type = lib.types.str;
+    description = "Choose the host-specific configuration. (e.g. 'jade' or 'ruby')";
+  };
 
-    (lib.mkIf config.homeModules.foot.ruby.enable {
-      # Installation
-      programs.foot = {
-        enable = true;
-      };
+  config = lib.mkIf config.homeModules.foot.enable {
+    programs.foot = {
+      enable = true;
+    };
 
-      # Configuration
-      xdg.configFile."foot/foot.ini".text = builtins.readFile ./config/ruby;
-    })
-  ];
+    xdg.configFile."foot/foot.ini".text = builtins.readFile ./config/${config.homeModules.foot.host};
+  };
 }
