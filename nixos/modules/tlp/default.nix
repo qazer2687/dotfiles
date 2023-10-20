@@ -4,7 +4,7 @@
   ...
 }: {
   options.systemModules.tlp.enable = lib.mkEnableOption "";
-  # Configuration
+
   config = lib.mkIf config.systemModules.tlp.enable {
     services.tlp = {
       enable = true;
