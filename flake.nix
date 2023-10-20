@@ -75,7 +75,6 @@
               sharedModules = [
                 ./home/configurations/shared
                 inputs.sops-nix.homeManagerModules.sops
-                inputs.spicetify-nix.homeManagerModule
               ];
             };
           }

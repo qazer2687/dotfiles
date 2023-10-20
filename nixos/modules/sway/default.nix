@@ -26,13 +26,9 @@
         dmenu-wayland # Application Launcher
         mako # Notification Daemon
         fltk # Keymap Control
-        nitch # System Stats
-        pavucontrol # Audio GUI
         grim # Screenshot Tool
         wl-clipboard # Clipboard Tool
-        waybar # System Bar
         gnome.nautilus # File Explorer
-        pamixer # Volume Bindings
       ];
     };
 

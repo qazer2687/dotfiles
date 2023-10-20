@@ -11,6 +11,8 @@
     security.rtkit.enable = true;
     environment.systemPackages = with pkgs; [
       pulseaudio
+      pavucontrol
+      pamixer
     ];
     services.pipewire = {
       enable = true;

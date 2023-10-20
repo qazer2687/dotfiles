@@ -34,6 +34,7 @@
 
     nvidia = {
       enable = true;
+      driver = "stable";
     };
 
     opengl = {
