@@ -32,6 +32,9 @@ bindsym $mod+# exec grim -g "$(slurp)" ~/Screenshots/$(date +'%H:%M:%S.png') | w
 # System Bar   
 #exec_always --no-startup-id killall .waybar-wrapped -q; waybar
 
+# Floating Resize
+floating_modifier $mod normal
+
 # Workspace Navigation
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
