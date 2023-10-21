@@ -16,7 +16,6 @@
     #temp
     vscode.jade.enable = true;
     waybar.ruby.enable = true;
-    foot.jade.enable = true;
     
     armcord.enable = true;
     vlc.enable = true;
@@ -31,10 +30,10 @@
     #  host = "jade";
     #};
 
-    #foot = {
-    #  enable = true;
-    #  host = "jade";
-    #};
+    foot = {
+      enable = true;
+      host = "ruby";
+    };
 
   };
 }
