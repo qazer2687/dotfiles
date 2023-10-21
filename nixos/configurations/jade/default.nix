@@ -12,9 +12,9 @@
   networking.hostName = "jade";
 
   # Disable XWayland & Xorg & XDG Portal
-  programs.xwayland.enable = false;
-  services.xserver.enable = lib.mkDefault false;
-  xdg.portal.enable = false;
+  #programs.xwayland.enable = false;
+  #services.xserver.enable = lib.mkDefault false;
+  #xdg.portal.enable = false;
 
   # Environment Variables
   environment.sessionVariables = {
