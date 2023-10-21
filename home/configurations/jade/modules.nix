@@ -14,8 +14,8 @@
     obsidian.enable = true;
 
     #temp
-    vscode.enable = true;
-    waybar.enable = true;
+    vscode.jade.enable = true;
+    waybar.ruby.enable = true;
     
     armcord.enable = true;
     vlc.enable = true;
