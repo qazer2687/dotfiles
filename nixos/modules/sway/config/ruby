@@ -36,6 +36,9 @@ bindsym $mod+# exec grim -g "$(slurp)" ~/Screenshots/$(date +'%H:%M:%S.png') | w
 # Eye Comfort \\ EXPERIMENTAL
 exec --no-startup-id nohup gammastep -xO 4000
 
+# Floating Resize
+floating_modifier $mod normal
+
 # Brightness Control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
