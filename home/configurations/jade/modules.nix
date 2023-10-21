@@ -12,19 +12,23 @@
     obs.enable = true;
     spotifyd.enable = true;
     obsidian.enable = true;
+
+    #temp
+    vscode.enable = true;
+    waybar.enable = true;
     
     armcord.enable = true;
     vlc.enable = true;
     
-    vscode = {
-      enable = true;
-      host = "jade";
-    };
+    #vscode = {
+    #  enable = true;
+    #  host = "jade";
+    #};
 
-    waybar = {
-      enable = true;
-      host = "jade";
-    };
+    #waybar = {
+    #  enable = true;
+    #  host = "jade";
+    #};
 
     foot = {
       enable = true;
