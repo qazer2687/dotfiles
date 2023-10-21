@@ -13,6 +13,9 @@
     spotifyd.enable = true;
     obsidian.enable = true;
     
+    armcord.enable = true;
+    vlc.enable = true;
+    
     vscode = {
       enable = true;
       host = "jade";
@@ -28,8 +31,5 @@
       host = "jade";
     };
 
-    vlc = {
-      enable = true;
-    };
   };
 }

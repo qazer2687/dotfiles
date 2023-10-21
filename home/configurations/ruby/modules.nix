@@ -11,7 +11,22 @@
     firefox.enable = true;
     obsidian.enable = true;
     vscode.ruby.enable = true;
-    foot.ruby.enable = true;
-    waybar.ruby.enable = true;
+
+    vscode = {
+      enable = true;
+      host = "ruby";
+    };
+
+    foot = {
+      enable = true;
+      host = "ruby";
+    };
+
+    waybar = {
+      enable = true;
+      host = "ruby";
+    };
+
+    armcord.enable = true;
   };
 }

@@ -16,20 +16,36 @@
   config = lib.mkIf config.systemModules.sway.enable {
     programs.sway = {
       enable = true;
+      wrapperFeatures.gtk = true;
 
       # Use SwayFX Package
       package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
 
       # Install Additional Packages
       extraPackages = with pkgs; [
-        brightnessctl # Backlight Control
-        dmenu-wayland # Application Launcher
-        mako # Notification Daemon
-        fltk # Keymap Control
-        grim # Screenshot Tool
-        wl-clipboard # Clipboard Tool
-        gnome.nautilus # File Explorer
+        brightnessctl
+        dmenu-wayland
+        mako
+        fltk
+        grim
+        wl-clipboard
+        gnome.nautilus
+        slurp
+        swaylock
+        swayidle
+        wayland
+        gammastep
       ];
+    };
+
+    # DBUS
+    services.dbus.enable = true;
+
+    # XDG
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+    # extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # WARN: Causes Waybar Startup Delay
     };
 
     # Copy Sway Configuration Into /etc
