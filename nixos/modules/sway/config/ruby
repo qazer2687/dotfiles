@@ -31,7 +31,7 @@ exec_always --no-startup-id mako
 
 # Screenshot Binds
 bindsym Print exec grim -g "$(slurp)" ~/Screenshots/$(date +'%H:%M:%S.png') | wl-copy -t image/png
-bindsym $mod+# exec grim -g "$(slurp)" ~/Screenshots/$(date +'%H:%M:%S.png') | wl-copy -t image/png
+#bindsym $mod+# exec grim -g "$(slurp)" ~/Screenshots/$(date +'%H:%M:%S.png') | wl-copy -t image/png # cant use '#' symbol
 
 # Eye Comfort \\ EXPERIMENTAL
 exec --no-startup-id nohup gammastep -xO 4000
@@ -92,7 +92,7 @@ bar {
 
 # SwayFX
 corner_radius 5
-shadows enable
+shadows disable
 shadow_color #0000007F
 #default_dim_inactive 0.1
 #dim_inactive_colors.unfocused #000000FF
