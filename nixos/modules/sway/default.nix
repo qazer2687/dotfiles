@@ -41,12 +41,12 @@
     # DBUS
     services.dbus.enable = true;
 
-    # XDG
-    xdg.portal = {
-      enable = true;
-      wlr.enable = true;
-    # extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # WARN: Causes Waybar Startup Delay
-    };
+    # XDG (broken, causes firefox and waybar 'very' slow startup)
+    #xdg.portal = {
+    #  enable = true;
+    #  wlr.enable = true;
+    # extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    #};
 
     # Copy Sway Configuration Into /etc
     environment.etc."sway/config".source = ./config/${config.systemModules.sway.host};
