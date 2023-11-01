@@ -21,6 +21,8 @@ in {
     sandbox = mkDefault false;
   };
 
+  # Logrotate Bug Workaround
+  services.logrotate.enable = false;
   services.logrotate.checkConfig = false;
 
   # Locale
