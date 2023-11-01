@@ -70,11 +70,13 @@
           {
             home-manager = {
               users.alex = ./home/configurations/ruby;
+              extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
                 ./home/configurations/shared
                 inputs.sops-nix.homeManagerModules.sops
+                inputs.spicetify-nix.homeManagerModule
               ];
             };
           }
