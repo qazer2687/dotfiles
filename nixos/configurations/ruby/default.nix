@@ -9,9 +9,9 @@
 
   # ENVIRONMENT
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # Wayland Electron Support
-    MOZ_ENABLE_WAYLAND = "1"; # Wayland Firefox Support
-    GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
+    #NIXOS_OZONE_WL = "1"; # Wayland Electron Support
+    #MOZ_ENABLE_WAYLAND = "1"; # Wayland Firefox Support
+    #GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
     NIXPKGS_ALLOW_UNFREE = "1"; # Allow Unfree 'nix-shell' Packages
   };
 

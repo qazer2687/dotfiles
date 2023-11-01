@@ -30,22 +30,15 @@
         wl-clipboard
         gnome.nautilus
         slurp
-        swaylock
-        swayidle
         wayland
         gammastep
       ];
     };
 
-    # DBUS
-    services.dbus.enable = true;
-
     # XDG (broken, causes firefox and waybar 'very' slow startup)
-    #xdg.portal = {
-    #  enable = true;
-    #  wlr.enable = true;
-    # extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    #};
+    xdg.portal = {
+      enable = false;
+    };
 
     # Copy Sway Configuration Into /etc
     environment.etc."sway/config".source = ./config/${config.systemModules.sway.host};
