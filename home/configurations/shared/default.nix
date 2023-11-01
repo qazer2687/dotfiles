@@ -13,6 +13,7 @@ in {
     comma
     ncdu
     bash
+    nitch
   ];
 
   home.stateVersion = mkDefault "23.05";
