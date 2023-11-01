@@ -33,7 +33,7 @@ in {
       VISUAL = "nvim";
     };
     interactiveShellInit = ''
-      alias check='alejandra **/* && deadnix -e && statix fix'
+      alias check='alejandra -q **/* && deadnix -e && statix fix'
       alias rebuild='sudo nixos-rebuild switch --flake .#$(hostname)'
       alias rebuild-git='sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#$(hostname)'
     '';
