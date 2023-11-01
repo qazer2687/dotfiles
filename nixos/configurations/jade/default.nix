@@ -1,41 +1,51 @@
-{
-  lib,
-  ...
-}: {
-  # Imports
+{...}: {
   imports = [
-    ./hardware-configuration.nix
-    ./modules.nix
+    ../../../hardware/jade
+    ../../modules
   ];
 
-  # Hostname
+  # NETWORKING
   networking.hostName = "jade";
 
-  # Disable XWayland & Xorg & XDG Portal
-  #programs.xwayland.enable = false;
-  #services.xserver.enable = lib.mkDefault false;
-  #xdg.portal.enable = false;
+  # MODULES
+  systemModules = {
+    user.alex.enable = true;
+    pipewire.enable = true;
+    easyeffects.enable = true;
+    systemd-boot.enable = true;
+    colemak.enable = true;
+    fonts.enable = true;
+    libinput.enable = true;
+    gnome-keyring.enable = true;
+    networkmanager.enable = true;
+    udev.via.enable = false;
+    fstrim.enable = true;
+    polkit.enable = true;
+    i3.enable = true;
 
-  # Environment Variables
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1"; # Invisible Cursor Fix
-    NIXOS_OZONE_WL = "1"; # Wayland Electron Support
-    MOZ_ENABLE_WAYLAND = "1"; # Wayland Firefox Support
-    GTK_USE_PORTAL = "0"; # Waybar Startup Delay Fix
-    NIXPKGS_ALLOW_UNFREE = "1"; # Allow Unfree 'nix-shell' Packages
-    #WLR_RENDERER= "vulkan"; # Wayland Flickering Fix (does not launch with swayfx)
-    
-  };
+    kernel = {
+      enable = true;
+      type = "latest";
+    };
 
-  # Startup Message
-  environment.etc = {
-    issue = {
-      text = ''\e[32mWelcome to Jade!\e[0m'';
+    zram = {
+      enable = true;
+      percentage = 20;
+    };
+
+
+    nvidia = {
+      enable = true;
+      driver = "stable";
+    };
+
+    opengl = {
+      enable = true;
+    };
+
+    gdm = {
+      enable = true;
+      backend = "xorg";
     };
   };
-
-  # No Login Manager
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway --unsupported-gpu
-  '';
 }

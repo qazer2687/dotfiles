@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}: { 
-
+}: {
   options.systemModules.kernel.enable = lib.mkEnableOption "";
 
   options.systemModules.kernel.type = lib.mkOption {

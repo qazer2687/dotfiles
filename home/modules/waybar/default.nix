@@ -30,9 +30,9 @@
               default = ["" "" ""];
             };
           };
-#          clock = {
-#            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
-#          };
+          #          clock = {
+          #            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
+          #          };
           battery = {
             format = "{icon} {}%";
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];

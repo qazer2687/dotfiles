@@ -2,8 +2,7 @@
   lib,
   config,
   ...
-}: { 
-
+}: {
   options.systemModules.zram.enable = lib.mkEnableOption "";
 
   options.systemModules.zram.percentage = lib.mkOption {

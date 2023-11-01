@@ -5,11 +5,6 @@
 }: let
   inherit (lib) mkDefault;
 in {
-  
-  imports = [
-    ./modules.nix
-  ];
-
   home.packages = with pkgs; [
     statix
     alejandra
@@ -25,5 +20,4 @@ in {
 
   sops.defaultSopsFile = ../../../secrets/default.yaml;
   sops.age.sshKeyPaths = ["/home/alex/.ssh/id_ed25519"];
-  #sops.secrets.defaultUserPassword.neededForUsers = true;
 }

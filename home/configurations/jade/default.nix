@@ -1,7 +1,24 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
-    ./modules.nix
+    ../../modules
   ];
 
-  sops.secrets.spotify_password.path = "/home/alext/.config/spotifyd/password";
+  sops.secrets.spotify_password.path = "/home/alex/.config/spotifyd/password";
+
+  homeModules = {
+    direnv.enable = true;
+    git.enable = true;
+    neovim.enable = true;
+    firefox.enable = true;
+    spicetify.enable = true;
+    obs.enable = true;
+    spotifyd.enable = true;
+    obsidian.enable = true;
+    vscode.jade.enable = true;
+    polybar.jade.enable = true;
+    armcord.enable = true;
+    vlc.enable = true;
+    alacritty.enable = true;
+    i3.jade.enable = true;
+  };
 }

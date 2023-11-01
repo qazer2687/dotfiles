@@ -4,7 +4,6 @@
   config,
   ...
 }: {
-
   options.systemModules.opengl.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.systemModules.opengl.enable {
@@ -13,9 +12,8 @@
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        vulkan-validation-layers 
+        vulkan-validation-layers
       ];
     };
   };
 }
-

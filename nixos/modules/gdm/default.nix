@@ -2,8 +2,7 @@
   lib,
   config,
   ...
-}: { 
-
+}: {
   options.systemModules.gdm.enable = lib.mkEnableOption "";
 
   options.systemModules.gdm.backend = lib.mkOption {
