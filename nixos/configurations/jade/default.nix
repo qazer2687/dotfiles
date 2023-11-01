@@ -33,7 +33,6 @@
       percentage = 20;
     };
 
-
     nvidia = {
       enable = true;
       driver = "stable";
