@@ -4,9 +4,8 @@
   pkgs,
   ...
 }: {
-
   options.systemModules.sway.enable = lib.mkEnableOption "";
-  
+
   options.systemModules.sway.host = lib.mkOption {
     default = "";
     type = lib.types.str;
@@ -50,7 +49,5 @@
 
     # Copy Sway Configuration Into /etc
     environment.etc."sway/config".source = ./config/${config.systemModules.sway.host};
-  
   };
 }
-

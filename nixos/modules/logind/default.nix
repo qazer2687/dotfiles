@@ -8,8 +8,8 @@
   config = lib.mkIf config.systemModules.logind.enable {
     services.logind = {
       extraConfig = ''
-      HandlePowerKey=ignore
-    '';
+        HandlePowerKey=ignore
+      '';
     };
   };
 }

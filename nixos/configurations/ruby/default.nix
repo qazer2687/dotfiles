@@ -1,19 +1,13 @@
 {...}: {
-  # Imports
   imports = [
-    ./hardware-configuration.nix
-    ./modules.nix
+    ../../../hardware/ruby
+    ../../modules
   ];
 
-  # Hostname
+  # NETWORKING
   networking.hostName = "ruby";
 
-  # Disable XWayland & Xorg & XDG Portal
-  programs.xwayland.enable = false;
-  services.xserver.enable = false;
-  xdg.portal.enable = false;
-
-  # Environment Variables
+  # ENVIRONMENT
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Wayland Electron Support
     MOZ_ENABLE_WAYLAND = "1"; # Wayland Firefox Support
@@ -21,15 +15,40 @@
     NIXPKGS_ALLOW_UNFREE = "1"; # Allow Unfree 'nix-shell' Packages
   };
 
-  # Startup Message
-  environment.etc = {
-    issue = {
-      text = ''\e[31mWelcome to Ruby!\e[0m'';
+  # MODULES
+  systemModules = {
+    user.alex.enable = true;
+    pipewire.enable = true;
+    systemd-boot.enable = true;
+    colemak.enable = true;
+    fonts.enable = true;
+    libinput.enable = true;
+    logind.enable = true;
+    gnome-keyring.enable = true;
+    networkmanager.enable = true;
+    tlp.enable = true;
+    fstrim.enable = true;
+    polkit.enable = true;
+    opengl.enable = true;
+
+    kernel = {
+      enable = true;
+      type = "latest";
+    };
+
+    zram = {
+      enable = true;
+      percentage = 20;
+    };
+
+    sway = {
+      enable = true;
+      host = "ruby";
+    };
+
+    gdm = {
+      enable = true;
+      backend = "wayland";
     };
   };
-
-  # No Login Manager
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway
-  '';
 }

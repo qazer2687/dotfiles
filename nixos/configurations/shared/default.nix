@@ -1,7 +1,4 @@
-{
-  lib,
-  ...
-}: let
+{lib, ...}: let
   inherit (lib) mkDefault;
 in {
   # System State Version
@@ -35,5 +32,10 @@ in {
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
+    interactiveShellInit = ''
+      alias check='alejandra **/* && deadnix -e && statix fix'
+      alias rebuild='sudo nixos-rebuild switch --flake .#$(hostname)'
+      alias rebuild-git='sudo nixos-rebuild switch --flake github:***REMOVED***/dotfiles#$(hostname)'
+    '';
   };
 }
