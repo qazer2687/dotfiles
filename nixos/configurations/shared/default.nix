@@ -12,10 +12,8 @@ in {
     experimental-features = mkDefault [
       "nix-command"
       "flakes"
-      #"auto-allocate-uids"
     ];
     auto-optimise-store = mkDefault true;
-    auto-allocate-uids = mkDefault false;
     keep-derivations = mkDefault true;
     keep-outputs = mkDefault true;
     sandbox = mkDefault false;
