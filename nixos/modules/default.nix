@@ -23,7 +23,9 @@
     ./systemd-boot
     ./tlp
     ./udev
+    ./virt-manager
     ./zram
     ./user
+    ./grub
   ];
 }
