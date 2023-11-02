@@ -54,9 +54,9 @@
   module-margin-left = 2
   module-margin-right = 1
 
-  font-0 = FiraCode Nerd Font:pixelsize=13:antialias=true;3
+  font-0 = FiraCode Nerd Font:pixelsize=18:antialias=true;3
   font-1 = FiraCode Nerd Font:style=Regular:pixelsize=21:antialias=true;4.5
-  font-2 = FiraCode Nerd Font:style=Regular:pixelsize=15:antialias=true;3
+  font-2 = FiraCode Nerd Font:style=Regular:pixelsize=18:antialias=true;3
 
   modules-left = i3
   modules-center =
