@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.systemModules.virt-manager.enable = lib.mkEnableOption "";
