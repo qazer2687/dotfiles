@@ -8,11 +8,13 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 450
-    height = 300
+    width = 400
+    height = 400
     origin = top-right
     offset = 10x60
 
+    frame_color = "#000000"
+    separator_color= frame
 
     progress_bar = true
     progress_bar_height = 14
@@ -22,7 +24,7 @@
 
 
     # Show how many messages are hidden
-    indicate_hidden = yes
+    indicate_hidden = no
 
     # Shrink window if it's smaller than the width.
     shrink = no
@@ -31,10 +33,7 @@
     transparency = 0
 
     # Draw a line between multiple notifications
-    separator_height = 2
-
-    frame_color = "#8AADF4"
-    separator_color = frame
+    separator_height = 4
 
     notification_limit = 8
 
@@ -145,7 +144,7 @@
     class = Dunst
 
     # Define the corner radius of the notification window
-    corner_radius = 10
+    corner_radius = 6
 
     # Don't gnore the dbus closeNotification message.
     ignore_dbusclose = false
@@ -167,28 +166,19 @@
     per_monitor_dpi = false
 
 [urgency_low]
-background = "#24273A"
-foreground = "#CAD3F5"
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    timeout = 8
 
 [urgency_normal]
-background = "#24273A"
-foreground = "#CAD3F5"
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    timeout = 8
 
 [urgency_critical]
-background = "#24273A"
-foreground = "#CAD3F5"
-frame_color = "#F5A97F"
-timeout = 0
-icon = battery-ac-adapter
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    frame_color = "#FAB387"
+    timeout = 0
 
-[backlight]
-    appname = "Backlight"
 
-[music]
-    appname = "Music"
-
-[volume]
-    summary = "Volume*"
-
-[battery]
-    appname = "Power Warning"

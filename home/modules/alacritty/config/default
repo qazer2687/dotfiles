@@ -36,7 +36,7 @@
   colors:
       # Default colors
     primary:
-      background: "#24273A" # base
+      background: "#000000" # base
       foreground: "#CAD3F5" # text
       # Bright and dim foreground colors
       dim_foreground: "#CAD3F5" # text
