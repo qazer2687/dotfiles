@@ -1,4 +1,7 @@
-{...}: {
+{
+  pkgs,
+  ...
+}: {
   imports = [
     ../../../hardware/jade
     ../../modules
@@ -6,6 +9,11 @@
 
   # NETWORKING
   networking.hostName = "jade";
+
+  # PACKAGES
+  environment.systemPackages = with pkgs; [
+    wineWowPackages.staging
+  ];
 
   # MODULES
   systemModules = {
