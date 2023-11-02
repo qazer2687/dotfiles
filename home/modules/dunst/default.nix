@@ -4,24 +4,10 @@
   pkgs,
   ...
 }: {
-  options.homeModules.dunst.jade.enable = lib.mkEnableOption "";
-  options.homeModules.dunst.ruby.enable = lib.mkEnableOption "";
+  options.homeModules.dunst.enable = lib.mkEnableOption "";
 
-  config = lib.mkMerge [
-    (lib.mkIf config.homeModules.dunst.jade.enable {
-      # Installation
-      home.packages = with pkgs; [dunst];
-
-      # Configuration
-      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/jade;
-    })
-
-    (lib.mkIf config.homeModules.dunst.ruby.enable {
-      # Installation
-      home.packages = with pkgs; [dunst];
-
-      # Configuration
-      xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/ruby;
-    })
-  ];
+  config = lib.mkIf config.homeModules.dunst.jade.enable {
+    home.packages = with pkgs; [dunst];
+    xdg.configFile."dunst/dunstrc".text = builtins.readFile ./config/default;
+  };
 }
