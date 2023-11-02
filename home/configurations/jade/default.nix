@@ -15,10 +15,11 @@
     spotifyd.enable = true;
     obsidian.enable = true;
     vscode.jade.enable = true;
-    polybar.jade.enable = true;
+    polybar.enable = true;
     armcord.enable = true;
     vlc.enable = true;
     alacritty.enable = true;
     i3.jade.enable = true;
+    dunst.enable = true;
   };
 }
