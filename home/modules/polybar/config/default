@@ -3,33 +3,33 @@
  mantle = #000000
  crust = #000000
 
- white = #cdd6f4
- subtext0 = #a6adc8
- subtext1 = #bac2de
+ white = #ffffff
+ subtext0 = #ffffff
+ subtext1 = #ffffff
 
- surface0 = #313244
- surface1 = #45475a
- surface2 = #585b70
+ surface0 = #ffffff
+ surface1 = #ffffff
+ surface2 = #ffffff
  
- overlay0 = #6c7086
- overlay1 = #7f849c
- overlay2 = #9399b2
+ overlay0 = #ffffff
+ overlay1 = #ffffff
+ overlay2 = #ffffff
  
 
- blue = #89b4fa
- lavender = #b4befe
- sapphire = #74c7ec
- sky = #89dceb
- teal = #94e2d5
- green = #a6e3a1
- yellow = #f9e2af
- peach = #fab387
- maroon = #eba0ac
- red = #f38ba8
- mauve = #cba6f7
- pink = #f5c2e7
- flamingo = #f2cdcd
- foreground = #f5e0dc
+ blue = #ffffff
+ lavender = #ffffff
+ sapphire = #ffffff
+ sky = #ffffff
+ teal = #ffffff
+ green = #ffffff
+ yellow = #ffffff
+ peach = #ffffff
+ maroon = #ffffff
+ red = #ffffff
+ mauve = #ffffff
+ pink = #ffffff
+ flamingo = #ffffff
+ foreground = #ffffff
 
  transparent = #FF00000
 
