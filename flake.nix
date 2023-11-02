@@ -82,6 +82,20 @@
           }
         ];
       };
+
+      # Citrine Configuration - VM
+      citrine = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./nixos/configurations/citrine
+          ./nixos/configurations/shared
+          {
+            nix.registry.nixpkgs.flake = nixpkgs;
+            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
+          }
+        ];
+      };
     };
   };
 }
