@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{ ...}: {
   imports = [
     ../../../hardware/citrine
     ../../modules
@@ -22,4 +19,3 @@
     };
   };
 }
-
