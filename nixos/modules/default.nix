@@ -26,5 +26,6 @@
     ./virt-manager
     ./zram
     ./user
+    ./grub
   ];
 }
