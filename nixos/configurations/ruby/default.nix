@@ -27,6 +27,7 @@
     fstrim.enable = true;
     polkit.enable = true;
     opengl.enable = true;
+    virt-manager.enable = true;
 
     kernel = {
       enable = true;
