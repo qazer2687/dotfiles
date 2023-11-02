@@ -13,6 +13,6 @@
     # Configuration
     xdg.configFile."polybar/launch.sh".text = builtins.readFile ./scripts/launch.sh;
     xdg.configFile."polybar/launch.sh".executable = true;
-    xdg.configFile."polybar/config.ini".text = builtins.readFile ./config/jade;
+    xdg.configFile."polybar/config.ini".text = builtins.readFile ./config/default;
   };
 }
