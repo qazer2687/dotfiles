@@ -7,7 +7,8 @@
 
   config = lib.mkIf config.systemModules.virt-manager.enable {
     virtualisation.libvirtd.enable = true;
-    programs.virt-manager.enable = true;
+    programs.dconf.enable = true;
+    environment.systemPackages = with pkgs; [ virt-manager ];
     users.users.alex.extraGroups = ["libvirtd"];
   };
 }
