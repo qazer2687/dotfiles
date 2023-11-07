@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../../hardware/jade
     ../../modules
@@ -10,6 +7,12 @@
   # NETWORKING
   networking.hostName = "jade";
 
+  # USER
+  users.users.alex = {
+    isNormalUser = true;
+    extraGroups = ["networkmanager" "wheel" "video"];
+  };
+
   # PACKAGES
   environment.systemPackages = with pkgs; [
     wineWowPackages.staging
@@ -17,7 +20,6 @@
 
   # MODULES
   systemModules = {
-    user.alex.enable = true;
     pipewire.enable = true;
     easyeffects.enable = true;
     systemd-boot.enable = true;

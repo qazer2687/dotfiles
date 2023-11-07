@@ -12,9 +12,14 @@
     NIXPKGS_ALLOW_UNFREE = "1"; # Allow Unfree 'nix-shell' Packages
   };
 
+  # USER
+  users.users.alex = {
+    isNormalUser = true;
+    extraGroups = ["networkmanager" "wheel" "video"];
+  };
+
   # MODULES
   systemModules = {
-    user.alex.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
     colemak.enable = true;

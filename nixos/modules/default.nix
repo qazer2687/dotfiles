@@ -25,7 +25,6 @@
     ./udev
     ./virt-manager
     ./zram
-    ./user
     ./grub
   ];
 }

@@ -17,6 +17,7 @@
     vscode.jade.enable = true;
     polybar.enable = true;
     armcord.enable = true;
+    rider.enable = true;
     vlc.enable = true;
     alacritty.enable = true;
     i3.jade.enable = true;
