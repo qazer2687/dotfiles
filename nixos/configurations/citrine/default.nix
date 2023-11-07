@@ -1,4 +1,4 @@
-{ ...}: {
+{...}: {
   imports = [
     ../../../hardware/citrine
     ../../modules
@@ -7,9 +7,14 @@
   # NETWORKING
   networking.hostName = "citrine";
 
+  # USER
+  users.users.alex = {
+    isNormalUser = true;
+    extraGroups = ["networkmanager" "wheel" "video"];
+  };
+
   # MODULES
   systemModules = {
-    user.alex.enable = true;
     grub.enable = true;
     colemak.enable = true;
     networkmanager.enable = true;
