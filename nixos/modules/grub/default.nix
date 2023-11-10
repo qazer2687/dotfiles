@@ -32,9 +32,7 @@
 in {
   options.systemModules.grub.enable = lib.mkEnableOption "";
   config = lib.mkIf config.systemModules.grub.enable {
-    boot.loader.grub.enable = true;
-    boot.loader.grub.device = "nodev";
-    boot.loader.timeout = 5;
+    
     system.build.bootStage2 = lib.mkForce bootStage2;
     environment.etc = {
       "issue" = {
