@@ -13,7 +13,7 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
-  # PACKAGES
+  # PACKAGES (temporary until vinegar gets packaged)
   environment.systemPackages = with pkgs; [
     wineWowPackages.staging
   ];
@@ -32,6 +32,7 @@
     fstrim.enable = true;
     polkit.enable = true;
     i3.enable = true;
+    prismlauncher.enable = true;
 
     kernel = {
       enable = true;

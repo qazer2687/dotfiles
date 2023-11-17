@@ -25,6 +25,7 @@
     ./udev
     ./virt-manager
     ./zram
+    ./prismlauncher
     ./grub
   ];
 }
