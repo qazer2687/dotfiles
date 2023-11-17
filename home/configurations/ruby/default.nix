@@ -13,16 +13,10 @@
     vscode.ruby.enable = true;
     waybar.ruby.enable = true;
 
-    #vscode = {
-    #  enable = true;
-    #  host = "ruby";
-    #};
 
     foot = {
       enable = true;
       host = "ruby";
     };
-
-    armcord.enable = true;
   };
 }
