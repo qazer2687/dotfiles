@@ -13,7 +13,6 @@
     vscode.ruby.enable = true;
     waybar.ruby.enable = true;
 
-
     foot = {
       enable = true;
       host = "ruby";

@@ -15,7 +15,7 @@
   # USER
   users.users.alex = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "video" "storage" ];
+    extraGroups = ["networkmanager" "wheel" "video" "storage"];
   };
 
   # MODULES
