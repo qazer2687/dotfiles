@@ -15,6 +15,7 @@
       ];
       etc = {
         "jdks/17".source = lib.getBin pkgs.openjdk17;
+        "jdks/11".source = lib.getBin pkgs.openjdk11;
         "jdks/8".source = lib.getBin pkgs.openjdk8;
       };
     };
