@@ -15,7 +15,7 @@
   # USER
   users.users.alex = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "video"];
+    extraGroups = ["networkmanager" "wheel" "video" "storage"];
   };
 
   # MODULES
@@ -32,7 +32,6 @@
     fstrim.enable = true;
     polkit.enable = true;
     opengl.enable = true;
-    virt-manager.enable = true;
 
     kernel = {
       enable = true;

@@ -24,25 +24,24 @@
           modules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "battery" "clock"];
           pulseaudio = {
             tooltip = false;
-            scroll-step = 5;
+            scroll-step = 1;
+            on-click = "pamixer -t";
             format = "{icon} {volume}%";
             format-icons = {
               default = ["" "" ""];
             };
           };
-          # doesn't even need the module (no format switching w/o it tho)
-          #          clock = {
-          #            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
-          #          };
+          clock = {
+            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
+          };
           battery = {
             format = "{icon} {}%";
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-            format-plugged = "󰂄";
             states = {
               critical = 10;
               warning = 20;
             };
-            interval = 10;
+            interval = 60;
           };
           mpris = {
             format = "{player_icon} {artist} - {title}";
@@ -58,16 +57,18 @@
             tooltip = false;
             format-wifi = " {essid}"; # 󱐋 {frequency}
             format-disconnected = " Disconnected";
-            format-wifi-alt = "{ipaddr}";
+            format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
           };
           cpu = {
             tooltip = false;
             format = "󰘚 {}%";
+            interval = 60;
           };
           memory = {
             tooltip = false;
             format = "󰍛 {}%";
+            interval = 60;
           };
         }
       ];

@@ -32,7 +32,6 @@
 in {
   options.systemModules.grub.enable = lib.mkEnableOption "";
   config = lib.mkIf config.systemModules.grub.enable {
-    
     system.build.bootStage2 = lib.mkForce bootStage2;
     environment.etc = {
       "issue" = {
