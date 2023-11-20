@@ -10,6 +10,7 @@
     environment = {
       systemPackages = with pkgs; [
         prismlauncher
+        temurin-bin-8
       ];
       etc = {
         "jdks/17".source = lib.getBin pkgs.jdk17;
