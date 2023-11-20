@@ -11,7 +11,7 @@
       systemPackages = with pkgs; [
         prismlauncher
         temurin-bin-8
-        graalvm17-ce
+        graalvmCEPackages.graalvm17-ce-full
       ];
       etc = {
         "jdks/17".source = lib.getBin pkgs.openjdk17;
