@@ -12,8 +12,8 @@
         prismlauncher
       ];
       etc = {
-        "jdks/17".source = lib.getBin pkgs.openjdk17;
-        "jdks/8".source = lib.getBin pkgs.openjdk8;
+        "jdks/17".source = lib.getBin pkgs.jdk17;
+        "jdks/8".source = lib.getBin pkgs.temurin-bin-8;
       };
     };
   };
