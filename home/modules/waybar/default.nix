@@ -30,6 +30,7 @@
               default = ["" "" ""];
             };
           };
+          # doesn't even need the module (no format switching w/o it tho)
           #          clock = {
           #            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
           #          };
