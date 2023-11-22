@@ -35,6 +35,7 @@
     prismlauncher.enable = true;
     steam.enable = true;
     opengl.enable = true;
+    piper.enable = true;
 
     kernel = {
       enable = true;
