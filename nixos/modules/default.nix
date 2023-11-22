@@ -27,5 +27,6 @@
     ./zram
     ./prismlauncher
     ./grub
+    ./piper
   ];
 }
