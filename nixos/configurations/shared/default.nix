@@ -1,10 +1,6 @@
 {lib, ...}: let
   inherit (lib) mkDefault;
 in {
-  imports = [
-    ./scripts
-  ];
-
   # System State Version
   system.stateVersion = mkDefault "23.05";
 
