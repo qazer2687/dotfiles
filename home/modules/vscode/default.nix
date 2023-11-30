@@ -5,7 +5,7 @@
   ...
 }: {
   options.homeModules.code.enable = lib.mkEnableOption "";
-  
+
   config = lib.mkIf config.homeModules.code.enable {
     programs.vscode = {
       enable = true;
