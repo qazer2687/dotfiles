@@ -9,7 +9,7 @@
   config = lib.mkIf config.homeModules.vscode.enable {
     programs.vscode = {
       enable = true;
-      package = pkgs.vscode-fhs;
+      package = pkgs.vscodium;
       extensions = with pkgs.vscode-extensions; [
         # Theming
         pkief.material-icon-theme
