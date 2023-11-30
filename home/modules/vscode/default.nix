@@ -20,8 +20,6 @@
         # Rust
         rust-lang.rust-analyzer
         serayuzgur.crates
-        #dustypomerleau.rust-syntax
-        dunstontc.vscode-rust-syntax
         # Other
         naumovs.color-highlight
         tamasfe.even-better-toml
