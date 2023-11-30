@@ -11,7 +11,7 @@
       enable = true;
       theme = {
         name = "Adwaita-Dark";
-        package = pkgs.adwaita-gtk-theme;
+        #package = pkgs.adwaita-gtk-theme;
       };
     };
   };
