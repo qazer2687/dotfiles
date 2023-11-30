@@ -33,6 +33,9 @@
     polkit.enable = true;
     i3.enable = true;
     prismlauncher.enable = true;
+    steam.enable = true;
+    opengl.enable = true;
+    piper.enable = true;
 
     kernel = {
       enable = true;
@@ -40,17 +43,13 @@
     };
 
     zram = {
-      enable = true;
+      enable = false;
       percentage = 20;
     };
 
     nvidia = {
       enable = true;
       driver = "stable";
-    };
-
-    opengl = {
-      enable = true;
     };
 
     gdm = {
