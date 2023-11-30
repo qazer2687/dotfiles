@@ -25,5 +25,6 @@
     ./chromium
     ./obs
     ./vlc
+    ./gtk
   ];
 }

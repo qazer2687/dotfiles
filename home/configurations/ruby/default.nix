@@ -12,6 +12,7 @@
     obsidian.enable = true;
     vscode.enable = true;
     waybar.ruby.enable = true;
+    gtk.enable = true;
 
     foot = {
       enable = true;
