@@ -17,7 +17,7 @@
       enable = true;
       settings = [
         {
-          height = 15;
+          height = 40;
           layer = "top";
           modules-left = ["sway/workspaces" "mpris"];
           modules-center = [];
@@ -41,7 +41,7 @@
               critical = 10;
               warning = 20;
             };
-            interval = 60;
+            interval = 2;
           };
           mpris = {
             format = "{player_icon} {artist} - {title}";
@@ -63,12 +63,12 @@
           cpu = {
             tooltip = false;
             format = "󰘚 {}%";
-            interval = 60;
+            interval = 2;
           };
           memory = {
             tooltip = false;
             format = "󰍛 {}%";
-            interval = 60;
+            interval = 2;
           };
         }
       ];
