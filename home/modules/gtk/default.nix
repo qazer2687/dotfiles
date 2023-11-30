@@ -11,7 +11,7 @@
       enable = true;
       theme = {
         name = "Adwaita-dark";
-        #package = pkgs.fluent-gtk-theme;
+        package = pkgs.libadwaita;
       };
     };
   };
