@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  options.homeModules.code.enable = lib.mkEnableOption "";
+  options.homeModules.vscode.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.homeModules.vscode.enable {
     programs.vscode = {
