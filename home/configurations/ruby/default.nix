@@ -10,7 +10,7 @@
     gammastep.enable = true;
     firefox.enable = true;
     obsidian.enable = true;
-    code.enable = true;
+    vscode.enable = true;
     waybar.ruby.enable = true;
 
     foot = {
