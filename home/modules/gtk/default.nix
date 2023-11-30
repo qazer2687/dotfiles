@@ -10,8 +10,8 @@
     gtk = {
       enable = true;
       theme = {
-        name = "Adwaita-Dark";
-        #package = pkgs.adwaita-gtk-theme;
+        name = "Adwaita-dark";
+        #package = pkgs.fluent-gtk-theme;
       };
     };
   };
