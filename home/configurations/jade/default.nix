@@ -14,7 +14,7 @@
     obs.enable = true;
     spotifyd.enable = true;
     obsidian.enable = true;
-    vscode.jade.enable = true;
+    code.enable = true;
     polybar.enable = true;
     armcord.enable = true;
     rider.enable = true;
