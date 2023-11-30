@@ -6,7 +6,7 @@
 }: {
   options.homeModules.code.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.code.enable {
+  config = lib.mkIf config.homeModules.vscode.enable {
     programs.vscode = {
       enable = true;
       package = pkgs.vscode-fhs;
@@ -20,7 +20,8 @@
         # Rust
         rust-lang.rust-analyzer
         serayuzgur.crates
-        dustypomerleau.rust-syntax
+        #dustypomerleau.rust-syntax
+        dunstontc.vscode-rust-syntax
         # Other
         naumovs.color-highlight
         tamasfe.even-better-toml
