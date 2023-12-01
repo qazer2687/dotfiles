@@ -12,7 +12,6 @@ in {
     nil
     comma
     ncdu
-    bash
     nitch
   ];
 
