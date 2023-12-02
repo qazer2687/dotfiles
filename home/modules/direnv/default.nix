@@ -13,5 +13,6 @@
         enableBashIntegration = true;
       };
       bash.enable = true;
+    };
   };
 }
