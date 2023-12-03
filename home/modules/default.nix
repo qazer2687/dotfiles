@@ -28,5 +28,6 @@
     ./vlc
     ./gtk
     ./eza
+    ./bash
   ];
 }
