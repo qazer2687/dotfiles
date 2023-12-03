@@ -15,6 +15,7 @@
     ./polybar
     ./spicetify
     ./spotifyd
+    ./starship
     ./udiskie
     ./vscode
     ./wofi
@@ -26,5 +27,6 @@
     ./obs
     ./vlc
     ./gtk
+    ./eza
   ];
 }
