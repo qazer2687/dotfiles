@@ -10,14 +10,6 @@
     programs.starship = {
       enable = true;
       enableBashIntegration = true;
-      settings = {
-        rust = {
-          format = "via [󰒓 $version](red bold) ";
-        };
-        nix-shell = {
-          symbol = "󱄅";
-        };
-      };
     };
   };
 }
