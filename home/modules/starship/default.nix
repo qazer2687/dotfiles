@@ -15,7 +15,7 @@
           format = "via [󰒓 $version](red bold) ";
         };
         nix-shell = {
-          format = "on [$state( \($name\))](bold blue) ";
+          format = "on [$state nix-shell](bold blue) ";
         };
       };
     };
