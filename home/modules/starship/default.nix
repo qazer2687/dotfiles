@@ -13,7 +13,7 @@
       settings = {
         rust = {
           format = "via [⚙️ $version](red bold)"
-        };
+        }
       };
     };
   };
