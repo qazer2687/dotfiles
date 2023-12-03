@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.homeModules.starship.enable = lib.mkEnableOption "";
+  options.homeModules.bash.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.starship.enable {
+  config = lib.mkIf config.homeModules.bash.enable {
     programs.bash = {
       enable = true;
       bashrcExtra = ''
