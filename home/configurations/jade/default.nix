@@ -23,5 +23,6 @@
     i3.jade.enable = true;
     dunst.enable = true;
     gtk.enable = true;
+    bash.enable = true;
   };
 }
