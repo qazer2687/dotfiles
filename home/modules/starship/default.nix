@@ -12,8 +12,8 @@
       enableBashIntegration = true;
       settings = {
         rust = {
-          format = "via [⚙️ $version](red bold)"
-        }
+          format = "via [⚙️ $version](red bold)";
+        };
       };
     };
   };
