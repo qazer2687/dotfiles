@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.homeModules.bash.enable = lib.mkEnableOption "";

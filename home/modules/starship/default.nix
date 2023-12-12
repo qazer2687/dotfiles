@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.homeModules.starship.enable = lib.mkEnableOption "";
