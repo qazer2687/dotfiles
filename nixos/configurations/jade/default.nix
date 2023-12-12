@@ -13,11 +13,6 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
-  # PACKAGES (temporary until vinegar gets packaged)
-  environment.systemPackages = with pkgs; [
-    wineWowPackages.staging
-  ];
-
   # MODULES
   systemModules = {
     pipewire.enable = true;
@@ -43,7 +38,7 @@
     };
 
     zram = {
-      enable = false;
+      enable = true;
       percentage = 20;
     };
 
@@ -56,5 +51,8 @@
       enable = true;
       backend = "xorg";
     };
+
+    # Games
+    vinegar.enable = true;
   };
 }
