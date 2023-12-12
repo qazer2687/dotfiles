@@ -28,5 +28,6 @@
     ./prismlauncher
     ./grub
     ./piper
+    ./vinegar
   ];
 }
