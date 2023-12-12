@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.homeModules.eza.enable = lib.mkEnableOption "";
@@ -14,4 +13,3 @@
     };
   };
 }
-
