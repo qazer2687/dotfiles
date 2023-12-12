@@ -10,5 +10,9 @@
     environment.systemPackages = with pkgs; [
       vinegar
     ];
+    # required to build vinegar
+    nixpkgs.config.permittedInsecurePackages = [
+      "electron-25.9.0"
+    ];
   };
 }
