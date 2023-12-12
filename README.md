@@ -36,9 +36,3 @@ To install a specific NixOS system configuration from this repository, you can u
 nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#<output>
 ```
 Replace `<output>` with the desired system configuration you want to use from the flake.
-
-## Credit ❤️
-
-- **Misterio** for inspiring this README.
-- **NobbZ**, **Gerg** & **Camellia** for all the support I've recieved along the way.
-- **Raf** for some Nix that helped with boot performance.

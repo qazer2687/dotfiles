@@ -13,6 +13,9 @@
     vscode.enable = true;
     waybar.ruby.enable = true;
     gtk.enable = true;
+    eza.enable = true;
+    starship.enable = true;
+    bash.enable = true;
 
     foot = {
       enable = true;
