@@ -8,7 +8,7 @@
   config = lib.mkIf config.homeModules.starship.enable {
     programs.starship = {
       enable = true;
-      #enableBashIntegration = true;
+      enableBashIntegration = true;
     };
   };
 }
