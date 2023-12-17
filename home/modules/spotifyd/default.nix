@@ -12,14 +12,16 @@
       settings = {
         global = {
           username = "3fl3wvehzpuudbzovifsyndbp";
-          password_cmd = "/home/alex/.config/spotifyd/read_password.sh";
+          password_cmd = "/home/alex/.config/spotifyd/readPassword.sh";
         };
       };
     };
 
+    # Password
+    sops.secrets.spotifyPassword.path = "/home/alex/.config/spotifyd/password";
+
     # Configuration
-    #xdg.configFile."spotifyd/spotifyd.conf".text = builtins.readFile ./spotifyd.conf;
-    xdg.configFile."spotifyd/read_password.sh".text = builtins.readFile ./scripts/read_password.sh;
-    xdg.configFile."spotifyd/read_password.sh".executable = true;
+    xdg.configFile."spotifyd/readPassword.sh".text = builtins.readFile ./scripts/readPassword.sh;
+    xdg.configFile."spotifyd/readPassword.sh".executable = true;
   };
 }

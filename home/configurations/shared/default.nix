@@ -9,10 +9,11 @@ in {
     statix
     alejandra
     deadnix
-    nil
-    comma
-    ncdu
+    #nil
+    #comma
+    #ncdu
     nitch
+    #bat
   ];
 
   home.stateVersion = mkDefault "23.05";
