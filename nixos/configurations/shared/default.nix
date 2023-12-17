@@ -36,10 +36,5 @@ in {
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
-    interactiveShellInit = ''
-      alias check='alejandra -q **/* && deadnix -e && statix fix'
-      alias rebuild-local='sudo nixos-rebuild switch --flake .#$(hostname)'
-      alias rebuild='sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#$(hostname) --refresh --option eval-cache false'
-    '';
   };
 }
