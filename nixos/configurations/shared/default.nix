@@ -7,6 +7,11 @@ in {
   # Allow Unfree Software
   nixpkgs.config.allowUnfree = mkDefault true;
 
+  # Allow Insecure Packages
+  nixpkgs.config.permittedInsecurePackages = [
+      "electron-25.9.0"
+    ];
+
   # Nix Settings & Experimental Features
   nix.settings = {
     experimental-features = mkDefault [
