@@ -4,9 +4,9 @@
   config,
   ...
 }: {
-  options.homeModules.waybar.ruby.enable = lib.mkEnableOption "";
+  options.homeModules.waybar.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.waybar.ruby.enable {
+  config = lib.mkIf config.homeModules.waybar.enable {
     # Dependencies
     home.packages = with pkgs; [
       playerctl

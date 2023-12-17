@@ -3,7 +3,7 @@
     ../../modules
   ];
 
-  sops.secrets.spotify_password.path = "/home/alex/.config/spotifyd/password";
+  
 
   homeModules = {
     direnv.enable = true;
