@@ -30,7 +30,8 @@ exec_always --no-startup-id mako
 #exec_always --no-startup-id killall .waybar-wrapped -q; waybar
 
 # Screenshot Binds
-bindsym Print exec grim -g "$(slurp -d)" ~/Screenshots/$(date +'%H:%M:%S.png') | wl-copy
+bindsym Print exec grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy
+
 
 # Eye Comfort \\ EXPERIMENTAL
 exec --no-startup-id nohup gammastep -xO 3500
