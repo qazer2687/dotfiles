@@ -30,11 +30,10 @@ exec_always --no-startup-id mako
 #exec_always --no-startup-id killall .waybar-wrapped -q; waybar
 
 # Screenshot Binds
-bindsym Print exec grim -g "$(slurp)" ~/Screenshots/$(date +'%H:%M:%S.png') | wl-copy -t image/png
-#bindsym $mod+# exec grim -g "$(slurp)" ~/Screenshots/$(date +'%H:%M:%S.png') | wl-copy -t image/png # cant use '#' symbol
+bindsym Print exec grim -g "$(slurp -d)" ~/Screenshots/$(date +'%H:%M:%S.png') | wl-copy
 
 # Eye Comfort \\ EXPERIMENTAL
-exec --no-startup-id nohup gammastep -xO 4000
+exec --no-startup-id nohup gammastep -xO 3500
 
 # Floating Resize
 floating_modifier $mod normal
