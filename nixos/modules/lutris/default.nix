@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.homeModules.lutris.enable = lib.mkEnableOption "";
+  options.systemModules.lutris.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.lutris.enable {
+  config = lib.mkIf config.systemModules.lutris.enable {
     environment.systemPackages = with pkgs; [
       lutris
     ];
