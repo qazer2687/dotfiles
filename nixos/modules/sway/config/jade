@@ -26,8 +26,7 @@ output * bg /home/alex/.config/feh/wallpaper.png fill
 exec_always --no-startup-id mako
 
 # Screenshot Binds
-bindsym Print exec grim -g "$(slurp)" ~/Screenshots/$(date +'%H:%M:%S.png') | wl-copy -t image/png
-#bindsym $mod+# exec grim -g "$(slurp)" ~/Screenshots/$(date +'%H:%M:%S.png') | wl-copy -t image/png # cant use '#' symbol
+bindsym Print exec grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy
 
 # System Bar   
 #exec_always --no-startup-id killall .waybar-wrapped -q; waybar
