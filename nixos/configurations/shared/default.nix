@@ -41,5 +41,9 @@ in {
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
+    sessionVariables = {
+      NIXPKGS_ALLOW_UNFREE = "1"; # Allow Unfree Packages
+      NIXPKGS_ALLOW_INSECURE = "1"; # Allow Insecure Packages
+    }
   };
 }
