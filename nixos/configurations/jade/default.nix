@@ -27,8 +27,6 @@
     fstrim.enable = true;
     polkit.enable = true;
     i3.enable = true;
-    prismlauncher.enable = true;
-    steam.enable = true;
     opengl.enable = true;
     piper.enable = true;
 
@@ -54,5 +52,8 @@
 
     # Games
     vinegar.enable = true;
+    lutris.enable = true;
+    steam.enable = true;
+    prismlauncher.enable = true;
   };
 }

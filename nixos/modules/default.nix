@@ -29,5 +29,6 @@
     ./grub
     ./piper
     ./vinegar
+    ./lutris
   ];
 }
