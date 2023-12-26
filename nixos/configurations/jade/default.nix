@@ -42,7 +42,7 @@
     };
 
     zram = {
-      enable = true;
+      enable = false;
       percentage = 20;
     };
 
