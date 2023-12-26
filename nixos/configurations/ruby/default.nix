@@ -7,21 +7,30 @@
   # NETWORKING
   networking.hostName = "ruby";
 
-  # ENVIRONMENT
-  environment.sessionVariables = {
-    NIXPKGS_ALLOW_UNFREE = "1"; # Allow Unfree Packages
-    NIXPKGS_ALLOW_INSECURE = "1"; # Allow Insecure Packages
-  };
-
   # USER
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video" "storage"];
   };
 
+  # Startup Message
+  environment.etc = {
+    issue = {
+      text = ''\e[31mWelcome to Ruby!\e[0m'';
+    };
+  };
+
+  # No Login Manager
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && sway
+  '';
+
   # MODULES
   systemModules = {
+    # Audio
     pipewire.enable = true;
+    easyeffects.enable = true;
+
     systemd-boot.enable = true;
     colemak.enable = true;
     fonts.enable = true;
@@ -47,11 +56,6 @@
     sway = {
       enable = true;
       host = "ruby";
-    };
-
-    gdm = {
-      enable = true;
-      backend = "wayland";
     };
   };
 }
