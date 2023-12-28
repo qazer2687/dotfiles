@@ -36,8 +36,8 @@
     };
 
     zram = {
-      enable = false;
-      percentage = 20;
+      enable = true;
+      percentage = 50;
     };
 
     nvidia = {
