@@ -9,8 +9,8 @@ in {
 
   # Allow Insecure Packages
   nixpkgs.config.permittedInsecurePackages = [
-      "electron-25.9.0"
-    ];
+    "electron-25.9.0"
+  ];
 
   # Nix Settings & Experimental Features
   nix.settings = {
