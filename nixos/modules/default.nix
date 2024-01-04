@@ -30,5 +30,6 @@
     ./piper
     ./vinegar
     ./lutris
+    ./gamemode
   ];
 }

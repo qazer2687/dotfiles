@@ -2,32 +2,32 @@
   imports = [
     ./alacritty
     ./armcord
+    ./bash
+    ./chromium
     ./direnv
     ./dunst
+    ./eza
     ./firefox
     ./foot
     ./gammastep
     ./git
+    ./gtk
     ./i3
+    ./mangohud
     ./mpd
     ./neovim
+    ./obs
     ./obsidian
     ./polybar
+    ./rider
     ./spicetify
     ./spotifyd
     ./starship
     ./udiskie
+    ./vlc
     ./vscode
-    ./wofi
     ./waybar
     ./webcord
-    ./wluma
-    ./rider
-    ./chromium
-    ./obs
-    ./vlc
-    ./gtk
-    ./eza
-    ./bash
+    ./wofi
   ];
 }
