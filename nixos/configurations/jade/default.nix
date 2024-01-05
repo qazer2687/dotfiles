@@ -41,7 +41,7 @@
     opengl.enable = true;
     nvidia.enable = true;
 
-    # System 
+    # System
     kernel = {
       enable = true;
       type = "zen";

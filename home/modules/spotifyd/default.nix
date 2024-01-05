@@ -18,7 +18,7 @@
     };
 
     # Password
-    sops.secrets.spotifyPassword.path = "/home/alex/.config/spotifyd/password";
+    sops.secrets.spotify.password.path = "/home/alex/.config/spotifyd/password";
 
     # Configuration
     xdg.configFile."spotifyd/readPassword.sh".text = builtins.readFile ./scripts/readPassword.sh;
