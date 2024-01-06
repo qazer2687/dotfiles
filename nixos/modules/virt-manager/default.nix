@@ -7,7 +7,6 @@
   options.systemModules.virt-manager.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.systemModules.virt-manager.enable {
-    # Virtualisation Service
     virtualisation = {
       libvirtd = {
         enable = true;
@@ -21,10 +20,8 @@
     };
     services.spice-vdagentd.enable = true;
 
-    # Dconf
     programs.dconf.enable = true;
 
-    # Required Packages
     environment.systemPackages = with pkgs; [
       virt-manager
       virt-viewer
@@ -36,7 +33,6 @@
       gnome.adwaita-icon-theme
     ];
 
-    # Add Group
     users.users.alex.extraGroups = ["libvirtd"];
   };
 }
