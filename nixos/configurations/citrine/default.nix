@@ -4,16 +4,13 @@
     ../../modules
   ];
 
-  # NETWORKING
   networking.hostName = "citrine";
 
-  # USER
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
-  # MODULES
   systemModules = {
     grub.enable = true;
     colemak.enable = true;
