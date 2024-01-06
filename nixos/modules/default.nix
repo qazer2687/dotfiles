@@ -11,7 +11,6 @@
     ./keepassxc
     ./kernel
     ./libinput
-    ./logind
     ./networkmanager
     ./nvidia
     ./opendrop
