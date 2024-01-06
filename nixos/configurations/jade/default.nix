@@ -12,7 +12,7 @@
   };
 
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && i3
+    [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
 
   systemModules = {
@@ -22,7 +22,7 @@
     udev.via.enable = false;
     colemak.enable = true;
     fonts.enable = true;
-    i3.enable = true;
+    sway.enable = true;
     gamemode.enable = true;
     lutris.enable = true;
     steam.enable = true;
