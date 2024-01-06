@@ -48,7 +48,7 @@
     };
     zram = {
       enable = true;
-      percentage = 50;
+      percentage = 125;
     };
 
     # Other
