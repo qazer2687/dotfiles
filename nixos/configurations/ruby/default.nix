@@ -28,7 +28,6 @@
     colemak.enable = true;
     fonts.enable = true;
     libinput.enable = true;
-    logind.enable = true;
     gnome-keyring.enable = true;
     networkmanager.enable = true;
     tlp.enable = true;
