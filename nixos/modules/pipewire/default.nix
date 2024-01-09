@@ -13,6 +13,13 @@
       pulseaudio
       pavucontrol
       pamixer
+      easyeffects
+      calf
+      libebur128
+      zam-plugins
+      zita-convolver
+      rnnoise
+      speexdsp
     ];
     services.pipewire = {
       enable = true;
