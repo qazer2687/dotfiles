@@ -1,4 +1,8 @@
-{...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../../hardware/jade
     ../../modules
@@ -11,30 +15,24 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway
-  '';
-
-  systemModules = {
-    pipewire.enable = true;
-    easyeffects.enable = true;
-    systemd-boot.enable = true;
-    udev.via.enable = false;
-    colemak.enable = true;
-    fonts.enable = true;
-    sway.enable = true;
-    gamemode.enable = true;
-    lutris.enable = true;
-    steam.enable = true;
-    prismlauncher.enable = true;
-    opengl.enable = true;
-    nvidia.enable = true;
+  environment.systemPackages = with pkgs; [
+    firefox
+    obsidian
+    vscodium-fhs
+    gnome.nautilus
+  ];
+  
+  modules = {
+    i3.enable = true;
+    alacritty.enable = true;
+    polybar.enable = true;
+    bash.enable = true;
     kernel.enable = true;
-    zram.enable = true;
-    fstrim.enable = true;
-    piper.enable = true;
     networkmanager.enable = true;
-    polkit.enable = true;
-    gnome-keyring.enable = true;
+    nvidia.enable = true;
+    pipewire.enable = true;
+    prismlauncher.enable = true;
+    systemd-boot.enable = true;
+    zram.enable = true;
   };
 }

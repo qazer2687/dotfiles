@@ -4,11 +4,12 @@
   pkgs,
   ...
 }: {
-  options.systemModules.pipewire.enable = lib.mkEnableOption "";
+  options.modules.pipewire.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.systemModules.pipewire.enable {
+  config = lib.mkIf config.modules.pipewire.enable {
     sound.enable = true;
     security.rtkit.enable = true;
+    hardware.pulseaudio.enable = false;
     environment.systemPackages = with pkgs; [
       pulseaudio
       pavucontrol

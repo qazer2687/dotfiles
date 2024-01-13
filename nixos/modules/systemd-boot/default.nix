@@ -30,8 +30,8 @@
       '';
   };
 in {
-  options.systemModules.systemd-boot.enable = lib.mkEnableOption "";
-  config = lib.mkIf config.systemModules.systemd-boot.enable {
+  options.modules.systemd-boot.enable = lib.mkEnableOption "";
+  config = lib.mkIf config.modules.systemd-boot.enable {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot/efi";

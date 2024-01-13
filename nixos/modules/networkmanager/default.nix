@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.systemModules.networkmanager.enable = lib.mkEnableOption "";
+  options.modules.networkmanager.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.systemModules.networkmanager.enable {
+  config = lib.mkIf config.modules.networkmanager.enable {
     networking = {
       networkmanager.enable = true;
       firewall = {

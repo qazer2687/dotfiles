@@ -1,34 +1,19 @@
 {...}: {
   imports = [
-    ./auto-cpufreq
-    ./colemak
-    ./easyeffects
-    ./fonts
-    ./fstrim
-    ./gdm
-    ./gnome-keyring
+    ./alacritty
+    ./bash
+    ./foot
     ./i3
-    ./keepassxc
     ./kernel
-    ./libinput
     ./networkmanager
     ./nvidia
-    ./opendrop
-    ./opengl
     ./pipewire
-    ./polkit
-    ./steam
+    ./polybar
+    ./prismlauncher
     ./sway
     ./systemd-boot
     ./tlp
-    ./udev
-    ./virt-manager
+    ./waybar
     ./zram
-    ./prismlauncher
-    ./grub
-    ./piper
-    ./vinegar
-    ./lutris
-    ./gamemode
   ];
 }

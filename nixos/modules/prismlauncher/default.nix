@@ -4,12 +4,15 @@
   pkgs,
   ...
 }: {
-  options.systemModules.prismlauncher.enable = lib.mkEnableOption "";
+  options.modules.prismlauncher.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.systemModules.prismlauncher.enable {
+  config = lib.mkIf config.modules.prismlauncher.enable {
     environment = {
       systemPackages = with pkgs; [
         prismlauncher
+        gamemode
+        mangohud
+        glfw-wayland-minecraft
       ];
       etc = {
         "jdks/8-temurin".source = lib.getBin pkgs.temurin-bin-8;
