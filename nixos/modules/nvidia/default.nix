@@ -3,17 +3,21 @@
   config,
   ...
 }: {
-  options.systemModules.nvidia.enable = lib.mkEnableOption "";
+  options.modules.nvidia.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.systemModules.nvidia.enable {
+  config = lib.mkIf config.modules.nvidia.enable {
     services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia = {
-      modesetting.enable = true;
-      open = true;
-      nvidiaSettings = false;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    hardware = {
+      nvidia = {
+        modesetting.enable = true;
+        open = false;
+        nvidiaSettings = true;
+      };
+      opengl = {
+        enable = true;
+        driSupport = true;
+        driSupport32Bit = true;
+      };
     };
   };
 }

@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.systemModules.zram.enable = lib.mkEnableOption "";
+  options.modules.zram.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.systemModules.zram.enable {
+  config = lib.mkIf config.modules.zram.enable {
     zramSwap = {
       enable = true;
       algorithm = "lz4";
