@@ -25,8 +25,8 @@
       bindsym $mod+space floating toggle
       bindsym $mod+q kill
       bindsym $mod+e exec --no-startup-id dmenu_run -i -b -nb "#111111" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"
-      exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpaper/wallpaper.png
-      exec_always --no-startup-id polybar -c /etc/polybar/config.ini &
+      exec_always --no-startup-id feh --bg-fill /home/alex/.config/wallpaper/wallpaper.png
+      exec_always --no-startup-id polybar -c /etc/polybar/config.ini main &
       bindsym $mod+Left move left
       bindsym $mod+Down move down
       bindsym $mod+Up move up
