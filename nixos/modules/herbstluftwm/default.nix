@@ -7,7 +7,10 @@
   options.modules.herbstluftwm.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.herbstluftwm.enable {
-    services.xserver.windowManager.herbstluftwm.enable = true;
+    services.xserver.windowManager.herbstluftwm = {
+      enable = true;
+      configFile = "/home/alex/.config/herbstluftwm/autostart";
+    };
     environment.systemPackages = with pkgs; [
       dmenu
       scrot
@@ -15,7 +18,7 @@
     ];
     environment.etc."xdg/herbstluftwm/autostart".text = ''
       
-      #!/bin/bash
+      #!/usr/bin/env bash
 
       function hc() {
           herbstclient "$@"
