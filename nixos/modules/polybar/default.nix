@@ -50,9 +50,9 @@
       monitor = ''${env:MONITOR:}
       width = 100%
       offset-x = 0
-      offset-y = 8
+      offset-y = 20
 
-      height = 50
+      height = 40
       radius = 6.0
       bottom = false
 
