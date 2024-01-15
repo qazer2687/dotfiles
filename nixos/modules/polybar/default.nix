@@ -56,8 +56,7 @@
       radius = 0.0
       bottom = false
 
-      override-redirect = false
-      wm-restack = i3
+      override-redirect = true
 
       background = ''${colors.background}
       foreground = ''${colors.foreground}
@@ -71,7 +70,7 @@
       font-1 = FiraCode Nerd Font:style=Regular:pixelsize=21:antialias=true;4.5
       font-2 = FiraCode Nerd Font:style=Regular:pixelsize=15:antialias=true;3
 
-      modules-left = i3
+      modules-left = ewmh
       modules-center =
       modules-right = date
 
