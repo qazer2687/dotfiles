@@ -84,7 +84,7 @@
       [module/ewmh]
       type = internal/xworkspaces
       enable-scroll = false
-      format-padding = 6
+      format-padding = 0
       format-background = #000000
       format = <label-state>
 
