@@ -56,7 +56,7 @@
       radius = 6.0
       bottom = false
 
-      override-redirect = true
+      override-redirect = false
 
       background = ''${colors.background}
       foreground = ''${colors.foreground}
