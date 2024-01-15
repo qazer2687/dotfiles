@@ -17,7 +17,6 @@
       feh
     ];
     environment.etc."xdg/herbstluftwm/autostart".text = ''
-      
       #!/usr/bin/env bash
 
       function hc() {
@@ -48,12 +47,12 @@
 
       hc rename default "''${TAG_NAMES[0]}" || true
       for i in ''${!TAG_NAMES[@]} ; do
-          hc add "''${TAG_NAMES[$i]}"
-          key="''${TAG_KEYS[$i]}"
-          if ! [ -z "$key" ] ; then
-              hc keybind "$Mod-$key" use_index "$i"
-              hc keybind "$Mod-Shift-$key" move_index "$i"
-          fi
+        hc add "''${TAG_NAMES[$i]}"
+        key="''${TAG_KEYS[$i]}"
+        if ! [ -z "$key" ] ; then
+          hc keybind "$Mod-$key" use_index "$i"
+          hc keybind "$Mod-Shift-$key" move_index "$i"
+        fi
       done
 
       # Gaps/Borders
