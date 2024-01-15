@@ -82,8 +82,8 @@
       type = internal/xwindow
       label = %title:0:25:...%
 
-      [module/i3]
-      type = internal/i3
+      [module/ewmh]
+      type = internal/xworkspaces
       pin-workspaces = false
       strip-wsnumbers = true
       index-sort = true
