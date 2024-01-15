@@ -3,6 +3,7 @@
     ./alacritty
     ./bash
     ./foot
+    ./herbstluftwm
     ./i3
     ./kernel
     ./networkmanager
