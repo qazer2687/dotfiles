@@ -49,8 +49,8 @@
       [bar/main]
       monitor = ''${env:MONITOR:}
       width = 100%
-      offset-x = 29
-      offset-y = 29
+      offset-x = 0
+      offset-y = 0
 
       height = 50
       radius = 0.0
