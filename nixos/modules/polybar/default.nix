@@ -83,18 +83,18 @@
 
       [module/ewmh]
       type = internal/xworkspaces
-      enable-scroll = true
+      enable-scroll = false
       format-padding = 6
       format-background = #000000
       format = <label-state>
-      
-      label-active = ""
+
+      label-active = " "
       label-active-foreground = #ffffff
-      label-occupied = ""
+      label-occupied = " "
       label-occupied-foreground = #ffffff
-      label-urgent = ""
+      label-urgent = " "
       label-urgent-foreground = #ffffff
-      label-empty = ""
+      label-empty = " "
       label-empty-foreground = #ffffff
 
       [module/date]
