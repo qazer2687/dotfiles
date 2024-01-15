@@ -50,7 +50,7 @@
       monitor = ''${env:MONITOR:}
       width = 100%
       offset-x = 0
-      offset-y = 20
+      offset-y = 10
 
       height = 40
       radius = 6.0
@@ -134,7 +134,7 @@
       ;pseudo-transparency =true
 
       [global/wm]
-      margin-bottom = 20
+      margin-bottom = 2
     '';
   };
 }
