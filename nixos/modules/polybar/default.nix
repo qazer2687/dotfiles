@@ -10,6 +10,10 @@
     environment.systemPackages = with pkgs; [
       polybarFull
     ];
+    environment.etc."polybar/launch.sh".text = ''
+      killall -q polybar
+      polybar main 2>&1 | tee -a /tmp/polybar.log & disown
+    '';
     environment.etc."polybar/config.ini".text = ''
       [colors]
       background = #000000
@@ -32,7 +36,7 @@
       blue = #ffffff
       lavender = #ffffff
       sapphire = #ffffff
-      sky = #ffffff
+      sky = #ffffffi show
       teal = #ffffff
       green = #ffffff
       yellow = #ffffff
