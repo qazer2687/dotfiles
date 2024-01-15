@@ -57,9 +57,9 @@
       bindsym $mod+Shift+0 move container to workspace number 10
       bindsym $mod+Shift+r restart
       default_border pixel 0
-      gaps inner 10
+      gaps inner 8
       gaps outer 0
-      border_radius 10
+      border_radius 6
       bar {
         mode invisible
       } 
