@@ -50,10 +50,10 @@
       monitor = ''${env:MONITOR:}
       width = 100%
       offset-x = 0
-      offset-y = 0
+      offset-y = 8
 
       height = 50
-      radius = 0.0
+      radius = 6.0
       bottom = false
 
       override-redirect = true
