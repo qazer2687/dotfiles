@@ -24,6 +24,7 @@
   
   modules = {
     i3.enable = true;
+    herbstluftwm.enable = true;
     alacritty.enable = true;
     polybar.enable = true;
     bash.enable = true;
