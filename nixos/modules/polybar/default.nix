@@ -83,43 +83,14 @@
 
       [module/ewmh]
       type = internal/xworkspaces
-      pin-workspaces = false
-      strip-wsnumbers = true
-      index-sort = true
-      enable-click = true
-      enable-scroll = false
-      wrapping-scroll = false
-      reverse-scroll = false
-      fuzzy-match = true
-
-      ws-icon-0 = "0;"
-      ws-icon-1 = "1;"
-      ws-icon-2 = "2;"
-      ws-icon-3 = "3;"
-      ws-icon-4 = "4;"
-      ws-icon-5 = "5;"
-      ws-icon-6 = "6;"
-      ws-icon-7 = "7;"
-      ws-icon-8 = "8;"
-      ws-icon-9 = "9;"
-
-      format = <label-state>
-
-      label-focused = 
-      label-focused-foreground = #ffffff
-      label-focused-padding = 6px
-
-      label-unfocused = 
-      label-unfocused-foreground = ''${colors.flamingo}
-      label-unfocused-padding = ''${self.label-focused-padding}
-
-      label-visible = ''${self.label-focused}
-      label-visible-foreground = ''${colors.pink}
-      label-visible-padding = ''${self.label-focused-padding}
-
-      label-urgent = ''${self.label-focused}
-      label-urgent-foreground = ''${colors.alert}
-      label-urgent-padding = ''${self.label-focused-padding}
+      enable-scroll = true
+      format-padding = 6
+      format-foreground = #ffffff
+      format-background = #ffffff
+      label-active = ""
+      label-occupied = ""
+      label-urgent = ""
+      label-empty = ""
 
       [module/date]
       type = internal/date
