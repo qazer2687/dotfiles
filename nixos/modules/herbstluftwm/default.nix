@@ -47,9 +47,9 @@
       TAG_KEYS=( {1..6} 0 )
 
 
-      for i in ${!TAG_NAMES[@]} ; do
-        hc add "${TAG_NAMES[$i]}"
-        key="${TAG_KEYS[$i]}"
+      for i in ''${!TAG_NAMES[@]} ; do
+        hc add "''${TAG_NAMES[$i]}"
+        key="''${TAG_KEYS[$i]}"
         if ! [ -z "$key" ] ; then
           hc keybind "$Mod-$key" use_index "$i"
           hc keybind "$Mod-Shift-$key" move_index "$i"
