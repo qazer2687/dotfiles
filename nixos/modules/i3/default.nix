@@ -18,7 +18,7 @@
         ];
       };
     };
-    environment.etc."etc/i3/config".text = ''
+    environment.etc."i3/config".text = ''
       set $mod Mod4
       #exec --no-startup-id dex --autostart --environment i3
       bindsym $mod+Return exec alacritty
