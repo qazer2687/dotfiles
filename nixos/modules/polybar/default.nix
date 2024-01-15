@@ -93,9 +93,9 @@
       label-occupied = " "
       label-occupied-foreground = #ffffff
       label-urgent = " "
-      label-urgent-foreground = #ffffff
+      label-urgent-foreground = #ff0000
       label-empty = " "
-      label-empty-foreground = #ffffff
+      label-empty-foreground = #000000
 
       [module/date]
       type = internal/date
