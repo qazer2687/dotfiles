@@ -85,12 +85,17 @@
       type = internal/xworkspaces
       enable-scroll = true
       format-padding = 6
-      format-foreground = #ffffff
-      format-background = #ffffff
+      format-background = #000000
+      format = <label-state>
+      
       label-active = ""
+      label-active-foreground = #ffffff
       label-occupied = ""
+      label-occupied-foreground = #ffffff
       label-urgent = ""
+      label-urgent-foreground = #ffffff
       label-empty = ""
+      label-empty-foreground = #ffffff
 
       [module/date]
       type = internal/date
