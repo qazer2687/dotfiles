@@ -36,7 +36,7 @@ in {
   ];
 
   services.xserver.enable = true;	
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.startx.enable = true;
 
   console.keyMap = "colemak";
   services.xserver = {
