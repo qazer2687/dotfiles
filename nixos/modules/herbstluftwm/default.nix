@@ -10,7 +10,6 @@
   config = lib.mkIf config.modules.herbstluftwm.enable {
     services.xserver.windowManager.herbstluftwm = {
       enable = true;
-      configFile = ./config/autostart;
     };
     environment.systemPackages = with pkgs; [
       dmenu
@@ -18,7 +17,7 @@
       feh
     ];
 
-    /*environment.etc."xdg/herbstluftwm/autostart".mode = "7777";
+    environment.etc."xdg/herbstluftwm/autostart".mode = "7777";
     environment.etc."xdg/herbstluftwm/autostart".text = ''
       #!/usr/bin/env bash
 
@@ -84,6 +83,6 @@
 
       # Unlock
       hc unlock
-    '';*/
+    '';
   };
 }
