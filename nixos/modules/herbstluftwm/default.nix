@@ -87,6 +87,6 @@ in
       feh
     ];
 
-    environment.etc."xdg/herbstluftwm/autostart".source = lib.getExe herbstluftwm;
+   # environment.etc."xdg/herbstluftwm/autostart".source = lib.getExe herbstluftwm;
   };
 }
