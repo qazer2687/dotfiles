@@ -16,7 +16,7 @@
       feh
     ];
 
-    writeShellScriptBin "herbstluftwm"
+    writeShellScriptBin "herbstluftwm" =
       ''
        #!/usr/bin/env bash
 
