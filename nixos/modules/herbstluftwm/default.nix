@@ -15,8 +15,10 @@
       scrot
       feh
     ];
-    environment.etc."xdg/herbstluftwm/autostart".text = ''
-      #!/usr/bin/env bash
+
+    writeShellScriptBin "herbstluftwm"
+      ''
+       #!/usr/bin/env bash
 
       # Shorten Name
       function hc() {
@@ -33,7 +35,6 @@
       # Keyboard
       Mod=Super
       hc keybind $Mod-q close
-      hc keybind $Mod-Shift-r reload
       hc keybind $Mod-Return spawn alacritty
       hc keybind $Mod-e spawn dmenu_run -i -b -nb "#111111" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"
 
@@ -47,9 +48,9 @@
       TAG_KEYS=( {1..6} 0 )
 
 
-      for i in ''${!TAG_NAMES[@]} ; do
-        hc add "''${TAG_NAMES[$i]}"
-        key="''${TAG_KEYS[$i]}"
+      for i in ${!TAG_NAMES[@]} ; do
+        hc add "${TAG_NAMES[$i]}"
+        key="${TAG_KEYS[$i]}"
         if ! [ -z "$key" ] ; then
           hc keybind "$Mod-$key" use_index "$i"
           hc keybind "$Mod-Shift-$key" move_index "$i"
@@ -81,6 +82,8 @@
 
       # Unlock
       hc unlock
-    '';
+      '';
+
+      environment.etc."xdg/herbstluftwm/autostart".file = lib.getExe herbstluftwm;
   };
 }
