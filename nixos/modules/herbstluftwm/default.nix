@@ -16,9 +16,9 @@
       feh
     ];
 
-    writeShellScriptBin "herbstluftwm" =
+    writeShellScriptBin "herbstluftwm" 
       ''
-       #!/usr/bin/env bash
+      #!/usr/bin/env bash
 
       # Shorten Name
       function hc() {
