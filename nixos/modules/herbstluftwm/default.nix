@@ -77,7 +77,6 @@ in
   config = lib.mkIf config.modules.herbstluftwm.enable {
     services.xserver.windowManager.herbstluftwm = {
       enable = true;
-      configFile = 
     };
     environment.systemPackages = with pkgs; [
       dmenu
