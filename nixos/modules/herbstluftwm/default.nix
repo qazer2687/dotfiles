@@ -83,6 +83,6 @@
       hc unlock
       '';
 
-      environment.etc."xdg/herbstluftwm/autostart".file = lib.getExe herbstluftwm;
+      environment.etc."xdg/herbstluftwm/autostart".source = lib.getExe herbstluftwm;
   };
 }
