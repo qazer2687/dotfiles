@@ -77,6 +77,9 @@ in
   config = lib.mkIf config.modules.herbstluftwm.enable {
     services.xserver.windowManager.herbstluftwm = {
       enable = true;
+      configFile = ''
+      ${script}
+      '';
     };
     environment.systemPackages = with pkgs; [
       dmenu
@@ -84,6 +87,6 @@ in
       feh
     ];
 
-    environment.etc."xdg/herbstluftwm/autostart".source = ${herbstluftwm};
+    environment.etc."xdg/herbstluftwm/autostart".source = lib.getExe herbstluftwm;
   };
 }
