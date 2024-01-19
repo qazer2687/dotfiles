@@ -34,7 +34,7 @@ in {
   config = lib.mkIf config.modules.systemd-boot.enable {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.efi.efiSysMountPoint = "/boot/efi";
+    #boot.loader.efi.efiSysMountPoint = "/boot/efi";
     boot.loader.timeout = 5;
     system.build.bootStage2 = lib.mkForce bootStage2;
     environment.etc = {
