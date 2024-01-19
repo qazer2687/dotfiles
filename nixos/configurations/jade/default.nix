@@ -15,6 +15,13 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  services.xserver.enable = true;	
+  services.xserver.displayManager.sx.enable = true;
+
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && sx
+  '';
+
   environment.systemPackages = with pkgs; [
     firefox
     obsidian
