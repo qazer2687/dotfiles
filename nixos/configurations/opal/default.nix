@@ -32,8 +32,11 @@
     openFirewall = true;
   };
 
-  
-  
+  environment.systemPackages = with pkgs; [
+    qbittorrent-nox
+    flood
+  ];
+
   modules = {
     bash.enable = true;
     kernel.enable = true;
