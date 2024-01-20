@@ -15,6 +15,18 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  networking = {
+      networkmanager.enable = true;
+      firewall = {
+        enable = true;
+        allowedTCPPorts = [22 80 3000 8080 8096 9090 443 25565];
+      };
+    };
+    systemd = {
+      services.NetworkManager-wait-online.enable = false;
+      network.wait-online.enable = false;
+    };
+
   services.homepage-dashboard = {
     enable = true;
     openFirewall = true;
@@ -40,7 +52,6 @@
   modules = {
     bash.enable = true;
     kernel.enable = true;
-    networkmanager.enable = true;
     systemd-boot.enable = true;
     zram.enable = true;
   };
