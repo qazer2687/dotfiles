@@ -29,19 +29,17 @@
 
   services.homepage-dashboard = {
     enable = true;
-    openFirewall = true;
     listenPort = 80;
+    environment.HOMEPAGE_CONFIG_DIR = lib.mkForce “/home/alex/.config/homepage”;
   };
 
   services.cockpit = {
     enable = true;
-    openFirewall = true;
   };
 
   services.jellyfin = {
     enable = true;
     user = "alex";
-    openFirewall = true;
   };
 
   environment.systemPackages = with pkgs; [
