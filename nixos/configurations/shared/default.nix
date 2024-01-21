@@ -35,13 +35,6 @@ in {
     })
   ];
 
-  services.xserver.enable = true;	
-  services.xserver.displayManager.sx.enable = true;
-
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sx
-  '';
-
   console.keyMap = "colemak";
   services.xserver = {
     layout = "gb";
