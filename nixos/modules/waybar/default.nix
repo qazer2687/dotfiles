@@ -34,7 +34,7 @@
             "critical": 10,
             "warning": 20
           },
-          "interval": 10
+          "interval": 60
         },
         "mpris": {
           "format": "{player_icon} {artist} - {title}",
@@ -52,14 +52,20 @@
           "format-disconnected": " Disconnected",
           "format-wifi-alt": "{ipaddr}",
           "format-ethernet": "󰈁"
+          "interval": 60
+        },
+        "temperature": {
+          "interval": 60
         },
         "cpu": {
           "tooltip": false,
           "format": "󰘚 {}%"
+          "interval": 60
         },
         "memory": {
           "tooltip": false,
           "format": "󰍛 {}%"
+          "interval": 60
         }
       }
     '';
