@@ -17,7 +17,7 @@
         CPU_MIN_PERF_ON_AC = 0;
         CPU_MAX_PERF_ON_AC = 100;
 
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        CPU_SCALING_GOVERNOR_ON_BAT = "performance";
         CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
         SOUND_POWER_SAVE_ON_BAT = 1;
         MEM_SLEEP_ON_BAT = "deep";
