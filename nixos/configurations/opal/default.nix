@@ -30,7 +30,6 @@
   services.homepage-dashboard = {
     enable = true;
     listenPort = 80;
-    environment.HOMEPAGE_CONFIG_DIR = lib.mkForce “/home/alex/.config/homepage”;
   };
 
   services.cockpit = {
