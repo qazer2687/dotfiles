@@ -9,6 +9,7 @@
   ];
 
   networking.hostName = "jade";
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   users.users.alex = {
     isNormalUser = true;

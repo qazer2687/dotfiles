@@ -9,7 +9,7 @@
   config = lib.mkIf config.container.homepage-dashboard.enable {
 
     virtualisation.oci-containers.containers.homepage = {
-      image = "ghcr.io/benphelps/homepage:latest";
+      image = "ghcr.io/gethomepage/homepage:latest";
       autoStart = true;
       ports = [ "80:3000" ];
       volumes = [
