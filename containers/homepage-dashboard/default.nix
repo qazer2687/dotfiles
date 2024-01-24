@@ -21,9 +21,9 @@
           enable = true;
           allowedTCPPorts = [ 80 ];
         };
-        useHostResolvConf = mkForce false;
+        useHostResolvConf = lib.mkForce false;
       };
-      
+
       services.resolved.enable = true;
     };
   };
