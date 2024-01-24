@@ -10,17 +10,9 @@
 
     containers.homepage-dashboard = {
       autoStart = true;
-      privateNetwork = true;
-
-      hostAddress = "192.168.1.123";
-      localAddress = "192.168.1.122";
 
       bindMounts = {
         "/var/lib/homepage-dashboard" = {
-          hostPath = "/home/alex/.config/homepage-dashboard";
-          isReadOnly = false;
-        };
-        "/var/lib/private/homepage-dashboard" = {
           hostPath = "/home/alex/.config/homepage-dashboard";
           isReadOnly = false;
         };
