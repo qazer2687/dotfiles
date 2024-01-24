@@ -5,7 +5,9 @@
 }: {
   imports = [
     ../../../hardware/opal
+    ../../../containers
     ../../modules
+    
   ];
 
   networking.hostName = "opal";
@@ -26,12 +28,7 @@
       services.NetworkManager-wait-online.enable = false;
       network.wait-online.enable = false;
     };
-
-  services.homepage-dashboard = {
-    enable = true;
-    listenPort = 80;
-  };
-
+    
   services.cockpit = {
     enable = true;
   };

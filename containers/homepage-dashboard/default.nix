@@ -1,18 +1,26 @@
-{...}: {
-  containers.homepage-dashboard = {
-    autoStart = true;
-    privateNetwork = true;
-    cfg = { config, pkgs, lib, ... }: {
+{
+  lib,
+  config,
+  ...
+}: {
+  options.containers.homepage-dashboard.enable = lib.mkEnableOption "";
 
+  config = lib.mkIf config.containers.homepage-dashboard.enable {
+
+    containers.homepage-dashboard = {
+      autoStart = true;
+      privateNetwork = true;
       
+      services.homepage-dashboard = {
+        enable = true;
+        listenPort = 80;
+      };
 
       networking = {
         firewall = {
           enable = true;
           allowedTCPPorts = [ 80 ];
         };
-        # Use systemd-resolved inside the container
-        # Workaround for bug https://github.com/NixOS/nixpkgs/issues/162686
         useHostResolvConf = mkForce false;
       };
       
