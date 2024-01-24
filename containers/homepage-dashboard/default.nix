@@ -10,21 +10,23 @@
     containers.homepage-dashboard = {
       autoStart = true;
       privateNetwork = true;
+      config = { config, pkgs, lib, ... }: {
       
-      services.homepage-dashboard = {
-        enable = true;
-        listenPort = 80;
-      };
-
-      networking = {
-        firewall = {
+        services.homepage-dashboard = {
           enable = true;
-          allowedTCPPorts = [ 80 ];
+          listenPort = 80;
         };
-        useHostResolvConf = lib.mkForce false;
-      };
 
-      services.resolved.enable = true;
+        networking = {
+          firewall = {
+            enable = true;
+            allowedTCPPorts = [ 80 ];
+          };
+          useHostResolvConf = lib.mkForce false;
+        };
+
+        services.resolved.enable = true;
+      };
     };
   };
 }
