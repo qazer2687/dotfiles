@@ -17,7 +17,7 @@
         "layer": "top",
         "modules-left": ["sway/workspaces", "mpris"],
         "modules-center": [],
-        "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "battery", "clock"],
+        "modules-right": ["clock"],
         "pulseaudio": {
           "tooltip": false,
           "scroll-step": 5,
@@ -34,7 +34,7 @@
             "critical": 10,
             "warning": 20
           },
-          "interval": 10
+          "interval": 60
         },
         "mpris": {
           "format": "{player_icon} {artist} - {title}",
@@ -46,21 +46,6 @@
             "paused": "󰏤"
           }
         },
-        "network": {
-          "tooltip": false,
-          "format-wifi": " {essid}",
-          "format-disconnected": " Disconnected",
-          "format-wifi-alt": "{ipaddr}",
-          "format-ethernet": "󰈁"
-        },
-        "cpu": {
-          "tooltip": false,
-          "format": "󰘚 {}%"
-        },
-        "memory": {
-          "tooltip": false,
-          "format": "󰍛 {}%"
-        }
       }
     '';
     environment.etc."xdg/waybar/style.css".text = ''
