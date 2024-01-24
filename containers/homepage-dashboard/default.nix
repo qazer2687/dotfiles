@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.container.homepage-dashboard.enable = lib.mkEnableOption "";
@@ -10,11 +11,15 @@
     containers.homepage-dashboard = {
       autoStart = true;
       privateNetwork = true;
+      
       config = { config, pkgs, lib, ... }: {
+
+        system.stateVersion = "24.05";
       
         services.homepage-dashboard = {
           enable = true;
           listenPort = 80;
+          package = pkgs.homepage-dashboard;
         };
 
         networking = {
