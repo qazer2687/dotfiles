@@ -28,7 +28,7 @@
       services.NetworkManager-wait-online.enable = false;
       network.wait-online.enable = false;
     };
-    
+
   services.cockpit = {
     enable = true;
   };
@@ -42,6 +42,8 @@
     qbittorrent-nox
     flood
   ];
+
+  container.homepage-dashboard.enable = true;
 
   modules = {
     bash.enable = true;
