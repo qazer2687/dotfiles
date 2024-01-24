@@ -11,6 +11,13 @@
     containers.homepage-dashboard = {
       autoStart = true;
       privateNetwork = true;
+
+      bindMounts = {
+        "/var/lib/homepage-dashboard" = {
+          hostPath = "/home/alex/.config/homepage-dashboard";
+          isReadOnly = false;
+        };
+      };
       
       config = { config, pkgs, lib, ... }: {
 
