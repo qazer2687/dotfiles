@@ -24,14 +24,13 @@
       
         services.homepage-dashboard = {
           enable = true;
-          listenPort = 80;
           package = pkgs.homepage-dashboard;
         };
 
         networking = {
           firewall = {
             enable = true;
-            allowedTCPPorts = [ 80 3000 ];
+            allowedTCPPorts = [ 3000 ];
           };
           useHostResolvConf = lib.mkForce false;
         };
