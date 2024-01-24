@@ -36,7 +36,7 @@
         networking = {
           firewall = {
             enable = true;
-            allowedTCPPorts = [ 80 ];
+            allowedTCPPorts = [ 80 3000 ];
           };
           useHostResolvConf = lib.mkForce false;
         };
