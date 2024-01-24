@@ -17,6 +17,10 @@
           hostPath = "/home/alex/.config/homepage-dashboard";
           isReadOnly = false;
         };
+        "/var/lib/private/homepage-dashboard" = {
+          hostPath = "/home/alex/.config/homepage-dashboard";
+          isReadOnly = false;
+        };
       };
       
       config = { config, pkgs, lib, ... }: {
