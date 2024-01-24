@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.containers.homepage-dashboard.enable = lib.mkEnableOption "";
+  options.container.homepage-dashboard.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.containers.homepage-dashboard.enable {
+  config = lib.mkIf config.container.homepage-dashboard.enable {
 
     containers.homepage-dashboard = {
       autoStart = true;
