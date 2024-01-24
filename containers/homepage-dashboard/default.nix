@@ -8,35 +8,14 @@
 
   config = lib.mkIf config.container.homepage-dashboard.enable {
 
-    containers.homepage-dashboard = {
+    virtualisation.oci-containers.containers.homepage = {
+      image = "ghcr.io/benphelps/homepage:latest";
       autoStart = true;
-
-      bindMounts = {
-        "/var/lib/homepage-dashboard" = {
-          hostPath = "/home/alex/.config/homepage-dashboard";
-          isReadOnly = false;
-        };
-      };
-      
-      config = { config, pkgs, lib, ... }: {
-
-        system.stateVersion = "24.05";
-      
-        services.homepage-dashboard = {
-          enable = true;
-          package = pkgs.homepage-dashboard;
-        };
-
-        networking = {
-          firewall = {
-            enable = true;
-            allowedTCPPorts = [ 3000 ];
-          };
-          useHostResolvConf = lib.mkForce false;
-        };
-
-        services.resolved.enable = true;
-      };
+      ports = [ "80:3000" ];
+      volumes = [
+        "/home/alex/.config/homepage-dashboard:/app/config"
+        "/run/podman/podman.sock:/var/run/docker.sock"
+      ];
     };
   };
 }
