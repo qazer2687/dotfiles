@@ -1,9 +1,9 @@
 {...}: {
   imports = [
-    ./cockpit
-    ./deluge
+   # ./cockpit
+   # ./deluge
     ./homepage-dashboard
-    ./jellyfin
-    ./pihole
+    #./jellyfin
+    #./pihole
   ];
 }
