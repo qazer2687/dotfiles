@@ -13,7 +13,7 @@
       privateNetwork = true;
 
       hostAddress = "192.168.1.123";
-      localAddress = "192.168.1.321";
+      localAddress = "192.168.1.122";
 
       bindMounts = {
         "/var/lib/homepage-dashboard" = {
