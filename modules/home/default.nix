@@ -20,7 +20,6 @@
     ./prismlauncher
     ./rider
     ./starship
-    ./udiskie
     ./vlc
     ./vscode
     ./waybar
