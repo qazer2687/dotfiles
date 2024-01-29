@@ -4,9 +4,9 @@
   ...
 }: {
   imports = [
-    ../../../hardware/opal
-    ../../../containers
-    ../../../modules/nixos
+    ../../hardware/opal
+    ../../containers
+    ../../modules/nixos
     
   ];
 
