@@ -12,7 +12,6 @@
     ./git
     ./gtk
     ./i3
-    ./mangohud
     ./mpd
     ./neovim
     ./obs
