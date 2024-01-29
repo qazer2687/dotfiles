@@ -1,0 +1,34 @@
+{...}: {
+  imports = [
+    ./alacritty
+    ./armcord
+    ./bash
+    ./chromium
+    ./direnv
+    ./dunst
+    ./eza
+    ./firefox
+    ./foot
+    ./gammastep
+    ./git
+    ./gtk
+    ./i3
+    ./mangohud
+    ./mpd
+    ./neovim
+    ./obs
+    ./obsidian
+    ./polybar
+    ./prismlauncher
+    ./rider
+    ./spicetify
+    ./spotifyd
+    ./starship
+    ./udiskie
+    ./vlc
+    ./vscode
+    ./waybar
+    ./webcord
+    ./wofi
+  ];
+}
