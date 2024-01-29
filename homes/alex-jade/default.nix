@@ -14,11 +14,6 @@
     gnome.nautilus
   ];
 
-  dconf = {
-    enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-  };
-
   modules = {
     # Environment
     i3.enable = true;
