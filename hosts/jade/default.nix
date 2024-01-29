@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-    ../../../hardware/jade
-    ../../../modules/nixos
+    ../../hardware/jade
+    ../../modules/nixos
   ];
 
   networking.hostName = "jade";

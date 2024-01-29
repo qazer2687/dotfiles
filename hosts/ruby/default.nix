@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-    ../../../hardware/ruby
-    ../../../modules/nixos
+    ../../hardware/ruby
+    ../../modules/nixos
   ];
 
   networking.hostName = "ruby";
