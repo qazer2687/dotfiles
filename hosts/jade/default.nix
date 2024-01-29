@@ -12,12 +12,7 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.windowManager.i3 = {
-    enable = true;
-    package = pkgs.i3-rounded;
-  };
-
+  services.xserver.displayManager.startx.enable = true;
 
   users.users.alex = {
     isNormalUser = true;
