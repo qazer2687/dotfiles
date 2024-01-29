@@ -18,9 +18,9 @@
   };
 in {
 
-  options.modules.sway.enable = lib.mkEnableOption "";
+  options.homeModules.sway.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.sway.enable {
+  config = lib.mkIf config.homeModules.sway.enable {
 
     home.packages = with pkgs; [
       vlc

@@ -9,9 +9,9 @@
     "rebuild-local" = "sudo nixos-rebuild switch --flake .#$(hostname)";
   };
 in {
-  options.modules.bash.enable = lib.mkEnableOption "";
+  options.homeModules.bash.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.bash.enable {
+  config = lib.mkIf config.homeModules.bash.enable {
     programs.bash = {
       enable = true;
       shellAliases = bashAliases;
