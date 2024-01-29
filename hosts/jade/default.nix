@@ -14,6 +14,17 @@
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
 
+  environment.etc = {
+    issue = {
+      text = ''\e[32mWelcome to Jade!\e[0m'';
+    };
+  };
+
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && startx
+  '';
+
+
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
