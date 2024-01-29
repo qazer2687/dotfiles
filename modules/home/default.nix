@@ -19,8 +19,6 @@
     ./polybar
     ./prismlauncher
     ./rider
-    ./spicetify
-    ./spotifyd
     ./starship
     ./udiskie
     ./vlc
