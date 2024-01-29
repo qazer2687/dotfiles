@@ -57,7 +57,7 @@ in {
   };
 
   ## required by most things incl sway and nvidia
-  opengl = {
+  hardware.opengl = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
