@@ -8,6 +8,12 @@
 
   config = lib.mkIf config.modules.i3.enable {
 
+    xsession.windowmanager.i3 = {
+      enable = true;
+      package = pkgs.i3-rounded;
+      extraConfig = builtins.readFile ./config/default;
+    };
+
     home.packages = with pkgs; [
       dmenu
       scrot
@@ -15,6 +21,5 @@
       gnome.nautilus
       redshift
     ];
-    xdg.configFile."i3/config".text = builtins.readFile ./config/default;
   };
 }
