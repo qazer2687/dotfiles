@@ -11,6 +11,10 @@
   networking.hostName = "ruby";
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && sway
+  '';
+
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
