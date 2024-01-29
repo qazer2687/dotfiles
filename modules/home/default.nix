@@ -7,7 +7,6 @@
     ./direnv
     ./dunst
     ./eza
-    ./firefox
     ./foot
     ./gammastep
     ./git
@@ -28,7 +27,5 @@
     ./vlc
     ./vscode
     ./waybar
-    ./webcord
-    ./wofi
   ];
 }
