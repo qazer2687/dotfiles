@@ -26,37 +26,39 @@ in {
       vlc
     ];
   
-    wayland.windowManager.sway.config = {
+    wayland.windowManager.sway = {
+      enable = true;
+      config = {
 
-      package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+        package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
 
-      inherit modifier;
+        inherit modifier;
 
-      # Gaps
-      gaps = {
-        inner = 10;
-        outer = 0;
-      };
-
-      # Input
-      input = {
-        "type:pointer" = {
-          accel_profile = "flat";
-          pointer_accel = "0.0";
+        # Gaps
+        gaps = {
+          inner = 10;
+          outer = 0;
         };
-        "type:keyboard" = {
-          xkb_layout = "gb";
-          xkb_variant = "colemak";
+
+        # Input
+        input = {
+          "type:pointer" = {
+            accel_profile = "flat";
+            pointer_accel = "0.0";
+          };
+          "type:keyboard" = {
+            xkb_layout = "gb";
+            xkb_variant = "colemak";
+          };
         };
-      };
 
-      # Bar
-      bars = lib.mkForce [];
+        # Bar
+        bars = lib.mkForce [];
 
-      # Wallpaper
-      output."*".bg = "~/.config/wallpaper/wallpaper.png fill";
+        # Wallpaper
+        output."*".bg = "~/.config/wallpaper/wallpaper.png fill";
 
-      keybindings = lib.mkOptionDefault rec {
+        keybindings = lib.mkOptionDefault rec {
 
           # Open Terminal
           "${modifier}+Return" = "exec foot";
@@ -109,16 +111,17 @@ in {
           "${modifier}+Shift+9" = "move container to workspace number 9";
         };
 
-      wayland.windowManager.sway.extraConfig = ''
-        # Corner Radius
-        corner_radius 5
+        wayland.windowManager.sway.extraConfig = ''
+          # Corner Radius
+          corner_radius 5
 
-        # Eye Comfort (EXPERIMENTAL)
-        exec nohup gammastep -xO 3500
+          # Eye Comfort (EXPERIMENTAL)
+          exec nohup gammastep -xO 3500
 
-        # Notification Daemon
-        exec_always mako
-      '';
+          # Notification Daemon
+          exec_always mako
+        '';
+      };
     };
   };
 }
