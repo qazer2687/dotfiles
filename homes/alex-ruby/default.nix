@@ -14,7 +14,7 @@
     gnome.nautilus
   ];
 
-  homeModules = {
+  modules = {
     # Environment
     sway.enable = true;
     waybar.enable = true;
