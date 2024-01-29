@@ -28,10 +28,12 @@ in {
     sandbox = mkDefault true;
   };
 
+  ## i forgot what requires this, maybe vinegar or obsidian
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
 
+  # Default Fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override {
       fonts = [
@@ -42,22 +44,32 @@ in {
     })
   ];
 
+  # Bash Aliases
   programs.bash = {
     shellAliases = aliases;
   };
 
+  # Keyboard Layout
   console.keyMap = "colemak";
   services.xserver = {
     layout = "gb";
     xkbVariant = "colemak";
   };
+
+  ## required by most things incl sway and nvidia
+  opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
   
+  # Locale
   time.timeZone = mkDefault "Europe/London";
   i18n.defaultLocale = mkDefault "en_GB.UTF-8";
 
+  # Environment
   programs.direnv.enable = true;
   programs.git.enable = true;
-
   environment = {
     defaultPackages = lib.mkForce [];
     sessionVariables = {
