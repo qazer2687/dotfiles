@@ -110,18 +110,18 @@ in {
           "${modifier}+Shift+8" = "move container to workspace number 8";
           "${modifier}+Shift+9" = "move container to workspace number 9";
         };
-
-        wayland.windowManager.sway.extraConfig = ''
-          # Corner Radius
-          corner_radius 5
-
-          # Eye Comfort (EXPERIMENTAL)
-          exec nohup gammastep -xO 3500
-
-          # Notification Daemon
-          exec_always mako
-        '';
       };
+      
+      extraConfig = ''
+        # Corner Radius
+        corner_radius 5
+
+        # Eye Comfort (EXPERIMENTAL)
+        exec nohup gammastep -xO 3500
+
+        # Notification Daemon
+        exec_always mako
+      '';
     };
   };
 }
