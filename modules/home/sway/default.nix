@@ -58,6 +58,12 @@ in {
         # Wallpaper
         output."*".bg = "~/.config/wallpaper/wallpaper.png fill";
 
+        # Decorations
+        window = {
+          titlebar = false;
+          border = 0;
+        };
+
         keybindings = lib.mkOptionDefault rec {
 
           # Open Terminal
