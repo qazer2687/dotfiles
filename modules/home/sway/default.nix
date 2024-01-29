@@ -111,7 +111,7 @@ in {
           "${modifier}+Shift+9" = "move container to workspace number 9";
         };
       };
-      
+
       extraConfig = ''
         # Corner Radius
         corner_radius 5
@@ -121,6 +121,11 @@ in {
 
         # Notification Daemon
         exec_always mako
+
+        # Waybar
+        bar { 
+          swaybar_command waybar
+        }
       '';
     };
   };
