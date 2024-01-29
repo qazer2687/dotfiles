@@ -10,6 +10,6 @@
     home.packages = with pkgs; [
       alacritty
     ];
-    xdg.configFile."alacritty/alacritty.yaml".text = builtins.readFile ./config/default;
+    xdg.configFile."alacritty/alacritty.toml".text = builtins.readFile ./config/default;
   };
 }
