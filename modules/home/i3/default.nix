@@ -8,10 +8,13 @@
 
   config = lib.mkIf config.modules.i3.enable {
 
-    xsession.windowManager.i3 = {
+    xsession = {
       enable = true;
-      package = pkgs.i3-rounded;
-      extraConfig = builtins.readFile ./config/default;
+      windowManager.i3 = {
+        enable = true;
+        package = pkgs.i3-rounded;
+        extraConfig = builtins.readFile ./config/default;
+      };
     };
 
     home.packages = with pkgs; [
