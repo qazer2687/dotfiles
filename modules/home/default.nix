@@ -21,6 +21,7 @@
     ./rider
     ./starship
     ./vlc
+    ./sway
     ./vscode
     ./waybar
   ];
