@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.homeModules.gtk.enable = lib.mkEnableOption "";
+  options.modules.gtk.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.gtk.enable {
+  config = lib.mkIf config.modules.gtk.enable {
     gtk = {
       enable = true;
       theme = {

@@ -58,9 +58,9 @@ font-0 = FiraCode Nerd Font:pixelsize=13:antialias=true;3
 font-1 = FiraCode Nerd Font:style=Regular:pixelsize=21:antialias=true;4.5
 font-2 = FiraCode Nerd Font:style=Regular:pixelsize=15:antialias=true;3
 
-homeModules-left = i3
-homeModules-center =
-homeModules-right = date
+modules-left = i3
+modules-center =
+modules-right = date
 
 cursor-click = pointer
 cursor-scroll = ns-resize

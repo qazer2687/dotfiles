@@ -4,9 +4,9 @@
   config,
   ...
 }: {
-  options.homeModules.obs.enable = lib.mkEnableOption "";
+  options.modules.obs.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.obs.enable {
+  config = lib.mkIf config.modules.obs.enable {
     programs.obs-studio = {
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [

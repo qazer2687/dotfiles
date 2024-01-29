@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.homeModules.eza.enable = lib.mkEnableOption "";
+  options.modules.eza.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.eza.enable {
+  config = lib.mkIf config.modules.eza.enable {
     programs.eza = {
       enable = true;
       enableAliases = true;

@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.homeModules.gammastep.enable = lib.mkEnableOption "";
+  options.modules.gammastep.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.gammastep.enable {
+  config = lib.mkIf config.modules.gammastep.enable {
     services.gammastep = {
       enable = true;
       provider = "manual";

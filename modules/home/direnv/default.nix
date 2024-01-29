@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.homeModules.direnv.enable = lib.mkEnableOption "";
+  options.modules.direnv.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.direnv.enable {
+  config = lib.mkIf config.modules.direnv.enable {
     programs = {
       direnv = {
         enable = true;

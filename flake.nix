@@ -28,7 +28,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              users.alex = "./homes/alex@jade";
+              users.alex = ./homes/alex-jade;
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
@@ -57,7 +57,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              users.alex = "./homes/alex@ruby";
+              users.alex = ./homes/alex-ruby;
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
