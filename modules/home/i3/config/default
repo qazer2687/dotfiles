@@ -5,7 +5,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+q kill
 bindsym $mod+e exec --no-startup-id dmenu_run -i -b -nb "#111111" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"
 exec_always --no-startup-id feh --bg-fill /home/alex/.config/wallpaper/wallpaper.png
-exec_always --no-startup-id polybar -c /etc/polybar/config.ini main &
+exec_always --no-startup-id polybar -c /home/alex/polybar/config.ini main &
 bindsym $mod+Left move left
 bindsym $mod+Down move down
 bindsym $mod+Up move up
@@ -23,7 +23,6 @@ bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -33,7 +32,6 @@ bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+Shift+r restart
 default_border pixel 0
 gaps inner 8
