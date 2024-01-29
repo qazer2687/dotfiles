@@ -14,7 +14,7 @@
     gnome.nautilus
   ];
 
-  modules = {
+  homeModules = {
     # Environment
     i3.enable = true;
     polybar.enable = true;

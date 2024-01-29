@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.modules.vscode.enable = lib.mkEnableOption "";
+  options.homeModules.vscode.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.vscode.enable {
+  config = lib.mkIf config.homeModules.vscode.enable {
     programs.vscode = {
       enable = true;
       package = pkgs.vscodium;
