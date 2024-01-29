@@ -11,10 +11,11 @@
   networking.hostName = "jade";
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-  };
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && sx
+  '';
+
+  services.xserver.displayManager.sx.enable = true;
 
   users.users.alex = {
     isNormalUser = true;
