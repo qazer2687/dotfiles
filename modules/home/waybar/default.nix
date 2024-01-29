@@ -4,9 +4,9 @@
   config,
   ...
 }: {
-  options.homeModules.waybar.enable = lib.mkEnableOption "";
+  options.modules.waybar.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.waybar.enable {
+  config = lib.mkIf config.modules.waybar.enable {
     # Dependencies
     home.packages = with pkgs; [
       playerctl
@@ -23,9 +23,9 @@
         {
           height = 40;
           layer = "top";
-          homeModules-left = ["sway/workspaces" "mpris"];
-          homeModules-center = [];
-          homeModules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "battery" "clock"];
+          modules-left = ["sway/workspaces" "mpris"];
+          modules-center = [];
+          modules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "battery" "clock"];
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;

@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.homeModules.alacritty.enable = lib.mkEnableOption "";
+  options.modules.alacritty.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.alacritty.enable {
+  config = lib.mkIf config.modules.alacritty.enable {
     home.packages = with pkgs; [
       alacritty
     ];

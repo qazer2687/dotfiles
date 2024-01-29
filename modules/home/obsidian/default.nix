@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.homeModules.obsidian.enable = lib.mkEnableOption "";
+  options.modules.obsidian.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.obsidian.enable {
+  config = lib.mkIf config.modules.obsidian.enable {
     home.packages = with pkgs; [
       obsidian
     ];

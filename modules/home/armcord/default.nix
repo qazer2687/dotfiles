@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.homeModules.armcord.enable = lib.mkEnableOption "";
+  options.modules.armcord.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.armcord.enable {
+  config = lib.mkIf config.modules.armcord.enable {
     home.packages = with pkgs; [
       armcord
     ];

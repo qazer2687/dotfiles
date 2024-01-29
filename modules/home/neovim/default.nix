@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.homeModules.neovim.enable = lib.mkEnableOption "";
+  options.modules.neovim.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.neovim.enable {
+  config = lib.mkIf config.modules.neovim.enable {
     programs.neovim = {
       enable = true;
       vimAlias = true;

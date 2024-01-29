@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.homeModules.prismlauncher.enable = lib.mkEnableOption "";
+  options.modules.prismlauncher.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.prismlauncher.enable {
+  config = lib.mkIf config.modules.prismlauncher.enable {
     home.packages = with pkgs; [
       prismlauncher
       gamemode

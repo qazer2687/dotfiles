@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.homeModules.git.enable = lib.mkEnableOption "";
+  options.modules.git.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.git.enable {
+  config = lib.mkIf config.modules.git.enable {
     programs.git = {
       enable = true;
       userName = "alexvasilkovski";

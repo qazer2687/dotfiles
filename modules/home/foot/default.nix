@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.homeModules.foot.enable = lib.mkEnableOption "";
+  options.modules.foot.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.foot.enable {
+  config = lib.mkIf config.modules.foot.enable {
     programs.foot = {
       enable = true;
     };

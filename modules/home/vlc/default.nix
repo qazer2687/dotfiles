@@ -4,9 +4,9 @@
   config,
   ...
 }: {
-  options.homeModules.vlc.enable = lib.mkEnableOption "";
+  options.modules.vlc.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.vlc.enable {
+  config = lib.mkIf config.modules.vlc.enable {
     home.packages = with pkgs; [
       vlc
     ];

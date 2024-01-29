@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.homeModules.starship.enable = lib.mkEnableOption "";
+  options.modules.starship.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.homeModules.starship.enable {
+  config = lib.mkIf config.modules.starship.enable {
     programs.starship = {
       enable = true;
       enableBashIntegration = true;
