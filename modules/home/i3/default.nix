@@ -7,7 +7,7 @@
 
   config = lib.mkIf config.modules.i3.enable {
 
-    home.packages = [
+    home.packages = with pkgs; [
       dmenu
       scrot
       feh
