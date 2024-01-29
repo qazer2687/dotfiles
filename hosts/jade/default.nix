@@ -11,7 +11,8 @@
   networking.hostName = "jade";
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  services.xserver.displayManager.sx.enable = true;
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
 
   users.users.alex = {
     isNormalUser = true;
