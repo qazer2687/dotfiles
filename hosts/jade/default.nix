@@ -13,11 +13,7 @@
 
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.windowManager.i3 ={
-    enable = true;
-    package = pkgs.i3-rounded;
-  };
-
+  
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
