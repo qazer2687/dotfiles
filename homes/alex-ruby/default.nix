@@ -21,11 +21,11 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Adwaita-dark";
+      name = "Adwaita";
       package = pkgs.gnome.adwaita-icon-theme;
     };
     theme = {
-      name = "Adwaita-Dark";
+      name = "Adwaita-dark";
       package = pkgs.gnome.gnome-themes-extra;
     };
   };
