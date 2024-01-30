@@ -39,5 +39,5 @@ gaps inner 10
 gaps outer 0
 border_radius 4
 bar {
-        mode invisible
+  mode invisible
 }
