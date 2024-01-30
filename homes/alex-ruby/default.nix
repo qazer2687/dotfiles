@@ -29,7 +29,7 @@
       package = pkgs.gnome.gnome-themes-extra;
     };
   };
-  qt5 = {
+  qt = {
     enable = true;
     platformTheme = "gnome";
     style = "adwaita-dark";
