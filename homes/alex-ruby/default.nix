@@ -17,7 +17,7 @@
     foliate
   ];
   
-  # Dark Mode (GTK4)
+  # Dark Mode
   gtk = {
     enable = true;
     iconTheme = {
@@ -25,9 +25,14 @@
       package = pkgs.gnome3.adwaita-icon-theme;
     };
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome3.gnome_themes_standard;
+      name = "Fluent-dark";
+      package = pkgs.gnome.gnome-themes-extra
     };
+  };
+  qt5 = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
   };
 
   modules = {
