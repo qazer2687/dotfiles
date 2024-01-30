@@ -21,12 +21,12 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Fluent-dark";
-      package = pkgs.fluent-icon-theme;
+      name = "Adwaita-dark";
+      package = pkgs.gnome.adwaita-icon-theme;
     };
     theme = {
-      name = "Fluent-Dark";
-      package = pkgs.fluent-gtk-theme;
+      name = "Adwaita-Dark";
+      package = pkgs.gnome.gnome-themes-extra;
     };
   };
   qt = {
