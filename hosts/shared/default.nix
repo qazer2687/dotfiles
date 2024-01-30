@@ -41,8 +41,8 @@ in {
         "FiraMono"
         "Iosevka"
       ];
-      atkinson-hyperlegible
     })
+    atkinson-hyperlegible
   ];
 
   # Bash Aliases
