@@ -18,9 +18,16 @@
   ];
   
   # Dark Mode (GTK4)
-  dconf = {
+  gtk = {
     enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    iconTheme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome3.adwaita-icon-theme;
+    };
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome3.gnome_themes_standard;
+    };
   };
 
   modules = {

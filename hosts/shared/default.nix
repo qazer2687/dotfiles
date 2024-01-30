@@ -63,9 +63,6 @@ in {
     driSupport32Bit = true;
   };
 
-  ## required for dark mode with home-manager
-  programs.dconf.enable = true;
-  
   # Locale
   time.timeZone = mkDefault "Europe/London";
   i18n.defaultLocale = mkDefault "en_GB.UTF-8";
