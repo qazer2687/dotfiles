@@ -25,7 +25,7 @@
       package = pkgs.gnome3.adwaita-icon-theme;
     };
     theme = {
-      name = "Fluent-dark";
+      name = "Adwaita-dark";
       package = pkgs.gnome.gnome-themes-extra;
     };
   };
