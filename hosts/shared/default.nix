@@ -39,6 +39,7 @@ in {
         "FiraMono"
         "Iosevka"
       ];
+      atkinson-hyperlegible
     })
   ];
 
