@@ -62,6 +62,9 @@ in {
     driSupport = true;
     driSupport32Bit = true;
   };
+
+  ## required for dark mode with home-manager
+  programs.dconf.enable = true;
   
   # Locale
   time.timeZone = mkDefault "Europe/London";
