@@ -22,11 +22,11 @@
     enable = true;
     iconTheme = {
       name = "Fluent-dark";
-      package = pkgs.fluent-icon-theme
+      package = pkgs.fluent-icon-theme;
     };
     theme = {
       name = "Fluent-dark";
-      package = pkgs.fluent-gtk-theme
+      package = pkgs.fluent-gtk-theme;
     };
   };
   qt = {
