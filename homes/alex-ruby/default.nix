@@ -26,7 +26,7 @@
     };
     theme = {
       name = "Fluent-dark";
-      package = pkgs.gnome.gnome-themes-extra
+      package = pkgs.gnome.gnome-themes-extra;
     };
   };
   qt5 = {
