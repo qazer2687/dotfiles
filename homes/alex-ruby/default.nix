@@ -32,7 +32,7 @@
   qt = {
     enable = true;
     platformTheme = "gnome";
-    style.name = "Fluent-dark";
+    style.name = "adwaita-dark";
   };
 
   modules = {
