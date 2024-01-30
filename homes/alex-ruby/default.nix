@@ -12,8 +12,30 @@
     obsidian
     vscodium-fhs
     gnome.nautilus
+
+    qbittorrent
+    foliate
   ];
   
+  # Dark Mode
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+    };
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
+    gtk3.extraConfig = { gtk-application-prefer-dark-theme=1; };
+  };
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style.name = "adwaita-dark";
+  };
+
   modules = {
     # Environment
     sway.enable = true;
