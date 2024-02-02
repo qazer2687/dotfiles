@@ -23,9 +23,9 @@
         {
           height = 40;
           layer = "top";
-          modules-left = ["sway/workspaces" "mpris"];
+          modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "temperature" "cpu" "memory" "battery" "clock"];
+          modules-right = ["pulseaudio" "temperature" "cpu" "memory" "network" "disk" "battery"];
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
@@ -45,7 +45,7 @@
               critical = 10;
               warning = 20;
             };
-            interval = 2;
+            interval = 30;
           };
           mpris = {
             format = "{player_icon} {artist} - {title}";
@@ -63,16 +63,29 @@
             format-disconnected = " Disconnected";
             format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
+            interval = 5;
           };
           cpu = {
             tooltip = false;
-            format = "󰘚 {}%";
+            format = " {}%";
             interval = 2;
           };
           memory = {
             tooltip = false;
-            format = "󰍛 {}%";
+            format = "󰘚 {}%";
             interval = 2;
+          };
+          temperature = {
+            tooltip = false;
+            thermal-zone = 5; # x86_pkg_temp
+            format = " {temperatureC}°C";
+            format-critical = " {temperatureC}°C";
+            interval = 2;
+          };
+          disk = {
+            tooltip = false;
+            format = "󰋊 {percentage_used}%";
+            interval = 30;
           };
         }
       ];
@@ -218,6 +231,18 @@
         }
 
         #battery {
+          margin-top: 8px;
+          margin-left: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          border-radius: 5px;
+          transition: none;
+          color: #ffffff;
+          background: #000000;
+        }
+
+        #disk {
           margin-top: 8px;
           margin-left: 8px;
           padding-left: 16px;
