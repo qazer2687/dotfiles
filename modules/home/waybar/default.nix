@@ -25,7 +25,7 @@
           layer = "top";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["pulseaudio" "temperature" "cpu" "memory" "network" "disk" "battery"];
+          modules-right = [ "network" "pulseaudio" "temperature" "cpu" "memory" "disk" "battery"];
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
