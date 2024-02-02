@@ -9,20 +9,31 @@
   config = lib.mkIf config.modules.vscode.enable {
     programs.vscode = {
       enable = true;
-      package = pkgs.vscodium;
+      enableUpdateCheck = false;
+      enableExtentionUpdateCheck = false;
+      package = pkgs.vscodium-fhs;
       extensions = with pkgs.vscode-extensions; [
-        # Theming
+        # UI Theme
+        jdinhlife.gruvbox
+
+        # Icon Theme
         pkief.material-icon-theme
+
         # Nix
         jnoortheen.nix-ide
+        
         # C#
         ms-dotnettools.csharp
+
         # Rust
         rust-lang.rust-analyzer
         serayuzgur.crates
+
         # Other
         naumovs.color-highlight
         tamasfe.even-better-toml
+        mkhl.direnv
+
       ];
     };
   };

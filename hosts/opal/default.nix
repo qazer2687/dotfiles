@@ -44,8 +44,13 @@
   ];
 
   modules = {
+    
     kernel.enable = true;
     systemd-boot.enable = true;
     zram.enable = true;
+
+    containers = {
+      homepage-dashboard.enable = true;
+    }
   };
 }

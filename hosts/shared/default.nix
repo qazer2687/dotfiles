@@ -70,7 +70,6 @@ in {
 
   # Environment
   programs.direnv.enable = true;
-  programs.git.enable = true;
   environment = {
     defaultPackages = lib.mkForce [];
     sessionVariables = {

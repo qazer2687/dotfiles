@@ -11,8 +11,8 @@
       provider = "manual";
       latitude = 51.5;
       longitude = 0.1;
-      temperature.day = 4000;
-      temperature.night = 4000;
+      temperature.day = 2000;
+      temperature.night = 2000;
     };
   };
 }

@@ -10,7 +10,6 @@
   home.packages = with pkgs; [
     firefox
     obsidian
-    vscodium-fhs
     gnome.nautilus
 
     qbittorrent
@@ -41,6 +40,12 @@
     sway.enable = true;
     waybar.enable = true;
     foot.enable = true;
+    git.enable = true;
+    gammastep.enable = true;
+    starship.enable = true;
+
+    # Development
+    vscode.enable = true;
   };
 
   home.stateVersion = "23.05";
