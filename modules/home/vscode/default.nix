@@ -33,8 +33,26 @@
         naumovs.color-highlight
         tamasfe.even-better-toml
         mkhl.direnv
-
       ];
+      userSettings = {
+        "window.menuBarVisibility" = "toggle";
+        "workbench.startupEditor" = "none";
+        "workbench.iconTheme" = "material-icon-theme";
+        "files.autoSave" = "afterDelay";
+        "haskell.manageHLS" = "GHCup";
+        "git.autofetch" = true;
+        "git.enableSmartCommit" = true;
+        "git.confirmSync" = false;
+        "editor.cursorSmoothCaretAnimation" = "on";
+        "editor.tabSize" = 2;
+        "editor.detectIndentation" = false;
+        "workbench.colorTheme" = "Gruvbox Dark Medium";
+        "editor.fontFamily" = "'FiraCode Nerd Font'";
+        "workbench.statusBar.visible" = false;
+        "editor.minimap.enabled" = false;
+        "breadcrumbs.enabled" = false;
+        "window.zoomLevel" = 2;
+      };
     };
   };
 }

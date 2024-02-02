@@ -201,6 +201,7 @@
 
         #pulseaudio.muted {
           color: #ff0000;
+          font-weight: bold;
         }
 
         #temperature {
@@ -218,6 +219,7 @@
 
         #temperature.critical {
           color: #ff0000;
+          font-weight: bold;
         }
 
         #cpu {
@@ -262,6 +264,7 @@
 
         #battery.critical {
           color: #ff0000;
+          font-weight: bold;
         }
 
         #disk {
