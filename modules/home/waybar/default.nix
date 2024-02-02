@@ -25,7 +25,7 @@
           layer = "top";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = [ "network" "pulseaudio" "temperature" "cpu" "memory" "disk" "battery"];
+          modules-right = [ "network" "pulseaudio" "temperature""disk" "battery"];
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
@@ -94,8 +94,8 @@
           border: none;
           border-radius: 0;
           font-family: FiraCode Nerd Font;
-          font-size: 14px;
-          min-height: 24px;
+          font-size: 12px;
+          min-height: 20px;
         }
 
         window#waybar {
