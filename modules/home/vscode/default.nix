@@ -10,7 +10,7 @@
     programs.vscode = {
       enable = true;
       enableUpdateCheck = false;
-      enableExtentionUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
       package = pkgs.vscodium-fhs;
       extensions = with pkgs.vscode-extensions; [
         # UI Theme
