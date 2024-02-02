@@ -25,14 +25,15 @@
           layer = "top";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = [ "network" "pulseaudio" "temperature" "cpu" "memory" "disk" "battery"];
+          modules-right = [ "network" "pulseaudio" "temperature" "disk" "battery"];
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
             on-click = "pamixer -t";
             format = "{icon} {volume}%";
+            format-muted = "󰝟";
             format-icons = {
-              default = ["" "" ""];
+              default = ["󰕿" "󰖀" "󰕾"]; 
             };
           };
           clock = {
@@ -42,10 +43,9 @@
             format = "{icon} {}%";
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             states = {
-              critical = 10;
-              warning = 20;
+              critical = 25;
             };
-            interval = 30;
+            interval = 60;
           };
           mpris = {
             format = "{player_icon} {artist} - {title}";
@@ -78,14 +78,15 @@
           temperature = {
             tooltip = false;
             thermal-zone = 5; # x86_pkg_temp
+            critical-threshold = 70;
             format = " {temperatureC}°C";
             format-critical = " {temperatureC}°C";
-            interval = 2;
+            interval = 10;
           };
           disk = {
             tooltip = false;
             format = "󰋊 {percentage_used}%";
-            interval = 30;
+            interval = 120;
           };
         }
       ];
@@ -198,6 +199,10 @@
           background: #000000;
         }
 
+        #pulseaudio.muted {
+          color: #ff0000;
+        }
+
         #temperature {
           margin-top: 8px;
           margin-left: 4px;
@@ -209,6 +214,10 @@
           transition: none;
           color: #ffffff;
           background: #000000;
+        }
+
+        #temperature.critical {
+          color: #ff0000;
         }
 
         #cpu {
@@ -249,6 +258,10 @@
           transition: none;
           color: #ffffff;
           background: #000000;
+        }
+
+        #battery.critical {
+          color: #ff0000;
         }
 
         #disk {
