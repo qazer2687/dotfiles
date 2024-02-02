@@ -126,7 +126,8 @@
 
         #workspaces {
           margin-top: 8px;
-          margin-left: 8px;
+          margin-left: 4px;
+          margin-right: 4px;
           margin-bottom: 0;
           border-radius: 5px;
           background: #000000;
@@ -153,7 +154,8 @@
 
         #mpris {
           margin-top: 8px;
-          margin-left: 8px;
+          margin-left: 4px;
+          margin-right: 4px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
@@ -172,7 +174,8 @@
 
         #network {
           margin-top: 8px;
-          margin-left: 8px;
+          margin-left: 4px;
+          margin-right: 4px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
@@ -184,7 +187,8 @@
 
         #pulseaudio {
           margin-top: 8px;
-          margin-left: 8px;
+          margin-left: 4px;
+          margin-right: 4px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
@@ -196,7 +200,8 @@
 
         #temperature {
           margin-top: 8px;
-          margin-left: 8px;
+          margin-left: 4px;
+          margin-right: 4px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
@@ -208,7 +213,8 @@
 
         #cpu {
           margin-top: 8px;
-          margin-left: 8px;
+          margin-left: 4px;
+          margin-right: 4px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
@@ -220,7 +226,8 @@
 
         #memory {
           margin-top: 8px;
-          margin-left: 8px;
+          margin-left: 4px;
+          margin-right: 4px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
@@ -233,7 +240,8 @@
         #battery {
           margin-top: 8px;
           margin-left: 8px;
-          margin-right: 12px;
+          margin-left: 4px;
+          margin-right: 8px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
@@ -257,8 +265,8 @@
 
         #clock {
           margin-top: 8px;
-          margin-left: 12px;
-          margin-right: 8px;
+          margin-left: 8px;
+          margin-right: 4px;
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
