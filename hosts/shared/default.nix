@@ -43,6 +43,7 @@ in {
       ];
     })
     atkinson-hyperlegible
+    noto-fonts-color-emoji
   ];
 
   # Bash Aliases
