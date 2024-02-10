@@ -65,6 +65,9 @@ in {
     driSupport32Bit = true;
   };
 
+  # Dconf (gtk settings)
+  programs.dconf.enable = true;
+
   # Locale
   time.timeZone = mkDefault "Europe/London";
   i18n.defaultLocale = mkDefault "en_GB.UTF-8";

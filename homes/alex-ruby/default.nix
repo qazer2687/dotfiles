@@ -18,7 +18,6 @@
   
   # Dark Mode
   home.sessionVariables.GTK_THEME = "Adwaita-dark";
-  programs.dconf.enable = true;
   gtk = {
     enable = true;
     iconTheme = {
@@ -36,7 +35,6 @@
     platformTheme = "gnome";
     style.name = "adwaita-dark";
   };
-  
 
   modules = {
     # Environment
