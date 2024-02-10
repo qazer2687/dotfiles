@@ -52,9 +52,9 @@ in {
 
   # Keyboard Layout
   console.keyMap = "colemak";
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "gb";
-    xkbVariant = "colemak";
+    variant = "colemak";
   };
 
   # PAM (allow users to request rtprio)
