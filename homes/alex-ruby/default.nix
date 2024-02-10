@@ -13,6 +13,7 @@
     gnome.nautilus
     qbittorrent
     foliate
+    gammastep
   ];
   
   # Dark Mode
@@ -41,8 +42,6 @@
     waybar.enable = true;
     foot.enable = true;
     git.enable = true;
-    gammastep.enable = true;
-    starship.enable = true;
 
     # Development
     vscode.enable = true;

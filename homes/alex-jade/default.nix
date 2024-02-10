@@ -38,7 +38,6 @@
     polybar.enable = true;
     alacritty.enable = true;
     git.enable = true;
-    starship.enable = true;
 
     # Development
     vscode.enable = true;
