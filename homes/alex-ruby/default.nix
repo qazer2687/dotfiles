@@ -11,9 +11,9 @@
     firefox
     obsidian
     gnome.nautilus
-
     qbittorrent
     foliate
+    tor
   ];
   
   # Dark Mode
