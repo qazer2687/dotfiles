@@ -25,6 +25,8 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
   };
+
+  services.tor.enable = true;
   
   modules = {
     kernel.enable = true;
