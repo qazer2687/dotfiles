@@ -14,6 +14,8 @@
     qbittorrent
     foliate
     tor
+    orjail
+    firejail
   ];
   
   # Dark Mode
