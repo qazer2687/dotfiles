@@ -7,7 +7,6 @@
   options.modules.i3.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.i3.enable {
-
     xsession = {
       enable = true;
       windowManager.i3 = {

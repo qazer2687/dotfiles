@@ -12,9 +12,11 @@
       playerctl
     ];
 
-    wayland.windowManager.sway.config.bars = [{
-      command = "${pkgs.waybar}/bin/waybar";
-    }];
+    wayland.windowManager.sway.config.bars = [
+      {
+        command = "${pkgs.waybar}/bin/waybar";
+      }
+    ];
 
     # Config
     programs.waybar = {
@@ -25,7 +27,7 @@
           layer = "top";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = [ "network" "pulseaudio" "temperature" "disk" "battery"];
+          modules-right = ["network" "pulseaudio" "temperature" "disk" "battery"];
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
@@ -33,7 +35,7 @@
             format = "{icon} {volume}%";
             format-muted = "󰝟";
             format-icons = {
-              default = ["󰕿" "󰖀" "󰕾"]; 
+              default = ["󰕿" "󰖀" "󰕾"];
             };
           };
           clock = {

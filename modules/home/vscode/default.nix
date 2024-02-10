@@ -21,7 +21,7 @@
 
         # Nix
         jnoortheen.nix-ide
-        
+
         # C#
         ms-dotnettools.csharp
 

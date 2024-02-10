@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (lib) mkDefault;
-  
+
   # Custom Bash Aliases
   aliases = {
     "check" = "alejandra -q **/* && deadnix -e && statix fix";
@@ -12,7 +12,6 @@
     "rebuild-local" = "sudo nixos-rebuild switch --flake .#$(hostname)";
   };
 in {
-
   system.stateVersion = mkDefault "23.05";
 
   nixpkgs.config.allowUnfree = mkDefault true;
@@ -60,9 +59,13 @@ in {
 
   # PAM (allow users to request rtprio)
   security.pam.loginLimits = [
-    { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+    {
+      domain = "@users";
+      item = "rtprio";
+      type = "-";
+      value = 1;
+    }
   ];
-
 
   ## required by most things incl sway and nvidia
   hardware.opengl = {
