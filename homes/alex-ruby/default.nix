@@ -17,6 +17,8 @@
     orjail
     firejail
   ];
+
+  services.tor.enable = true;
   
   # Dark Mode
   gtk = {
