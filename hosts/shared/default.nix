@@ -58,6 +58,12 @@ in {
     xkbVariant = "colemak";
   };
 
+  # PAM (allow users to request rtprio)
+  security.pam.loginLimits = [
+    { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+  ];
+
+
   ## required by most things incl sway and nvidia
   hardware.opengl = {
     enable = true;
