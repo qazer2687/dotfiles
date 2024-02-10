@@ -1,13 +1,8 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../hardware/opal
     ../../containers
     ../../modules/nixos
-    
   ];
 
   networking.hostName = "opal";
@@ -18,16 +13,16 @@
   };
 
   networking = {
-      networkmanager.enable = true;
-      firewall = {
-        enable = true;
-        allowedTCPPorts = [22 80 3000 8080 8096 9090 443 25565];
-      };
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [22 80 3000 8080 8096 9090 443 25565];
     };
-    systemd = {
-      services.NetworkManager-wait-online.enable = false;
-      network.wait-online.enable = false;
-    };
+  };
+  systemd = {
+    services.NetworkManager-wait-online.enable = false;
+    network.wait-online.enable = false;
+  };
 
   services.cockpit = {
     enable = true;
@@ -44,13 +39,12 @@
   ];
 
   modules = {
-    
     kernel.enable = true;
     systemd-boot.enable = true;
     zram.enable = true;
 
     containers = {
       homepage-dashboard.enable = true;
-    }
+    };
   };
 }

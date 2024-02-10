@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../modules/home
   ];
@@ -15,7 +11,7 @@
     foliate
     gammastep
   ];
-  
+
   # Dark Mode
   home.sessionVariables.GTK_THEME = "Adwaita-dark";
   gtk = {
@@ -28,7 +24,7 @@
       name = "Adwaita-dark";
       package = pkgs.gnome.gnome-themes-extra;
     };
-    gtk3.extraConfig = { gtk-application-prefer-dark-theme=1; };
+    gtk3.extraConfig = {gtk-application-prefer-dark-theme = 1;};
   };
   qt = {
     enable = true;

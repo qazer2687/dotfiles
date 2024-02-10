@@ -18,20 +18,17 @@
     '';
   };
 in {
-
   options.modules.sway.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.sway.enable {
-
     home.packages = with pkgs; [
       vlc
     ];
-  
+
     wayland.windowManager.sway = {
       enable = true;
       package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       config = {
-
         inherit modifier;
 
         # Gaps
@@ -65,7 +62,6 @@ in {
         };
 
         keybindings = lib.mkOptionDefault rec {
-
           # Open Terminal
           "${modifier}+Return" = "exec foot";
 
@@ -77,7 +73,7 @@ in {
 
           # Search
           "${modifier}+e" = ''exec ${pkgs.dmenu-wayland}/bin/dmenu-wl_run -b -i -nb "#000000" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"'';
-          
+
           # Floating
           "${modifier}+space" = "floating toggle";
 
@@ -129,7 +125,7 @@ in {
         exec_always mako
 
         # Waybar
-        bar { 
+        bar {
           swaybar_command waybar
         }
       '';
@@ -146,9 +142,9 @@ in {
       '';
 
       wrapperFeatures = {
-          base = true;
-          gtk = true;
-        };
+        base = true;
+        gtk = true;
+      };
     };
   };
 }

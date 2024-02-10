@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{...}: {
   imports = [
     ../../hardware/jade
     ../../modules/nixos
@@ -24,12 +20,11 @@
     [[ "$(tty)" == /dev/tty1 ]] && startx
   '';
 
-
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
   };
-  
+
   modules = {
     kernel.enable = true;
     networkmanager.enable = true;

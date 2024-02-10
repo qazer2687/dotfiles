@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{...}: {
   imports = [
     ../../hardware/ruby
     ../../modules/nixos
@@ -25,7 +21,7 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
   };
-  
+
   modules = {
     kernel.enable = true;
     networkmanager.enable = true;
