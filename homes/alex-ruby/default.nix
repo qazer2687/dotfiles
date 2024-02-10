@@ -13,12 +13,10 @@
     gnome.nautilus
     qbittorrent
     foliate
-    tor
-    orjail
-    firejail
   ];
   
   # Dark Mode
+  home.sessionVariables.GTK_THEME = "Adwaita-dark";
   gtk = {
     enable = true;
     iconTheme = {
