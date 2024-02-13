@@ -14,7 +14,7 @@
       wl-clipboard
     ];
     text = ''
-      grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy
+      grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy -t image/png
     '';
   };
 in {
@@ -78,7 +78,7 @@ in {
           "${modifier}+space" = "floating toggle";
 
           # Screenshot
-          "${modifier}+Print" = "exec ${lib.getExe wayland-screenshot}";
+          "Print" = "exec ${lib.getExe wayland-screenshot}";
 
           # Volume Controls
           XF86AudioRaiseVolume = "exec ${pkgs.pamixer}/bin/pamixer -i 5";
