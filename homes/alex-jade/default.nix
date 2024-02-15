@@ -7,6 +7,7 @@
     firefox
     obsidian
     gnome.nautilus
+    obs-studio
   ];
 
   # Dark Mode
