@@ -21,11 +21,16 @@
       sendingFqdn = "q4z3r0x.com";
       domains = [ "q4z3r0x.com" ];
 
-      # SMTP: 587
-      enableSubmission = true;
-
-      # IMAP :143
+      # IMAP (143)
       enableImap = true;
+      enableImapSsl = true;
+
+      # POP3
+      enablePop3 = false;
+      enablePop3Ssl = false;
+
+      # SMTP (587)
+      enableSubmission = true;
 
       localDnsResolver = false;
       openFirewall = true;
