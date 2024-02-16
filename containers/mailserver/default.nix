@@ -18,27 +18,26 @@
     mailserver = {
       enable = true;
       fqdn = "mail.q4z3r0x.com";
-      sendingFqdn = "q4z3r0x.com";
       domains = [ "q4z3r0x.com" ];
 
       # IMAP (143)
-      enableImap = true;
+      #enableImap = true;
 
       # SMTP (587)
-      enableSubmission = true;
+      #enableSubmission = true;
 
-      localDnsResolver = false;
-      openFirewall = true;
+      #localDnsResolver = false;
+      #openFirewall = true;
 
       loginAccounts = {
         "mail@q4z3r0x.com" = {
           hashedPasswordFile = "/home/alex/.config/mailserver/password";
         };
       };
-      certificateScheme = "acme-nginx";
+      certificateScheme = "selfsigned";
     };
     
-    security.acme.acceptTerms = true;
-    security.acme.defaults.email = "security@q4z3r0x.com";
+    #security.acme.acceptTerms = true;
+    #security.acme.defaults.email = "security@q4z3r0x.com";
   };
 }
