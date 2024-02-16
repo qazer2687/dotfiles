@@ -23,11 +23,6 @@
 
       # IMAP (143)
       enableImap = true;
-      enableImapSsl = true;
-
-      # POP3
-      enablePop3 = false;
-      enablePop3Ssl = false;
 
       # SMTP (587)
       enableSubmission = true;
