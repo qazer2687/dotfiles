@@ -32,7 +32,7 @@
 
       loginAccounts = {
         "mail@q4z3r0x.com" = {
-          hashedPasswordFile = config.sops.secrets.mailserver_password;
+          hashedPasswordFile = config.sops.secrets."mailserver_password";
         };
       };
       certificateScheme = "acme-nginx";
