@@ -82,6 +82,7 @@
             nix.registry.nixpkgs.flake = nixpkgs;
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
           }
+          sops-nix.nixosModules.sops
         ];
       };
     };
