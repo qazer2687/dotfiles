@@ -21,7 +21,7 @@
   '';
 
   # Gnome Keyring
-  services.gnome3.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   users.users.alex = {
     isNormalUser = true;
