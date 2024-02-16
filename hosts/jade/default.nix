@@ -16,9 +16,14 @@
     };
   };
 
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && startx
-  '';
+
+  # GDM 
+  services.xserver.displayManager.gdm.enable = true;
+
+  # StartX
+  #environment.loginShellInit = ''
+  #  [[ "$(tty)" == /dev/tty1 ]] && startx
+  #'';
 
   # Gnome Keyring
   services.gnome.gnome-keyring.enable = true;
