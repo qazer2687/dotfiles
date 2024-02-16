@@ -20,6 +20,7 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
+          simple-nixos-mailserver.nixosModule
           ./hosts/jade
           ./hosts/shared
           {
