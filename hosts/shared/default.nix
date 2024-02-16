@@ -81,6 +81,9 @@ in {
   time.timeZone = mkDefault "Europe/London";
   i18n.defaultLocale = mkDefault "en_GB.UTF-8";
 
+  # Sops-Nix
+  defaultSopsFile = ./secrets/default.yaml;
+
   # Environment
   programs.direnv.enable = true;
   environment = {
