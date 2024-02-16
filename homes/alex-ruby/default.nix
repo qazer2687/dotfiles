@@ -11,6 +11,7 @@
     foliate
     gammastep
     mailspring
+    gnome.gnome-keyring
   ];
 
   # Dark Mode

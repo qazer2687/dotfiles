@@ -20,7 +20,6 @@
       dmenu
       scrot
       feh
-      gnome.nautilus
       redshift
     ];
   };
