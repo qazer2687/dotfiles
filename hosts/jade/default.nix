@@ -26,7 +26,8 @@
 
   # Gnome Keyring
   services.gnome.gnome-keyring.enable = true;
-
+  programs.seahorse.enable = true;
+  
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
