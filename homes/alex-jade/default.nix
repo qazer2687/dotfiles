@@ -9,6 +9,7 @@
     gnome.nautilus
     obs-studio
     mailspring
+    gnome.gnome-keyring
   ];
 
   # Dark Mode
