@@ -18,19 +18,8 @@
       enable = true;
       allowedTCPPorts = [
         22    # SSH
-        25    # SMTP
-        80    # HTTP (Homepage Dashboard)
-        110   # POP3
-        143   # IMAP
-        443   # HTTPS
-        465   # SMTPS
-        587   # TLS
-        993   # IMAPS
-        995   # POP3S
-        3000  # HTTP (Gitea)
-        4190  # ManageSieve
-        8080  # HTTP
-        8096  # HTTP (Jellyfin)
+        3000  # Gitea
+        8096  # Jellyfin
         9090  # Cockpit
         25565 # Minecraft
       ];
