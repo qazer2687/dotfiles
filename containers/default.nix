@@ -2,7 +2,8 @@
   imports = [
     # ./cockpit
     # ./deluge
-    ./homepage-dashboard
+    ./homepage
+    ./mailserver
     #./jellyfin
     #./pihole
   ];

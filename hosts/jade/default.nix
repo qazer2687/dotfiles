@@ -20,6 +20,9 @@
     [[ "$(tty)" == /dev/tty1 ]] && startx
   '';
 
+  # Gnome Keyring
+  services.gnome3.gnome-keyring.enable = true;
+
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];

@@ -22,6 +22,9 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  # Gnome Keyring
+  services.gnome3.gnome-keyring.enable = true;
+
   modules = {
     kernel.enable = true;
     networkmanager.enable = true;
