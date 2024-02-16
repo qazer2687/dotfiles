@@ -16,7 +16,24 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [22 80 3000 8080 8096 9090 443 25565];
+      allowedTCPPorts = [
+        22    # SSH
+        25    # SMTP
+        80    # HTTP (Homepage Dashboard)
+        110   # POP3
+        143   # IMAP
+        443   # HTTPS
+        465   # SMTPS
+        587   # TLS
+        993   # IMAPS
+        995   # POP3S
+        3000  # HTTP (Gitea)
+        4190  # ManageSieve
+        8080  # HTTP
+        8096  # HTTP (Jellyfin)
+        9090  # Cockpit
+        25565 # Minecraft
+      ];
     };
   };
   systemd = {
@@ -44,7 +61,8 @@
     zram.enable = true;
 
     containers = {
-      homepage-dashboard.enable = true;
+      homepage.enable = true;
+      mailserver.enable = true;
     };
   };
 }

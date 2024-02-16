@@ -10,6 +10,7 @@
     qbittorrent
     foliate
     gammastep
+    mailspring
   ];
 
   # Dark Mode
