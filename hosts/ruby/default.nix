@@ -24,6 +24,7 @@
 
   # Gnome Keyring
   services.gnome.gnome-keyring.enable = true;
+  gnome-keyring.enable = true;
 
   modules = {
     kernel.enable = true;
