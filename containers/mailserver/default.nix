@@ -21,7 +21,7 @@
       domains = [ "q4z3r0x.com" ];
       loginAccounts = {
         "mail@q4z3r0x.com" = {
-          hashedPasswordFile = "~/.config/mailserver/password";
+          hashedPasswordFile = "/home/alex/.config/mailserver/password";
         };
       };
       certificateScheme = "acme-nginx";
