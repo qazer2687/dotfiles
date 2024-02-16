@@ -3,12 +3,14 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     sops-nix.url = "github:Mic92/sops-nix";
+    inputs.simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-23.11";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
     sops-nix,
+    simple-nixos-mailserver,
     ...
   } @ inputs: {
 
@@ -83,6 +85,7 @@
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
           }
           sops-nix.nixosModules.sops
+          simple-nixos-mailserver.nixosModule
         ];
       };
     };
