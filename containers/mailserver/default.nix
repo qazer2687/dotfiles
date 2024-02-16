@@ -19,6 +19,13 @@
       enable = true;
       fqdn = "mail.q4z3r0x.com";
       domains = [ "q4z3r0x.com" ];
+
+      # SMTP: 587
+      enableSubmission = true;
+
+      # IMAP :143
+      enableImap = true;
+
       loginAccounts = {
         "mail@q4z3r0x.com" = {
           hashedPasswordFile = "/home/alex/.config/mailserver/password";
