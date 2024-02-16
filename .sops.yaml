@@ -1,11 +1,12 @@
 keys:
-  - &jade age1x2t55uu60pkjsmggep284a4pvx05w7jyrxdnd503k26vp8ecnf2qk8zede
+  - &jade age1laxes9xz25p0lhcflurv9mxyxm22g6ghw2d7c0hlxdkft7ettptsr7nmjw
   - &ruby age1vpwvdgz268pqt7m3xk0w6vu5z5j27quwn4p6xnghnyncqqn2m4ks9wlqg7
-
+  - &opal age1lxmhrxyqjev4vznfsmve6fumlpqnudlyyur3wu6tymgj9gns7qlsnyv7wj
 creation_rules:
   - path_regex: secrets/[^/]+\.ya?ml$
     key_groups:
     - age:
       - *jade
       - *ruby
+      - *opal
 
