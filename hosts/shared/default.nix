@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: let
   inherit (lib) mkDefault;
@@ -82,7 +83,7 @@ in {
   i18n.defaultLocale = mkDefault "en_GB.UTF-8";
 
   # Sops-Nix
-  defaultSopsFile = ./secrets/default.yaml;
+  sops.defaultSopsFile = ./secrets/default.yaml;
 
   # Environment
   programs.direnv.enable = true;
