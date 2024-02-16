@@ -18,6 +18,7 @@
     mailserver = {
       enable = true;
       fqdn = "mail.q4z3r0x.com";
+      sendingFqdn = "q4z3r0x.com";
       domains = [ "q4z3r0x.com" ];
 
       # SMTP: 587
@@ -25,6 +26,9 @@
 
       # IMAP :143
       enableImap = true;
+
+      localDnsResolver = false;
+      openFirewall = true;
 
       loginAccounts = {
         "mail@q4z3r0x.com" = {
