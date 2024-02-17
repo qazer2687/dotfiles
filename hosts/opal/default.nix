@@ -50,7 +50,7 @@
     zram.enable = true;
 
     containers = {
-      homepage.enable = false;
+      homepage.enable = true;
       mailserver.enable = true;
     };
   };
