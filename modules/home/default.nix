@@ -9,5 +9,6 @@
     ./sway
     ./vscode
     ./waybar
+    ./theme
   ];
 }

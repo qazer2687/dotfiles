@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./fstrim
     ./kernel
     ./networkmanager
     ./nvidia

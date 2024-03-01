@@ -8,28 +8,7 @@
     obsidian
     gnome.nautilus
     obs-studio
-    mailspring
-    gnome.gnome-keyring
   ];
-
-  # Dark Mode
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.gnome.adwaita-icon-theme;
-    };
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.gnome-themes-extra;
-    };
-    gtk3.extraConfig = {gtk-application-prefer-dark-theme = 1;};
-  };
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style.name = "adwaita-dark";
-  };
 
   modules = {
     # Environment
@@ -37,6 +16,7 @@
     polybar.enable = true;
     alacritty.enable = true;
     git.enable = true;
+    theme.enable = true;
 
     # Development
     vscode.enable = true;
