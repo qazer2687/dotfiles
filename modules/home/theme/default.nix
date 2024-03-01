@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.modules.theme.enable = lib.mkEnableOption "";
