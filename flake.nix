@@ -3,7 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     sops-nix.url = "github:Mic92/sops-nix";
-    nur.url = github:nix-community/NUR;
+    nur.url = "github:nix-community/NUR";
     arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
   };
 
