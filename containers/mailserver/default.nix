@@ -6,11 +6,10 @@
   options.modules.containers.mailserver.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.containers.mailserver.enable {
-  
     mailserver = {
       enable = true;
       fqdn = "mail.q4z3r0x.com";
-      domains = [ "q4z3r0x.com" ];
+      domains = ["q4z3r0x.com"];
 
       # IMAP (143)
       #enableImap = true;
@@ -28,7 +27,7 @@
       };
       certificateScheme = "selfsigned";
     };
-    
+
     #security.acme.acceptTerms = true;
     #security.acme.defaults.email = "security@q4z3r0x.com";
   };

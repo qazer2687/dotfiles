@@ -17,10 +17,10 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [
-        22    # SSH
-        3000  # Gitea
-        8096  # Jellyfin
-        9090  # Cockpit
+        22 # SSH
+        3000 # Gitea
+        8096 # Jellyfin
+        9090 # Cockpit
         25565 # Minecraft
       ];
     };
