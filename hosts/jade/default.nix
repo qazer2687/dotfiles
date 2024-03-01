@@ -7,32 +7,27 @@
   networking.hostName = "jade";
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
-
+  # Issue
   environment.etc = {
     issue = {
       text = ''\e[32mWelcome to Jade!\e[0m'';
     };
   };
 
-  services.xserver.windowManager.i3.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-
   # StartX
-  #environment.loginShellInit = ''
-  #  [[ "$(tty)" == /dev/tty1 ]] && startx
-  #'';
+  services.xserver.enable = true;
+  services.xserver.displayManager.startx.enable = true;
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && startx
+  '';
 
-  # Gnome Keyring
-  services.gnome.gnome-keyring.enable = true;
-  programs.seahorse.enable = true;
-  
+  # User
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  # Modules
   modules = {
     kernel.enable = true;
     networkmanager.enable = true;
@@ -41,4 +36,7 @@
     systemd-boot.enable = true;
     zram.enable = true;
   };
+
+  # State Version
+  system.stateVersion = mkDefault "23.05";
 }

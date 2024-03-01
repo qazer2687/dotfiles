@@ -7,32 +7,10 @@
     firefox
     obsidian
     gnome.nautilus
-    qbittorrent
     foliate
     gammastep
-    mailspring
-    gnome.gnome-keyring
+    fragments
   ];
-
-  # Dark Mode
-  home.sessionVariables.GTK_THEME = "Adwaita-dark";
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.gnome.adwaita-icon-theme;
-    };
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.gnome-themes-extra;
-    };
-    gtk3.extraConfig = {gtk-application-prefer-dark-theme = 1;};
-  };
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style.name = "adwaita-dark";
-  };
 
   modules = {
     # Environment
@@ -40,6 +18,7 @@
     waybar.enable = true;
     foot.enable = true;
     git.enable = true;
+    theme.enable = true;
 
     # Development
     vscode.enable = true;

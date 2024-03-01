@@ -22,15 +22,13 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
-  # Gnome Keyring
-  services.gnome.gnome-keyring.enable = true;
-
   modules = {
     kernel.enable = true;
     networkmanager.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
     zram.enable = true;
-    tlp.enable = true;
   };
+
+  system.stateVersion = mkDefault "23.05";
 }

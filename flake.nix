@@ -3,14 +3,15 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     sops-nix.url = "github:Mic92/sops-nix";
-    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-23.11";
+    nur.url = github:nix-community/NUR;
+    arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
     sops-nix,
-    simple-nixos-mailserver,
+    nur,
     ...
   } @ inputs: {
 
@@ -20,23 +21,23 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
-          simple-nixos-mailserver.nixosModule
           ./hosts/jade
           ./hosts/shared
-          {
-            nix.registry.nixpkgs.flake = nixpkgs;
-            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
-          }
+          nur.nixosModules.nur
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
+            nix.registry.nixpkgs.flake = nixpkgs;
+            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
+
             home-manager = {
-              users.alex = ./homes/alex-jade;
+              users.alex = ./homes/jade;
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
                 inputs.sops-nix.homeManagerModules.sops
+                inputs.arkenfox.hmModules.default
               ];
             };
           }
@@ -52,20 +53,21 @@
         modules = [
           ./hosts/ruby
           ./hosts/shared
-          {
-            nix.registry.nixpkgs.flake = nixpkgs;
-            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
-          }
+          nur.nixosModules.nur
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
+            nix.registry.nixpkgs.flake = nixpkgs;
+            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
+
             home-manager = {
-              users.alex = ./homes/alex-ruby;
+              users.alex = ./homes/ruby;
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
                 inputs.sops-nix.homeManagerModules.sops
+                inputs.arkenfox.hmModules.default
               ];
             };
           }
@@ -86,7 +88,6 @@
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
           }
           sops-nix.nixosModules.sops
-          simple-nixos-mailserver.nixosModule
         ];
       };
     };

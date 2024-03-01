@@ -9,12 +9,10 @@
   # Custom Bash Aliases
   aliases = {
     "check" = "alejandra -q **/* && deadnix -e && statix fix";
-    "rebuild" = "sudo nixos-rebuild switch --flake github:alexvasilkovski/dotfiles#$(hostname) --refresh --option eval-cache false";
+    "rebuild" = "sudo nixos-rebuild switch --flake github:ihatewindows/dotfiles#$(hostname) --refresh --option eval-cache false";
     "rebuild-local" = "sudo nixos-rebuild switch --flake .#$(hostname)";
   };
 in {
-  system.stateVersion = mkDefault "23.05";
-
   nixpkgs.config.allowUnfree = mkDefault true;
 
   nix.settings = {
@@ -67,6 +65,11 @@ in {
       value = 1;
     }
   ];
+
+  # Power Profiles Daemon
+  services.power-profiles-daemon = {
+    enable = true;
+  };
 
   ## required by most things incl sway and nvidia
   hardware.opengl = {

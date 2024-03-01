@@ -50,8 +50,9 @@
     zram.enable = true;
 
     containers = {
-      homepage.enable = false;
-      mailserver.enable = true;
+      homepage.enable = true;
     };
   };
+
+  system.stateVersion = mkDefault "23.05";
 }
