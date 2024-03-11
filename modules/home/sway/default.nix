@@ -58,7 +58,7 @@ in {
         # Display & Wallpaper
         output = {
           "*".bg = "~/.config/wallpaper/wallpaper.png fill";
-          "DP-1 mode 1920x1080@144Hz";
+          "DP-1" = "mode 1920x1080@144Hz";
         };
 
         # Decorations
