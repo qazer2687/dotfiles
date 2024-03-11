@@ -46,7 +46,7 @@
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             full-at = 95;
             format-full = "{icon}";
-            format-charging = "󰂄 {}%"
+            format-charging = "󰂄 {}%";
 
             states = {
               full = 95;
