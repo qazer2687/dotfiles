@@ -7,5 +7,6 @@
     ./systemd-boot
     ./zram
     ./virt-manager
+    ./bluetooth
   ];
 }
