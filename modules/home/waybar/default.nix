@@ -27,7 +27,7 @@
           layer = "top";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "temperature" "disk" "battery"];
+          modules-right = ["network" "pulseaudio" "temperature" "battery"];
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
@@ -44,7 +44,12 @@
           battery = {
             format = "{icon} {}%";
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            full-at = 95;
+            format-full = "{icon}";
+            format-charging = "󰂄 {}%"
+
             states = {
+              full = 95;
               critical = 25;
             };
             interval = 60;
@@ -202,8 +207,7 @@
         }
 
         #pulseaudio.muted {
-          color: #ff0000;
-          font-weight: bold;
+          color: #ff6666;
         }
 
         #temperature {
@@ -220,8 +224,7 @@
         }
 
         #temperature.critical {
-          color: #ff0000;
-          font-weight: bold;
+          color: #ff6666;
         }
 
         #cpu {
@@ -265,8 +268,11 @@
         }
 
         #battery.critical {
-          color: #ff0000;
-          font-weight: bold;
+          color: #ff6666;
+        }
+
+        #battery.full {
+          color: #66ff66;
         }
 
         #disk {
