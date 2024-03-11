@@ -128,6 +128,9 @@ in {
         bar {
           swaybar_command waybar
         }
+
+        # External Displays
+        output DP-1 mode 2560x1440@144Hz position 0,0
       '';
 
       extraSessionCommands = ''
