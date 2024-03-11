@@ -26,7 +26,7 @@ in {
     sandbox = mkDefault true;
   };
 
-  ## i forgot what requires this, maybe vinegar or obsidian
+  ## i forgot what this does
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
