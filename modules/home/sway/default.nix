@@ -52,9 +52,6 @@ in {
         # Bar
         bars = lib.mkForce [];
 
-        # Wallpaper
-        output."*".bg = "~/.config/wallpaper/wallpaper.png fill";
-
         # Display & Wallpaper
         output = {
           "*".bg = "~/.config/wallpaper/wallpaper.png fill";
