@@ -27,7 +27,7 @@
           layer = "top";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "temperature" "battery"];
+          modules-right = ["battery"];
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
@@ -49,10 +49,9 @@
             format-charging = "󰂄 {}%";
 
             states = {
-              full = 95;
               critical = 25;
             };
-            interval = 60;
+            interval = 5;
           };
           mpris = {
             format = "{player_icon} {artist} - {title}";
@@ -93,7 +92,7 @@
           disk = {
             tooltip = false;
             format = "󰋊 {percentage_used}%";
-            interval = 120;
+            interval = 240;
           };
         }
       ];
