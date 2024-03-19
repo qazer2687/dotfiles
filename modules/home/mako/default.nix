@@ -14,6 +14,7 @@
       borderRadius = 8;
       margin = "8";
       anchor = "top-right";
+      width = "600";
       
       # Theme
       backgroundColor = "#000000";
