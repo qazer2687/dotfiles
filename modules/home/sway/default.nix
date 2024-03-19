@@ -124,10 +124,10 @@ in {
           "${modifier}+Right" = "move right";
 
           # Resize
-          "${modifier}+Shift+Left" = "resize shrink width 5 px";
-          "${modifier}+Shift+Up" = "resize grow height 5 px";
-          "${modifier}+Shift+Down" = "resize shrink height 5 px";
-          "${modifier}+Shift+Right" = "resize grow width 5 px";
+          "${modifier}+Shift+Left" = "resize shrink left 5 ppt";
+          "${modifier}+Shift+Up" = "resize grow height 5 ppt";
+          "${modifier}+Shift+Down" = "resize shrink height 5 ppt";
+          "${modifier}+Shift+Right" = "resize grow right 5 ppt";
         };
       };
 
