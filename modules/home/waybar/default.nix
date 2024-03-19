@@ -27,7 +27,7 @@
           layer = "top";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["battery"];
+          modules-right = ["network" "battery"];
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
@@ -65,8 +65,8 @@
           };
           network = {
             tooltip = false;
-            format-wifi = " {essid}"; # 󱐋 {frequency}
-            format-disconnected = " Disconnected";
+            format-wifi = ""; # 󱐋 {frequency}
+            format-disconnected = "";
             format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
             interval = 5;

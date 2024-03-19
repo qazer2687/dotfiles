@@ -23,6 +23,7 @@ in {
   config = lib.mkIf config.modules.sway.enable {
     home.packages = with pkgs; [
       vlc
+      libnotify
     ];
 
     wayland.windowManager.sway = {
@@ -115,8 +116,21 @@ in {
           "${modifier}+Shift+7" = "move container to workspace number 7";
           "${modifier}+Shift+8" = "move container to workspace number 8";
           "${modifier}+Shift+9" = "move container to workspace number 9";
+
+          # Move
+          "${modifier}+Left" = "move left";
+          "${modifier}+Down" = "move down";
+          "${modifier}+Up" = "move up";
+          "${modifier}+Right" = "move right";
+
+          # Resize
+          "${modifier}+Shift" = "resize shrink width 5 px";
+          "${modifier}+Shift" = "resize grow height 5 px";
+          "${modifier}+Shift" = "resize shrink height 5 px";
+          "${modifier}+Shift" = "resize grow width 5 px";
         };
       };
+
 
       extraConfig = ''
         # Corner Radius
@@ -125,14 +139,10 @@ in {
         # Eye Comfort (EXPERIMENTAL)
         exec nohup gammastep -xO 3500
 
-        # Notification Daemon
-        exec_always mako
-
         # Waybar
         bar {
           swaybar_command waybar
         }
-
       '';
 
       extraSessionCommands = ''
