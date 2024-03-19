@@ -29,6 +29,7 @@
     systemd-boot.enable = true;
     zram.enable = true;
     bluetooth.enable = true;
+    mako.enable = true;
   };
 
   system.stateVersion = "23.05";

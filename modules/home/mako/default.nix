@@ -1,0 +1,24 @@
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
+  options.modules.mako.enable = lib.mkEnableOption "";
+
+  config = lib.mkIf config.modules.mako.enable {
+    services.mako = {
+      enable = true;
+      defaultTimeout = 5000;
+      font = "FiraCode Nerd Font 12";
+      borderRadius = 8;
+      margin = "8";
+      anchor = "top-right";
+      
+      # Theme
+      backgroundColor = "#000000";
+      borderColor = "#000000";
+      padding = "8,8,8,8";
+    };
+  };
+}
