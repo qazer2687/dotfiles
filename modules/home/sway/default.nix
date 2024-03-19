@@ -131,7 +131,6 @@ in {
         };
       };
 
-
       extraConfig = ''
         # Corner Radius
         corner_radius 5

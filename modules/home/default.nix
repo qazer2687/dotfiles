@@ -10,5 +10,6 @@
     ./vscode
     ./waybar
     ./theme
+    ./mako
   ];
 }
