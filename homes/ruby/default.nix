@@ -19,6 +19,7 @@
     foot.enable = true;
     git.enable = true;
     theme.enable = true;
+    mako.enable = true;
 
     # Development
     vscode.enable = true;
