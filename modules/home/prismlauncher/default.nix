@@ -9,20 +9,39 @@
   config = lib.mkIf config.modules.prismlauncher.enable {
     home.packages = with pkgs; [
       prismlauncher
-      gamemode
       mangohud
     ];
+    
     home.file = {
-      # Java 8
       ".jdks/8".source = lib.getBin pkgs.openjdk8;
       ".jdks/8-temurin".source = lib.getBin pkgs.temurin-bin-8;
 
-      # Java 11
       ".jdks/11".source = lib.getBin pkgs.openjdk11;
 
-      # Java 17
       ".jdks/17".source = lib.getBin pkgs.openjdk17;
       ".jdks/17-temurin".source = lib.getBin pkgs.temurin-bin-17;
+    };
+
+    programs.gamemode = {
+      enable = true;
+      enableRenice = false;
+      settings = {
+        general = {
+          desiredgov = "performance";
+          defaultgov = "powersave";
+        };
+
+        gpu = {
+          apply_gpu_optimisations = "accept-responsibility";
+          gpu_device = 0;
+          nv_powermizer_mode = 1; # "Prefer Maximum Performance"
+        };
+
+        custom = {
+          start = "${pkgs.libnotify}/bin/notify-send 'GameMode Enabled'";
+          end = "${pkgs.libnotify}/bin/notify-send 'GameMode Disabled'";
+        };
+      };
     };
   };
 }
