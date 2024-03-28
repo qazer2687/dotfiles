@@ -25,9 +25,11 @@
         {
           height = 40;
           layer = "top";
-          modules-left = ["clock" "sway/workspaces" "mpris"];
+          modules-left = ["clock" "wlr/workspaces" "mpris"];
           modules-center = [];
           modules-right = ["network" "battery"];
+          
+          # Pulseaudio
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
@@ -38,9 +40,13 @@
               default = ["󰕿" "󰖀" "󰕾"];
             };
           };
+
+          # Clock
           clock = {
             format-alt = "{:%Y/%m/%d | %H:%M:%S}";
           };
+
+          # Battery
           battery = {
             format = "{icon} {}%";
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
@@ -53,6 +59,27 @@
             };
             interval = 5;
           };
+          
+          # Workspaces
+          wlr/workspaces = {
+            format = "{icon}";
+            format-icons = {
+              1 = "󰎤";
+              2 = "󰎧";
+              3 = "󰎪";
+              4 = "󰎭";
+              5 = "󰎱";
+              6 = "󰎳";
+              7 = "󰎶";
+              8 = "󰎹";
+              9 = "󰎼";
+              0 = "󰽽";
+              urgent = "󰀧";
+            };
+            sort-by-number = true;
+          };
+
+          # Mpris
           mpris = {
             format = "{player_icon} {artist} - {title}";
             format-paused = "{status_icon} {artist} - {title}";
@@ -63,6 +90,8 @@
               paused = "󰏤";
             };
           };
+
+          # Network
           network = {
             tooltip = false;
             format-wifi = ""; # 󱐋 {frequency}
@@ -71,16 +100,22 @@
             format-ethernet = "󰈁";
             interval = 5;
           };
+
+          # CPU
           cpu = {
             tooltip = false;
             format = " {}%";
             interval = 2;
           };
+
+          # Memory
           memory = {
             tooltip = false;
             format = "󰘚 {}%";
             interval = 2;
           };
+
+          # Temperature
           temperature = {
             tooltip = false;
             thermal-zone = 5; # x86_pkg_temp
@@ -89,6 +124,8 @@
             format-critical = " {temperatureC}°C";
             interval = 10;
           };
+
+          # Disk
           disk = {
             tooltip = false;
             format = "󰋊 {percentage_used}%";
@@ -96,6 +133,7 @@
           };
         }
       ];
+
       style = ''
         * {
           border: none;
