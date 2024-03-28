@@ -147,13 +147,6 @@
           background-color: #000000;
           transition-property: background-color;
           transition-duration: 0.5s;
-        }
-
-        window#waybar.hidden {
-          opacity: 0.5;
-        }
-
-        #window {
           margin-top: 8px;
           padding-left: 16px;
           padding-right: 16px;
@@ -161,6 +154,10 @@
           transition: none;
           color: transparent;
           background: transparent;
+        }
+
+        window#waybar.hidden {
+          opacity: 0.5;
         }
 
         #workspaces {
