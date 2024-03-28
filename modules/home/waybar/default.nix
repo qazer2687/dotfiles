@@ -237,7 +237,15 @@
         .tray #memory,
         .tray #battery,
         .tray #disk {
-
+          margin-top: 8px;
+          margin-left: 0px;
+          margin-right: 0px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-bottom: 0;
+          transition: none;
+          color: #ffffff;
+          background: #000000;
         }
 
         #pulseaudio.muted {
