@@ -25,7 +25,7 @@
         {
           height = 40;
           layer = "top";
-          modules-left = ["clock" "wlr/workspaces" "mpris"];
+          modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
           modules-right = ["network" "battery"];
           
@@ -61,7 +61,7 @@
           };
           
           # Workspaces
-          "wlr/workspaces" = {
+          "sway/workspaces" = {
             format = "{icon}";
             format-icons = {
               "1" = "󰎤";
