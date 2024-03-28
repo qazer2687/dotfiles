@@ -147,9 +147,6 @@
           background-color: #000000;
           transition-property: background-color;
           transition-duration: 0.5s;
-          top: 8px; /* Adjust top position */
-          left: 8px; /* Add left padding */
-          right: 8px; /* Add right padding */
         }
 
         window#waybar.hidden {
