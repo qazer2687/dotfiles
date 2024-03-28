@@ -141,15 +141,16 @@
           min-height: 0;
           font-family: FiraCode Nerd Font;
           font-size: 14px;
-          padding-top: 8px;
-          padding-left: 16px;
-          padding-right: 16px;
         }
 
         window#waybar {
           background-color: #000000;
           transition-property: background-color;
           transition-duration: 0.5s;
+          background: transparent;
+          margin-top: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
         }
 
         window#waybar.hidden {
