@@ -144,7 +144,7 @@
         }
 
         window#waybar {
-          background-color: #181825;
+          background-color: #000000;
           transition-property: background-color;
           transition-duration: 0.5s;
         }
@@ -196,7 +196,7 @@
         #temperature,
         #disk,
         #tray {
-          border-radius: 4px;
+          border-radius: 5px;
           margin: 6px 3px;
           padding: 6px 12px;
           background-color: #1e1e2e;
@@ -224,8 +224,8 @@
         }
         @keyframes blink {
           to {
-            background-color: #f38ba8;
-            color: #181825;
+            background-color: #010101;
+            color: #ffffff;
           }
         }
 
