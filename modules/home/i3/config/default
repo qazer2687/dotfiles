@@ -1,5 +1,4 @@
 set $mod Mod4
-#exec --no-startup-id dex --autostart --environment i3
 exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=secrets
 bindsym $mod+Return exec alacritty
@@ -40,6 +39,3 @@ default_border pixel 0
 gaps inner 10
 gaps outer 0
 border_radius 4
-bar {
-  mode invisible
-}
