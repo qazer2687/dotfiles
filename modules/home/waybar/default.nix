@@ -217,26 +217,13 @@
           background: #000000;
         }
 
-        .tray * {
-          border-radius: 5px;
-          margin-top: 8px;
-          margin-left: 0px;
-          margin-right: 0px;
-          padding-left: 16px;
-          padding-right: 16px;
-          margin-bottom: 0;
-          transition: none;
-          color: #ffffff;
-          background: #000000;
-        }
-
-        .tray #network,
-        .tray #pulseaudio, 
-        .tray #temperature,
-        .tray #cpu,
-        .tray #memory,
-        .tray #battery,
-        .tray #disk {
+        #network,
+        #pulseaudio, 
+        #temperature,
+        #cpu,
+        #memory,
+        #battery,
+        #disk {
           margin-top: 8px;
           margin-left: 0px;
           margin-right: 0px;
