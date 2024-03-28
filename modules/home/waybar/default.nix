@@ -64,16 +64,16 @@
           "sway/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "1" = "󰎤";
-              "2" = "󰎧";
-              "3" = "󰎪";
-              "4" = "󰎭";
-              "5" = "󰎱";
-              "6" = "󰎳";
-              "7" = "󰎶";
-              "8" = "󰎹";
-              "9" = "󰎼";
-              "0" = "󰽽";
+              "1" = "1";
+              "2" = "2";
+              "3" = "3";
+              "4" = "4";
+              "5" = "5";
+              "6" = "6";
+              "7" = "7";
+              "8" = "8";
+              "9" = "9";
+              "0" = "10";
               urgent = "󰀧";
             };
             sort-by-number = true;
@@ -200,7 +200,7 @@
           border-radius: 5px;
           margin: 6px 3px;
           padding: 6px 12px;
-          background-color: #010101;
+          background-color: #050505;
           color: #ffffff;
         }
 
@@ -208,14 +208,6 @@
           margin-right: 6px;
         }
 
-        #custom-logo {
-          padding-right: 7px;
-          padding-left: 7px;
-          margin-left: 5px;
-          font-size: 15px;
-          border-radius: 8px 0px 0px 8px;
-          color: #1793d1;
-        }
 
         #memory {
           background-color: #fab387;
@@ -223,17 +215,10 @@
         #battery {
           background-color: #f38ba8;
         }
-        @keyframes blink {
-          to {
-            background-color: #010101;
-            color: #ffffff;
-          }
-        }
 
         #battery.warning,
         #battery.critical,
         #battery.urgent {
-          background-color: #ff0048;
           color: #181825;
           animation-name: blink;
           animation-duration: 0.5s;
@@ -242,29 +227,15 @@
           animation-direction: alternate;
         }
         #battery.charging {
-          background-color: #a6e3a1;
-        }
-
-        #backlight {
-          background-color: #fab387;
-        }
-
-        #pulseaudio {
-          background-color: #f9e2af;
+          color: #66ff66;
         }
 
         #network {
-          background-color: #94e2d5;
           padding-right: 17px;
         }
 
         #clock {
           font-family: JetBrainsMono Nerd Font;
-          background-color: #cba6f7;
-        }
-
-        #custom-power {
-          background-color: #f2cdcd;
         }
 
         tooltip {
