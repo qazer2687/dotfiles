@@ -195,12 +195,13 @@
         #memory,
         #temperature,
         #disk,
+        #mpris,
         #tray {
           border-radius: 5px;
           margin: 6px 3px;
           padding: 6px 12px;
-          background-color: #1e1e2e;
-          color: #181825;
+          background-color: #010101;
+          color: #ffffff;
         }
 
         #custom-power {
