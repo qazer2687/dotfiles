@@ -34,7 +34,7 @@
             tooltip = false;
             scroll-step = 1;
             on-click = "pamixer -t";
-            format = "{icon} {volume}%";
+            format = "{icon}";
             format-muted = "󰝟";
             format-icons = {
               default = ["󰕿" "󰖀" "󰕾"];
@@ -217,6 +217,22 @@
           background: #000000;
         }
 
+        #tray {
+          margin: 3px 2px;
+          border-radius: 5px;
+          background-color: rgba(0,0,0,0.4);
+        }
+
+        #tray * {
+          padding: 0 0px;
+          border-left: 1px solid black;
+        }
+
+        #tray *:first-child {
+          border-left: none;
+        }
+
+
         #network,
         #pulseaudio, 
         #temperature,
@@ -230,7 +246,6 @@
           padding-left: 16px;
           padding-right: 16px;
           margin-bottom: 0;
-          border-radius: 5px;
           transition: none;
           color: #ffffff;
           background: #000000;
