@@ -61,7 +61,7 @@
           };
           
           # Workspaces
-          wlr/workspaces = {
+          "wlr/workspaces" = {
             format = "{icon}";
             format-icons = {
               1 = "󰎤";
