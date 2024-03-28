@@ -219,15 +219,6 @@
 
         .tray {
           border-radius: 5px;
-        }
-
-        .tray #network,
-        .tray #pulseaudio, 
-        .tray #temperature,
-        .tray #cpu,
-        .tray #memory,
-        .tray #battery,
-        .tray #disk {
           margin-top: 8px;
           margin-left: 0px;
           margin-right: 0px;
@@ -237,6 +228,16 @@
           transition: none;
           color: #ffffff;
           background: #000000;
+        }
+
+        .tray #network,
+        .tray #pulseaudio, 
+        .tray #temperature,
+        .tray #cpu,
+        .tray #memory,
+        .tray #battery,
+        .tray #disk {
+
         }
 
         #pulseaudio.muted {
