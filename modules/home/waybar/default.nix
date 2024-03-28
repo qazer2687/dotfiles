@@ -25,9 +25,9 @@
         {
           height = 40;
           layer = "top";
-          modules-left = ["clock" "sway/workspaces" "mpris"];
-          modules-center = [];
-          modules-right = ["cpu" "memory" "pulseaudio" "network" "disk" "battery"];
+          modules-left = ["sway/workspaces" "mpris"];
+          modules-center = [ "clock" ];
+          modules-right = [ "pulseaudio" "network" "battery"];
           
           # Pulseaudio
           pulseaudio = {
@@ -217,22 +217,11 @@
           background: #000000;
         }
 
-        #tray {
-          margin: 3px 2px;
+        .tray {
           border-radius: 5px;
-          background-color: rgba(0,0,0,0.4);
         }
 
-        #tray * {
-          padding: 0 0px;
-          border-left: 1px solid black;
-        }
-
-        #tray *:first-child {
-          border-left: none;
-        }
-
-
+        .tray,
         #network,
         #pulseaudio, 
         #temperature,
