@@ -153,6 +153,16 @@
           opacity: 0.5;
         }
 
+        #window {
+          margin-top: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          border-radius: 5px;
+          transition: none;
+          color: transparent;
+          background: transparent;
+        }
+
         #workspaces {
           background-color: transparent;
         }
@@ -204,16 +214,9 @@
           color: #ffffff;
         }
 
-        #custom-power {
-          margin-right: 6px;
-        }
-
-
-        #memory {
-          background-color: #fab387;
-        }
         #battery {
           background-color: #f38ba8;
+          color: #000000;
         }
 
         #battery.warning,
