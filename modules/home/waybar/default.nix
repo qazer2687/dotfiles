@@ -27,7 +27,7 @@
           layer = "top";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["network" "battery"];
+          modules-right = ["cpu" "memory" "pulseaudio" "network" "disk" "battery"];
           
           # Pulseaudio
           pulseaudio = {
@@ -225,8 +225,10 @@
         #battery,
         #disk {
           margin-top: 8px;
-          margin-left: 4px;
-          margin-right: 4px;
+          margin-left: 0px;
+          margin-right: 0px;
+          padding-left: 16px;
+          padding-right: 16px;
           margin-bottom: 0;
           border-radius: 5px;
           transition: none;
