@@ -141,7 +141,7 @@
           min-height: 0;
           font-family: FiraCode Nerd Font;
           font-size: 14px;
-          margin-top: 8px;
+          padding-top: 8px;
           padding-left: 16px;
           padding-right: 16px;
         }
