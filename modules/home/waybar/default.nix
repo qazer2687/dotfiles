@@ -137,7 +137,7 @@
       style = ''
         * {
           border: none;
-          border-radius: 0;
+          border-radius: 5;
           min-height: 0;
           font-family: FiraCode Nerd Font;
           font-size: 14px;
@@ -150,10 +150,6 @@
           margin-top: 8px;
           padding-left: 16px;
           padding-right: 16px;
-          border-radius: 5px;
-          transition: none;
-          color: transparent;
-          background: transparent;
         }
 
         window#waybar.hidden {
