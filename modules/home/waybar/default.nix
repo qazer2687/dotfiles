@@ -147,7 +147,6 @@
           background-color: #000000;
           transition-property: background-color;
           transition-duration: 0.5s;
-          position: absolute; /* Make the bar absolute positioned */
           top: 8px; /* Adjust top position */
           left: 8px; /* Add left padding */
           right: 8px; /* Add right padding */
@@ -209,7 +208,7 @@
         }
 
         #battery {
-          background-color: #f38ba8;
+          background-color: #db1d1d;
           color: #000000;
         }
 
