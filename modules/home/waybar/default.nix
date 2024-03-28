@@ -217,20 +217,13 @@
           background: #000000;
         }
 
-        #network {
-          margin-top: 8px;
-          margin-left: 4px;
-          margin-right: 4px;
-          padding-left: 16px;
-          padding-right: 16px;
-          margin-bottom: 0;
-          border-radius: 5px;
-          transition: none;
-          color: #ffffff;
-          background: #000000;
-        }
-
-        #pulseaudio {
+        #network,
+        #pulseaudio, 
+        #temperature,
+        #cpu,
+        #memory,
+        #battery,
+        #disk {
           margin-top: 8px;
           margin-left: 4px;
           margin-right: 4px;
@@ -247,61 +240,8 @@
           color: #ff6666;
         }
 
-        #temperature {
-          margin-top: 8px;
-          margin-left: 4px;
-          margin-right: 4px;
-          padding-left: 16px;
-          padding-right: 16px;
-          margin-bottom: 0;
-          border-radius: 5px;
-          transition: none;
-          color: #ffffff;
-          background: #000000;
-        }
-
         #temperature.critical {
           color: #ff6666;
-        }
-
-        #cpu {
-          margin-top: 8px;
-          margin-left: 4px;
-          margin-right: 4px;
-          padding-left: 16px;
-          padding-right: 16px;
-          margin-bottom: 0;
-          border-radius: 5px;
-          transition: none;
-          color: #ffffff;
-          background: #000000;
-        }
-
-        #memory {
-          margin-top: 8px;
-          margin-left: 4px;
-          margin-right: 4px;
-          padding-left: 16px;
-          padding-right: 16px;
-          margin-bottom: 0;
-          border-radius: 5px;
-          transition: none;
-          color: #ffffff;
-          background: #000000;
-        }
-
-        #battery {
-          margin-top: 8px;
-          margin-left: 8px;
-          margin-left: 4px;
-          margin-right: 8px;
-          padding-left: 16px;
-          padding-right: 16px;
-          margin-bottom: 0;
-          border-radius: 5px;
-          transition: none;
-          color: #ffffff;
-          background: #000000;
         }
 
         #battery.critical {
@@ -310,19 +250,6 @@
 
         #battery.full {
           color: #66ff66;
-        }
-
-        #disk {
-          margin-top: 8px;
-          margin-left: 4px;
-          margin-right: 4px;
-          padding-left: 16px;
-          padding-right: 16px;
-          margin-bottom: 0;
-          border-radius: 5px;
-          transition: none;
-          color: #ffffff;
-          background: #000000;
         }
 
         #clock {
