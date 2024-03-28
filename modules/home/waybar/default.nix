@@ -217,7 +217,7 @@
           background: #000000;
         }
 
-        .tray {
+        .tray * {
           border-radius: 5px;
         }
 
