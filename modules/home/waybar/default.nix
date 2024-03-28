@@ -227,8 +227,6 @@
           margin-top: 8px;
           margin-left: 4px;
           margin-right: 4px;
-          padding-left: 16px;
-          padding-right: 16px;
           margin-bottom: 0;
           border-radius: 5px;
           transition: none;
