@@ -147,10 +147,10 @@
           background-color: #000000;
           transition-property: background-color;
           transition-duration: 0.5s;
-          background: transparent;
-          margin-top: 8px;
-          padding-left: 16px;
-          padding-right: 16px;
+          position: absolute; /* Make the bar absolute positioned */
+          top: 8px; /* Adjust top position */
+          left: 8px; /* Add left padding */
+          right: 8px; /* Add right padding */
         }
 
         window#waybar.hidden {
