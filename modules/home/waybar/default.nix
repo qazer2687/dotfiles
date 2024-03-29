@@ -24,7 +24,7 @@
       settings = [
         {
           layer = "top";
-          width = "-16";
+          width = 16;
           modules-left = [ "clock" "sway/workspaces" "mpris"];
           modules-center = [];
           modules-right = [ "memory" "pulseaudio" "disk" "backlight" "network" "battery"];
