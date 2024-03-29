@@ -38,7 +38,10 @@
         }
 
         #entry {
-          margin: 8px;
+          margin-left: 8px;
+          margin-right: 8px;
+          margin-top: 4px;
+          margin-bottom: 4px;
           padding: 8px;
           color: #9699b7;
           border-radius: 5px;
