@@ -53,6 +53,8 @@
         #input:first-child > :nth-child(1) {
           min-height: 0em;
           min-width: 0em;
+          color: #000000;
+          background-color = #000000;
           background-image: none;
         }
       '';
