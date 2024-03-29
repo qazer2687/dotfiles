@@ -146,8 +146,8 @@
           font-size: 14px;
           background-color: transparent;
           border-radius: 5px;
-          margin-left: 4px;
-          margin-right: 4px;
+          margin-left: 2px;
+          margin-right: 2px;
         }
 
         window#waybar {
