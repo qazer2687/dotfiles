@@ -156,10 +156,10 @@
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-          padding: 6px 18px;
-          margin: 6px 3px;
+          padding: 0px 18px;
+          margin: 0px 3px;
           border-radius: 5px;
-          background-color: #1a1a1a;
+          background-color: #262626;
           color: #ffffff;
         }
 
@@ -193,8 +193,8 @@
         #mpris,
         #tray {
           border-radius: 5px;
-          margin: 6px 3px;
-          padding: 6px 12px;
+          margin: 0px 3px;
+          padding: 0px 12px;
           background-color: #050505;
           color: #ffffff;
         }
