@@ -144,7 +144,9 @@
         * {
           font-family: Atkinson Hyperlegible, FiraCode Nerd Font;
           font-size: 16px;
-          border: 20px transparent;
+          padding: 20px; /* Adjust the padding to control the size of the gap */
+          margin: -20px;
+          background-color: transparent;
         }
 
         window#waybar {
