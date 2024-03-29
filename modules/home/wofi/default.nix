@@ -12,9 +12,11 @@
       settings = {
         mode = "drun";
         prompt = "";
-        allow_images = "true";
+        allow_images = "false";
         insensitive = "true";
         no_actions = "true";
+        hide_scroll = "true";
+        allow_markup = "false";
       };
       style = ''
         * {
