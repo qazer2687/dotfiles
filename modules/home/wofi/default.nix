@@ -10,7 +10,7 @@
     programs.wofi = {
       enable = true;
       settings = {
-        
+        mode = "drun";
       };
       style = ''
         * {
