@@ -174,10 +174,10 @@
         }
 
         #workspaces button:hover {
-        box-shadow: inherit;
-        text-shadow: inherit;
-        color: #000000;
-        background-color: #ffffff;
+          box-shadow: inherit;
+          text-shadow: inherit;
+          color: #000000;
+          background-color: #ffffff;
         }
 
         #workspaces button.urgent {
@@ -213,7 +213,7 @@
         #battery.critical,
         #battery.urgent {
           color: #000000;
-          background-color: #db1d1d
+          background-color: #db1d1d;
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -224,14 +224,6 @@
         #battery.charging {
           background-color: #1ddd1d;
           color: #000000;
-        }
-
-        #network {
-          padding-right: 17px;
-        }
-
-        #clock {
-          font-family: JetBrainsMono Nerd Font;
         }
 
         tooltip {
