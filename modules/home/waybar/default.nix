@@ -23,7 +23,6 @@
       enable = true;
       settings = [
         {
-          #height = 30;
           layer = "top";
           modules-left = [ "clock" "sway/workspaces" "mpris"];
           modules-center = [];
@@ -144,6 +143,9 @@
         * {
           font-family: Atkinson Hyperlegible, FiraCode Nerd Font;
           font-size: 16px;
+        }
+
+        #window {
           padding: 20px; /* Adjust the padding to control the size of the gap */
           margin: -20px;
           background-color: transparent;
