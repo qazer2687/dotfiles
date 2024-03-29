@@ -12,7 +12,9 @@
       settings = {
         mode = "drun";
         prompt = "";
-        
+        allow_images = "true";
+        insensitive = "true";
+        no_actions = "true";
       };
       style = ''
         * {
@@ -27,7 +29,7 @@
         }
 
         #input{
-          margin: 1rem;
+          margin: 8px;
           padding: 0.5rem;
           border-radius: 5px;
           background-color: #262626;
@@ -37,7 +39,7 @@
           margin: 0.25rem 0.75rem 0.25rem 0.75rem;
           padding: 0.25rem 0.75rem 0.25rem 0.75rem;
           color: #9699b7;
-          border-radius: 8px;
+          border-radius: 5px;
         }
 
         #entry:selected {
