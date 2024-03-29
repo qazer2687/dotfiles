@@ -17,7 +17,6 @@
         no_actions = "true";
         hide_scroll = "true";
         allow_markup = "false";
-        lines = "5";
         matching = "multi-contains";
       };
       style = ''
