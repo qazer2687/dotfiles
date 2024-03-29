@@ -171,14 +171,8 @@
           color: #ffffff;
         }
 
-        #workspaces button.active {
-          color: #000000;
-          background-color: #ffffff;
-        }
-
+        #workspaces button.active,
         #workspaces button:hover {
-          box-shadow: inherit;
-          text-shadow: inherit;
           color: #000000;
           background-color: #ffffff;
         }
