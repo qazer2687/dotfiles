@@ -17,8 +17,8 @@
         no_actions = "true";
         hide_scroll = "true";
         allow_markup = "false";
-        dynamic_lines = "true";
         lines = "5";
+        matching = "multi-contains";
       };
       style = ''
         * {
