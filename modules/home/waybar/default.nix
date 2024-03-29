@@ -137,7 +137,7 @@
       style = ''
         * {
           border: none;
-          border-radius: 5;
+          border-radius: 0;
           min-height: 0;
           font-family: FiraCode Nerd Font;
           font-size: 14px;
@@ -164,20 +164,20 @@
           padding: 6px 18px;
           margin: 6px 3px;
           border-radius: 4px;
-          background-color: #1e1e2e;
-          color: #cdd6f4;
+          background-color: #050505;
+          color: #ffffff;
         }
 
         #workspaces button.active {
-          color: #1e1e2e;
-          background-color: #cdd6f4;
+          color: #000000;
+          background-color: #ffffff;
         }
 
         #workspaces button:hover {
         box-shadow: inherit;
         text-shadow: inherit;
-        color: #1e1e2e;
-        background-color: #cdd6f4;
+        color: #000000;
+        background-color: #ffffff;
         }
 
         #workspaces button.urgent {
@@ -205,22 +205,25 @@
         }
 
         #battery {
-          background-color: #db1d1d;
+          background-color: #ffffff;
           color: #000000;
         }
 
         #battery.warning,
         #battery.critical,
         #battery.urgent {
-          color: #181825;
+          color: #000000;
+          background-color: #db1d1d
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
           animation-iteration-count: infinite;
           animation-direction: alternate;
         }
+
         #battery.charging {
-          color: #66ff66;
+          background-color: #1ddd1d;
+          color: #000000;
         }
 
         #network {
