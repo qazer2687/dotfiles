@@ -145,13 +145,9 @@
           font-size: 16px;
         }
 
-        #window {
+        window#waybar {
           padding: 10px; /* Adjust the padding to control the size of the gap */
           margin: 10px;
-          background-color: transparent;
-        }
-
-        window#waybar {
           background-color: #000000;
         }
 
