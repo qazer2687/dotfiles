@@ -53,7 +53,7 @@
             full-at = 95;
             format-full = "󱟢";
             format-charging = "󰂄";
-            format-alt = "{capacity}%"
+            format-alt = "{capacity}%";
 
             states = {
               critical = 25;
