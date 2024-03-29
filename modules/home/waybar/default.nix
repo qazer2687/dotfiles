@@ -54,7 +54,7 @@
             format-full = "󱟢";
             format-charging = "󰂄";
             tooltip = true;
-            format-tooltip = "{}%"
+            format-tooltip = "{}%";
 
             states = {
               critical = 25;
