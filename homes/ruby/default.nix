@@ -20,6 +20,7 @@
     git.enable = true;
     theme.enable = true;
     mako.enable = true;
+    wofi.enable = true;
 
     # Development
     vscode.enable = true;
