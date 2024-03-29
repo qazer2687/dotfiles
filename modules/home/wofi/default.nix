@@ -33,15 +33,13 @@
         #input{
           margin: 8px;
           padding: 0.5rem;
-          margin-left: 3.5rem;
-          padding-left: 1.5rem;
           border-radius: 5px;
           background-color: #262626;
         }
 
         #entry {
-          margin: 0.25rem 0.75rem 0.25rem 0.75rem;
-          padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+          margin: 8px;
+          padding: 8px;
           color: #9699b7;
           border-radius: 5px;
         }
