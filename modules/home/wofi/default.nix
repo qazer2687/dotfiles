@@ -33,6 +33,7 @@
         #input{
           margin: 8px;
           padding: 0.5rem;
+          padding-left: 1.5rem;
           border-radius: 5px;
           background-color: #262626;
         }
