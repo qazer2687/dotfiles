@@ -116,7 +116,7 @@
             device = "intel_backlight";
             tooltip = true;
             format = "{icon}";
-            tooltip-format = "{percent}%"
+            tooltip-format = "{percent}%";
             format-icons = ["󰃚" "󰃛" "󰃜" "󰃝" "󰃞" "󰃟" "󰃠"];
           }
 
