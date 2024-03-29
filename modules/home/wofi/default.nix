@@ -41,7 +41,7 @@
 
         #entry {
           padding: 8px;
-          color: #9699b7;
+          color: #ffffff;
           border-radius: 5px;
         }
 
@@ -53,9 +53,8 @@
         #input:first-child > :nth-child(1) {
           min-height: 0em;
           min-width: 0em;
-          color: #000000;
-          background-color = #000000;
-          background-image: none;
+          color: transparent;
+          background-color = transparent;
         }
       '';
     };
