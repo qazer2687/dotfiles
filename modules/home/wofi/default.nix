@@ -40,6 +40,7 @@
         }
 
         #entry {
+          margin: 8px;
           padding: 8px;
           color: #ffffff;
           border-radius: 5px;
