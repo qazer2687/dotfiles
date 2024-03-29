@@ -139,8 +139,8 @@
       style = ''
         * {
           border: none;
-          border-radius: 24;
-          min-height: 0;
+          border-radius: 0;
+          min-height: 24;
           font-family: FiraCode Nerd Font;
           font-size: 14px;
         }
