@@ -213,7 +213,6 @@
         #battery.critical,
         #battery.urgent {
           color: #000000;
-          background-color: #db1d1d;
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
