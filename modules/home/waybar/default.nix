@@ -147,12 +147,6 @@
 
         window#waybar {
           background-color: #000000;
-          transition-property: background-color;
-          transition-duration: 0.5s;
-        }
-
-        window#waybar.hidden {
-          opacity: 0.5;
         }
 
         #workspaces {
@@ -162,11 +156,10 @@
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-          box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
           padding: 6px 18px;
           margin: 6px 3px;
-          border-radius: 4px;
-          background-color: #333333;
+          border-radius: 5px;
+          background-color: #1a1a1a;
           color: #ffffff;
         }
 
