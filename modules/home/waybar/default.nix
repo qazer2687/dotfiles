@@ -156,8 +156,8 @@
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-          padding: 0px 18px;
-          margin: 0px 3px;
+          padding: 6px 18px;
+          margin: 6px 3px;
           border-radius: 5px;
           background-color: #262626;
           color: #ffffff;
