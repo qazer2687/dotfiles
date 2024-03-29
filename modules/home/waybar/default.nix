@@ -139,7 +139,7 @@
       style = ''
         * {
           border: none;
-          border-radius: 0;
+          border-radius: 24;
           min-height: 0;
           font-family: FiraCode Nerd Font;
           font-size: 14px;
@@ -194,7 +194,7 @@
         #tray {
           border-radius: 5px;
           margin: 6px 3px;
-          padding: 6px 6px;
+          padding: 6px 12px;
           background-color: #050505;
           color: #ffffff;
         }
