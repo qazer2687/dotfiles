@@ -9,6 +9,7 @@
     ./sway
     ./vscode
     ./waybar
+    ./wofi
     ./theme
     ./mako
   ];
