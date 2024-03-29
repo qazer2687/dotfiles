@@ -171,14 +171,9 @@
           color: #ffffff;
         }
 
-        #workspaces button.active,
-        #workspaces button:hover {
+        #workspaces button.active {
           color: #000000;
           background-color: #ffffff;
-        }
-
-        #workspaces button.urgent {
-          background-color: #f38ba8;
         }
 
         #memory,
