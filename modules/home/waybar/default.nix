@@ -118,7 +118,7 @@
             format = "{icon}";
             tooltip-format = "{percent}%";
             format-icons = ["󰃚" "󰃛" "󰃜" "󰃝" "󰃞" "󰃟" "󰃠"];
-          }
+          };
 
           # Temperature
           temperature = {
