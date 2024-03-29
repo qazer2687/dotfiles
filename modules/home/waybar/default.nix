@@ -54,7 +54,7 @@
             format-full = "󱟢";
             format-charging = "󰂄";
             tooltip = true;
-            format-tooltip = "{}%";
+            format-tooltip = "{capacity}%";
 
             states = {
               critical = 25;
@@ -166,7 +166,7 @@
           padding: 6px 18px;
           margin: 6px 3px;
           border-radius: 4px;
-          background-color: #050505;
+          background-color: #333333;
           color: #ffffff;
         }
 
@@ -225,6 +225,10 @@
         #battery.charging {
           background-color: #1ddd1d;
           color: #000000;
+        }
+
+        #network {
+          padding-right: 17px;
         }
 
         tooltip {
