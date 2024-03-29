@@ -11,7 +11,7 @@
       enable = true;
       settings = {
         mode = "drun";
-        prompt = "";
+        prompt = "\b";
         allow_images = "false";
         insensitive = "true";
         no_actions = "true";
