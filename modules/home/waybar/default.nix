@@ -48,16 +48,18 @@
 
           # Battery
           battery = {
-            format = "{icon} {}%";
+            format = "{icon}";
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             full-at = 95;
-            format-full = "{icon}";
-            format-charging = "󰂄 {}%";
+            format-full = "󱟢";
+            format-charging = "󰂄";
+            tooltip = true;
+            format-tooltip = "{}%"
 
             states = {
               critical = 25;
             };
-            interval = 5;
+            interval = 2;
           };
           
           # Workspaces
@@ -98,7 +100,7 @@
             format-disconnected = "";
             format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
-            interval = 5;
+            interval = 2;
           };
 
           # CPU
