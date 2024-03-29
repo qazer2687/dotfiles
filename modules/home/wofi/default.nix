@@ -40,7 +40,8 @@
         }
 
         #entry {
-          margin: 8px;
+          margin-left: 8px;
+          margin-right: 8px;
           padding: 8px;
           color: #ffffff;
           border-radius: 5px;
