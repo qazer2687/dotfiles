@@ -17,6 +17,7 @@
         no_actions = "true";
         hide_scroll = "true";
         allow_markup = "false";
+        hide_search = "true";
       };
       style = ''
         * {
@@ -39,7 +40,7 @@
 
         #entry {
           padding: 8px;
-          margin: -4px;
+          margin: 2px;
           color: #9699b7;
           border-radius: 5px;
         }
