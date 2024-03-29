@@ -194,7 +194,7 @@
         #tray {
           border-radius: 5px;
           margin: 6px 3px;
-          padding: 6px 12px;
+          padding: 6px 6px;
           background-color: #050505;
           color: #ffffff;
         }
