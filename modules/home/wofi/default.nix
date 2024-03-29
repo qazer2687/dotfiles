@@ -39,6 +39,7 @@
 
         #entry {
           padding: 8px;
+          margin: -4px;
           color: #9699b7;
           border-radius: 5px;
         }
