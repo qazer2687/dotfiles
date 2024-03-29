@@ -23,7 +23,7 @@
       enable = true;
       settings = [
         {
-          height = 40;
+          #height = 30;
           layer = "top";
           modules-left = [ "clock" "sway/workspaces" "mpris"];
           modules-center = [];
@@ -147,7 +147,6 @@
           padding: 20px; /* Adjust the padding to control the size of the gap */
           margin: -20px;
           background-color: transparent;
-          min-height: 30px;
         }
 
         window#waybar {
