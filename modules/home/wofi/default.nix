@@ -11,13 +11,14 @@
       enable = true;
       settings = {
         mode = "drun";
-        prompt = "\b";
+        prompt = "";
         allow_images = "false";
         insensitive = "true";
         no_actions = "true";
         hide_scroll = "true";
         allow_markup = "false";
         matching = "multi-contains";
+        dynamic_lines = "true";
       };
       style = ''
         * {
@@ -47,6 +48,12 @@
         #entry:selected {
           background-color: #ffffff;
           color: #000000;
+        }
+
+        #input:first-child > :nth-child(1) {
+          min-height: 0em;
+          min-width: 0em;
+          background-image: none;
         }
       '';
     };
