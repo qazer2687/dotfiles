@@ -51,8 +51,8 @@
         }
 
         #input:first-child > :nth-child(1) {
-          padding: -2;
-          margin: -2;
+          padding: -50;
+          margin: -50;
           color: transparent;
           background-color = transparent;
         }
