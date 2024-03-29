@@ -15,26 +15,20 @@
       style = ''
         * {
           all: unset;
-          font-family: "JetBrainsMono";
-          font-size: 16px;
+          font-family: "FiraCode Nerd Font";
+          font-size: 14px;
         }
 
         #window {
-          background-color: #292a37;
-          border-radius: 12px;
-        }
-
-        #outer-box {
-          background-color: #292a37;
-          border: 4px solid #44465c;
-          border-radius: 12px;
+          background-color: #000000;
+          border-radius: 5px;
         }
 
         #input{
           margin: 1rem;
           padding: 0.5rem;
           border-radius: 10px;
-          background-color: #303241;
+          background-color: #262626;
         }
 
         #entry {
@@ -45,7 +39,7 @@
         }
 
         #entry:selected {
-          background-color: #303241;
+          background-color: #262626;
           color: #d9e0ee;
         }
       '';
