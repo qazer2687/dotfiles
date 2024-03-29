@@ -24,6 +24,7 @@
       settings = [
         {
           layer = "top";
+          width = -16;
           modules-left = [ "clock" "sway/workspaces" "mpris"];
           modules-center = [];
           modules-right = [ "memory" "pulseaudio" "disk" "backlight" "network" "battery"];
@@ -143,8 +144,6 @@
         * {
           font-family: Atkinson Hyperlegible, FiraCode Nerd Font;
           font-size: 16px;
-          padding: 10px; /* Adjust the padding to control the size of the gap */
-          margin: 10px;
           background-color: transparent;
         }
 
