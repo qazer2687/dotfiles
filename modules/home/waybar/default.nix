@@ -144,7 +144,7 @@
         * {
           border: none;
           border-radius: 0;
-          font-family: FiraCode Nerd Font;
+          font-family: Atkinson Hyperlegible, FiraCode Nerd Font;
           font-size: 16px;
         }
 
