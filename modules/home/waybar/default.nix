@@ -27,7 +27,7 @@
           layer = "top";
           modules-left = [ "clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = [ "cpu" "memory" "pulseaudio" "network" "disk" "battery"];
+          modules-right = [ "memory" "pulseaudio" "disk" "backlight" "network" "battery"];
           
           # Pulseaudio
           pulseaudio = {
@@ -103,19 +103,22 @@
             interval = 2;
           };
 
-          # CPU
-          cpu = {
-            tooltip = false;
-            format = " {}%";
+          # Memory
+          memory = {
+            tooltip = true;
+            format = "󰘚";
+            tooltip-format = "{percentage}%";
             interval = 2;
           };
 
-          # Memory
-          memory = {
-            tooltip = false;
-            format = "󰘚 {}%";
-            interval = 2;
-          };
+          # Backlight
+          backlight = {
+            device = "intel_backlight";
+            tooltip = true;
+            format = "{icon}";
+            tooltip-format = "{percent}%"
+            format-icons = ["󰃚" "󰃛" "󰃜" "󰃝" "󰃞" "󰃟" "󰃠"]
+          }
 
           # Temperature
           temperature = {
@@ -129,9 +132,10 @@
 
           # Disk
           disk = {
-            tooltip = false;
-            format = "󰋊 {percentage_used}%";
-            interval = 240;
+            tooltip = true;
+            format = "󰋊";
+            tooltip-format = "{percentage_used}%";
+            interval = 5;
           };
         }
       ];
