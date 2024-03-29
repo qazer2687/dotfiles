@@ -142,8 +142,9 @@
 
       style = ''
         * {
-          border: none;
-          border-radius: 0;
+          border: hidden;
+          border-radius: 5;
+          border-width: 8px;
           font-family: Atkinson Hyperlegible, FiraCode Nerd Font;
           font-size: 16px;
         }
