@@ -68,7 +68,7 @@ in {
 
         keybindings = lib.mkOptionDefault rec {
           # Open Terminal
-          "${modifier}+Return" = "exec ${pkgs.foot}/bin/foot";
+          "${modifier}+Return" = "exec foot";
 
           # Close Window
           "${modifier}+q" = "kill";
@@ -80,7 +80,7 @@ in {
           "${modifier}+e" = ''exec ${pkgs.dmenu-wayland}/bin/dmenu-wl_run -b -i -nb "#000000" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"'';
 
           # Experimental Search
-          "${modifier}+Shift+e" = "exec ${pkgs.wofi}/bin/wofi --show drun";
+          "${modifier}+Shift+e" = "exec wofi --show drun";
 
           # Floating
           "${modifier}+space" = "floating toggle";
