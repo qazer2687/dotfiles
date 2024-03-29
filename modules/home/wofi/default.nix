@@ -51,10 +51,7 @@
         }
 
         #input:first-child > :nth-child(1) {
-          min-height: 0em;
-          min-width: 0em;
-          color: transparent;
-          background-color = transparent;
+          all: unset;
         }
       '';
     };
