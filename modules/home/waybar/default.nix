@@ -147,6 +147,7 @@
           padding: 20px; /* Adjust the padding to control the size of the gap */
           margin: -20px;
           background-color: transparent;
+          min-height: 45px;
         }
 
         window#waybar {
