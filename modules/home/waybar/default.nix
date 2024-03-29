@@ -143,11 +143,11 @@
         * {
           font-family: Atkinson Hyperlegible, FiraCode Nerd Font;
           font-size: 16px;
+          padding: 10px; /* Adjust the padding to control the size of the gap */
+          margin: 10px;
         }
 
         window#waybar {
-          padding: 10px; /* Adjust the padding to control the size of the gap */
-          margin: 10px;
           background-color: #000000;
         }
 
