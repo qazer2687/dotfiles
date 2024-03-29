@@ -17,7 +17,8 @@
         no_actions = "true";
         hide_scroll = "true";
         allow_markup = "false";
-        hide_search = "true";
+        dynamic_lines = "true";
+        lines = "5";
       };
       style = ''
         * {
