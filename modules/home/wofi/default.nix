@@ -11,6 +11,8 @@
       enable = true;
       settings = {
         mode = "drun";
+        prompt = "";
+        
       };
       style = ''
         * {
@@ -27,7 +29,7 @@
         #input{
           margin: 1rem;
           padding: 0.5rem;
-          border-radius: 10px;
+          border-radius: 5px;
           background-color: #262626;
         }
 
@@ -39,8 +41,8 @@
         }
 
         #entry:selected {
-          background-color: #262626;
-          color: #d9e0ee;
+          background-color: #ffffff;
+          color: #000000;
         }
       '';
     };
