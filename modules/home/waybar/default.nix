@@ -158,6 +158,8 @@
           padding: 6px 18px;
           margin-top: 6px;
           margin-bottom: 6px;
+          margin-left: 3px;
+          margin-right: 3px;
           border-radius: 5px;
           background-color: #262626;
           color: #ffffff;
@@ -195,6 +197,8 @@
           border-radius: 5px;
           margin-top: 6px;
           margin-bottom: 6px;
+          margin-left: 3px;
+          margin-right: 3px;
           padding: 6px 12px;
           background-color: #050505;
           color: #ffffff;
