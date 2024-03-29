@@ -142,8 +142,6 @@
           border-radius: 0;
           font-family: FiraCode Nerd Font;
           font-size: 14px;
-          margin-top: 3px;
-          margin-bottom: 6px;
         }
 
         window#waybar {
@@ -158,7 +156,9 @@
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 6px 18px;
-          margin: 6px 3px;
+          #margin: 6px 3px;
+          margin-top: 6px;
+          margin-bottom: 6px;
           border-radius: 5px;
           background-color: #262626;
           color: #ffffff;
@@ -194,7 +194,9 @@
         #mpris,
         #tray {
           border-radius: 5px;
-          margin: 6px 3px;
+          #margin: 6px 3px;
+          margin-top: 6px;
+          margin-bottom: 6px;
           padding: 6px 12px;
           background-color: #050505;
           color: #ffffff;
