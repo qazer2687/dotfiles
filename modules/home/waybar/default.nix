@@ -27,7 +27,7 @@
           layer = "top";
           modules-left = [ "clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = [ "pulseaudio" "network" "battery"];
+          modules-right = [ "cpu" "memory" "pulseaudio" "network" "disk" "battery"];
           
           # Pulseaudio
           pulseaudio = {
@@ -53,7 +53,8 @@
             full-at = 95;
             format-full = "󱟢";
             format-charging = "󰂄";
-            format-alt = "{capacity}%";
+            tooltip = true;
+            tooltip-format = "{capacity}%";
 
             states = {
               critical = 25;
