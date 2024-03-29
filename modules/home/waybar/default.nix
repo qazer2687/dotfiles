@@ -117,7 +117,7 @@
             tooltip = true;
             format = "{icon}";
             tooltip-format = "{percent}%";
-            format-icons = ["󰃚" "󰃛" "󰃜" "󰃝" "󰃞" "󰃟" "󰃠"];
+            format-icons = ["󰃞" "󰃟" "󰃠"];
           };
 
           # Temperature
@@ -145,7 +145,7 @@
           border: none;
           border-radius: 0;
           font-family: FiraCode Nerd Font;
-          font-size: 14px;
+          font-size: 16px;
         }
 
         window#waybar {
