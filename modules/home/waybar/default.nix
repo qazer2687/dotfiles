@@ -193,8 +193,8 @@
         #mpris,
         #tray {
           border-radius: 5px;
-          margin: 0px 3px;
-          padding: 0px 12px;
+          margin: 6px 3px;
+          padding: 6px 12px;
           background-color: #050505;
           color: #ffffff;
         }
