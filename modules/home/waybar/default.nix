@@ -144,13 +144,11 @@
         * {
           font-family: Atkinson Hyperlegible, FiraCode Nerd Font;
           font-size: 16px;
+          padding: 8px;
         }
 
         window#waybar {
           background-color: #000000;
-          border: hidden;
-          border-radius: 5;
-          border-width: 8px;
         }
 
         #workspaces {
