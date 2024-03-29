@@ -142,7 +142,8 @@
           border-radius: 0;
           font-family: FiraCode Nerd Font;
           font-size: 14px;
-          margin: 6px;
+          margin-top: 3px;
+          margin-bottom: 6px;
         }
 
         window#waybar {
