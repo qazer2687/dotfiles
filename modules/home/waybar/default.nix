@@ -76,13 +76,13 @@
               "8" = "8";
               "9" = "9";
               "0" = "10";
-              urgent = "󰀧";
             };
             sort-by-number = true;
           };
 
           # Mpris
           mpris = {
+            tooltip = false;
             format = "{player_icon} {artist} - {title}";
             format-paused = "{status_icon} {artist} - {title}";
             player-icons = {
@@ -171,7 +171,7 @@
           color: #ffffff;
         }
 
-        #workspaces button.active {
+        #workspaces button.visible {
           color: #000000;
           background-color: #ffffff;
         }
