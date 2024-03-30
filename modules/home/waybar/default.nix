@@ -207,7 +207,7 @@
         #battery.warning,
         #battery.critical,
         #battery.urgent {
-          color: #000000;
+          color: #cc0000;
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -216,7 +216,7 @@
         }
 
         #battery.charging {
-          background-color: #1ddd1d;
+          background-color: #00cc00;
           color: #000000;
         }
 
