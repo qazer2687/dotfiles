@@ -77,10 +77,7 @@ in {
           "${modifier}+Shift+r" = "reload";
 
           # Search
-          "${modifier}+e" = ''exec ${pkgs.dmenu-wayland}/bin/dmenu-wl_run -b -i -nb "#000000" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"'';
-
-          # Experimental Search
-          "${modifier}+Shift+e" = "exec wofi --show drun";
+          "${modifier}+e" = "exec wofi --show drun";
 
           # Floating
           "${modifier}+space" = "floating toggle";
