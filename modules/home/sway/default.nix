@@ -43,9 +43,9 @@ in {
           "TPPS/2 IBM TrackPoint" = {
             accel_speed = "0.5";
             accel_profile = "adaptive";
-            disable_while_typing = false;
-            natural_scrolling = false;
-            tap_to_click = true;
+            disable_while_typing = "false";
+            natural_scrolling = "false";
+            tap_to_click = "true";
           };
           "Synaptics TM3276-022" = {
             accel_profile = "flat";
