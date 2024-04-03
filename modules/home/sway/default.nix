@@ -42,7 +42,8 @@ in {
         input = {
           "TPPS/2 IBM TrackPoint" = {
             pointer_accel = "0.5";
-            accel_profile = "adaptive";
+            accel_profile = "flat";
+            tap_to_click = "true";
           };
           "Synaptics TM3276-022" = {
             accel_profile = "flat";
