@@ -40,7 +40,14 @@ in {
 
         # Input
         input = {
-          "type:pointer" = {
+          "TPPS/2 IBM TrackPoint" = {
+            AccelSpeed 0.5
+            AccelProfile adaptive
+            DisableWhileTyping false
+            NaturalScrolling false
+            TapToClick true
+          };
+          "Synaptics TM3276-022" = {
             accel_profile = "flat";
             pointer_accel = "0.0";
           };
