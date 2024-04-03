@@ -41,11 +41,11 @@ in {
         # Input
         input = {
           "TPPS/2 IBM TrackPoint" = {
-            AccelSpeed 0.5
-            AccelProfile adaptive
-            DisableWhileTyping false
-            NaturalScrolling false
-            TapToClick true
+            accel_speed = 0.5;
+            accel_profile = "adaptive";
+            disable_while_typing = false;
+            natural_scrolling = false;
+            tap_to_click = true;
           };
           "Synaptics TM3276-022" = {
             accel_profile = "flat";
