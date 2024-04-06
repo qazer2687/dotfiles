@@ -39,3 +39,7 @@ default_border pixel 0
 gaps inner 10
 gaps outer 0
 border_radius 4
+bar {
+  mode invisible
+  hidden_state hide
+}

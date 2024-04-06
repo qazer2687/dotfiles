@@ -9,8 +9,8 @@
   # Custom Bash Aliases
   aliases = {
     "check" = "alejandra -q **/* && deadnix -e && statix fix";
-    "nr" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
-    "nr -l" = "sudo nixos-rebuild switch --flake .#$(hostname)";
+    "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
+    "rebuildl" = "sudo nixos-rebuild switch --flake .#$(hostname)";
   };
 in {
   nixpkgs.config.allowUnfree = mkDefault true;
