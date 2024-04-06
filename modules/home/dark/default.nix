@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.modules.theme.enable = lib.mkEnableOption "";
+  options.modules.dark.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.theme.enable {
+  config = lib.mkIf config.modules.dark.enable {
     # Dark Mode
     home.sessionVariables.GTK_THEME = "Adwaita-dark";
     gtk = {
