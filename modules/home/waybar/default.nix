@@ -25,10 +25,10 @@
         {
           layer = "top";
           margin = "8 8 0 8";
-          modules-left = [ "clock" "sway/workspaces" "mpris"];
+          modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = [ "memory" "pulseaudio" "disk" "backlight" "network" "battery"];
-          
+          modules-right = ["memory" "pulseaudio" "disk" "backlight" "network" "battery"];
+
           # Pulseaudio
           pulseaudio = {
             tooltip = false;
@@ -61,7 +61,7 @@
             };
             interval = 2;
           };
-          
+
           # Workspaces
           "sway/workspaces" = {
             format = "{icon}";
