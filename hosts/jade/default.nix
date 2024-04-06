@@ -19,10 +19,12 @@
 
   # StartX
   services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && startx
-  '';
+  services.xserver.displayManager.gdm.enable = true;
+
+  #services.xserver.displayManager.startx.enable = true;
+  #environment.loginShellInit = ''
+  #  [[ "$(tty)" == /dev/tty1 ]] && startx
+  #'';
 
   # User
   users.users.alex = {

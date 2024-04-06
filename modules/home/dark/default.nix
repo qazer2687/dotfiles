@@ -7,7 +7,10 @@
   options.modules.dark.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.dark.enable {
-    # Dark Mode
+    dconf = {
+      enable = true;
+      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    };
     home.sessionVariables.GTK_THEME = "Adwaita-dark";
     gtk = {
       enable = true;
