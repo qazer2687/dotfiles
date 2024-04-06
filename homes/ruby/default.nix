@@ -18,7 +18,7 @@
     waybar.enable = true;
     foot.enable = true;
     git.enable = true;
-    theme.enable = true;
+    dark.enable = true;
     mako.enable = true;
     wofi.enable = true;
 

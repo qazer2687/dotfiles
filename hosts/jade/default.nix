@@ -14,6 +14,9 @@
     };
   };
 
+  # required to hide i3bar
+  services.xserver.windowManager.i3.enable
+
   # StartX
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
@@ -34,7 +37,6 @@
     nvidia.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
-    zram.enable = true;
   };
 
   # State Version
