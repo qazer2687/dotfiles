@@ -15,7 +15,7 @@
   };
 
   # required to hide i3bar
-  services.xserver.windowManager.i3.enable
+  services.xserver.windowManager.i3.enable = true;
 
   # StartX
   services.xserver.enable = true;
