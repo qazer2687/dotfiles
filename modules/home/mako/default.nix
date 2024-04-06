@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.modules.mako.enable = lib.mkEnableOption "";
@@ -15,7 +14,7 @@
       margin = "8";
       anchor = "top-right";
       width = 600;
-      
+
       # Theme
       backgroundColor = "#000000";
       borderColor = "#000000";
