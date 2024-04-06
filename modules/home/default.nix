@@ -10,7 +10,7 @@
     ./vscode
     ./waybar
     ./wofi
-    ./theme
+    ./dark
     ./mako
   ];
 }

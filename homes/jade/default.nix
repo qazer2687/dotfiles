@@ -16,7 +16,7 @@
     polybar.enable = true;
     alacritty.enable = true;
     git.enable = true;
-    theme.enable = true;
+    dark.enable = true;
 
     # Development
     vscode.enable = true;

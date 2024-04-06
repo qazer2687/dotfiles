@@ -27,7 +27,6 @@
     networkmanager.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
-    zram.enable = true;
     bluetooth.enable = true;
   };
 

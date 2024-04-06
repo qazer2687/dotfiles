@@ -5,8 +5,6 @@
     ./nvidia
     ./pipewire
     ./systemd-boot
-    ./zram
-    ./virt-manager
     ./bluetooth
   ];
 }

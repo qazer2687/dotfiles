@@ -9,8 +9,8 @@
   # Custom Bash Aliases
   aliases = {
     "check" = "alejandra -q **/* && deadnix -e && statix fix";
-    "rebuild" = "sudo nixos-rebuild switch --flake github:ihatewindows/dotfiles#$(hostname) --refresh --option eval-cache false";
-    "rebuild-local" = "sudo nixos-rebuild switch --flake .#$(hostname)";
+    "nr" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
+    "nr -l" = "sudo nixos-rebuild switch --flake .#$(hostname)";
   };
 in {
   nixpkgs.config.allowUnfree = mkDefault true;
@@ -26,7 +26,7 @@ in {
     sandbox = mkDefault true;
   };
 
-  ## i forgot what this does
+  ## i forgot what this does (obsidian req maybe)
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
@@ -87,6 +87,13 @@ in {
 
   # Sops-Nix
   sops.defaultSopsFile = ./secrets/default.yaml;
+
+  # zram
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+  };
 
   # Environment
   programs.direnv.enable = true;
