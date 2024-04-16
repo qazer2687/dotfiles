@@ -30,6 +30,9 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  # Programs
+  programs.steam.enable = true;
+
   # Modules
   modules = {
     kernel.enable = true;
