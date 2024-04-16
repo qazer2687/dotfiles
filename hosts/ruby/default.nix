@@ -22,6 +22,7 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  # Modules
   modules = {
     kernel.enable = true;
     networkmanager.enable = true;
