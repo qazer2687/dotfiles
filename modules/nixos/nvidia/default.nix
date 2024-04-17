@@ -33,6 +33,8 @@
           end = "${pkgs.libnotify}/bin/notify-send 'GameMode Disabled'";
         };
       };
+      boot = {
+        kernelParams = ["nvidia-drm.modeset=1"];
     };
   };
 }
