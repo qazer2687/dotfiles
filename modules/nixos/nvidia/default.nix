@@ -7,6 +7,9 @@
   options.modules.nvidia.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.nvidia.enable {
+    boot = {
+      kernelParams = ["nvidia-drm.modeset=1"];
+    };
     services.xserver.videoDrivers = ["nvidia"];
     hardware = {
       nvidia = {
@@ -33,8 +36,6 @@
           end = "${pkgs.libnotify}/bin/notify-send 'GameMode Disabled'";
         };
       };
-      boot = {
-        kernelParams = ["nvidia-drm.modeset=1"];
     };
   };
 }
