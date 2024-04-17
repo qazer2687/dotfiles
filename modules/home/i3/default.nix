@@ -11,7 +11,6 @@
       enable = true;
       windowManager.i3 = {
         enable = true;
-        package = pkgs.i3-rounded;
         extraConfig = builtins.readFile ./config/default;
       };
     };

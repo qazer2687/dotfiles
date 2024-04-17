@@ -1,35 +1,35 @@
 [colors]
-background = #000000
-mantle = #000000
-crust = #000000
+background = #f7edc0
+mantle = #f7edc0
+crust = #f7edc0
 
-white = #ffffff
-subtext0 = #ffffff
-subtext1 = #ffffff
+white = #444032
+subtext0 = #444032
+subtext1 = #444032
 
-surface0 = #ffffff
-surface1 = #ffffff
-surface2 = #ffffff
+surface0 = #444032
+surface1 = #444032
+surface2 = #444032
 
-overlay0 = #ffffff
-overlay1 = #ffffff
-overlay2 = #ffffff
+overlay0 = #444032
+overlay1 = #444032
+overlay2 = #444032
 
 
-blue = #ffffff
-lavender = #ffffff
-sapphire = #ffffff
-sky = #ffffff
-teal = #ffffff
-green = #ffffff
-yellow = #ffffff
-peach = #ffffff
-maroon = #ffffff
-red = #ffffff
-mauve = #ffffff
-pink = #ffffff
-flamingo = #ffffff
-foreground = #ffffff
+blue = #444032
+lavender = #444032
+sapphire = #444032
+sky = #444032
+teal = #444032
+green = #444032
+yellow = #444032
+peach = #444032
+maroon = #444032
+red = #444032
+mauve = #444032
+pink = #444032
+flamingo = #444032
+foreground = #444032
 
 transparent = #FF00000
 
@@ -80,10 +80,10 @@ wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
 
-ws-icon-0 = "0;"
-ws-icon-1 = "1;"
-ws-icon-2 = "2;"
-ws-icon-3 = "3;"
+ws-icon-0 = "0;󰬺"
+ws-icon-1 = "1;󰬻"
+ws-icon-2 = "2;󰬼"
+ws-icon-3 = "3;󰬽"
 ws-icon-4 = "4;"
 ws-icon-5 = "5;"
 ws-icon-6 = "6;"
@@ -94,7 +94,7 @@ ws-icon-9 = "9;"
 format = <label-state>
 
 label-focused = 
-label-focused-foreground = #ffffff
+label-focused-foreground = #444032
 label-focused-padding = 6px
 
 label-unfocused = 
@@ -135,7 +135,7 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 
 label-muted = ﱝ
-label-muted-foreground = #ffffff
+label-muted-foreground = #444032
 
 [settings]
 screenchange-reload = true
