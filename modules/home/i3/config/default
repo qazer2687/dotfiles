@@ -50,9 +50,10 @@ default_border pixel 2
 gaps inner 8
 gaps outer 0
 
-# Colours
 client.focused #e8d997
+client.focused_inactive #aa9f6e
 client.unfocused #aa9f6e
+
 
 bar {
   mode invisible
