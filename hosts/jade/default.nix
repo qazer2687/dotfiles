@@ -30,9 +30,6 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
-  # Programs
-  programs.steam.enable = true;
-
   # Modules
   modules = {
     kernel.enable = true;
@@ -40,6 +37,7 @@
     nvidia.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
+    steam.enable = true;
   };
 
   # State Version

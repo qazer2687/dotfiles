@@ -6,5 +6,6 @@
     ./pipewire
     ./systemd-boot
     ./bluetooth
+    ./steam
   ];
 }
