@@ -1,35 +1,35 @@
 [colors]
-background = #f7edc0
-mantle = #f7edc0
-crust = #f7edc0
+background = #72618b
+mantle = #72618b
+crust = #72618b
 
-white = #444032
-subtext0 = #444032
-subtext1 = #444032
+white = #6f624e
+subtext0 = #6f624e
+subtext1 = #6f624e
 
-surface0 = #444032
-surface1 = #444032
-surface2 = #444032
+surface0 = #6f624e
+surface1 = #6f624e
+surface2 = #6f624e
 
-overlay0 = #444032
-overlay1 = #444032
-overlay2 = #444032
+overlay0 = #6f624e
+overlay1 = #6f624e
+overlay2 = #6f624e
 
 
-blue = #444032
-lavender = #444032
-sapphire = #444032
-sky = #444032
-teal = #444032
-green = #444032
-yellow = #444032
-peach = #444032
-maroon = #444032
-red = #444032
-mauve = #444032
-pink = #444032
-flamingo = #444032
-foreground = #444032
+blue = #6f624e
+lavender = #6f624e
+sapphire = #6f624e
+sky = #6f624e
+teal = #6f624e
+green = #6f624e
+yellow = #6f624e
+peach = #6f624e
+maroon = #6f624e
+red = #6f624e
+mauve = #6f624e
+pink = #6f624e
+flamingo = #6f624e
+foreground = #6f624e
 
 transparent = #FF00000
 
@@ -94,7 +94,7 @@ ws-icon-9 = "9;"
 format = <label-state>
 
 label-focused = 
-label-focused-foreground = #444032
+label-focused-foreground = #6f624e
 label-focused-padding = 6px
 
 label-unfocused = 
@@ -135,7 +135,7 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 
 label-muted = ﱝ
-label-muted-foreground = #444032
+label-muted-foreground = #6f624e
 
 [settings]
 screenchange-reload = true
