@@ -8,6 +8,7 @@
     obsidian
     gnome.nautilus
     obs-studio
+    armcord
   ];
 
   modules = {
