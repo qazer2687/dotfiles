@@ -3,33 +3,33 @@ background = #72618b
 mantle = #72618b
 crust = #72618b
 
-white = #6f624e
-subtext0 = #6f624e
-subtext1 = #6f624e
+white = #f7edc0
+subtext0 = #f7edc0
+subtext1 = #f7edc0
 
-surface0 = #6f624e
-surface1 = #6f624e
-surface2 = #6f624e
+surface0 = #f7edc0
+surface1 = #f7edc0
+surface2 = #f7edc0
 
-overlay0 = #6f624e
-overlay1 = #6f624e
-overlay2 = #6f624e
+overlay0 = #f7edc0
+overlay1 = #f7edc0
+overlay2 = #f7edc0
 
 
-blue = #6f624e
-lavender = #6f624e
-sapphire = #6f624e
-sky = #6f624e
-teal = #6f624e
-green = #6f624e
-yellow = #6f624e
-peach = #6f624e
-maroon = #6f624e
-red = #6f624e
-mauve = #6f624e
-pink = #6f624e
-flamingo = #6f624e
-foreground = #6f624e
+blue = #f7edc0
+lavender = #f7edc0
+sapphire = #f7edc0
+sky = #f7edc0
+teal = #f7edc0
+green = #f7edc0
+yellow = #f7edc0
+peach = #f7edc0
+maroon = #f7edc0
+red = #f7edc0
+mauve = #f7edc0
+pink = #f7edc0
+flamingo = #f7edc0
+foreground = #f7edc0
 
 transparent = #FF00000
 
@@ -94,7 +94,7 @@ ws-icon-9 = "9;"
 format = <label-state>
 
 label-focused = 
-label-focused-foreground = #6f624e
+label-focused-foreground = #f7edc0
 label-focused-padding = 6px
 
 label-unfocused = 
@@ -135,7 +135,7 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 
 label-muted = ﱝ
-label-muted-foreground = #6f624e
+label-muted-foreground = #f7edc0
 
 [settings]
 screenchange-reload = true
