@@ -52,13 +52,13 @@ hide_edge_borders none
 gaps inner 8
 gaps outer 0
 
-client.focused          #7a8b61 #7a8b61 #7a8b61 #7a8b61   #7a8b61
-client.focused_inactive #a8534b #a8534b #a8534b #a8534b   #a8534b
-client.unfocused        #a8534b #a8534b #a8534b #a8534b   #a8534b
-client.urgent           #a8534b #a8534b #a8534b #a8534b   #a8534b
-client.placeholder      #a8534b #a8534b #a8534b #a8534b   #a8534b
+client.focused          #f7edc0 #f7edc0 #59513f #f7edc0   #f7edc0
+client.focused_inactive #59513f #59513f #f7edc0 #59513f   #59513f
+client.unfocused        #59513f #59513f #f7edc0 #59513f   #59513f
+client.urgent           #59513f #59513f #f7edc0 #59513f   #59513f
+client.placeholder      #59513f #59513f #f7edc0 #59513f   #59513f
 
-client.background       #a8534b
+client.background       #59513f
 
 bar {
   mode invisible
