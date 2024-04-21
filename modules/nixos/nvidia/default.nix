@@ -7,31 +7,7 @@
   options.modules.nvidia.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.nvidia.enable {
-    boot = {
-      kernelParams = ["nvidia-drm.modeset=1"];
-    };
     services.xserver.videoDrivers = ["nvidia"];
-    hardware = {
-      nvidia = {
-        package = config.boot.kernelPackages.nvidiaPackages.latest;
-        modesetting.enable = true;
-        open = false;
-        nvidiaSettings = true;
-      };
-    };
-
-    # gamescope
-    programs.gamescope = {
-      enable = true;
-      capSysNice = true;
-      args = [
-        "-w 1720" # width
-        "-h 1080" # height
-        "-S stretch" # scaling
-        "-f" # fullscreen
-        "-e" # steam integration
-      ];
-    };
 
     # gamemode
     programs.gamemode = {
