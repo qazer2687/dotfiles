@@ -19,6 +19,20 @@
         nvidiaSettings = true;
       };
     };
+
+    # gamescope
+    programs.gamescope = {
+      enable = true;
+      args = [
+        "-w 1720" # width
+        "-h 1080" # height
+        "-S stretch" # scaling
+        "-f" # fullscreen
+        "-e" # steam integration
+      ];
+    };
+
+    # gamemode
     programs.gamemode = {
       enable = true;
       enableRenice = false;
