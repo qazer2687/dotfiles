@@ -13,7 +13,7 @@
     services.xserver.videoDrivers = ["nvidia"];
     hardware = {
       nvidia = {
-        package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+        package = config.boot.kernelPackages.nvidiaPackages.latest;
         modesetting.enable = true;
         open = false;
         nvidiaSettings = true;
@@ -23,6 +23,7 @@
     # gamescope
     programs.gamescope = {
       enable = true;
+      capSysNice = true;
       args = [
         "-w 1720" # width
         "-h 1080" # height
@@ -35,7 +36,7 @@
     # gamemode
     programs.gamemode = {
       enable = true;
-      enableRenice = false;
+      enableRenice = true;
       settings = {
         general = {
           desiredgov = "performance";
