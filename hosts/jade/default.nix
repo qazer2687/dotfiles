@@ -23,6 +23,9 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  # disable swap for now
+  swapDevices = lib.mkForce [ ];
+
   # Modules
   modules = {
     kernel.enable = true;
