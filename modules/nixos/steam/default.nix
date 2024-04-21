@@ -24,7 +24,6 @@
           gamemode
           mangohud
           openssl
-          openssl_1_1
           openssl_3_1
         ];
       };
