@@ -89,11 +89,11 @@ in {
   sops.defaultSopsFile = ./secrets/default.yaml;
 
   # zram
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-    memoryPercent = 50;
-  };
+  #zramSwap = {
+  #  enable = true;
+  #  algorithm = "zstd";
+  #  memoryPercent = 50;
+  #};
 
   # Environment
   programs.direnv.enable = true;
