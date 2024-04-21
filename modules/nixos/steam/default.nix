@@ -9,7 +9,13 @@
   config = lib.mkIf config.modules.steam.enable {
     programs.steam = {
       enable = true;
-      gamescopeSession.enable = true;
+      gamescopeSession = {
+        enable = true;
+        env = {
+          WLR_RENDERER = "vulkan";
+          SDL_VIDEODRIVER = "x11";
+        };
+      };
       package = pkgs.steam.override {
         extraPkgs = pkgs: with pkgs; [
           xorg.libXcursor
@@ -22,11 +28,10 @@
           stdenv.cc.cc.lib
           libkrb5
           keyutils
+          gamescope
+          mangohud
         ];
       };
-    };
-    programs.gamescope = {
-      enable = true;
     };
   };
 }
