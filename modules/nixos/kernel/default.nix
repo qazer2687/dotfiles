@@ -16,8 +16,7 @@
         "systemd.show_status=false"
         "rd.udev.log_level=0"
         "vt.global_cursor_default=0"
-        "i915.enable_psr=0"
-        "ipv6.disable=1"
+        "nvidia_drm.fbdev=1"
         "mitigations=off"
         "kernel.nmi_watchdog=0"
       ];
