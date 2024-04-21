@@ -1,4 +1,7 @@
-{...}: {
+{
+  lib,
+  ...
+}: {
   imports = [
     ../../hardware/jade
     ../../modules/nixos
