@@ -20,6 +20,7 @@
       scrot
       feh
       redshift
+      xorg.xkill
     ];
   };
 }
