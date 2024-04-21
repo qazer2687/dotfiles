@@ -57,14 +57,14 @@ in {
   };
 
   # PAM (allow users to request rtprio)
- # security.pam.loginLimits = [
- #   {
- #     domain = "@users";
- #     item = "rtprio";
- #     type = "-";
- #     value = 1;
- #   }
- # ];
+  security.pam.loginLimits = [
+    {
+      domain = "@users";
+      item = "rtprio";
+      type = "-";
+      value = 1;
+    }
+  ];
 
   # Power Profiles Daemon
   services.power-profiles-daemon = {
@@ -89,11 +89,11 @@ in {
   sops.defaultSopsFile = ./secrets/default.yaml;
 
   # zram
-  #zramSwap = {
-  #  enable = true;
-  #  algorithm = "zstd";
-  #  memoryPercent = 50;
-  #};
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+  };
 
   # Environment
   programs.direnv.enable = true;
