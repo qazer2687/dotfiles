@@ -15,7 +15,7 @@
   '';
 
   # autologin
-  services.mingetty.autologinUser = "alex";
+  services.getty.autologinUser = "alex";
 
   # User
   users.users.alex = {
