@@ -7,7 +7,6 @@
   options.modules.nvidia.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.nvidia.enable {
-    services.xserver.videoDrivers = ["nvidia"];
 
     # gamemode
     programs.gamemode = {
