@@ -19,6 +19,7 @@
         "nvidia_drm.fbdev=1"
         "mitigations=off"
         "kernel.nmi_watchdog=0"
+        "clearcpuid=304" # disable avx-512
       ];
       consoleLogLevel = 0;
       initrd.verbose = false;
