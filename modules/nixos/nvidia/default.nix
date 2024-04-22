@@ -12,7 +12,7 @@
       modesetting.enable = true;
       open = false;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
     };
     programs.gamemode = {
       enable = true;
