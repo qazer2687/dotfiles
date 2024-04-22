@@ -16,7 +16,7 @@
         "systemd.show_status=false"
         "rd.udev.log_level=0"
         "vt.global_cursor_default=0"
-        #"nvidia_drm.fbdev=1"
+        "nvidia_drm.fbdev=1"
         "nvidia-drm.modeset=1" # required by gamescope
         "mitigations=off"
         "kernel.nmi_watchdog=0"
