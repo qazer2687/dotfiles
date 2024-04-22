@@ -44,7 +44,7 @@
     security.wrappers.gamescope = {
       owner = "root";
       group = "root";
-      source = "${gamescope}/bin/gamescope";
+      source = "${pkgs.gamescope}/bin/gamescope";
       capabilities = "cap_sys_nice+pie";
     };
 
