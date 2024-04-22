@@ -28,17 +28,17 @@
           openssl
         ];
       };
-      programs.gamescope = {
-        enable = true;
-        capSysNice = true;
-        args = [
-          "-w 1720" # width
-          "-h 1080" # height
-          "-S stretch" # scaling
-          "-f" # fullscreen
-          "-e" # steam integration
-        ];
-      };
+    };
+    programs.gamescope = {
+      enable = true;
+      capSysNice = true;
+      args = [
+        "-w 1720" # width
+        "-h 1080" # height
+        "-S stretch" # scaling
+        "-f" # fullscreen
+        "-e" # steam integration
+      ];
     };
   };
 }
