@@ -31,7 +31,7 @@
     };
     programs.gamescope = {
       enable = true;
-      capSysNice = true;
+      capSysNice = false; # disabled because of "failed to inherit capabilities: Operation not permitted" error
       args = [
         "-w 1720" # width
         "-h 1080" # height
@@ -39,6 +39,14 @@
         "-f" # fullscreen
         "-e" # steam integration
       ];
+    }; 
+    # capSysNice workaround
+    security.wrappers.gamescope = {
+      owner = "root";
+      group = "root";
+      source = "${gamescope}/bin/gamescope";
+      capabilities = "cap_sys_nice+pie";
     };
+
   };
 }
