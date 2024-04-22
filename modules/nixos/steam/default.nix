@@ -42,8 +42,8 @@
     }; 
     # capSysNice workaround
     security.wrappers.gamescope = {
-      owner = "root";
-      group = "root";
+      owner = "alex";
+      group = "users";
       source = "${pkgs.gamescope}/bin/gamescope";
       capabilities = "cap_sys_nice+pie";
     };
