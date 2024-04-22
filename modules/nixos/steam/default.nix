@@ -40,5 +40,9 @@
         "-e" # steam integration
       ];
     }; 
+
+    environment.sessionVariables = {
+      MANGOHUD = 1;
+    };
   };
 }
