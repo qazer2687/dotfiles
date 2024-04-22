@@ -40,13 +40,5 @@
         "-e" # steam integration
       ];
     }; 
-    # capSysNice workaround
-    security.wrappers.gamescope = {
-      owner = "alex";
-      group = "users";
-      source = "${pkgs.gamescope}/bin/gamescope";
-      capabilities = "cap_sys_nice+pie";
-    };
-
   };
 }
