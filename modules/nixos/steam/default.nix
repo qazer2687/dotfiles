@@ -9,6 +9,7 @@
   config = lib.mkIf config.modules.steam.enable {
     programs.steam = {
       enable = true;
+      gamescopeSession.enable = true;
       package = pkgs.steam.override {
         extraPkgs = pkgs: with pkgs; [
           xorg.libXcursor
@@ -22,8 +23,20 @@
           libkrb5
           keyutils
           gamemode
+          gamescope
           mangohud
           openssl
+        ];
+      };
+      programs.gamescope = {
+        enable = true;
+        capSysNice = true;
+        args = [
+          "-w 1720" # width
+          "-h 1080" # height
+          "-S stretch" # scaling
+          "-f" # fullscreen
+          "-e" # steam integration
         ];
       };
     };
