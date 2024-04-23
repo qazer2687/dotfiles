@@ -12,14 +12,14 @@
       modesetting.enable = true;
       open = false;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
     programs.gamemode = {
       enable = true;
       enableRenice = true;
       settings = {
         general = {
-          renice = 15;
+          renice = 12;
           desiredgov = "performance";
           defaultgov = "performance";
         };
