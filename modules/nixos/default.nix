@@ -8,5 +8,6 @@
     ./bluetooth
     ./steam
     ./tlp
+    ./avahi
   ];
 }
