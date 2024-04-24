@@ -18,6 +18,7 @@
     alacritty.enable = true;
     git.enable = true;
     dark.enable = true;
+    neovim.enable = true;
 
     # Development
     vscode.enable = true;
