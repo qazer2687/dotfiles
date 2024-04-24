@@ -12,5 +12,6 @@
     ./wofi
     ./dark
     ./mako
+    ./neovim
   ];
 }
