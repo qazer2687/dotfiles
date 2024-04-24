@@ -46,7 +46,10 @@ bindsym $mod+Shift+9 move container to workspace number 9
 
 bindsym $mod+Shift+r restart
 
-for_window [class=.*] border normal 0
+
+default_border pixel 0
+default_floating_border pixel 0
+for_window [class=^.*] border normal 0
 
 gaps inner 8
 gaps outer 0
