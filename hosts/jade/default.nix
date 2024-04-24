@@ -23,6 +23,10 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  environment.systemPackages = with pkgs; [
+    uxplay
+  ];
+
   # Modules
   modules = {
     kernel.enable = true;
@@ -31,6 +35,7 @@
     pipewire.enable = true;
     systemd-boot.enable = true;
     steam.enable = true;
+    avahi.enable = true;
   };
 
   # State Version
