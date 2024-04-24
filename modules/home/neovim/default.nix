@@ -27,7 +27,7 @@
         };
 
         auto-save = {
-          enable = true;
+          enable = false;
           enableAutoSave = true;
         };
 
