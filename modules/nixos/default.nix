@@ -7,5 +7,6 @@
     ./systemd-boot
     ./bluetooth
     ./steam
+    ./tlp
   ];
 }
