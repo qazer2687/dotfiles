@@ -42,6 +42,7 @@ in {
     })
     atkinson-hyperlegible
     noto-fonts-color-emoji
+    noto-fonts-cjk-sans
   ];
 
   # Bash Aliases
@@ -54,21 +55,6 @@ in {
   services.xserver.xkb = {
     layout = "gb";
     variant = "colemak";
-  };
-
-  # PAM (allow users to request rtprio)
-  security.pam.loginLimits = [
-    {
-      domain = "@users";
-      item = "rtprio";
-      type = "-";
-      value = 1;
-    }
-  ];
-
-  # Power Profiles Daemon
-  services.power-profiles-daemon = {
-    enable = true;
   };
 
   ## required by most things incl sway and nvidia
