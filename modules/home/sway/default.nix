@@ -140,7 +140,7 @@ in {
         corner_radius 5
 
         # Eye Comfort (EXPERIMENTAL)
-        exec nohup gammastep -xO 3500
+        exec nohup gammastep -xO 2500
 
         # Waybar
         bar {
