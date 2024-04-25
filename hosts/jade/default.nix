@@ -27,7 +27,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    uxplay
+    #uxplay
   ];
 
   # Modules
@@ -38,7 +38,7 @@
     pipewire.enable = true;
     systemd-boot.enable = true;
     steam.enable = true;
-    avahi.enable = true;
+    avahi.enable = false;
   };
 
   # State Version
