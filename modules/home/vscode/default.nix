@@ -52,6 +52,7 @@
         "editor.minimap.enabled" = false;
         "breadcrumbs.enabled" = false;
         "window.zoomLevel" = 2;
+        "editor.codeLens" = false;
       };
     };
   };
