@@ -59,6 +59,8 @@
 
             .urlbarView-body-inner{ border-top-style: none !important; }
 
+            /* remove bokmarks icon from toolbar*/
+            #personal-bookmarks .bookmark-item > .toolbarbutton-icon {display:none!important}
           }
         '';
       };
