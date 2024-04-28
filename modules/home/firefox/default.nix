@@ -13,13 +13,7 @@
         name = "0";
         isDefault = true;
         id = 0;
-        search.default = "DuckDuckGo";
-
-        # Arkenfox
-        arkenfox = {
-          enable = true;
-          version = "122.0";
-        };
+        search.default = "Google"; # i need calculator
 
         # Extensions
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
