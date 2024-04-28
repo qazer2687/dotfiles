@@ -4,13 +4,14 @@
     home-manager.url = "github:nix-community/home-manager";
     sops-nix.url = "github:Mic92/sops-nix";
     nur.url = "github:nix-community/NUR";
-    arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
+    nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
     sops-nix,
+    nixvim,
     nur,
     ...
   } @ inputs: {
@@ -37,7 +38,7 @@
               useUserPackages = true;
               sharedModules = [
                 inputs.sops-nix.homeManagerModules.sops
-                inputs.arkenfox.hmModules.default
+                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
@@ -67,7 +68,7 @@
               useUserPackages = true;
               sharedModules = [
                 inputs.sops-nix.homeManagerModules.sops
-                inputs.arkenfox.hmModules.default
+                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
