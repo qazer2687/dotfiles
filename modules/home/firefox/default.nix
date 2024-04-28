@@ -24,15 +24,11 @@
         ];
 
         userChrome = ''
-          @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-
-          #browser {
-            -moz-box-ordinal-group: 0 !important;
-            padding-top: 1px;
-          }
-
-          #nav-bar[inFullscreen] {
-            display: none;
+          #search-container {
+            position: fixed !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            z-index: 9999 !important;
           }
         '';
       };
