@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: {
   options.modules.firefox.enable = lib.mkEnableOption "";
@@ -17,7 +16,7 @@
         search.default = "Google"; # i need calculator
 
         # Extensions
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions = with config.nur.repos.rycee.firefox-addons; [
           ublock-origin
           keepa
           auto-tab-discard
