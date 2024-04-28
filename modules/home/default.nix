@@ -5,6 +5,7 @@
     ./git
     ./i3
     ./polybar
+    ./firefox
     ./prismlauncher
     ./sway
     ./vscode
