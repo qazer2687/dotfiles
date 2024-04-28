@@ -9,12 +9,12 @@
   config = lib.mkIf config.modules.vscode.enable {
     programs.vscode = {
       enable = true;
-      enableUpdateCheck = false;
-      enableExtensionUpdateCheck = false;
+      #enableUpdateCheck = false;
+      #enableExtensionUpdateCheck = false;
       package = pkgs.vscodium-fhs;
+      /*
       extensions = with pkgs.vscode-extensions; [
         # UI Theme
-        
 
         # Icon Theme
         pkief.material-icon-theme
@@ -30,6 +30,8 @@
         tamasfe.even-better-toml
         mkhl.direnv
       ];
+      */
+
       /* i will use vscode for a while to build some preferences and then copy it here
       userSettings = {
         "window.menuBarVisibility" = "toggle";
