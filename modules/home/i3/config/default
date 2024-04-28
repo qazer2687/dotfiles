@@ -46,20 +46,10 @@ bindsym $mod+Shift+9 move container to workspace number 9
 
 bindsym $mod+Shift+r restart
 
-default_border pixel 6
-for_window [class=.*] border normal 6
-hide_edge_borders none
-
+default_border pixel 0
 gaps inner 8
 gaps outer 0
-
-client.focused          #f7edc0 #f7edc0 #59513f #f7edc0   #f7edc0
-client.focused_inactive #59513f #59513f #f7edc0 #59513f   #59513f
-client.unfocused        #59513f #59513f #f7edc0 #59513f   #59513f
-client.urgent           #59513f #59513f #f7edc0 #59513f   #59513f
-client.placeholder      #59513f #59513f #f7edc0 #59513f   #59513f
-
-client.background       #59513f
+border_radius 4
 
 bar {
   mode invisible
