@@ -14,7 +14,7 @@
       package = pkgs.vscodium-fhs;
       extensions = with pkgs.vscode-extensions; [
         # UI Theme
-        jdinhlife.gruvbox
+        
 
         # Icon Theme
         pkief.material-icon-theme
@@ -24,10 +24,6 @@
 
         # C#
         ms-dotnettools.csharp
-
-        # Rust
-        rust-lang.rust-analyzer
-        serayuzgur.crates
 
         # Other
         naumovs.color-highlight

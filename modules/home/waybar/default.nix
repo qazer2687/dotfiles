@@ -176,6 +176,11 @@
           background-color: #ffffff;
         }
 
+        #workspaces button.active {
+          color: #000000;
+          background-color: #ffffff;
+        }
+
         #memory,
         #custom-power,
         #battery,
