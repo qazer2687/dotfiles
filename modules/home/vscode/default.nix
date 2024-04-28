@@ -34,6 +34,7 @@
         tamasfe.even-better-toml
         mkhl.direnv
       ];
+      /* i will use vscode for a while to build some preferences and then copy it here
       userSettings = {
         "window.menuBarVisibility" = "toggle";
         "workbench.startupEditor" = "none";
@@ -53,6 +54,7 @@
         "breadcrumbs.enabled" = false;
         "window.zoomLevel" = 2;
       };
+      */
     };
   };
 }
