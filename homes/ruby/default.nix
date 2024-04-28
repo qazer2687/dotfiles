@@ -4,7 +4,6 @@
   ];
 
   home.packages = with pkgs; [
-    firefox
     obsidian
     gnome.nautilus
     foliate
@@ -21,6 +20,7 @@
     dark.enable = true;
     mako.enable = true;
     wofi.enable = true;
+    firefox.enable = true;
 
     # Development
     vscode.enable = true;
