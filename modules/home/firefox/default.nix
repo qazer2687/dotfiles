@@ -21,6 +21,7 @@
           keepa
           auto-tab-discard
           youtube-recommended-videos
+          statshunters
         ];
 
         userChrome = ''
