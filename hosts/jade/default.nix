@@ -1,7 +1,4 @@
-{ 
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../hardware/jade
     ../../modules/nixos
