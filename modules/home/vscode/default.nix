@@ -32,7 +32,8 @@
       ];
       */
 
-      /* i will use vscode for a while to build some preferences and then copy it here
+      /*
+         i will use vscode for a while to build some preferences and then copy it here
       userSettings = {
         "window.menuBarVisibility" = "toggle";
         "workbench.startupEditor" = "none";

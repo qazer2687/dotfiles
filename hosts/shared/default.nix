@@ -64,6 +64,11 @@ in {
     driSupport32Bit = true;
   };
 
+  # Automount External Drives
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   # Dconf (gtk settings)
   programs.dconf.enable = true;
 
@@ -74,7 +79,7 @@ in {
   # Sops-Nix
   sops.defaultSopsFile = ./secrets/default.yaml;
 
-  # zram
+  # Zram
   zramSwap = {
     enable = true;
     algorithm = "zstd";
