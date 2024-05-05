@@ -15,11 +15,11 @@
     gtk = {
       enable = true;
       iconTheme = {
-        name = "adwaita";
+        name = "Adwaita";
         package = pkgs.gnome.adwaita-icon-theme;
       };
       theme = {
-        name = "adwaita-dark";
+        name = "Adwaita-dark";
         package = pkgs.gnome.gnome-themes-extra;
       };
       gtk3.extraConfig = {gtk-application-prefer-dark-theme = 1;};
