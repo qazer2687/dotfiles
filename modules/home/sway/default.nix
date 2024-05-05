@@ -29,6 +29,7 @@ in {
     wayland.windowManager.sway = {
       enable = true;
       package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+      checkConfig = false;
       config = {
         inherit modifier;
 
