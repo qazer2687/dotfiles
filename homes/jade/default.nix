@@ -4,7 +4,6 @@
   ];
 
   home.packages = with pkgs; [
-    firefox
     obsidian
     gnome.nautilus
     obs-studio
@@ -19,6 +18,7 @@
     git.enable = true;
     dark.enable = true;
     neovim.enable = true;
+    firefox.enable = true;
 
     # Development
     vscode.enable = true;

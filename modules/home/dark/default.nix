@@ -15,16 +15,18 @@
     gtk = {
       enable = true;
       iconTheme = {
-        name = "Adwaita";
+        name = "adwaita";
         package = pkgs.gnome.adwaita-icon-theme;
       };
       theme = {
-        name = "Adwaita-dark";
+        name = "adwaita-dark";
         package = pkgs.gnome.gnome-themes-extra;
       };
       gtk3.extraConfig = {gtk-application-prefer-dark-theme = 1;};
       gtk4.extraConfig = {gtk-application-prefer-dark-theme = 1;};
     };
+    # i have no idea if this does anything
+    systemd.user.sessionVariables = config.home-manager.users.alex.home.sessionVariables;
     qt = {
       enable = true;
       platformTheme.name = "adwaita";
