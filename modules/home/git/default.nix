@@ -9,9 +9,8 @@
     programs.git = {
       enable = true;
       userName = "qazer2687";
-      #userName = config.sops.secrets."github-user-name".path;
-      userEmail = "alexvasilkovski@gmail.com";
-      #userEmail = config.sops.secrets."github-user-email".path;
+      userEmail = "114782572+qazer2687@users.noreply.github.com";
+      # TODO: use sops to retrieve details
     };
   };
 }
