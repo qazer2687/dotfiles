@@ -64,11 +64,6 @@ in {
     driSupport32Bit = true;
   };
 
-  # Automount External Drives
-  services.devmon.enable = true;
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
-
   # Dconf (gtk settings)
   programs.dconf.enable = true;
 
@@ -93,6 +88,7 @@ in {
     sessionVariables = {
       NIXPKGS_ALLOW_UNFREE = "1";
       NIXPKGS_ALLOW_INSECURE = "1";
+      GTK_THEME = "Adwaita-dark";
     };
   };
 }
