@@ -35,7 +35,7 @@
     pipewire.enable = true;
     systemd-boot.enable = true;
     steam.enable = true;
-    avahi.enable = false;
+    filesystem.enable = true;
   };
 
   # State Version
