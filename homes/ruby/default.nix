@@ -9,7 +9,6 @@
   home.packages = with pkgs; [
     obsidian
     gnome.nautilus
-    foliate
     gammastep
     fragments
   ];

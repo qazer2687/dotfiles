@@ -9,5 +9,6 @@
     ./steam
     ./tlp
     ./filesystem
+    ./waydroid
   ];
 }
