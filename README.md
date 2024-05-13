@@ -3,16 +3,13 @@
 <p align="left">A repository containing my personal nix flake.</p>
 
 ## Hosts
-`jade` Desktop (16GB RAM, R9 3900x, RTX 2070S)<br>
-`ruby` Laptop (8GB RAM, I5 8350U)<br>
-`opal` Server (8GB RAM, I7 7700, GTX 1050)<br>
-
+┌── `jade` Desktop (16GB RAM, R9 3900x, RTX 2070S)<br>
+├── `ruby` Laptop (8GB RAM, I5 8350U)<br>
+└── `opal` Server (8GB RAM, I7 7700, GTX 1050)<br>
 ## Structure
-
 ┌── flake.nix<br>
 ├── containers<br>
-│   ├── homepage<br>
-│   └── mailserver<br>
+│   └── \<containers><br>
 ├── hardware<br>
 │   ├── jade<br>
 │   ├── opal<br>
@@ -29,25 +26,3 @@
 │   ├── home<br>
 │   └── nixos<br>
 └── secrets<br>
-
-┌── `flake.nix`<br>
-├── `containers`<br>
-│   ├── `homepage`<br>
-│   └── `mailserver`<br>
-├── `hardware`<br>
-│   ├── `jade`<br>
-│   ├── `opal`<br>
-│   └── `ruby`<br>
-├── `homes`<br>
-│   ├── `jade`<br>
-│   └── `ruby`<br>
-├── `hosts`<br>
-│   ├── `jade`<br>
-│   ├── `opal`<br>
-│   ├── `ruby`<br>
-│   └── `shared`<br>
-├── `modules`<br>
-│   ├── `home`<br>
-│   └── `nixos`<br>
-└── `secrets`<br>
-
