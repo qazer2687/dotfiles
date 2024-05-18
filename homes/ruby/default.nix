@@ -24,6 +24,8 @@
     mako.enable = true;
     wofi.enable = true;
     firefox.enable = true;
+    eza.enable = true;
+    starship.enable = true;
 
     # Development
     vscode.enable = true;
