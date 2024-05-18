@@ -31,7 +31,6 @@
     bluetooth.enable = true;
     tlp.enable = true;
     filesystem.enable = true;
-    waydroid.enable = true;
   };
 
   system.stateVersion = "23.05";
