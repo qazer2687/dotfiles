@@ -14,5 +14,7 @@
     ./dark
     ./mako
     ./neovim
+    ./starship
+    ./eza
   ];
 }
