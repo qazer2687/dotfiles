@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.eza.enable {
     programs.eza = {
       enable = true;
-      enableAliases = true;
+      enableBashIntegration = true;
       icons = true;
     };
   };
