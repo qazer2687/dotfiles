@@ -7,7 +7,6 @@
   options.modules.filesystem.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.filesystem.enable {
-    
     # Automount External Drives
     services.devmon.enable = true;
     services.gvfs.enable = true;
