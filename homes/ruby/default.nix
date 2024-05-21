@@ -9,6 +9,7 @@
     gammastep
     fragments
     obs-studio
+    wine # required by calibre dedrm
   ];
 
   modules = {
