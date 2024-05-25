@@ -21,6 +21,8 @@
       ".jdks/17".source = lib.getBin pkgs.openjdk17;
       ".jdks/17-temurin".source = lib.getBin pkgs.temurin-bin-17;
       ".jdks/17-zulu".source = lib.getBin pkgs.zulu17;
+
+      ".jdks/21-temurin".source lib.getBin pkgs.temurin-bin
     };
   };
 }
