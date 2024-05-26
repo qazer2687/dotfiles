@@ -3,9 +3,9 @@
 <p align="left">A repository containing my personal nix flake.</p>
 
 ## Hosts
-┌── jade (16GB RAM, R9 3900x, RTX 2070S)<br>
+┌── jade (16GB RAM, R9 3900x, RTX 2070S, GTX 1050) (kinda brokey rn)<br>
 ├── ruby (8GB RAM, I5 8350U)<br>
-└── opal (8GB RAM, I7 7700, GTX 1050)<br>
+└── opal (8GB RAM, I7 7700)<br>
 ## Structure
 ┌── flake.nix<br>
 ├── containers<br>
