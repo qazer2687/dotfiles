@@ -17,11 +17,6 @@
     [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
 
-  users.users.alex = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "video"];
-  };
-
   # Modules
   modules = {
     kernel.enable = true;

@@ -17,16 +17,6 @@
   # autologin
   services.getty.autologinUser = "alex";
 
-  # User
-  users.users.alex = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "video"];
-  };
-
-  environment.systemPackages = with pkgs; [
-    #uxplay
-  ];
-
   # Modules
   modules = {
     kernel.enable = true;

@@ -31,6 +31,13 @@ in {
     "electron-25.9.0"
   ];
 
+  # user
+  users.users.alex = {
+    isNormalUser = true;
+    extraGroups = ["networkmanager" "wheel" "video"];
+    shell = pkgs.fish;
+  };
+
   # Default Fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override {
