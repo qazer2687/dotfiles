@@ -19,6 +19,7 @@
     dark.enable = true;
     neovim.enable = true;
     firefox.enable = true;
+    fish.enable = true;
 
     # Development
     vscode.enable = true;
