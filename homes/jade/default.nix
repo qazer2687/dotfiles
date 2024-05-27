@@ -13,7 +13,6 @@
   modules = {
     # Environment
     i3.enable = true;
-    polybar.enable = true;
     alacritty.enable = true;
     git.enable = true;
     dark.enable = true;
