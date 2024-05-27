@@ -31,12 +31,15 @@ in {
     "electron-25.9.0"
   ];
 
-  # user
+  # User
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
     shell = pkgs.fish;
   };
+
+  # Shell
+  programs.fish.enable = true;
 
   # Default Fonts
   fonts.packages = with pkgs; [
