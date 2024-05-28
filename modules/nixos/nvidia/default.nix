@@ -8,7 +8,7 @@
   config = lib.mkIf config.modules.nvidia.enable {
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia = {
-      modesetting.enable = true;
+      modesetting.enable = false;
       open = false;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
@@ -18,7 +18,7 @@
       enableRenice = true;
       settings = {
         general = {
-          renice = 12;
+          renice = 10;
           desiredgov = "performance";
           defaultgov = "performance";
         };
