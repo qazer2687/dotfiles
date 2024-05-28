@@ -8,10 +8,15 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   # startx
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
+  #services.xserver.enable = true;
+  #services.xserver.displayManager.startx.enable = true;
+  #environment.loginShellInit = ''
+  #  [[ "$(tty)" == /dev/tty1 ]] && startx
+  #'';
+
+  # test wayland
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && startx
+    [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
 
   # autologin
