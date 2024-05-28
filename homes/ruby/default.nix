@@ -16,10 +16,10 @@
     sway.enable = true;
     waybar.enable = true;
     foot.enable = true;
-    git.enable = true;
-    dark.enable = true;
     mako.enable = true;
     wofi.enable = true;
+    git.enable = true;
+    dark.enable = true;
     firefox.enable = true;
     fish.enable = true;
 
