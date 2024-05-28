@@ -12,16 +12,8 @@
 
   modules = {
     # Environment
-    #i3.enable = true;
-    #alacritty.enable = true;
-    
-    # test wayland
-    sway.enable = true;
-    waybar.enable = true;
-    foot.enable = true;
-    mako.enable = true;
-    wofi.enable = true;
-
+    i3.enable = true;
+    alacritty.enable = true;
     git.enable = true;
     dark.enable = true;
     neovim.enable = true;
