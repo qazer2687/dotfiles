@@ -8,24 +8,14 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   # startx
-  #services.xserver.enable = true;
-  #services.xserver.displayManager.startx.enable = true;
-  #environment.loginShellInit = ''
-  #  [[ "$(tty)" == /dev/tty1 ]] && startx
-  #'';
-
-  environment = {
-    loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway
-  '';
-    sessionVariables = {
-      WLR_NO_HARDWARE_CURSORS = "1";
-      MOZ_ENABLE_WAYLAND = "1";
-      NIXOS_OZONE_WL = "1";
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-      GBM_BACKEND = "nvidia-drm";
-    };
+  services.xserver = {
+    enable = true;
+    displayManager.startx.enable = true;
   };
+  
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && startx
+  '';
 
   # autologin
   services.getty.autologinUser = "alex";
