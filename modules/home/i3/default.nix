@@ -7,6 +7,14 @@
   options.modules.i3.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.i3.enable {
+    home.packages = with pkgs; [
+      dmenu
+      scrot
+      feh
+      redshift
+      xorg.xkill
+    ];
+
     xsession = {
       enable = true;
       windowManager.i3 = {
@@ -91,14 +99,6 @@
           border_radius 4
         '';
       };
-
-      home.packages = with pkgs; [
-        dmenu
-        scrot
-        feh
-        redshift
-        xorg.xkill
-      ];
     };
   };
 }
