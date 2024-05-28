@@ -3,15 +3,15 @@ set $mod Mod4
 exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=secrets
 
-bindsym           $mod+Return  exec alacritty
+bindsym           $mod+Return  exec --no-startup-id alacritty
 bindsym           $mod+space   floating toggle
 bindsym           $mod+q       kill
-bindsym --release $mod+Shift+q exec xkill
+bindsym --release $mod+Shift+q exec --no-startup-id xkill
 bindsym           $mod+e       exec --no-startup-id dmenu_run -i -b -nb "#000000" -sb "#ffffff" -nf "#ffffff" -sf "#000000" -fn "FiraCode Nerd Font"
 
 exec_always --no-startup-id feh --bg-fill /home/alex/.config/wallpaper/wallpaper.png
 
-exec_always i3-msg workspace number 1
+exec_always --no-startup-id i3-msg workspace number 1
 
 bindsym $mod+Left  move left
 bindsym $mod+Down  move down
