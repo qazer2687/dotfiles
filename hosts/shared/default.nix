@@ -99,6 +99,7 @@ in {
       NIXPKGS_ALLOW_UNFREE = "1";
       NIXPKGS_ALLOW_INSECURE = "1";
       GTK_THEME = "Adwaita-dark";
+      WLR_NO_HARDWARE_CURSORS = "1";
     };
   };
 }
