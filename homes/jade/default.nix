@@ -8,6 +8,7 @@
     gnome.nautilus
     obs-studio
     armcord
+    lunar-client
   ];
 
   modules = {
