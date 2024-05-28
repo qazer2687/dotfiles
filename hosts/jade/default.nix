@@ -18,9 +18,7 @@
     loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
-    defaultPackages = lib.mkForce [];
     sessionVariables = {
-      # wayland support
       WLR_NO_HARDWARE_CURSORS = "1";
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
