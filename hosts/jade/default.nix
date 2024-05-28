@@ -20,6 +20,10 @@
   # autologin
   services.getty.autologinUser = "alex";
 
+  environment.systemPackages = with pkgs; [
+    mesa
+  ];
+
   # Modules
   modules = {
     kernel.enable = true;
