@@ -14,10 +14,20 @@
   #  [[ "$(tty)" == /dev/tty1 ]] && startx
   #'';
 
-  # test wayland
-  environment.loginShellInit = ''
+  environment = {
+    loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
+    defaultPackages = lib.mkForce [];
+    sessionVariables = {
+      # wayland support
+      WLR_NO_HARDWARE_CURSORS = "1";
+      MOZ_ENABLE_WAYLAND = "1";
+      NIXOS_OZONE_WL = "1";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      GBM_BACKEND = "nvidia-drm";
+    };
+  };
 
   # autologin
   services.getty.autologinUser = "alex";
