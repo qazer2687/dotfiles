@@ -14,5 +14,8 @@
     ./mako
     ./neovim
     ./fish
+    ./keyring
+    ./polybar
+    ./dunst
   ];
 }
