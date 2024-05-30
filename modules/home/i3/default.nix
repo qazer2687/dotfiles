@@ -29,6 +29,10 @@
             }
             {
               always = true;
+              command = "$HOME/.config/polybar/launch.sh &"
+            }
+            {
+              always = true;
               command = "gnome-keyring-daemon --start --components=secrets";
             }
             {
