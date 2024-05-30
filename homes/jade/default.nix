@@ -9,6 +9,7 @@
     obs-studio
     armcord
     lunar-client
+    vlc
   ];
 
   modules = {
@@ -20,6 +21,8 @@
     neovim.enable = true;
     firefox.enable = true;
     fish.enable = true;
+    polybar.enable = true;
+    dunst.enable = true;
 
     # Development
     vscode.enable = true;
