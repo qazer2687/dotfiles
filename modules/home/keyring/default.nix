@@ -12,10 +12,10 @@
       components = [
         "secrets"
       ];
-      home.packages = with pkgs; [
-        gnome.seahorse
-      ];
     };
+    home.packages = with pkgs; [
+        gnome.seahorse
+    ];
   };
 }
 
