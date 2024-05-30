@@ -7,6 +7,7 @@
   options.modules.dunst.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.dunst.enable {
+    # ! reports a configuration error (l14,l15) but works fine
     services.dunst = {
       enable = true;
       package = pkgs.dunst;
