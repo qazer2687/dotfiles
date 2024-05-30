@@ -29,7 +29,7 @@
             }
             {
               always = true;
-              command = "$HOME/.config/polybar/launch.sh &"
+              command = "$HOME/.config/polybar/launch.sh &";
             }
             {
               always = true;
