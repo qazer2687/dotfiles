@@ -86,7 +86,7 @@ in {
 
   # Zram
   zramSwap = {
-    enable = false;
+    enable = true;
     algorithm = "zstd";
     memoryPercent = 75;
   };
