@@ -9,7 +9,7 @@
     services.mako = {
       enable = true;
       defaultTimeout = 5000;
-      font = "FiraCode Nerd Font 12";
+      font = "LiberationMono Nerd Font 12";
       borderRadius = 8;
       margin = "8";
       anchor = "top-right";

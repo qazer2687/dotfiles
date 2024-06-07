@@ -15,7 +15,6 @@
     nur,
     ...
   } @ inputs: {
-
     # Desktop Configuration
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {

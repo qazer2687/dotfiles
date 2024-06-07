@@ -38,6 +38,7 @@ in {
         "FiraCode"
         "FiraMono"
         "Iosevka"
+        "LiberationMono"
       ];
     })
     atkinson-hyperlegible

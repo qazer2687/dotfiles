@@ -12,16 +12,18 @@
         name = "0";
         isDefault = true;
         id = 0;
-        search.default = "Google"; # i need calculator
+        #search.default = "Google"; # i need calculator
 
         # Extensions
-        extensions = with config.nur.repos.rycee.firefox-addons; [
+        /*
+          extensions = with config.nur.repos.rycee.firefox-addons; [
           ublock-origin
           keepa
           auto-tab-discard
           youtube-recommended-videos
           statshunters
         ];
+        */
 
         userChrome = ''
           @-moz-document url(chrome://browser/content/browser.xhtml){
