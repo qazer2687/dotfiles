@@ -9,7 +9,6 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/qazer2687/dotfiles)
 [![Nix Evaluation](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml/badge.svg)](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml)
 
-<<<<<<< HEAD
 </div>
 
 <p align="center">
@@ -102,29 +101,3 @@ Others who have been super helpful or inspired things:\
 ![Misterio77](https://github.com/Misterio77) - ![NotAShelf](https://github.com/NotAShelf) - ![Sioodmy](https://github.com/sioodmy) - ![Éclairvoyant](https://github.com/eclairevoyant/)
 
 </div>
-=======
-## Hosts
-┌── jade (16GB RAM, R9 3900x, RTX 2070S, GTX 1050) (kinda brokey rn)<br>
-├── ruby (8GB RAM, I5 8350U)<br>
-└── opal (8GB RAM, I7 7700) (completely brokey) <br>
-## Structure
-┌── flake.nix<br>
-├── containers<br>
-│   └── \<containers><br>
-├── hardware<br>
-│   ├── jade<br>
-│   ├── opal<br>
-│   └── ruby<br>
-├── homes<br>
-│   ├── jade<br>
-│   └── ruby<br>
-├── hosts<br>
-│   ├── jade<br>
-│   ├── opal<br>
-│   ├── ruby<br>
-│   └── shared<br>
-├── modules<br>
-│   ├── home<br>
-│   └── nixos<br>
-└── secrets<br>
->>>>>>> 3bd56dc641f3d8bb36b3b0994b62b3741a5a4c58
