@@ -7,7 +7,6 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/qazer2687/dotfiles?style=flat)
 ![GitHub repo size](https://img.shields.io/github/repo-size/qazer2687/dotfiles)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/qazer2687/dotfiles)
-[![Nix Evaluation](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml/badge.svg)](https://github.com/***REMOVED***/dotfiles/actions/workflows/nix.yml)
 
 </div>
 
