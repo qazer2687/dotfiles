@@ -16,13 +16,12 @@
     sway.enable = true;
     waybar.enable = true;
     foot.enable = true;
-    git.enable = true;
-    dark.enable = true;
     mako.enable = true;
     wofi.enable = true;
+    git.enable = true;
+    dark.enable = true;
     firefox.enable = true;
-    eza.enable = true;
-    starship.enable = true;
+    fish.enable = true;
 
     # Development
     vscode.enable = true;
