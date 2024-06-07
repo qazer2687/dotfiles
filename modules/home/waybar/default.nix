@@ -142,7 +142,7 @@
 
       style = ''
         * {
-          font-family: LiberationMono Nerd Font;
+          font-family: LiterationMono Nerd Font;
           font-size: 14px;
           background-color: transparent;
           border-radius: 5px;
