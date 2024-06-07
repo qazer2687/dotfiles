@@ -8,24 +8,17 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   # startx
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.startx.enable = true;
+  };
+  
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && startx
   '';
 
   # autologin
   services.getty.autologinUser = "alex";
-
-  # User
-  users.users.alex = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "video"];
-  };
-
-  environment.systemPackages = with pkgs; [
-    #uxplay
-  ];
 
   # Modules
   modules = {

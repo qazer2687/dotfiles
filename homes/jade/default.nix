@@ -8,17 +8,21 @@
     gnome.nautilus
     obs-studio
     armcord
+    lunar-client
+    vlc
   ];
 
   modules = {
     # Environment
     i3.enable = true;
-    polybar.enable = true;
     alacritty.enable = true;
     git.enable = true;
     dark.enable = true;
     neovim.enable = true;
     firefox.enable = true;
+    fish.enable = true;
+    polybar.enable = true;
+    dunst.enable = true;
 
     # Development
     vscode.enable = true;

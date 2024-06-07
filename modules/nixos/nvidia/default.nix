@@ -18,7 +18,7 @@
       enableRenice = true;
       settings = {
         general = {
-          renice = 12;
+          renice = 10;
           desiredgov = "performance";
           defaultgov = "performance";
         };

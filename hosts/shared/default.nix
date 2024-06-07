@@ -31,6 +31,16 @@ in {
     "electron-25.9.0"
   ];
 
+  # User
+  users.users.alex = {
+    isNormalUser = true;
+    extraGroups = ["networkmanager" "wheel" "video"];
+    shell = pkgs.fish;
+  };
+
+  # Shell
+  programs.fish.enable = true;
+
   # Default Fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override {
@@ -79,7 +89,7 @@ in {
   zramSwap = {
     enable = true;
     algorithm = "zstd";
-    memoryPercent = 50;
+    memoryPercent = 75;
   };
 
   # Environment
