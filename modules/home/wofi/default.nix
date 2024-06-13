@@ -22,7 +22,7 @@
       style = ''
         * {
           all: unset;
-          font-family: "FiraCode Nerd Font";
+          font-family: "LiterationMono Nerd Font";
           font-size: 14px;
         }
 
