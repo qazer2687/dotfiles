@@ -86,13 +86,16 @@ in {
 
   # Zram
   zramSwap = {
-    enable = true;
+    enable = false;
     algorithm = "zstd";
-    memoryPercent = 75;
+    memoryPercent = 25;
   };
 
+  # Systemd
+  systemd.coredump.enable = false;
+
   # Environment
-  programs.direnv.enable = true;
+  programs.direnv.enable = true; 
   environment = {
     defaultPackages = lib.mkForce [];
     sessionVariables = {
