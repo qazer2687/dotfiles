@@ -53,8 +53,8 @@ in {
           "type:keyboard" = {
             xkb_layout = "gb";
             xkb_variant = "colemak";
-            xkb_options = "caps:ctrl_modifier";
-          };
+            xkb_options = "caps:ctrl_modifier"; # make capslock become ctrl for emacs
+          }; 
         };
 
         # Bar
