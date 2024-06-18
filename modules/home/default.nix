@@ -17,5 +17,6 @@
     ./keyring
     ./polybar
     ./dunst
+    ./emacs
   ];
 }
