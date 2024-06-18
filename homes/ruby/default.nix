@@ -25,6 +25,7 @@
 
     # Development
     vscode.enable = true;
+    emacs.enable = true;
   };
 
   home.stateVersion = "23.05";
