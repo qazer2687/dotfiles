@@ -53,7 +53,7 @@ in {
           "type:keyboard" = {
             xkb_layout = "gb";
             xkb_variant = "colemak";
-            xkb_options = "caps:ctrl_modifier, ctrl:none";
+            xkb_options = "caps:ctrl_modifier,ctrl:none";
           }; 
         };
 
