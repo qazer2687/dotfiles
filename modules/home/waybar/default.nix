@@ -27,7 +27,7 @@
           margin = "8 8 0 8";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["memory" "pulseaudio" "disk" "backlight" "network" "battery"];
+          modules-right = ["pulseaudio" "network" "battery"];
 
           # Pulseaudio
           pulseaudio = {
@@ -59,7 +59,7 @@
             states = {
               critical = 25;
             };
-            interval = 2;
+            interval = 5;
           };
 
           # Workspaces
@@ -100,7 +100,7 @@
             format-disconnected = "";
             format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
-            interval = 2;
+            interval = 5;
           };
 
           # Memory
@@ -152,6 +152,7 @@
 
         window#waybar {
           background-color: #000000;
+          height: 30px
         }
 
         #workspaces {
