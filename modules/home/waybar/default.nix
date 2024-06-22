@@ -24,7 +24,7 @@
       settings = [
         {
           layer = "top";
-          margin = "8 8 0 8";
+          margin = "4 4 0 4";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
           modules-right = ["pulseaudio" "network" "battery"];
@@ -143,9 +143,9 @@
       style = ''
         * {
           font-family: LiterationMono Nerd Font;
-          font-size: 14px;
+          font-size: 12px;
           background-color: transparent;
-          border-radius: 5px;
+          border-radius: 4px;
           margin-left: 2px;
           margin-right: 2px;
         }
@@ -166,7 +166,7 @@
           margin-bottom: 4px;/* Adjust margin to halfway */
           margin-left: 3px;
           margin-right: 3px;
-          border-radius: 5px;
+          border-radius: 4px;
           background-color: #262626;
           color: #ffffff;
         }
@@ -194,7 +194,7 @@
         #disk,
         #mpris,
         #tray {
-          border-radius: 5px;
+          border-radius: 4px;
           margin-top: 4px;   /* Adjust margin to halfway */
           margin-bottom: 4px;/* Adjust margin to halfway */
           margin-left: 3px;
@@ -231,7 +231,7 @@
         }
 
         tooltip {
-          border-radius: 8px;
+          border-radius: 4px;
           padding: 10px; /* Adjust padding to halfway */
           background-color: #131822;
         }
