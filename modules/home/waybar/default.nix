@@ -48,7 +48,7 @@
 
           # Battery
           battery = {
-            format = "{icon}";
+            format = " "; # {icon}
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             full-at = 95;
             format-full = "󱟢";
@@ -207,6 +207,7 @@
         #battery {
           background-color: #ffffff;
           color: #000000;
+          padding: 4px 14px;
         }
 
         #battery.warning,
