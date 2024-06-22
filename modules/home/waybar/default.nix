@@ -152,7 +152,6 @@
 
         window#waybar {
           background-color: #000000;
-          height: 30px;
         }
 
         #workspaces {
@@ -162,9 +161,9 @@
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-          padding: 6px 18px;
-          margin-top: 6px;
-          margin-bottom: 6px;
+          padding: 2px 10px; /* Adjust padding to decrease height */
+          margin-top: 2px;    /* Adjust margin to decrease height */
+          margin-bottom: 2px; /* Adjust margin to decrease height */
           margin-left: 3px;
           margin-right: 3px;
           border-radius: 5px;
@@ -196,11 +195,11 @@
         #mpris,
         #tray {
           border-radius: 5px;
-          margin-top: 6px;
-          margin-bottom: 6px;
+          margin-top: 2px;    /* Adjust margin to decrease height */
+          margin-bottom: 2px; /* Adjust margin to decrease height */
           margin-left: 3px;
           margin-right: 3px;
-          padding: 6px 12px;
+          padding: 2px 8px; /* Adjust padding to decrease height */
           background-color: #050505;
           color: #ffffff;
         }
@@ -228,17 +227,17 @@
         }
 
         #network {
-          padding-right: 17px;
+          padding-right: 10px;
         }
 
         tooltip {
           border-radius: 8px;
-          padding: 15px;
+          padding: 5px;
           background-color: #131822;
         }
 
         tooltip label {
-          padding: 5px;
+          padding: 3px;
           background-color: #131822;
         }
       '';
