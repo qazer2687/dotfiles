@@ -142,13 +142,12 @@
 
       style = ''
         * {
-          font-family: LiterationMono Nerd Font;
+          font-family: FiraCode Mono Nerd Font;
           font-size: 12px;
           background-color: transparent;
           border-radius: 4px;
           margin-left: 2px;
           margin-right: 2px;
-          align-items: center;
         }
 
         window#waybar {
