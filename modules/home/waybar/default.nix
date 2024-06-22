@@ -51,8 +51,8 @@
             format = " "; # {icon}
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             full-at = 95;
-            format-full = "󱟢";
-            format-charging = "󰂄";
+            format-full = " ";
+            format-charging = " ";
             tooltip = true;
             tooltip-format = "{capacity}%";
 
