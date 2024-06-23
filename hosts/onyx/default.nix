@@ -3,7 +3,7 @@
     ../../modules/nixos-darwin
   ];
 
-  nixpkgs.config.allowUnfree = mkDefault true;
+  nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
     experimental-features = mkDefault [
