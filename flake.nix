@@ -14,7 +14,7 @@
     sops-nix,
     nixvim,
     nur,
-    nix-darwin,
+    darwin,
     ...
   } @ inputs: {
     # Desktop Configuration
