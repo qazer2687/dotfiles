@@ -26,6 +26,7 @@
 
     # Development
     vscode.enable = true;
+    emacs.enable = true;
 
     # Gaming
     prismlauncher.enable = true;

@@ -25,8 +25,6 @@
       gtk3.extraConfig = {gtk-application-prefer-dark-theme = 1;};
       gtk4.extraConfig = {gtk-application-prefer-dark-theme = 1;};
     };
-    # i have no idea if this does anything
-    systemd.user.sessionVariables = config.home.sessionVariables;
     qt = {
       enable = true;
       platformTheme.name = "adwaita";
