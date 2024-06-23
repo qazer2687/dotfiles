@@ -142,10 +142,10 @@
 
       style = ''
         * {
-          font-family: FiraCode Mono Nerd Font;
-          font-size: 12px;
+          font-family: LiterationMono Nerd Font;
+          font-size: 14px;
           background-color: transparent;
-          border-radius: 4px;
+          border-radius: 5px;
           margin-left: 2px;
           margin-right: 2px;
         }
@@ -161,12 +161,12 @@
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-          padding: 4px 14px; /* Adjust padding to halfway */
-          margin-top: 4px;   /* Adjust margin to halfway */
-          margin-bottom: 4px;/* Adjust margin to halfway */
+          padding: 6px 18px;
+          margin-top: 6px;
+          margin-bottom: 6px;
           margin-left: 3px;
           margin-right: 3px;
-          border-radius: 4px;
+          border-radius: 5px;
           background-color: #262626;
           color: #ffffff;
         }
@@ -194,12 +194,12 @@
         #disk,
         #mpris,
         #tray {
-          border-radius: 4px;
-          margin-top: 4px;   /* Adjust margin to halfway */
-          margin-bottom: 4px;/* Adjust margin to halfway */
+          border-radius: 5px;
+          margin-top: 6px;
+          margin-bottom: 6px;
           margin-left: 3px;
           margin-right: 3px;
-          padding: 4px 10px; /* Adjust padding to halfway */
+          padding: 6px 12px;
           background-color: #050505;
           color: #ffffff;
         }
@@ -207,7 +207,6 @@
         #battery {
           background-color: #ffffff;
           color: #000000;
-          padding: 4px 14px;
         }
 
         #battery.warning,
@@ -228,17 +227,17 @@
         }
 
         #network {
-          padding-right: 14px; /* Adjust padding to halfway */
+          padding-right: 17px;
         }
 
         tooltip {
-          border-radius: 4px;
-          padding: 10px; /* Adjust padding to halfway */
+          border-radius: 8px;
+          padding: 15px;
           background-color: #131822;
         }
 
         tooltip label {
-          padding: 4px; /* Adjust padding to halfway */
+          padding: 5px;
           background-color: #131822;
         }
       '';
