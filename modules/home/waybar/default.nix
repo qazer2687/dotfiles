@@ -24,10 +24,10 @@
       settings = [
         {
           layer = "top";
-          margin = "8 8 0 8";
+          margin = "4 4 0 4";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["memory" "pulseaudio" "disk" "backlight" "network" "battery"];
+          modules-right = ["network" "pulseaudio" "battery"];
 
           # Pulseaudio
           pulseaudio = {
@@ -48,18 +48,18 @@
 
           # Battery
           battery = {
-            format = "{icon}";
+            format = "{icon}"; # {icon}
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             full-at = 95;
-            format-full = "󱟢";
-            format-charging = "󰂄";
+            format-full = "󰁹";
+            format-charging = "󰁹";
             tooltip = true;
             tooltip-format = "{capacity}%";
 
             states = {
               critical = 25;
             };
-            interval = 2;
+            interval = 5;
           };
 
           # Workspaces
@@ -96,11 +96,11 @@
           # Network
           network = {
             tooltip = false;
-            format-wifi = ""; # 󱐋 {frequency}
+            format-wifi = "{ipaddr}"; # 󱐋 {frequency}
             format-disconnected = "";
             format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
-            interval = 2;
+            interval = 5;
           };
 
           # Memory
@@ -142,7 +142,7 @@
 
       style = ''
         * {
-          font-family: LiterationMono Nerd Font;
+          font-family: FiraCode Mono Nerd Font;
           font-size: 14px;
           background-color: transparent;
           border-radius: 5px;
@@ -200,13 +200,13 @@
           margin-left: 3px;
           margin-right: 3px;
           padding: 6px 12px;
-          background-color: #050505;
+          background-color: #000000;
           color: #ffffff;
         }
 
         #battery {
-          background-color: #ffffff;
-          color: #000000;
+          background-color: #000000;
+          color: #ffffff;
         }
 
         #battery.warning,
@@ -214,11 +214,6 @@
         #battery.urgent {
           background-color: #cc0000;
           color: #000000;
-          animation-name: blink;
-          animation-duration: 0.5s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
         }
 
         #battery.charging {
