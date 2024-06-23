@@ -6,14 +6,14 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
-    experimental-features = mkDefault [
+    experimental-features = [
       "nix-command"
       "flakes"
     ];
-    keep-derivations = mkDefault true;
-    keep-outputs = mkDefault true;
-    auto-optimise-store = mkDefault true;
-    sandbox = mkDefault true;
+    keep-derivations = true;
+    keep-outputs = true;
+    auto-optimise-store = true;
+    sandbox = true;
   };
 
   system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
