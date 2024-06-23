@@ -205,7 +205,7 @@
         }
 
         #battery {
-          background-color: #00000;
+          background-color: #000000;
           color: #ffffff;
         }
 
