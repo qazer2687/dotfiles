@@ -3,7 +3,19 @@
     ../../modules/nixos-darwin
   ];
 
-  # Defaults
+  nixpkgs.config.allowUnfree = mkDefault true;
+
+  nix.settings = {
+    experimental-features = mkDefault [
+      "nix-command"
+      "flakes"
+    ];
+    keep-derivations = mkDefault true;
+    keep-outputs = mkDefault true;
+    auto-optimise-store = mkDefault true;
+    sandbox = mkDefault true;
+  };
+
   system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
   system.defaults.NSGlobalDomain._HIHideMenuBar = true;
   system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
