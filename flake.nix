@@ -98,7 +98,7 @@
   };
 
   darwinConfigurations = {
-    onyx = inputs.nix-darwin.lib.darwinSystem {
+    onyx = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
       specialArgs = { inherit inputs; };
