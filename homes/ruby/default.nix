@@ -13,14 +13,17 @@
 
   modules = {
     # Environment
-    sway.enable = true;
-    waybar.enable = true;
+
+#### temp
+    edge.enable = true;
+#    sway.enable = true;
+#    waybar.enable = true;
     foot.enable = true;
-    mako.enable = true;
-    wofi.enable = true;
+#    mako.enable = true;
+#    wofi.enable = true;
     git.enable = true;
     dark.enable = true;
-    firefox.enable = true;
+#    firefox.enable = true;
     fish.enable = true;
 
     # Development
