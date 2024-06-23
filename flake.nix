@@ -5,7 +5,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     nur.url = "github:nix-community/NUR";
     nixvim.url = "github:nix-community/nixvim";
-    darwin.url = "github:lnl7/nix-darwin/master"; 
+    darwin.url = "github:lnl7/nix-darwin/master";
   };
 
   outputs = {
