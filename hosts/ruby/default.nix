@@ -31,7 +31,7 @@
     pipewire.enable = true;
     systemd-boot.enable = true;
     bluetooth.enable = true;
-    tlp.enable = true;
+    #tlp.enable = true;
     filesystem.enable = true;
   };
 
