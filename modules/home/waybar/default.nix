@@ -48,11 +48,11 @@
 
           # Battery
           battery = {
-            format = "  "; # {icon}
+            format = "{icon}"; # {icon}
             format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             full-at = 95;
-            format-full = "  ";
-            format-charging = "  ";
+            format-full = "󰁹";
+            format-charging = "󰁹";
             tooltip = true;
             tooltip-format = "{capacity}%";
 
@@ -143,7 +143,7 @@
       style = ''
         * {
           font-family: Atkinson Hyperlegible;
-          font-size: 14px;
+          font-size: 16px;
           background-color: transparent;
           border-radius: 5px;
           margin-left: 2px;
@@ -205,8 +205,8 @@
         }
 
         #battery {
-          background-color: #ffffff;
-          color: #000000;
+          background-color: #00000;
+          color: #ffffff;
         }
 
         #battery.warning,
