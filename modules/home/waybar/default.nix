@@ -142,7 +142,7 @@
 
       style = ''
         * {
-          font-family: LiterationMono Nerd Font;
+          font-family: Atkinson Hyperlegible;
           font-size: 14px;
           background-color: transparent;
           border-radius: 5px;
@@ -200,7 +200,7 @@
           margin-left: 3px;
           margin-right: 3px;
           padding: 6px 12px;
-          background-color: #050505;
+          background-color: #000000;
           color: #ffffff;
         }
 
@@ -214,11 +214,6 @@
         #battery.urgent {
           background-color: #cc0000;
           color: #000000;
-          animation-name: blink;
-          animation-duration: 0.5s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
         }
 
         #battery.charging {
