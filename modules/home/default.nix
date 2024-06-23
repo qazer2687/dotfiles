@@ -18,5 +18,6 @@
     ./polybar
     ./dunst
     ./emacs
+    ./edge
   ];
 }
