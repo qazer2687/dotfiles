@@ -27,7 +27,7 @@
           margin = "4 4 0 4";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["pulseaudio" "network" "battery"];
+          modules-right = ["network" "pulseaudio" "battery"];
 
           # Pulseaudio
           pulseaudio = {
@@ -96,7 +96,7 @@
           # Network
           network = {
             tooltip = false;
-            format-wifi = ""; # 󱐋 {frequency}
+            format-wifi = "{ipaddr}"; # 󱐋 {frequency}
             format-disconnected = "";
             format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
