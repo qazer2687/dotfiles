@@ -3,6 +3,12 @@
     ../../modules/nixos-darwin
   ];
 
+  networking = let name = "onyx"; in {
+    computerName = name;
+    hostName = name;
+    localHostName = name;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
@@ -17,7 +23,7 @@
   };
 
   system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
-  system.defaults.NSGlobalDomain._HIHideMenuBar = true;
+  #system.defaults.NSGlobalDomain._HIHideMenuBar = true;
   system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
   system.defaults.dock.autohide = true;
   system.defaults.dock.mru-spaces = false;
@@ -25,9 +31,13 @@
 
   services.nix-daemon.enable = true;
 
+  programs.fish.enable = true;
+
   environment.systemPackages = with pkgs; [
     coreutils
     git
+    vscodium
+    alacritty
   ];
 
   modules = {
