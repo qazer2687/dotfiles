@@ -5,6 +5,7 @@
   ];
 
   networking.hostName = "ruby";
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   environment.etc = {
     issue = {
