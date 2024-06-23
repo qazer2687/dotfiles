@@ -5,7 +5,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     nur.url = "github:nix-community/NUR";
     nixvim.url = "github:nix-community/nixvim";
-    darwin.url = "github:lnl7/nix-darwin/master";
+    nix-darwin.url = "github:lnl7/nix-darwin/master";
   };
 
   outputs = {
@@ -14,7 +14,7 @@
     sops-nix,
     nixvim,
     nur,
-    darwin,
+    nix-darwin,
     ...
   } @ inputs: {
     # Desktop Configuration
@@ -98,7 +98,7 @@
   };
 
   darwinConfigurations = {
-    onyx = inputs.darwin.lib.darwinSystem {
+    onyx = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
       specialArgs = { inherit inputs; };
