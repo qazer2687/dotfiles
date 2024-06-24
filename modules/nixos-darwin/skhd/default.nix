@@ -22,6 +22,8 @@
         cmd + shift - up : yabai -m window --swap north
         cmd + shift - down : yabai -m window --swap south
 
+        cmd + q : yabai -m window --close
+
         cmd - 1 : yabai -m space --focus 1
         cmd - 2 : yabai -m space --focus 2
         cmd - 3 : yabai -m space --focus 3
@@ -42,7 +44,7 @@
         cmd + shift - 7 : yabai -m window --space 7; yabai -m space --focus 7
         cmd + shift - 8 : yabai -m window --space 8; yabai -m space --focus 8
         cmd + shift - 9 : yabai -m window --space 9; yabai -m space --focus 9
-        cmd + shift - 0 : yabai -m window --space 10; yabai -m space --focus 10u
+        cmd + shift - 0 : yabai -m window --space 10; yabai -m space --focus 10
       '';
     };
   };
