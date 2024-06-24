@@ -25,8 +25,8 @@
         background_color = "0xff000000";
         foreground_color = "0xffffff";
         space_icon_color = "0xffffff";
-        space_icon_color_secondary = "0xff555555";
-        space_icon_color_tertiary = "0xff555555";
+        space_icon_color_secondary = "0xffffffff";
+        space_icon_color_tertiary = "0xffffffff";
         space_icon_strip = "1 2 3 4 5 6 7 8 9 10";
         spaces_for_all_displays = "on";
         clock_icon = "";
