@@ -35,6 +35,13 @@
   system.defaults.dock.mru-spaces = false;
   system.defaults.finder.ShowStatusBar = false;
 
+  /*
+  system.defaults.dock = {
+    autohide = true;
+    autohide-delay = 1000;
+  };
+  */
+  
   services.nix-daemon.enable = true;
 
   ## requires manual chsh
