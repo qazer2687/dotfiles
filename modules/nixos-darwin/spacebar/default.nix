@@ -22,8 +22,8 @@
           padding_right = 20;
           spacing_left = 25;
           spacing_right = 15;
-          text_font = "FiraCode Mono Nerd Font:Regular:16.0";
-          icon_font = "FiraCode Mono Nerd Font:Solid:1.0";
+          text_font = "FiraCode Mono Nerd Font:16.0";
+          icon_font = "FiraCode Mono Nerd Font:16.0";
           background_color = "0xff000000";
           foreground_color = "0xff888888";
           power_icon_color = "0xffcd950c";
