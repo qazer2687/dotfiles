@@ -33,11 +33,6 @@
         focus_follows_mouse = "autofocus";
         mouse_follows_focus = "on";
 
-        window_topmost = "on";
-        window_shadow = "float";
-        window_placement = "second_child";
-        window_border = "off";
-
         auto_balance = "on";
         split_ratio = 0.5;
       };
