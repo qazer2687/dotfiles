@@ -14,7 +14,7 @@
           position = "top";
           display = "main";
           height = 38;
-          title = "on";
+          title = "off";
           spaces = "on";
           clock = "on";
           power = "on";
@@ -37,8 +37,6 @@
           space_icon_color_tertiary = "0xfffff9b0";
           space_icon_strip = "1 2 3 4 5 6 7 8 9 10";
           spaces_for_all_displays = "on";
-          clock_icon = "";
-          dnd_icon = "";
           clock_format = "%H:%m";
       };
     };
