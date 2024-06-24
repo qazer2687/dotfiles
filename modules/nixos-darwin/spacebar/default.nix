@@ -30,7 +30,7 @@
           battery_icon_color = "0xffd75f5f";
           dnd_icon_color = "0xffa8a8a8";
           clock_icon_color = "0xffa8a8a8";
-          clock_icon = "🕰";
+          clock_icon = "⠀";
           power_icon_strip = "";
           space_icon = "";
           space_icon_color = "0xffffffff";
