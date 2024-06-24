@@ -17,7 +17,7 @@
 
         # Setting up the general bar appearance of the bar
         bar=(
-          height=45
+          height=38
           color="$TRANSPARENT"
           border_width=2
           border_color="$TRANSPARENT"
@@ -30,8 +30,7 @@
           margin=-2
           topmost=window
         )
-
-        sketchybar --bar "''${bar[''@]}"
+        sketchybar --bar "${bar[@]}"
 
         # Setting up default values
         defaults=(
