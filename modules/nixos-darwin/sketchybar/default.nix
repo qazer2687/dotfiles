@@ -31,7 +31,7 @@
           topmost=window
         )
 
-        sketchybar --bar "''${bar[@]}"
+        sketchybar --bar "''${bar[''@]}"
 
         # Setting up default values
         defaults=(
