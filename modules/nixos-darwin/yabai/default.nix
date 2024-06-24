@@ -17,7 +17,7 @@
         external_bar = "all:26:0";
 
         ## make menu bar invisible
-        menubar_opacity 0.0
+        menubar_opacity = 0.0;
 
         window_topmost = "off";
         window_shadow = "off";
