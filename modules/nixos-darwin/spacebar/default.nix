@@ -13,7 +13,7 @@
       config = {
           position = "top";
           display = "main";
-          height = 38;
+          height = 32;
           title = "off";
           spaces = "on";
           clock = "on";
