@@ -22,7 +22,7 @@
         window_topmost = "off";
         window_shadow = "off";
         window_border = "off";
-        title = "on";
+        title = "off";
         title_font_size = 0;
 
         mouse_modifier = "cmd";
