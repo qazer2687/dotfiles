@@ -39,7 +39,7 @@
           spaces_for_all_displays = "on";
           clock_icon = "";
           dnd_icon = "";
-          clock_format = "%HH:%mm";
+          clock_format = "%H:%m";
       };
     };
   };
