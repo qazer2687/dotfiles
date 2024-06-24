@@ -10,7 +10,7 @@
     services.skhd = {
       enable = true;
       skhdConfig = ''
-        cmd - return : /run/current-system/sw/bin/alacritty
+        cmd - return : alacritty
 
         cmd - left : yabai -m window --focus west
         cmd - right : yabai -m window --focus east
