@@ -22,7 +22,7 @@
           padding_right = 20;
           spacing_left = 25;
           spacing_right = 15;
-          text_font = "FiraCode Mono Nerd Font:16.0";
+          text_font = "FiraCode Mono Nerd Font:30.0";
           icon_font = "FiraCode Mono Nerd Font:16.0";
           background_color = "0xff000000";
           foreground_color = "0xff888888";
