@@ -12,6 +12,10 @@
       package = pkgs.yabai;
       enableScriptingAddition = true;
       config = {
+
+        ## leave space for spacebar
+        external_bar = "all:26:0";
+
         window_topmost = "off";
         window_shadow = "off";
         window_border = "off";
