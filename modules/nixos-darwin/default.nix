@@ -3,5 +3,6 @@
     ./skhd
     ./yabai
     ./spacebar
+    ./sketchybar
   ];
 }
