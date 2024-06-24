@@ -9,6 +9,7 @@
   config = lib.mkIf config.modules.spacebar.enable {
     services.spacebar = {
       enable = true;
+      package = pkgs.spacebar;
       config = {
         position = "top";
         display = "main";
