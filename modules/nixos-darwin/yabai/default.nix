@@ -13,8 +13,8 @@
       enableScriptingAddition = true;
       config = {
 
-        ## leave space for spacebar
-        external_bar = "all:26:0";
+        ## leave space for spacebar (not needed)
+        ##external_bar = "all:26:0";
 
         ## make menu bar invisible
         menubar_opacity = 0.0;
