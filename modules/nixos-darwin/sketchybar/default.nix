@@ -10,7 +10,7 @@
     services.sketchybar = {
       enable = true;
       package = pkgs.sketchybar;
-      config = builtins.readFile .config/default.nix;
+      config = builtins.readFile ./config/default.nix;
     };
   };
 }
