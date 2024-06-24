@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.modules.yabai.enable = lib.mkEnableOption "";
+  options.modules.spacebar.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.yabai.enable {
+  config = lib.mkIf config.modules.spacebar.enable {
     services.spacebar = {
       enable = true;
       config = {
