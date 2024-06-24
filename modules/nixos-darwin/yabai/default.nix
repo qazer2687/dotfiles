@@ -12,7 +12,11 @@
       package = pkgs.yabai;
       enableScriptingAddition = true;
       config = {
-        external_bar = "main:32:0";
+        window_topmost = "off";
+        window_shadow = "off";
+        window_border = "off";
+        title = "on";
+        title_font_size = 0;
 
         mouse_modifier = "cmd";
         mouse_action1 = "move";

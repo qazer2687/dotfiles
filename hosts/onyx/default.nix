@@ -31,8 +31,10 @@
 
   services.nix-daemon.enable = true;
 
+  ## requires manual chsh
   programs.fish.enable = true;
-  environment.systemPath = [ /run/current-system/sw/bin ];
+
+ security.pam.enableSudoTouchIdAuth = true;
 
   environment.systemPackages = with pkgs; [
     coreutils
