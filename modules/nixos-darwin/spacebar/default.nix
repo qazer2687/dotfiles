@@ -29,6 +29,7 @@
         space_icon_color_tertiary = "0xff555555";
         space_icon_strip = "1 2 3 4 5 6 7 8 9 10";
         spaces_for_all_displays = "on";
+        clock_icon = "";
         clock_format = "%HH:%mm";
       };
     };
