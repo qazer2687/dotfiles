@@ -59,8 +59,8 @@
   modules = {
     skhd.enable = true;
     yabai.enable = true;
-    #spacebar.enable = true;
-    sketchybar.enable = true;
+    spacebar.enable = true;
+    #sketchybar.enable = true;
   };
 
   system.stateVersion = 4;
