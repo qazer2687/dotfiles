@@ -22,8 +22,6 @@
         cmd + shift - up : yabai -m window --swap north
         cmd + shift - down : yabai -m window --swap south
 
-        cmd + q : yabai -m window --close
-
         cmd - 1 : yabai -m space --focus 1
         cmd - 2 : yabai -m space --focus 2
         cmd - 3 : yabai -m space --focus 3
