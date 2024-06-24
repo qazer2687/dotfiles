@@ -9,6 +9,12 @@
     localHostName = name;
   };
 
+  users.users.alex = {
+    name = "alex";
+    home = "/Users/alex";
+    shell = pkgs.fish;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
@@ -34,7 +40,7 @@
   ## requires manual chsh
   programs.fish.enable = true;
 
- security.pam.enableSudoTouchIdAuth = true;
+  security.pam.enableSudoTouchIdAuth = true;
 
   environment.systemPackages = with pkgs; [
     coreutils
