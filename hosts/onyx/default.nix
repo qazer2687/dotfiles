@@ -32,6 +32,7 @@
   services.nix-daemon.enable = true;
 
   programs.fish.enable = true;
+  environment.systemPath = [ /run/current-system/sw/bin ];
 
   environment.systemPackages = with pkgs; [
     coreutils
