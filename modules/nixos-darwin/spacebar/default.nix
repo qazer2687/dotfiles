@@ -31,7 +31,6 @@
           dnd_icon_color = "0xffa8a8a8";
           clock_icon_color = "0xffa8a8a8";
           power_icon_strip = "";
-          space_icon = "•";
           space_icon_color = "0xffffab91";
           space_icon_color_secondary = "0xff78c4d4";
           space_icon_color_tertiary = "0xfffff9b0";
