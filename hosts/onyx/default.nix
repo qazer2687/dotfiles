@@ -39,8 +39,6 @@
 
   ## requires manual chsh
   programs.fish.enable = true;
-  ## add fish to /etc/shells
-  environment.shells = with pkgs; [ fish ];
 
   security.pam.enableSudoTouchIdAuth = true;
 
