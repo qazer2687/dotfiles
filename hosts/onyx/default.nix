@@ -63,5 +63,19 @@
     #sketchybar.enable = true;
   };
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "FiraMono"
+        "Iosevka"
+        "LiberationMono"
+      ];
+    })
+    atkinson-hyperlegible
+    noto-fonts-color-emoji
+    noto-fonts-cjk-sans
+  ];
+
   system.stateVersion = 4;
 }
