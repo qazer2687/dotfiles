@@ -11,6 +11,7 @@
       enable = true;
       package = pkgs.sketchybar;
       config = ''
+        #!/bin/bash
         FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
         PADDINGS=3    # All paddings use this value (icon, label, background)
 
@@ -30,7 +31,7 @@
           topmost=window
         )
 
-        sketchybar --bar "${bar[@]}"
+        sketchybar --bar "''${bar[@]}"
 
         # Setting up default values
         defaults=(
