@@ -30,8 +30,7 @@
           margin=-2
           topmost=window
         )
-        #sketchybar --bar "${bar[@]}"
-
+        
         # Setting up default values
         defaults=(
           updates=when_shown
