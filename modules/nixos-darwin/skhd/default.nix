@@ -10,7 +10,7 @@
     services.skhd = {
       enable = true;
       skhdConfig = ''
-        cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty --working-directory ~
+        cmd - return : /run/current-system/sw/bin/alacritty --working-directory ~
 
         cmd - left : yabai -m window --focus west
         cmd - right : yabai -m window --focus east
