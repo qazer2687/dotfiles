@@ -2,5 +2,6 @@
   imports = [
     ./skhd
     ./yabai
+    ./spacebar
   ];
 }
