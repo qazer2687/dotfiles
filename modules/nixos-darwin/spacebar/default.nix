@@ -40,9 +40,6 @@
           clock_icon = "";
           dnd_icon = "";
           clock_format = "%d/%m/%y %R";
-          right_shell = "on";
-          right_shell_icon = "";
-          right_shell_command = "whoami";
       };
     };
   };
