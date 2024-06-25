@@ -37,8 +37,8 @@
   system.defaults.dock = {
     autohide = true;
     autohide-delay = 1000.0;
+  };
 
-  
   services.nix-daemon.enable = true;
 
   ## requires manual chsh
