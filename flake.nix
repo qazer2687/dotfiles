@@ -77,6 +77,26 @@
       };
     };
 
+    darwinConfigurations = {
+      onyx = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/onyx
+          home-manager.darwinModules.home-manager
+          {
+            home.manager {
+              users.alex = ./homes/onyx;
+              extraSpecialArgs = {inherit inputs;};
+              useGlobalPkgs = true;
+              useUserPackages = true;
+            }
+          }
+        ];
+      };
+    };
+
     nixosConfigurations = {
       opal = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -89,17 +109,6 @@
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
           }
           sops-nix.nixosModules.sops
-        ];
-      };
-    };
-
-    darwinConfigurations = {
-      onyx = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/onyx
         ];
       };
     };

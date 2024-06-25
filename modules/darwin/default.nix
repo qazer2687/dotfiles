@@ -4,5 +4,7 @@
     ./yabai
     ./spacebar
     ./sketchybar
+    ./fish
+    ./homebrew
   ];
 }

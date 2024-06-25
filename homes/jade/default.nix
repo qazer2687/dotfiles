@@ -12,6 +12,105 @@
     vlc
   ];
 
+  homebrew = {
+    enable = true;
+    onActivation = {
+      autoUpdate = true;
+      upgrade = true;
+      cleanup = "zap";
+    };
+
+    taps = [
+      "kadena-io/pact"
+    ];
+    brews = [
+      "openssl"
+      "kadena-io/pact/pact"
+      "z3"
+    ];
+
+    casks = [
+      "docker"
+      "drivedx"
+      { name = "firefox"; greedy = true; }
+      "hazel"
+      "iterm2"
+      "keyboard-maestro"
+      "launchbar"
+      "ollama"
+      "vmware-fusion"
+      "wireshark"
+    ] ++ lib.optionals (hostname != "athena") [
+      "1password"
+      "1password-cli"
+      "anki"
+      { name = "arc"; greedy = true; }
+      "asana"
+      "audacity"
+      "backblaze"
+      "backblaze-downloader"
+      { name = "brave-browser"; greedy = true; }
+      "carbon-copy-cloner"
+      "choosy"
+      # "datagraph"                 # Use DataGraph in App Store
+      "dbvisualizer"
+      "devonagent"
+      "devonthink"
+      "discord"
+      "element"
+      "expandrive"
+      "fantastical"
+      "gpg-suite"
+      "grammarly-desktop"
+      "lectrote"
+      # "macwhisper"                # Use Whisper Transcription in AppStore
+      # "marked"                    # Use Marked 2 in AppStore
+      "mellel"
+      "netdownloadhelpercoapp"
+      "notion"
+      # "omnigraffle"               # Stay at version 6
+      { name = "opera"; greedy = true; }
+      "pdf-expert"
+      "sage"
+      # "screenflow"                # Stay at version 9
+      "signal"
+      "slack"
+      # "soulver"                   # Use Soulver 3 in App Store
+      "soulver-cli"
+      "steam"
+      "suspicious-package"
+      "tagspaces"
+      "telegram"
+      "thinkorswim"
+      "tor-browser"
+      "ukelele"
+      "unicodechecker"
+      "vagrant"
+      "vagrant-manager"
+      "vagrant-vmware-utility"
+      "virtual-ii"
+      "visual-studio-code"
+      { name = "vivaldi"; greedy = true; }
+      "vlc"
+      "whatsapp"
+      "xnviewmp"
+      "yubico-yubikey-manager"
+      { name = "zoom"; greedy = true; }
+      "zotero"
+      "zulip"
+    ] ++ lib.optionals (hostname == "athena") [
+      "openzfs"
+    ] ++ lib.optionals (hostname == "hermes") [
+      "chronoagent"
+    ] ++ lib.optionals (hostname == "vulcan") [
+      "fujitsu-scansnap-home"
+      "geektool"
+      "gzdoom"
+      "ledger-live"
+      "raspberry-pi-imager"
+      "chronosync"
+    ];
+
   modules = {
     # Environment
     i3.enable = true;

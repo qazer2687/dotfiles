@@ -22,7 +22,7 @@
           padding_right = 20;
           spacing_left = 25;
           spacing_right = 15;
-          text_font = "FiraCode Mono Nerd Font:Regular:30";
+          text_font = "FiraCode Mono Nerd Font:Regular:30"; # font size doesn't work
           status_bar_text_font = "FiraCode Mono Nerd Font:Regular:30";
           icon_font = "FiraCode Mono Nerd Font:Regular:30";
           background_color = "0xff000000";
@@ -31,7 +31,7 @@
           battery_icon_color = "0xffd75f5f";
           dnd_icon_color = "0xffa8a8a8";
           clock_icon_color = "0xffa8a8a8";
-          clock_icon = "⠀";
+          clock_icon = "⠀"; # blank character to hide clock icon
           power_icon_strip = "";
           space_icon = "";
           space_icon_color = "0xffffffff";

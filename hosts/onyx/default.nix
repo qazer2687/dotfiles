@@ -1,6 +1,11 @@
-{config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
-    ../../modules/nixos-darwin
+    ../../modules/darwin
   ];
 
   networking = let name = "onyx"; in {
@@ -46,6 +51,7 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
+  # Packages
   environment.systemPackages = with pkgs; [
     coreutils
     git
@@ -53,13 +59,18 @@
     alacritty
   ];
 
+  # Modules
   modules = {
+    # Environment
     skhd.enable = true;
     yabai.enable = true;
-    #spacebar.enable = true;
-    #sketchybar.enable = true;
+    fish.enable = true;
+
+    # Homebrew
+    homebrew.enable = true;
   };
 
+  # Fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override {
       fonts = [
@@ -74,5 +85,6 @@
     noto-fonts-cjk-sans
   ];
 
+  # State Version
   system.stateVersion = 4;
 }
