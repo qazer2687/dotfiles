@@ -31,7 +31,6 @@
   system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
   system.defaults.NSGlobalDomain._HIHideMenuBar = false;
   system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
-  system.defaults.dock.autohide = true;
   system.defaults.dock.mru-spaces = false;
   system.defaults.finder.ShowStatusBar = false;
 
