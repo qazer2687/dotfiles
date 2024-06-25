@@ -17,7 +17,6 @@
     darwin,
     ...
   } @ inputs: {
-    # Desktop Configuration
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -48,7 +47,6 @@
       };
     };
 
-    # Laptop Configuration
     nixosConfigurations = {
       ruby = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -79,7 +77,6 @@
       };
     };
 
-    # Server Configuration
     nixosConfigurations = {
       opal = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -96,7 +93,6 @@
       };
     };
 
-    # Macbook Configuration
     darwinConfigurations = {
       onyx = darwin.lib.darwinSystem {
         system = "aarch64-darwin";

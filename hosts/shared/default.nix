@@ -4,15 +4,20 @@
   config,
   ...
 }: let
-  inherit (lib) mkDefault;
+  inherit (lib) mkDefault; 
 
-  # Custom Bash Aliases
   aliases = {
     "check" = "alejandra -q **/* && deadnix -e && statix fix";
+    <if x86_64>
     "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
-    "rebuildl" = "sudo nixos-rebuild switch --flake .#$(hostname)";
+    <if aarch64>
+    "rebuild" = "darwin-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
   };
 in {
+  programs.bash = {
+    shellAliases = aliases;
+  };
+
   nixpkgs.config.allowUnfree = mkDefault true;
 
   nix.settings = {

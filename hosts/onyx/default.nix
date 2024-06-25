@@ -35,12 +35,11 @@
   system.defaults.dock.mru-spaces = false;
   system.defaults.finder.ShowStatusBar = false;
 
-  /*
   system.defaults.dock = {
     autohide = true;
     autohide-delay = 1000;
   };
-  */
+
   
   services.nix-daemon.enable = true;
 
@@ -59,7 +58,7 @@
   modules = {
     skhd.enable = true;
     yabai.enable = true;
-    spacebar.enable = true;
+    #spacebar.enable = true;
     #sketchybar.enable = true;
   };
 
