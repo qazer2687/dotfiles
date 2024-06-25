@@ -54,7 +54,7 @@ in {
             xkb_layout = "gb";
             xkb_variant = "colemak";
             xkb_options = "caps:ctrl_modifier,ctrl_modifier:none";
-          }; 
+          };
         };
 
         # Bar

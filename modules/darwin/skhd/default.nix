@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.modules.skhd.enable = lib.mkEnableOption "";
@@ -11,7 +10,7 @@
       enable = true;
       skhdConfig = ''
         cmd - return : alacritty
-        
+
         cmd - left : yabai -m window --swap west
         cmd - right : yabai -m window --swap east
         cmd - up : yabai -m window --swap north

@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }: {
@@ -8,7 +7,9 @@
     ../../modules/darwin
   ];
 
-  networking = let name = "onyx"; in {
+  networking = let
+    name = "onyx";
+  in {
     computerName = name;
     hostName = name;
     localHostName = name;

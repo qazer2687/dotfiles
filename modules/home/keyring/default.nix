@@ -14,8 +14,7 @@
       ];
     };
     home.packages = with pkgs; [
-        gnome.seahorse
+      gnome.seahorse
     ];
   };
 }
-
