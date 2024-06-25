@@ -13,11 +13,11 @@
     };
   };
 
-# environment.loginShellInit = ''
-#    [[ "$(tty)" == /dev/tty1 ]] && sway
-#  '';
+  # environment.loginShellInit = ''
+  #    [[ "$(tty)" == /dev/tty1 ]] && sway
+  #  '';
 
-##### temp
+  ##### temp
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;

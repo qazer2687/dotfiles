@@ -4,7 +4,7 @@
   config,
   ...
 }: let
-  inherit (lib) mkDefault; 
+  inherit (lib) mkDefault;
 
   aliases = {
     "check" = "alejandra -q **/* && deadnix -e && statix fix";
@@ -98,7 +98,7 @@ in {
   systemd.coredump.enable = false;
 
   # Environment
-  programs.direnv.enable = true; 
+  programs.direnv.enable = true;
   environment = {
     defaultPackages = lib.mkForce [];
     sessionVariables = {
