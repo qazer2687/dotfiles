@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ../../hardware/jade
     ../../modules/nixos
@@ -12,7 +12,7 @@
     enable = true;
     displayManager.startx.enable = true;
   };
-  
+
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && startx
   '';
