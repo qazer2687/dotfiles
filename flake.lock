@@ -464,8 +464,7 @@
         "nixpkgs": "nixpkgs_5",
         "nixvim": "nixvim",
         "nur": "nur",
-        "sops-nix": "sops-nix",
-        "tap": "tap"
+        "sops-nix": "sops-nix"
       }
     },
     "sops-nix": {
@@ -514,22 +513,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "tap": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1719418821,
-        "narHash": "sha256-sXwu/na2qKmCZcz/3YM3FUq5vOCcJ6vtvDEbJ6UZDKs=",
-        "owner": "qazer2687",
-        "repo": "tap",
-        "rev": "a91d2252cb043b89f967b8ba938808ae4090a39d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "qazer2687",
-        "repo": "tap",
         "type": "github"
       }
     },
