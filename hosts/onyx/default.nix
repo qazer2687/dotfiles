@@ -65,7 +65,7 @@
     yabai.enable = true;
     fish.enable = true;
 
-    # Homebrew
+    # Homebrew - Manages the majority of my packages.
     homebrew.enable = true;
   };
 
