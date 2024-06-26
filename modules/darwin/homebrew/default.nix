@@ -19,10 +19,19 @@
       ];
 
       casks = [
-        "zed"
+        "alacritty"
+        "firefox"
+        "vscodium"
+        "obsidian"
         "vlc"
-        "vanilla"
+        "hiddenbar" # to replace vanilla because it has a startup window
         "spaceid"
+
+        # custom
+        "qazer2687/tap/armcord"
+
+        # experimental
+        "zed"
       ];
     };
   };

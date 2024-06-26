@@ -7,6 +7,7 @@
     nixvim.url = "github:nix-community/nixvim";
     darwin.url = "github:lnl7/nix-darwin/master";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    tap.url = "github:qazer2687/tap";
   };
 
   outputs = {
@@ -102,6 +103,10 @@
               enableRosetta = true;
               user = "alex";
               autoMigrate = true;
+              taps = {
+                "qazer2687/tap" = tap;
+              };
+              mutableTaps = false;
             };
           }
         ];
