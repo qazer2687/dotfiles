@@ -20,7 +20,6 @@
       ];
 
       brews = [
-        "jq"
       ];
 
       casks = [
