@@ -9,6 +9,9 @@
     services.skhd = {
       enable = true;
       skhdConfig = ''
+        # signal to focus the window under the cursor when a window is destroyed
+        yabai -m signal --add event=window_destroyed action="yabai -m window --focus $(yabai -m query --windows --window | jq '.id')"
+
         cmd - return : alacritty
 
         cmd - left : yabai -m window --swap west
