@@ -1,5 +1,5 @@
 * ToDo
-This file is just for me to track things I'm working on with my dotfiles.
+This file is just for me to track things I'm working on with my dotfiles and also try out org-mode.
 
 ** Key
 ✅: done
