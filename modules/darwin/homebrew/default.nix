@@ -15,6 +15,12 @@
         cleanup = "zap";
       };
 
+      taps = [
+        "homebrew/core"
+        "homebrew/cask"
+        "qazer2687/tap"
+      ];
+
       brews = [
       ];
 
