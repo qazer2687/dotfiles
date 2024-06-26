@@ -6,6 +6,7 @@
     nur.url = "github:nix-community/NUR";
     nixvim.url = "github:nix-community/nixvim";
     darwin.url = "github:lnl7/nix-darwin/master";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
   outputs = {
@@ -15,6 +16,7 @@
     nixvim,
     nur,
     darwin,
+    nix-homebrew,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -93,6 +95,15 @@
               useUserPackages = true;
             };
           }*/
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              enableRosetta = true;
+              user = "alex";
+              autoMigrate = true;
+            };
+          }
         ];
       };
     };
