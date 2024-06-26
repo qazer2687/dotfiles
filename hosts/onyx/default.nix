@@ -52,9 +52,9 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
-  # Packages & Envvars
+  # Packages & Environment Variables
   environment = {
-    sessionVariables = {
+    variables = {
       HOMEBREW_NO_ENV_HINTS = "1";
     };
     systemPackages = with pkgs; [
