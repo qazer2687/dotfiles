@@ -2,8 +2,10 @@
 This file is just for me to track things I'm working on with my dotfiles.
 
 ** Key
-✅: done \
-❎: scrapped \
+✅: done
+
+❎: scrapped
+
 else: todo 
 
 * Hosts
