@@ -13,6 +13,10 @@ in {
     programs.fish = {
       enable = true;
       shellAliases = aliases;
+      promptInit = "";
+      shellInit = "";
+      loginShellInit = "";
+      interactiveShellInit = "";
     };
   };
 }
