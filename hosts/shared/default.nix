@@ -11,10 +11,6 @@
     "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
   };
 in {
-  programs.bash = {
-    shellAliases = aliases;
-  };
-
   nixpkgs.config.allowUnfree = mkDefault true;
 
   nix.settings = {
