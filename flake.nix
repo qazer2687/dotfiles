@@ -18,6 +18,7 @@
     nur,
     darwin,
     nix-homebrew,
+    tap,
     ...
   } @ inputs: {
     nixosConfigurations = {
