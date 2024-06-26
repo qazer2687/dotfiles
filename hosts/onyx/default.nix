@@ -56,8 +56,6 @@
   environment.systemPackages = with pkgs; [
     coreutils
     git
-    vscodium
-    alacritty
   ];
 
   # Modules

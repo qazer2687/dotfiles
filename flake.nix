@@ -102,7 +102,7 @@
               enableRosetta = true;
               user = "alex";
               autoMigrate = true;
-              mutableTaps = false;
+              #mutableTaps = false; # breaks declaring taps in homebrew.taps
             };
           }
         ];

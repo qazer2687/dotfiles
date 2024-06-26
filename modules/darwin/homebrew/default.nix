@@ -16,9 +16,7 @@
       };
 
       taps = [
-        "homebrew/core"
-        "homebrew/cask"
-        "qazer2687/tap"
+        "qazer2687/homebrew-tap"
       ];
 
       brews = [
@@ -34,7 +32,7 @@
         "spaceid"
 
         # custom
-        "qazer2687/tap/armcord"
+        "qazer2687/homebrew-tap/armcord"
 
         # experimental
         "zed"
