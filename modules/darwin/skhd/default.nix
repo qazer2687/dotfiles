@@ -9,7 +9,7 @@
     services.skhd = {
       enable = true;
       skhdConfig = ''
-        cmd - return : ~/Applications/alacritty.app
+        cmd - return : alacritty
 
         cmd - left : yabai -m window --swap west
         cmd - right : yabai -m window --swap east
