@@ -1,0 +1,40 @@
+* ToDo
+This file is just for me to track things I'm working on with my dotfiles.
+
+** Key
+✅: done
+❎: scrapped
+else: todo
+
+* Hosts
+
+** Jade
+Needs a complete overhaul tbh. It's been using i3 since I switched to linux so I might try something else like xmonad or dwm.
+
+*** Tasks
+
+** Ruby
+
+*** Tasks
+- switch back to sway from gnome when i eventually get it back
+
+** Onyx
+How the Onyx configuration should eventually work:
+I will use homebrew to install all my graphical applications and then use home-manager move per-app configs to where they should be.
+Any commandline programs should be installed with nix and then with homebrew as a fallback.
+The reason I use homebrew for graphical applications is that they are indexed by spotlight search.
+
+*** Tasks
+- set up home manager for onyx
+- get apps installed by nix to be indexed in spotlight search
+- configure sketchybar to replace spacebar ❎
+- get rid of the shared folder or sort the options by cpu architecture 
+- get alacritty configured on onyx ✅
+- set up direnv on onyx
+- add eval "$(/opt/homebrew/bin/brew shellenv)" to fish.config
+
+
+** Opal
+
+*** Tasks
+- buy some more ram
