@@ -11,15 +11,15 @@
       skhdConfig = ''
         cmd - return : alacritty
 
-        cmd - left : yabai -m window --swap west
+        cmd - left  : yabai -m window --swap west
         cmd - right : yabai -m window --swap east
-        cmd - up : yabai -m window --swap north
-        cmd - down : yabai -m window --swap south
+        cmd - up    : yabai -m window --swap north
+        cmd - down  : yabai -m window --swap south
 
-        cmd + shift - left : yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0
-        cmd + shift - right : yabai -m window east --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
-        cmd + shift - up : yabai -m window north --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
-        cmd + shift - down : yabai -m window south --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
+        cmd + shift - left  : yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0
+        cmd + shift - down  : yabai -m window east --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
+        cmd + shift - up    : yabai -m window north --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
+        cmd + shift - right : yabai -m window south --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
 
         cmd - 1 : yabai -m space --focus 1
         cmd - 2 : yabai -m space --focus 2
