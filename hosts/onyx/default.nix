@@ -52,11 +52,16 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
-  # Packages
-  environment.systemPackages = with pkgs; [
-    coreutils
-    git
-  ];
+  # Packages & Envvars
+  environment = {
+    sessionVariables = {
+      HOMEBREW_NO_ENV_HINTS = "1";
+    };
+    systemPackages = with pkgs; [
+      coreutils
+      git
+    ];
+  };
 
   # Modules
   modules = {
@@ -83,6 +88,8 @@
     noto-fonts-color-emoji
     noto-fonts-cjk-sans
   ];
+
+  HOMEBREW_NO_ENV_HINTS
 
   # State Version
   system.stateVersion = 4;
