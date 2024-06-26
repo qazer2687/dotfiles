@@ -17,9 +17,9 @@
         cmd - down : yabai -m window --swap south
 
         cmd + shift - left : yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0
-        cmd + shift - right : yabai -m window north --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
-        cmd + shift - up : yabai -m window south --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
-        cmd + shift - down : yabai -m window east --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
+        cmd + shift - right : yabai -m window east --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
+        cmd + shift - up : yabai -m window north --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
+        cmd + shift - down : yabai -m window south --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
 
         cmd - 1 : yabai -m space --focus 1
         cmd - 2 : yabai -m space --focus 2
