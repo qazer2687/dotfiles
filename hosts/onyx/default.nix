@@ -89,8 +89,6 @@
     noto-fonts-cjk-sans
   ];
 
-  HOMEBREW_NO_ENV_HINTS
-
   # State Version
   system.stateVersion = 4;
 }
