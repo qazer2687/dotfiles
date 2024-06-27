@@ -20,21 +20,24 @@
       ];
 
       brews = [
+        # CLI Programs
+        "fastfetch"
       ];
 
       casks = [
+        # GUI Applications
         "alacritty"
         "firefox"
         "vscodium"
         "obsidian"
         "vlc"
-        "hiddenbar" # to replace vanilla because it has a startup window
+        # "hiddenbar"
         "spaceid"
 
-        # custom
+        # Custom
         "qazer2687/homebrew-tap/armcord"
 
-        # experimental
+        # Experimental
         "zed"
       ];
     };
