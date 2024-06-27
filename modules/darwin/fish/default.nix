@@ -16,7 +16,7 @@ in {
       enable = true;
       shellAliases = aliases;
       interactiveShellInit = ''
-        source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+        set fish_greeting # disable greeting
       '';
     };
   };
