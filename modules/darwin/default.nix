@@ -6,5 +6,6 @@
     ./sketchybar
     ./fish
     ./homebrew
+    ./direnv
   ];
 }

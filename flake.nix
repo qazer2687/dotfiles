@@ -82,11 +82,12 @@
     darwinConfigurations = {
       onyx = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
-        specialArgs = { inherit inputs; };
+        pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/onyx
-          /*home-manager.darwinModules.home-manager
+          /*
+            home-manager.darwinModules.home-manager
           {
             home.manager = {
               users.alex = ./homes/onyx;
@@ -94,7 +95,8 @@
               useGlobalPkgs = true;
               useUserPackages = true;
             };
-          }*/
+          }
+          */
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {

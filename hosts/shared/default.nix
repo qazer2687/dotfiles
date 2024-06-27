@@ -7,7 +7,7 @@
   inherit (lib) mkDefault;
 
   aliases = {
-    "check" = "alejandra -q **/* && deadnix -e && statix fix";
+    "check" = ''nix-shell -p alejandra -p deadnix -p statix --command "alejandra -q **/* && deadnix -e && statix fix"'';
     "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
   };
 in {
