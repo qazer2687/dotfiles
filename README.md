@@ -1,5 +1,8 @@
+> [!WARNING]  
+> So apparently I used links to images from a different repo, which I deleted. ._. I'll fix this at some point but fyi that's why none of the images load.
+
 <p align="center">
-  <img src="https://github.com/qazer2687/dotfiles-readme-test/assets/114782572/4abb900c-454f-49fe-8b88-9bdead35a85f" />
+  <h1 align="center" >Dotfiles V7</h1>
 </p>
 
 <div align="center">
