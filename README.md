@@ -1,8 +1,8 @@
 > [!WARNING]  
-> So apparently I used links to images from a different repo, which I deleted. ._. I'll fix this at some point but fyi that's why none of the images load.
+> I (accidentally) used links to images from a repo I deleted so I'm using this super boring readme for a while till I can make another.
 
 <p align="center">
-  <h1 align="center" >Dotfiles V7</h1>
+  <h3 align="center" >Dotfiles V7</h3>
 </p>
 
 <div align="center">
@@ -13,31 +13,8 @@
 
 </div>
 
-<p align="center">
-  <img src="https://github.com/qazer2687/dotfiles-readme-test/assets/114782572/55957204-3d2c-4e1a-bac8-271907342847" />
-</p>
 
-<br>
-<br>
-<br>
-
-<p align="center">
-  <img src="https://github.com/qazer2687/dotfiles-readme-test/assets/114782572/93fe9fc8-a987-4e9c-99da-3530a64d4834" />
-</p>
-
-<br>
-
-<p align="center">
-  <img src="https://github.com/qazer2687/dotfiles-readme-test/assets/114782572/7984554b-6a63-4117-883b-957585a8c3b0" />
-</p>
-
-<br>
-
-<p align="center">
-  <img src="https://github.com/qazer2687/dotfiles-readme-test/assets/114782572/3f41a61f-ef29-4150-9f1f-0f46c8207800" />
-</p>
-
-<br>
+<h3>Hosts</h3>
 
 | Name         | Description                                                                                       |  Type   |     Arch      |
 | :----------- | :------------------------------------------------------------------------------------------------ | :-----: | :-----------: |
@@ -47,13 +24,7 @@
 | `opal`       | My personal homelab for backups, minecraft and a few other services.                              | Server  | x86_64-linux  |
 | `quartz`     | My miniature server configuration for a Raspberry Pi 4 Model B. Not yet included in the dotfiles. | Server  | aarch64-linux |
 
-<br>
-
-<p align="center">
-  <img src="https://github.com/qazer2687/dotfiles-readme-test/assets/114782572/1ef869eb-5f50-4dcd-921c-fba056b636a3" />
-</p>
-
-<br>
+<h3>Structure</h3>
 
 <div style="text-align: right;">
   <div style="display: inline-block; text-align: left;">
@@ -85,12 +56,7 @@
   </div>
 </div>
 
-<br>
-
-<p align="center">
-  <img src="https://github.com/qazer2687/dotfiles-readme-test/assets/114782572/408816de-159c-4c7f-939c-7acec87519be" />
-</p>
-
+<h3>Credits</h3>
 <div align="center">
 
 ![Fufexan](https://github.com/fufexan)\
