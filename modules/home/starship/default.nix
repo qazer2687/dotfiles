@@ -39,14 +39,6 @@
           symbol = " direnv";
         };
 
-        git_status = {
-          format = "([\[$all_status$ahead_behind\]]($style) )";
-          style = "cyan";
-          stashed = "≡";
-          ahead = "⇡\${count}";
-          behind = "⇣\${count}";
-        };
-
         cmd_duration = {
           format = " [\$duration](\$style)";
         };
