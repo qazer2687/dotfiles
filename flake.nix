@@ -90,7 +90,7 @@
           nix-homebrew.darwinModules.nix-homebrew
           {
             home.manager = {
-              users.alex = ./homes/onyx;
+              users.alex = import ./homes/onyx;
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
