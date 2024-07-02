@@ -57,10 +57,6 @@
     variables = {
       HOMEBREW_NO_ENV_HINTS = "1";
     };
-    systemPackages = with pkgs; [
-      coreutils
-      git
-    ];
   };
 
   # Modules
@@ -68,7 +64,6 @@
     # Environment
     skhd.enable = true;
     yabai.enable = true;
-    fish.enable = true;
 
     # Homebrew - Manages the majority of my packages.
     homebrew.enable = true;

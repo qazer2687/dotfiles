@@ -86,7 +86,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/onyx
-          /*
             home-manager.darwinModules.home-manager
           {
             home.manager = {
@@ -96,7 +95,6 @@
               useUserPackages = true;
             };
           }
-          */
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
