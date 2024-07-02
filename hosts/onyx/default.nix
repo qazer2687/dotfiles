@@ -33,6 +33,7 @@
     sandbox = true;
   };
 
+  programs.fish.enable = true; # everything explodes without this
   services.nix-daemon.enable = true;
 
   # Packages & Environment Variables
