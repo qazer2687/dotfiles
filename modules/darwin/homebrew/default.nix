@@ -31,6 +31,7 @@
         "vscodium"
         "obsidian"
         "vlc"
+        "tor-browser"
         # "hiddenbar"
         "spaceid"
 
