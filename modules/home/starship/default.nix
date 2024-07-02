@@ -15,7 +15,7 @@
         add_newline = false;
 
         format = "$directory$character";
-        right_format = "$status$cmd_duration$git_branch$git_status";
+        right_format = "$status$cmd_duration$git_branch$direnv";
         character = {
           success_symbol = "[>](green)";
           error_symbol = "[>](red)";
