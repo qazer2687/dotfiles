@@ -11,8 +11,8 @@
     direnv.enable = true;
   };
 
-  home.stateVersion = "24.05";
-  home.homeDirectory = "/Users/alex";
+  #home.stateVersion = "24.05";
+  #home.homeDirectory = "/Users/alex";
 
   sops.defaultSopsFile = ../../../secrets/default.yaml;
   sops.age.sshKeyPaths = ["/home/alex/.ssh/id_ed25519"];
