@@ -18,7 +18,6 @@
   users.users.alex = {
     name = "alex";
     home = "/Users/alex";
-    shell = pkgs.fish;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -34,23 +33,7 @@
     sandbox = true;
   };
 
-  system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
-  system.defaults.NSGlobalDomain._HIHideMenuBar = false;
-  system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
-  system.defaults.dock.mru-spaces = false;
-  system.defaults.finder.ShowStatusBar = false;
-
-  system.defaults.dock = {
-    autohide = true;
-    autohide-delay = 1000.0;
-  };
-
   services.nix-daemon.enable = true;
-
-  ## requires manual chsh
-  programs.fish.enable = true;
-
-  security.pam.enableSudoTouchIdAuth = true;
 
   # Packages & Environment Variables
   environment = {
@@ -64,25 +47,13 @@
     # Environment
     skhd.enable = true;
     yabai.enable = true;
+    defaults.enable = true;
+    security.enable = true;
+    fonts.enable = true;
 
     # Homebrew - Manages the majority of my packages.
     homebrew.enable = true;
   };
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "FiraMono"
-        "Iosevka"
-        "LiberationMono"
-      ];
-    })
-    atkinson-hyperlegible
-    noto-fonts-color-emoji
-    noto-fonts-cjk-sans
-  ];
 
   # State Version
   system.stateVersion = 4;
