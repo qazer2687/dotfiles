@@ -34,8 +34,13 @@
           style = "green";
         };
 
+        direnv = {
+          format = "$symbol";
+          symbol = " direnv";
+        };
+
         git_status = {
-          format = "( [\\[\$ahead_behind\$stashed]](\$style))";
+          format = "([\[$all_status$ahead_behind\]]($style) )";
           style = "cyan";
           stashed = "≡";
           ahead = "⇡\${count}";
