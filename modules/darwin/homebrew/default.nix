@@ -21,24 +21,20 @@
 
       brews = [
         # CLI Programs
-        "fastfetch"
+        # Managed by HM...
       ];
 
       casks = [
-        # GUI Applications
+        # GUI Applications - Not indexed by spotlight search when using Nix, so this is required.
         "firefox"
         "vscodium"
         "obsidian"
         "vlc"
         "tor-browser"
-        # "hiddenbar"
         "spaceid"
 
         # Custom
         "qazer2687/homebrew-tap/armcord"
-
-        # Experimental
-        "zed"
       ];
     };
   };
