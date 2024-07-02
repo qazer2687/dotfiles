@@ -7,7 +7,7 @@
   options.modules.neovim.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.neovim.enable {
-    programs.nixvim = {
+    inputs.nixvim.programs.nixvim = {
       enable = true;
 
       opts = {
