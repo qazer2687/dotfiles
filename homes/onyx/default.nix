@@ -8,7 +8,7 @@
     git.enable = true;
     fish.enable = true;
     starship.enable = true;
-    direnv.enable = true;
+    #direnv.enable = true;
   };
 
   home.stateVersion = "24.05";
