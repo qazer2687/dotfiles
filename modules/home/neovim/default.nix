@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  inputs,
   ...
 }: {
   options.modules.neovim.enable = lib.mkEnableOption "";
