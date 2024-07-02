@@ -26,7 +26,6 @@
 
       casks = [
         # GUI Applications
-        "alacritty"
         "firefox"
         "vscodium"
         "obsidian"
