@@ -94,7 +94,6 @@ in {
   systemd.coredump.enable = false;
 
   # Environment
-  programs.direnv.enable = true;
   environment = {
     defaultPackages = lib.mkForce [];
     sessionVariables = {
