@@ -19,5 +19,7 @@
     ./dunst
     ./emacs
     ./edge
+    ./direnv
+    ./starship
   ];
 }
