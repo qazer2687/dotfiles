@@ -86,7 +86,8 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/onyx
-            home-manager.darwinModules.home-manager
+          home-manager.darwinModules.home-manager
+          nix-homebrew.darwinModules.nix-homebrew
           {
             home.manager = {
               users.alex = ./homes/onyx;
@@ -94,9 +95,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
             };
-          }
-          nix-homebrew.darwinModules.nix-homebrew
-          {
+
             nix-homebrew = {
               enable = true;
               enableRosetta = true;
