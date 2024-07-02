@@ -94,6 +94,11 @@
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
+              sharedModules = [
+                inputs.nur.hmModules.nur
+                inputs.sops-nix.homeManagerModules.sops
+                inputs.nixvim.homeManagerModules.nixvim
+              ];
             };
 
             nix-homebrew = {
