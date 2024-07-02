@@ -6,8 +6,8 @@
   modules = {
     alacritty.enable = true;
     git.enable = true;
-    #fish.enable = true;
-    #starship.enable = true;
+    fish.enable = true;
+    starship.enable = true;
     direnv.enable = true;
   };
 
