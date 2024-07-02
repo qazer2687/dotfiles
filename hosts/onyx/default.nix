@@ -17,7 +17,7 @@
 
   users.users.alex = {
     name = "alex";
-    #home = "/Users/alex";
+    home = "/Users/alex";
     shell = pkgs.fish;
   };
 

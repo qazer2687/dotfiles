@@ -89,7 +89,7 @@
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
           {
-            home.manager = {
+            home-manager = {
               users.alex = ./homes/onyx;
               extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
