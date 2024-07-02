@@ -15,7 +15,7 @@
         add_newline = false;
 
         format = "$directory$character";
-        right_format = "$status$cmd_duration$git_branch''${custom.git_status_dirty}$git_status";
+        right_format = "$status$cmd_duration$git_branch$git_status";
         character = {
           success_symbol = "[>](green)";
           error_symbol = "[>](red)";
@@ -40,14 +40,6 @@
           stashed = "≡";
           ahead = "⇡\${count}";
           behind = "⇣\${count}";
-        };
-
-        custom.git_status_dirty = {
-          when = "test -n ''$(git status --porcelain 2>/dev/null)";
-          symbol = "•";
-          style = "white";
-          format = "[\$symbol](\$style)";
-          shell = ["sh"];
         };
 
         cmd_duration = {
