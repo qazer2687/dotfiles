@@ -34,6 +34,7 @@
         "vlc"
         "tor-browser"
         "spaceid"
+        "discord"
 
         ## Games
         "osu"
