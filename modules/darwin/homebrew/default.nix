@@ -26,6 +26,8 @@
 
       casks = [
         # GUI Applications - Not indexed by spotlight search when using Nix, so this is required.
+
+        ## General
         "firefox"
         "vscodium"
         "obsidian"
@@ -33,7 +35,10 @@
         "tor-browser"
         "spaceid"
 
-        # Custom
+        ## Games
+        "osu"
+
+        ## Custom
         "qazer2687/homebrew-tap/armcord"
       ];
     };
