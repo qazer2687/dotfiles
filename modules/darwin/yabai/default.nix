@@ -16,11 +16,11 @@
         window_border = "off";
 
         layout = "bsp";
-        top_padding = 6;
-        bottom_padding = 6;
-        left_padding = 6;
-        right_padding = 6;
-        window_gap = 6;
+        top_padding = 8;
+        bottom_padding = 8;
+        left_padding = 8;
+        right_padding = 8;
+        window_gap = 8;
 
         focus_follows_mouse = "autofocus";
 
