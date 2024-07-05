@@ -36,11 +36,8 @@
         "spaceid"
         "discord"
 
-        ## Games
-        "osu"
-
         ## Custom
-        "qazer2687/homebrew-tap/armcord"
+        "qazer2687/homebrew-tap/vesktop"
       ];
     };
   };
