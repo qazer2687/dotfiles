@@ -9,6 +9,7 @@
     system.defaults = {
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
         _HIHideMenuBar = false;
         "com.apple.swipescrolldirection" = false;
       };
