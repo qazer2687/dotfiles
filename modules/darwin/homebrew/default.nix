@@ -34,7 +34,6 @@
         "vlc"
         "tor-browser"
         "spaceid"
-        "discord"
 
         ## Custom
         "qazer2687/homebrew-tap/vesktop"
