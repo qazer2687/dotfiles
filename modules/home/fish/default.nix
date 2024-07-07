@@ -24,7 +24,8 @@ in {
 
     ## add brew prefix to path
     home.sessionVariables = {
-      PATH = "${pkgs.coreutils}/bin:/usr/local/bin:$PATH";
+      #PATH = "${pkgs.coreutils}/bin:/usr/local/bin:$PATH";
+      PATH = "${pkgs.coreutils}/bin:/usr/local:$PATH";
     };
 
     programs.eza.enable = true;
