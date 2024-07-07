@@ -34,6 +34,7 @@
         "vlc"
         "tor-browser"
         "spaceid"
+        "calibre"
 
         ## Custom
         "qazer2687/homebrew-tap/vesktop"
