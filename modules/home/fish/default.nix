@@ -17,14 +17,11 @@ in {
     programs.fish = {
       enable = true;
       interactiveShellInit = ''
-        set fish_greeting # Disable greeting
+        set fish_greeting # disable greeting
+
+        fish_add_path /usr/local # add brew prefix to path
       '';
       shellAliases = aliases;
-    };
-
-    ## add brew prefix to path
-    home.sessionVariables = {
-      PATH = "${pkgs.coreutils}/bin:/usr/local/:$PATH";
     };
 
     programs.eza.enable = true;
