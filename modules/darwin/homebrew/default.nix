@@ -21,7 +21,7 @@
 
       brews = [
         # CLI Programs
-        # Managed by HM...
+        "fastfetch"
       ];
 
       casks = [
@@ -31,8 +31,6 @@
         "firefox"
         "vscodium"
         "obsidian"
-        "vlc"
-        "tor-browser"
         "spaceid"
         "calibre"
 
