@@ -21,6 +21,11 @@ in {
       shellAliases = aliases;
     };
 
+    ## add brew prefix to path
+    home.sessionVariables = {
+      PATH = "${pkgs.coreutils}/bin:/usr/local/bin:$PATH";
+    };
+
     programs.eza.enable = true;
   };
 }
