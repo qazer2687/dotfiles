@@ -19,7 +19,7 @@ in {
       interactiveShellInit = ''
         set fish_greeting # disable greeting
 
-        fish_add_path /usr/local # add brew prefix to path
+        fish_add_path /opt/homebrew/bin # add brew binaries to path
       '';
       shellAliases = aliases;
     };
