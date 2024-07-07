@@ -38,6 +38,9 @@
 
   # Packages & Environment Variables
   environment = {
+    systemPackages = [
+      pkgs.neofetch
+    ];
     variables = {
       HOMEBREW_NO_ENV_HINTS = "1";
     };
