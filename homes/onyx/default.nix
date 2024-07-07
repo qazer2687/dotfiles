@@ -11,6 +11,10 @@
     direnv.enable = true;
   };
 
+  home.packages = [
+    pkgs.neofetch
+  ];
+
   home.stateVersion = "24.05";
   home.homeDirectory = "/Users/alex";
 
