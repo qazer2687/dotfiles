@@ -33,6 +33,7 @@
         "obsidian"
         "spaceid"
         "calibre"
+        "microsoft-teams"
 
         ## Custom
         "qazer2687/homebrew-tap/vesktop"
