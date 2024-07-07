@@ -14,7 +14,7 @@
   home.stateVersion = "24.05";
   home.homeDirectory = "/Users/alex";
 
-  home.packages = [ pkgs.vlc pkgs.pfetch ];
+  home.packages = [ pkgs.pfetch ];
 
   sops.defaultSopsFile = ../../../secrets/default.yaml;
   sops.age.sshKeyPaths = ["/home/alex/.ssh/id_ed25519"];
