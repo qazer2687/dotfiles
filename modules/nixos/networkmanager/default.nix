@@ -8,7 +8,7 @@
   config = lib.mkIf config.modules.networkmanager.enable {
     networking = {
       networkmanager.enable = true;
-      firewall.enable = false;
+      firewall.enable = true;
     };
     systemd = {
       services.NetworkManager-wait-online.enable = false;
