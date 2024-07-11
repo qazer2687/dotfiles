@@ -27,14 +27,8 @@ Any commandline programs should be installed with nix and then with homebrew as 
 The reason I use homebrew for graphical applications is that they are indexed by spotlight search.
 
 *** Tasks
-- set up home manager for onyx
 - get apps installed by nix to be indexed in spotlight search
-- configure sketchybar to replace spacebar ❎
-- get rid of the shared folder or sort the options by cpu architecture 
-- get alacritty configured on onyx ✅
-- set up direnv on onyx
-- add eval "$(/opt/homebrew/bin/brew shellenv)" to fish.config
-- find a way to install vencord with homebrew
+- get rid of the shared folder
 
 
 ** Opal
