@@ -7,7 +7,7 @@
   options.modules.pipewire.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.pipewire.enable {
-    sound.enable = false;
+    sound.enable = false; # nixos/nixpkgs#319809
     security.rtkit.enable = true;
     hardware.pulseaudio.enable = false;
     environment.systemPackages = with pkgs; [
