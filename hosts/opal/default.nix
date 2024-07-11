@@ -53,6 +53,7 @@
   modules = {
     kernel.enable = true;
     systemd-boot.enable = true;
+    pipewire.enable = true;
 
     containers = {
       homepage.enable = true;
