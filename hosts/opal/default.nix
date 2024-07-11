@@ -24,10 +24,12 @@
     enable = true;
   };
 
- # services.undervolt = {
- #   enable = true;
-
-  #};
+  services.undervolt = {
+    enable = true;
+    turbo = 1; # disable turbo boost
+    verbose = true;
+    coreOffset = -50;
+  };
 
   services.xserver.displayManager.gdm.autoSuspend = false;
 
