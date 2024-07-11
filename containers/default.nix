@@ -3,7 +3,6 @@
     # ./cockpit
     # ./deluge
     ./homepage
-    ./mailserver
     #./jellyfin
     #./pihole
   ];
