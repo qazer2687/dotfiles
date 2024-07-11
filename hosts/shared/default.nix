@@ -67,7 +67,7 @@ in {
   };
 
   ## required by most things incl sway and nvidia
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # Dconf (gtk settings)
   programs.dconf.enable = true;
