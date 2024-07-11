@@ -12,23 +12,24 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
-
   networking.firewall.allowedTCPPorts = [
     22 # SSH
-    3000 # Gitea
-    8096 # Jellyfin
+   # 3000 # Gitea
+   # 8096 # Jellyfin
     9090 # Cockpit
-    25565 # Minecraft
+   # 25565 # Minecraft
   ];
 
   services.cockpit = {
     enable = true;
   };
+
+ # services.undervolt = {
+ #   enable = true;
+
+  #};
+
+  services.xserver.displayManager.gdm.autoSuspend = false;
 
   modules = {
     kernel.enable = true;
