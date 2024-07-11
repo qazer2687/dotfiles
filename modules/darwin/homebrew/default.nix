@@ -27,7 +27,7 @@
       casks = [
         # GUI Applications - Not indexed by spotlight search when using Nix, so this is required.
 
-        ## General
+        # Generafl
         "firefox"
         "vscodium"
         "obsidian"
@@ -35,8 +35,15 @@
         "calibre"
         "microsoft-teams"
 
-        ## Custom
+        # Virtualization
+        "utm"
+
+        # Custom
         "qazer2687/homebrew-tap/vesktop"
+
+        # Experimental
+        "zed"
+        "wireshark"
       ];
     };
   };
