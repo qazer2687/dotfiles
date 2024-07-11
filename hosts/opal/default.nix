@@ -31,6 +31,10 @@
     coreOffset = -50;
   };
 
+  services.openssh = {
+    enable = true;
+  };
+
   services.xserver.displayManager.gdm.autoSuspend = false;
 
   modules = {
