@@ -14,6 +14,7 @@
 
   networking.firewall.allowedTCPPorts = [
     22 # SSH
+    53 # Pihole DNS
     3000 # Grafana
     3001 # Pihole
     9090 # Prometheus
