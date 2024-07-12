@@ -14,14 +14,16 @@
 
   networking.firewall.allowedTCPPorts = [
     22 # SSH
-   # 3000 # Gitea
+    3000 # Grafana
    # 8096 # Jellyfin
-    9090 # Cockpit
+    9090 # Prometheus
+    10000 # Cockpit
    # 25565 # Minecraft
   ];
 
   services.cockpit = {
     enable = true;
+    port = 10000;
   };
 
   services.undervolt = {
