@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../hardware/opal
-    ../../containers
+    ../../modules/server
     ../../modules/nixos
   ];
 
@@ -43,9 +43,8 @@
     pipewire.enable = true;
     networkmanager.enable = true;
 
-    containers = {
-      homepage.enable = true;
-    };
+    # Server Modules
+    docker.enable = true;
   };
 
   system.stateVersion = "23.05";
