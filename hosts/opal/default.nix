@@ -14,8 +14,8 @@
 
   networking.firewall.allowedTCPPorts = [
     22 # SSH
-    443 # Pihole
     3000 # Grafana
+    3001 # Pihole
     9090 # Prometheus
     9100 # Node Exporter (Prometheus)
     10000 # Cockpit
