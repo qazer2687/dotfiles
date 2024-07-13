@@ -32,7 +32,7 @@
     enable = true;
     turbo = 1; # disable turbo boost
     verbose = true;
-    coreOffset = -50;
+    coreOffset = -150;
   };
 
   services.openssh = {
