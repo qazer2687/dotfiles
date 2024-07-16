@@ -4,7 +4,6 @@
     home-manager.url = "github:nix-community/home-manager";
     sops-nix.url = "github:Mic92/sops-nix";
     nur.url = "github:nix-community/NUR";
-    nixvim.url = "github:nix-community/nixvim";
     darwin.url = "github:lnl7/nix-darwin/master";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
@@ -13,7 +12,6 @@
     nixpkgs,
     home-manager,
     sops-nix,
-    nixvim,
     nur,
     darwin,
     nix-homebrew,
@@ -41,7 +39,6 @@
               sharedModules = [
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
-                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
@@ -71,7 +68,6 @@
               sharedModules = [
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
-                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
@@ -125,7 +121,6 @@
               sharedModules = [
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
-                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
 
