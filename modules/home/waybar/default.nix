@@ -24,7 +24,7 @@
       settings = [
         {
           layer = "top";
-          margin = "4 4 0 4";
+          margin = "6 6 0 6";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
           modules-right = ["network" "pulseaudio" "battery"];
