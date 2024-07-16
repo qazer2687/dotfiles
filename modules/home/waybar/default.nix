@@ -25,9 +25,9 @@
         {
           layer = "top";
           margin = "0 0 0 0";
-          modules-left = ["clock" "sway/workspaces" "mpris"];
+          modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "battery"];
+          modules-right = ["pulseaudio" "battery"];
 
           # Pulseaudio
           pulseaudio = {
@@ -49,10 +49,10 @@
           # Battery
           battery = {
             format = "{icon}"; # {icon}
-            format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            format-icons = ["" "" "" ""];
             full-at = 95;
-            format-full = "󰁹";
-            format-charging = "󰁹";
+            format-full = "";
+            format-charging = " ";
             tooltip = true;
             tooltip-format = "{capacity}%";
 
