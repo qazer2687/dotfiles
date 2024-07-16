@@ -10,5 +10,8 @@
     ./tlp
     ./filesystem
     ./waydroid
+    ./fonts
+    ./keymap
+    ./zram
   ];
 }

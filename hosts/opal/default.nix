@@ -45,6 +45,9 @@
     systemd-boot.enable = true;
     pipewire.enable = true;
     networkmanager.enable = true;
+    fonts.enable = true;
+    keymap.enable = true;
+    zram.enable = true;
 
     # Server Modules
     docker.enable = true;

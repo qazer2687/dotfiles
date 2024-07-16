@@ -6,34 +6,27 @@
   home.packages = with pkgs; [
     obsidian
     gnome.nautilus
+    gammastep
+    fragments
     obs-studio
-    armcord
-    lunar-client
-    vlc
   ];
 
   modules = {
-    # Environment
-    i3.enable = true;
-    alacritty.enable = true;
+    sway.enable = true;
+    waybar.enable = true;
+    foot.enable = true;
+    mako.enable = true;
+    wofi.enable = true;
     git.enable = true;
     dark.enable = true;
-    neovim.enable = true;
     firefox.enable = true;
     fish.enable = true;
-    polybar.enable = true;
-    dunst.enable = true;
-
 
     # Development
     vscode.enable = true;
-    emacs.enable = true;
-
-    # Gaming
-    prismlauncher.enable = true;
   };
 
-  home.stateVersion = "23.05";
+  home.stateVersion = "24.11";
   home.homeDirectory = "/home/alex";
 
   sops.defaultSopsFile = ../../../secrets/default.yaml;
