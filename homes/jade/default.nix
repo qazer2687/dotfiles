@@ -18,7 +18,6 @@
     alacritty.enable = true;
     git.enable = true;
     dark.enable = true;
-    neovim.enable = true;
     firefox.enable = true;
     fish.enable = true;
     polybar.enable = true;
