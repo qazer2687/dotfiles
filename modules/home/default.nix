@@ -12,7 +12,6 @@
     ./wofi
     ./dark
     ./mako
-    ./neovim
     ./fish
     ./keyring
     ./polybar
