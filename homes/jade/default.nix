@@ -5,7 +5,7 @@
 
   home.packages = with pkgs; [
     obsidian
-    gnome.nautilus
+    nautilus
     obs-studio
     armcord
     lunar-client
