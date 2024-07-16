@@ -20,6 +20,17 @@
   # autologin
   services.getty.autologinUser = "alex";
 
+  # Remote Builds
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
+  ];
+  services.openssh.enable = true;
+    networking.firewall.allowedTCPPorts = [
+    22 # SSH
+  ];
+
+
+
   # Modules
   modules = {
     kernel.enable = true;
