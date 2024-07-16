@@ -22,7 +22,6 @@ in {
 
   config = lib.mkIf config.modules.sway.enable {
     home.packages = with pkgs; [
-      vlc
       libnotify
     ];
 

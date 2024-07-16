@@ -8,7 +8,6 @@
     nautilus
     gammastep
     fragments
-    obs-studio
   ];
 
   modules = {
