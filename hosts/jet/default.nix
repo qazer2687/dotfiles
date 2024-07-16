@@ -10,11 +10,8 @@
 
   networking.hostName = "jet";
 
-  environment.etc = {
-    issue = {
-      text = ''\e[31mWelcome to Jet!\e[0m'';
-    };
-  };
+  # autologin
+  services.getty.autologinUser = "alex";
 
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && sway
