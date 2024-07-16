@@ -81,6 +81,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/jet
+          ./hosts/shared
           nur.nixosModules.nur
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
