@@ -24,7 +24,7 @@
       settings = [
         {
           layer = "top";
-          margin = "4 4 0 4";
+          margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
           modules-right = ["network" "pulseaudio" "battery"];
@@ -143,9 +143,9 @@
       style = ''
         * {
           font-family: FiraCode Mono Nerd Font;
-          font-size: 14px;
+          font-size: 12px;
           background-color: transparent;
-          border-radius: 4px;
+          border-radius: 0px;
           margin-left: 2px;
           margin-right: 2px;
         }
@@ -161,9 +161,9 @@
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-          padding: 6px 18px;
-          margin-top: 6px;
-          margin-bottom: 6px;
+          padding: 4px 14px;
+          margin-top: 4px;
+          margin-bottom: 4px;
           margin-left: 3px;
           margin-right: 3px;
           border-radius: 4px;
@@ -195,11 +195,11 @@
         #mpris,
         #tray {
           border-radius: 4px;
-          margin-top: 6px;
-          margin-bottom: 6px;
+          margin-top: 4px;
+          margin-bottom: 4px;
           margin-left: 3px;
           margin-right: 3px;
-          padding: 6px 12px;
+          padding: 4px 12px;
           background-color: #000000;
           color: #ffffff;
         }
@@ -232,7 +232,7 @@
         }
 
         tooltip label {
-          padding: 5px;
+          padding: 4px;
           background-color: #131822;
         }
       '';
