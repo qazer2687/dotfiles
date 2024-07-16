@@ -28,6 +28,9 @@
     networking.firewall.allowedTCPPorts = [
     22 # SSH
   ];
+  nix.settings.system-features = [
+    "big-parallel"
+  ];
 
 
 
