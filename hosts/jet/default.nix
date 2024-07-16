@@ -5,8 +5,20 @@
     ../../modules/nixos
   ];
 
-  hardware.asahi.peripheralFirmwareDirectory = ../../firmware/jet;
-  hardware.asahi.useExperimentalGPUDriver = true;
+  hardware.asahi = {
+    # Kernel
+    withRust = true;
+
+    # GPU
+    useExperimentalGPUDriver = true;
+    experimentalGPUInstallMode = "overlay";
+
+    # Sound
+    setupAsahiSound = true;
+
+    # Firmware
+    peripheralFirmwareDirectory = ../../firmware/jet;
+  };
 
   networking.hostName = "jet";
 
@@ -24,9 +36,7 @@
     XDG_CURRENT_DESKTOP = "sway";
     XDG_SESSION_TYPE = "wayland";
   };
-
-  hardware.asahi.setupAsahiSound = true;
-
+  
   boot = {
     kernelParams = [
       "apple_dcp.show_notch=1" # enable notch pixel space on asahi
