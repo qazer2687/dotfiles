@@ -5,7 +5,7 @@
 
   home.packages = with pkgs; [
     obsidian
-    gnome.nautilus
+    nautilus
     gammastep
     fragments
     obs-studio
