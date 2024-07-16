@@ -143,7 +143,7 @@
       style = ''
         * {
           font-family: FiraCode Mono Nerd Font;
-          font-size: 14px;
+          font-size: 12px;
           background-color: transparent;
           border-radius: 0px;
           margin-left: 2px;
@@ -161,7 +161,7 @@
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-          padding: 6px 18px;
+          padding: 6px 14px;
           margin-top: 6px;
           margin-bottom: 6px;
           margin-left: 3px;
