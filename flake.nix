@@ -79,6 +79,34 @@
       };
     };
 
+    nixosConfigurations = {
+      jet = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/jet
+          nur.nixosModules.nur
+          sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
+          {
+            nix.registry.nixpkgs.flake = nixpkgs;
+            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
+
+            home-manager = {
+              users.alex = ./homes/jet;
+              extraSpecialArgs = {inherit inputs;};
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = [
+                inputs.nur.hmModules.nur
+                inputs.sops-nix.homeManagerModules.sops
+              ];
+            };
+          }
+        ];
+      };
+    };
+
     darwinConfigurations = {
       onyx = darwin.lib.darwinSystem {
         system = "aarch64-darwin";

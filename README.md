@@ -18,11 +18,12 @@
 
 | Name         | Description                                                                                       |  Type   |     Arch      |
 | :----------- | :------------------------------------------------------------------------------------------------ | :-----: | :-----------: |
-| `jade`       | My desktop PC used for gaming and programming.                                                    | Desktop | x86_64-linux  |
-| `ruby`       | My Thinkpad T480 for studying and note-taking. No longer used.                                                  | Laptop  | x86_64-linux  |
-| `onyx`       | My Macbook Air M2 for studying and note-taking.                                                    | Laptop  | aarch64-darwin  |
-| `opal`       | My personal homelab for backups, minecraft and a few other services.                              | Server  | x86_64-linux  |
-| `quartz`     | My miniature server configuration for a Raspberry Pi 4 Model B. Not yet included in the dotfiles. | Server  | aarch64-linux |
+| `jade`       | My desktop PC.                                                                                    | Desktop | x86_64-linux  |
+| `ruby`       | My Thinkpad T480. No longer used.                                                                 | Laptop  | x86_64-linux  |
+| `onyx`       | The MacOS install on my Macbook. No longer used.                                                  | Laptop  | aarch64-darwin  |
+| `jet`        | The Asahi install on my Macbook.                                                                  | Laptop  | aarch64-linux  |
+| `opal`       | My homeserver.                                                                                    | Server  | x86_64-linux  |
+| `quartz`     | RPI4B server configuration. Not yet included.                                                     | Server  | aarch64-linux |
 
 <h3>Structure</h3>
 
