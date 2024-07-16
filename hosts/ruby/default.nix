@@ -33,6 +33,10 @@
     bluetooth.enable = true;
     #tlp.enable = true;
     filesystem.enable = true;
+    fonts.enable = true;
+    keymap.enable = true;
+    zram.enable = true;
+
   };
 
   system.stateVersion = "23.05";

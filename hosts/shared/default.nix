@@ -5,11 +5,6 @@
   ...
 }: let
   inherit (lib) mkDefault;
-
-  aliases = {
-    "check" = ''nix-shell -p alejandra -p deadnix -p statix --command "alejandra -q **/* && deadnix -e && statix fix"'';
-    "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
-  };
 in {
   nixpkgs.config.allowUnfree = mkDefault true;
 
@@ -39,33 +34,6 @@ in {
   # Shell
   programs.fish.enable = true;
 
-  # Default Fonts
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "FiraMono"
-        "Iosevka"
-        "LiberationMono"
-      ];
-    })
-    atkinson-hyperlegible
-    noto-fonts-color-emoji
-    noto-fonts-cjk-sans
-  ];
-
-  # Bash Aliases
-  programs.bash = {
-    shellAliases = aliases;
-  };
-
-  # Keyboard Layout
-  console.keyMap = "colemak";
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "colemak";
-  };
-
   ## required by most things incl sway and nvidia
   hardware.graphics.enable = true;
 
@@ -78,13 +46,6 @@ in {
 
   # Sops-Nix
   sops.defaultSopsFile = ./secrets/default.yaml;
-
-  # Zram
-  zramSwap = {
-    enable = false;
-    algorithm = "zstd";
-    memoryPercent = 25;
-  };
 
   # Systemd
   systemd.coredump.enable = false;
