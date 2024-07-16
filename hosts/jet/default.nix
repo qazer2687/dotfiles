@@ -6,6 +6,7 @@
   ];
 
   hardware.asahi.peripheralFirmwareDirectory = /etc/nixos/firmware;
+  hardware.asahi.useExperimentalGPUDriver = true;
 
   networking.hostName = "jet";
 
