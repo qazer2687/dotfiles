@@ -20,11 +20,13 @@
     [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
 
+  hardware.asahi.setupAsahiSound = true;
+
   # Modules
   modules = {
     kernel.enable = true;
     networkmanager.enable = true;
-    pipewire.enable = true;
+    # pipewire.enable = true; # sound is managed by asahi-sound
     systemd-boot.enable = true;
     bluetooth.enable = true;
     filesystem.enable = true;
