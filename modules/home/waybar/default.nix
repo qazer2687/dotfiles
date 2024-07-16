@@ -24,7 +24,7 @@
       settings = [
         {
           layer = "top";
-          margin = "6 6 0 6";
+          margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
           modules-right = ["network" "pulseaudio" "battery"];
@@ -145,7 +145,7 @@
           font-family: FiraCode Mono Nerd Font;
           font-size: 14px;
           background-color: transparent;
-          border-radius: 4px;
+          border-radius: 0px;
           margin-left: 2px;
           margin-right: 2px;
         }
