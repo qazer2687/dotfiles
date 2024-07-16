@@ -4,7 +4,7 @@
   config,
   ...
 }: let
-  modifier = "Ctrl";
+  modifier = "Control";
 
   wayland-screenshot = pkgs.writeShellApplication {
     name = "wayland-screenshot";
