@@ -25,6 +25,7 @@
     "aarch64-linux"
   ];
   services.openssh.enable = true;
+  services.openssh.settings.PermitRootLogin = "yes";
     networking.firewall.allowedTCPPorts = [
     22 # SSH
   ];
