@@ -159,7 +159,8 @@ in {
         export GDK_SCALE=1
         export GDK_DPI_SCALE=1
         export MOZ_ENABLE_WAYLAND=1
-        export XCURSOR-SIZE=15
+        export OZONE_PLATFORM=wayland
+        export OBSIDIAN_USE_WAYLAND=1
       '';
 
       wrapperFeatures = {
