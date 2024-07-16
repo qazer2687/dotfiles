@@ -27,9 +27,14 @@
 
   hardware.asahi.setupAsahiSound = true;
 
+  boot = {
+    kernelParams = [
+      "apple_dcp.show_notch=1" # enable notch pixel space on asahi
+    ];
+  };
+
   # Modules
   modules = {
-    kernel.enable = true;
     networkmanager.enable = true;
     # pipewire.enable = true; # sound is managed by asahi-sound
     systemd-boot.enable = true;
