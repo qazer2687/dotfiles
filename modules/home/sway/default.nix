@@ -35,7 +35,7 @@ in {
 
         # Gaps
         gaps = {
-          inner = 8;
+          inner = 6;
           outer = 0;
         };
 
@@ -139,10 +139,10 @@ in {
 
       extraConfig = ''
         # Corner Radius
-        corner_radius 5
+        corner_radius 4
 
         # Eye Comfort (EXPERIMENTAL)
-        exec nohup gammastep -xO 2500
+        exec gammastep -xO 2500
 
         # Waybar
         bar {
@@ -159,6 +159,7 @@ in {
         export GDK_SCALE=1
         export GDK_DPI_SCALE=1
         export MOZ_ENABLE_WAYLAND=1
+        export XCURSOR-SIZE=15
       '';
 
       wrapperFeatures = {
