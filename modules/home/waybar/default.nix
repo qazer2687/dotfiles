@@ -145,7 +145,7 @@
           font-family: FiraCode Mono Nerd Font;
           font-size: 14px;
           background-color: transparent;
-          border-radius: 5px;
+          border-radius: 4px;
           margin-left: 2px;
           margin-right: 2px;
         }
@@ -166,7 +166,7 @@
           margin-bottom: 6px;
           margin-left: 3px;
           margin-right: 3px;
-          border-radius: 5px;
+          border-radius: 4px;
           background-color: #262626;
           color: #ffffff;
         }
@@ -194,7 +194,7 @@
         #disk,
         #mpris,
         #tray {
-          border-radius: 5px;
+          border-radius: 4px;
           margin-top: 6px;
           margin-bottom: 6px;
           margin-left: 3px;
@@ -226,7 +226,7 @@
         }
 
         tooltip {
-          border-radius: 8px;
+          border-radius: 4px;
           padding: 15px;
           background-color: #131822;
         }
