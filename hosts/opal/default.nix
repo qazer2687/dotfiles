@@ -14,6 +14,7 @@
 
   networking.firewall.allowedTCPPorts = [
     22 # SSH
+    53 # Pihole DNS
     3000 # Grafana
     3001 # Pihole
     9090 # Prometheus
@@ -27,12 +28,12 @@
     port = 10000;
   };
 
-  services.undervolt = {
+  /*services.undervolt = {
     enable = true;
     turbo = 1; # disable turbo boost
     verbose = true;
-    coreOffset = -50;
-  };
+    coreOffset = -150;
+  }; */ # lots of silly bomboclat issues caused by this option
 
   services.openssh = {
     enable = true;

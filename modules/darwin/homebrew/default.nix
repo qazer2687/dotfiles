@@ -27,13 +27,14 @@
       casks = [
         # GUI Applications - Not indexed by spotlight search when using Nix, so this is required.
 
-        # Generafl
+        # General
         "firefox"
         "vscodium"
         "obsidian"
         "spaceid"
         "calibre"
         "microsoft-teams"
+        "obs"
 
         # Virtualization
         "utm"
