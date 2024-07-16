@@ -5,6 +5,8 @@
     ../../modules/nixos
   ];
 
+  hardware.asahi.peripheralFirmwareDirectory = /etc/nixos/firmware;
+
   networking.hostName = "jet";
 
   environment.etc = {
