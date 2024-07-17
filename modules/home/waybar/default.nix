@@ -52,7 +52,7 @@
             format-icons = ["" "" "" "" ""];
             full-at = 100;
             format-full = "";
-            format-charging = " ";
+            format-charging = "";
             tooltip = true;
             tooltip-format = "{capacity}%";
 
@@ -208,6 +208,11 @@
         #battery {
           background-color: #000000;
           color: #ffffff;
+          margin-right: 12px;
+        }
+
+        #clock {
+          margin-left: 12px;
         }
 
         #battery.warning,
