@@ -35,10 +35,10 @@
             tooltip = false;
             scroll-step = 1;
             on-click = "pamixer -t";
-            format = "{icon} {volume}%";
+            format = "{icon}  {volume}%";
             format-muted = " ";
             format-icons = {
-              default = [" " " " ""];
+              default = [" " " " " "];
             };
           };
 
@@ -49,7 +49,7 @@
 
           # Battery
           battery = {
-            format = "{icon} {capacity}%"; # {icon}
+            format = "{icon}  {capacity}%"; # {icon}
             format-icons = [" " " " " " " " " "];
             format-charging = " ";
             tooltip = true;
