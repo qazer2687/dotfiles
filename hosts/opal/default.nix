@@ -39,7 +39,7 @@
       cores = 8;
     };
     buildMachines = [{
-      hostName = "jade";
+      hostName = "opal";
       protocol = "ssh-ng";
       systems = ["x86_64-linux" "aarch64-linux"];
       maxJobs = 6;
