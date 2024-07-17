@@ -62,6 +62,7 @@ in {
         output = {
           "*".bg = "~/.config/wallpaper/wallpaper.png fill";
           "DP-1".mode = "2560x1440@143.972000Hz";
+          "eDP-1".mode = "scale 1.5"
         };
 
         # Decorations
