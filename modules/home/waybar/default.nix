@@ -35,7 +35,7 @@
             scroll-step = 1;
             on-click = "pamixer -t";
             format = "{icon}";
-            format-muted = "󰝟";
+            format-muted = "󰝟 ";
             format-icons = {
               default = ["󰕿" "󰖀" "󰕾"];
             };
@@ -138,7 +138,7 @@
         * {
           font-family: FiraCode Mono Nerd Font;
           font-size: 12px;
-          background-color: transparent;
+          background-color: 000000;
           border-radius: 0px;
           margin-left: 2px;
           margin-right: 2px;
