@@ -57,7 +57,6 @@
 
           # Clock
           clock = {
-            format = "󱄅 "
             format-alt = "{:%Y/%m/%d | %H:%M:%S}";
           };
 
