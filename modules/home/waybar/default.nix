@@ -24,7 +24,7 @@
       settings = [
         {
           layer = "top";
-          height = 30;
+          height = 28;
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
@@ -165,7 +165,7 @@
         }
 
         window#waybar {
-          background-color: #000000;
+          background-color: #ffffff;
         }
 
         #workspaces {
