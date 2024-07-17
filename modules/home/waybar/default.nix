@@ -145,6 +145,10 @@
           margin-right: 2px;
         }
 
+        window#waybar {
+          background-color: #ffffff;
+        }
+
         #memory,
         #custom-power,
         #battery,
@@ -163,39 +167,16 @@
           color: #ffffff;
         }
 
-        window#waybar {
-          background-color: #ffffff;
-        }
-
-        #workspaces {
-          background-color: #000000;
-          border-radius: 4px;
-        }
-
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 4px;
           border-radius: 4px;
-          background-color: #000000;
           color: #606060;
         }
 
         #workspaces button.visible {
           color: #ffffff;
-          background-color: #000000;
-        }
-
-        #battery.warning,
-        #battery.critical,
-        #battery.urgent {
-          background-color: #cc0000;
-          color: #000000;
-        }
-
-        #battery.charging {
-          color: #004400;
-          background-color: #000000;
         }
 
         #network {
