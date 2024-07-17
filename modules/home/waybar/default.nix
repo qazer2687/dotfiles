@@ -172,7 +172,7 @@
 
 
         window#waybar {
-          background-color: #transparent;
+          background-color: transparent;
         }
 
         #workspaces {
