@@ -160,7 +160,6 @@
         #tray {
           border-radius: 4px;
           padding: 4px 4px;
-          background-color: #transparent;
           color: #ffffff;
         }
 
