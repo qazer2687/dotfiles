@@ -64,13 +64,13 @@
 
           # Workspaces
           "sway/workspaces" = {
-            format = "[{icon}]";
+            format = "{icon}";
             format-icons = {
-              "web" = "1";
-              "code" = "2";
-              "notes" = "3";
-              "term" = "4";
-              "files" = "5";
+              "1" = "web";
+              "2" = "code";
+              "3" = "notes";
+              "4" = "term";
+              "5" = "files";
               "6" = "6";
               "7" = "7";
               "8" = "8";
@@ -162,8 +162,8 @@
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 14px;
-          margin-top: 3px;
-          margin-bottom: 3px;
+          margin-top: 2px;
+          margin-bottom: 2px;
           margin-left: 3px;
           margin-right: 3px;
           border-radius: 4px;
@@ -195,8 +195,8 @@
         #mpris,
         #tray {
           border-radius: 4px;
-          margin-top: 3px;
-          margin-bottom: 3px;
+          margin-top: 2px;
+          margin-bottom: 2px;
           margin-left: 3px;
           margin-right: 3px;
           padding: 4px 12px;
