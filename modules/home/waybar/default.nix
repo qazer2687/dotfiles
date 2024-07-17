@@ -146,8 +146,7 @@
           font-size: 12px;
           background-color: transparent;
           border-radius: 0px;
-          margin-left: 2px;
-          margin-right: 2px;
+          margin: 2px;
         }
 
         window#waybar {
@@ -162,12 +161,9 @@
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 14px;
-          margin-top: 2px;
-          margin-bottom: 2px;
-          margin-left: 3px;
-          margin-right: 3px;
+          margin: 2px;
           border-radius: 4px;
-          background-color: #262626;
+          background-color: #000000;
           color: #ffffff;
         }
 
@@ -195,10 +191,7 @@
         #mpris,
         #tray {
           border-radius: 4px;
-          margin-top: 2px;
-          margin-bottom: 2px;
-          margin-left: 3px;
-          margin-right: 3px;
+          margin: 2px;
           padding: 4px 12px;
           background-color: #000000;
           color: #ffffff;
@@ -228,12 +221,12 @@
         tooltip {
           border-radius: 4px;
           padding: 15px;
-          background-color: #131822;
+          background-color: #000000;
         }
 
         tooltip label {
-          padding: 3px;
-          background-color: #131822;
+          padding: 2px;
+          background-color: #000000;
         }
       '';
     };
