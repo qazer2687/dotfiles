@@ -49,10 +49,10 @@
           # Battery
           battery = {
             format = "{icon}"; # {icon}
-            format-icons = ["" "" "" ""];
-            full-at = 95;
+            format-icons = ["" "" "" "" ""];
+            full-at = 100;
             format-full = "";
-            format-charging = " ";
+            format-charging = " ";
             tooltip = true;
             tooltip-format = "{capacity}%";
 
@@ -64,13 +64,13 @@
 
           # Workspaces
           "sway/workspaces" = {
-            format = "{icon}";
+            format = "[{icon}]";
             format-icons = {
-              "1" = "1";
-              "2" = "2";
-              "3" = "3";
-              "4" = "4";
-              "5" = "5";
+              "web" = "1";
+              "code" = "2";
+              "notes" = "3";
+              "term" = "4";
+              "files" = "5";
               "6" = "6";
               "7" = "7";
               "8" = "8";
@@ -151,7 +151,7 @@
         }
 
         window#waybar {
-          background-color: #000000;
+          background-color: #ffffff;
         }
 
         #workspaces {
