@@ -35,14 +35,13 @@
         "root"
         "alex"
       ];
-      max-jobs = 12;
-      cores = 24;
+      max-jobs = "auto";
+      cores = 0;
     };
     buildMachines = [{
       hostName = "jade";
       protocol = "ssh-ng";
       systems = ["x86_64-linux" "aarch64-linux"];
-      maxJobs = 12;
       speedFactor = 2;
       supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
       mandatoryFeatures = [ ];
