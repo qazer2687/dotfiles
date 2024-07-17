@@ -146,7 +146,7 @@
         }
 
         window#waybar {
-          background-color: #ffffff;
+          background-color: #000;
         }
 
         #memory,
