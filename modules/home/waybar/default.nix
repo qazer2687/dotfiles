@@ -28,7 +28,7 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
-          modules-right = ["disk" "network" "pulseaudio" "battery"];
+          modules-right = ["network" "pulseaudio" "battery"];
 
           # Pulseaudio
           pulseaudio = {
@@ -49,7 +49,7 @@
 
           # Battery
           battery = {
-            format = "{icon}"; # {icon}
+            format = "{icon"; # {icon}
             format-icons = [" " " " " " " " " "];
             format-charging = " ";
             tooltip = true;
@@ -82,14 +82,6 @@
             format-disconnected = " ";
             format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
-            interval = 5;
-          };
-
-          # Disk
-          disk = {
-            tooltip = true;
-            format = " ";
-            tooltip-format = "{percentage_used}%";
             interval = 5;
           };
         }
