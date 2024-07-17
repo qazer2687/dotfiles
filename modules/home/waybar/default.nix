@@ -141,8 +141,8 @@
           font-size: 12px;
           background-color: transparent;
           border-radius: 0px;
-          margin-left: 6px;
-          margin-right: 6px;
+          margin-left: 2px;
+          margin-right: 2px;
         }
 
         window#waybar {
@@ -198,6 +198,7 @@
         /* EDGE MARGINS */
         #clock {
         margin-left: 10px;
+        margin-right: 4px;
         }
         #battery {
         margin-right: 10px;
