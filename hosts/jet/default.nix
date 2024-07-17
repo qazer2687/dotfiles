@@ -11,7 +11,7 @@
 
     # GPU
     useExperimentalGPUDriver = true;
-    experimentalGPUInstallMode = "overlay";
+    #experimentalGPUInstallMode = "overlay";
 
     # Sound
     setupAsahiSound = true;
