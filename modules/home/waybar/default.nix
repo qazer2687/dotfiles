@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.waybar.enable {
     # Dependencies
     home.packages = with pkgs; [
-      playerctl
+      pamixer
     ];
 
     wayland.windowManager.sway.config.bars = [
@@ -28,7 +28,7 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
-          modules-right = ["backlight" "network" "pulseaudio" "battery"];
+          modules-right = ["network" "pulseaudio" "battery"];
 
           # Pulseaudio
           pulseaudio = {
@@ -75,19 +75,6 @@
             sort-by-number = true;
           };
 
-          # Mpris
-          mpris = {
-            tooltip = false;
-            format = "{player_icon} {artist} - {title}";
-            format-paused = "{status_icon} {artist} - {title}";
-            player-icons = {
-              default = "󰐊";
-            };
-            status-icons = {
-              paused = "󰏤";
-            };
-          };
-
           # Network
           network = {
             tooltip = false;
@@ -98,37 +85,10 @@
             interval = 5;
           };
 
-          # Memory
-          memory = {
-            tooltip = true;
-            format = "󰘚";
-            tooltip-format = "{percentage}%";
-            interval = 2;
-          };
-
-          # Backlight
-          backlight = {
-            device = "intel_backlight";
-            tooltip = true;
-            format = "{icon}";
-            tooltip-format = "{percent}%";
-            format-icons = ["󰃞" "󰃟" "󰃠"];
-          };
-
-          # Temperature
-          temperature = {
-            tooltip = false;
-            thermal-zone = 5; # x86_pkg_temp
-            critical-threshold = 70;
-            format = " {temperatureC}°C";
-            format-critical = " {temperatureC}°C";
-            interval = 10;
-          };
-
           # Disk
           disk = {
             tooltip = true;
-            format = "󰋊";
+            format = " ";
             tooltip-format = "{percentage_used}%";
             interval = 5;
           };
@@ -177,10 +137,6 @@
 
         #workspaces button.visible {
           color: #ffffff;
-        }
-
-        #network {
-          padding-right: 17px;
         }
 
         tooltip {
