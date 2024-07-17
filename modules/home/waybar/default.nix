@@ -143,7 +143,6 @@
           margin-left: 2px;
           margin-right: 2px;
           margin-bottom: 0px;
-          margin-top: 2px;
         }
 
         #memory,
@@ -187,7 +186,7 @@
           color: #ffffff;
           background-color: #000000;
         }
-        
+
         #battery.warning,
         #battery.critical,
         #battery.urgent {
