@@ -138,7 +138,7 @@
         * {
           font-family: FiraCode Mono Nerd Font;
           font-size: 10px;
-          background-color: #000000;
+          background-color: transparent;
           border-radius: 0px;
           margin-left: 2px;
           margin-right: 2px;
@@ -164,7 +164,7 @@
         }
 
         window#waybar {
-          background-color: transparent;
+          background-color: #000000;
         }
 
         #workspaces {
