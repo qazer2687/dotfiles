@@ -46,7 +46,7 @@
       mandatoryFeatures = [ ];
 	  }];
     distributedBuilds = true;
-    nix.extraOptions = ''
+    extraOptions = ''
 	  builders-use-substitutes = true
 	'';
   };
