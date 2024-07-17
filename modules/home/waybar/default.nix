@@ -190,13 +190,8 @@
         }
 
         #workspaces button.visible {
-          color: #000000;
-          background-color: #ffffff;
-        }
-
-        #workspaces button.active {
-          color: #000000;
-          background-color: #ffffff;
+          color: #303030;
+          background-color: #000000;
         }
 
         #battery {
@@ -212,8 +207,8 @@
         }
 
         #battery.charging {
-          background-color: #00cc00;
-          color: #000000;
+          color: #004400;
+          background-color: #000000;
         }
 
         #network {
