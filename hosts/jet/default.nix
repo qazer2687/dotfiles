@@ -11,7 +11,7 @@
 
     # GPU
     useExperimentalGPUDriver = true;
-    experimentalGPUInstallMode = "overlay";
+    #experimentalGPUInstallMode = "overlay";
 
     # Sound
     setupAsahiSound = true;
@@ -28,6 +28,13 @@
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
+
+  # swap
+  swapDevices = [{
+    device = "/swapfile";
+    size = 16 * 1024;
+  }];
+
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
