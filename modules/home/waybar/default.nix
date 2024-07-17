@@ -151,7 +151,7 @@
         }
 
         window#waybar {
-          background-color: #000000aa;
+          background-color: #000000;
         }
 
         #workspaces {
