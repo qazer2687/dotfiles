@@ -186,11 +186,11 @@
           margin: 2px;
           border-radius: 4px;
           background-color: #000000;
-          color: #ffffff;
+          color: #303030;
         }
 
         #workspaces button.visible {
-          color: #303030;
+          color: #ffffff;
           background-color: #000000;
         }
 
