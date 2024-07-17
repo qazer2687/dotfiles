@@ -177,14 +177,14 @@
 
         #workspaces {
           background-color: #000000;
-        }
-
-        #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 4px;
           margin: 2px;
           border-radius: 4px;
+        }
+
+        #workspaces button {
           background-color: #000000;
           color: #606060;
         }
