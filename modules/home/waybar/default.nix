@@ -162,7 +162,10 @@
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 14px;
-          margin: 2px;
+          margin-top: 2px;
+          margin-bottom: 2px;
+          margin-left: 3px;
+          margin-right: 3px;
           border-radius: 4px;
           background-color: #000000;
           color: #ffffff;
@@ -192,7 +195,10 @@
         #mpris,
         #tray {
           border-radius: 4px;
-          margin: 2px;
+          margin-top: 2px;
+          margin-bottom: 2px;
+          margin-left: 3px;
+          margin-right: 3px;
           padding: 4px 12px;
           background-color: #000000;
           color: #ffffff;
@@ -226,7 +232,7 @@
         }
 
         tooltip label {
-          padding: 2px;
+          padding: 3px;
           background-color: #000000;
         }
       '';
