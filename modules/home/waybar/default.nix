@@ -36,9 +36,9 @@
             icon-size = 20;
             transition-duration = 250;
             modules = [
-              "{"type": "screenshare"}"
-              "{"type": "audio-in"}"
-              "{"type": "audio-out"}"
+              "type:screenshare"
+              "type:audio-in"
+              "type:audio-out"
             ];
           };
 
