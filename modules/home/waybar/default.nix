@@ -28,7 +28,20 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
-          modules-right = ["pulseaudio" "battery"];
+          modules-right = ["privacy" "pulseaudio" "battery"];
+
+          # Privacy
+          privacy = {
+            icon-spacing = 0;
+            icon-size = 20;
+            transition-duration = 250;
+            modules = [
+              "{"type": "screenshare"}"
+              "{"type": "audio-in"}"
+              "{"type": "audio-out"}"
+            ];
+          };
+
 
           # Pulseaudio
           pulseaudio = {
@@ -44,6 +57,7 @@
 
           # Clock
           clock = {
+            format = "󱄅 "
             format-alt = "{:%Y/%m/%d | %H:%M:%S}";
           };
 
