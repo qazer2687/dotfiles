@@ -193,6 +193,15 @@
           padding: 3px;
           background-color: #000000;
         }
+
+
+        /* EDGE MARGINS */
+        #clock {
+        margin-left: 10px;
+        }
+        #battery {
+        margin-right: 10px;
+        }
       '';
     };
   };
