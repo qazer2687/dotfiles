@@ -28,7 +28,7 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "battery"];
+          modules-right = ["disk" "network" "pulseaudio" "battery"];
 
           # Pulseaudio
           pulseaudio = {
@@ -36,9 +36,9 @@
             scroll-step = 1;
             on-click = "pamixer -t";
             format = "{icon}";
-            format-muted = "󰝟 ";
+            format-muted = " ";
             format-icons = {
-              default = ["󰕿" "󰖀" "󰕾"];
+              default = [" " " " ""];
             };
           };
 
