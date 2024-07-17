@@ -49,7 +49,7 @@
 
           # Battery
           battery = {
-            format = "{icon"; # {icon}
+            format = "{icon}"; # {icon}
             format-icons = [" " " " " " " " " "];
             format-charging = " ";
             tooltip = true;
