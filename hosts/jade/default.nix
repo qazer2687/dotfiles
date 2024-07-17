@@ -42,7 +42,7 @@
       hostName = "jade";
       protocol = "ssh-ng";
       systems = ["x86_64-linux" "aarch64-linux"];
-      maxJobs = 6;
+      maxJobs = 12;
       speedFactor = 2;
       supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
       mandatoryFeatures = [ ];
