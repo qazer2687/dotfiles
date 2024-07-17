@@ -66,11 +66,11 @@
           "sway/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "1" = "web";
-              "2" = "code";
-              "3" = "notes";
-              "4" = "term";
-              "5" = "files";
+              "1" = "1";
+              "2" = "2";
+              "3" = "3";
+              "4" = "4";
+              "5" = "5";
               "6" = "6";
               "7" = "7";
               "8" = "8";
@@ -182,7 +182,7 @@
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-          padding: 4px 14px;
+          padding: 4px 4px;
           margin: 2px;
           border-radius: 4px;
           background-color: #000000;
