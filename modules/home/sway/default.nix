@@ -138,10 +138,10 @@ in {
 
       extraConfig = ''
         # Corner Radius
-        corner_radius 4
+        corner_radius 6
 
         # Eye Comfort (EXPERIMENTAL)
-        exec gammastep -xO 2500
+        exec gammastep -xO 3000
 
         # Waybar
         bar {
