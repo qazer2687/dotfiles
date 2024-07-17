@@ -138,7 +138,7 @@
         * {
           font-family: FiraCode Mono Nerd Font;
           font-size: 10px;
-          background-color: 000000;
+          background-color: #000000;
           border-radius: 0px;
           margin-left: 2px;
           margin-right: 2px;
