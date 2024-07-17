@@ -142,7 +142,6 @@
           border-radius: 0px;
           margin-left: 2px;
           margin-right: 2px;
-          margin-bottom: 0px;
         }
 
         #memory,
