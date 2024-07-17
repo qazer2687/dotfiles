@@ -36,13 +36,12 @@
         "alex"
       ];
       max-jobs = 6;
-      cores = 8;
+      cores = 0;
     };
     buildMachines = [{
       hostName = "opal";
       protocol = "ssh-ng";
       systems = ["x86_64-linux" "aarch64-linux"];
-      maxJobs = 6;
       speedFactor = 2;
       supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
       mandatoryFeatures = [ ];
