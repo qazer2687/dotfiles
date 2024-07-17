@@ -7,11 +7,6 @@
   options.modules.waybar.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.waybar.enable {
-    # Dependencies
-    home.packages = with pkgs; [
-      pamixer
-    ];
-
     wayland.windowManager.sway.config.bars = [
       {
         command = "${pkgs.waybar}/bin/waybar";
@@ -34,7 +29,6 @@
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
-            on-click = "pamixer -t";
             format = "{icon}";
             format-alt = "{volume}%";
             format-muted = " ";
@@ -54,8 +48,7 @@
             format-icons = [" " " " " " " " " "];
             format-charging = " ";
             format-alt = "{capacity}%";
-            tooltip = true;
-            tooltip-format = "{capacity}%";
+            tooltip = false;
             interval = 5;
           };
 
@@ -116,7 +109,7 @@
         #disk,
         #mpris,
         #tray {
-          border-radius: 4px;
+          border-radius: 6px;
           padding: 4px 4px;
           color: #ffffff;
         }
@@ -125,7 +118,7 @@
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 4px;
-          border-radius: 4px;
+          border-radius: 6px;
           color: #606060;
         }
 
@@ -134,7 +127,7 @@
         }
 
         tooltip {
-          border-radius: 4px;
+          border-radius: 6px;
           padding: 15px;
           background-color: #000000;
         }
@@ -144,6 +137,23 @@
           background-color: #000000;
         }
 
+
+        #memory,
+        #battery,
+        #backlight,
+        #pulseaudio,
+        #network,
+        #cpu,
+        #memory,
+        #temperature,
+        #disk,
+        #tray {
+          border-radius: 6px;
+          padding: 4px 4px;
+          color: #ffffff;
+          background-color: #222222;
+        }
+        
 
         /* EDGE MARGINS */
         #clock {

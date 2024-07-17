@@ -28,13 +28,13 @@
 
         #window {
           background-color: #000000;
-          border-radius: 4px;
+          border-radius: 6px;
         }
 
         #input{
           margin: 8px;
           padding: 0.5rem;
-          border-radius: 4px;
+          border-radius: 6px;
           background-color: #262626;
         }
 
@@ -43,7 +43,7 @@
           margin-right: 8px;
           padding: 8px;
           color: #ffffff;
-          border-radius: 4px;
+          border-radius: 6px;
         }
 
         #entry:selected {
