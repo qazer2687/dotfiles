@@ -177,7 +177,7 @@
 
         #workspaces {
           background-color: #000000;
-          margin: 2px;
+          margin: 6px;
           border-radius: 4px;
         }
 
