@@ -181,29 +181,6 @@
           background-color: #ffffff;
         }
 
-        #memory,
-        #custom-power,
-        #battery,
-        #backlight,
-        #pulseaudio,
-        #network,
-        #clock,
-        #cpu,
-        #memory,
-        #temperature,
-        #disk,
-        #mpris,
-        #tray {
-          border-radius: 4px;
-          margin-top: 2px;
-          margin-bottom: 2px;
-          margin-left: 3px;
-          margin-right: 3px;
-          padding: 4px 12px;
-          background-color: #000000;
-          color: #ffffff;
-        }
-
         #battery {
           background-color: #000000;
           color: #ffffff;
