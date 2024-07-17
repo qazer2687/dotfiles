@@ -50,15 +50,9 @@
           battery = {
             format = "{icon}"; # {icon}
             format-icons = ["" "" "" "" ""];
-            full-at = 100;
-            format-full = "";
             format-charging = "";
             tooltip = true;
             tooltip-format = "{capacity}%";
-
-            states = {
-              critical = 25;
-            };
             interval = 5;
           };
 
@@ -148,6 +142,8 @@
           border-radius: 0px;
           margin-left: 2px;
           margin-right: 2px;
+          margin-bottom: 0px;
+          margin-top: 2px;
         }
 
         #memory,
@@ -164,15 +160,10 @@
         #mpris,
         #tray {
           border-radius: 4px;
-          margin-top: 2px;
-          margin-bottom: 0px;
-          margin-right: 2px;
-          margin-left: 2px;
           padding: 4px 12px;
           background-color: #000000;
           color: #ffffff;
         }
-
 
         window#waybar {
           background-color: transparent;
@@ -180,10 +171,6 @@
 
         #workspaces {
           background-color: #000000;
-          margin-top: 2px;
-          margin-bottom: 0px;
-          margin-right: 2px;
-          margin-left: 2px;
           border-radius: 4px;
         }
 
@@ -191,10 +178,6 @@
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 4px;
-          margin-top: 2px;
-          margin-bottom: 0px;
-          margin-right: 2px;
-          margin-left: 2px;
           border-radius: 4px;
           background-color: #000000;
           color: #606060;
