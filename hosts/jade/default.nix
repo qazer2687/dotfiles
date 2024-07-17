@@ -21,16 +21,37 @@
   services.getty.autologinUser = "alex";
 
   # Remote Builds
-  boot.binfmt.emulatedSystems = [
-    "aarch64-linux"
-  ];
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "yes";
     networking.firewall.allowedTCPPorts = [
     22 # SSH
   ];
-  nix.settings.system-features = [
-    "big-parallel"
+  nix = {
+    settings = {
+      system-features = [
+        "big-parallel"
+      ];
+      trusted-users = [
+        "root"
+        "alex"
+      ];
+    };
+    buildMachines = [{
+      hostName = "jade";
+      protocol = "ssh-ng";
+      systems = ["x86_64-linux" "aarch64-linux"];
+      maxJobs = 1;
+      speedFactor = 2;
+      supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+      mandatoryFeatures = [ ];
+	  }];
+    distributedBuilds = true;
+    extraOptions = ''
+	    builders-use-substitutes = true
+	  '';
+  };
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
   ];
 
 
