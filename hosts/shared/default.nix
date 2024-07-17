@@ -17,6 +17,7 @@ in {
     keep-outputs = mkDefault true;
     auto-optimise-store = mkDefault true;
     sandbox = mkDefault true;
+    require-sigs = false; # for remote builds
   };
 
   ## i forgot what this does (obsidian req maybe)
