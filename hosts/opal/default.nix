@@ -25,12 +25,9 @@
 
   # Remote Builds
   services.openssh.enable = true;
-  services.openssh.settings.PermitRootLogin = "yes";
-    networking.firewall.allowedTCPPorts = [
-    22 # SSH
-  ];
   nix = {
     settings = {
+      require-sigs = false;
       system-features = [
         "big-parallel"
       ];
