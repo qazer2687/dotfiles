@@ -159,7 +159,7 @@
         #mpris,
         #tray {
           border-radius: 4px;
-          padding: 4px 12px;
+          padding: 4px 4px;
           background-color: #000000;
           color: #ffffff;
         }
