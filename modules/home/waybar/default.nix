@@ -146,7 +146,8 @@
           font-size: 12px;
           background-color: transparent;
           border-radius: 0px;
-          margin: 2px;
+          margin-left: 2px;
+          margin-right: 2px;
         }
 
         window#waybar {
