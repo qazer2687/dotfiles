@@ -68,10 +68,6 @@
     coreOffset = -150;
   }; */ # lots of silly bomboclat issues caused by this option
 
-  services.openssh = {
-    enable = true;
-  };
-
   services.xserver.displayManager.gdm.autoSuspend = false;
 
   modules = {
