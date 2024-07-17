@@ -4,7 +4,7 @@
   config,
   ...
 }: let
-  modifier = "Control";
+  modifier = "Mod4";
 
   wayland-screenshot = pkgs.writeShellApplication {
     name = "wayland-screenshot";
@@ -52,7 +52,6 @@ in {
           "type:keyboard" = {
             xkb_layout = "gb";
             xkb_variant = "colemak";
-            xkb_options = "ctrl:swap_lwin_lctl,ctrl:swap_rwin_rctl";
           };
         };
 
