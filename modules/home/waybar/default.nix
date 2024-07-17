@@ -150,6 +150,27 @@
           margin-right: 2px;
         }
 
+        #memory,
+        #custom-power,
+        #battery,
+        #backlight,
+        #pulseaudio,
+        #network,
+        #clock,
+        #cpu,
+        #memory,
+        #temperature,
+        #disk,
+        #mpris,
+        #tray {
+          border-radius: 4px;
+          margin: 2px;
+          padding: 4px 12px;
+          background-color: #000000;
+          color: #ffffff;
+        }
+
+
         window#waybar {
           background-color: #000000;
         }
@@ -162,10 +183,7 @@
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 14px;
-          margin-top: 2px;
-          margin-bottom: 2px;
-          margin-left: 3px;
-          margin-right: 3px;
+          margin: 2px;
           border-radius: 4px;
           background-color: #000000;
           color: #ffffff;
