@@ -187,17 +187,7 @@
           color: #ffffff;
           background-color: #000000;
         }
-
-        #battery {
-          background-color: #000000;
-          color: #ffffff;
-          margin-right: 12px;
-        }
-
-        #clock {
-          margin-left: 12px;
-        }
-
+        
         #battery.warning,
         #battery.critical,
         #battery.urgent {
