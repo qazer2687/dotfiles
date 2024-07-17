@@ -35,7 +35,8 @@
             tooltip = false;
             scroll-step = 1;
             on-click = "pamixer -t";
-            format = "{icon}  {volume}%";
+            format = "{icon}";
+            format-alt = "{volume}%";
             format-muted = " ";
             format-icons = {
               default = [" " " " " "];
@@ -49,9 +50,10 @@
 
           # Battery
           battery = {
-            format = "{icon}  {capacity}%"; # {icon}
+            format = "{icon}"; # {icon}
             format-icons = [" " " " " " " " " "];
             format-charging = " ";
+            format-alt = "{capacity}%";
             tooltip = true;
             tooltip-format = "{capacity}%";
             interval = 5;
@@ -78,7 +80,7 @@
           # Network
           network = {
             tooltip = false;
-            format-wifi = "  {ipaddr}"; # 󱐋 {frequency}
+            format-wifi = " "; # 󱐋 {frequency}
             format-disconnected = " ";
             format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
