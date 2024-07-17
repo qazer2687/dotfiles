@@ -35,6 +35,8 @@
         "root"
         "alex"
       ];
+      max-jobs = 12;
+      cores = 24;
     };
     buildMachines = [{
       hostName = "jade";
