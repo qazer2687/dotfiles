@@ -23,6 +23,6 @@
         ";
       };
     };
-    home.packages = [ pkgs.git-credential-manager ];
+    home.packages = [ pkgs.gitFull ];
   };
 }
