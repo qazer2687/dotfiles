@@ -30,19 +30,6 @@
           modules-center = [];
           modules-right = ["privacy" "pulseaudio" "battery"];
 
-          # Privacy
-          privacy = {
-            icon-spacing = 0;
-            icon-size = 20;
-            transition-duration = 250;
-            modules = [
-              "type:screenshare"
-              "type:audio-in"
-              "type:audio-out"
-            ];
-          };
-
-
           # Pulseaudio
           pulseaudio = {
             tooltip = false;
