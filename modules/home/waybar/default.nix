@@ -164,7 +164,10 @@
         #mpris,
         #tray {
           border-radius: 4px;
-          margin: 2px;
+          margin-top: 2px;
+          margin-bottom: 0px;
+          margin-right: 2px;
+          margin-left: 2px;
           padding: 4px 12px;
           background-color: #000000;
           color: #ffffff;
@@ -177,7 +180,10 @@
 
         #workspaces {
           background-color: #000000;
-          margin: 6px;
+          margin-top: 2px;
+          margin-bottom: 0px;
+          margin-right: 2px;
+          margin-left: 2px;
           border-radius: 4px;
         }
 
@@ -185,7 +191,10 @@
           all: initial; /* Remove GTK theme values (waybar #1351) */
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 4px;
-          margin: 2px;
+          margin-top: 2px;
+          margin-bottom: 0px;
+          margin-right: 2px;
+          margin-left: 2px;
           border-radius: 4px;
           background-color: #000000;
           color: #606060;
