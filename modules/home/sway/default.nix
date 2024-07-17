@@ -132,7 +132,7 @@ in {
           "${modifier}+Shift+Left" = "resize shrink left 5 ppt";
           "${modifier}+Shift+Up" = "resize grow height 5 ppt";
           "${modifier}+Shift+Down" = "resize shrink height 5 ppt";
-          "${modifier}+Shift+Right" = "resize grow right 5 ppt";
+          "${modifier}+Shift+Right" = "resize shrink right 5 ppt";
         };
       };
 
