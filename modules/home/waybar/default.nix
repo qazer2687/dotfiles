@@ -24,7 +24,7 @@
       settings = [
         {
           layer = "top";
-          height = 28;
+          height = 35;
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
