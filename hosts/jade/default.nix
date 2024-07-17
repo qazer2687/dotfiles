@@ -47,8 +47,8 @@
 	  }];
     distributedBuilds = true;
     extraOptions = ''
-	  builders-use-substitutes = true
-	'';
+	    builders-use-substitutes = true
+	  '';
   };
   boot.binfmt.emulatedSystems = [
     "aarch64-linux"
