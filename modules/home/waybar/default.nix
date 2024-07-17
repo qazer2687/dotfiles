@@ -141,8 +141,8 @@
           font-size: 12px;
           background-color: transparent;
           border-radius: 0px;
-          margin-left: 2px;
-          margin-right: 2px;
+          margin-left: 4px;
+          margin-right: 4px;
         }
 
         window#waybar {
