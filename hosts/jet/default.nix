@@ -11,7 +11,7 @@
 
     # GPU
     useExperimentalGPUDriver = true;
-    experimentalGPUInstallMode = "overlay";
+    experimentalGPUInstallMode = "driver"; # overlay fails to compile, replace doesn't work in pure eval
 
     # Sound
     setupAsahiSound = true;
