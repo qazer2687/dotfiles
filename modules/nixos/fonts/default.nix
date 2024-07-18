@@ -16,7 +16,7 @@
           "LiberationMono"
         ];
       })
-      dina-font
+      proggyfonts
       atkinson-hyperlegible
       noto-fonts-color-emoji
       noto-fonts-cjk-sans
