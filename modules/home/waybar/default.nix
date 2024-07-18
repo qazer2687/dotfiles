@@ -87,7 +87,6 @@
           font-family: FiraCode Mono Nerd Font;
           font-size: 12px;
           background-color: transparent;
-          border-radius: 0px;
           margin-left: 4px;
           margin-right: 4px;
         }
@@ -109,10 +108,10 @@
         #disk,
         #mpris,
         #tray {
-          border-radius: 6px;
+          border-radius: 4px;
           padding: 0px 4px;
-          margin-top: 2px;
-          margin-bottom: 2px;
+          margin-top: 6px;
+          margin-bottom: 6px;
           color: #ffffff;
         }
 
