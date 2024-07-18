@@ -22,7 +22,7 @@
       style = ''
         * {
           all: unset;
-          font-family: "LiterationMono Nerd Font";
+          font-family: "Agave";
           font-size: 14px;
         }
 
