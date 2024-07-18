@@ -9,8 +9,8 @@
     services.mako = {
       enable = true;
       defaultTimeout = 5000;
-      font = "LiterationMono Nerd Font 12";
-      borderRadius = 8;
+      font = "Agave";
+      borderRadius = 6;
       margin = "8";
       anchor = "top-right";
       width = 600;
