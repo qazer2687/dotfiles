@@ -97,8 +97,8 @@ in {
           XF86AudioMicMute = "exec ${pkgs.pamixer}/bin/pamixer --default-source -t";
 
           # Brightness Controls
-          XF86MonBrightnessUp = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%+";
-          XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%-";
+          XF86MonBrightnessUp = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 4%+";
+          XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 4%-";
 
           # Workspace Navigation
           "${modifier}+1" = "workspace number 1";

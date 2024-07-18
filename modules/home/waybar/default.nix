@@ -137,28 +137,12 @@
           background-color: #000000;
         }
 
-
-        #memory,
-        #battery,
-        #backlight,
-        #pulseaudio,
-        #network,
-        #cpu,
-        #memory,
-        #temperature,
-        #disk,
-        #tray {
-          border-radius: 6px;
-          padding: 4px 4px;
-          color: #ffffff;
-          background-color: #222222;
-        }
-        
-
         /* EDGE MARGINS */
         #clock {
         margin-left: 10px;
         margin-right: 4px;
+        background-color: #fff;
+        color: #000;
         }
         #battery {
         margin-right: 10px;
