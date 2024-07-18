@@ -8,6 +8,7 @@
     nautilus
     gammastep
     fragments
+    vesktop
   ];
 
   modules = {
