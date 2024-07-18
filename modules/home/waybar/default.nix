@@ -85,7 +85,7 @@
       style = ''
         * { 
           font-family: Agave, FiraCode Mono Nerd Font;
-          font-size: 12px;
+          font-size: 11px;
           background-color: transparent;
           margin-left: 4px;
           margin-right: 4px;
