@@ -90,7 +90,7 @@
           border-radius: 0px;
           margin-left: 4px;
           margin-right: 4px;
-          padding: 4px px;
+          padding: 4px 4px;
         }
 
         window#waybar {
