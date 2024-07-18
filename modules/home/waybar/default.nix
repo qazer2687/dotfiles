@@ -110,7 +110,9 @@
         #mpris,
         #tray {
           border-radius: 6px;
-          padding: 2px 4px;
+          padding: 0px 4px;
+          margin-top: 2px;
+          margin-bottom: 2px;
           color: #ffffff;
         }
 
