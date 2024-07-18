@@ -84,7 +84,7 @@
 
       style = ''
         * {
-          font-family: FiraCode Mono Nerd Font;
+          font-family: Dina, FiraCode Mono Nerd Font;
           font-size: 11px;
           background-color: transparent;
           margin-left: 4px;
