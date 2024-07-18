@@ -85,7 +85,7 @@
       style = ''
         * {
           font-family: FiraCode Mono Nerd Font;
-          font-size: 12px;
+          font-size: 11px;
           background-color: transparent;
           margin-left: 4px;
           margin-right: 4px;
@@ -109,7 +109,7 @@
         #mpris,
         #tray {
           border-radius: 2px;
-          padding: 2px 2px;
+          padding: 2px 4px;
           margin-top: 4px;
           margin-bottom: 4px;
           color: #ffffff;
@@ -123,31 +123,19 @@
           border-radius: 6px;
           color: #606060;
         }
-
         #workspaces button.visible {
           color: #ffffff;
         }
 
-        tooltip {
-          border-radius: 6px;
-          padding: 15px;
-          background-color: #000000;
-        }
-
-        tooltip label {
-          padding: 3px;
-          background-color: #000000;
-        }
-
         /* EDGE MARGINS */
         #clock {
-        margin-left: 10px;
-        margin-right: 4px;
-        background-color: #fff;
-        color: #000;
+          margin-left: 10px;
+          margin-right: 4px;
+          background-color: #fff;
+          color: #000;
         }
         #battery {
-        margin-right: 10px;
+          margin-right: 10px;
         }
       '';
     };
