@@ -29,7 +29,7 @@
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
-            format = "{icon}";
+            format = "{icon} {volume}%";
             format-alt = "{volume}%";
             format-muted = " ";
             format-icons = {
@@ -44,7 +44,7 @@
 
           # Battery
           battery = {
-            format = "{icon}"; # {icon}
+            format = "{icon} {capacity}%"; # {icon}
             format-icons = [" " " " " " " " " "];
             format-charging = " ";
             format-alt = "{capacity}%";
@@ -73,7 +73,7 @@
           # Network
           network = {
             tooltip = false;
-            format-wifi = " "; # 󱐋 {frequency}
+            format-wifi = "  {ipaddr}"; # 󱐋 {frequency}
             format-disconnected = " ";
             format-alt = "{ipaddr}";
             format-ethernet = "󰈁";
