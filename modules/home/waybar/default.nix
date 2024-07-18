@@ -108,12 +108,12 @@
         #disk,
         #mpris,
         #tray {
-          border-radius: 4px;
-          padding: 0px 4px;
-          margin-top: 6px;
-          margin-bottom: 6px;
+          border-radius: 2px;
+          margin-top: 4px;
+          margin-bottom: 4px;
           color: #ffffff;
         }
+
 
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
