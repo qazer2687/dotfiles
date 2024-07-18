@@ -94,6 +94,9 @@
 
         window#waybar {
           background-color: #000;
+
+          margin-top: 4px;
+          margin-bottom: 4px;
         }
 
         #memory,
