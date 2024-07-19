@@ -20,5 +20,6 @@
     ./edge
     ./direnv
     ./starship
+    ./bat
   ];
 }
