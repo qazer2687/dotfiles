@@ -7,14 +7,6 @@
     ../../modules/darwin
   ];
 
-  networking = let
-    name = "onyx";
-  in {
-    computerName = name;
-    hostName = name;
-    localHostName = name;
-  };
-
   users.users.alex = {
     name = "alex";
     home = "/Users/alex";

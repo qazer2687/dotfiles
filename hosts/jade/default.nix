@@ -4,7 +4,6 @@
     ../../modules/nixos
   ];
 
-  networking.hostName = "jade";
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   # startx

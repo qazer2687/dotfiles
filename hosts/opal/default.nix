@@ -5,8 +5,6 @@
     ../../modules/nixos
   ];
 
-  networking.hostName = "opal";
-
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
