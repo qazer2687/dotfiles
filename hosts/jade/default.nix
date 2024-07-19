@@ -38,6 +38,9 @@
     fonts.enable = true;
     keymap.enable = true;
     zram.enable = true;
+
+    # Utilities
+    nh.enable = true;
   };
 
   # Did you read the comment?

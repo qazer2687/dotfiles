@@ -44,6 +44,9 @@
     keymap.enable = true;
     zram.enable = true;
 
+    # Utilities
+    nh.enable = true;
+
     # Server Modules
     docker.enable = true;
   };
