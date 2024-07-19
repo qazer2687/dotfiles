@@ -17,11 +17,14 @@
     nix-homebrew,
     ...
   } @ inputs: {
-    nixosConfigurations = {
-      jade = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = let
+      name = "jade";
+    in {
+      ${name} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
+          {networking.hostName=name;}
           ./hosts/jade
           ./hosts/shared
           nur.nixosModules.nur
@@ -46,8 +49,10 @@
       };
     };
 
-    nixosConfigurations = {
-      ruby = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = let
+      name = "ruby";
+    in {
+      ${name} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
@@ -75,7 +80,9 @@
       };
     };
 
-    nixosConfigurations = {
+    nixosConfigurations = let
+      name = "jet";
+    in {
       jet = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         specialArgs = {inherit inputs;};
@@ -104,7 +111,9 @@
       };
     };
 
-    darwinConfigurations = {
+    darwinConfigurations = let
+      name = "onyx";
+    in {
       onyx = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
@@ -137,7 +146,9 @@
       };
     };
 
-    nixosConfigurations = {
+    nixosConfigurations = let
+      name = "opal";
+    in {
       opal = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};

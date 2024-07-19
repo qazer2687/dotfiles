@@ -21,5 +21,6 @@
     ./direnv
     ./starship
     ./bat
+    ./eza
   ];
 }
