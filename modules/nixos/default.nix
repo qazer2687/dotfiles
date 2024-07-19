@@ -14,5 +14,6 @@
     ./keymap
     ./zram
     ./remote-builder
+    ./nh
   ];
 }
