@@ -12,21 +12,23 @@
   ];
 
   modules = {
+    # Environment
     sway.enable = true;
     waybar.enable = true;
     foot.enable = true;
     mako.enable = true;
     wofi.enable = true;
-    git.enable = true;
     dark.enable = true;
     firefox.enable = true;
     fish.enable = true;
 
     # CLI Tools
     bat.enable = true;
+    eza.enable = true;
 
     # Development
     vscode.enable = true;
+    git.enable = true;
   };
 
   home.stateVersion = "24.11";
