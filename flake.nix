@@ -83,7 +83,7 @@
     nixosConfigurations = let
       name = "jet";
     in {
-      jet = nixpkgs.lib.nixosSystem {
+      ${name} = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         specialArgs = {inherit inputs;};
         modules = [
@@ -114,7 +114,7 @@
     darwinConfigurations = let
       name = "onyx";
     in {
-      onyx = darwin.lib.darwinSystem {
+      ${name} = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
         specialArgs = {inherit inputs;};
@@ -147,7 +147,7 @@
     };
 
     nixosConfigurations = let
-      name = "opal";
+      ${name} = "opal";
     in {
       opal = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
