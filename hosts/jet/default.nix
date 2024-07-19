@@ -20,8 +20,6 @@
     peripheralFirmwareDirectory = ../../firmware/jet;
   };
 
-  networking.hostName = "jet";
-
   # autologin
   services.getty.autologinUser = "alex";
 
