@@ -21,38 +21,6 @@
    # 25565 # Minecraft
   ];
 
-  # Remote Builds
-  services.openssh.enable = true;
-  nix = {
-    settings = {
-      require-sigs = false;
-      system-features = [
-        "big-parallel"
-      ];
-      trusted-users = [
-        "root"
-        "alex"
-      ];
-      max-jobs = 6;
-      cores = 0;
-    };
-    buildMachines = [{
-      hostName = "opal";
-      protocol = "ssh-ng";
-      systems = ["x86_64-linux" "aarch64-linux"];
-      speedFactor = 2;
-      supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
-      mandatoryFeatures = [ ];
-	  }];
-    distributedBuilds = true;
-    extraOptions = ''
-	    builders-use-substitutes = true
-	  '';
-  };
-  boot.binfmt.emulatedSystems = [
-    "aarch64-linux"
-  ];
-
   services.cockpit = {
     enable = true;
     port = 10000;
