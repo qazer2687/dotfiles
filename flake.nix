@@ -149,7 +149,7 @@
     nixosConfigurations = let
       ${name} = "opal";
     in {
-      opal = nixpkgs.lib.nixosSystem {
+      ${name} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
