@@ -21,7 +21,7 @@
 
     # Additional Supported Filesystems
     boot = {
-      supportedFilesystems = ["ntfs" "apfs"];
+      supportedFilesystems = ["ntfs"];
     };
   };
 }
