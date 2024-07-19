@@ -5,35 +5,33 @@
     ../../modules/nixos
   ];
 
+  # Asahi
   hardware.asahi = {
-    # Kernel
     withRust = true;
-
-    # GPU
     useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "replace"; # driver breaks sway, overlay fails to compile, replace doesn't work in pure eval
-
-    # Sound
     setupAsahiSound = true;
-
-    # Firmware
     peripheralFirmwareDirectory = ../../firmware/jet;
   };
+  boot = {
+    kernelParams = [
+      "apple_dcp.show_notch=1" # enable notch pixel space on asahi
+    ];
+  };
 
-  # autologin
+  # Autologin
   services.getty.autologinUser = "alex";
-
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
 
-  # swap
+  # Swap
   swapDevices = [{
     device = "/swapfile";
     size = 16 * 1024;
   }];
 
-
+  # Environment Variables
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
@@ -42,16 +40,13 @@
     XDG_SESSION_TYPE = "wayland";
   };
   
-  boot = {
-    kernelParams = [
-      "apple_dcp.show_notch=1" # enable notch pixel space on asahi
-    ];
-  };
-
   # Modules
   modules = {
     networkmanager.enable = true;
-    # pipewire.enable = true; # sound is managed by asahi-sound
+
+    # sound is managed by hardware.asahi.setupAsahiSound
+    # pipewire.enable = true;
+
     systemd-boot.enable = true;
     bluetooth.enable = true;
     filesystem.enable = true;
@@ -60,5 +55,6 @@
     zram.enable = true;
   };
 
+  # Did you read the comment?
   system.stateVersion = "24.11";
 }

@@ -1,60 +1,29 @@
-{...}: {
+{
+  lib,
+  ...
+}: {
   imports = [
     ../../hardware/jade
     ../../modules/nixos
   ];
 
+  # require for everything to not shit itself when i rebuild
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  # startx
+  # required for i3 to start properly
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
   };
 
+  # Autologin
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && startx
   '';
-
-  # autologin
   services.getty.autologinUser = "alex";
 
-  # Remote Builds
-  services.openssh.enable = true;
-  services.openssh.settings.PermitRootLogin = "yes";
-    networking.firewall.allowedTCPPorts = [
-    22 # SSH
-  ];
-  nix = {
-    settings = {
-      system-features = [
-        "big-parallel"
-      ];
-      trusted-users = [
-        "root"
-        "alex"
-      ];
-      max-jobs = "auto";
-      cores = 0;
-    };
-    buildMachines = [{
-      hostName = "jade";
-      protocol = "ssh-ng";
-      systems = ["x86_64-linux" "aarch64-linux"];
-      speedFactor = 2;
-      supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
-      mandatoryFeatures = [ ];
-	  }];
-    distributedBuilds = true;
-    extraOptions = ''
-	    builders-use-substitutes = true
-	  '';
-  };
-  boot.binfmt.emulatedSystems = [
-    "aarch64-linux"
-  ];
-
-
+  # Custom Kernel
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
 
   # Modules
   modules = {
@@ -70,6 +39,6 @@
     zram.enable = true;
   };
 
-  # State Version
+  # Did you read the comment?
   system.stateVersion = "23.05";
 }
