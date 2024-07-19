@@ -31,7 +31,7 @@
             format = "{icon} {volume}%";
             format-muted = "  MUTED";
             format-icons = {
-              default = ["" " " " "];
+              default = [" " " " " "];
             };
           };
 
