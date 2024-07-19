@@ -22,6 +22,9 @@
     firefox.enable = true;
     fish.enable = true;
 
+    # CLI Tools
+    bat.enable = true;
+
     # Development
     vscode.enable = true;
   };
