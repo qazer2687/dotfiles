@@ -12,6 +12,12 @@
     };
   };
 
+  # SSH
+  services.openssh.enable = true;
+  networking.firewall.allowedTCPPorts = [
+    22 # SSH
+  ];
+
   # environment.loginShellInit = ''
   #    [[ "$(tty)" == /dev/tty1 ]] && sway
   #  '';
@@ -30,7 +36,6 @@
     pipewire.enable = true;
     systemd-boot.enable = true;
     bluetooth.enable = true;
-    #tlp.enable = true;
     filesystem.enable = true;
     fonts.enable = true;
     keymap.enable = true;
@@ -38,5 +43,6 @@
 
   };
 
+  # Did you read the comment?
   system.stateVersion = "23.05";
 }
