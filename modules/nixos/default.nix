@@ -13,5 +13,6 @@
     ./fonts
     ./keymap
     ./zram
+    ./remote-builder
   ];
 }

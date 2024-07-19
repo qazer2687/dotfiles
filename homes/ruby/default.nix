@@ -6,9 +6,9 @@
   home.packages = with pkgs; [
     obsidian
     nautilus
-    gammastep
-    fragments
-    obs-studio
+   # gammastep
+   # fragments
+   # obs-studio
   ];
 
   modules = {
@@ -27,8 +27,8 @@
     fish.enable = true;
 
     # Development
-    vscode.enable = true;
-    emacs.enable = true;
+    #vscode.enable = true;
+    #emacs.enable = true;
   };
 
   home.stateVersion = "23.05";
