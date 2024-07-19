@@ -28,12 +28,10 @@
           # Pulseaudio
           pulseaudio = {
             tooltip = false;
-            scroll-step = 1;
             format = "{icon} {volume}%";
-            format-alt = "{volume}%";
-            format-muted = " ";
+            format-muted = "  MUTED";
             format-icons = {
-              default = [" " " " " "];
+              default = ["" " " " "];
             };
           };
 
@@ -46,8 +44,7 @@
           battery = {
             format = "{icon} {capacity}%"; # {icon}
             format-icons = [" " " " " " " " " "];
-            format-charging = " ";
-            format-alt = "{capacity}%";
+            format-charging = "  CHARGING";
             tooltip = false;
             interval = 5;
           };
@@ -74,9 +71,8 @@
           network = {
             tooltip = false;
             format-wifi = "  {ipaddr}"; # 󱐋 {frequency}
-            format-disconnected = " ";
-            format-alt = "{ipaddr}";
-            format-ethernet = "󰈁";
+            format-disconnected = "  DISCONNECTED";
+            format-ethernet = "  {ipaddr}";
             interval = 5;
           };
         }
