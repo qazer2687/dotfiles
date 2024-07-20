@@ -7,7 +7,6 @@
   options.modules.pipewire.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.pipewire.enable {
-    sound.enable = false;
     security.rtkit.enable = true;
     hardware.pulseaudio.enable = false;
     hardware.enableAllFirmware = true; # saw this somewhere, might help with stuff idk
@@ -28,6 +27,14 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      extraConfig.pipewire."92-low-latency" = {
+        context.properties = {
+          default.clock.rate = 48000;
+          default.clock.quantum = 32;
+          default.clock.min-quantum = 32;
+          default.clock.max-quantum = 32;
+        };
+      };
     };
   };
 }
