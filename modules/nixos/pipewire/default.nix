@@ -7,6 +7,7 @@
   options.modules.pipewire.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.pipewire.enable {
+    sound.enable = false;
     security.rtkit.enable = true;
     hardware.pulseaudio.enable = false;
     hardware.enableAllFirmware = true; # saw this somewhere, might help with stuff idk
