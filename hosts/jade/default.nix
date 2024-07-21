@@ -24,7 +24,7 @@
   services.getty.autologinUser = "alex";
 
   # Custom Kernel
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages-rt ;
 
   # Modules
   modules = {

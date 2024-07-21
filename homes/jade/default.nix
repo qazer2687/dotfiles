@@ -7,9 +7,9 @@
     obsidian
     nautilus
     obs-studio
-    armcord
     lunar-client
     vlc
+    vesktop
   ];
 
   modules = {
