@@ -25,6 +25,8 @@
           apply_gpu_optimisations = "accept-responsibility";
           gpu_device = 0;
           nv_powermizer_mode = 1; # "Prefer Maximum Performance"
+          nv_core_clock_mhz_offset = 100;
+          nv_mem_clock_mhz_offset = 800;
         };
       };
     };
