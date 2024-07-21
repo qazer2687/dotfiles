@@ -28,6 +28,10 @@
         userChrome = ''
           @-moz-document url(chrome://browser/content/browser.xhtml){
 
+            /* Additional options required
+            browser.tabs.tabmanager.enabled = false
+            */
+
             :root:not([inFullscreen]){
               --uc-bottom-toolbar-height: calc(39px + var(--toolbarbutton-outer-padding) )
             }
@@ -61,6 +65,20 @@
 
             .urlbarView-body-inner{ border-top-style: none !important; }
           }
+
+          /* hide enhanced tracking protection shield icon */
+          #tracking-protection-icon-container {
+            display: none;
+          }
+          .bookmark-item[container] {
+            list-style-image: url("chrome://global/skin/dirListing/folder.png") !important;
+          }
+
+          /* hide extensions button */
+          #unified-extensions-button { display: none }
+
+          /* hide bookmarks star */
+          #star-button-box {display: none !important;}
         '';
       };
     };
