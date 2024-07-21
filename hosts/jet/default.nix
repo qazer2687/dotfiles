@@ -45,7 +45,8 @@
     networkmanager.enable = true;
 
     # sound is managed by hardware.asahi.setupAsahiSound
-    # pipewire.enable = true;
+    # this will install easyeffects with its plugins
+    pipewire.enable = true;
 
     systemd-boot.enable = true;
     bluetooth.enable = true;
