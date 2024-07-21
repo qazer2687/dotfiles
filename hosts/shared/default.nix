@@ -28,7 +28,7 @@ in {
   # User
   users.users.alex = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "video"];
+    extraGroups = ["networkmanager" "wheel" "video" "audio"];
     shell = pkgs.fish;
   };
 

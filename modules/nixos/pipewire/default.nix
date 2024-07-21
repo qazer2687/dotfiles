@@ -20,6 +20,7 @@
       zita-convolver
       rnnoise
       speexdsp
+      libbs2b
     ];
     services.pipewire = {
       enable = true;
