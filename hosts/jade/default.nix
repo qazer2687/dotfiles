@@ -24,8 +24,7 @@
   services.getty.autologinUser = "alex";
 
   # Custom Kernel
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen ;
-  programs.cfs-zen-tweaks.enable = true; # enable the cfs cpu scheduler
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod ;
 
   # Modules
   modules = {
