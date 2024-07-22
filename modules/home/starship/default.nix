@@ -12,6 +12,8 @@
       enableFishIntegration = true;
       enableTransience = true;
       settings = {
+        format = "$all";
+
         character = {
           success_symbol = "[>](bold green)";
           error_symbol = "[x](bold red)";
