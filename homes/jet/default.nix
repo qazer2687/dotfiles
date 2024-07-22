@@ -29,6 +29,7 @@
     # Development
     vscode.enable = true;
     git.enable = true;
+    direnv.enable = true;
   };
 
   home.stateVersion = "24.11";
