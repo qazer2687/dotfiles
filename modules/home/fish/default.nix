@@ -18,6 +18,7 @@ in {
       interactiveShellInit = ''
         set fish_greeting # disable greeting
         fish_add_path /opt/homebrew/bin # add brew binaries to path
+        direnv hook fish | source # direnv.fishShellIntegration is broken
       '';
     };
     home.shellAliases = aliases;
