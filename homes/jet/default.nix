@@ -1,13 +1,13 @@
 { pkgs, lib, ... }: let
   warpOverlay = final: prev: {
-    warp-terminal-aarch64 = prev.warp-terminal.overrideAttrs (oldAttrs: rec {
+    warp-terminal-aarch64 = prev.warp-terminal.overrideAttrs (finalAttrs: rec {
       src = pkgs.fetchurl {
-        url = "https://releases.warp.dev/stable/v${oldAttrs.version}/warp-terminal-v${oldAttrs.version}-1-aarch64.pkg.tar.zst";
+        url = "https://releases.warp.dev/stable/v${finalAttrs.version}/warp-terminal-v${finalAttrs.version}-1-aarch64.pkg.tar.zst";
       };
 
       meta = with lib; {
-        inherit (oldAttrs.meta) description homepage license sourceProvenance maintainers;
-        platforms = oldAttrs.meta.platforms ++ [ "aarch64-linux" ];
+        inherit (finalAttrs.meta) description homepage license sourceProvenance maintainers;
+        platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" ];
       };
     });
   };
