@@ -2,20 +2,7 @@
   pkgs,
   lib,
   ...
-}: {
-  imports = [
-    ../../modules/home
-  ];
-
-  home.packages = with pkgs; [
-    obsidian
-    nautilus
-    gammastep
-    fragments
-    vesktop
-    warp-terminal
-  ];
-
+}: let
   nixpkgs.overlays = [
     (final: prev: {
       warp-terminal = prev.warp-terminal.overrideAttrs (finalAttrs: rec {
@@ -29,6 +16,19 @@
         };
       });
     })
+  ];
+in {
+  imports = [
+    ../../modules/home
+  ];
+
+  home.packages = with pkgs; [
+    obsidian
+    nautilus
+    gammastep
+    fragments
+    vesktop
+    warp-terminal
   ];
 
   modules = {
