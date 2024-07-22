@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.direnv.enable {
     programs.direnv = {
       enable = true;
-      #enableFishIntegration = true; # broken for some reason
+      enableFishIntegration = true;
       nix-direnv = {
         enable = true;
       };
