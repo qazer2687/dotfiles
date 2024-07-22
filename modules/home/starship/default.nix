@@ -127,7 +127,7 @@
           disabled = false;
           time_format = "%R";
           style = "bg:#33658A";
-          format = "[ ♥ $time ]($style)";
+          format = "[ $time ]($style)";
         };
       };
     };
