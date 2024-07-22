@@ -12,7 +12,7 @@
       enableFishIntegration = true;
       enableTransience = true;
       settings = {
-        format = "$character $all";
+        format = "$all";
 
         character = {
           format = "$symbol ";

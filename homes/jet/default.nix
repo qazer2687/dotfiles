@@ -9,6 +9,7 @@
     gammastep
     fragments
     vesktop
+    warp-terminal
   ];
 
   modules = {
@@ -30,7 +31,7 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
-    starship.enable = true;
+    #starship.enable = true;
   };
 
   home.stateVersion = "24.11";
