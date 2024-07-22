@@ -13,22 +13,20 @@
     gammastep
     fragments
     vesktop
-    warp-terminal-aarch64
+    warp-terminal
   ];
 
   nixpkgs.overlays = [
     (final: prev: {
       warp-terminal = prev.warp-terminal.overrideAttrs (finalAttrs: rec {
-        src = if final.stdenv.isAarch64 then pkgs.fetchurl {
+        src = pkgs.fetchurl {
           url = "https://releases.warp.dev/stable/v${finalAttrs.version}/warp-terminal-v${finalAttrs.version}-1-aarch64.pkg.tar.zst";
-        } else finalAttrs.src;
+        };
 
         meta = with lib; {
           inherit (finalAttrs.meta) description homepage license sourceProvenance maintainers;
           platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" "aarch64-unknown-linux-gnu" ];
         };
-
-        warp-terminal-aarch64 = final.warp-terminal;
       });
     })
   ];
