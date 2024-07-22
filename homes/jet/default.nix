@@ -13,6 +13,8 @@
         meta = with lib; {
           inherit (finalAttrs.meta) description homepage license sourceProvenance maintainers;
           platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" "aarch64-unknown-linux-gnu" ];
+
+          warp-aarch64 = final.warp-terminal;
         };
       });
     })
@@ -28,7 +30,7 @@ in {
     gammastep
     fragments
     vesktop
-    warp-terminal
+    warp-aarch64
   ];
 
   modules = {
