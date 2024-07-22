@@ -73,7 +73,7 @@ in {
 
         keybindings = lib.mkOptionDefault rec {
           # Open Terminal
-          "${modifier}+Return" = "exec warp-terminal";
+          "${modifier}+Return" = "exec WARP_ENABLE_WAYLAND=1 warp-terminal";
 
           # Close Window
           "${modifier}+q" = "kill";
