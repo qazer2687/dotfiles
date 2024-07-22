@@ -4,7 +4,7 @@
   ...
 }: let
     warp = final: prev: {
-      warp-terminal = prev.warp-terminal.overrideAttrs (finalAttrs: rec {
+      warp-terminal-aarch64 = prev.warp-terminal.overrideAttrs (finalAttrs: rec {
         src = pkgs.fetchurl {
           url = "https://releases.warp.dev/stable/v${finalAttrs.version}/warp-terminal-v${finalAttrs.version}-1-aarch64.pkg.tar.zst";
         };
@@ -28,7 +28,7 @@ in {
     gammastep
     fragments
     vesktop
-    warp-terminal
+    warp-terminal-aarch64
   ];
 
   modules = {
