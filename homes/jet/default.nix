@@ -1,30 +1,25 @@
 { pkgs, lib, ... }: let
-  warpOverlay = final: prev: {
-    warp-terminal-aarch64 = prev.warp-terminal.overrideAttrs (finalAttrs: rec {
-      src = pkgs.fetchurl {
-        url = "https://releases.warp.dev/stable/v${finalAttrs.version}/warp-terminal-v${finalAttrs.version}-1-aarch64.pkg.tar.zst";
-      };
+  warp-terminal = pkgs.warp-terminal.overrideAttrs (oldAttrs: rec {
+    src = pkgs.fetchurl {
+      url = "https://releases.warp.dev/stable/v$%7BoldAttrs.version%7D/warp-terminal-v$%7BoldAttrs.version%7D-1-aarch64.pkg.tar.zst";
+    };
 
-      meta = with lib; {
-        inherit (finalAttrs.meta) description homepage license sourceProvenance maintainers;
-        platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" ];
-      };
-    });
-  };
+    meta = with lib; {
+      inherit (oldAttrs.meta) description homepage license sourceProvenance maintainers;
+      platforms = oldAttrs.meta.platforms ++ [ "aarch64-linux" ];
+    };
+  });
 in {
   imports = [
     ../../modules/home
   ];
-
-  nixpkgs.overlays = [ warpOverlay ];
-
   home.packages = with pkgs; [
     obsidian
     nautilus
     gammastep
     fragments
     vesktop
-    warp-terminal-aarch64
+    warp-terminal
   ];
 
   modules = {
