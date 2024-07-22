@@ -15,7 +15,7 @@
         format = "$all";
 
         character = {
-          symbol = ">";
+          format = "[>](bold green)";
           success_symbol = "[>](bold green)";
           error_symbol = "[x](bold red)";
           vimcmd_symbol = "[<](bold green)";
