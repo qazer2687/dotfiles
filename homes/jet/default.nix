@@ -2,6 +2,7 @@
   warp-terminal = pkgs.warp-terminal.overrideAttrs (finalAttrs: rec {
     src = pkgs.fetchurl {
       url = "https://releases.warp.dev/stable/v${finalAttrs.version}/warp-terminal-v${finalAttrs.version}-1-aarch64.pkg.tar.zst";
+      hash = "sha256-693dSiF82aqTElap/7tZvYd7PQpQBqUvZAsTci2azCo=";
     };
 
     meta = with lib; {
