@@ -24,8 +24,12 @@
         } else finalAttrs.src;
 
         meta = with lib; {
-          inherit (finalAttrs.meta) description homepage license sourceProvenance maintainers;
-          platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" "aarch64-unknown-linux-gnu" ];
+          description = "Rust-based terminal";
+          homepage = "https://www.warp.dev";
+          license = licenses.unfree;
+          sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+          maintainers = with maintainers; [ emilytrau imadnyc donteatoreo johnrtitor ];
+          platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" ];
         };
       });
     })
