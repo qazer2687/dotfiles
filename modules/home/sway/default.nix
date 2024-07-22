@@ -73,7 +73,7 @@ in {
 
         keybindings = lib.mkOptionDefault rec {
           # Open Terminal
-          "${modifier}+Return" = "exec foot";
+          "${modifier}+Return" = "exec warp-terminal";
 
           # Close Window
           "${modifier}+q" = "kill";
@@ -154,6 +154,7 @@ in {
         export XDG_CURRENT_DESKTOP=sway
         export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
         export MOZ_ENABLE_WAYLAND=1
+        export WARP_ENABLE_WAYLAND=1
         export NIXOS_OZONE_WL=1
       '';
 
