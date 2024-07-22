@@ -10,7 +10,7 @@
     programs.starship = {
       enable = true;
       enableFishIntegration = true;
-      enableTransience = true;
+      enableTransience = false;
       settings = {
         format = "$all";
 
