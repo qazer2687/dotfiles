@@ -10,11 +10,12 @@
     programs.starship = {
       enable = true;
       enableFishIntegration = true;
-      enableTransience = false;
+      enableTransience = true;
       settings = {
         format = "$all";
 
         character = {
+          symbol = "[>](bold green)";
           success_symbol = "[>](bold green)";
           error_symbol = "[x](bold red)";
           vimcmd_symbol = "[<](bold green)";
