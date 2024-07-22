@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: let
   warp-terminal = pkgs.warp-terminal.overrideAttrs (finalAttrs: rec {
     src = pkgs.fetchurl {
-      url = "https://releases.warp.dev/stable/v$%7BfinalAttrs.version%7D/warp-terminal-v$%7BfinalAttrs.version%7D-1-aarch64.pkg.tar.zst";
+      url = "https://releases.warp.dev/stable/v${finalAttrs.version}/warp-terminal-v${finalAttrs.version}-1-aarch64.pkg.tar.zst";
     };
 
     meta = with lib; {
