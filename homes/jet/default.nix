@@ -13,7 +13,7 @@
     gammastep
     fragments
     vesktop
-    warp-terminal
+    warp-terminal-aarch64
   ];
 
   nixpkgs.overlays = [
@@ -24,13 +24,11 @@
         } else finalAttrs.src;
 
         meta = with lib; {
-          description = "Rust-based terminal";
-          homepage = "https://www.warp.dev";
-          license = licenses.unfree;
-          sourceProvenance = with sourceTypes; [ binaryNativeCode ];
-          maintainers = with maintainers; [ emilytrau imadnyc donteatoreo johnrtitor ];
-          platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" ];
+          inherit (finalAttrs.meta) description homepage license sourceProvenance maintainers;
+          platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" "aarch64-unknown-linux-gnu" ];
         };
+
+        warp-terminal-aarch64 = final.warp-terminal;
       });
     })
   ];
