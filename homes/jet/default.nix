@@ -5,6 +5,11 @@
       hash = "sha256-693dSiF82aqTElap/7tZvYd7PQpQBqUvZAsTci2azCo=";
     };
 
+    postInstall = ''
+      wrapProgram "$out/bin/warp-terminal" \
+        --set LD_LIBRARY_PATH ${lib.makeLibraryPath [pkgs.wayland] }
+    '';
+
     meta = with lib; {
       inherit (finalAttrs.meta) description homepage license sourceProvenance maintainers;
       platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" ];
