@@ -17,7 +17,6 @@
       warp-terminal = prev.warp-terminal.overrideAttrs (finalAttrs: rec {
         src = if final.stdenv.isAarch64 then pkgs.fetchurl {
           url = "https://releases.warp.dev/stable/v${finalAttrs.version}/warp-terminal-v${finalAttrs.version}-1-aarch64.pkg.tar.zst";
-          # No need to specify sha256; the package will handle it.
         } else finalAttrs.src;
 
         meta = with lib; {
