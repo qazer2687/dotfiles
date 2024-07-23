@@ -10,9 +10,11 @@
       enable = true;
       server.enable = true; # open foot with the footclient command
       settings = {
-        font = "Agave:size=12, FiraCode Nerd Font:size=12";
-        font-bold = "Agave:size=12:style=Bold, FiraCode Nerd Font:size=12";
-        pad = "16x16";
+        main = {
+          font = "Agave:size=12, FiraCode Nerd Font:size=12";
+          font-bold = "Agave:size=12:style=Bold, FiraCode Nerd Font:size=12";
+          pad = "16x16";
+        };
 
         scrollback = {
           lines = "1000";
