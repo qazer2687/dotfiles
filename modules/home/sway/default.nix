@@ -61,8 +61,8 @@ in {
         # Display & Wallpaper
         output = {
           "*".bg = "~/.config/wallpaper/wallpaper.png fill";
-          "DP-1".mode = "2560x1440@143.972000Hz";
-          "eDP-1".mode = "2560x1664@59.94Hz scale 2";
+          "DP-1".mode = "2560x1440@143.972000Hz"; # external monitor
+          "eDP-1".mode = "2560x1664@59.94Hz scale 2"; # jet display
         };
 
         # Decorations
@@ -73,7 +73,7 @@ in {
 
         keybindings = lib.mkOptionDefault rec {
           # Open Terminal
-          "${modifier}+Return" = "exec WARP_ENABLE_WAYLAND=1 warp-terminal";
+          "${modifier}+Return" = "exec footclient";
 
           # Close Window
           "${modifier}+q" = "kill";
