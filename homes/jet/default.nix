@@ -1,21 +1,8 @@
-{ pkgs, lib, ... }: let
-  warp-terminal = pkgs.warp-terminal.overrideAttrs (finalAttrs: rec {
-    src = pkgs.fetchurl {
-      url = "https://releases.warp.dev/stable/v${finalAttrs.version}/warp-terminal-v${finalAttrs.version}-1-aarch64.pkg.tar.zst";
-      hash = "sha256-693dSiF82aqTElap/7tZvYd7PQpQBqUvZAsTci2azCo=";
-    };
-
-    postInstall = ''
-      wrapProgram "$out/bin/warp-terminal" \
-        --set LD_LIBRARY_PATH ${lib.makeLibraryPath [pkgs.wayland] }
-    '';
-
-    meta = with lib; {
-      inherit (finalAttrs.meta) description homepage license sourceProvenance maintainers;
-      platforms = finalAttrs.meta.platforms ++ [ "aarch64-linux" ];
-    };
-  });
-in {
+{ 
+  pkgs,
+  lib,
+  ...
+}:{
   imports = [
     ../../modules/home
   ];
@@ -25,7 +12,6 @@ in {
     gammastep
     fragments
     vesktop
-    warp-terminal
   ];
 
   modules = {
