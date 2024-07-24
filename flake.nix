@@ -17,6 +17,9 @@
     nix-homebrew,
     ...
   } @ inputs: {
+
+    packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
+
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
