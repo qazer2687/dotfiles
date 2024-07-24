@@ -73,7 +73,7 @@ in {
 
         keybindings = lib.mkOptionDefault rec {
           # Open Terminal
-          "${modifier}+Return" = "exec footclient";
+          "${modifier}+Return" = "exec foot";
 
           # Close Window
           "${modifier}+q" = "kill";
