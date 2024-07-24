@@ -16,8 +16,10 @@
     darwin,
     nix-homebrew,
     ...
-  } @ inputs: {
-
+  } @ inputs: let 
+    inherit (self) outputs;
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+  in {
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
 
     nixosConfigurations = {
