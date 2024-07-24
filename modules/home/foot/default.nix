@@ -8,7 +8,7 @@
   config = lib.mkIf config.modules.foot.enable {
     programs.foot = {
       enable = true;
-      server.enable = true; # open foot with the footclient command
+      server.enable = false; # open foot with the footclient command (introduces some read-only issues)
       settings = {
         main = {
           font = "Agave:size=12, FiraCode Nerd Font:size=12";
@@ -25,9 +25,9 @@
           blink = "yes";
         };
 
-        mouse = {
-          hide_when_typing = "no";
-        };
+       # mouse = {
+       #   hide_when_typing = "no";
+       #  };
 
         colors = {
           foreground = "ffffff"; # Text
