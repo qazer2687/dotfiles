@@ -19,6 +19,14 @@
     ...
   } @ inputs: let 
     inherit (self) outputs;
+
+    # Supported Systems
+    systems = [
+      "aarch64-linux"
+      "x86_64-linux"
+      "aarch64-darwin"
+    ];
+
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
