@@ -34,7 +34,7 @@
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/jade
           ./hosts/shared
@@ -49,7 +49,7 @@
 
             home-manager = {
               users.alex = ./homes/jade;
-              extraSpecialArgs = {inherit inputs;};
+              extraSpecialArgs = {inherit inputs outputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
@@ -65,7 +65,7 @@
     nixosConfigurations = {
       ruby = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/ruby
           ./hosts/shared
@@ -80,7 +80,7 @@
 
             home-manager = {
               users.alex = ./homes/ruby;
-              extraSpecialArgs = {inherit inputs;};
+              extraSpecialArgs = {inherit inputs outputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
@@ -111,7 +111,7 @@
 
             home-manager = {
               users.alex = ./homes/jet;
-              extraSpecialArgs = {inherit inputs;};
+              extraSpecialArgs = {inherit inputs outputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
