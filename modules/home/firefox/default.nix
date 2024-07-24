@@ -26,7 +26,7 @@
         ];
         */
 
-        lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
+        (lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
           programs.firefox.profiles.default.settings = {
             "media.gmp-widevinecdm.version" = pkgs.widevinecdm-aarch64.version;
             "media.gmp-widevinecdm.visible" = true;
@@ -47,7 +47,7 @@
             '';
             recursive = true;
           };
-        };
+        };)
 
         userChrome = ''
           @-moz-document url(chrome://browser/content/browser.xhtml){
