@@ -47,7 +47,7 @@
             '';
             recursive = true;
           };
-        };)
+        });
 
         userChrome = ''
           @-moz-document url(chrome://browser/content/browser.xhtml){
