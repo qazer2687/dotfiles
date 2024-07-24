@@ -9,6 +9,7 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     home-manager,
     sops-nix,
