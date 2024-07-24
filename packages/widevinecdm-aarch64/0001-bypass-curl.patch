@@ -1,0 +1,23 @@
+diff --git a/widevine-installer b/widevine-installer
+index 78a1191..f575ce2 100755
+--- a/widevine-installer
++++ b/widevine-installer
+@@ -93,10 +93,14 @@ workdir="$(mktemp -d /tmp/widevine-installer.XXXXXXXX)"
+ 
+ cd "$workdir"
+ 
+-echo "Downloading LaCrOS (Chrome) image..."
+-URL="$DISTFILES_BASE/$LACROS_NAME-$LACROS_VERSION"
+-echo "URL: $URL"
+-curl -# -o lacros.squashfs "$URL"
++if [[ -z $LACROS_SQUASHFS ]]; then
++    echo "Downloading LaCrOS (Chrome) image..."
++    URL="$DISTFILES_BASE/$LACROS_NAME-$LACROS_VERSION"
++    echo "URL: $URL"
++    curl -# -o lacros.squashfs "$URL"
++else
++    ln -s $LACROS_SQUASHFS lacros.squashfs
++fi
+ 
+ echo
+ echo "Extracting Widevine..."
