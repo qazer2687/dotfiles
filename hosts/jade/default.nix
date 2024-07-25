@@ -21,24 +21,6 @@
     };
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      experimental-features = "nix-command flakes";
-      flake-registry = "";
-      nix-path = config.nix.nixPath;
-      keep-derivations = true;
-      keep-outputs = true;
-      auto-optimise-store = true;
-      sandbox = true;
-      require-sigs = false;
-    };
-    channel.enable = false;
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-  };
-
   # Hostname
   networking.hostName = "jade";
 
@@ -64,11 +46,34 @@
       enable = true;
     };
   };
+
+  # Boot
   boot = {
     loader.efi.efiSysMountPoint = "/boot/efi"; #! Required for everything to not shit itself when I rebuild...
     kernelParams = [
       # TODO: Move kernelParams from module to here...
+      "kernel.nmi_watchdog=0"
+      "fbcon=nodefer"
+      "bgrt_disable"
+      "quiet"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=0"
+      "udev.log_priority=3"
+      "vt.global_cursor_default=0"
+      "mitigations=off"
     ];
+    initrd.kernelModules = [
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
+    ];
+    blacklistedKernelModules = [
+      "nouveau"
+    ];
+    initrd.verbose = false;
+    consoleLogLevel = 0;
+    kernelPackages = pkgs.linuxPackages_xanmod;
   };
   
 
@@ -103,15 +108,11 @@
     displayManager.startx.enable = true;
   };
 
-  # Custom Kernel
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod ;
-  
   # Modules
   modules = {
     # Network
     networkmanager.enable = true;
 
-    kernel.enable = true;
     nvidia.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;

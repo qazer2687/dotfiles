@@ -22,24 +22,6 @@
     };
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      experimental-features = "nix-command flakes";
-      flake-registry = "";
-      nix-path = config.nix.nixPath;
-      keep-derivations = true;
-      keep-outputs = true;
-      auto-optimise-store = true;
-      sandbox = true;
-      require-sigs = false;
-    };
-    channel.enable = false;
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-  };
-
   # Hostname
   networking.hostName = "jet";
 
@@ -64,6 +46,7 @@
     graphics = {
       enable = true;
     };
+    # Asahi
     asahi = {
       withRust = true;
       useExperimentalGPUDriver = true;
@@ -72,6 +55,8 @@
       peripheralFirmwareDirectory = ../../firmware/jet;
     };
   };
+
+  # Boot
   boot = {
     kernelParams = [
       "apple_dcp.show_notch=1" ## enable notch pixel space on asahi
@@ -112,6 +97,8 @@
   
   # Modules
   modules = {
+    # Core
+    nix.enable = true;
 
     # Network
     networkmanager.enable = true;
