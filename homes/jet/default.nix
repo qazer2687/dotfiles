@@ -5,7 +5,7 @@
   config,
   pkgs,
   ...
-}:{
+}: {
   imports = [
     ../../modules/home
   ];
@@ -19,7 +19,7 @@
       allowUnfree = true;
     };
   };
-  
+
   home.packages = with pkgs; [
     obsidian
     nautilus
