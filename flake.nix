@@ -111,6 +111,7 @@
 
             home-manager = {
               users.alex = ./homes/jet;
+               pkgs = nixpkgs.legacyPackages.aarch64-linux;
               extraSpecialArgs = {inherit inputs outputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
