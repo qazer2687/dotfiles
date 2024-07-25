@@ -1,11 +1,24 @@
 {
-  pkgs,
+  inputs,
+  outputs,
   lib,
+  config,
+  pkgs,
   ...
 }: {
   imports = [
     ../../modules/home
   ];
+
+  nixpkgs = {
+    overlays = [
+      outputs.overlays.additions
+      outputs.overlays.modifications
+    ];
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   home.packages = with pkgs; [
     obsidian

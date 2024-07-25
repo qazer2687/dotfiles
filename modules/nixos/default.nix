@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./kernel
     ./networkmanager
     ./nvidia
     ./pipewire
@@ -15,5 +14,6 @@
     ./zram
     ./remote-builder
     ./nh
+    ./nix
   ];
 }

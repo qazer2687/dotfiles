@@ -26,6 +26,10 @@
           gpu_device = 0;
           nv_powermizer_mode = 1; # "Prefer Maximum Performance"
         };
+        custom = {
+          start = "${pkgs.libnotify}/bin/notify-send 'GameMode Enabled'";
+          end = "${pkgs.libnotify}/bin/notify-send 'GameMode Disabled'";
+        };
       };
     };
   };
