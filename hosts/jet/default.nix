@@ -19,10 +19,6 @@
     ];
   };
 
-  # Hostname
-  networking.hostName = "jet";
-
-
   # Autologin
   services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
