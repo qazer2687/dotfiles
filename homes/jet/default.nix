@@ -1,11 +1,17 @@
 { 
   pkgs,
   lib,
+  outputs,
   ...
 }:{
   imports = [
     ../../modules/home
   ];
+
+  nixpkgs.overlays = [
+    outputs.overlays.additions
+  ];
+
   home.packages = with pkgs; [
     obsidian
     nautilus
