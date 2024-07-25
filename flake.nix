@@ -9,7 +9,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     home-manager,
     sops-nix,
@@ -17,45 +16,27 @@
     darwin,
     nix-homebrew,
     ...
-  } @ inputs: let 
-    inherit (self) outputs;
+  } @ inputs: {
 
-    # Supported Systems
-    systems = [
-      "x86_64-linux"
-      "aarch64-linux"
-      "aarch64-darwin"
-    ];
-
-    forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
-    # Custom Packages
-    packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
-
-    ## packages and modifications exported as overlays
-    overlays = import ./overlays {inherit inputs;};
-
-    # Formatter
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-
+    # Jade
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/jade
-          ./hosts/shared
           nur.nixosModules.nur
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
+            networking.hostName = "jade";
+
             nix.registry.nixpkgs.flake = nixpkgs;
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
 
-            # Home-Manager Configuration
             home-manager = {
               users.alex = ./homes/jade;
-              extraSpecialArgs = {inherit inputs outputs;};
+              extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
@@ -68,10 +49,42 @@
       };
     };
 
+    # Jet
+    nixosConfigurations = {
+      jet = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/jet
+          nur.nixosModules.nur
+          sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
+          {
+            networking.hostName = "jet";
+
+            nix.registry.nixpkgs.flake = nixpkgs;
+            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
+
+            home-manager = {
+              users.alex = ./homes/jet;
+              extraSpecialArgs = {inherit inputs;};
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = [
+                inputs.nur.hmModules.nur
+                inputs.sops-nix.homeManagerModules.sops
+              ];
+            };
+          }
+        ];
+      };
+    };
+
+    # Ruby
     nixosConfigurations = {
       ruby = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/ruby
           ./hosts/shared
@@ -79,13 +92,14 @@
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
+            networking.hostName = "ruby";
+
             nix.registry.nixpkgs.flake = nixpkgs;
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
 
-            # Home-Manager Configuration
             home-manager = {
               users.alex = ./homes/ruby;
-              extraSpecialArgs = {inherit inputs outputs;};
+              extraSpecialArgs = {inherit inputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
@@ -98,36 +112,7 @@
       };
     };
 
-    nixosConfigurations = {
-      jet = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/jet
-          ./hosts/shared
-          nur.nixosModules.nur
-          sops-nix.nixosModules.sops
-          home-manager.nixosModules.home-manager
-          {
-            nix.registry.nixpkgs.flake = nixpkgs;
-            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
-
-            # Home-Manager Configuration
-            home-manager = {
-              users.alex = ./homes/jet;
-              extraSpecialArgs = {inherit inputs outputs;};
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              sharedModules = [
-                inputs.nur.hmModules.nur
-                inputs.sops-nix.homeManagerModules.sops
-              ];
-            };
-          }
-        ];
-      };
-    };
-
+    # Onyx
     darwinConfigurations = {
       onyx = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -138,7 +123,15 @@
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
           {
-            # Home-Manager Configuration
+            networking = let
+              name = "onyx";
+            in {
+              computerName = name;
+              hostName = name;
+              localHostName = name;
+            };
+            
+            # Home-Manager
             home-manager = {
               users.alex = ./homes/onyx;
               extraSpecialArgs = {inherit inputs;};
@@ -149,18 +142,20 @@
                 inputs.sops-nix.homeManagerModules.sops
               ];
             };
+            
+            # Homebrew
             nix-homebrew = {
               enable = true;
               enableRosetta = true;
               user = "alex";
               autoMigrate = true;
-              #mutableTaps = false; # breaks declaring taps in homebrew.taps
             };
           }
         ];
       };
     };
 
+    # Opal
     nixosConfigurations = {
       opal = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -169,6 +164,8 @@
           ./hosts/opal
           ./hosts/shared
           {
+            networking.hostName = "opal";
+
             nix.registry.nixpkgs.flake = nixpkgs;
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
           }
