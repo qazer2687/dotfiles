@@ -30,6 +30,7 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
+    overlays = import ./overlays {inherit inputs;};
 
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
@@ -111,7 +112,6 @@
 
             home-manager = {
               users.alex = ./homes/jet;
-               pkgs = nixpkgs.legacyPackages.aarch64-linux;
               extraSpecialArgs = {inherit inputs outputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
