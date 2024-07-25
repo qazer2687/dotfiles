@@ -63,13 +63,14 @@
     graphics = {
       enable = true;
     };
-    boot = {
-      loader.efi.efiSysMountPoint = "/boot/efi"; #! Required for everything to not shit itself when I rebuild...
-      kernelParams = [
-        # TODO: Move kernelParams from module to here...
-      ];
-    };
   };
+  boot = {
+    loader.efi.efiSysMountPoint = "/boot/efi"; #! Required for everything to not shit itself when I rebuild...
+    kernelParams = [
+      # TODO: Move kernelParams from module to here...
+    ];
+  };
+  
 
   # Autologin
   services.getty.autologinUser = "alex";

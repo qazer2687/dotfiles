@@ -71,11 +71,11 @@
       setupAsahiSound = true;
       peripheralFirmwareDirectory = ../../firmware/jet;
     };
-    boot = {
-      kernelParams = [
-        "apple_dcp.show_notch=1" ## enable notch pixel space on asahi
-      ];
-    };
+  };
+  boot = {
+    kernelParams = [
+      "apple_dcp.show_notch=1" ## enable notch pixel space on asahi
+    ];
   };
 
   # Autologin
