@@ -12,6 +12,9 @@
     };
   };
 
+  # Hostname
+  networking.hostName = "ruby";
+
   # SSH
   services.openssh.enable = true;
   networking.firewall.allowedTCPPorts = [

@@ -17,6 +17,9 @@
     displayManager.startx.enable = true;
   };
 
+  # Hostname
+  networking.hostName = "jade";
+
   # Autologin
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && startx
