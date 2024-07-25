@@ -96,7 +96,7 @@
     nixosConfigurations = {
       jet = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/jet
           ./hosts/shared
