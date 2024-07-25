@@ -12,6 +12,15 @@
     home = "/Users/alex";
   };
 
+  # Hostname
+  networking = let
+    name = "onyx";
+  in {
+    computerName = name;
+    hostName = name;
+    localHostName = name;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {

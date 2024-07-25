@@ -22,15 +22,21 @@
 
     # Supported Systems
     systems = [
-      "aarch64-linux"
       "x86_64-linux"
+      "aarch64-linux"
       "aarch64-darwin"
     ];
 
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    # Custom Packages
+    packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
+
+    ## packages and modifications exported as overlays
     overlays = import ./overlays {inherit inputs;};
+
+    # Formatter
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
@@ -43,11 +49,10 @@
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
-            networking.hostName = "jade";
-
             nix.registry.nixpkgs.flake = nixpkgs;
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
 
+            # Home-Manager Configuration
             home-manager = {
               users.alex = ./homes/jade;
               extraSpecialArgs = {inherit inputs outputs;};
@@ -74,11 +79,10 @@
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
-            networking.hostName = "ruby";
-
             nix.registry.nixpkgs.flake = nixpkgs;
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
 
+            # Home-Manager Configuration
             home-manager = {
               users.alex = ./homes/ruby;
               extraSpecialArgs = {inherit inputs outputs;};
@@ -105,11 +109,10 @@
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
-            networking.hostName = "jet";
-
             nix.registry.nixpkgs.flake = nixpkgs;
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
 
+            # Home-Manager Configuration
             home-manager = {
               users.alex = ./homes/jet;
               extraSpecialArgs = {inherit inputs outputs;};
@@ -135,14 +138,7 @@
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
           {
-            networking = let
-              name = "onyx";
-            in {
-              computerName = name;
-              hostName = name;
-              localHostName = name;
-            };
-            
+            # Home-Manager Configuration
             home-manager = {
               users.alex = ./homes/onyx;
               extraSpecialArgs = {inherit inputs;};
@@ -153,7 +149,6 @@
                 inputs.sops-nix.homeManagerModules.sops
               ];
             };
-
             nix-homebrew = {
               enable = true;
               enableRosetta = true;
@@ -174,8 +169,6 @@
           ./hosts/opal
           ./hosts/shared
           {
-            networking.hostName = "opal";
-
             nix.registry.nixpkgs.flake = nixpkgs;
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
           }

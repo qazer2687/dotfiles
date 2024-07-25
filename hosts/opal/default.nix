@@ -10,6 +10,10 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  # Hostname
+  networking.hostName = "opal";
+
+
   networking.firewall.allowedTCPPorts = [
     22 # SSH
     53 # Pihole DNS
