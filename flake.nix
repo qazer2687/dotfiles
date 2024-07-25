@@ -18,8 +18,7 @@
     nix-homebrew,
     ...
   } @ inputs: let
-    inherit (self) outputs;
-    # Supported systems for your flake packages, shell, etc.
+    inherit inputs;
     systems = [
       "x86_64-linux"
       "aarch64-linux"
@@ -28,13 +27,12 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     # Packages
-    packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
+    packages = forAllSystems (system: {
+      default = import ./packages { inherit system; pkgs = nixpkgs.legacyPackages.${system}; };
+    });
 
     # Formatter
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-
-    # Overlays
-    overlays = import ./overlays {inherit inputs;};
 
     # Jade
     nixosConfigurations = {
