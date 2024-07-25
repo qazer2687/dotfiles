@@ -88,7 +88,7 @@
           }
 
           /* hide extensions button */
-          #unified-extensions-button { display: none }
+       /*   #unified-extensions-button { display: none } */
 
           /* hide bookmarks star */
           #star-button-box {display: none !important;}
