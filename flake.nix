@@ -28,7 +28,12 @@
   in {
     
     # Packages
-    packages = forAllSystems (/*system: import ./packages*/ nixpkgs.legacyPackages.${system});
+    # packages = forAllSystems (/*system: import ./packages*/ nixpkgs.legacyPackages.${system});
+
+    packages = (
+      nixpkgs.legacyPackages.aarch64-linux
+      import ./packages
+    );
 
     # Formatter
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
