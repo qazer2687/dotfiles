@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, self, lib, ... }:
 {
   config = let
     isMode = mode: (config.hardware.asahi.useExperimentalGPUDriver
@@ -26,7 +26,7 @@
       # replace the Mesa linked into system packages with the Asahi version
       # without rebuilding them to avoid rebuilding the world.
       system.replaceRuntimeDependencies = [
-        { original = pkgs.mesa;
+        { original = self.packages.mesa;
           replacement = config.hardware.asahi.pkgs.mesa-asahi-edge;
         }
       ];

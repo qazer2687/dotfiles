@@ -1,6 +1,6 @@
 # the Asahi Linux kernel and options that must go along with it
 
-{ config, pkgs, lib, ... }:
+{ config, self, lib, ... }:
 {
   config = lib.mkIf config.hardware.asahi.enable {
     boot.kernelPackages = let

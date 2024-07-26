@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, self, lib, ... }:
 let
   pkgs' = config.hardware.asahi.pkgs;
 
@@ -13,7 +13,7 @@ let
   };
 
   bootFiles = {
-    "m1n1/boot.bin" = pkgs.runCommand "boot.bin" {} ''
+    "m1n1/boot.bin" = self.packages.runCommand "boot.bin" {} ''
       cat ${bootM1n1}/build/m1n1.bin > $out
       cat ${config.boot.kernelPackages.kernel}/dtbs/apple/*.dtb >> $out
       cat ${bootUBoot}/u-boot-nodtb.bin.gz >> $out

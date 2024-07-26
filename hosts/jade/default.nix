@@ -28,7 +28,7 @@
         # TODO: Add your SSH public key(s) here...
       ];
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
-      shell = pkgs.fish;
+      shell = self.packages.fish;
     };
   };
 
@@ -71,7 +71,7 @@
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelPackages = self.packages.linuxPackages_xanmod;
   };
   
 
