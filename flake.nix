@@ -19,7 +19,6 @@
     ...
   } @ inputs: let
     inherit inputs;
-    pkgs = self.nixpkgs.legacyPackages.${system};
     systems = [
       "x86_64-linux"
       "aarch64-linux"
@@ -29,10 +28,10 @@
   in {
     
     # Packages
-    packages = forAllSystems (system: /*import ./packages*/ pkgs);
+    packages = forAllSystems (system: /*import ./packages*/ self.nixpkgs.legacyPackages.${system});
 
     # Formatter
-    formatter = forAllSystems (system: pkgs.alejandra);
+    formatter = forAllSystems (system: self.nixpkgs.legacyPackages.${system}.alejandra);
 
     # Jade
     nixosConfigurations = {
