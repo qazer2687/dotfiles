@@ -22,7 +22,7 @@
     foot.enable = true;
     mako.enable = true;
     wofi.enable = true;
-    dark.enable = true;
+    dark.enable = false;
     firefox.enable = true;
     fish.enable = true;
 
