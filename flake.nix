@@ -32,10 +32,7 @@
         default = import ./packages;
       }
     );
-
-    # Formatter
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-
+    
     # Jade
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
