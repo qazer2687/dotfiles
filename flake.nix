@@ -9,6 +9,7 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     home-manager,
     sops-nix,
@@ -27,8 +28,6 @@
   in {
     # Packages
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
-
-    defaultPackage = self.packages.${system}.default;
 
     # Formatter
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
