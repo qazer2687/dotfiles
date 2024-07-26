@@ -29,7 +29,7 @@
       system: let
         pkgs = import nixpkgs {inherit system;};
       in
-        import ./packages {inherit pkgs;}
+        pkgs
     );
 
     # Formatter
