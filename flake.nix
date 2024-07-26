@@ -68,7 +68,7 @@
     # Jet
     nixosConfigurations = {
       jet = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
+        #system = "aarch64-linux";
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/jet
