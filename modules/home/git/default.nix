@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs,
+  self,
   ...
 }: {
   options.modules.git.enable = lib.mkEnableOption "";

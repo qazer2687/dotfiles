@@ -1,9 +1,9 @@
-{pkgs, ...}: {
+{self, ...}: {
   imports = [
     ../../modules/home
   ];
 
-  home.packages = with pkgs; [
+  home.packages = with self.packages; [
     obsidian
     nautilus
    # gammastep

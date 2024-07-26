@@ -1,6 +1,6 @@
 {
   config,
-  pkgs,
+  self,
   ...
 }: {
   imports = [

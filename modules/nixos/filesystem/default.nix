@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs,
+  self,
   ...
 }: {
   options.modules.filesystem.enable = lib.mkEnableOption "";
@@ -14,7 +14,7 @@
 
     # iOS Support
     services.usbmuxd.enable = true;
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with self.packages; [
       ifuse
       libimobiledevice
     ];

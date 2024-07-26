@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs,
+  self,
   ...
 }: {
   options.modules.eza.enable = lib.mkEnableOption "";

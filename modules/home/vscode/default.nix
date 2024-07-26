@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs,
+  self,
   ...
 }: {
   options.modules.vscode.enable = lib.mkEnableOption "";
@@ -13,7 +13,7 @@
       #enableExtensionUpdateCheck = false;
       package = pkgs.vscodium-fhs;
       /*
-      extensions = with pkgs.vscode-extensions; [
+      extensions = with self.packages.vscode-extensions; [
         # UI Theme
 
         # Icon Theme

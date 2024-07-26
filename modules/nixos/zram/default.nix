@@ -1,7 +1,7 @@
  {
   lib,
   config,
-  pkgs,
+  self,
   ...
 }: {
   options.modules.zram.enable = lib.mkEnableOption "";

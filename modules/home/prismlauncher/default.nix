@@ -1,13 +1,13 @@
 {
   lib,
   config,
-  pkgs,
+  self,
   ...
 }: {
   options.modules.prismlauncher.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.prismlauncher.enable {
-    home.packages = with pkgs; [
+    home.packages = with self.packages; [
       prismlauncher
       mangohud
     ];

@@ -1,13 +1,13 @@
 {
   lib,
   config,
-  pkgs,
+  self,
   ...
 }: {
   options.modules.i3.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.i3.enable {
-    home.packages = with pkgs; [
+    home.packages = with self.packages; [
       dmenu
       scrot
       feh

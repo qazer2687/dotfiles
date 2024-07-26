@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs,
+  self,
   ...
 }: {
   options.modules.steam.enable = lib.mkEnableOption "";
@@ -12,7 +12,7 @@
       gamescopeSession.enable = true;
       package = pkgs.steam.override {
         extraPkgs = pkgs:
-          with pkgs; [
+          with self.packages; [
             xorg.libXcursor
             xorg.libXi
             xorg.libXinerama

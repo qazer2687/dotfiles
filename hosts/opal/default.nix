@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{self, ...}: {
   imports = [
     ../../hardware/opal
     ../../modules/server
