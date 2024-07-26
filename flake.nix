@@ -27,7 +27,7 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     # Packages
-    packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
+    packages = forAllSystems (system: /*import ./packages*/ nixpkgs.legacyPackages.${system});
 
     # Formatter
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
