@@ -29,7 +29,7 @@
 
         # Asahi Widevine Support
         settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
-          "media.gmp-widevinecdm.version" = self.packages.widevinecdm-aarch64.version;
+          "media.gmp-widevinecdm.version" = pkgs.widevinecdm-aarch64.version;
           "media.gmp-widevinecdm.visible" = true;
           "media.gmp-widevinecdm.enabled" = true;
           "media.gmp-widevinecdm.autoupdate" = false;
