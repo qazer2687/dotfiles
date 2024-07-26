@@ -1,4 +1,6 @@
-{...}: {
+{ ... }:
+
+{
   imports = [
     ./modules/default.nix
   ];

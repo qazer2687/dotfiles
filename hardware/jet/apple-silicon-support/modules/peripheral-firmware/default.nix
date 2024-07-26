@@ -1,13 +1,8 @@
+{ config, pkgs, lib, ... }:
 {
-  config,
-  self,
-  lib,
-  ...
-}: {
   config = lib.mkIf config.hardware.asahi.enable {
     assertions = lib.mkIf config.hardware.asahi.extractPeripheralFirmware [
-      {
-        assertion = config.hardware.asahi.peripheralFirmwareDirectory != null;
+      { assertion = config.hardware.asahi.peripheralFirmwareDirectory != null;
         message = ''
           Asahi peripheral firmware extraction is enabled but the firmware
           location appears incorrect.
@@ -16,14 +11,14 @@
     ];
 
     hardware.firmware = let
-      pkgs' = config.hardware.asahi.self.packages;
+      pkgs' = config.hardware.asahi.pkgs;
     in
       lib.mkIf ((config.hardware.asahi.peripheralFirmwareDirectory != null)
-        && config.hardware.asahi.extractPeripheralFirmware) [
-        (self.packages.stdenv.mkDerivation {
+          && config.hardware.asahi.extractPeripheralFirmware) [
+        (pkgs.stdenv.mkDerivation {
           name = "asahi-peripheral-firmware";
 
-          nativeBuildInputs = [pkgs'.asahi-fwextract self.packages.cpio];
+          nativeBuildInputs = [ pkgs'.asahi-fwextract pkgs.cpio ];
 
           buildCommand = ''
             mkdir extracted
@@ -50,8 +45,7 @@
     peripheralFirmwareDirectory = lib.mkOption {
       type = lib.types.nullOr lib.types.path;
 
-      default =
-        lib.findFirst (path: builtins.pathExists (path + "/all_firmware.tar.gz")) null
+      default = lib.findFirst (path: builtins.pathExists (path + "/all_firmware.tar.gz")) null
         [
           # path when the system is operating normally
           /boot/asahi
