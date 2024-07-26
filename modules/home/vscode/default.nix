@@ -11,7 +11,7 @@
       enable = true;
       #enableUpdateCheck = false;
       #enableExtensionUpdateCheck = false;
-      package = pkgs.vscodium-fhs;
+      package = self.packages.vscodium-fhs;
       /*
       extensions = with self.packages.vscode-extensions; [
         # UI Theme

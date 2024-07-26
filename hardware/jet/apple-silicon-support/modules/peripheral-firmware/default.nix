@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, self, lib, ... }:
 {
   config = lib.mkIf config.hardware.asahi.enable {
     assertions = lib.mkIf config.hardware.asahi.extractPeripheralFirmware [
@@ -18,7 +18,7 @@
         (pkgs.stdenv.mkDerivation {
           name = "asahi-peripheral-firmware";
 
-          nativeBuildInputs = [ pkgs'.asahi-fwextract pkgs.cpio ];
+          nativeBuildInputs = [ pkgs'.asahi-fwextract self.packages.cpio ];
 
           buildCommand = ''
             mkdir extracted

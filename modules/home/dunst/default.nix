@@ -10,7 +10,7 @@
     # ! reports a configuration error (l14,l15) but works fine
     services.dunst = {
       enable = true;
-      package = pkgs.dunst;
+      package = self.packages.dunst;
       settings = {
         global = {
           monitor = "0";

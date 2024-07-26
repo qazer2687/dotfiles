@@ -6,7 +6,7 @@
 }: let
   modifier = "Mod4";
 
-  wayland-screenshot = pkgs.writeShellApplication {
+  wayland-screenshot = self.packages.writeShellApplication {
     name = "wayland-screenshot";
     runtimeInputs = with self.packages; [
       grim
@@ -27,7 +27,7 @@ in {
 
     wayland.windowManager.sway = {
       enable = true;
-      package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+      package = self.packages.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       checkConfig = false;
       config = {
         inherit modifier;

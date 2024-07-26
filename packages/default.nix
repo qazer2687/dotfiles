@@ -1,3 +1,3 @@
 pkgs: {
-  widevinecdm-aarch64 = pkgs.callPackage ./widevinecdm-aarch64 { };
+  widevinecdm-aarch64 = self.packages.callPackage ./widevinecdm-aarch64 { };
 }

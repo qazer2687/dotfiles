@@ -1,4 +1,4 @@
-{ config, options, pkgs, lib, ... }:
+{ config, options, self, lib, ... }:
 
 {
   imports = [
@@ -22,13 +22,13 @@
   config = let
     cfg = config.hardware.asahi;
 
-    asahi-audio = pkgs.asahi-audio; # the asahi-audio we use
+    asahi-audio = self.packages.asahi-audio; # the asahi-audio we use
 
-    lsp-plugins = pkgs.lsp-plugins; # the lsp-plugins we use
+    lsp-plugins = self.packages.lsp-plugins; # the lsp-plugins we use
 
     lsp-plugins-is-safe = (pkgs.lib.versionAtLeast lsp-plugins.version "1.2.14");
 
-    lv2Path = lib.makeSearchPath "lib/lv2" [ lsp-plugins pkgs.bankstown-lv2 ];
+    lv2Path = lib.makeSearchPath "lib/lv2" [ lsp-plugins self.packages.bankstown-lv2 ];
   in lib.mkIf (cfg.setupAsahiSound && cfg.enable) (lib.mkMerge [
     {
       # enable pipewire to run real-time and avoid audible glitches
@@ -41,13 +41,13 @@
         pulse.enable = true;
 
         configPackages = [ asahi-audio ];
-        extraLv2Packages = [ lsp-plugins pkgs.bankstown-lv2 ];
+        extraLv2Packages = [ lsp-plugins self.packages.bankstown-lv2 ];
 
         wireplumber = {
           enable = true;
 
           configPackages = [ asahi-audio ];
-          extraLv2Packages = [ lsp-plugins pkgs.bankstown-lv2 ];
+          extraLv2Packages = [ lsp-plugins self.packages.bankstown-lv2 ];
         };
       };
 
@@ -59,14 +59,14 @@
       # enable speakersafetyd to protect speakers
       systemd.packages = lib.mkAssert lsp-plugins-is-safe
         "lsp-plugins is unpatched/outdated and speakers cannot be safely enabled"
-        [ pkgs.speakersafetyd ];
-      services.udev.packages = [ pkgs.speakersafetyd ];
+        [ self.packages.speakersafetyd ];
+      services.udev.packages = [ self.packages.speakersafetyd ];
 
       # asahi-sound requires wireplumber 0.5.2 or above
       # https://github.com/AsahiLinux/asahi-audio/commit/29ec1056c18193ffa09a990b1b61ed273e97fee6
       assertions = [
         {
-          assertion = lib.versionAtLeast pkgs.wireplumber.version "0.5.2";
+          assertion = lib.versionAtLeast self.packages.wireplumber.version "0.5.2";
           message = "wireplumber >= 0.5.2 is required for sound with nixos-apple-silicon.";
         }
       ];
