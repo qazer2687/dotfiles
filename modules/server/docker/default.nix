@@ -12,6 +12,6 @@
         data-root = "/home/alex/.docker"; # sudo chown -R alex ~/.docker
       };
     };
-    users.users.alex.extraGroups = [ "docker" ];
+    users.users.alex.extraGroups = ["docker"];
   };
 }

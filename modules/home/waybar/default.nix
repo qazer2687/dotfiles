@@ -79,7 +79,7 @@
       ];
 
       style = ''
-        * { 
+        * {
           font-family: Agave, FiraCode Mono Nerd Font;
           font-size: 11px;
           background-color: transparent;

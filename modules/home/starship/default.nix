@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  self,
   ...
 }: {
   options.modules.starship.enable = lib.mkEnableOption "";

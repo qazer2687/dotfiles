@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  self,
   ...
 }: {
   options.modules.remote-builder.enable = lib.mkEnableOption "";
@@ -28,13 +27,15 @@
         max-jobs = "auto";
         cores = 0;
       };
-      buildMachines = [{
-        hostName = config.networking.hostName;
-        protocol = "ssh-ng";
-        systems = ["x86_64-linux" "aarch64-linux"];
-        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
-        mandatoryFeatures = [ ];
-      }];
+      buildMachines = [
+        {
+          inherit (config.networking) hostName;
+          protocol = "ssh-ng";
+          systems = ["x86_64-linux" "aarch64-linux"];
+          supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+          mandatoryFeatures = [];
+        }
+      ];
       distributedBuilds = true;
       extraOptions = ''
         builders-use-substitutes = true

@@ -1,8 +1,5 @@
 {
-  inputs,
-  outputs,
   lib,
-  config,
   self,
   ...
 }: {
@@ -29,7 +26,6 @@
     fish.enable = true;
     polybar.enable = true;
     dunst.enable = true;
-
 
     # Development
     vscode.enable = true;

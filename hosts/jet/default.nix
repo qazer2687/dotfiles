@@ -1,6 +1,4 @@
 {
-  inputs,
-  outputs,
   lib,
   config,
   self,
@@ -36,7 +34,7 @@
 
   # Shell
   programs.fish.enable = true;
-  
+
   # Dconf
   programs.dconf.enable = true;
 
@@ -69,10 +67,12 @@
   '';
 
   # Swap
-  swapDevices = [{
-    device = "/swapfile";
-    size = 16 * 1024;
-  }];
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 16 * 1024;
+    }
+  ];
 
   # Environment
   environment = {
@@ -93,7 +93,7 @@
     };
     defaultPackages = lib.mkForce [];
   };
-  
+
   # Modules
   modules = {
     # Core

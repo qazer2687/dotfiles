@@ -1,4 +1,4 @@
-{self, ...}: {
+{ ...}: {
   imports = [
     ../../hardware/opal
     ../../modules/server
@@ -13,7 +13,6 @@
   # Hostname
   networking.hostName = "opal";
 
-
   networking.firewall.allowedTCPPorts = [
     22 # SSH
     53 # Pihole DNS
@@ -22,7 +21,7 @@
     9090 # Prometheus
     9100 # Node Exporter (Prometheus)
     10000 # Cockpit
-   # 25565 # Minecraft
+    # 25565 # Minecraft
   ];
 
   services.cockpit = {
@@ -30,12 +29,15 @@
     port = 10000;
   };
 
-  /*services.undervolt = {
+  /*
+    services.undervolt = {
     enable = true;
     turbo = 1; # disable turbo boost
     verbose = true;
     coreOffset = -150;
-  }; */ # lots of silly bomboclat issues caused by this option
+  };
+  */
+  # lots of silly bomboclat issues caused by this option
 
   services.xserver.displayManager.gdm.autoSuspend = false;
 

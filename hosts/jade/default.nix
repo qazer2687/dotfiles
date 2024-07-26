@@ -1,5 +1,4 @@
 {
-  inputs,
   lib,
   config,
   self,
@@ -73,7 +72,6 @@
     consoleLogLevel = 0;
     kernelPackages = self.packages.linuxPackages_xanmod;
   };
-  
 
   # Autologin
   services.getty.autologinUser = "alex";
@@ -82,10 +80,12 @@
   '';
 
   # Swap
-  swapDevices = [{
-    device = "/swapfile";
-    size = 16 * 1024;
-  }];
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 16 * 1024;
+    }
+  ];
 
   # Environment
   environment = {

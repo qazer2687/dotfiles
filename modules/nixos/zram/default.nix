@@ -1,7 +1,6 @@
- {
+{
   lib,
   config,
-  self,
   ...
 }: {
   options.modules.zram.enable = lib.mkEnableOption "";
@@ -13,4 +12,4 @@
       memoryPercent = 50;
     };
   };
-} 
+}
