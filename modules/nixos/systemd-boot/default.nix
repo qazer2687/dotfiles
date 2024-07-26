@@ -6,7 +6,7 @@
   ...
 }: let
   useHostResolvConf = config.networking.resolvconf.enable && config.networking.useHostResolvConf;
-  bootStage2 = pkgs.substituteAll {
+  bootStage2 = self.packages.substituteAll {
     src = pkgs.runCommand "stage-2-init.sh" {} ''
       sed '2i exec 1<>/dev/null' ${inputs.nixpkgs}/nixos/modules/system/boot/stage-2-init.sh > $out
     '';
