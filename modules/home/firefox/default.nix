@@ -3,6 +3,7 @@
   config,
   self,
   pkgs,
+  outputs,
   ...
 }: {
   options.modules.firefox.enable = lib.mkEnableOption "";
