@@ -25,11 +25,7 @@
       "aarch64-darwin"
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
-    
-    # Packages
-    # packages = forAllSystems (/*system: import ./packages*/ nixpkgs.legacyPackages.${system});
-
+  in rec {
     packages = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
