@@ -27,7 +27,7 @@
   in {
     # Packages
     packages = forAllSystems (system: {
-      default = import ./packages {
+      packages = import ./packages {
         inherit system;
         pkgs = nixpkgs.legacyPackages.${system};
       };
