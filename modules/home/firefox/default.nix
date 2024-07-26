@@ -2,6 +2,7 @@
   lib,
   config,
   self,
+  pkgs,
   ...
 }: {
   options.modules.firefox.enable = lib.mkEnableOption "";
@@ -27,7 +28,7 @@
         */
 
         # Asahi Widevine Support
-        settings = lib.mkIf self.packages.stdenv.hostPlatform.isAarch64 {
+        settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
           "media.gmp-widevinecdm.version" = self.packages.widevinecdm-aarch64.version;
           "media.gmp-widevinecdm.visible" = true;
           "media.gmp-widevinecdm.enabled" = true;
