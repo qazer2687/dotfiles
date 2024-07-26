@@ -19,17 +19,18 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    forAllSystems = nixpkgs.lib.genAttrs [
-      "x86_64-linux"
-      "aarch64-linux"
-      "aarch64-darwin"
-    ];
+    each = f:
+      lib.genAttrs [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ]
+      (system: f nixpkgs.legacyPackages.${system});
   in rec {
-    packages = forAllSystems (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-        pkgs
+    packages = each (
+      pkgs: rec {
+        default = import ./packages;
+      };
     );
 
     # Formatter
