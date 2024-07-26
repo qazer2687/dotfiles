@@ -27,7 +27,7 @@
   in rec {
     packages = forAllSystems (
       system: let
-        pkgs = import nixpkgs {inherit system;};
+        pkgs = nixpkgs.legacyPackages.${system};
       in
         pkgs
     );
