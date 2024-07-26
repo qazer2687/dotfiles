@@ -27,10 +27,7 @@
   in {
     # Packages
     packages = forAllSystems (system: {
-      packages = import ./packages {
-        inherit system;
-        pkgs = nixpkgs.legacyPackages.${system};
-      };
+      default = self.packages.${pkgs.system}.default;
     });
 
     # Formatter
