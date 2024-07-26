@@ -25,7 +25,6 @@
       "aarch64-darwin"
     ];
   in rec {
-    # custom packages
     packages = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
