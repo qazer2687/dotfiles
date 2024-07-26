@@ -30,7 +30,7 @@
         # TODO: Add your SSH public key(s) here...
       ];
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
-      shell = pkgs.fish;
+      shell = self.packages.fish;
     };
   };
 
