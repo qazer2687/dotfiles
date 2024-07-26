@@ -28,10 +28,10 @@
   in {
     
     # Packages
-    packages = forAllSystems (system: /*import ./packages*/ self.nixpkgs.legacyPackages.${system});
+    packages = forAllSystems (/*system: import ./packages*/ nixpkgs.legacyPackages.${system});
 
     # Formatter
-    formatter = forAllSystems (system: self.nixpkgs.legacyPackages.${system}.alejandra);
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Jade
     nixosConfigurations = {
