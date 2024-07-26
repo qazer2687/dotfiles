@@ -30,10 +30,10 @@
     # Packages
     # packages = forAllSystems (/*system: import ./packages*/ nixpkgs.legacyPackages.${system});
 
-    packages = (
-      nixpkgs.legacyPackages.aarch64-linux
-      import ./packages
-    );
+    packages = {
+      default = nixpkgs.legacyPackages.aarch64-linux;
+      custom = import ./packages;
+    };
 
     # Formatter
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
