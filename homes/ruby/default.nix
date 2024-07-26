@@ -6,9 +6,9 @@
   home.packages = with self.packages; [
     obsidian
     nautilus
-   # gammastep
-   # fragments
-   # obs-studio
+    # gammastep
+    # fragments
+    # obs-studio
   ];
 
   modules = {

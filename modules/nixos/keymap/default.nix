@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  self,
   ...
 }: {
   options.modules.keymap.enable = lib.mkEnableOption "";
@@ -11,6 +10,6 @@
     services.xserver.xkb = {
       layout = "gb";
       variant = "colemak";
-    }; 
+    };
   };
 }

@@ -9,7 +9,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     home-manager,
     sops-nix,
@@ -28,7 +27,10 @@
   in {
     # Packages
     packages = forAllSystems (system: {
-      default = import ./packages { inherit system; pkgs = nixpkgs.legacyPackages.${system}; };
+      default = import ./packages {
+        inherit system;
+        pkgs = nixpkgs.legacyPackages.${system};
+      };
     });
 
     # Formatter
@@ -146,7 +148,7 @@
               hostName = name;
               localHostName = name;
             };
-            
+
             # Home-Manager
             home-manager = {
               users.alex = ./homes/onyx;
@@ -158,7 +160,7 @@
                 inputs.sops-nix.homeManagerModules.sops
               ];
             };
-            
+
             # Homebrew
             nix-homebrew = {
               enable = true;

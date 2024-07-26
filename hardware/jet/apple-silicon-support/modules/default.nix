@@ -1,5 +1,9 @@
-{ config, self, lib, ... }:
 {
+  config,
+  self,
+  lib,
+  ...
+}: {
   imports = [
     ./kernel
     ./mesa
@@ -9,17 +13,18 @@
   ];
 
   config = let
-      cfg = config.hardware.asahi;
-    in lib.mkIf cfg.enable {
-      nixpkgs.overlays = lib.mkBefore [ cfg.overlay ];
+    cfg = config.hardware.asahi;
+  in
+    lib.mkIf cfg.enable {
+      nixpkgs.overlays = lib.mkBefore [cfg.overlay];
 
       hardware.asahi.pkgs =
         if cfg.pkgsSystem != "aarch64-linux"
         then
-          import (self.packages.path) {
+          import self.packages.path {
             crossSystem.system = "aarch64-linux";
             localSystem.system = cfg.pkgsSystem;
-            overlays = [ cfg.overlay ];
+            overlays = [cfg.overlay];
           }
         else self.packages;
     };
