@@ -26,7 +26,8 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     # Packages
-    packages.default = self.packages.${system}.${packageName};
+    packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
+
     defaultPackage = self.packages.${system}.default;
 
     # Formatter
