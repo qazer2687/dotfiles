@@ -20,7 +20,7 @@
   } @ inputs: let
     inherit (self) outputs;
     each = f:
-      lib.genAttrs [
+      genAttrs [
         "x86_64-linux"
         "aarch64-linux"
         "aarch64-darwin"
