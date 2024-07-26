@@ -26,7 +26,7 @@
 
     lsp-plugins = self.packages.lsp-plugins; # the lsp-plugins we use
 
-    lsp-plugins-is-safe = (pkgs.lib.versionAtLeast lsp-plugins.version "1.2.14");
+    lsp-plugins-is-safe = (self.packages.lib.versionAtLeast lsp-plugins.version "1.2.14");
 
     lv2Path = lib.makeSearchPath "lib/lv2" [ lsp-plugins self.packages.bankstown-lv2 ];
   in lib.mkIf (cfg.setupAsahiSound && cfg.enable) (lib.mkMerge [

@@ -15,7 +15,7 @@
     in
       lib.mkIf ((config.hardware.asahi.peripheralFirmwareDirectory != null)
           && config.hardware.asahi.extractPeripheralFirmware) [
-        (pkgs.stdenv.mkDerivation {
+        (self.packages.stdenv.mkDerivation {
           name = "asahi-peripheral-firmware";
 
           nativeBuildInputs = [ pkgs'.asahi-fwextract self.packages.cpio ];
