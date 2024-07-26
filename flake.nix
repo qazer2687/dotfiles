@@ -30,7 +30,7 @@
     packages = each (
       pkgs: rec {
         default = import ./packages;
-      };
+      }
     );
 
     # Formatter
