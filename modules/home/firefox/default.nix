@@ -99,7 +99,7 @@
     home.file."firefox-widevinecdm" = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       enable = true;
       target = ".mozilla/firefox/default/gmp-widevinecdm";
-      source = self.packages.runCommandLocal "firefox-widevinecdm" {} ''
+      source = pkgs.runCommandLocal "firefox-widevinecdm" {} ''
         out=$out/${self.packages.widevinecdm-aarch64.version}
         mkdir -p $out
         ln -s ${self.packages.widevinecdm-aarch64}/manifest.json $out/manifest.json
