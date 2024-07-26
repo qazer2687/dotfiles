@@ -26,9 +26,8 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     # Packages
-    packages = forAllSystems (system: {
-      default = self.packages.${pkgs.system}.default;
-    });
+    packages.default = self.packages.${system}.${packageName};
+    defaultPackage = self.packages.${system}.default;
 
     # Formatter
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
@@ -67,7 +66,7 @@
     # Jet
     nixosConfigurations = {
       jet = nixpkgs.lib.nixosSystem {
-        #system = "aarch64-linux";
+        system = "aarch64-linux";
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/jet
