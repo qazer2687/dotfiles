@@ -96,7 +96,7 @@
     };
 
     # Asahi Widevine Support
-    home.file."firefox-widevinecdm" = lib.mkIf self.packages.stdenv.hostPlatform.isAarch64 {
+    home.file."firefox-widevinecdm" = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       enable = true;
       target = ".mozilla/firefox/default/gmp-widevinecdm";
       source = self.packages.runCommandLocal "firefox-widevinecdm" {} ''
