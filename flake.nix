@@ -27,10 +27,9 @@
   in rec {
     packages = forAllSystems (
       system: let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {inherit system;};
       in
-        pkgs
-        /*import ./packages {inherit pkgs;}*/
+        import ./packages {inherit pkgs;}
     );
 
     # Formatter
