@@ -21,7 +21,7 @@
             localSystem.system = cfg.pkgsSystem;
             overlays = [ cfg.overlay ];
           }
-        else pkgs;
+        else self.packages;
     };
 
   options.hardware.asahi = {

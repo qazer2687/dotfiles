@@ -4,7 +4,7 @@
 {
   config = lib.mkIf config.hardware.asahi.enable {
     boot.kernelPackages = let
-      pkgs' = config.hardware.asahi.pkgs;
+      pkgs' = config.hardware.asahi.self.packages;
     in
       pkgs'.linux-asahi.override {
         _kernelPatches = config.boot.kernelPatches;

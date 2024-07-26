@@ -1,6 +1,6 @@
 { config, self, lib, ... }:
 let
-  pkgs' = config.hardware.asahi.pkgs;
+  pkgs' = config.hardware.asahi.self.packages;
 
   bootM1n1 = pkgs'.m1n1.override {
     isRelease = true;

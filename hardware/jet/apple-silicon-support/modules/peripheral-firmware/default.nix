@@ -11,7 +11,7 @@
     ];
 
     hardware.firmware = let
-      pkgs' = config.hardware.asahi.pkgs;
+      pkgs' = config.hardware.asahi.self.packages;
     in
       lib.mkIf ((config.hardware.asahi.peripheralFirmwareDirectory != null)
           && config.hardware.asahi.extractPeripheralFirmware) [
