@@ -19,13 +19,13 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    systems = [
+    forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
       "aarch64-linux"
       "aarch64-darwin"
     ];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
   in rec {
+    # custom packages
     packages = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
