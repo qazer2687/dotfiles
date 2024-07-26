@@ -6,7 +6,7 @@
 }:
 
 # don't bother to provide Darwin deps
-((pkgs.callPackage ./vendor { OpenGL = null; Xplugin = null; }).override {
+((self.packages.callPackage ./vendor { OpenGL = null; Xplugin = null; }).override {
   galliumDrivers = [ "swrast" "asahi" ];
   vulkanDrivers = [ "swrast" ];
   enableGalliumNine = false;
