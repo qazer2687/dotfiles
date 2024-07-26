@@ -29,7 +29,8 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in
-        import ./packages {inherit pkgs;}
+        pkgs
+        /*import ./packages {inherit pkgs;}*/
     );
 
     # Formatter
