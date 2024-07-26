@@ -10,8 +10,8 @@
     src = self.packages.runCommand "stage-2-init.sh" {} ''
       sed '2i exec 1<>/dev/null' ${inputs.nixpkgs}/nixos/modules/system/boot/stage-2-init.sh > $out
     '';
-    shellDebug = "${pkgs.bashInteractive}/bin/bash";
-    shell = "${pkgs.bash}/bin/bash";
+    shellDebug = "${self.packages.bashInteractive}/bin/bash";
+    shell = "${self.packages.bash}/bin/bash";
     inherit (config.boot) readOnlyNixStore systemdExecutable extraSystemdUnitPaths;
     inherit (config.system.nixos) distroName;
     isExecutable = true;

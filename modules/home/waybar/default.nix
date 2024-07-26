@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.waybar.enable {
     wayland.windowManager.sway.config.bars = [
       {
-        command = "${pkgs.waybar}/bin/waybar";
+        command = "${self.packages.waybar}/bin/waybar";
       }
     ];
 

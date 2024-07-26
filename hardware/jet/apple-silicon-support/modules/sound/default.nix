@@ -52,7 +52,7 @@
       };
 
       # set up enivronment so that UCM configs are used as well
-      environment.variables.ALSA_CONFIG_UCM2 = "${pkgs.alsa-ucm-conf-asahi}/share/alsa/ucm2";
+      environment.variables.ALSA_CONFIG_UCM2 = "${self.packages.alsa-ucm-conf-asahi}/share/alsa/ucm2";
       systemd.user.services.pipewire.environment.ALSA_CONFIG_UCM2 = config.environment.variables.ALSA_CONFIG_UCM2;
       systemd.user.services.wireplumber.environment.ALSA_CONFIG_UCM2 = config.environment.variables.ALSA_CONFIG_UCM2;
 
