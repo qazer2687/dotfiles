@@ -91,14 +91,14 @@ in {
           "Print" = "exec ${lib.getExe wayland-screenshot}";
 
           # Volume Controls
-          XF86AudioRaiseVolume = "exec ${pkgs.pamixer}/bin/pamixer -i 5";
-          XF86AudioLowerVolume = " exec ${pkgs.pamixer}/bin/pamixer -d 5";
-          XF86AudioMute = "exec ${pkgs.pamixer}/bin/pamixer -t";
-          XF86AudioMicMute = "exec ${pkgs.pamixer}/bin/pamixer --default-source -t";
+          XF86AudioRaiseVolume = "exec ${self.packages.pamixer}/bin/pamixer -i 5";
+          XF86AudioLowerVolume = " exec ${self.packages.pamixer}/bin/pamixer -d 5";
+          XF86AudioMute = "exec ${self.packages.pamixer}/bin/pamixer -t";
+          XF86AudioMicMute = "exec ${self.packages.pamixer}/bin/pamixer --default-source -t";
 
           # Brightness Controls
-          XF86MonBrightnessUp = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 4%+";
-          XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 4%-";
+          XF86MonBrightnessUp = "exec ${self.packages.brightnessctl}/bin/brightnessctl set 4%+";
+          XF86MonBrightnessDown = "exec ${self.packages.brightnessctl}/bin/brightnessctl set 4%-";
 
           # Workspace Navigation
           "${modifier}+1" = "workspace number 1";
