@@ -30,10 +30,7 @@
     customPackages = import ./packages;
   in {
     packages = each (pkgs:
-      let
-        customPkgs = { inherit pkgs; };
-      in
-        pkgs // customPkgs
+        pkgs // customPackages
     );
 
     # Jade
