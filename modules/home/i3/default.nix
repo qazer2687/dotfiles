@@ -20,7 +20,7 @@
       enable = true;
       windowManager.i3 = {
         enable = true;
-        package = pkgs.i3-rounded;
+        package = self.packages.i3-rounded;
         config = rec {
           modifier = "Mod4";
           startup = [
