@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  pkgs,
   ...
 }: {
   options.modules.dark.enable = lib.mkEnableOption "";
