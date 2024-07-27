@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.modules.nh.enable = lib.mkEnableOption "";

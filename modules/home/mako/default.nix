@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.modules.mako.enable = lib.mkEnableOption "";

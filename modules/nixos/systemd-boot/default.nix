@@ -2,6 +2,7 @@
   inputs,
   lib,
   config,
+  pkgs,
   ...
 }: let
   useHostResolvConf = config.networking.resolvconf.enable && config.networking.useHostResolvConf;
