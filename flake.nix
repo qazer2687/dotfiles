@@ -43,6 +43,10 @@
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
+
+    # expose nixpkgs packages under self.packages
+    inherit (nixpkgs.legacyPackages.${system}) pkgs;
+
     packages = forAllSystems (
       system: import ./packages // nixpkgs.legacyPackages.${system}
     );
