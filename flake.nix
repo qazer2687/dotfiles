@@ -21,27 +21,15 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    /*each = f:
-      nixpkgs.lib.genAttrs [
-        "x86_64-linux"
-        "aarch64-linux"
-        "aarch64-darwin"
-      ] (system: f nixpkgs.legacyPackages.${system});
-  in {
-    packages = each (pkgs:
-      let
-        customPackages = import ./packages { inherit pkgs; };
-      in
-        pkgs // customPackages
-    );*/
     systems = [
       "aarch64-linux"
       "x86_64-linux"
       "aarch64-darwin"
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
+    pkgs = forAllSystems (system: nixpkgs.legacyPackages.${system});
   in {
-    packages = forAllSystems (system: import ./packages { inherit pkgs; system = system; });
+    packages = pkgs // import ./packages;
 
     # Jade
     nixosConfigurations = {
