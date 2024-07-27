@@ -35,7 +35,6 @@
       in
         pkgs // customPackages
     );
-  };
 
     # Jade
     nixosConfigurations = {
