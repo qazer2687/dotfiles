@@ -20,8 +20,8 @@
     nix-homebrew,
     ...
   } @ inputs: let
-    /*inherit (self) outputs;
-    each = f:
+    inherit (self) outputs;
+    /*each = f:
       nixpkgs.lib.genAttrs [
         "x86_64-linux"
         "aarch64-linux"
