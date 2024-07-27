@@ -32,7 +32,7 @@
         default = import ./packages {inherit nixpkgs;};
       }
     );
-    
+
     # Jade
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
