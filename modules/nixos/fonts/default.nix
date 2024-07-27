@@ -2,12 +2,13 @@
   lib,
   config,
   pkgs,
+  self,
   ...
 }: {
   options.modules.fonts.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.fonts.enable {
-    fonts.packages = with pkgs; [
+    fonts.packages = with self.packages; [
       (nerdfonts.override {
         fonts = [
           "FiraCode"

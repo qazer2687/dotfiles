@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  self,
   ...
 }: {
   options.modules.vscode.enable = lib.mkEnableOption "";

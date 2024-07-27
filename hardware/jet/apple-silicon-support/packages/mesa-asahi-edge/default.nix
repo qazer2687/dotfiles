@@ -2,6 +2,7 @@
   lib,
   fetchFromGitLab,
   pkgs,
+  self,
 }:
 # don't bother to provide Darwin deps
 ((pkgs.callPackage ./vendor {
