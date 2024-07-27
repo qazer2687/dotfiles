@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.modules.direnv.enable = lib.mkEnableOption "";
