@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  self,
   ...
 }: {
   options.modules.waybar.enable = lib.mkEnableOption "";

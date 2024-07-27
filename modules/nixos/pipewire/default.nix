@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  self,
   ...
 }: {
   options.modules.pipewire.enable = lib.mkEnableOption "";
@@ -10,7 +11,7 @@
     security.rtkit.enable = true;
     hardware.pulseaudio.enable = false;
     hardware.enableAllFirmware = true; # saw this somewhere, might help with stuff idk
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with self.packages; [
       pulseaudio
       pavucontrol
       pamixer

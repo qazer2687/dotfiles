@@ -2,13 +2,14 @@
   lib,
   config,
   pkgs,
+  self,
   ...
 }: let
   modifier = "Mod4";
 
   wayland-screenshot = pkgs.writeShellApplication {
     name = "wayland-screenshot";
-    runtimeInputs = with pkgs; [
+    runtimeInputs = with self.packages; [
       grim
       slurp
       wl-clipboard
@@ -21,7 +22,7 @@ in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.sway.enable {
-    home.packages = with pkgs; [
+    home.packages = with self.packages; [
       libnotify
     ];
 
