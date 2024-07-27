@@ -36,20 +36,12 @@
     );*/
     systems = [
       "aarch64-linux"
-      "i686-linux"
       "x86_64-linux"
       "aarch64-darwin"
-      "x86_64-darwin"
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-
-    # expose nixpkgs packages under self.packages
-    inherit (nixpkgs.legacyPackages.${system}) pkgs;
-
-    packages = forAllSystems (
-      system: import ./packages {inherit pkgs;}
-    );
+    packages = forAllSystems (system: import ./packages { inherit pkgs; system = system; });
 
     # Jade
     nixosConfigurations = {
