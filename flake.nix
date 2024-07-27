@@ -29,7 +29,7 @@
   in rec {
     packages = each (
       pkgs: rec {
-        default = import ./packages {inherit pkgs;};
+        default = import ./packages {inherit nixpkgs;};
       }
     );
     
