@@ -20,7 +20,7 @@
     nix-homebrew,
     ...
   } @ inputs: let
-    inherit (self) outputs;
+    /*inherit (self) outputs;
     each = f:
       nixpkgs.lib.genAttrs [
         "x86_64-linux"
@@ -33,6 +33,18 @@
         customPackages = import ./packages { inherit pkgs; };
       in
         pkgs // customPackages
+    );*/
+    systems = [
+      "aarch64-linux"
+      "i686-linux"
+      "x86_64-linux"
+      "aarch64-darwin"
+      "x86_64-darwin"
+    ];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+  in {
+    packages = forAllSystems (
+      system: import ./packages nixpkgs.legacyPackages.${system}
     );
 
     # Jade
