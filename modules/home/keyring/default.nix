@@ -13,7 +13,7 @@
         "secrets"
       ];
     };
-    home.packages = with self.packages; [
+    home.packages = with pkgs; [
       gnome.seahorse
     ];
   };

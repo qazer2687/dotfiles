@@ -10,9 +10,9 @@
     programs.steam = {
       enable = true;
       gamescopeSession.enable = true;
-      package = self.packages.steam.override {
+      package = pkgs.steam.override {
         extraPkgs = _pkgs:
-          with self.packages; [
+          with pkgs; [
             xorg.libXcursor
             xorg.libXi
             xorg.libXinerama

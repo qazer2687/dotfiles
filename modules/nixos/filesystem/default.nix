@@ -14,7 +14,7 @@
 
     # iOS Support
     services.usbmuxd.enable = true;
-    environment.systemPackages = with self.packages; [
+    environment.systemPackages = with pkgs; [
       ifuse
       libimobiledevice
     ];

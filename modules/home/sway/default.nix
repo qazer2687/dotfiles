@@ -6,9 +6,9 @@
 }: let
   modifier = "Mod4";
 
-  wayland-screenshot = self.packages.writeShellApplication {
+  wayland-screenshot = pkgs.writeShellApplication {
     name = "wayland-screenshot";
-    runtimeInputs = with self.packages; [
+    runtimeInputs = with pkgs; [
       grim
       slurp
       wl-clipboard
@@ -21,13 +21,13 @@ in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.sway.enable {
-    home.packages = with self.packages; [
+    home.packages = with pkgs; [
       libnotify
     ];
 
     wayland.windowManager.sway = {
       enable = true;
-      package = self.packages.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+      package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       checkConfig = false;
       config = {
         inherit modifier;
@@ -91,14 +91,14 @@ in {
           "Print" = "exec ${lib.getExe wayland-screenshot}";
 
           # Volume Controls
-          XF86AudioRaiseVolume = "exec ${self.packages.pamixer}/bin/pamixer -i 5";
-          XF86AudioLowerVolume = " exec ${self.packages.pamixer}/bin/pamixer -d 5";
-          XF86AudioMute = "exec ${self.packages.pamixer}/bin/pamixer -t";
-          XF86AudioMicMute = "exec ${self.packages.pamixer}/bin/pamixer --default-source -t";
+          XF86AudioRaiseVolume = "exec ${pkgs.pamixer}/bin/pamixer -i 5";
+          XF86AudioLowerVolume = " exec ${pkgs.pamixer}/bin/pamixer -d 5";
+          XF86AudioMute = "exec ${pkgs.pamixer}/bin/pamixer -t";
+          XF86AudioMicMute = "exec ${pkgs.pamixer}/bin/pamixer --default-source -t";
 
           # Brightness Controls
-          XF86MonBrightnessUp = "exec ${self.packages.brightnessctl}/bin/brightnessctl set 4%+";
-          XF86MonBrightnessDown = "exec ${self.packages.brightnessctl}/bin/brightnessctl set 4%-";
+          XF86MonBrightnessUp = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 4%+";
+          XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 4%-";
 
           # Workspace Navigation
           "${modifier}+1" = "workspace number 1";

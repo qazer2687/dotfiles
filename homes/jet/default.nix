@@ -7,7 +7,7 @@
     ../../modules/home
   ];
 
-  home.packages = with self.packages; [
+  home.packages = with pkgs; [
     obsidian
     nautilus
     gammastep
