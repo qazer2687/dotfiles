@@ -1,4 +1,4 @@
-{self, ...}: {
+{ ...}: {
   imports = [
     ../../modules/home
   ];

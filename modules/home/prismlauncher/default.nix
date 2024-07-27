@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  self,
   ...
 }: {
   options.modules.prismlauncher.enable = lib.mkEnableOption "";

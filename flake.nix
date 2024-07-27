@@ -28,7 +28,7 @@
       (system: f nixpkgs.legacyPackages.${system});
   in rec {
     packages = each (
-      pkgs: rec {
+      _pkgs: rec {
         default = import ./packages {inherit nixpkgs;};
       }
     );
