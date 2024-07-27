@@ -1,4 +1,6 @@
 {
+  description = "Qazer's NixOS Flake";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
@@ -24,14 +26,16 @@
         "x86_64-linux"
         "aarch64-linux"
         "aarch64-darwin"
-      ]
-      (system: f nixpkgs.legacyPackages.${system});
-  in rec {
-    packages = each (
-      _pkgs: rec {
-        default = import ./packages {inherit nixpkgs;};
-      }
+      ] (system: f nixpkgs.legacyPackages.${system});
+    customPackages = import ./packages;
+  in {
+    packages = each (pkgs:
+      let
+        customPackages = import ./packages { inherit pkgs; };
+      in
+        pkgs // customPackages
     );
+  };
 
     # Jade
     nixosConfigurations = {
