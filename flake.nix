@@ -27,10 +27,12 @@
         "aarch64-linux"
         "aarch64-darwin"
       ] (system: f nixpkgs.legacyPackages.${system});
-    customPackages = import ./packages;
   in {
     packages = each (pkgs:
-        pkgs // customPackages
+    let
+      customPackages = import ./packages;
+    in 
+      pkgs // customPackages
     );
 
     # Jade
