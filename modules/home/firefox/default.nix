@@ -25,7 +25,7 @@
         ];
         */
 
-        /*
+        
         # Asahi Widevine Support
         settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
           "media.gmp-widevinecdm.version" = pkgs.widevinecdm-aarch64.version;
@@ -35,7 +35,6 @@
           "media.eme.enabled" = true;
           "media.eme.encrypted-media-encryption-scheme.enabled" = true;
         };
-        */
 
         userChrome = ''
              @-moz-document url(chrome://browser/content/browser.xhtml){
@@ -95,7 +94,6 @@
       };
     };
 
-    /*
     # Asahi Widevine Support
     home.file."firefox-widevinecdm" = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       enable = true;
@@ -108,6 +106,5 @@
       '';
       recursive = true;
     };
-    */
   };
 }
