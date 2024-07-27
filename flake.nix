@@ -31,9 +31,9 @@
   in {
     packages = each (pkgs:
       let
-        customPackages = import ./packages { inherit pkgs; };
+        customPkgs = { inherit pkgs; };
       in
-        pkgs // customPackages
+        pkgs // customPkgs
     );
 
     # Jade
