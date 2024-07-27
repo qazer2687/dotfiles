@@ -1,9 +1,6 @@
 {
   lib,
   config,
-  self,
-  pkgs,
-  outputs,
   ...
 }: {
   options.modules.firefox.enable = lib.mkEnableOption "";
@@ -37,7 +34,8 @@
           "media.gmp-widevinecdm.autoupdate" = false;
           "media.eme.enabled" = true;
           "media.eme.encrypted-media-encryption-scheme.enabled" = true;
-        };*/
+        };
+        */
 
         userChrome = ''
              @-moz-document url(chrome://browser/content/browser.xhtml){
@@ -109,6 +107,7 @@
         ln -s ${pkgs.widevinecdm-aarch64}/libwidevinecdm.so $out/libwidevinecdm.so
       '';
       recursive = true;
-    };*/
+    };
+    */
   };
 }

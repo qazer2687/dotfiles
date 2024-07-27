@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  self,
   ...
 }: {
   options.modules.filesystem.enable = lib.mkEnableOption "";

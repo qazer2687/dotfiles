@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  self,
   ...
 }: {
   options.modules.pipewire.enable = lib.mkEnableOption "";

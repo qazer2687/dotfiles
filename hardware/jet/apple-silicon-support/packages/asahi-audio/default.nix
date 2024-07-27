@@ -1,8 +1,7 @@
-{ stdenv
-, lib
-, fetchFromGitHub
+{
+  stdenv,
+  fetchFromGitHub,
 }:
-
 stdenv.mkDerivation rec {
   pname = "asahi-audio";
   # tracking: https://src.fedoraproject.org/rpms/asahi-audio

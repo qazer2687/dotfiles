@@ -1,4 +1,4 @@
-{ ...}: {
+{...}: {
   imports = [
     ../../hardware/opal
     ../../modules/server

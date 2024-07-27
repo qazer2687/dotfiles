@@ -1,9 +1,9 @@
-{ lib
-, fetchFromGitHub
-, buildUBoot
-, m1n1
+{
+  lib,
+  fetchFromGitHub,
+  buildUBoot,
+  m1n1,
 }:
-
 (buildUBoot rec {
   src = fetchFromGitHub {
     # tracking: https://pagure.io/fedora-asahi/uboot-tools/commits/main
@@ -15,7 +15,7 @@
   version = "2024.04-4-asahi";
 
   defconfig = "apple_m1_defconfig";
-  extraMeta.platforms = [ "aarch64-linux" ];
+  extraMeta.platforms = ["aarch64-linux"];
   filesToInstall = [
     "u-boot-nodtb.bin.gz"
     "m1n1-u-boot.bin"
@@ -27,9 +27,10 @@
     CONFIG_VIDEO_FONT_SUN12X22=n
     CONFIG_VIDEO_FONT_16X32=y
   '';
-}).overrideAttrs (o: {
+})
+.overrideAttrs (o: {
   # nixos's downstream patches are not applicable
-  patches = [ 
+  patches = [
   ];
 
   # DTC= flag somehow breaks DTC compilation so we remove it
