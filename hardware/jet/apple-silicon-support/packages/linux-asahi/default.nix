@@ -85,7 +85,8 @@
         if (v == "y") || (v == "m") || (v == "n")
         then "${k}=${v}"
         else ''${k}="${v}"'';
-    in map (t: text (i t 0) (i t 1)) extraConfig;
+    in
+      map (t: text (i t 0) (i t 1)) extraConfig;
 
     # final config as a text file path
     configfile =
@@ -104,9 +105,7 @@
       configList = (parseConfig origConfigText) ++ extraConfig;
     in
       builtins.listToAttrs (map makePair (lib.lists.reverseList configList));
-
     # used to (ostensibly) keep compatibility for those running stable versions of nixos
-
     # used to fix issues when nixpkgs gets ahead of the kernel
   in
     (linuxKernel.manualConfig rec {
