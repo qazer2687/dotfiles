@@ -68,7 +68,7 @@
     # Jet
     nixosConfigurations = {
       jet = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs self outputs;};
         modules = [
           ./hosts/jet
           nur.nixosModules.nur
@@ -82,7 +82,7 @@
 
             home-manager = {
               users.alex = ./homes/jet;
-              extraSpecialArgs = {inherit inputs outputs;};
+              extraSpecialArgs = {inherit inputs self outputs;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
