@@ -29,7 +29,7 @@ in {
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video" "audio"];
-    shell = self.packages.fish;
+    shell = pkgs.fish;
   };
 
   # Shell

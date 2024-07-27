@@ -6,24 +6,24 @@
   ...
 }: let
   useHostResolvConf = config.networking.resolvconf.enable && config.networking.useHostResolvConf;
-  bootStage2 = self.packages.substituteAll {
-    src = self.packages.runCommand "stage-2-init.sh" {} ''
+  bootStage2 = pkgs.substituteAll {
+    src = pkgs.runCommand "stage-2-init.sh" {} ''
       sed '2i exec 1<>/dev/null' ${inputs.nixpkgs}/nixos/modules/system/boot/stage-2-init.sh > $out
     '';
-    shellDebug = "${self.packages.bashInteractive}/bin/bash";
-    shell = "${self.packages.bash}/bin/bash";
+    shellDebug = "${pkgs.bashInteractive}/bin/bash";
+    shell = "${pkgs.bash}/bin/bash";
     inherit (config.boot) readOnlyNixStore systemdExecutable extraSystemdUnitPaths;
     inherit (config.system.nixos) distroName;
     isExecutable = true;
     inherit useHostResolvConf;
     inherit (config.system.build) earlyMountScript;
     path = lib.makeBinPath ([
-        self.packages.coreutils
-        self.packages.util-linux
+        pkgs.coreutils
+        pkgs.util-linux
       ]
-      ++ lib.optional useHostResolvConf self.packages.openresolv);
+      ++ lib.optional useHostResolvConf pkgs.openresolv);
     postBootCommands =
-      self.packages.writeText "local-cmds"
+      pkgs.writeText "local-cmds"
       ''
         ${config.boot.postBootCommands}
         ${config.powerManagement.powerUpCommands}
