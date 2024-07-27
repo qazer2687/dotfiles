@@ -12,9 +12,9 @@
       enable = true;
       #enableUpdateCheck = false;
       #enableExtensionUpdateCheck = false;
-      package = pkgs.vscodium-fhs;
+      package = self.packages.vscodium-fhs;
       /*
-      extensions = with pkgs.vscode-extensions; [
+      extensions = with self.packages.vscode-extensions; [
         # UI Theme
 
         # Icon Theme

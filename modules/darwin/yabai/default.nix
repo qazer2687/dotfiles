@@ -10,7 +10,7 @@
   config = lib.mkIf config.modules.yabai.enable {
     services.yabai = {
       enable = true;
-      package = pkgs.yabai;
+      package = self.packages.yabai;
       enableScriptingAddition = true;
       config = {
         window_shadow = "off";
