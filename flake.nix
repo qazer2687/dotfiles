@@ -48,7 +48,7 @@
     inherit (nixpkgs.legacyPackages.${system}) pkgs;
 
     packages = forAllSystems (
-      system: import ./packages // nixpkgs.legacyPackages.${system}
+      system: import ./packages {inherit pkgs;}
     );
 
     # Jade
