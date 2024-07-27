@@ -29,10 +29,10 @@
       ] (system: f nixpkgs.legacyPackages.${system});
   in {
     packages = each (pkgs:
-    let
-      customPackages = import ./packages;
-    in 
-      pkgs // customPackages
+      let
+        customPackages = import ./packages { inherit pkgs; };
+      in
+        pkgs // customPackages
     );
 
     # Jade
