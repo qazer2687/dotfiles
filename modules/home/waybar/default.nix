@@ -46,7 +46,8 @@
             format = "{icon} {capacity}%"; # {icon}
             format-icons = [" " " " " " " " " "];
             format-charging = "  CHARGING";
-            tooltip = false;
+            tooltip-format = "{icon} {capacity%}";
+            tooltip = true;
             interval = 5;
           };
 
