@@ -29,7 +29,11 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     packages = forAllSystems (
-      system: import ./packages nixpkgs.legacyPackages.${system} // nixpkgs.legacyPackages.${system}
+      let
+        customPackages = system: import ./packages nixpkgs.legacyPackages.${system};
+        nixPkgs = system: nixpkgs.legacyPackages.${system};
+      in
+        nixPkgs // customPackages
     );
 
     # Jade
