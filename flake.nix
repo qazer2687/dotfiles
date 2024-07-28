@@ -30,8 +30,8 @@
   in {
     packages = forAllSystems (system:
       let
-        customPackages = import ./packages nixpkgs.legacyPackages.${system};
         nixPkgs = nixpkgs.legacyPackages.${system};
+        customPackages = import ./packages {inherit nixPkgs;};
       in
         nixPkgs // customPackages
     );
