@@ -32,8 +32,9 @@
       let
         nixPkgs = nixpkgs.legacyPackages.${system};
         customPackages = import ./packages {inherit nixPkgs;};
+        combinedPackages = nixPkgs // customPackages;
       in
-        nixPkgs // customPackages
+        builtins.trace "Combined packages for ${system}: ${builtins.attrNames combinedPackages}" combinedPackages
     );
 
     # Jade
