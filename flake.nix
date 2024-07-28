@@ -28,13 +28,14 @@
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    packages = forAllSystems (system:
+    packages = forAllSystems (system: 
       let
         nixPkgs = nixpkgs.legacyPackages.${system};
-        customPackages = import ./packages {inherit nixPkgs;};
+        customPackages = import ./packages { inherit nixPkgs; };
         combinedPackages = nixPkgs // customPackages;
+        combinedPackageNames = builtins.attrNames combinedPackages;
       in
-        builtins.trace "Combined packages for ${system}: ${builtins.attrNames combinedPackages}" combinedPackages
+        builtins.trace "Combined packages for ${system}: ${builtins.concatStringsSep ", " combinedPackageNames}" combinedPackages
     );
 
     # Jade
