@@ -33,7 +33,7 @@
         customPackages = system: import ./packages nixpkgs.legacyPackages.${system};
         nixPkgs = system: nixpkgs.legacyPackages.${system};
       in
-        nixPkgs // customPackages
+        (nixPkgs // customPackages)
     );
 
     # Jade
