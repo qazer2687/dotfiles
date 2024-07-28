@@ -35,6 +35,7 @@
           combinedPackages = nixPkgs // customPackages;
         in
           builtins.trace "Custom packages for ${system}: ${builtins.concatStringsSep ", " (builtins.attrNames customPackages)}" customPackages
+          customPackages
       );
 
       defaultPackage.x86_64-linux = self.packages.x86_64-linux;
