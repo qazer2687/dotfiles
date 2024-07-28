@@ -28,15 +28,18 @@
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    packages = forAllSystems (system: 
-      let
-        nixPkgs = nixpkgs.legacyPackages.${system};
-        customPackages = import ./packages { inherit nixPkgs; };
-        combinedPackages = nixPkgs // customPackages;
-        combinedPackageNames = builtins.attrNames combinedPackages;
-      in
-        builtins.trace "Combined packages for ${system}: ${builtins.concatStringsSep ", " combinedPackageNames}" combinedPackages
-    );
+      packages = forAllSystems (system:
+        let
+          nixPkgs = nixpkgs.legacyPackages.${system};
+          customPackages = import ./packages { inherit nixPkgs; };
+          combinedPackages = nixPkgs // customPackages;
+        in
+          combinedPackages
+      );
+
+      defaultPackage.x86_64-linux = self.packages.x86_64-linux;
+      defaultPackage.aarch64-linux = self.packages.aarch64-linux;
+      defaultPackage.aarch64-darwin = self.packages.aarch64-darwin;
 
     # Jade
     nixosConfigurations = {
