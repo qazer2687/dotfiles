@@ -27,9 +27,11 @@
       "aarch64-darwin"
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
-    nixpkgsFor = forAllSystems (system: import nixpkgs {inherit system pkgs;});
+    nixpkgsFor = forAllSystems (
+      system: import nixpkgs {inherit system;}
+    );
   in {
-    packages = import ./packages {import pkgs system};
+    packages = import nixpkgs // import ./packages;
 
     # Jade
     nixosConfigurations = {
