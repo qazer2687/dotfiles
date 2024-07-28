@@ -31,7 +31,7 @@
       packages = forAllSystems (system:
         let
           nixPkgs = nixpkgs.legacyPackages.${system};
-          customPackages = import ./packages { inherit nixPkgs; };
+          customPackages = import ./packages nixpkgs.legacyPackages.${system};
           combinedPackages = nixPkgs // customPackages;
         in
           combinedPackages
