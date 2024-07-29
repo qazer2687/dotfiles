@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  pkgs,
   ...
 }: {
   options.modules.steam.enable = lib.mkEnableOption "";

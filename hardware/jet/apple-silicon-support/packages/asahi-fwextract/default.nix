@@ -1,11 +1,11 @@
-{ lib
-, python3
-, fetchFromGitHub
-, gzip
-, gnutar
-, lzfse
+{
+  lib,
+  python3,
+  fetchFromGitHub,
+  gzip,
+  gnutar,
+  lzfse,
 }:
-
 python3.pkgs.buildPythonApplication rec {
   pname = "asahi-fwextract";
   version = "0.7.5";
@@ -26,7 +26,7 @@ python3.pkgs.buildPythonApplication rec {
       --replace '"xf"' '"-x", "-I", "${gzip}/bin/gzip", "-f"'
   '';
 
-  nativeBuildInputs = [ python3.pkgs.setuptools ];
+  nativeBuildInputs = [python3.pkgs.setuptools];
 
   doCheck = false;
 }

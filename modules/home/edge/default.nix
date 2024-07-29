@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  pkgs,
   ...
 }: {
   options.modules.edge.enable = lib.mkEnableOption "";
