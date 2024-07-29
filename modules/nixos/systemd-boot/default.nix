@@ -3,7 +3,6 @@
   lib,
   config,
   pkgs,
-  pkgs,
   ...
 }: let
   useHostResolvConf = config.networking.resolvconf.enable && config.networking.useHostResolvConf;

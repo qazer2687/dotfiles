@@ -1,18 +1,23 @@
-{ lib
-, fetchFromGitLab
-, pkgs
-, meson
-, llvmPackages
+{
+  lib,
+  fetchFromGitLab,
+  pkgs,
+  meson,
+  llvmPackages,
 }:
-
 # don't bother to provide Darwin deps
-((pkgs.callPackage ./vendor { OpenGL = null; Xplugin = null; }).override {
-  galliumDrivers = [ "swrast" "asahi" ];
-  vulkanDrivers = [ "swrast" ];
-  enableGalliumNine = false;
-  # libclc and other OpenCL components are needed for geometry shader support on Apple Silicon
-  enableOpenCL = true;
-}).overrideAttrs (oldAttrs: {
+((pkgs.callPackage ./vendor {
+    OpenGL = null;
+    Xplugin = null;
+  })
+  .override {
+    galliumDrivers = ["swrast" "asahi"];
+    vulkanDrivers = ["swrast"];
+    enableGalliumNine = false;
+    # libclc and other OpenCL components are needed for geometry shader support on Apple Silicon
+    enableOpenCL = true;
+  })
+.overrideAttrs (oldAttrs: {
   # version must be the same length (i.e. no unstable or date)
   # so that system.replaceRuntimeDependencies can work
   version = "24.2.0";
@@ -28,7 +33,8 @@
   mesonFlags =
     # remove flag to configure xvmc functionality as having it
     # breaks the build because that no longer exists in Mesa 23
-    (lib.filter (x: !(lib.hasPrefix "-Dxvmc-libs-path=" x)) oldAttrs.mesonFlags) ++ [
+    (lib.filter (x: !(lib.hasPrefix "-Dxvmc-libs-path=" x)) oldAttrs.mesonFlags)
+    ++ [
       # we do not build any graphics drivers these features can be enabled for
       "-Dgallium-va=disabled"
       "-Dgallium-vdpau=disabled"
