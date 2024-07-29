@@ -29,7 +29,7 @@
 
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    packages = forAllSystems (
+    overlays = forAllSystems (
       system: let
         packages = import ./packages nixpkgs.legacyPackages.${system};
       in
