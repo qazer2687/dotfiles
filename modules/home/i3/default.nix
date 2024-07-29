@@ -2,13 +2,12 @@
   lib,
   config,
   pkgs,
-  self,
   ...
 }: {
   options.modules.i3.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.i3.enable {
-    home.packages = with self.packages; [
+    home.packages = with pkgs; [
       dmenu
       scrot
       feh
@@ -20,7 +19,7 @@
       enable = true;
       windowManager.i3 = {
         enable = true;
-        package = self.packages.i3-rounded;
+        package = pkgs.i3-rounded;
         config = rec {
           modifier = "Mod4";
           startup = [

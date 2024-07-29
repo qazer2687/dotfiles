@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self,
+  pkgs,
   ...
 }: {
   imports = [
@@ -28,7 +28,7 @@
         # TODO: Add your SSH public key(s) here...
       ];
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
-      shell = self.packages.fish;
+      shell = pkgs.fish;
     };
   };
 
@@ -71,7 +71,7 @@
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
-    kernelPackages = self.packages.linuxPackages_xanmod;
+    kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
   # Autologin

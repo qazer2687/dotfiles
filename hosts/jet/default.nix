@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self,
+  pkgs,
   ...
 }: {
   imports = [
@@ -29,7 +29,7 @@
         # TODO: Add your SSH public key(s) here...
       ];
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
-      shell = self.packages.fish;
+      shell = pkgs.fish;
     };
   };
 

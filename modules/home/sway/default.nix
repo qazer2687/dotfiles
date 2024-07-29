@@ -2,14 +2,13 @@
   lib,
   config,
   pkgs,
-  self,
   ...
 }: let
   modifier = "Mod4";
 
-  wayland-screenshot = self.packages.writeShellApplication {
+  wayland-screenshot = pkgs.writeShellApplication {
     name = "wayland-screenshot";
-    runtimeInputs = with self.packages; [
+    runtimeInputs = with pkgs; [
       grim
       slurp
       wl-clipboard
@@ -22,13 +21,13 @@ in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.sway.enable {
-    home.packages = with self.packages; [
+    home.packages = with pkgs; [
       libnotify
     ];
 
     wayland.windowManager.sway = {
       enable = true;
-      package = self.packages.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+      package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       checkConfig = false;
       config = {
         inherit modifier;

@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self,
+  pkgs,
   ...
 }: {
   options.modules.dunst.enable = lib.mkEnableOption "";
@@ -11,7 +11,7 @@
     # ! reports a configuration error (l14,l15) but works fine
     services.dunst = {
       enable = true;
-      package = self.packages.dunst;
+      package = pkgs.dunst;
       settings = {
         global = {
           monitor = "0";

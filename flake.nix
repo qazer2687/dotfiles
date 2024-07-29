@@ -26,21 +26,15 @@
       "x86_64-linux"
       "aarch64-darwin"
     ];
+    
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
       packages = forAllSystems (system:
-        let
-          nixPkgs = nixpkgs.legacyPackages.${system};
-          customPackages = import ./packages nixpkgs.legacyPackages.${system};
-          combinedPackages = nixPkgs // customPackages;
-        in
-          builtins.trace "Custom packages for ${system}: ${builtins.concatStringsSep ", " (builtins.attrNames customPackages)}" customPackages
-          customPackages
+      let
+        packages = import ./packages nixpkgs.legacyPackages.${system};
+      in
+        packages
       );
-
-      defaultPackage.x86_64-linux = self.packages.x86_64-linux;
-      defaultPackage.aarch64-linux = self.packages.aarch64-linux;
-      defaultPackage.aarch64-darwin = self.packages.aarch64-darwin;
 
     # Jade
     nixosConfigurations = {

@@ -1,6 +1,6 @@
 {pkgs ? import <nixpkgs> {}}:
 pkgs.mkShell {
-  packages = with self.packages; [
+  packages = with pkgs; [
     statix
     alejandra
     deadnix

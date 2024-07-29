@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self,
+  pkgs,
   ...
 }: {
   options.modules.nvidia.enable = lib.mkEnableOption "";
