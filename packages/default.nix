@@ -1,7 +1,6 @@
-pkgs: let
-  packages = {
-    widevinecdm-aarch64 = pkgs.callPackage ./widevinecdm-aarch64 {};
-  };
-in {
-  customPackages = final: _prev: packages final.pkgs;
+# Custom packages, that can be defined similarly to ones from nixpkgs
+# You can build them using 'nix build .#example'
+pkgs: {
+  # example = pkgs.callPackage ./example { };
+  widevinecdm-aarch64 = pkgs.callPackage ./widevinecdm-aarch64 {};
 }
