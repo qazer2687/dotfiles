@@ -36,13 +36,6 @@
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     overlays = import ./overlays {inherit inputs;};
 
-    nixpkgs = {
-      overlays = [
-        outputs.overlays.additions
-        outputs.overlays.modifications
-      ];
-    };
-
     # Jade
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {

@@ -16,6 +16,13 @@
     };
   };
 
+  nixpkgs = {
+      overlays = [
+        outputs.overlays.additions
+        outputs.overlays.modifications
+      ];
+    };
+
   # Hostname
   networking.hostName = "jet";
 
