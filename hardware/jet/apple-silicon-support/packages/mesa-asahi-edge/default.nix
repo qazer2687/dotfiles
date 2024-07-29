@@ -2,8 +2,6 @@
   lib,
   fetchFromGitLab,
   pkgs,
-  meson,
-  llvmPackages,
 }:
 # don't bother to provide Darwin deps
 ((pkgs.callPackage ./vendor {

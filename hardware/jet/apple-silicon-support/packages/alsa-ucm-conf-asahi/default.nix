@@ -1,5 +1,4 @@
 {
-  lib,
   fetchFromGitHub,
   alsa-ucm-conf,
 }: (alsa-ucm-conf.overrideAttrs (oldAttrs: rec {
