@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self,
+  pkgs,
   ...
 }: let
   inherit (lib) mkDefault;
@@ -30,7 +30,7 @@ in {
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video" "audio"];
-    shell = self.packages.fish;
+    shell = pkgs.fish;
   };
 
   # Shell

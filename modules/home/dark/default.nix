@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self,
+  pkgs,
   ...
 }: {
   options.modules.dark.enable = lib.mkEnableOption "";
@@ -17,11 +17,11 @@
       enable = true;
       iconTheme = {
         name = "Adwaita";
-        package = self.packages.adwaita-icon-theme;
+        package = pkgs.adwaita-icon-theme;
       };
       theme = {
         name = "Adwaita-dark";
-        package = self.packages.gnome-themes-extra;
+        package = pkgs.gnome-themes-extra;
       };
       gtk3.extraConfig = {gtk-application-prefer-dark-theme = 1;};
       gtk4.extraConfig = {gtk-application-prefer-dark-theme = 1;};

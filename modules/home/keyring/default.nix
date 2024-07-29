@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  self,
   ...
 }: {
   options.modules.keyring.enable = lib.mkEnableOption "";
@@ -14,7 +13,7 @@
         "secrets"
       ];
     };
-    home.packages = with self.packages; [
+    home.packages = with pkgs; [
       gnome.seahorse
     ];
   };

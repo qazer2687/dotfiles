@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self,
+  pkgs,
   ...
 }: {
   options.modules.yabai.enable = lib.mkEnableOption "";
@@ -10,7 +10,7 @@
   config = lib.mkIf config.modules.yabai.enable {
     services.yabai = {
       enable = true;
-      package = self.packages.yabai;
+      package = pkgs.yabai;
       enableScriptingAddition = true;
       config = {
         window_shadow = "off";
