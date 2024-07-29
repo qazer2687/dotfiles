@@ -29,7 +29,7 @@
 
         # Asahi Widevine Support
         settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
-          "media.gmp-widevinecdm.version" = pkgs.widevinecdm-aarch64.version;
+          "media.gmp-widevinecdm.version" = self.packages.widevinecdm-aarch64.version;
           "media.gmp-widevinecdm.visible" = true;
           "media.gmp-widevinecdm.enabled" = true;
           "media.gmp-widevinecdm.autoupdate" = false;
@@ -100,7 +100,7 @@
       enable = true;
       target = ".mozilla/firefox/default/gmp-widevinecdm";
       source = pkgs.runCommandLocal "firefox-widevinecdm" {} ''
-        out=$out/${pkgs.widevinecdm-aarch64.version}
+        out=$out/${self.packages.widevinecdm-aarch64.version}
         mkdir -p $out
         ln -s ${self.packages.widevinecdm-aarch64}/manifest.json $out/manifest.json
         ln -s ${self.packages.widevinecdm-aarch64}/libwidevinecdm.so $out/libwidevinecdm.so
