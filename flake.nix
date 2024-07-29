@@ -21,6 +21,7 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+
     systems = [
       "aarch64-linux"
       "x86_64-linux"
@@ -29,12 +30,18 @@
 
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    overlays = forAllSystems (
-      system: let
-        packages = import ./packages nixpkgs.legacyPackages.${system};
-      in
-        packages
-    );
+    
+    # Misc
+    packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    overlays = import ./overlays {inherit inputs;};
+
+    nixpkgs = {
+      overlays = [
+        outputs.overlays.additions
+        outputs.overlays.modifications
+      ];
+    };
 
     # Jade
     nixosConfigurations = {
