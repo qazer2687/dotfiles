@@ -10,7 +10,7 @@
     ./vscode
     ./waybar
     ./wofi
-    ./dark
+    ./theme
     ./mako
     ./fish
     ./keyring

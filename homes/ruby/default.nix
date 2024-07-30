@@ -22,7 +22,7 @@
     #    mako.enable = true;
     #    wofi.enable = true;
     git.enable = true;
-    dark.enable = true;
+    theme.enable = true;
     #    firefox.enable = true;
     fish.enable = true;
 

@@ -17,7 +17,7 @@
     i3.enable = true;
     alacritty.enable = true;
     git.enable = true;
-    dark.enable = true;
+    theme.enable = true;
     firefox.enable = true;
     fish.enable = true;
     polybar.enable = true;
