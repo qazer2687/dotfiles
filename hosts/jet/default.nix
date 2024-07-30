@@ -56,6 +56,7 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=0"
       "udev.log_priority=3"
+      "console=tty3"
       "vt.global_cursor_default=0"
       "mitigations=off"
     ];
@@ -94,7 +95,9 @@
     core.enable = true;
     networkmanager.enable = true;
     bluetooth.enable = true;
-    pipewire.enable = true; ## this will install easyeffects with its plugins
+    ## Sound is managed via the setupAsahiSound option
+    ## and I do not need easyeffects installed on Jet.
+    ## pipewire.enable = true;
     systemd-boot.enable = true;
     filesystem.enable = true;
     fonts.enable = true;
