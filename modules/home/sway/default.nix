@@ -6,8 +6,8 @@
 }: let
   modifier = "Mod4";
 
-  wayland-screenshot = pkgs.writeShellApplication {
-    name = "wayland-screenshot";
+  screenshot = pkgs.writeShellApplication {
+    name = "screenshot";
     runtimeInputs = with pkgs; [
       grim
       slurp
@@ -23,6 +23,7 @@ in {
   config = lib.mkIf config.modules.sway.enable {
     home.packages = with pkgs; [
       libnotify
+      screenshot
     ];
 
     wayland.windowManager.sway = {
@@ -61,8 +62,10 @@ in {
         # Display & Wallpaper
         output = {
           "*".bg = "~/.config/wallpaper/wallpaper.png fill";
-          "DP-1".mode = "2560x1440@143.972000Hz"; # external monitor
-          "eDP-1".mode = "2560x1664@59.94Hz scale 2"; # jet display
+          ## Settings for my external Asus monitor.
+          "DP-1".mode = "2560x1440@143.972000Hz";
+          ## Settings for the internal display on Jet.
+          "eDP-1".mode = "2560x1664@59.94Hz scale 2";
         };
 
         # Decorations
@@ -88,7 +91,7 @@ in {
           "${modifier}+space" = "floating toggle";
 
           # Screenshot
-          "Print" = "exec ${lib.getExe wayland-screenshot}";
+          "Print" = "exec ${lib.getExe screenshot}";
 
           # Volume Controls
           XF86AudioRaiseVolume = "exec ${pkgs.pamixer}/bin/pamixer -i 5";
@@ -141,6 +144,7 @@ in {
         corner_radius 6
 
         # Eye Comfort (EXPERIMENTAL)
+        ## Gammastep currently doesn't work on Asahi Linux.
         exec gammastep -xO 3000
 
         # Waybar
@@ -149,6 +153,9 @@ in {
         }
       '';
 
+      ## I'm not sure if these make a difference as they are
+      ## already defined in environment.systemPackages but I
+      ## will keep them here till I have the time to test it.
       extraSessionCommands = ''
         export XDG_SESSION_TYPE=wayland
         export XDG_CURRENT_DESKTOP=sway
