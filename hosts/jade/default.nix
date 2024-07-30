@@ -90,7 +90,6 @@
   # Environment
   environment = {
     sessionVariables = {
-      # Theme
       GTK_THEME = "Adwaita-dark";
     };
   };
