@@ -75,6 +75,7 @@
       XDG_CURRENT_DESKTOP = "sway";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      GTK_THEME = "Adwaita-dark";
     };
   };
 
