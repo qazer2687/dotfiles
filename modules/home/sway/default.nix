@@ -153,21 +153,20 @@ in {
         }
       '';
 
-      ## I'm not sure if these make a difference as they are
-      ## already defined in environment.systemPackages but I
-      ## will keep them here till I have the time to test it.
-      extraSessionCommands = ''
-        export XDG_SESSION_TYPE=wayland
-        export XDG_CURRENT_DESKTOP=sway
-        export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-        export MOZ_ENABLE_WAYLAND=1
-        export WARP_ENABLE_WAYLAND=1
-        export NIXOS_OZONE_WL=1
-      '';
-
       wrapperFeatures = {
         base = true;
         gtk = true;
+      };
+    };
+
+    # Wayland Support
+    environment = {
+      sessionVariables = {
+        NIXOS_OZONE_WL = "1";
+        MOZ_ENABLE_WAYLAND = "1";
+        XDG_CURRENT_DESKTOP = "sway";
+        XDG_SESSION_TYPE = "wayland";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       };
     };
   };

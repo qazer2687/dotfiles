@@ -10,12 +10,6 @@
     ../../modules/nixos
   ];
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
-
   # Hostname
   networking.hostName = "jet";
 
@@ -24,9 +18,6 @@
     alex = {
       initialPassword = "xela";
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here...
-      ];
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
       shell = pkgs.fish;
     };
@@ -43,11 +34,13 @@
     graphics = {
       enable = true;
     };
-    # Asahi
     asahi = {
       withRust = true;
       useExperimentalGPUDriver = true;
-      experimentalGPUInstallMode = "replace"; ## driver breaks sway, overlay fails to compile, replace doesn't work in pure eval
+      ## Using the driver mode breaks sway and using the 
+      ## overlay mode fails to compile so I can only use
+      ## the replace mode, but it makes my config impure.
+      experimentalGPUInstallMode = "replace";
       setupAsahiSound = true;
       peripheralFirmwareDirectory = ../../firmware/jet;
     };
@@ -74,48 +67,19 @@
     }
   ];
 
-  # Environment
-  environment = {
-    sessionVariables = {
-      # Wayland Support
-      NIXOS_OZONE_WL = "1";
-      MOZ_ENABLE_WAYLAND = "1";
-      XDG_CURRENT_DESKTOP = "sway";
-      XDG_SESSION_TYPE = "wayland";
-      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-
-      # Theme
-      GTK_THEME = "Adwaita-dark";
-    };
-  };
-
   # Modules
   modules = {
-    # Core
     core.enable = true;
-
-    # Network
     networkmanager.enable = true;
     bluetooth.enable = true;
-
     pipewire.enable = true; ## this will install easyeffects with its plugins
-
     systemd-boot.enable = true;
     filesystem.enable = true;
     fonts.enable = true;
     keymap.enable = true;
     zram.enable = true;
-
-    # Utilities
     nh.enable = true;
   };
-
-  # SOPS
-  sops.defaultSopsFile = ./secrets/default.yaml;
-
-  # Locale
-  time.timeZone = "Europe/London";
-  i18n.defaultLocale = "en_GB.UTF-8";
 
   # Did you read the comment?
   system.stateVersion = "24.11";

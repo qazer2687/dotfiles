@@ -3,10 +3,7 @@
   config,
   pkgs,
   ...
-}: let
-  inherit (lib) mkDefault;
-in {
-
+}: {
   # User
   users.users.alex = {
     isNormalUser = true;
