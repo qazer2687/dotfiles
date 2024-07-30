@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  outputs,
   ...
 }: {
   imports = [
@@ -16,13 +15,6 @@
       allowUnfree = true;
     };
   };
-
-  nixpkgs = {
-      overlays = [
-        outputs.overlays.additions
-        outputs.overlays.modifications
-      ];
-    };
 
   # Hostname
   networking.hostName = "jet";
