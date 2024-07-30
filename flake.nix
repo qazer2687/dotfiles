@@ -21,13 +21,13 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-
     systems = [
       "aarch64-linux"
       "x86_64-linux"
       "aarch64-darwin"
     ];
-
+    ## A function which generations an attribute by calling a
+    ## function you pass to it, with each system as an argument.
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     
@@ -46,11 +46,6 @@
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
-            networking.hostName = "jade";
-
-            nix.registry.nixpkgs.flake = nixpkgs;
-            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
-
             home-manager = {
               users.alex = ./homes/jade;
               extraSpecialArgs = {inherit inputs outputs;};
@@ -76,11 +71,6 @@
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
-            networking.hostName = "jet";
-
-            nix.registry.nixpkgs.flake = nixpkgs;
-            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
-
             home-manager = {
               users.alex = ./homes/jet;
               extraSpecialArgs = {inherit inputs outputs;};
@@ -99,7 +89,6 @@
     # Ruby
     nixosConfigurations = {
       ruby = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/ruby
@@ -108,11 +97,6 @@
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
-            networking.hostName = "ruby";
-
-            nix.registry.nixpkgs.flake = nixpkgs;
-            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
-
             home-manager = {
               users.alex = ./homes/ruby;
               extraSpecialArgs = {inherit inputs;};
@@ -131,7 +115,6 @@
     # Onyx
     darwinConfigurations = {
       onyx = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
         pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
         specialArgs = {inherit inputs;};
         modules = [
@@ -139,14 +122,6 @@
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
           {
-            networking = let
-              name = "onyx";
-            in {
-              computerName = name;
-              hostName = name;
-              localHostName = name;
-            };
-
             # Home-Manager
             home-manager = {
               users.alex = ./homes/onyx;
@@ -174,17 +149,10 @@
     # Opal
     nixosConfigurations = {
       opal = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/opal
           ./hosts/shared
-          {
-            networking.hostName = "opal";
-
-            nix.registry.nixpkgs.flake = nixpkgs;
-            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
-          }
           sops-nix.nixosModules.sops
         ];
       };
