@@ -32,7 +32,6 @@
     ## function you pass to it, with each system as an argument.
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    
     # Misc
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
