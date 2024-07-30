@@ -56,7 +56,6 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=0"
       "udev.log_priority=3"
-      "console=tty3"
       "vt.global_cursor_default=0"
       "mitigations=off"
     ];
@@ -65,7 +64,13 @@
   };
 
   # Autologin
-  services.getty.autologinUser = "alex";
+  services.getty = {
+    autologinUser = "alex";
+    ## https://bbs.archlinux.org/viewtopic.php?pid=1579226#p1579226
+    loginOptions = ''
+      "-f alex" %I 38400 linux
+    '';
+  };
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
