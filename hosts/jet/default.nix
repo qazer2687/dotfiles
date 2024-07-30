@@ -6,7 +6,6 @@
 }: {
   imports = [
     ../../hardware/jet
-    ../../hardware/jet/apple-silicon-support
     ../../modules/nixos
   ];
 
@@ -49,7 +48,7 @@
   # Boot
   boot = {
     kernelParams = [
-      "apple_dcp.show_notch=1" ## enable notch pixel space on asahi
+      "apple_dcp.show_notch=1" ## Enables the pixels horizontal of the notch.
     ];
   };
 

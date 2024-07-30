@@ -8,6 +8,7 @@
     nur.url = "github:nix-community/NUR";
     darwin.url = "github:lnl7/nix-darwin/master";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    asahi.url = "github:tpwrules/nixos-apple-silicon";
   };
 
   outputs = {
@@ -18,6 +19,7 @@
     nur,
     darwin,
     nix-homebrew,
+    asahi,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -70,6 +72,7 @@
           nur.nixosModules.nur
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
+          asahi.nixosModules.apple-silicon-support
           {
             home-manager = {
               users.alex = ./homes/jet;
