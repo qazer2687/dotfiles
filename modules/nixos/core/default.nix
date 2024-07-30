@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  outputs,
   ...
 }: {
   options.modules.core.enable = lib.mkEnableOption "";
