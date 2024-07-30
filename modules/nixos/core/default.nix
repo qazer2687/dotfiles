@@ -17,7 +17,6 @@
   ## lib.mkForce in the configuration files for specific hosts.
 
   config = lib.mkIf config.modules.core.enable {
-
     # Nix
     nix = let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
@@ -34,7 +33,7 @@
         keep-derivations = true;
         keep-outputs = true;
         auto-optimise-store = true;
-        sandbox =  true;
+        sandbox = true;
         ## Required for remote builds.
         require-sigs = false;
       };
@@ -79,7 +78,7 @@
     i18n.defaultLocale = "en_GB.UTF-8";
 
     # Sops
-    sops.defaultSopsFile =  ./secrets/default.yaml;
+    sops.defaultSopsFile = ./secrets/default.yaml;
 
     # Environment
     environment = {

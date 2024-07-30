@@ -36,7 +36,7 @@
     asahi = {
       withRust = true;
       useExperimentalGPUDriver = true;
-      ## Using the driver mode breaks sway and using the 
+      ## Using the driver mode breaks sway and using the
       ## overlay mode fails to compile so I can only use
       ## the replace mode, but it makes my config impure.
       experimentalGPUInstallMode = "replace";
