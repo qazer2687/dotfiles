@@ -54,7 +54,7 @@
         ## that have unfree licences.
         allowUnfree = lib.mkDefault true;
       };
-      overlays = lib.mkDefault [
+      overlays = [
         outputs.overlays.additions
         ## Enabling the modifications overlay for all machines
         ## means that any package which has an overlay will be
