@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.modules.dark.enable = lib.mkEnableOption "";
+  options.modules.theme.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.dark.enable {
+  config = lib.mkIf config.modules.theme.enable {
     dconf = {
       enable = true;
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";

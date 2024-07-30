@@ -22,7 +22,7 @@
     foot.enable = true;
     mako.enable = true;
     wofi.enable = true;
-    #dark.enable = true;
+    theme.enable = true;
     firefox.enable = true;
     fish.enable = true;
 
@@ -34,7 +34,6 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
-    #starship.enable = true;
   };
 
   home.stateVersion = "24.11";
