@@ -66,10 +66,6 @@
   # Autologin
   services.getty = {
     autologinUser = "alex";
-    ## https://bbs.archlinux.org/viewtopic.php?pid=1579226#p1579226
-    loginOptions = ''
-      "-f alex" %I 38400 linux
-    '';
   };
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && sway
