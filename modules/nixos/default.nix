@@ -14,6 +14,6 @@
     ./zram
     ./remote-builder
     ./nh
-    ./nix
+    ./core
   ];
 }

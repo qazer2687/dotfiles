@@ -94,18 +94,13 @@
 
       # Theme
       GTK_THEME = "Adwaita-dark";
-
-      # Nixpkgs
-      NIXPKGS_ALLOW_UNFREE = "1";
-      NIXPKGS_ALLOW_INSECURE = "1";
     };
-    defaultPackages = lib.mkForce [];
   };
 
   # Modules
   modules = {
     # Core
-    nix.enable = true;
+    core.enable = true;
 
     # Network
     networkmanager.enable = true;
