@@ -11,11 +11,10 @@
   ## folder in the hosts directory.
   ##
   ## All options defined in this module are meant to be
-  ## enabled by all hosts.
+  ## enabled on all hosts.
   ##
-  ## All settings are enabled with lib.mkDefault meaning
-  ## that you can override them with lib.mkForce in the
-  ## configuration files for specific hosts.
+  ## All settings defined here can be overridden using
+  ## lib.mkForce in the configuration files for specific hosts.
 
   config = lib.mkIf config.modules.core.enable {
 
@@ -24,23 +23,23 @@
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in {
       settings = {
-        experimental-features = lib.mkDefault [
+        experimental-features = [
           "nix-command"
           "flakes"
         ];
         ## Disable global registry.
-        flake-registry = lib.mkDefault "";
+        flake-registry = "";
         ## https://github.com/NixOS/nix/issues/9574
-        nix-path = lib.mkDefault config.nix.nixPath;
-        keep-derivations = lib.mkDefault true;
-        keep-outputs = lib.mkDefault true;
-        auto-optimise-store = lib.mkDefault true;
-        sandbox = lib.mkDefault true;
+        nix-path = config.nix.nixPath;
+        keep-derivations = true;
+        keep-outputs = true;
+        auto-optimise-store = true;
+        sandbox =  true;
         ## Required for remote builds.
-        require-sigs = lib.mkDefault false;
+        require-sigs = false;
       };
       ## Disable channels.
-      channel.enable = lib.mkDefault false;
+      channel.enable = false;
       ## Make the flake registry and
       ## nix path match flake inputs.
       registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
@@ -52,7 +51,7 @@
       config = {
         ## Permit the install of packages
         ## that have unfree licences.
-        allowUnfree = lib.mkDefault true;
+        allowUnfree = true;
       };
       overlays = [
         outputs.overlays.additions
@@ -76,11 +75,11 @@
     };
 
     # Locale
-    time.timeZone = lib.mkDefault "Europe/London";
-    i18n.defaultLocale = lib.mkDefault "en_GB.UTF-8";
+    time.timeZone = "Europe/London";
+    i18n.defaultLocale = "en_GB.UTF-8";
 
     # Sops
-    sops.defaultSopsFile = lib.mkDefault ./secrets/default.yaml;
+    sops.defaultSopsFile =  ./secrets/default.yaml;
 
     # Environment
     environment = {
