@@ -13,10 +13,7 @@
     };
     home.sessionVariables = {
       GTK_THEME = "Adwaita-dark";
-      #QT_SCALE_FACTOR = "2";
-      #ELM_SCALE = "2";
-      #GDK_SCALE = "2";
-      XCURSOR_SIZE=48;
+      XCURSOR_SIZE=24;
     };
     gtk = {
       enable = true;
@@ -40,7 +37,7 @@
       gtk.enable = true;
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
-      size = 22;
+      size = 24;
     };
   };
 }
