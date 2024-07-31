@@ -13,9 +13,9 @@
     };
     home.sessionVariables = {
       GTK_THEME = "Adwaita-dark";
-      QT_SCALE_FACTOR = "2";
-      ELM_SCALE = "2";
-      GDK_SCALE = "2";
+      #QT_SCALE_FACTOR = "2";
+      #ELM_SCALE = "2";
+      #GDK_SCALE = "2";
       XCURSOR_SIZE=90;
     };
     gtk = {
