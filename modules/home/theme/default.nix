@@ -16,7 +16,7 @@
       #QT_SCALE_FACTOR = "2";
       #ELM_SCALE = "2";
       #GDK_SCALE = "2";
-      XCURSOR_SIZE=90;
+      XCURSOR_SIZE=48;
     };
     gtk = {
       enable = true;
