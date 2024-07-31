@@ -105,7 +105,5 @@
       "media.eme.enabled" = true;
       "media.eme.encrypted-media-encryption-scheme.enabled" = true;
     };
-
-    
   };
 }
