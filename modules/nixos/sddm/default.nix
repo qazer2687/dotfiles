@@ -11,8 +11,9 @@
       defaultSession = "sway";
       sddm = {
         enable = true;
+        enableHidpi = true;
         wayland.enable = true;
-        theme = "where_is_my_sddm_theme";
+        theme = "where-is-my-sddm-theme";
         settings = {
           Item = {
             id = "cursor";
