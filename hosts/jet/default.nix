@@ -64,12 +64,12 @@
   };
 
   # Autologin
-  services.getty = {
-    autologinUser = "alex";
-  };
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway
-  '';
+  #services.getty = {
+  #  autologinUser = "alex";
+  #};
+  #environment.loginShellInit = ''
+  #  [[ "$(tty)" == /dev/tty1 ]] && sway
+  #'';
 
   # Swap
   swapDevices = [
@@ -94,6 +94,7 @@
   # Modules
   modules = {
     core.enable = true;
+    sddm.enable = true;
     networkmanager.enable = true;
     bluetooth.enable = true;
     ## Sound is managed via the setupAsahiSound option
