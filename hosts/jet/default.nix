@@ -22,6 +22,11 @@
     };
   };
 
+  # Sway
+  ## This is required so that sddm can read the
+  ## displayManager.defaultSession option.
+  programs.sway.enable = true;
+
   # Shell
   programs.fish.enable = true;
 
