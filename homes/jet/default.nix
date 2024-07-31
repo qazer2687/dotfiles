@@ -18,7 +18,7 @@
   # arRPC
   ## This allows the use of Discord rich
   ## presence via Vencord on firefox.
-  programs.arrpc.enable = true;
+  services.arrpc.enable = true;
 
   modules = {
     # Environment
