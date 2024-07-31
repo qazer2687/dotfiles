@@ -27,16 +27,6 @@
         ];
         */
 
-        # Asahi Widevine Support
-        settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
-          "media.gmp-widevinecdm.version" = pkgs.widevinecdm-aarch64.version;
-          "media.gmp-widevinecdm.visible" = true;
-          "media.gmp-widevinecdm.enabled" = true;
-          "media.gmp-widevinecdm.autoupdate" = false;
-          "media.eme.enabled" = true;
-          "media.eme.encrypted-media-encryption-scheme.enabled" = true;
-        };
-
         userChrome = ''
              @-moz-document url(chrome://browser/content/browser.xhtml){
 
@@ -98,7 +88,7 @@
     # Asahi Widevine Support
     home.file."firefox-widevinecdm" = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       enable = true;
-      target = ".mozilla/firefox/default/gmp-widevinecdm";
+      target = ".mozilla/firefox/0/gmp-widevinecdm";
       source = pkgs.runCommandLocal "firefox-widevinecdm" {} ''
         out=$out/${pkgs.widevinecdm-aarch64.version}
         mkdir -p $out
@@ -107,5 +97,15 @@
       '';
       recursive = true;
     };
+    programs.firefox.profiles."0".settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
+      "media.gmp-widevinecdm.version" = pkgs.widevinecdm-aarch64.version;
+      "media.gmp-widevinecdm.visible" = true;
+      "media.gmp-widevinecdm.enabled" = true;
+      "media.gmp-widevinecdm.autoupdate" = false;
+      "media.eme.enabled" = true;
+      "media.eme.encrypted-media-encryption-scheme.enabled" = true;
+    };
+
+    
   };
 }
