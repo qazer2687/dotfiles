@@ -151,6 +151,10 @@ in {
         bar {
           swaybar_command waybar
         }
+
+        ## Move to workspace one on startup, because for some
+        ## reason it defaults to workspace ten on startup.
+        exec swaymsg workspace 1
       '';
 
       wrapperFeatures = {
