@@ -11,20 +11,20 @@
       defaultSession = "sway";
       sddm = {
         enable = true;
+        package = pkgs.kdePackages.sddm;
         enableHidpi = true;
         wayland.enable = true;
-        theme = "where-is-my-sddm-theme";
+        theme = "where_is_my_sddm_theme";
         settings = {
           Item = {
             id = "cursor";
             visible = "false";
           };
+          extraPackages = with pkgs; [
+            where-is-my-sddm-theme
+          ];
         };
       };
     };
-
-    environment.systemPackages = with pkgs; [
-      where-is-my-sddm-theme
-    ];
   };
 }
