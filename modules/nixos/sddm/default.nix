@@ -23,6 +23,7 @@
         };
         extraPackages = with pkgs; [
           where-is-my-sddm-theme
+          qt6.qt5compat
         ];
       };
     };
