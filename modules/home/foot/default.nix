@@ -11,7 +11,7 @@
       ## This option starts foot as a service and opens clients on demand, I
       ## ran into read-only issues when trying this and it's speed feels
       ## basically the same as having the setting off, so it doesn't matter.
-      server.enable = false; 
+      server.enable = false;
       settings = {
         main = {
           font = "Agave:size=12, FiraCode Nerd Font:size=12";

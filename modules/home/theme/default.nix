@@ -13,7 +13,7 @@
     };
     home.sessionVariables = {
       GTK_THEME = "Adwaita-dark";
-      XCURSOR_SIZE=24;
+      XCURSOR_SIZE = 24;
     };
     gtk = {
       enable = true;
