@@ -22,10 +22,12 @@
           };
         };
         extraPackages = with pkgs; [
-          where-is-my-sddm-theme
           qt6.qt5compat
         ];
       };
     };
+    environment.systemPackages = with pkgs; [
+      where-is-my-sddm-theme
+    ];
   };
 }
