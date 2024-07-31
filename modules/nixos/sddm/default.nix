@@ -20,10 +20,10 @@
             id = "cursor";
             visible = "false";
           };
-          extraPackages = with pkgs; [
-            where-is-my-sddm-theme
-          ];
         };
+        extraPackages = with pkgs; [
+          where-is-my-sddm-theme
+        ];
       };
     };
   };
