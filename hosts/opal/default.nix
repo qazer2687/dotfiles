@@ -29,16 +29,6 @@
     port = 10000;
   };
 
-  /*
-    services.undervolt = {
-    enable = true;
-    turbo = 1; # disable turbo boost
-    verbose = true;
-    coreOffset = -150;
-  };
-  */
-  # lots of silly bomboclat issues caused by this option
-
   services.xserver.displayManager.gdm.autoSuspend = false;
 
   modules = {
