@@ -23,13 +23,8 @@
       };
     };
 
-    environment.systemPackages = with pkgs; [(
-      where-is-my-sddm-theme.override {
-        themeConfig.General = {
-          passwordCharacter = "*";
-          passwordFontSize = "45";
-        };
-      }
-    )];
+    environment.systemPackages = with pkgs; [
+      where-is-my-sddm-theme
+    ];
   };
 }
