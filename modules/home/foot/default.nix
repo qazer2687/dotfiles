@@ -8,7 +8,10 @@
   config = lib.mkIf config.modules.foot.enable {
     programs.foot = {
       enable = true;
-      server.enable = false; # open foot with the footclient command (introduces some read-only issues)
+      ## This option starts foot as a service and opens clients on demand, I
+      ## ran into read-only issues when trying this and it's speed feels
+      ## basically the same as having the setting off, so it doesn't matter.
+      server.enable = false; 
       settings = {
         main = {
           font = "Agave:size=12, FiraCode Nerd Font:size=12";
@@ -25,9 +28,9 @@
           blink = "yes";
         };
 
-        # mouse = {
-        #   hide_when_typing = "no";
-        #  };
+        mouse = {
+          hide-when-typing = "no";
+        };
 
         colors = {
           foreground = "ffffff"; # Text
@@ -48,6 +51,11 @@
           bright5 = "f5bde6"; # pink
           bright6 = "8bd5ca"; # teal
           bright7 = "a5adcb"; # Subtext 0
+        };
+
+        key-bindings = {
+          clipboard-copy = "Control+c XF86Copy";
+          clipboard-paste = "Control+v XF86Paste";
         };
       };
     };

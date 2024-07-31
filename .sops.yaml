@@ -1,5 +1,6 @@
 keys:
   - &jade age1laxes9xz25p0lhcflurv9mxyxm22g6ghw2d7c0hlxdkft7ettptsr7nmjw
+  - &jet age1g2ajxczmr86fua0a8qyj09laz4c4wl3yngx0rjces28seq8gk4mqthc4mp
   - &ruby age1vpwvdgz268pqt7m3xk0w6vu5z5j27quwn4p6xnghnyncqqn2m4ks9wlqg7
   - &opal age1lxmhrxyqjev4vznfsmve6fumlpqnudlyyur3wu6tymgj9gns7qlsnyv7wj
 creation_rules:
@@ -7,6 +8,7 @@ creation_rules:
     key_groups:
     - age:
       - *jade
+      - *jet
       - *ruby
       - *opal
 
