@@ -15,5 +15,6 @@
     ./remote-builder
     ./nh
     ./core
+    ./sddm
   ];
 }
