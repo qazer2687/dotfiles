@@ -67,10 +67,20 @@
     blacklistedKernelModules = [
       "nouveau"
     ];
+    ## EXPERIMENTAL - These sysctl options are for
+    ## improving performance under high memory usage.
+    kernel.sysctl = {
+      "vm.dirty_background_ratio" = 20;
+      "vm.dirty_ratio" = 80;
+    };
     initrd.verbose = false;
     consoleLogLevel = 0;
     kernelPackages = pkgs.linuxPackages_xanmod;
   };
+
+  ## EXPERIMENTAL - This service distributes CPU interrupts
+  ## across all cores, supposedly improving performance.
+  services.irqbalance.enable = true;
 
   # Autologin
   services.getty.autologinUser = "alex";
@@ -102,10 +112,7 @@
   # Modules
   modules = {
     core.enable = true;
-
-    # Network
     networkmanager.enable = true;
-
     nvidia.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
@@ -114,8 +121,7 @@
     fonts.enable = true;
     keymap.enable = true;
     zram.enable = true;
-
-    # Utilities
+    gamemode.enable = true;
     nh.enable = true;
   };
 
