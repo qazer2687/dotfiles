@@ -16,5 +16,6 @@
     ./nh
     ./core
     ./sddm
+    ./gamemode
   ];
 }

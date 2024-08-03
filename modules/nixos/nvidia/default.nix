@@ -9,29 +9,18 @@
   config = lib.mkIf config.modules.nvidia.enable {
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia = {
-      modesetting.enable = true;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
-    };
-    programs.gamemode = {
-      enable = true;
-      enableRenice = true;
-      settings = {
-        general = {
-          desiredgov = "performance";
-          defaultgov = "performance";
-        };
-        gpu = {
-          apply_gpu_optimisations = "accept-responsibility";
-          gpu_device = 0;
-          nv_powermizer_mode = 1; # "Prefer Maximum Performance"
-        };
-        custom = {
-          start = "${pkgs.libnotify}/bin/notify-send 'GameMode Enabled'";
-          end = "${pkgs.libnotify}/bin/notify-send 'GameMode Disabled'";
-        };
-      };
+
+    ## Modesetting is required.
+    modesetting.enable = true;
+
+    ## Use the nvidia open source kernel module.
+    open = true;
+
+    ## Enable the nvidia settings menu.
+    nvidiaSettings = true;
+
+    ## EXPERIMENTAL - Use the beta vulkan nvidia drivers.
+    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
     };
   };
 }
