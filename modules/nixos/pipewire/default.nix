@@ -28,7 +28,7 @@
       pulse.enable = true;
       extraConfig.pipewire."92-low-latency" = {
         context.properties = {
-          default.clock.rate = 44100;
+          default.clock.rate = 96000;
           default.clock.quantum = 48;
           default.clock.min-quantum = 48;
           default.clock.max-quantum = 48;
