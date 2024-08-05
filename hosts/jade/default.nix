@@ -45,9 +45,10 @@
 
   # Boot
   boot = {
-    loader.efi.efiSysMountPoint = "/boot/efi"; #! Required for everything to not shit itself when I rebuild...
+    ## I don't remember exactly why this is needed but
+    ## I'm unable to rebuild without this option set.
+    loader.efi.efiSysMountPoint = "/boot/efi";
     kernelParams = [
-      # TODO: Move kernelParams from module to here...
       "kernel.nmi_watchdog=0"
       "fbcon=nodefer"
       "bgrt_disable"
