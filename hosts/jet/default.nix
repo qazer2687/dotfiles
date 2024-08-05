@@ -58,6 +58,8 @@
       "udev.log_priority=3"
       "vt.global_cursor_default=0"
       "mitigations=off"
+      ##
+      "brcmfmac.feature_disable=0x82000"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
