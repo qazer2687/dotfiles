@@ -8,7 +8,7 @@
     nur.url = "github:nix-community/NUR";
     darwin.url = "github:lnl7/nix-darwin/master";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    asahi.url = "github:tpwrules/nixos-apple-silicon";
+    asahi.url = "github:tpwrules/nixos-apple-silicon?rev=3a2074d";
   };
 
   outputs = {
