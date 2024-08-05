@@ -9,8 +9,6 @@
   # Shell
   programs.fish.enable = true;
 
-  ## required by most things incl sway and nvidia
-  hardware.graphics.enable = true;
 
   # Dconf (gtk settings)
   programs.dconf.enable = true;
