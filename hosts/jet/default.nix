@@ -81,6 +81,14 @@
 
   # Environment
   environment = {
+    systemPackages = with pkgs; [
+      (lutris.override {
+        extraPkgs = pkgs: [
+          wineWowPackages.stable
+          winetricks
+        ];
+      })
+    ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
@@ -107,11 +115,7 @@
     keymap.enable = true;
     zram.enable = true;
     nh.enable = true;
-    steam.enable = true;
   };
-
-  # Fixes
-  hardware.graphics.enable32Bit = lib.mkForce false;
 
   # Did you read the comment?
   system.stateVersion = "24.11";
