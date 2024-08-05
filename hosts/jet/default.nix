@@ -82,7 +82,7 @@
   # Environment
   environment = {
     systemPackages = with pkgs; [
-     # lutris
+      lutris
      # wineWowPackages.waylandFull
     ];
     sessionVariables = {
