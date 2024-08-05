@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   imports = [
     ../../hardware/jet
     ../../modules/nixos
@@ -111,7 +111,7 @@
   };
 
   # Fixes
-  hardware.graphics.enable32Bit = false;
+  hardware.graphics.enable32Bit = lib.mkForce false;
 
   # Did you read the comment?
   system.stateVersion = "24.11";
