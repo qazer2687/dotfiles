@@ -7,16 +7,17 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1722469787,
-        "narHash": "sha256-P20oAmbgXHl1E77TXPXiAj1Ntycc1mf7fZMI7X13VYw=",
+        "lastModified": 1722395498,
+        "narHash": "sha256-2m1HAdbgd86hW47aR/cSNTexnoEC4T1zCYoahRuFInI=",
         "owner": "tpwrules",
         "repo": "nixos-apple-silicon",
-        "rev": "8a665fee82901878edaeb8ee120296a979db2dd2",
+        "rev": "3a2074da74384031429bdf44e8dfc5337d4ff8a3",
         "type": "github"
       },
       "original": {
         "owner": "tpwrules",
         "repo": "nixos-apple-silicon",
+        "rev": "3a2074da74384031429bdf44e8dfc5337d4ff8a3",
         "type": "github"
       }
     },
@@ -271,11 +272,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1722838469,
-        "narHash": "sha256-ojRQjLcyo0MpvN7Vu9mEhzQxrPE8Lsc3QDIWbFBV128=",
+        "lastModified": 1722847605,
+        "narHash": "sha256-mRizfib4z219JxKuROb4ZXXZR2E3v8hiq3RcdI8W5yQ=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "a898d86c3f524499778b1ac61e5102ef773bb210",
+        "rev": "2c6780f99382c0a4282f4e1320b52b4e75bda1c8",
         "type": "github"
       },
       "original": {
