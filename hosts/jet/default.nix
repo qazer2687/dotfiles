@@ -82,12 +82,8 @@
   # Environment
   environment = {
     systemPackages = with pkgs; [
-      (lutris.override {
-        extraPkgs = pkgs: [
-          wineWowPackages.stable
-          winetricks
-        ];
-      })
+      lutris
+      wineWowPackages.waylandFull
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
