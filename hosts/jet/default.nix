@@ -12,7 +12,7 @@
     alex = {
       initialPassword = "xela";
       isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "video" "audio"];
+      extraGroups = ["networkmanager" "wheel" "video" "audio" "wireshark"];
       shell = pkgs.fish;
     };
   };
@@ -82,8 +82,7 @@
   # Environment
   environment = {
     systemPackages = with pkgs; [
-      lutris
-     # wineWowPackages.waylandFull
+      ## Add packages here.
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
