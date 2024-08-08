@@ -82,7 +82,8 @@
   # Environment
   environment = {
     systemPackages = with pkgs; [
-      ## Add packages here.
+      wireshark
+      bettercap
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
