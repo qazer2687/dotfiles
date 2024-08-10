@@ -17,6 +17,16 @@
     };
   };
 
+  # Logind
+  ## Stop the power button from
+  ## shutting down the machine.
+  services.logind.extraConfig = ''
+    HandlePowerKey=ignore
+    HandleSuspendKey=ignore
+    HandleHibernateKey=ignore
+  '';
+
+
   # Sway
   ## This is required so that sddm can read the
   ## displayManager.defaultSession option.
