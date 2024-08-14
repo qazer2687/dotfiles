@@ -58,6 +58,10 @@
       "udev.log_priority=3"
       "vt.global_cursor_default=0"
       "mitigations=off"
+      ## A workaround for wine not being able to use SIDT instructions,
+      ## this kernel flag disables UMIP. See link below for more info.
+      ## https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/x86/include/asm/cpufeatures.h?h=v5.2.5#n324
+      "clearcpuid=514"
     ];
     initrd.kernelModules = [
       "nvidia"
