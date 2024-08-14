@@ -100,8 +100,8 @@ in {
           XF86AudioMicMute = "exec ${pkgs.pamixer}/bin/pamixer --default-source -t";
 
           # Brightness Controls
-          XF86MonBrightnessUp = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 4%+";
-          XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 4%-";
+          XF86MonBrightnessUp = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%+";
+          XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%-";
 
           # Workspace Navigation
           "${modifier}+1" = "workspace number 1";
@@ -143,9 +143,9 @@ in {
         # Corner Radius
         corner_radius 6
 
-        # Eye Comfort (EXPERIMENTAL)
+        # Eye Comfort
         ## Gammastep currently doesn't work on Asahi Linux.
-        exec gammastep -xO 3000
+        ## exec gammastep -xO 3000
 
         # Waybar
         bar {
