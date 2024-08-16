@@ -12,7 +12,7 @@
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
     home.sessionVariables = {
-      GTK_THEME = "Adwaita-dark";
+      GTK_THEME = "Adwaita";
       XCURSOR_SIZE = 24;
     };
     gtk = {
@@ -22,7 +22,7 @@
         package = pkgs.adwaita-icon-theme;
       };
       theme = {
-        name = "Adwaita-dark";
+        name = "Adwaita";
         package = pkgs.gnome-themes-extra;
       };
       gtk3.extraConfig = {gtk-application-prefer-dark-theme = 1;};
