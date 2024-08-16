@@ -87,6 +87,12 @@
   ## across all cores, supposedly improving performance.
   services.irqbalance.enable = true;
 
+  ## EXPERIMENTAL - Enable realtime priority
+  ## to improve latency and reduce stuttering.
+  security.pam.loginLimits = [{
+    domain = "@users"; item = "rtprio"; type = "-"; value = 1;
+  }];
+
   # Autologin
   services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
@@ -128,6 +134,7 @@
     zram.enable = true;
     gamemode.enable = true;
     nh.enable = true;
+    keyring.enable  = true;
   };
 
   # SOPS
