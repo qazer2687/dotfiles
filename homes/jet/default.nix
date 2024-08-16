@@ -30,6 +30,7 @@
     theme.enable = true;
     firefox.enable = true;
     fish.enable = true;
+    keyring.enable = true;
 
     # CLI Tools
     bat.enable = true;
