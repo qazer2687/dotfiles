@@ -121,6 +121,7 @@
     keymap.enable = true;
     zram.enable = true;
     nh.enable = true;
+    keyring.enable = true;
   };
 
   # Did you read the comment?
