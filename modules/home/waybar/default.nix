@@ -132,6 +132,8 @@
           background-image: none;
           border: none;
           box-shadow: none;
+          margin-left: 0px;
+          margin-right: 0px;
         }
         #pulseaudio-slider slider {
           min-height: 0px;
