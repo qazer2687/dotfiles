@@ -129,6 +129,7 @@
 
         #pulseaudio-slider {
           padding: 0 5px 0 8px;
+          opacity: 0;
         }
         #pulseaudio-slider slider {
           min-height: 0px;
