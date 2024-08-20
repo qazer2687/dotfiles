@@ -156,7 +156,6 @@
         #pulseaudio-slider highlight {
           border-radius: 2px;
           background-color: #FFFFFF;
-          border: none;
         }
 
         /* EDGE MARGINS */
