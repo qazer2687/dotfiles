@@ -144,7 +144,7 @@
         #pulseaudio-slider trough {
           min-width: 50px;
           min-height: 10px;
-          border-radius: 6px;
+          border-radius: 2px;
         }
         #pulseaudio-slider highlight {
           border-radius: 6px;
