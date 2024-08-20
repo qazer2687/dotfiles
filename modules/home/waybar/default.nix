@@ -142,7 +142,7 @@
           box-shadow: none;
         }
         #pulseaudio-slider trough {
-          min-width: 50px;
+          min-width: 0;
           min-height: 10px;
           border-radius: 2px;
         }
