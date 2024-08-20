@@ -145,9 +145,10 @@
           min-width: 50px;
           min-height: 10px;
           border-radius: 2px;
+          opacity: 0;
         }
         #pulseaudio-slider highlight {
-          border-radius: 6px;
+          border-radius: 2px;
           background-color: #FFFFFF;
         }
 
