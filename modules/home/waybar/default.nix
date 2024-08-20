@@ -155,7 +155,7 @@
         }
         #pulseaudio-slider highlight {
           border-radius: 2px;
-          background-color: #FFFFFF;]
+          background-color: #FFFFFF;
           color: transparent;
           box-shadow: none;
           background-image: none;
