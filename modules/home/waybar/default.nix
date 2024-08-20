@@ -128,7 +128,7 @@
         }
 
         #pulseaudio-slider {
-          padding: 0 5px 0 8px;
+          padding: 0 4px 0 4px;
           background-image: none;
           border: none;
           box-shadow: none;
@@ -143,7 +143,7 @@
         }
         #pulseaudio-slider trough {
           min-width: 50px;
-          min-height: 5px;
+          min-height: 10px;
           border-radius: 6px;
         }
         #pulseaudio-slider highlight {
