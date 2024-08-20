@@ -127,30 +127,24 @@
           color: #ffffff;
         }
 
-        #backlight-slider,
-        #pulseaudio-slider {
-          padding: 0 5px 0 8px;
-        }
-
-        #backlight-slider slider,
         #pulseaudio-slider slider {
-          background-color: transparent;
+          min-height: 0px;
+          min-width: 0px;
+          opacity: 0;
+          background-image: none;
+          border: none;
           box-shadow: none;
         }
-
-        #backlight-slider trough,
         #pulseaudio-slider trough {
-          min-width: 50px;
-          min-height: 5px;
-          border-radius: 8px;
+          min-height: 80px;
+          min-width: 10px;
+          border-radius: 5px;
+          background-color: black;
         }
-
-        #backlight-slider highlight,
         #pulseaudio-slider highlight {
-          min-width: 5px;
-          min-height: 5px;
-          background-color: #FFFFFF;
-
+          min-width: 10px;
+          border-radius: 5px;
+          background-color: green;
         }
 
         /* EDGE MARGINS */
