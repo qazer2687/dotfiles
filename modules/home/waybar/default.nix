@@ -149,6 +149,7 @@
           min-height: 5px;
           border-radius: 6px;
           background-color: #FFFFFF;
+          color: transparent;
         }
 
         /* EDGE MARGINS */
