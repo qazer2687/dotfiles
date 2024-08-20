@@ -144,7 +144,6 @@
           box-shadow: none;
         }
         #pulseaudio-slider trough {
-          min-width: 50px;
           min-height: 10px;
           border-radius: 2px;
           opacity: 0;
@@ -156,7 +155,11 @@
         }
         #pulseaudio-slider highlight {
           border-radius: 2px;
-          background-color: #FFFFFF;
+          background-color: #FFFFFF;]
+          color: transparent;
+          box-shadow: none;
+          background-image: none;
+          border: none;
         }
 
         /* EDGE MARGINS */
