@@ -131,11 +131,17 @@
           padding: 0 5px 0 8px;
         }
         #pulseaudio-slider slider {
-          background-color: transparent;
+          min-height: 0px;
+          min-width: 0px;
           opacity: 0;
+          background-image: none;
+          border: none;
           box-shadow: none;
         }
         #pulseaudio-slider trough {
+          min-width: 50px;
+          min-height: 5px;
+          border-radius: 6px;
           opacity: 0;
         }
         #pulseaudio-slider highlight {
