@@ -128,7 +128,7 @@
         }
 
         #pulseaudio-slider {
-          padding: 0 4px 0 4px;
+          padding: 0;
           background-image: none;
           border: none;
           box-shadow: none;
