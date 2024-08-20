@@ -144,6 +144,7 @@
         #pulseaudio-slider highlight {
           border-radius: 2px;
           background-color: #FFFFFF;
+          color: #FFFFFF;
           border: none;
         }
 
