@@ -129,7 +129,7 @@
 
         #pulseaudio-slider {
           padding: 0 5px 0 8px;
-          opacity: 0;
+          border: none;
         }
         #pulseaudio-slider slider {
           min-height: 0px;
@@ -147,7 +147,6 @@
         #pulseaudio-slider highlight {
           border-radius: 6px;
           background-color: #FFFFFF;
-          color: #ffffff;
         }
 
         /* EDGE MARGINS */
