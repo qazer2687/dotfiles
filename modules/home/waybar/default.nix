@@ -23,7 +23,7 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "battery"];
+          modules-right = ["network" "pulseaudio" "pulseaudio/slider" "battery"];
 
           # Pulseaudio
           pulseaudio = {
@@ -33,6 +33,11 @@
             format-icons = {
               default = [" " " " " "];
             };
+          };
+          pulseaudio-slider = {
+            min = 0;
+            max = 100;
+            orientation = "horizontal";
           };
 
           # Clock
@@ -120,6 +125,32 @@
         }
         #workspaces button.visible {
           color: #ffffff;
+        }
+
+        #backlight-slider,
+        #pulseaudio-slider {
+          padding: 0 5px 0 8px;
+        }
+
+        #backlight-slider slider,
+        #pulseaudio-slider slider {
+          background-color: transparent;
+          box-shadow: none;
+        }
+
+        #backlight-slider trough,
+        #pulseaudio-slider trough {
+          min-width: 50px;
+          min-height: 5px;
+          border-radius: 8px;
+        }
+
+        #backlight-slider highlight,
+        #pulseaudio-slider highlight {
+          min-width: 5px;
+          min-height: 5px;
+          background-color: #FFFFFF;
+
         }
 
         /* EDGE MARGINS */
