@@ -131,6 +131,9 @@
           background-image: none;
           border: none;
           box-shadow: none;
+          background-color: transparent;
+          color: transparent;
+          box-shadow: none;
         }
         #pulseaudio-slider slider {
           min-height: 0px;
