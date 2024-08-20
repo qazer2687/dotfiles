@@ -147,7 +147,7 @@
         #pulseaudio-slider highlight {
           border-radius: 6px;
           background-color: #FFFFFF;
-          color: transparent;
+          color: #ffffff;
         }
 
         /* EDGE MARGINS */
