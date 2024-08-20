@@ -145,7 +145,6 @@
           border-radius: 2px;
           background-color: #FFFFFF;
           color: #FFFFFF;
-          border: none;
         }
 
         /* EDGE MARGINS */
