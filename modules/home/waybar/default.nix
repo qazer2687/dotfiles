@@ -176,14 +176,14 @@
         border: none;
         border-radius: 25px;
         box-shadow: none;
-        background-color: @2;
-        color: @2;
+        background-color: #000;
+        color: #fff;
     }
 
     #pulseaudio-slider trough {
         min-height: 2px;
         min-width: 50px;
-        background-color: @1;
+        background-color: #fff;
     }
 
         /* EDGE MARGINS */
