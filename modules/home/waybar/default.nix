@@ -127,6 +127,7 @@
           color: #ffffff;
         }
 
+        /*
         #pulseaudio-slider {
           padding: 0;
           margin: 0;
@@ -157,6 +158,33 @@
           padding: 0;
           margin: 0;
         }
+        */
+
+
+    #pulseaudio {
+        padding-left: 12px;
+    }
+
+    #pulseaudio-slider {
+        margin-left: 0;
+        padding-right: 20px;
+    }
+
+    #pulseaudio-slider slider {
+        min-height: 1px;
+        min-width: 1px;
+        border: none;
+        border-radius: 25px;
+        box-shadow: none;
+        background-color: @2;
+        color: @2;
+    }
+
+    #pulseaudio-slider trough {
+        min-height: 2px;
+        min-width: 50px;
+        background-color: @1;
+    }
 
         /* EDGE MARGINS */
         #clock {
