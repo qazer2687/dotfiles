@@ -147,7 +147,7 @@
           border-radius: 2px;
           padding: 0;
           margin: 0;
-          border-color: transparent;
+          border-color: #fff;
         }
         #pulseaudio-slider highlight {
           border-radius: 2px;
