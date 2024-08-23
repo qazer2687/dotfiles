@@ -123,12 +123,7 @@
         }
 
         #pulseaudio-slider {
-          padding: 0;
-          margin: 0;
-          background-image: none;
-          border: none;
-          box-shadow: none;
-          border-color: transparent;
+          all: unset;
         }
         #pulseaudio-slider slider {
           min-height: 0px;
