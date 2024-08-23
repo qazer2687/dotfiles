@@ -106,6 +106,7 @@
         tooltip {
           background: rgba(0, 0, 0, 1);
           border: 1px solid rgba(255, 255, 255, 1);
+          padding: 2px 2px 2px 2px;
         }
         tooltip label {
           color: white;
