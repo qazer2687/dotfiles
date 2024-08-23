@@ -23,7 +23,7 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "pulseaudio/slider" "battery"];
+          modules-right = ["network" "pulseaudio" "backlight" "battery"];
 
           # Pulseaudio
           pulseaudio = {
@@ -64,6 +64,13 @@
               "0" = "10";
             };
             sort-by-number = true;
+          };
+
+          # Backlight
+          backlight = {
+            device = "apple-panel-bl";
+            format = "{icon} {percent}%";
+            format-icons = ["󰃞 " "󰃟 " "󰃠 "];
           };
 
           # Network
@@ -109,7 +116,6 @@
           margin-bottom: 4px;
           color: #ffffff;
         }
-
 
         #workspaces button {
           all: initial; /* Remove GTK theme values (waybar #1351) */
