@@ -150,7 +150,7 @@
           border-color: #606060;
         }
         #pulseaudio-slider highlight {
-          border-radius: 0px;
+          border-radius: 1px;
           background-color: #FFFFFF;
           padding: 0;
           margin: 0;
