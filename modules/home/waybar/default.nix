@@ -128,6 +128,7 @@
           background-image: none;
           border: none;
           box-shadow: none;
+          border-color: transparent;
         }
         #pulseaudio-slider slider {
           min-height: 0px;
@@ -153,6 +154,10 @@
           background-color: #FFFFFF;
           padding: 0;
           margin: 0;
+          border: none;
+          outline: none;
+          box-shadow: none;
+          text-decoration: none;
         }
 
         /* EDGE MARGINS */
