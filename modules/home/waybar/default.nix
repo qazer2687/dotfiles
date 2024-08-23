@@ -27,9 +27,10 @@
 
           # Pulseaudio
           pulseaudio = {
-            tooltip = false;
-            format = "{icon} {volume}%";
-            format-muted = "  MUTED";
+            format = "{icon}";
+            tooltip = true;
+            tooltip-format = "{volume}%";
+            format-muted = " ";
             format-icons = {
               default = [" " " " " "];
             };
@@ -42,9 +43,11 @@
 
           # Battery
           battery = {
-            format = "{icon} {capacity}%"; # {icon}
+            format = "{icon}";
+            tooltip = true;
+            tooltip-format = "{capacity}%";
             format-icons = [" " " " " " " " " "];
-            format-charging = "  CHARGING";
+            format-charging = "󱐋";
             interval = 5;
           };
 
@@ -69,16 +72,19 @@
           # Backlight
           backlight = {
             device = "apple-panel-bl";
-            format = "{icon} {percent}%";
+            format = "{icon}";
+            tooltip = true;
+            tooltip-format = "{percent}%";
             format-icons = ["󰃞 " "󰃟 " "󰃠 "];
           };
 
           # Network
           network = {
-            tooltip = false;
-            format-wifi = "  {ipaddr}"; # 󱐋 {frequency}
-            format-disconnected = "  DISCONNECTED";
-            format-ethernet = "  {ipaddr}";
+            tooltip = true;
+            tooltip-format = "{ipaddr}";
+            format-wifi = " "; # 󱐋 {frequency}
+            format-disconnected = " ";
+            format-ethernet = " ";
             interval = 5;
           };
         }
