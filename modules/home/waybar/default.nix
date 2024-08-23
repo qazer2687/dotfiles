@@ -129,7 +129,6 @@
           border: none;
           box-shadow: none;
           border-color: transparent;
-          border-radius: 2px;
         }
         #pulseaudio-slider slider {
           min-height: 0px;
@@ -140,7 +139,6 @@
           background-image: none;
           border: none;
           box-shadow: none;
-          border-radius: 2px;
           border-color: transparent;
         }
         #pulseaudio-slider trough {
@@ -149,10 +147,10 @@
           border-radius: 2px;
           padding: 0;
           margin: 0;
-          border-color: #fff;
+          border-color: #606060;
         }
         #pulseaudio-slider highlight {
-          border-radius: 2px;
+          border-radius: 0px;
           background-color: #FFFFFF;
           padding: 0;
           margin: 0;
