@@ -80,7 +80,8 @@
     };
     initrd.verbose = false;
     consoleLogLevel = 0;
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    ## Doesn't include the vfio modules.
+    #kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
   ## EXPERIMENTAL - This service distributes CPU interrupts
