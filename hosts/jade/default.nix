@@ -134,6 +134,7 @@
     zram.enable = true;
     gamemode.enable = true;
     nh.enable = true;
+    libvirtd.enable = true;
   };
 
   # SOPS

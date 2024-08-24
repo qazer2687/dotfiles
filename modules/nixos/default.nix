@@ -17,5 +17,6 @@
     ./core
     ./sddm
     ./gamemode
+    ./libvirtd
   ];
 }
