@@ -27,19 +27,6 @@ in {
       screenshot
     ];
 
-    # XDG
-    xdg.portal = {
-      enable = true;
-      wlr.enable = true;
-      xdgOpenUsePortal = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-      ];
-    };
-
-    # Polkit
-    security.polkit.enable = true;
-
     # Sway
     wayland.windowManager.sway = {
       enable = true;

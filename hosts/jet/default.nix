@@ -38,6 +38,21 @@
   # Dconf
   programs.dconf.enable = true;
 
+  # XDG
+  ## This allows links to be
+  ## opened across applications.
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
+  # Polkit
+  security.polkit.enable = true;
+
   # Hardware
   hardware = {
     graphics = {
