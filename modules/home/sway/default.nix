@@ -21,11 +21,26 @@ in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.sway.enable {
+    # Packages
     home.packages = with pkgs; [
       libnotify
       screenshot
     ];
 
+    # XDG
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+
+    # Polkit
+    security.polkit.enable = true;
+
+    # Sway
     wayland.windowManager.sway = {
       enable = true;
       package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
