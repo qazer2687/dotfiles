@@ -50,7 +50,7 @@ in {
         ## Enable IOMMU.
         "amd_iommu=on"
         ## Isolate the GPU.
-        ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs);
+        ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs)
       ];
     };
 
