@@ -29,7 +29,7 @@ in {
     services.spice-vdagentd.enable = true;
 
     # VFIO
-    config = let cfg = config.vfio;
+    config = let cfg = config.libvirtd;
     in {
       boot = {
         initrd.kernelModules = [
@@ -54,7 +54,7 @@ in {
           ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs);
       };
     };
-    
+
     # Dconf
     programs.dconf.enable = true;
     
