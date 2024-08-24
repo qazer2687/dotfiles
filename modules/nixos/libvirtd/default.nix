@@ -6,8 +6,10 @@
 }: let
   gpuIDs = [
     ## For an RTX 2070 Super.
-    "10de:2482" # Graphics
-    "10de:228b" # Audio
+    "10de:1e84" # Graphics
+    "10de:10f8" # Audio
+    #"10de:1ad8" # USB
+    #"10de:1ad9" # Serial Bus
   ];
 in {
   options.modules.libvirtd.enable = lib.mkEnableOption "";
