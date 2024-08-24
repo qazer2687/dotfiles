@@ -73,15 +73,27 @@
       "nouveau"
     ];
     ## EXPERIMENTAL - These sysctl options are for
-    ## improving performance under high memory usage.
+    ## improving performance whilst running games.
     kernel.sysctl = {
-      "vm.dirty_background_ratio" = 20;
-      "vm.dirty_ratio" = 80;
+      "vm.dirty_background_ratio" = 5;
+      "vm.dirty_ratio" = 10;
+      ## The received frames will be stored in this queue after taking
+      ## them from the ring buffer on the network card. Increasing this
+      ## value for high speed cards may help prevent losing packets.
+      "net.core.netdev_max_backlog" = 16384;
+      ## TCP Fast Open is an extension to the transmission control protocol
+      ## that helps reduce network latency by enabling data to be exchanged
+      ## during the sender’s initial TCP SYN. Using the value 3 allows TCP
+      ## Fast Open for both incoming and outgoing connections.
+      "net.ipv4.tcp_fastopen" = 3;
+      ## The BBR congestion control algorithm can help achieve higher
+      ## bandwidths and lower latencies for internet traffic.
+      "net.core.default_qdisc" = "cake";
+      "net.ipv4.tcp_congestion_control" = "bbr";
     };
     initrd.verbose = false;
     consoleLogLevel = 0;
-    ## Doesn't include the vfio modules.
-    #kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
   ## EXPERIMENTAL - This service distributes CPU interrupts
