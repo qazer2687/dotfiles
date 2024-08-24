@@ -52,6 +52,7 @@ in {
         ] ++ lib.optional cfg.enable
           ## Isolate the GPU.
           ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs);
+      };
     };
     
     # Dconf
