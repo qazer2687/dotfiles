@@ -31,30 +31,27 @@ in {
     services.spice-vdagentd.enable = true;
 
     # VFIO
-    config = let cfg = config.libvirtd;
-    in {
-      boot = {
-        initrd.kernelModules = [
-          # VFIO
-          "vfio_pci"
-          "vfio"
-          "vfio_iommu_type1"
-          "vfio_virqfd"
+    boot = {
+      initrd.kernelModules = [
+        # VFIO
+        "vfio_pci"
+        "vfio"
+        "vfio_iommu_type1"
+        "vfio_virqfd"
 
-          # Nvidia
-          "nvidia"
-          "nvidia_modeset"
-          "nvidia_uvm"
-          "nvidia_drm"
-        ];
+        # Nvidia
+        "nvidia"
+        "nvidia_modeset"
+        "nvidia_uvm"
+        "nvidia_drm"
+      ];
 
-        kernelParams = [
-          ## Enable IOMMU.
-          "amd_iommu=on"
-        ] ++ lib.optional cfg.enable
-          ## Isolate the GPU.
-          ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs);
-      };
+      kernelParams = [
+        ## Enable IOMMU.
+        "amd_iommu=on"
+        ## Isolate the GPU.
+        ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs);
+      ];
     };
 
     # Dconf
