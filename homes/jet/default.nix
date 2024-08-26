@@ -13,6 +13,7 @@
     gammastep
     fragments
     calibre
+    gimp
   ];
 
   # arRPC
