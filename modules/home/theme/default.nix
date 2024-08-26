@@ -8,7 +8,14 @@
 
   config = lib.mkIf config.modules.theme.enable {
     # Dconf
-    dconf.enable = true;
+    dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
+      };
+    };
 
     # HM
     home = {
