@@ -12,8 +12,9 @@
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
     home.sessionVariables = {
-      GTK_THEME = "Adwaita";
+      GTK_THEME = "Adwaita-dark";
       XCURSOR_SIZE = 24;
+      GDK_FONT_SCALE = 2;
     };
     gtk = {
       enable = true;
