@@ -34,10 +34,7 @@
 
   # Shell
   programs.fish.enable = true;
-
-  # Dconf
-  programs.dconf.enable = true;
-
+  
   # XDG
   ## This allows links to be
   ## opened across applications.

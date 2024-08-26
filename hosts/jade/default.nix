@@ -33,9 +33,6 @@
   # Shell
   programs.fish.enable = true;
 
-  # Dconf
-  programs.dconf.enable = true;
-
   # Hardware
   hardware = {
     graphics = {
