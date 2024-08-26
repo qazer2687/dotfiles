@@ -69,7 +69,7 @@ in {
           ## Settings for the internal display on Jet.
           "eDP-1".mode = "2560x1664@59.94Hz scale 2";
         };
-
+x
         # Decorations
         window = {
           titlebar = false;
