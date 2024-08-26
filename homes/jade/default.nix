@@ -14,7 +14,6 @@
     lunar-client
     vlc
     vesktop
-    gimp
   ];
 
   modules = {
