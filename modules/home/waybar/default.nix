@@ -23,30 +23,29 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "backlight" "battery"];
+          modules-right = ["network" "pulseaudio" "battery"];
 
           # Pulseaudio
           pulseaudio = {
-            format = "{icon}";
-            tooltip = true;
-            tooltip-format = "{volume}%";
-            format-muted = " ";
+            format = "{icon} {volume}%";
+            tooltip = false;
+            format-muted = "  MUTED";
             format-icons = {
-              default = [" "];
+              default = [" " " " " "];
             };
           };
 
           # Clock
           clock = {
             format-alt = "{:%Y/%m/%d | %H:%M:%S}";
+            tooltip = false;
           };
 
           # Battery
           battery = {
-            format = "{icon}";
-            tooltip = true;
-            tooltip-format = "{capacity}%";
-            format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+            tooltip = false;
+            format = "{icon} {capacity}%";
+            format-icons = [" " " " " " " " " "];
             format-charging = "󱐋";
             interval = 5;
           };
@@ -80,9 +79,8 @@
 
           # Network
           network = {
-            tooltip = true;
-            tooltip-format = "{ipaddr}";
-            format-wifi = " "; # 󱐋 {frequency}
+            tooltip = false;
+            format-wifi = "  {ipaddr}"; # 󱐋 {frequency}
             format-disconnected = " ";
             format-ethernet = " ";
             interval = 5;
