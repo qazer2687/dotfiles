@@ -98,7 +98,7 @@
 
           /* center favicons and text in tab bar */
           .tabbrowser-tab .tab-stack {
-            display: flex;
+            display: block;
             align-items: center;
           }
           
