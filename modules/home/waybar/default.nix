@@ -32,7 +32,7 @@
             tooltip-format = "{volume}%";
             format-muted = " ";
             format-icons = {
-              default = [" " " " " "];
+              default = [" "];
             };
           };
 
