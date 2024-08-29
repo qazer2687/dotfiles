@@ -9,6 +9,7 @@
   config = lib.mkIf config.modules.firefox.enable {
     programs.firefox = {
       enable = true;
+      package = pkgs.firefox-devedition; ## Required for paxmod to work.
       profiles."0" = {
         name = "0";
         isDefault = true;
@@ -27,7 +28,6 @@
         */
 
         userChrome = ''
-             @import url("./multipleTabRows.css");
              @-moz-document url(chrome://browser/content/browser.xhtml){
 
                /* Additional options required
