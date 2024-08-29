@@ -105,7 +105,7 @@
           }
 
           .tab-icon-image {
-            transform: translateY(1px) !important; /* how much to move favicon down */
+            transform: translateY(0px) !important; /* how much to move favicon down */
           }
 
           /* remove rounding from the edges of tabs */
