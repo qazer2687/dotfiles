@@ -104,6 +104,12 @@
             height: 100%;
           }
 
+          /* remove rounding from the edges of tabs */
+          :root {
+            --tab-block-margin: 0 !important;
+            --tab-border-radius: 0 !important;
+          }
+
         '';
       };
     };
