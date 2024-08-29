@@ -98,7 +98,7 @@
 
           /* center the text on tabs properly */
           .tabbrowser-tab .tab-label {
-            transform: translateY(1px); /* how much to move text down */
+            transform: translateY(0px); /* how much to move text down */
             display: flex;
             align-items: center;
             height: 100%;
@@ -108,6 +108,12 @@
           :root {
             --tab-block-margin: 0 !important;
             --tab-border-radius: 0 !important;
+          }
+
+          /* shrink tab favicon size */
+          .tab-icon-image {
+            width: 14px !important; /* Adjust the width to your desired size */
+            height: 14px !important; /* Adjust the height to your desired size */
           }
 
         '';
