@@ -25,6 +25,7 @@
         noto-fonts-color-emoji
         noto-fonts-cjk-sans
         agave
+        terminus_font
       ];
     };
   };
