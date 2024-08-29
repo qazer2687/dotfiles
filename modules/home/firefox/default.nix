@@ -98,7 +98,7 @@
 
           /* center the text on tabs properly */
           .tabbrowser-tab .tab-label {
-            transform: translateY(1px); /* how much to move text down */
+            transform: translateY(0px); /* how much to move text down */
           }
 
           /* remove rounding from the edges of tabs */
