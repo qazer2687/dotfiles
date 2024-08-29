@@ -96,12 +96,11 @@
             z-index: 10000 !important;
           }
 
-          /* center favicons and text in tab bar */
-          .tabbrowser-tab .tab-content {
-            align-items: center;
-            display: flex;
+          /* center the text on tabs properly */
+          .tabbrowser-tab .tab-label {
+            transform: translateY(1px); /* how much to move text down */
           }
-          
+
           /* remove rounding from the edges of tabs */
           :root {
             --tab-block-margin: 0 !important;
