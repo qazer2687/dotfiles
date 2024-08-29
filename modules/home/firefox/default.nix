@@ -27,6 +27,7 @@
         */
 
         userChrome = ''
+             @import url("./multipleTabRows.css");
              @-moz-document url(chrome://browser/content/browser.xhtml){
 
                /* Additional options required
