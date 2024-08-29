@@ -98,7 +98,6 @@
 
           /* center favicons and text in tab bar */
           .tabbrowser-tab .tab-stack {
-            display: block;
             align-items: center;
           }
           
