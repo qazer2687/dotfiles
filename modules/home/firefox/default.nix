@@ -10,8 +10,8 @@
     programs.firefox = {
       enable = true;
       package = pkgs.firefox-devedition; ## Required for paxmod to work.
-      profiles."0" = {
-        name = "0";
+      profiles."dev-edition-default" = {
+        name = "dev-edition-default";
         isDefault = true;
         id = 0;
         #search.default = "Google"; # i need calculator
@@ -91,7 +91,7 @@
     # Asahi Widevine Support
     home.file."firefox-widevinecdm" = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       enable = true;
-      target = ".mozilla/firefox/0/gmp-widevinecdm";
+      target = ".mozilla/firefox/dev-edition-default/gmp-widevinecdm";
       source = pkgs.runCommandLocal "firefox-widevinecdm" {} ''
         out=$out/${pkgs.widevinecdm-aarch64.version}
         mkdir -p $out
@@ -100,7 +100,7 @@
       '';
       recursive = true;
     };
-    programs.firefox.profiles."0".settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
+    programs.firefox.profiles."dev-edition-default".settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       "media.gmp-widevinecdm.version" = pkgs.widevinecdm-aarch64.version;
       "media.gmp-widevinecdm.visible" = true;
       "media.gmp-widevinecdm.enabled" = true;
