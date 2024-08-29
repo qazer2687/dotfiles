@@ -30,43 +30,49 @@
         userChrome = ''
           @-moz-document url(chrome://browser/content/browser.xhtml){
 
-            /* Additional options required
-            browser.tabs.tabmanager.enabled = false
-            */
+          /* Additional options required - about:config
+          browser.tabs.tabmanager.enabled = false
+          xpinstall.signatures.required = false
+          extensions.experiments.enabled = true
+          */
 
-            :root:not([inFullscreen]){
-              --uc-bottom-toolbar-height: calc(39px + var(--toolbarbutton-outer-padding) )
-            }
-
-            :root[uidensity="compact"]:not([inFullscreen]){
-              --uc-bottom-toolbar-height: calc(32px + var(--toolbarbutton-outer-padding) )
-            }
-
-            #browser,
-            #customization-container{ margin-bottom: var(--uc-bottom-toolbar-height,0px) }
-
-            #nav-bar{
-              position: fixed !important;
-              bottom: 0px;
-              /* For some reason -webkit-box behaves internally like -moz-box, but can be used with fixed position. display: flex would work too but it breaks extension menus. */
-              display: -webkit-box;
-              width: 100%;
-              z-index: 1;
-            }
-            #nav-bar-customization-target{ -webkit-box-flex: 1; }
-
-            /* Fix panels sizing */
-            .panel-viewstack{ max-height: unset !important; }
-
-            #urlbar[breakout][breakout-extend]{
-              display: flex !important;
-              flex-direction: column-reverse;
-              bottom: 0px !important; /* Change to 3-5 px if using compact_urlbar_megabar.css depending on toolbar density */
-              top: auto !important;
-            }
-
-            .urlbarView-body-inner{ border-top-style: none !important; }
+          /* move search bar to bottom */
+          /*
+          :root:not([inFullscreen]) {
+            --uc-bottom-toolbar-height: calc(39px + var(--toolbarbutton-outer-padding))
           }
+          :root[uidensity="compact"]:not([inFullscreen]) {
+            --uc-bottom-toolbar-height: calc(32px + var(--toolbarbutton-outer-padding))
+          }
+          #browser,
+          #customization-container {
+            margin-bottom: var(--uc-bottom-toolbar-height, 0px)
+          }
+          #nav-bar {
+            position: fixed !important;
+            bottom: 0px;
+            /* For some reason -webkit-box behaves internally like -moz-box, but can be used with fixed position. display: flex would work too but it breaks extension menus. */
+            display: -webkit-box;
+            width: 100%;
+            z-index: 1;
+          }
+          #nav-bar-customization-target {
+            -webkit-box-flex: 1;
+          }
+          .panel-viewstack {
+            max-height: unset !important;
+          }
+          #urlbar[breakout][breakout-extend] {
+            display: flex !important;
+            flex-direction: column-reverse;
+            bottom: 0px !important;
+            /* Change to 3-5 px if using compact_urlbar_megabar.css depending on toolbar density */
+            top: auto !important;
+          }
+          .urlbarView-body-inner {
+            border-top-style: none !important;
+          }
+          }*/
 
           /* hide enhanced tracking protection shield icon */
           #tracking-protection-icon-container {
