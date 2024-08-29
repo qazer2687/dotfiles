@@ -97,8 +97,9 @@
           }
 
           /* center favicons and text in tab bar */
-          .tabbrowser-tab .tab-stack {
+          .tabbrowser-tab .tab-content {
             align-items: center;
+            display: flex;
           }
           
           /* remove rounding from the edges of tabs */
