@@ -76,10 +76,13 @@
              }
 
              /* hide extensions button */
-          /*   #unified-extensions-button { display: none } */
+             /* DISABLED  #unified-extensions-button { display: none } */
 
              /* hide bookmarks star */
              #star-button-box {display: none !important;}
+
+             /* remove main close button*/
+             .titlebar-buttonbox-container{ display:none } 
         '';
       };
     };
