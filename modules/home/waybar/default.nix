@@ -27,9 +27,10 @@
 
           # Pulseaudio
           pulseaudio = {
-            format = "{icon} {volume}%";
-            tooltip = false;
-            format-muted = "  MUTED";
+            format = "{icon}";
+            tooltip = true;
+            tooltip-format = "{volume}%";
+            format-muted = " ";
             format-icons = {
               default = [" " " " " "];
             };
@@ -70,17 +71,19 @@
           # Backlight
           backlight = {
             device = "apple-panel-bl";
-            format = "{icon} {percent}%";
-            tooltip = false;
+            format = "{icon}";
+            tooltip = true;
+            tooltip-format = "{percent}%";
             format-icons = ["󰃞 " "󰃟 " "󰃠 "];
           };
 
           # Network
           network = {
-            tooltip = false;
-            format-wifi = "  {ipaddr}"; # 󱐋 {frequency}
+            tooltip = true;
+            tooltip-format = "{ipaddr}";
+            format-wifi = " "; # 󱐋 {frequency}
             format-disconnected = " ";
-            format-ethernet = "  {ipaddr}";
+            format-ethernet = " ";
             interval = 5;
           };
         }
