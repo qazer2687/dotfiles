@@ -14,8 +14,8 @@
       server.enable = false;
       settings = {
         main = {
-          font = "Agave:size=8, FiraCode Nerd Font:size=8";
-          font-bold = "Agave:size=8:style=Bold, FiraCode Nerd Font:size=8";
+          font = "Agave:size=10, FiraCode Nerd Font:size=10";
+          font-bold = "Agave:size=10:style=Bold, FiraCode Nerd Font:size=10";
           line-height = "12px";
           pad = "8x8";
         };
