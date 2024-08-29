@@ -96,6 +96,14 @@
             z-index: 10000 !important;
           }
 
+          /* center the text on tabs properly */
+          .tabbrowser-tab .tab-label {
+            transform: translateY(1px); /* how much to move text down */
+            display: flex;
+            align-items: center;
+            height: 100%;
+          }
+
         '';
       };
     };
