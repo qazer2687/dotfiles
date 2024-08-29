@@ -43,10 +43,11 @@
 
           # Battery
           battery = {
-            format = "{icon} {capacity}%";
-            tooltip = false;
-            format-icons = [" " " " " " " " " "];
-            format-charging = "󱐋 {capacity}%";
+            format = "{icon}";
+            tooltip = true;
+            tooltip-format = "{capacity}%";
+            format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+            format-charging = "󱐋";
             interval = 5;
           };
 
