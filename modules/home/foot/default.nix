@@ -14,10 +14,10 @@
       server.enable = false;
       settings = {
         main = {
-          font = "Agave:size=12, FiraCode Nerd Font:size=12";
-          font-bold = "Agave:size=12:style=Bold, FiraCode Nerd Font:size=12";
-          line-height = "12px";
-          pad = "8x8";
+          font = "Agave:size=11, FiraCode Nerd Font:size=11";
+          font-bold = "Agave:size=11:style=Bold, FiraCode Nerd Font:size=11";
+          line-height = "16px";
+          pad = "16x16";
         };
 
         scrollback = {
