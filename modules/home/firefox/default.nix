@@ -104,6 +104,10 @@
             height: 100%;
           }
 
+          .tab-icon-image {
+            transform: translateY(1px) !important; /* how much to move favicon down */
+          }
+
           /* remove rounding from the edges of tabs */
           :root {
             --tab-block-margin: 0 !important;
