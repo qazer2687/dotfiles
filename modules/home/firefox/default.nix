@@ -37,6 +37,7 @@
           */
 
           /* move search bar to bottom */
+          /*
           :root:not([inFullscreen]) {
             --uc-bottom-toolbar-height: calc(39px + var(--toolbarbutton-outer-padding))
           }
@@ -71,7 +72,7 @@
           .urlbarView-body-inner {
             border-top-style: none !important;
           }
-          }
+          }*/
 
           /* hide enhanced tracking protection shield icon */
           #tracking-protection-icon-container {
