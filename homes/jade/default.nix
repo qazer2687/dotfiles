@@ -31,6 +31,7 @@
     # Development
     vscode.enable = true;
     emacs.enable = true;
+    direnv.enable = true;
 
     # Gaming
     prismlauncher.enable = true;
