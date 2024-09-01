@@ -13,27 +13,27 @@
       #enableUpdateCheck = false;
       #enableExtensionUpdateCheck = false;
       package = pkgs.vscodium-fhs;
-      extensions = with inputs.nix-vscode-extensions.extensions."${pkgs.system}".vscode-marketplace; with inputs.nix-vscode-extensions.extensions."${pkgs.system}".open-vsx; [
+      extensions = with inputs.nix-vscode-extensions.extensions."${pkgs.system}"; [
         # UI Theme
-        ankitpati.vscodium-amoled
+        open-vsx.ankitpati.vscodium-amoled
 
         # Icon Theme
-        wilfriedago.vscode-symbols-icon-theme
+        open-vsx.wilfriedago.vscode-symbols-icon-theme
 
         # Nix
-        jnoortheen.nix-ide
+        vscode-marketplace.jnoortheen.nix-ide
 
         # HTML
-        yandeu.five-server
+        vscode-marketplace.yandeu.five-server
 
         # C#
-        ms-dotnettools.csharp
+        vscode-marketplace.ms-dotnettools.csharp
         #muhammad-sammy.csharp
 
         # Other
-        naumovs.color-highlight
-        aaron-bond.better-comments
-        mkhl.direnv
+        vscode-marketplace.naumovs.color-highlight
+        vscode-marketplace.aaron-bond.better-comments
+        vscode-marketplace.mkhl.direnv
       ];
 
       userSettings = {
