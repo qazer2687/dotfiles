@@ -94,6 +94,7 @@
         ## Hide the timeline tab in the explorer pane.
         "timeline.visible" = false;
       };
+      */
     };
   };
 }
