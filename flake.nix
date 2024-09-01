@@ -9,6 +9,7 @@
     darwin.url = "github:lnl7/nix-darwin/master";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     asahi.url = "github:tpwrules/nixos-apple-silicon";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = {
@@ -20,6 +21,7 @@
     darwin,
     nix-homebrew,
     asahi,
+    nix-vscode-extensions,
     ...
   } @ inputs: let
     inherit (self) outputs;
