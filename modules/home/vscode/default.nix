@@ -18,7 +18,7 @@
         #ankitpati.vscodium-amoled
 
         # Icon Theme
-        wilfriedago.vscode-symbols-icon-theme
+        #wilfriedago.vscode-symbols-icon-theme
 
         # Nix
         jnoortheen.nix-ide
