@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }: {
   options.modules.vscode.enable = lib.mkEnableOption "";
@@ -12,49 +13,69 @@
       #enableUpdateCheck = false;
       #enableExtensionUpdateCheck = false;
       package = pkgs.vscodium-fhs;
-      /*
-      extensions = with pkgs.vscode-extensions; [
+      extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         # UI Theme
+        ankitpati.vscodium-amoled
 
         # Icon Theme
-        pkief.material-icon-theme
+        wilfriedago.vscode-symbols-icon-theme
 
         # Nix
         jnoortheen.nix-ide
 
+        # HTML
+        yandeu.five-server
+
         # C#
         ms-dotnettools.csharp
+        #muhammad-sammy.csharp
 
         # Other
         naumovs.color-highlight
-        tamasfe.even-better-toml
+        aaron-bond.better-comments
         mkhl.direnv
       ];
-      */
 
-      /*
-         i will use vscode for a while to build some preferences and then copy it here
       userSettings = {
-        "window.menuBarVisibility" = "toggle";
-        "workbench.startupEditor" = "none";
-        "workbench.iconTheme" = "material-icon-theme";
+        # Editor
+        "editor.stickyScroll.enabled" = false;
+        "editor.cursorSmoothCaretAnimation" = "on";
+        "editor.smoothScrolling" = true;
+        "editor.cursorBlinking" = "smooth";
+        "editor.scrollbar.horizontal" = "hidden";
+        "editor.scrollbar.vertical" = "hidden";
+        "editor.renderWhitespace" = "none";
+        "editor.minimap.renderCharacters" = false;
+        "editor.minimap.showSlider" = "always";
+        "editor.minimap.enabled" = false;
+        "editor.fontFamily" = "Agave, FiraCode Nerd Font";
+        "editor.fontSize" = 16;
+        "editor.codeLens" = false;
+
+        # Files & Explorer
         "files.autoSave" = "afterDelay";
-        "haskell.manageHLS" = "GHCup";
-        "git.autofetch" = true;
+        "explorer.confirmDelete" = false;
+        "symbols.hidesExplorerArrows" = false;
+        "breadcrumbs.enabled" = false;
+
+        # Git
         "git.enableSmartCommit" = true;
         "git.confirmSync" = false;
-        "editor.cursorSmoothCaretAnimation" = "on";
-        "editor.tabSize" = 2;
-        "editor.detectIndentation" = false;
-        "workbench.colorTheme" = "Gruvbox Dark Medium";
-        "editor.fontFamily" = "'FiraCode Nerd Font'";
+        "git.ignoreRebaseWarning" = true;
+        "git.openRepositoryInParentFolders" = "always";
+
+        # Terminal
+        "terminal.integrated.smoothScrolling" = true;
+        "terminal.integrated.scrollback" = 100000;
+
+        # Workbench & UI
+        "workbench.colorTheme" = "AMOLED";
+        "workbench.iconTheme" = "symbols";
+        "workbench.list.smoothScrolling" = true;
         "workbench.statusBar.visible" = false;
-        "editor.minimap.enabled" = false;
-        "breadcrumbs.enabled" = false;
-        "window.zoomLevel" = 2;
-        "editor.codeLens" = false;
+        "window.menuBarVisibility" = "toggle";
+        "debug.showInlineBreakpointCandidates" = false;
       };
-      */
     };
   };
 }
