@@ -15,7 +15,7 @@
       package = pkgs.vscodium-fhs;
       extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         # UI Theme
-        ankitpati.vscodium-amoled
+        #ankitpati.vscodium-amoled
 
         # Icon Theme
         wilfriedago.vscode-symbols-icon-theme
