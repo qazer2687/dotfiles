@@ -13,7 +13,7 @@
       #enableUpdateCheck = false;
       #enableExtensionUpdateCheck = false;
       package = pkgs.vscodium-fhs;
-      extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+      extensions = with inputs.nix-vscode-extensions.extensions."${pkgs.system}".vscode-marketplace; [
         # UI Theme
         #ankitpati.vscodium-amoled
 
