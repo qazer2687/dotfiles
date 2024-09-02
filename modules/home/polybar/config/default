@@ -35,8 +35,8 @@ offset-y = 29
 height = 40
 bottom = false
 
-override-redirect = true
-wm-restack = i3
+override-redirect = false
+#wm-restack = i3
 radius = 6
 
 background = ${colors.background}
