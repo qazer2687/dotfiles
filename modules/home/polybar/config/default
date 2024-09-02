@@ -53,8 +53,8 @@ separator-foreground = ${colors.disabled}
 
 font-0 = Terminus:size=14;2
 
-modules-left = xworkspaces xwindow
-modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth date
+modules-left = xworkspaces
+modules-right = date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
