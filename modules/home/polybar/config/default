@@ -35,7 +35,7 @@ offset-y = 29
 height = 40
 bottom = false
 
-override-redirect = false
+override-redirect = true
 wm-restack = i3
 radius = 6
 
