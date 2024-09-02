@@ -33,7 +33,6 @@ offset-x = 29
 offset-y = 29
 
 height = 40
-radius = 0.0
 bottom = true
 
 override-redirect = false
