@@ -29,8 +29,6 @@ disabled = #707880
 
 monitor = ${env:MONITOR:}
 width = 100%
-offset-x = 29
-offset-y = 29
 
 height = 40
 bottom = false
