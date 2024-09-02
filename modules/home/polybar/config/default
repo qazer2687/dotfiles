@@ -43,8 +43,8 @@ border-size = 8
 border-bottom-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 1
+padding-left = 4
+padding-right = 4
 
 module-margin = 1
 
