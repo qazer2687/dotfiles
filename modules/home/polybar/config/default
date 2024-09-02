@@ -33,7 +33,7 @@ offset-x = 29
 offset-y = 29
 
 height = 40
-bottom = true
+bottom = false
 
 override-redirect = false
 wm-restack = i3
