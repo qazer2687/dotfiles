@@ -33,6 +33,7 @@
     firefox.enable = true;
     fish.enable = true;
     keyring.enable = true;
+    webcam.enable = true;
 
     # CLI Tools
     bat.enable = true;

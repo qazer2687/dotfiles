@@ -22,5 +22,6 @@
     ./starship
     ./bat
     ./eza
+    ./webcam
   ];
 }
