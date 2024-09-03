@@ -45,9 +45,7 @@
       ## My configuration has to be perfect otherwise I have to
       ## go through the process of coming back to here, modifying
       ## a setting and then rebuilding - every time I want to
-      ## change something. I think it's better to just uncomment
-      ## this option when initializing the settings.json like a
-      ## sort of template that then becomes mutable by vscode.
+      ## change something.
       /*
       userSettings = {
         # Editor
