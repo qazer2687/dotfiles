@@ -19,7 +19,7 @@ option_as_alt = "None"
 history = 100000
 multiplier = 1
 [font]
-normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+normal = { family = "Terminus", style = "Regular" }
 bold = { style = "Bold" }
 italic = { style = "Italic" }
 bold_italic = { style = "Bold Italic" }
