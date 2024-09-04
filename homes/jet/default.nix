@@ -43,6 +43,7 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
+    emacs.enable = true;
   };
 
   home.stateVersion = "24.11";
