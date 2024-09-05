@@ -17,9 +17,9 @@
   ];
 
   # arRPC
-  ## This allows the use of Discord rich presence via
-  ## Vencord on Firefox. I'm not sure how this affects
-  ## battery life so I will leave it off for now.
+  #? This allows the use of Discord rich presence via
+  #? Vencord on Firefox. I'm not sure how this affects
+  #? battery life so I will leave it off for now.
   services.arrpc.enable = false;
 
   modules = {

@@ -8,10 +8,10 @@
 
   config = lib.mkIf config.modules.fonts.enable {
     fonts = {
-      ## Enables a set of fonts families and styles
-      ## for reasonable coverage of unicode.
+      #? Enables a set of fonts families and styles
+      #? for reasonable coverage of unicode.
       enableDefaultPackages = true;
-      ## Additional fonts to install.
+      #? Additional fonts to install.
       packages = with pkgs; [
         (nerdfonts.override {
           fonts = [

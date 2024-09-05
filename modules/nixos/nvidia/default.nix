@@ -10,16 +10,16 @@
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia = {
 
-    ## Modesetting is required.
+    #? Modesetting is required.
     modesetting.enable = true;
 
-    ## Use the nvidia open source kernel module.
+    #? Use the nvidia open source kernel module.
     open = true;
 
-    ## Enable the nvidia settings menu.
+    #? Enable the nvidia settings menu.
     nvidiaSettings = true;
 
-    ## EXPERIMENTAL - Use the beta vulkan nvidia drivers.
+    #? EXPERIMENTAL - Use the beta vulkan nvidia drivers.
     package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
     };
   };
