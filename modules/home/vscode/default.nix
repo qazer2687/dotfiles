@@ -14,10 +14,10 @@
       #enableExtensionUpdateCheck = false;
       package = pkgs.vscodium-fhs;
 
-      ## The extensions folder is mutable by default as far as
-      ## I'm aware. I don't know whether this is for installations
-      ## or just updates, but as long as updates work I'm happy
-      ## keeping this here.
+      #? The extensions folder is mutable by default as far as
+      #? I'm aware. I don't know whether this is for installations
+      #? or just updates, but as long as updates work I'm happy
+      #? keeping this here.
       extensions = with inputs.nix-vscode-extensions.extensions."${pkgs.system}"; [
         # UI Theme
         open-vsx.ankitpati.vscodium-amoled
@@ -41,11 +41,11 @@
         vscode-marketplace.mkhl.direnv
       ];
 
-      ## Not in use because this is a very impractical option.
-      ## My configuration has to be perfect otherwise I have to
-      ## go through the process of coming back to here, modifying
-      ## a setting and then rebuilding - every time I want to
-      ## change something.
+      #? Not in use because this is a very impractical option.
+      #? My configuration has to be perfect otherwise I have to
+      #? go through the process of coming back to here, modifying
+      #? a setting and then rebuilding - every time I want to
+      #? change something.
       /*
       userSettings = {
         # Editor
@@ -87,9 +87,9 @@
         "window.menuBarVisibility" = "toggle";
         "debug.showInlineBreakpointCandidates" = false;
 
-        ## Hide the outline tab in the explorer pane.
+        #? Hide the outline tab in the explorer pane.
         "outline.showOutline" = false;
-        ## Hide the timeline tab in the explorer pane.
+        #? Hide the timeline tab in the explorer pane.
         "timeline.visible" = false;
       };
       */

@@ -18,8 +18,8 @@
   };
 
   # Logind
-  ## Stop the power button from
-  ## shutting down the machine.
+  #? Stop the power button from
+  #? shutting down the machine.
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
     HandleSuspendKey=ignore
@@ -27,16 +27,16 @@
   '';
 
   # Sway
-  ## This is required so that sddm can read the
-  ## displayManager.defaultSession option.
+  #? This is required so that sddm can read the
+  #? displayManager.defaultSession option.
   programs.sway.enable = true;
 
   # Shell
   programs.fish.enable = true;
   
   # XDG
-  ## This allows links to be
-  ## opened across applications.
+  #? This allows links to be
+  #? opened across applications.
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -57,9 +57,9 @@
     asahi = {
       withRust = true;
       useExperimentalGPUDriver = true;
-      ## Using the driver mode breaks sway and using the
-      ## overlay mode fails to compile so I can only use
-      ## the replace mode, but it makes my config impure.
+      #? Using the driver mode breaks sway and using the
+      #? overlay mode fails to compile so I can only use
+      #? the replace mode, but it makes my config impure.
       experimentalGPUInstallMode = "replace";
       setupAsahiSound = true;
       peripheralFirmwareDirectory = ../../firmware/jet;
@@ -69,16 +69,16 @@
   # Boot
   boot = {
     kernelParams = [
-      "apple_dcp.show_notch=1" ## Enables the pixels horizontal of the notch.
+      "apple_dcp.show_notch=1" #? Enables the pixels horizontal of the notch.
       "kernel.nmi_watchdog=0"
       "fbcon=nodefer"
       "bgrt_disable"
-      "quiet"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=0"
-      "udev.log_priority=3"
+      "udev.log_priority=2"
       "vt.global_cursor_default=0"
       "mitigations=off"
+      "quiet"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
@@ -104,8 +104,7 @@
   # Environment
   environment = {
     systemPackages = with pkgs; [
-      wireshark
-      bettercap
+      #? Put system packages here...
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
@@ -113,20 +112,22 @@
       XDG_CURRENT_DESKTOP = "sway";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      GDK_SCALE = "2";
+      #? This option scales menu bars, causing
+      #? them to appear way too large.
+      #? GDK_SCALE = "2";
     };
   };
 
   # Modules
   modules = {
     core.enable = true;
-    ## Currently using getty autologin.
-    ## sddm.enable = true;
+    #? Currently using getty autologin.
+    #? sddm.enable = true;
     networkmanager.enable = true;
     bluetooth.enable = true;
-    ## Sound is managed via the setupAsahiSound option
-    ## and I do not need easyeffects installed on Jet.
-    ## pipewire.enable = true;
+    #? Sound is managed via the setupAsahiSound option
+    #? and I do not need easyeffects installed on Jet.
+    #? pipewire.enable = true;
     systemd-boot.enable = true;
     filesystem.enable = true;
     fonts.enable = true;

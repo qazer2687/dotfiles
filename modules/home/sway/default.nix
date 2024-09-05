@@ -64,9 +64,9 @@ in {
         # Display & Wallpaper
         output = {
           "*".bg = "~/.config/wallpaper/wallpaper.png fill";
-          ## Settings for my external Asus monitor.
+          #? Settings for my external Asus monitor.
           "DP-1".mode = "2560x1440@143.972000Hz";
-          ## Settings for the internal display on Jet.
+          #? Settings for the internal display on Jet.
           "eDP-1".mode = "2560x1664@59.94Hz scale 2";
         };
 
@@ -146,16 +146,16 @@ in {
         corner_radius 6
 
         # Eye Comfort
-        ## Gammastep currently doesn't work on Asahi Linux.
-        ## exec gammastep -xO 3000
+        #? Gammastep currently doesn't work on Asahi Linux.
+        #? exec gammastep -xO 3000
 
         # Waybar
         bar {
           swaybar_command waybar
         }
 
-        ## Move to workspace one on startup, because for some
-        ## reason it defaults to workspace ten on startup.
+        #? Move to workspace one on startup, because for some
+        #? reason it defaults to workspace ten on startup.
         exec swaymsg workspace 1
       '';
 
