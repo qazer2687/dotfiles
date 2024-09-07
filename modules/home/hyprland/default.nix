@@ -23,6 +23,7 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
+      package = pkgs.hyprland;
       extraConfig = ''
         # Modifier
         $mod = MOD4

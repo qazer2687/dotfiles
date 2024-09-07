@@ -10,5 +10,10 @@ _: {
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+
+    hyprland = super.hyprland.override {
+      #? Use the legacy renderer for support with Asahi Linux.
+      legacyRenderer = true;
+    };
   };
 }
