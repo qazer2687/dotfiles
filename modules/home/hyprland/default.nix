@@ -58,7 +58,7 @@
         bind = $mod, Return, exec, foot
 
         # Waybar
-        bind = exec-once = waybar
+        exec-once = waybar
 
         # Search
         bind = $mod, E, exec, wofi --show drun
