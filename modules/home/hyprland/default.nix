@@ -28,7 +28,7 @@
         $mod = MOD4
 
         general { 
-          gaps_in = 6
+          gaps_in = 3
           gaps_out = 6
           border_size = 0
           resize_on_border = true 
