@@ -11,7 +11,7 @@ _: {
     # ...
     # });
 
-    hyprland = super.hyprland.override {
+    hyprland = prev.hyprland.override {
       #? Use the legacy renderer for support with Asahi Linux.
       legacyRenderer = true;
     };
