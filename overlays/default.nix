@@ -15,5 +15,7 @@ _: {
       #? Use the legacy renderer for support with Asahi Linux.
       legacyRenderer = true;
     };
+
+    # TODO zed-editor withGLES false
   };
 }
