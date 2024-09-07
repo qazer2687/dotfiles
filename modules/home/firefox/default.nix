@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.firefox.enable {
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox-devedition-unwrapped; #? Required for paxmod to work.
+      package = pkgs.firefox-devedition; #? Required for paxmod to work.
       profiles."dev-edition-default" = {
         name = "dev-edition-default";
         isDefault = true;

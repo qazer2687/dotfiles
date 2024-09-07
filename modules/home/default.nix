@@ -23,5 +23,6 @@
     ./bat
     ./eza
     ./webcam
+    ./hyprland
   ];
 }
