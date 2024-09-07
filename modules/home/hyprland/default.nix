@@ -7,6 +7,20 @@
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprland.enable {
+    services.hyprpaper = {
+      enable = true;
+      settings = {
+        ipc = "off";
+        splash = false;
+        preload = [
+          "/home/alex/.config/wallpaper/wallpaper.png"
+        ];
+        wallpaper = [
+          "eDP-1,/home/alex/.config/wallpaper/wallpaper.png"
+        ];
+      };
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = ''
