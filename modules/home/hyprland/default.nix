@@ -48,9 +48,6 @@
           animation = workspaces, 1, 6, default
         }
 
-        # HiDPI
-        #monitor = highres, auto, 2
-
         # Input
         input {
           kb_layout = gb
@@ -111,14 +108,6 @@
         bind = $mod SHIFT, 8, movetoworkspace, 8
         bind = $mod SHIFT, 9, movetoworkspace, 9
         bind = $mod SHIFT, 0, movetoworkspace, 10
-
-        # Resize
-        binde = [
-          $mod SHIFT, left, resizeactive, -50 0
-          $mod SHIFT, right, resizeactive, 50 0
-          $mod SHIFT, up, resizeactive, 0 -50
-          $mod SHIFT, down, resizeactive, 0 50
-        ]
       '';
     };
   };
