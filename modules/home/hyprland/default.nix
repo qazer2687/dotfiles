@@ -122,11 +122,6 @@
         bind = $mod SHIFT, 8, movetoworkspace, 8
         bind = $mod SHIFT, 9, movetoworkspace, 9
         bind = $mod SHIFT, 0, movetoworkspace, 10
-
-        env = MESA_GL_VERSION_OVERRIDE,3.3
-        env = MESA_GLSL_VERSION_OVERRIDE,330
-        env = MESA_GLES_VERSION_OVERRIDE,3.1
-
       '';
     };
   };
