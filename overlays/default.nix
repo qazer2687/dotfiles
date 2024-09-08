@@ -20,13 +20,14 @@ _: {
       # TODO zed-editor withGLES false
     };
 
-    dwl = prev.dwl.overrideAttrs (_: rec {
+    dwl-patches = prev.dwl.overrideAttrs (_: rec {
       patches = [
         ../patches/dwl/autostart.patch
         ../patches/dwl/vanitygaps.patch
       ];
-
-      configH = ../modules/home/dwl/config/config.h;
     });
+    dwl = prev.dwl-patches.override {
+      configH = ../modules/home/dwl/config/config.h;
+    };
   };
 }
