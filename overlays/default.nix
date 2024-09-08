@@ -23,7 +23,7 @@ _: {
     dwl = prev.dwl.overrideAttrs (_: rec {
       patches = [
         ../patches/dwl/autostart.patch
-        #../patches/dwl/vanitygaps.patch
+        ../patches/dwl/vanitygaps.patch
       ];
 
       configH = ../modules/home/dwl/config/config.h;

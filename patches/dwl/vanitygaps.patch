@@ -1,4 +1,4 @@
-From a66874e623f8471bf5cee7f7d64ce97fc6cd1564 Mon Sep 17 00:00:00 2001
+From 3c95b58bc2b87ebd9b8481b3b16e49d99883f0a7 Mon Sep 17 00:00:00 2001
 From: Bonicgamer <44382222+Bonicgamer@users.noreply.github.com>
 Date: Mon, 17 Aug 2020 14:48:24 -0400
 Subject: [PATCH 1/2] Implement vanitygaps
@@ -53,10 +53,10 @@ index 22d2171d..39e528b1 100644
  	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
  	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_C,          killclient,     {0} },
 diff --git a/dwl.c b/dwl.c
-index 9021e442..14e4627a 100644
+index a2711f67..d749728a 100644
 --- a/dwl.c
 +++ b/dwl.c
-@@ -201,6 +201,10 @@ struct Monitor {
+@@ -200,6 +200,10 @@ struct Monitor {
  	struct wlr_box w; /* window area, layout-relative */
  	struct wl_list layers[4]; /* LayerSurface.link */
  	const Layout *lt[2];
@@ -67,7 +67,7 @@ index 9021e442..14e4627a 100644
  	unsigned int seltags;
  	unsigned int sellt;
  	uint32_t tagset[2];
-@@ -274,6 +278,7 @@ static void createpopup(struct wl_listener *listener, void *data);
+@@ -273,6 +277,7 @@ static void createpopup(struct wl_listener *listener, void *data);
  static void cursorconstrain(struct wlr_pointer_constraint_v1 *constraint);
  static void cursorframe(struct wl_listener *listener, void *data);
  static void cursorwarptohint(void);
@@ -75,7 +75,7 @@ index 9021e442..14e4627a 100644
  static void destroydecoration(struct wl_listener *listener, void *data);
  static void destroydragicon(struct wl_listener *listener, void *data);
  static void destroyidleinhibitor(struct wl_listener *listener, void *data);
-@@ -294,6 +299,13 @@ static void fullscreennotify(struct wl_listener *listener, void *data);
+@@ -293,6 +298,13 @@ static void fullscreennotify(struct wl_listener *listener, void *data);
  static void gpureset(struct wl_listener *listener, void *data);
  static void handlesig(int signo);
  static void incnmaster(const Arg *arg);
@@ -89,10 +89,10 @@ index 9021e442..14e4627a 100644
  static void inputdevice(struct wl_listener *listener, void *data);
  static int keybinding(uint32_t mods, xkb_keysym_t sym);
  static void keypress(struct wl_listener *listener, void *data);
-@@ -327,6 +339,7 @@ static void setcursor(struct wl_listener *listener, void *data);
- static void setcursorshape(struct wl_listener *listener, void *data);
+@@ -327,6 +339,7 @@ static void setcursorshape(struct wl_listener *listener, void *data);
  static void setfloating(Client *c, int floating);
  static void setfullscreen(Client *c, int fullscreen);
+ static void setgamma(struct wl_listener *listener, void *data);
 +static void setgaps(int oh, int ov, int ih, int iv);
  static void setlayout(const Arg *arg);
  static void setmfact(const Arg *arg);
@@ -105,7 +105,7 @@ index 9021e442..14e4627a 100644
  static void toggletag(const Arg *arg);
  static void toggleview(const Arg *arg);
  static void unlocksession(struct wl_listener *listener, void *data);
-@@ -411,6 +425,8 @@ static struct wlr_box sgeom;
+@@ -413,6 +427,8 @@ static struct wlr_box sgeom;
  static struct wl_list mons;
  static Monitor *selmon;
  
@@ -114,7 +114,7 @@ index 9021e442..14e4627a 100644
  #ifdef XWAYLAND
  static void activatex11(struct wl_listener *listener, void *data);
  static void associatex11(struct wl_listener *listener, void *data);
-@@ -985,6 +1001,11 @@ createmon(struct wl_listener *listener, void *data)
+@@ -989,6 +1005,11 @@ createmon(struct wl_listener *listener, void *data)
  	for (i = 0; i < LENGTH(m->layers); i++)
  		wl_list_init(&m->layers[i]);
  
@@ -126,7 +126,7 @@ index 9021e442..14e4627a 100644
  	wlr_output_state_init(&state);
  	/* Initialize monitor state using configured rules */
  	m->tagset[0] = m->tagset[1] = 1;
-@@ -1167,6 +1188,12 @@ cursorwarptohint(void)
+@@ -1171,6 +1192,12 @@ cursorwarptohint(void)
  	}
  }
  
@@ -139,7 +139,7 @@ index 9021e442..14e4627a 100644
  void
  destroydecoration(struct wl_listener *listener, void *data)
  {
-@@ -1520,6 +1547,83 @@ incnmaster(const Arg *arg)
+@@ -1524,6 +1551,83 @@ incnmaster(const Arg *arg)
  	arrange(selmon);
  }
  
@@ -223,8 +223,8 @@ index 9021e442..14e4627a 100644
  void
  inputdevice(struct wl_listener *listener, void *data)
  {
-@@ -2310,6 +2414,16 @@ setfullscreen(Client *c, int fullscreen)
- 	printstatus();
+@@ -2352,6 +2456,16 @@ setgamma(struct wl_listener *listener, void *data)
+ 	wlr_output_schedule_frame(m->wlr_output);
  }
  
 +void
@@ -240,7 +240,7 @@ index 9021e442..14e4627a 100644
  void
  setlayout(const Arg *arg)
  {
-@@ -2651,7 +2765,7 @@ tagmon(const Arg *arg)
+@@ -2691,7 +2805,7 @@ tagmon(const Arg *arg)
  void
  tile(Monitor *m)
  {
@@ -249,7 +249,7 @@ index 9021e442..14e4627a 100644
  	int i, n = 0;
  	Client *c;
  
-@@ -2661,22 +2775,31 @@ tile(Monitor *m)
+@@ -2701,22 +2815,31 @@ tile(Monitor *m)
  	if (n == 0)
  		return;
  
@@ -290,7 +290,7 @@ index 9021e442..14e4627a 100644
  		}
  		i++;
  	}
-@@ -2699,6 +2822,13 @@ togglefullscreen(const Arg *arg)
+@@ -2739,6 +2862,13 @@ togglefullscreen(const Arg *arg)
  		setfullscreen(sel, !sel->isfullscreen);
  }
  
@@ -308,7 +308,7 @@ index 9021e442..14e4627a 100644
 2.46.0
 
 
-From 333bf3c468570468ec4525f28ba40a2d8b53ca6b Mon Sep 17 00:00:00 2001
+From 8b9db986eddeade22d92fb15a8c836912869be29 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Leonardo=20Hern=C3=A1ndez=20Hern=C3=A1ndez?=
  <leohdz172@protonmail.com>
 Date: Wed, 20 Jul 2022 00:15:32 -0500
@@ -336,10 +336,10 @@ index 39e528b1..f4d4095d 100644
  static const unsigned int gappih           = 10; /* horiz inner gap between windows */
  static const unsigned int gappiv           = 10; /* vert inner gap between windows */
 diff --git a/dwl.c b/dwl.c
-index 14e4627a..2428a6d1 100644
+index d749728a..dbc66ef8 100644
 --- a/dwl.c
 +++ b/dwl.c
-@@ -1877,8 +1877,12 @@ monocle(Monitor *m)
+@@ -1879,8 +1879,12 @@ monocle(Monitor *m)
  	wl_list_for_each(c, &clients, link) {
  		if (!VISIBLEON(c, m) || c->isfloating || c->isfullscreen)
  			continue;
