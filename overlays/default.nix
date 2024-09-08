@@ -13,9 +13,11 @@ _: {
 
     hyprland = prev.hyprland.override {
       #? Use the legacy renderer for support with Asahi Linux.
-      legacyRenderer = true;
+      #legacyRenderer = true;
     };
 
-    # TODO zed-editor withGLES false
+    zed-editor = prev.zed-editor.override {
+      # TODO zed-editor withGLES false
+    };
   };
 }
