@@ -26,6 +26,7 @@
     # Environment
     sway.enable = true;
     hyprland.enable = true;
+    dwl.enable = true;
     waybar.enable = true;
     foot.enable = true;
     mako.enable = true;

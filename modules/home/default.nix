@@ -24,5 +24,6 @@
     ./eza
     ./webcam
     ./hyprland
+    ./dwl
   ];
 }

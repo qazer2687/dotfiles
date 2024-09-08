@@ -19,5 +19,10 @@ _: {
     zed-editor = prev.zed-editor.override {
       # TODO zed-editor withGLES false
     };
+
+    dwl = prev.dwl.override {
+      conf = ../modules/home/dwl/config/config.h;
+      };
+
   };
 }

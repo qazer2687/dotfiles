@@ -26,7 +26,7 @@
     HandleHibernateKey=ignore
   '';
 
-  # Sway
+  # WM
   #? These are configured through home-manager but this
   #? option is required so they appear as desktop entries.
   programs.sway.enable = true;
@@ -91,9 +91,9 @@
   services.getty = {
     autologinUser = "alex";
   };
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session hyprland
-  '';
+  #environment.loginShellInit = ''
+  #  [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session hyprland
+  #'';
 
   # Swap
   swapDevices = [
@@ -111,7 +111,6 @@
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
-      XDG_CURRENT_DESKTOP = "hyprland";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       #? This option scales menu bars, causing
