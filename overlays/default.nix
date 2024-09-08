@@ -20,16 +20,11 @@ _: {
       # TODO zed-editor withGLES false
     };
 
-	  dwl = prev.dwl.override {
-      conf = ../modules/home/dwl/config/config.h;
-      };
-    (self: super: {
-      dwl = super.dwl.overrideAttrs (oldAttrs: rec {
-        patches = [
-          ../patches/dwl/autostart.patch
-          ../patches/dwl/vanitygaps.patch
-        ];
-      });
-    })
+    dwl = (prev.dwl.overrideAttrs (oldAttrs: rec {
+      patches = [
+        ../patches/dwl/autostart.patch
+        ../patches/dwl/vanitygaps.patch
+      ];
+    })).override{ conf = ../modules/home/dwl/config/config.h; };
   };
 }
