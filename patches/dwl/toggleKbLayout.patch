@@ -1,0 +1,187 @@
+From a0c758953fe0cbb20ea74d0acfa3e44b8173d12d Mon Sep 17 00:00:00 2001
+From: ForzCross <forzcross@gmail.com>
+Date: Sun, 21 Jan 2024 15:52:31 +0300
+Subject: [PATCH] Add per client keyboard layout and status bar info
+
+---
+ config.def.h |  3 +++
+ dwl.c        | 65 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 67 insertions(+), 1 deletion(-)
+
+diff --git a/config.def.h b/config.def.h
+index 9009517..81bb10d 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -13,6 +13,9 @@ static const float focuscolor[]            = COLOR(0x005577ff);
+ static const float urgentcolor[]           = COLOR(0xff0000ff);
+ /* To conform the xdg-protocol, set the alpha to zero to restore the old behavior */
+ static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
++/* keyboard layout change notification for status bar */
++static const char  kblayout_file[] = "/tmp/dwl-keymap";
++static const char *kblayout_cmd[]  = {"pkill", "-RTMIN+3", "someblocks", NULL};
+ 
+ /* tagging - TAGCOUNT must be no greater than 31 */
+ #define TAGCOUNT (9)
+diff --git a/dwl.c b/dwl.c
+index bf02a6d..17c8fa4 100644
+--- a/dwl.c
++++ b/dwl.c
+@@ -135,6 +135,7 @@ typedef struct {
+ 	uint32_t tags;
+ 	int isfloating, isurgent, isfullscreen;
+ 	uint32_t resize; /* configure serial of a pending resize */
++	xkb_layout_index_t layout_idx;
+ } Client;
+ 
+ typedef struct {
+@@ -155,6 +156,7 @@ typedef struct {
+ 
+ 	struct wl_listener modifiers;
+ 	struct wl_listener key;
++	xkb_layout_index_t layout_idx;
+ } KeyboardGroup;
+ 
+ typedef struct {
+@@ -273,6 +275,7 @@ static void fullscreennotify(struct wl_listener *listener, void *data);
+ static void handlesig(int signo);
+ static void incnmaster(const Arg *arg);
+ static void inputdevice(struct wl_listener *listener, void *data);
++static void kblayoutnotify(KeyboardGroup *kb, int update);
+ static int keybinding(uint32_t mods, xkb_keysym_t sym);
+ static void keypress(struct wl_listener *listener, void *data);
+ static void keypressmod(struct wl_listener *listener, void *data);
+@@ -385,6 +388,8 @@ static struct wlr_box sgeom;
+ static struct wl_list mons;
+ static Monitor *selmon;
+ 
++xkb_layout_index_t status_layout_idx = -1;
++
+ #ifdef XWAYLAND
+ static void activatex11(struct wl_listener *listener, void *data);
+ static void associatex11(struct wl_listener *listener, void *data);
+@@ -772,6 +777,7 @@ createkeyboard(struct wlr_keyboard *keyboard)
+ 
+ 	/* Add the new keyboard to the group */
+ 	wlr_keyboard_group_add_keyboard(kb_group.wlr_group, keyboard);
++	kblayoutnotify(&kb_group, 1);
+ }
+ 
+ void
+@@ -927,6 +933,7 @@ createnotify(struct wl_listener *listener, void *data)
+ 	struct wlr_xdg_surface *xdg_surface = data;
+ 	Client *c = NULL;
+ 	LayerSurface *l = NULL;
++	struct wlr_keyboard *kb = wlr_seat_get_keyboard(seat);
+ 
+ 	if (xdg_surface->role == WLR_XDG_SURFACE_ROLE_POPUP) {
+ 		struct wlr_xdg_popup *popup = xdg_surface->popup;
+@@ -949,6 +956,9 @@ createnotify(struct wl_listener *listener, void *data)
+ 	c = xdg_surface->data = ecalloc(1, sizeof(*c));
+ 	c->surface.xdg = xdg_surface;
+ 	c->bw = borderpx;
++	c->layout_idx = kb
++		? xkb_state_serialize_layout(kb->xkb_state, XKB_STATE_LAYOUT_EFFECTIVE)
++		: 0;
+ 
+ 	wlr_xdg_toplevel_set_wm_capabilities(xdg_surface->toplevel,
+ 			WLR_XDG_TOPLEVEL_WM_CAPABILITIES_FULLSCREEN);
+@@ -1165,6 +1175,9 @@ focusclient(Client *c, int lift)
+ 	int unused_lx, unused_ly, old_client_type;
+ 	Client *old_c = NULL;
+ 	LayerSurface *old_l = NULL;
++	xkb_mod_mask_t mdepr, mlatc, mlock;
++	xkb_layout_index_t ldepr, llatc, llock;
++	struct wlr_keyboard *kb = wlr_seat_get_keyboard(seat);
+ 
+ 	if (locked)
+ 		return;
+@@ -1217,6 +1230,17 @@ focusclient(Client *c, int lift)
+ 	}
+ 	printstatus();
+ 
++	/* Update keyboard layout */
++	if (kb) {
++		mdepr = xkb_state_serialize_mods(kb->xkb_state, XKB_STATE_MODS_DEPRESSED);
++		mlatc = xkb_state_serialize_mods(kb->xkb_state, XKB_STATE_MODS_LATCHED);
++		mlock = xkb_state_serialize_mods(kb->xkb_state, XKB_STATE_MODS_LOCKED);
++		ldepr = xkb_state_serialize_layout(kb->xkb_state, XKB_STATE_LAYOUT_DEPRESSED);
++		llatc = xkb_state_serialize_layout(kb->xkb_state, XKB_STATE_LAYOUT_LATCHED);
++		llock = c ? c->layout_idx : 0;
++		xkb_state_update_mask(kb->xkb_state, mdepr, mlatc, mlock, ldepr, llatc, llock);
++	}
++
+ 	if (!c) {
+ 		/* With no client, all we have left is to clear focus */
+ 		wlr_seat_keyboard_notify_clear_focus(seat);
+@@ -1227,7 +1251,7 @@ focusclient(Client *c, int lift)
+ 	motionnotify(0);
+ 
+ 	/* Have a client, so focus its top-level wlr_surface */
+-	client_notify_enter(client_surface(c), wlr_seat_get_keyboard(seat));
++	client_notify_enter(client_surface(c), kb);
+ 
+ 	/* Activate the new client */
+ 	client_activate_surface(client_surface(c), 1);
+@@ -1352,6 +1376,41 @@ inputdevice(struct wl_listener *listener, void *data)
+ 	wlr_seat_set_capabilities(seat, caps);
+ }
+ 
++void
++kblayoutnotify(KeyboardGroup *kb, int update)
++{
++	FILE *f;
++	Client *c;
++	xkb_layout_index_t old = kb->layout_idx;
++
++	if (update) {
++		kb->layout_idx = xkb_state_serialize_layout(kb->wlr_group->keyboard.xkb_state,
++				XKB_STATE_LAYOUT_EFFECTIVE);
++
++		// Update client layout
++		if (kb->layout_idx != old && (c = focustop(selmon)))
++			c->layout_idx = kb->layout_idx;
++	}
++
++	// If layout did not change, do nothing
++	if (status_layout_idx == kb->layout_idx)
++		return;
++	status_layout_idx = kb->layout_idx;
++
++	// Save current layout to kblayout_file
++	if (*kblayout_file && (f = fopen(kblayout_file, "w"))) {
++		fputs(xkb_keymap_layout_get_name(kb->wlr_group->keyboard.keymap,
++				kb->layout_idx), f);
++		fclose(f);
++	}
++
++	// Run kblayout_cmd
++	if (kblayout_cmd[0] && fork() == 0) {
++		execvp(kblayout_cmd[0], (char *const *)kblayout_cmd);
++		die("dwl: execvp %s failed:", kblayout_cmd[0]);
++	}
++}
++
+ int
+ keybinding(uint32_t mods, xkb_keysym_t sym)
+ {
+@@ -1391,6 +1450,8 @@ keypress(struct wl_listener *listener, void *data)
+ 
+ 	wlr_idle_notifier_v1_notify_activity(idle_notifier, seat);
+ 
++	kblayoutnotify(group, 0);
++
+ 	/* On _press_ if there is no active screen locker,
+ 	 * attempt to process a compositor keybinding. */
+ 	if (!locked && event->state == WL_KEYBOARD_KEY_STATE_PRESSED) {
+@@ -1429,6 +1490,8 @@ keypressmod(struct wl_listener *listener, void *data)
+ 	/* Send modifiers to the client. */
+ 	wlr_seat_keyboard_notify_modifiers(seat,
+ 			&group->wlr_group->keyboard.modifiers);
++
++	kblayoutnotify(group, 1);
+ }
+ 
+ int
+-- 
+2.43.0
+

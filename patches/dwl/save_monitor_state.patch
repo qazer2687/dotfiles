@@ -1,0 +1,75 @@
+diff --git a/dwl.c b/dwl.c
+index 868ef43..8fe89e7 100644
+--- a/dwl.c
++++ b/dwl.c
+@@ -209,6 +209,12 @@ typedef struct {
+ 	int custom;
+ } MonitorRule;
+ 
++typedef struct {
++	struct wl_list link;
++    char *name;
++    int isEnabled;
++} MonitorState;
++
+ typedef struct {
+ 	const char *id;
+ 	const char *title;
+@@ -359,6 +365,7 @@ static struct wlr_xdg_activation_v1 *activation;
+ static struct wlr_xdg_decoration_manager_v1 *xdg_decoration_mgr;
+ static struct wl_list clients; /* tiling order */
+ static struct wl_list fstack;  /* focus order */
++static struct wl_list monitorStates;
+ static struct wlr_idle *idle;
+ static struct wlr_idle_notifier_v1 *idle_notifier;
+ static struct wlr_idle_inhibit_manager_v1 *idle_inhibit_mgr;
+@@ -987,6 +994,7 @@ createmon(struct wl_listener *listener, void *data)
+ 	const MonitorRule *r;
+ 	size_t i;
+ 	Monitor *m = wlr_output->data = ecalloc(1, sizeof(*m));
++    MonitorState *mState, *selectedMState = NULL;
+ 	m->wlr_output = wlr_output;
+ 
+ 	wlr_output_set_mode(wlr_output, wlr_output_preferred_mode(wlr_output));
+@@ -1037,7 +1045,19 @@ createmon(struct wl_listener *listener, void *data)
+ 	LISTEN(&wlr_output->events.frame, &m->frame, rendermon);
+ 	LISTEN(&wlr_output->events.destroy, &m->destroy, cleanupmon);
+ 
+-	wlr_output_enable(wlr_output, 1);
++
++    wl_list_for_each(mState, &monitorStates, link)
++        if (strstr(mState->name, wlr_output->name))
++            selectedMState = mState;
++
++    if (!selectedMState) {
++        selectedMState = ecalloc(1, sizeof(*selectedMState));
++        selectedMState->name = (char*)malloc(20);
++        strcpy(selectedMState->name, wlr_output->name);
++        selectedMState->isEnabled = 1;
++    }
++
++	wlr_output_enable(wlr_output, selectedMState->isEnabled);
+ 	if (!wlr_output_commit(wlr_output))
+ 		return;
+ 
+@@ -2088,6 +2108,12 @@ void
+ powermgrsetmodenotify(struct wl_listener *listener, void *data)
+ {
+ 	struct wlr_output_power_v1_set_mode_event *event = data;
++    MonitorState *mState;
++
++    wl_list_for_each(mState, &monitorStates, link)
++        if (strstr(mState->name, event->output->name))
++            mState->isEnabled = event->mode;
++
+ 	wlr_output_enable(event->output, event->mode);
+ 	if (event->mode)
+ 		wlr_output_damage_whole(event->output);
+@@ -2460,6 +2486,7 @@ setup(void)
+ 	 */
+ 	wl_list_init(&clients);
+ 	wl_list_init(&fstack);
++    wl_list_init(&monitorStates);
+ 
+ 	idle = wlr_idle_create(dpy);
+ 	idle_notifier = wlr_idle_notifier_v1_create(dpy);

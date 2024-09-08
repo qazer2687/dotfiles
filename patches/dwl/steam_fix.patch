@@ -1,0 +1,26 @@
+From 7457eaf504aa6bc1b4bb20d6988632d2e29c1f0b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Anton=C3=ADn=20=C5=98=C3=ADha?=
+ <antonin.riha@protonmail.com>
+Date: Sat, 9 Mar 2024 18:38:40 +0100
+Subject: [PATCH] temp steam fix
+
+---
+ client.h | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/client.h b/client.h
+index fe9dffc..b58915e 100644
+--- a/client.h
++++ b/client.h
+@@ -380,7 +380,6 @@ client_set_suspended(Client *c, int suspended)
+ {
+ #ifdef XWAYLAND
+ 	if (client_is_x11(c)) {
+-		wlr_xwayland_surface_set_withdrawn(c->surface.xwayland, suspended);
+ 		return;
+ 	}
+ #endif
+-- 
+2.43.1
+
+

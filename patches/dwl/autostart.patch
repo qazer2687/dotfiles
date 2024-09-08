@@ -1,0 +1,146 @@
+From db02755bfff9c29927ed33ea70b459e33f565ba1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Leonardo=20Hern=C3=A1ndez=20Hern=C3=A1ndez?=
+ <leohdz172@proton.me>
+Date: Sat, 8 Jul 2023 17:11:36 -0600
+Subject: [PATCH] port autostart patch from dwm
+
+https://dwm.suckless.org/patches/cool_autostart/
+---
+ config.def.h |  6 ++++++
+ dwl.c        | 59 +++++++++++++++++++++++++++++++++++++++++++++++-----
+ 2 files changed, 60 insertions(+), 5 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 447ba0051..3cf694c7b 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -7,6 +7,12 @@ static const float focuscolor[]            = {1.0, 0.0, 0.0, 1.0};
+ /* To conform the xdg-protocol, set the alpha to zero to restore the old behavior */
+ static const float fullscreen_bg[]         = {0.1, 0.1, 0.1, 1.0}; /* You can also use glsl colors */
+ 
++/* Autostart */
++static const char *const autostart[] = {
++        "wbg", "/path/to/your/image", NULL,
++        NULL /* terminate */
++};
++
+ /* tagging - TAGCOUNT must be no greater than 31 */
+ #define TAGCOUNT (9)
+ 
+diff --git a/dwl.c b/dwl.c
+index 4ff5c37f7..6a2e7b645 100644
+--- a/dwl.c
++++ b/dwl.c
+@@ -227,6 +227,7 @@ static void arrange(Monitor *m);
+ static void arrangelayer(Monitor *m, struct wl_list *list,
+ 		struct wlr_box *usable_area, int exclusive);
+ static void arrangelayers(Monitor *m);
++static void autostartexec(void);
+ static void axisnotify(struct wl_listener *listener, void *data);
+ static void buttonpress(struct wl_listener *listener, void *data);
+ static void chvt(const Arg *arg);
+@@ -413,6 +414,9 @@ static Atom netatom[NetLast];
+ /* attempt to encapsulate suck into one file */
+ #include "client.h"
+ 
++static pid_t *autostart_pids;
++static size_t autostart_len;
++
+ /* function implementations */
+ void
+ applybounds(Client *c, struct wlr_box *bbox)
+@@ -553,6 +557,27 @@ arrangelayers(Monitor *m)
+ 	}
+ }
+ 
++void
++autostartexec(void) {
++	const char *const *p;
++	size_t i = 0;
++
++	/* count entries */
++	for (p = autostart; *p; autostart_len++, p++)
++		while (*++p);
++
++	autostart_pids = calloc(autostart_len, sizeof(pid_t));
++	for (p = autostart; *p; i++, p++) {
++		if ((autostart_pids[i] = fork()) == 0) {
++			setsid();
++			execvp(*p, (char *const *)p);
++			die("dwl: execvp %s:", *p);
++		}
++		/* skip arguments */
++		while (*++p);
++	}
++}
++
+ void
+ axisnotify(struct wl_listener *listener, void *data)
+ {
+@@ -652,11 +677,21 @@ checkidleinhibitor(struct wlr_surface *exclude)
+ void
+ cleanup(void)
+ {
++	size_t i;
+ #ifdef XWAYLAND
+ 	wlr_xwayland_destroy(xwayland);
+ 	xwayland = NULL;
+ #endif
+ 	wl_display_destroy_clients(dpy);
++
++	/* kill child processes */
++	for (i = 0; i < autostart_len; i++) {
++		if (0 < autostart_pids[i]) {
++			kill(autostart_pids[i], SIGTERM);
++			waitpid(autostart_pids[i], NULL, 0);
++		}
++	}
++
+ 	if (child_pid > 0) {
+ 		kill(child_pid, SIGTERM);
+ 		waitpid(child_pid, NULL, 0);
+@@ -1333,18 +1368,31 @@ void
+ handlesig(int signo)
+ {
+ 	if (signo == SIGCHLD) {
+-#ifdef XWAYLAND
+ 		siginfo_t in;
+ 		/* wlroots expects to reap the XWayland process itself, so we
+ 		 * use WNOWAIT to keep the child waitable until we know it's not
+ 		 * XWayland.
+ 		 */
+ 		while (!waitid(P_ALL, 0, &in, WEXITED|WNOHANG|WNOWAIT) && in.si_pid
+-				&& (!xwayland || in.si_pid != xwayland->server->pid))
+-			waitpid(in.si_pid, NULL, 0);
+-#else
+-		while (waitpid(-1, NULL, WNOHANG) > 0);
++#ifdef XWAYLAND
++			   && (!xwayland || in.si_pid != xwayland->server->pid)
+ #endif
++			   ) {
++			pid_t *p, *lim;
++			waitpid(in.si_pid, NULL, 0);
++			if (in.si_pid == child_pid)
++				child_pid = -1;
++			if (!(p = autostart_pids))
++				continue;
++			lim = &p[autostart_len];
++
++			for (; p < lim; p++) {
++				if (*p == in.si_pid) {
++					*p = -1;
++					break;
++				}
++			}
++		}
+ 	} else if (signo == SIGINT || signo == SIGTERM) {
+ 		quit(NULL);
+ 	}
+@@ -1964,6 +2012,7 @@ run(char *startup_cmd)
+ 		die("startup: backend_start");
+ 
+ 	/* Now that the socket exists and the backend is started, run the startup command */
++	autostartexec();
+ 	if (startup_cmd) {
+ 		int piperw[2];
+ 		if (pipe(piperw) < 0)
