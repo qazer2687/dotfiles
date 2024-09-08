@@ -20,9 +20,8 @@ _: {
       # TODO zed-editor withGLES false
     };
 
-    dwl = prev.dwl.override {
-      configH = ../modules/home/dwl/config/config.h;
-      /*patches = [
+    dwl = prev.dwl.overrideAttrs (oldAttrs: rec {
+      patches = oldAttrs.patches ++ [
         ../patches/dwl/focusdirection.patch
         ../patches/dwl/attachbottom.patch
         ../patches/dwl/monfig.patch
@@ -33,7 +32,9 @@ _: {
         ../patches/dwl/output-power-management.patch
         ../patches/dwl/autostart.patch
         ../patches/dwl/vanitygaps.patch
-      ];*/
-    };
+      ];
+
+      configH = ../modules/home/dwl/config/config.h;
+    });
   };
 }
