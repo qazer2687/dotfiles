@@ -22,7 +22,7 @@ _: {
 
     dwl = prev.dwl.override {
       conf = ../modules/home/dwl/config/config.h;
-      patches = [
+      /*patches = [
         ../patches/dwl/focusdirection.patch
         ../patches/dwl/attachbottom.patch
         ../patches/dwl/monfig.patch
@@ -33,7 +33,7 @@ _: {
         ../patches/dwl/output-power-management.patch
         ../patches/dwl/autostart.patch
         ../patches/dwl/vanitygaps.patch
-      ];
+      ];*/
     };
   };
 }
