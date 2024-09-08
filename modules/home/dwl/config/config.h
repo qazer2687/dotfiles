@@ -167,11 +167,12 @@ static const Key keys[] = {
 
 
     // Window Manipulation
-    { MODKEY, XKB_KEY_Left, moveleft, {0} },
-    { MODKEY, XKB_KEY_Right, moveright, {0} },
-    { MODKEY, XKB_KEY_Up, moveup, {0} },
-    { MODKEY, XKB_KEY_Down, movedown, {0} },
-    { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          quit,           {0} },
+    {MODKEY, XKB_KEY_Left, moveLeft, {0}},
+    {MODKEY, XKB_KEY_Right, moveRight, {0}},
+    {MODKEY, XKB_KEY_Up, moveUp, {0}},
+    {MODKEY, XKB_KEY_Down, moveDown, {0}},
+    
+    {MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q, quit, {0}},
 
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
 	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
