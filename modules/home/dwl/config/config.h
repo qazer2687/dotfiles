@@ -153,6 +153,8 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_q, killclient, {0}},
     {MODKEY, XKB_KEY_space, togglefloating, {0}},
     {MODKEY, XKB_KEY_f, togglefullscreen, {0}},
+
+    // Tag Navigation & Manipulation
     TAGKEYS(XKB_KEY_1, XKB_KEY_exclam, 0),
     TAGKEYS(XKB_KEY_2, XKB_KEY_quotedbl, 1),
     TAGKEYS(XKB_KEY_3, XKB_KEY_sterling, 2),
@@ -162,6 +164,13 @@ static const Key keys[] = {
     TAGKEYS(XKB_KEY_7, XKB_KEY_ampersand, 6),
     TAGKEYS(XKB_KEY_8, XKB_KEY_asterisk, 7),
     TAGKEYS(XKB_KEY_9, XKB_KEY_parenleft, 8),
+
+
+    // Window Manipulation
+    { MODKEY, XKB_KEY_Left, moveleft, {0} },
+    { MODKEY, XKB_KEY_Right, moveright, {0} },
+    { MODKEY, XKB_KEY_Up, moveup, {0} },
+    { MODKEY, XKB_KEY_Down, movedown, {0} },
     { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          quit,           {0} },
 
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
