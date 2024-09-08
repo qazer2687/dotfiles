@@ -25,6 +25,6 @@ _: {
         ../patches/dwl/autostart.patch
         ../patches/dwl/vanitygaps.patch
       ];
-    })).override{ conf = ../modules/home/dwl/config/config.h; };
+    })).override{ configH = ../modules/home/dwl/config/config.h; };
   };
 }
