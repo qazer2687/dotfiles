@@ -1,22 +1,26 @@
-From db02755bfff9c29927ed33ea70b459e33f565ba1 Mon Sep 17 00:00:00 2001
+From d2829ed5c970c7e7692e39c451526b3860dabb2f Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Leonardo=20Hern=C3=A1ndez=20Hern=C3=A1ndez?=
  <leohdz172@proton.me>
 Date: Sat, 8 Jul 2023 17:11:36 -0600
 Subject: [PATCH] port autostart patch from dwm
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
 https://dwm.suckless.org/patches/cool_autostart/
+Signed-off-by: Leonardo Hernández Hernández <leohdz172@proton.me>
 ---
- config.def.h |  6 ++++++
+ config.def.h |  7 +++++++
  dwl.c        | 59 +++++++++++++++++++++++++++++++++++++++++++++++-----
- 2 files changed, 60 insertions(+), 5 deletions(-)
+ 2 files changed, 61 insertions(+), 5 deletions(-)
 
 diff --git a/config.def.h b/config.def.h
-index 447ba0051..3cf694c7b 100644
+index 22d2171..1d0f935 100644
 --- a/config.def.h
 +++ b/config.def.h
-@@ -7,6 +7,12 @@ static const float focuscolor[]            = {1.0, 0.0, 0.0, 1.0};
- /* To conform the xdg-protocol, set the alpha to zero to restore the old behavior */
- static const float fullscreen_bg[]         = {0.1, 0.1, 0.1, 1.0}; /* You can also use glsl colors */
+@@ -20,6 +20,13 @@ static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You ca
+ /* logging */
+ static int log_level = WLR_ERROR;
  
 +/* Autostart */
 +static const char *const autostart[] = {
@@ -24,14 +28,15 @@ index 447ba0051..3cf694c7b 100644
 +        NULL /* terminate */
 +};
 +
- /* tagging - TAGCOUNT must be no greater than 31 */
- #define TAGCOUNT (9)
- 
++
+ /* NOTE: ALWAYS keep a rule declared even if you don't use rules (e.g leave at least one example) */
+ static const Rule rules[] = {
+ 	/* app_id             title       tags mask     isfloating   monitor */
 diff --git a/dwl.c b/dwl.c
-index 4ff5c37f7..6a2e7b645 100644
+index 00e9cc1e..5de32831 100644
 --- a/dwl.c
 +++ b/dwl.c
-@@ -227,6 +227,7 @@ static void arrange(Monitor *m);
+@@ -249,6 +249,7 @@ static void arrange(Monitor *m);
  static void arrangelayer(Monitor *m, struct wl_list *list,
  		struct wlr_box *usable_area, int exclusive);
  static void arrangelayers(Monitor *m);
@@ -39,7 +44,7 @@ index 4ff5c37f7..6a2e7b645 100644
  static void axisnotify(struct wl_listener *listener, void *data);
  static void buttonpress(struct wl_listener *listener, void *data);
  static void chvt(const Arg *arg);
-@@ -413,6 +414,9 @@ static Atom netatom[NetLast];
+@@ -429,6 +430,9 @@ static xcb_atom_t netatom[NetLast];
  /* attempt to encapsulate suck into one file */
  #include "client.h"
  
@@ -49,7 +54,7 @@ index 4ff5c37f7..6a2e7b645 100644
  /* function implementations */
  void
  applybounds(Client *c, struct wlr_box *bbox)
-@@ -553,6 +557,27 @@ arrangelayers(Monitor *m)
+@@ -577,6 +581,27 @@ arrangelayers(Monitor *m)
  	}
  }
  
@@ -77,7 +82,7 @@ index 4ff5c37f7..6a2e7b645 100644
  void
  axisnotify(struct wl_listener *listener, void *data)
  {
-@@ -652,11 +677,21 @@ checkidleinhibitor(struct wlr_surface *exclude)
+@@ -672,11 +697,21 @@ checkidleinhibitor(struct wlr_surface *exclude)
  void
  cleanup(void)
  {
@@ -97,9 +102,9 @@ index 4ff5c37f7..6a2e7b645 100644
 +	}
 +
  	if (child_pid > 0) {
- 		kill(child_pid, SIGTERM);
+ 		kill(-child_pid, SIGTERM);
  		waitpid(child_pid, NULL, 0);
-@@ -1333,18 +1368,31 @@ void
+@@ -1438,18 +1473,31 @@ void
  handlesig(int signo)
  {
  	if (signo == SIGCHLD) {
@@ -136,7 +141,7 @@ index 4ff5c37f7..6a2e7b645 100644
  	} else if (signo == SIGINT || signo == SIGTERM) {
  		quit(NULL);
  	}
-@@ -1964,6 +2012,7 @@ run(char *startup_cmd)
+@@ -2169,6 +2217,7 @@ run(char *startup_cmd)
  		die("startup: backend_start");
  
  	/* Now that the socket exists and the backend is started, run the startup command */
@@ -144,3 +149,5 @@ index 4ff5c37f7..6a2e7b645 100644
  	if (startup_cmd) {
  		int piperw[2];
  		if (pipe(piperw) < 0)
+-- 
+2.45.2
