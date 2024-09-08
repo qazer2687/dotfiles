@@ -26,7 +26,7 @@ _: {
         ../patches/dwl/vanitygaps.patch
       ];
     });
-    dwl = prev.dwl-patches.override {
+    dwl = dwl-patches.override {
       configH = ../modules/home/dwl/config/config.h;
     };
   };
