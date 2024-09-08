@@ -1,0 +1,83 @@
+diff --git a/dwl.c b/dwl.c
+index cf7d307..5c7674b 100644
+--- a/dwl.c
++++ b/dwl.c
+@@ -237,6 +237,7 @@ static void dragicondestroy(struct wl_listener *listener, void *data);
+ static void focusclient(Client *c, int lift);
+ static void focusmon(const Arg *arg);
+ static void focusstack(const Arg *arg);
++static void focusdirection(const Arg *arg);
+ static Client *focustop(Monitor *m);
+ static void fullscreennotify(struct wl_listener *listener, void *data);
+ static void incnmaster(const Arg *arg);
+@@ -1229,6 +1230,70 @@ focusstack(const Arg *arg)
+ 	focusclient(c, 1);
+ }
+ 
++void
++focusdirection(const Arg *arg)
++{
++	Client *c, *sel = focustop(selmon);
++    if (!sel)
++    {
++        focusmon(arg);
++        return;
++    }
++	Client *closest = NULL;
++	int center_x, center_y;
++	int sel_center_x = sel->geom.x + (sel->geom.width / 2);
++	int sel_center_y = sel->geom.y + (sel->geom.height / 2);
++	float min_distance = 99999999;
++	float distance;
++	int diff_x, diff_y;
++	int include = 0;
++    int dir = arg->i;
++	wl_list_for_each(c, &fstack, flink)
++	{
++        if (!VISIBLEON(c, c->mon))
++            continue;
++		center_x = c->geom.x + (c->geom.width / 2);
++		center_y = c->geom.y + (c->geom.height / 2);
++		diff_x = sel_center_x - center_x;
++		diff_y = sel_center_y - center_y;
++
++		switch (dir) {
++			case WLR_DIRECTION_LEFT:
++				if (center_x < sel->geom.x)
++					include = 1;
++				break;
++			case WLR_DIRECTION_RIGHT:
++				if (center_x > sel->geom.x + sel->geom.width)
++					include = 1;
++				break;
++			case WLR_DIRECTION_UP:
++				if (center_y < sel->geom.y)
++					include = 1;
++				break;
++			case WLR_DIRECTION_DOWN:
++				if (center_y > sel->geom.y + sel->geom.height)
++					include = 1;
++				break;
++		}
++
++		if (include)
++		{
++			distance = (diff_x * diff_x) + (diff_y * diff_y);
++			if (distance < min_distance)
++			{
++				closest = c;
++				min_distance = distance;
++			}
++		}
++	}
++	if (closest != NULL)
++    {
++		focusclient(closest, 0);
++        return;
++    }
++    focusmon(arg);
++}
++
+ /* We probably should change the name of this, it sounds like
+  * will focus the topmost client of this mon, when actually will
+  * only return that client */

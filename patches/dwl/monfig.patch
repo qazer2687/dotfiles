@@ -1,0 +1,94 @@
+From e43e79b7974b34786c9d3cc7b02952e7a1cd50a0 Mon Sep 17 00:00:00 2001
+From: Palanix <palanixyt@gmail.com>
+Date: Mon, 4 Apr 2022 16:08:29 +0200
+Subject: [PATCH] Updated patch now allowing setting x and y
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Co-authored-by: Leonardo Hernández Hernández <leohdz172@proton.me
+---
+ config.def.h | 11 +++++++----
+ dwl.c        | 24 +++++++++++++++++++-----
+ 2 files changed, 26 insertions(+), 9 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 9009517..4cf8471 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -39,12 +39,15 @@ static const Layout layouts[] = {
+ /* monitors */
+ /* NOTE: ALWAYS add a fallback rule, even if you are completely sure it won't be used */
+ static const MonitorRule monrules[] = {
+-	/* name       mfact  nmaster scale layout       rotate/reflect                x    y */
+-	/* example of a HiDPI laptop monitor:
+-	{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
++	/* name       mfact nmaster scale layout       rotate/reflect              x  y  resx resy rate mode adaptive*/
++	/* example of a HiDPI laptop monitor at 120Hz:
++	{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, 0, 0, 0, 0, 120.000f, 1, 1},
+ 	*/
+ 	/* defaults */
+-	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
++	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, 0, 0, 0, 0, 0.0f, 0 ,1},
++	// mode let's the user decide on how dwl should implement the modes:
++	// -1 Sets a custom mode following the users choice
++	// All other number's set the mode at the index n, 0 is the standard mode; see wlr-randr
+ };
+ 
+ /* keyboard */
+diff --git a/dwl.c b/dwl.c
+index fa76db2..52d210c 100644
+--- a/dwl.c
++++ b/dwl.c
+@@ -212,6 +212,11 @@ typedef struct {
+ 	const Layout *lt;
+ 	enum wl_output_transform rr;
+ 	int x, y;
++	int resx;
++	int resy;
++	float rate;
++	int mode;
++	int adaptive;
+ } MonitorRule;
+ 
+ typedef struct {
+@@ -848,6 +853,7 @@ createmon(struct wl_listener *listener, void *data)
+ 	/* This event is raised by the backend when a new output (aka a display or
+ 	 * monitor) becomes available. */
+ 	struct wlr_output *wlr_output = data;
++	struct wlr_output_mode *mode = wl_container_of(wlr_output->modes.next, mode, link);
+ 	const MonitorRule *r;
+ 	size_t i;
+ 	struct wlr_output_state state;
+@@ -876,15 +882,23 @@ createmon(struct wl_listener *listener, void *data)
+ 			strncpy(m->ltsymbol, m->lt[m->sellt]->symbol, LENGTH(m->ltsymbol));
+ 			wlr_output_state_set_scale(&state, r->scale);
+ 			wlr_output_state_set_transform(&state, r->rr);
++
++			if(r->mode == -1)
++				wlr_output_state_set_custom_mode(&state, r->resx, r->resy,
++				(int) (r->rate > 0 ? r->rate * 1000 : 0));
++			else {
++				for (int j = 0; j < r->mode; j++) {
++					mode = wl_container_of(mode->link.next, mode, link);
++				}
++				wlr_output_state_set_mode(&state, mode);
++			}
++
++			wlr_output_state_set_adaptive_sync_enabled(&state, r->adaptive);
+ 			break;
+ 		}
+ 	}
+ 
+-	/* The mode is a tuple of (width, height, refresh rate), and each
+-	 * monitor supports only a specific set of modes. We just pick the
+-	 * monitor's preferred mode; a more sophisticated compositor would let
+-	 * the user configure it. */
+-	wlr_output_state_set_mode(&state, wlr_output_preferred_mode(wlr_output));
++	wlr_output_init_render(wlr_output, alloc, drw);
+ 
+ 	/* Set up event listeners */
+ 	LISTEN(&wlr_output->events.frame, &m->frame, rendermon);
+-- 
+2.44.0
+
