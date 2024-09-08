@@ -27,9 +27,10 @@
   '';
 
   # Sway
-  #? This is required so that sddm can read the
-  #? displayManager.defaultSession option.
+  #? These are configured through home-manager but this
+  #? option is required so they appear as desktop entries.
   programs.sway.enable = true;
+  programs.hyprland.enable = true;
 
   # Shell
   programs.fish.enable = true;
@@ -115,10 +116,6 @@
       #? This option scales menu bars, causing
       #? them to appear way too large.
       #? GDK_SCALE = "2";
-      MESA_GL_VERSION_OVERRIDE = "3.3";
-      MESA_GLSL_VERSION_OVERRIDE = "330";
-      MESA_GLES_VERSION_OVERRIDE = "3.1";
-      #LIBGL_ALWAYS_SOFTWARE = "1";
     };
   };
 
