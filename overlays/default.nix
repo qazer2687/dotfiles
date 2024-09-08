@@ -20,8 +20,8 @@ _: {
       # TODO zed-editor withGLES false
     };
 
-    dwl = prev.dwl.overrideAttrs (oldAttrs: rec {
-      patches = oldAttrs.patches ++ [
+    dwl = prev.dwl.overrideAttrs (_: rec {
+      patches = [
         ../patches/dwl/focusdirection.patch
         ../patches/dwl/attachbottom.patch
         ../patches/dwl/monfig.patch
