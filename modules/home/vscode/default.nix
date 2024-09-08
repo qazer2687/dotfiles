@@ -33,7 +33,9 @@
 
         # C#
         vscode-marketplace.ms-dotnettools.csharp
-        #muhammad-sammy.csharp
+
+        # C
+        llvm-vs-code-extensions.vscode-clangd
 
         # Other
         vscode-marketplace.naumovs.color-highlight
