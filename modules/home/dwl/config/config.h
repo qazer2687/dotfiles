@@ -20,6 +20,19 @@ static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You ca
 /* logging */
 static int log_level = WLR_ERROR;
 
+/* gaps */
+static const unsigned int gappih    = 6;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 6;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 6;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 6;       /* vert outer gap between windows and screen edge */
+
+/* autostart */
+static const char *const autostart[] = {
+    "sh", "-c", "waybar", NULL,
+    "sh", "-c", "swaybg -o * -i /home/alex/.config/wallpaper/wallpaper.png -m fill", NULL,
+    NULL /* terminate */
+};
+
 /* NOTE: ALWAYS keep a rule declared even if you don't use rules (e.g leave at least one example) */
 static const Rule rules[] = {
 	/* app_id             title       tags mask     isfloating   monitor */
