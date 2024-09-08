@@ -22,14 +22,6 @@ _: {
 
     dwl = prev.dwl.overrideAttrs (_: rec {
       patches = [
-        ../patches/dwl/focusdirection.patch
-        ../patches/dwl/attachbottom.patch
-        ../patches/dwl/monfig.patch
-        ../patches/dwl/point.patch
-        ../patches/dwl/restoreTiling.patch
-        ../patches/dwl/toggleKbLayout.patch
-        ../patches/dwl/cursor_warp.patch
-        ../patches/dwl/output-power-management.patch
         ../patches/dwl/autostart.patch
         ../patches/dwl/vanitygaps.patch
       ];
