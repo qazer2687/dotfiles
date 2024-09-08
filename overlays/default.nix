@@ -21,7 +21,7 @@ _: {
     };
 
     dwl = prev.dwl.override {
-      conf = ../modules/home/dwl/config/config.h;
+      configH = ../modules/home/dwl/config/config.h;
       /*patches = [
         ../patches/dwl/focusdirection.patch
         ../patches/dwl/attachbottom.patch
