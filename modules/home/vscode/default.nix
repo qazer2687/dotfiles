@@ -35,7 +35,7 @@
         vscode-marketplace.ms-dotnettools.csharp
 
         # C
-        llvm-vs-code-extensions.vscode-clangd
+        vscode-marketplace.llvm-vs-code-extensions.vscode-clangd
 
         # Other
         vscode-marketplace.naumovs.color-highlight
