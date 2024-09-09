@@ -169,9 +169,11 @@ static const Key keys[] = {
 
 
     // Window Manipulation
-    { MODKEY, XKB_KEY_Left, movestack, {.i = +1} },
-	{ MODKEY, XKB_KEY_Right, movestack, {.i = -1} },
-    
+    {MODKEY, XKB_KEY_Left, movestack, {.i = +1}},
+    {MODKEY, XKB_KEY_Right, movestack, {.i = -1}},
+    {MODKEY, XKB_KEY_Up, pushup, {0}},
+    {MODKEY, XKB_KEY_Down, pushdown, {0}},
+
     {MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q, quit, {0}},
 
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
@@ -185,7 +187,7 @@ static const Key keys[] = {
 };
 
 static const Button buttons[] = {
-	{ MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
+	//{ MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
 	{ MODKEY, BTN_MIDDLE, togglefloating, {0} },
-	{ MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
+	//{ MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
 };
