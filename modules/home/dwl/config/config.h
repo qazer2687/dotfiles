@@ -113,7 +113,7 @@ static const uint32_t send_events_mode = LIBINPUT_CONFIG_SEND_EVENTS_ENABLED;
 LIBINPUT_CONFIG_ACCEL_PROFILE_FLAT
 LIBINPUT_CONFIG_ACCEL_PROFILE_ADAPTIVE
 */
-static const enum libinput_config_accel_profile accel_profile = LIBINPUT_CONFIG_ACCEL_PROFILE_ADAPTIVE;
+static const enum libinput_config_accel_profile accel_profile = LIBINPUT_CONFIG_ACCEL_PROFILE_FLAT;
 static const double accel_speed = 0.0;
 
 /* You can choose between:
@@ -140,15 +140,17 @@ static const char *menucmd[] = { "wofi", NULL };
 
 static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
-    /* modifier                  key                 function        argument */
+    /* modifier-key-function-argument */
     {MODKEY, XKB_KEY_e, spawn, {.v = menucmd}},
     {MODKEY, XKB_KEY_Return, spawn, {.v = termcmd}},
+
     {MODKEY, XKB_KEY_j, focusstack, {.i = +1}},
     {MODKEY, XKB_KEY_k, focusstack, {.i = -1}},
     {MODKEY, XKB_KEY_i, incnmaster, {.i = +1}},
     {MODKEY, XKB_KEY_d, incnmaster, {.i = -1}},
     {MODKEY, XKB_KEY_h, setmfact, {.f = -0.05f}},
     {MODKEY, XKB_KEY_l, setmfact, {.f = +0.05f}},
+
     {MODKEY, XKB_KEY_Return, zoom, {0}},
     {MODKEY, XKB_KEY_q, killclient, {0}},
     {MODKEY, XKB_KEY_space, togglefloating, {0}},
@@ -167,10 +169,8 @@ static const Key keys[] = {
 
 
     // Window Manipulation
-    {MODKEY, XKB_KEY_Left, moveWindowLeft, {0}},
-    {MODKEY, XKB_KEY_Right, moveWindowRight, {0}},
-    {MODKEY, XKB_KEY_Up, moveWindowUp, {0}},
-    {MODKEY, XKB_KEY_Down, moveWindowDown, {0}},
+    { MODKEY, XKB_KEY_Left, movestack, {.i = +1} },
+	{ MODKEY, XKB_KEY_Right, movestack, {.i = -1} },
     
     {MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q, quit, {0}},
 
@@ -185,7 +185,7 @@ static const Key keys[] = {
 };
 
 static const Button buttons[] = {
-	{ MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
-	{ MODKEY, BTN_MIDDLE, togglefloating, {0} },
-	{ MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
+	//{ MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
+	//{ MODKEY, BTN_MIDDLE, togglefloating, {0} },
+	//{ MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
 };
