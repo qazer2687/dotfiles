@@ -10,6 +10,7 @@
     home.packages = with pkgs; [
       #? The configuration is set in an overlay and defined in the config folder.
       dwl
+      swaybg
     ];
   };
 }

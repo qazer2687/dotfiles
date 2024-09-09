@@ -31,7 +31,7 @@ static const unsigned int gappov    = 6;       /* vert outer gap between windows
 /* autostart */
 static const char *const autostart[] = {
     "sh", "-c", "waybar", NULL,
-    "sh", "-c", "swaybg -o * -i /home/alex/.config/wallpaper/wallpaper.png -m fill", NULL,
+    "sh", "-c", "swaybg -i /home/alex/.config/wallpaper/wallpaper.png -m fill", NULL,
     NULL /* terminate */
 };
 
