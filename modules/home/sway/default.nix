@@ -145,6 +145,9 @@ in {
         # Corner Radius
         corner_radius 6
 
+        # Smart Gaps
+        smart_gaps on
+
         # Eye Comfort
         #? Gammastep currently doesn't work on Asahi Linux.
         #? exec gammastep -xO 3000
