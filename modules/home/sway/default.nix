@@ -67,7 +67,7 @@ in {
           #? Settings for my external Asus monitor.
           "DP-1".mode = "2560x1440@143.972000Hz";
           #? Settings for the internal display on Jet.
-          "eDP-1".mode = "2560x1664@59.94Hz scale 2";
+          "eDP-1".mode = "2560x1664@60Hz scale 2";
         };
 
         # Decorations
@@ -146,7 +146,7 @@ in {
         corner_radius 6
 
         # Smart Gaps
-        smart_gaps on
+        #smart_gaps on
 
         # Eye Comfort
         #? Gammastep currently doesn't work on Asahi Linux.
