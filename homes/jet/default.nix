@@ -14,6 +14,7 @@
     fragments
     calibre
     vlc
+    teams-for-linux
   ];
 
   # arRPC
@@ -25,8 +26,8 @@
   modules = {
     # Environment
     sway.enable = true;
-    hyprland.enable = true;
-    dwl.enable = true;
+    #hyprland.enable = true;
+    #dwl.enable = true;
     waybar.enable = true;
     foot.enable = true;
     mako.enable = true;
@@ -45,7 +46,7 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
-    emacs.enable = true;
+    #emacs.enable = true;
   };
 
   home.stateVersion = "24.11";
