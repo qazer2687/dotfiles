@@ -30,7 +30,10 @@ in {
     # Sway
     wayland.windowManager.sway = {
       enable = true;
-      package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+      #package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+      #? Not sure what the performance impact is with swayfx, I will just use sway for now.
+      #? The only "effect" I use is rounded corners but these aren't so important to me.
+      package = pkgs.sway.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       checkConfig = false;
       config = {
         inherit modifier;
@@ -143,7 +146,7 @@ in {
 
       extraConfig = ''
         # Corner Radius
-        corner_radius 6
+        #corner_radius 6
 
         # Smart Gaps
         #smart_gaps on
