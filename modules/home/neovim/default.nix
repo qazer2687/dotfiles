@@ -29,7 +29,9 @@
 
         auto-save = {
           enable = false;
-          enableAutoSave = true;
+          settings = {
+            enabled = true;
+          };
         };
 
         lsp = {
