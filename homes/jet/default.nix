@@ -20,8 +20,8 @@
   # arRPC
   #? This allows the use of Discord rich presence via
   #? Vencord on Firefox. I'm not sure how this affects
-  #? battery life so I will leave it off for now.
-  services.arrpc.enable = false;
+  #? battery life.
+  services.arrpc.enable = true;
 
   modules = {
     # Environment
@@ -47,6 +47,7 @@
     git.enable = true;
     direnv.enable = true;
     #emacs.enable = true;
+    neovim.enable = true;
   };
 
   home.stateVersion = "24.11";
