@@ -11,15 +11,22 @@
       enable = true;
 
       opts = {
-        shiftwidth = 2;
         relativenumber = false;
-        number = true;
+        number = false;
         updatetime = 100;
+
+        tabstop = 2;
+        shiftwidth = 2;
+        expandtab = true;
+        softtabstop = 2;
       };
 
       plugins = {
         lightline = {
           enable = true;
+          settings = {
+            colorscheme = "material";
+          };
         };
 
         nvim-tree = {
@@ -29,6 +36,7 @@
 
         auto-save = {
           enable = false;
+          # This doesn't enable the plugin, it just enables autosaving when the plugin has been enabled.
           settings = {
             enabled = true;
           };
