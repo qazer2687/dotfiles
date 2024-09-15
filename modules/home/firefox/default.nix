@@ -34,6 +34,8 @@
           browser.tabs.tabmanager.enabled = false
           xpinstall.signatures.required = false
           extensions.experiments.enabled = true
+          widget.use-xdg-desktop-portal.file-picker = 1
+          layout.css.devPixelsPerPx = 16
           */
 
           /* move search bar to bottom */

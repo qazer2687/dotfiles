@@ -25,5 +25,6 @@
     ./webcam
     ./hyprland
     ./dwl
+    ./neovim
   ];
 }

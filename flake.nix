@@ -10,6 +10,7 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs = {
@@ -19,6 +20,7 @@
     sops-nix,
     nur,
     darwin,
+    nixvim,
     nix-homebrew,
     asahi,
     nix-vscode-extensions,
@@ -57,6 +59,7 @@
               sharedModules = [
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
+                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
@@ -83,6 +86,7 @@
               sharedModules = [
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
+                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
