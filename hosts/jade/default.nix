@@ -58,16 +58,16 @@
       #? A workaround for wine not being able to use SIDT instructions,
       #? this kernel flag disables UMIP. See link below for more info.
       #? https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/x86/include/asm/cpufeatures.h?h=v5.2.5#n324
-      "clearcpuid=514"
+      #"clearcpuid=514"
     ];
     initrd.kernelModules = [
-      "nvidia"
-      "nvidia_modeset"
-      "nvidia_uvm"
-      "nvidia_drm"
+      #"nvidia"
+      #"nvidia_modeset"
+      #"nvidia_uvm"
+      #"nvidia_drm"
     ];
     blacklistedKernelModules = [
-      "nouveau"
+      #"nouveau"
     ];
     #? EXPERIMENTAL - These sysctl options are for
     #? improving performance whilst running games.
