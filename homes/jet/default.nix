@@ -21,7 +21,7 @@
   #? This allows the use of Discord rich presence via
   #? Vencord on Firefox. I'm not sure how this affects
   #? battery life.
-  services.arrpc.enable = true;
+  services.arrpc.enable = false;
 
   modules = {
     # Environment
@@ -48,6 +48,9 @@
     direnv.enable = true;
     #emacs.enable = true;
     neovim.enable = true;
+
+    # Gaming
+    prismlauncher.enable = true;
   };
 
   home.stateVersion = "24.11";
