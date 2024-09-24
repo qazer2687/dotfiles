@@ -10,9 +10,8 @@
   config = lib.mkIf config.modules.stylix.enable {
     stylix = {
       enable = true;
-      autoEnable = true;
+      autoEnable = false;
       image = /home/alex/.config/wallpaper/wallpaper.png;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
       polarity = "dark";
 
       fonts = {
@@ -31,6 +30,7 @@
       cursor = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
+        size = 24;
       };
     };
   };
