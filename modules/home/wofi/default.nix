@@ -20,7 +20,8 @@
         dynamic_lines = "true";
       };
       style = ''
-        #window {
+        * {
+          all: unset;
           background-color: #000000;
           border-radius: 6px;
         }
