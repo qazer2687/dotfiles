@@ -113,7 +113,6 @@
     systemd-boot.enable = true;
     filesystem.enable = true;
     #fonts.enable = true;
-    keymap.enable = true;
     zram.enable = true;
     nh.enable = true;
   };
