@@ -17,7 +17,7 @@
       fonts = {
         packages = with pkgs; [
           (nerdfonts.override {
-            packages = [
+            fonts = [
               "FiraCode"
               "FiraMono"
               "Iosevka"
