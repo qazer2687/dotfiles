@@ -15,6 +15,19 @@
       polarity = "dark";
 
       fonts = {
+        packages = with pkgs; [
+          (nerdfonts.override {
+            packages = [
+              "FiraCode"
+              "FiraMono"
+              "Iosevka"
+              "LiberationMono"
+            ];
+          })
+          atkinson-hyperlegible
+          noto-fonts-cjk-sans
+          terminus_font
+        ];
         monospace = {
           package = pkgs.agave;
           name = "Agave";

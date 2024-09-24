@@ -14,7 +14,6 @@
       server.enable = false;
       settings = {
         main = {
-          #! Managed by Stylix.
           font = "Agave:size=11, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
           font-bold = "Agave:size=11:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
           line-height = "16px";

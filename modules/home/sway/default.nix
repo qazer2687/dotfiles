@@ -66,8 +66,7 @@ in {
 
         # Display & Wallpaper
         output = {
-          #! Managed by Stylix.
-          #"*".bg = "~/.config/wallpaper/wallpaper.png fill";
+          "*".bg = "~/.config/wallpaper/wallpaper.png fill";
           #? Settings for my external Asus monitor.
           "DP-1".mode = "2560x1440@143.972000Hz";
           #? Settings for the internal display on Jet.
