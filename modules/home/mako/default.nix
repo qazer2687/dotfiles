@@ -13,6 +13,8 @@
       margin = "8";
       anchor = "top-right";
       width = 600;
+      backgroundColor = "#000000";
+      borderColor = "#000000";
       padding = "8,8,8,8";
     };
   };
