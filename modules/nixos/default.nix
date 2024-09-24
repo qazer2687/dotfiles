@@ -9,8 +9,6 @@
     ./tlp
     ./filesystem
     ./waydroid
-    ./fonts
-    ./keymap
     ./zram
     ./remote-builder
     ./nh

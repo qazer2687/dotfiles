@@ -7,17 +7,6 @@
   options.modules.theme.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.theme.enable {
-    # Dconf
-    dconf = {
-      enable = true;
-      settings = {
-        "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
-        };
-      };
-    };
-
-    # HM
     home = {
       pointerCursor = {
         gtk.enable = true;
@@ -27,7 +16,6 @@
       };
     };
 
-    # GTK
     gtk = {
       enable = true;
       iconTheme = {
@@ -46,11 +34,40 @@
       };
     };
 
-    # QT
+    dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
+      };
+    };
+
     qt = {
       enable = true;
       platformTheme.name = "adwaita";
       style.name = "adwaita-dark";
     };
+
+    fonts.fontconfig = {
+      enable = true;
+      defaultFonts.monospace = "Agave";
+    };
+
+    home.packages = with pkgs; [
+      (nerdfonts.override {
+          fonts = [
+            "FiraCode"
+            "FiraMono"
+            "Iosevka"
+            "LiberationMono"
+          ];
+        })
+        atkinson-hyperlegible
+        noto-fonts-color-emoji
+        noto-fonts-cjk-sans
+        agave
+        terminus_font
+    ];
   };
 }
