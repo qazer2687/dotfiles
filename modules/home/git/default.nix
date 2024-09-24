@@ -22,8 +22,9 @@
       '';
       #? This is a fix from github that handles the 'bad owner or permissions on ~/.ssh/config' error.
       #? https://github.com/nix-community/home-manager/issues/322#issuecomment-1856128020
+      target = ".ssh/config_source";
       onChange = ''
-        cat "${config.home.file.".ssh/config".text}" > .ssh/config && chmod 400 .ssh/config
+        cat ~/.ssh/config_source > ~/.ssh/config && chmod 400 ~/.ssh/config
       '';
     };
   };
