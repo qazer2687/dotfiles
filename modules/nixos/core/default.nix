@@ -17,7 +17,6 @@
   #? lib.mkForce in the configuration files for specific hosts.
 
   config = lib.mkIf config.modules.core.enable {
-    # Nix
     nix = let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in {
@@ -26,7 +25,6 @@
           "nix-command"
           "flakes"
         ];
-        #? Disable global registry.
         flake-registry = "";
         #? https://github.com/NixOS/nix/issues/9574
         nix-path = config.nix.nixPath;
@@ -37,15 +35,11 @@
         #? Required for remote builds.
         require-sigs = false;
       };
-      #? Disable channels.
       channel.enable = false;
-      #? Make the flake registry and
-      #? nix path match flake inputs.
       registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
       nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
-    # Nixpkgs
     nixpkgs = {
       config = {
         #? Permit the install of packages
@@ -62,28 +56,23 @@
       ];
     };
 
-    # SSH
     services.openssh = {
       enable = true;
       settings = {
-        #? Disallow root login over SSH.
         PermitRootLogin = "no";
-        #? Allow authenticating with passwords.
         PasswordAuthentication = true;
       };
     };
 
-    # Locale
     time.timeZone = "Europe/London";
     i18n.defaultLocale = "en_GB.UTF-8";
 
-    # DConf
     programs.dconf.enable = true;
+    security.polkit.enable = true;
+    systemd.coredump.enable = false;
 
-    # Sops
     sops.defaultSopsFile = ./secrets/default.yaml;
 
-    # Environment
     environment = {
       defaultPackages = lib.mkForce [];
       sessionVariables = {

@@ -100,7 +100,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/ruby
-          ./hosts/shared
           nur.nixosModules.nur
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
@@ -160,7 +159,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/opal
-          ./hosts/shared
           sops-nix.nixosModules.sops
         ];
       };

@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  inputs,
+  pkgs,
   ...
 }: {
   options.modules.neovim.enable = lib.mkEnableOption "";
@@ -22,11 +22,34 @@
       };
 
       plugins = {
+        treesitter = {
+          enable = true;
+          grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+            bash
+            json
+            lua
+            make
+            markdown
+            nix
+            regex
+            toml
+            vim
+            vimdoc
+            xml
+            yaml
+          ];
+        };
+
+
         lightline = {
           enable = true;
           settings = {
             colorscheme = "material";
           };
+        };
+
+        telescope = {
+          enable = true;
         };
 
         nvim-tree = {

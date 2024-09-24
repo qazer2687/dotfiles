@@ -14,10 +14,8 @@
     };
   };
 
-  # Hostname
   networking.hostName = "jade";
 
-  # User
   users.users = {
     alex = {
       initialPassword = "xela";
@@ -30,17 +28,14 @@
     };
   };
 
-  # Shell
   programs.fish.enable = true;
 
-  # Hardware
   hardware = {
     graphics = {
       enable = true;
     };
   };
 
-  # Boot
   boot = {
     #? I don't remember exactly why this is needed but
     #? I'm unable to rebuild without this option set.
@@ -58,19 +53,19 @@
       #? A workaround for wine not being able to use SIDT instructions,
       #? this kernel flag disables UMIP. See link below for more info.
       #? https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/x86/include/asm/cpufeatures.h?h=v5.2.5#n324
-      #"clearcpuid=514"
+      "clearcpuid=514"
     ];
     initrd.kernelModules = [
-      #"nvidia"
-      #"nvidia_modeset"
-      #"nvidia_uvm"
-      #"nvidia_drm"
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
     ];
     blacklistedKernelModules = [
-      #"nouveau"
+      "nouveau"
     ];
     #? EXPERIMENTAL - These sysctl options are for
-    #? improving performance whilst running games.
+    #? improving performance and stuff idk.
     kernel.sysctl = {
       "vm.dirty_background_ratio" = 5;
       "vm.dirty_ratio" = 10;
@@ -90,12 +85,16 @@
     };
     initrd.verbose = false;
     consoleLogLevel = 0;
+    # TODO: Use Cachyos kernel.
     kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
   #? EXPERIMENTAL - This service distributes CPU interrupts
   #? across all cores, supposedly improving performance.
-  services.irqbalance.enable = true;
+  #services.irqbalance.enable = true;
+  #! Apparently doesn't work as well anymore as the kernel
+  #! does a better job that it does, so it just makes things
+  #! worse.
 
   #? EXPERIMENTAL - Enable realtime priority
   #? to improve latency and reduce stuttering.
@@ -103,13 +102,15 @@
     domain = "@users"; item = "rtprio"; type = "-"; value = 1;
   }];
 
-  # Autologin
   services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && startx
   '';
+  services.xserver = {
+    enable = true;
+    displayManager.startx.enable = true;
+  };
 
-  # Swap
   swapDevices = [
     {
       device = "/swapfile";
@@ -117,20 +118,6 @@
     }
   ];
 
-  # Environment
-  environment = {
-    sessionVariables = {
-      #? Put environment variables here...
-    };
-  };
-
-  # X Server
-  services.xserver = {
-    enable = true;
-    displayManager.startx.enable = true;
-  };
-
-  # Modules
   modules = {
     core.enable = true;
     networkmanager.enable = true;
@@ -146,10 +133,8 @@
     nh.enable = true;
   };
 
-  # SOPS
   sops.defaultSopsFile = ./secrets/default.yaml;
 
-  # Locale
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 

@@ -4,20 +4,17 @@
     ../../modules/nixos
   ];
 
-  # Hostname
   networking.hostName = "jet";
 
-  # User
   users.users = {
     alex = {
-      initialPassword = "xela";
+      initialPassword = "toor";
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
       shell = pkgs.fish;
     };
   };
 
-  # Logind
   #? Stop the power button from
   #? shutting down the machine.
   services.logind.extraConfig = ''
@@ -26,16 +23,13 @@
     HandleHibernateKey=ignore
   '';
 
-  # WM
   #? These are configured through home-manager but this
   #? option is required so they appear as desktop entries.
   programs.sway.enable = true;
-  programs.hyprland.enable = true;
+  #programs.hyprland.enable = true;
 
-  # Shell
   programs.fish.enable = true;
   
-  # XDG
   #? This allows links to be
   #? opened across applications.
   xdg.portal = {
@@ -44,14 +38,10 @@
     xdgOpenUsePortal = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
+      #pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
-  # Polkit
-  security.polkit.enable = true;
-
-  # Hardware
   hardware = {
     graphics = {
       enable = true;
@@ -68,7 +58,6 @@
     };
   };
 
-  # Boot
   boot = {
     kernelParams = [
       "apple_dcp.show_notch=1" #? Enables the pixels horizontal of the notch.
@@ -87,23 +76,18 @@
     m1n1CustomLogo = ../../assets/m1n1CustomLogo.png;
   };
 
-  # Autologin
-  services.getty = {
-    autologinUser = "alex";
-  };
-  #environment.loginShellInit = ''
-  #  [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session hyprland
-  #'';
+  services.getty.autologinUser = "alex";
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session sway
+  '';
 
-  # Swap
   swapDevices = [
     {
       device = "/swapfile";
-      size = 16 * 1024;
+      size = 2 * 1024;
     }
   ];
 
-  # Environment
   environment = {
     systemPackages = with pkgs; [
       #? Put system packages here...
@@ -119,11 +103,8 @@
     };
   };
 
-  # Modules
   modules = {
     core.enable = true;
-    #? Currently using getty autologin.
-    #? sddm.enable = true;
     networkmanager.enable = true;
     bluetooth.enable = true;
     #? Sound is managed via the setupAsahiSound option
