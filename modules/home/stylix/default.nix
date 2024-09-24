@@ -11,7 +11,7 @@
     stylix = {
       enable = true;
       autoEnable = true;
-      image = ~/.config/wallpaper/wallpaper.png;
+      image = /home/alex/.config/wallpaper/wallpaper.png;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
       polarity = "dark";
 
