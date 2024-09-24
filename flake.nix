@@ -11,7 +11,6 @@
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
-    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -24,7 +23,6 @@
     nixvim,
     nix-homebrew,
     asahi,
-    stylix,
     nix-vscode-extensions,
     ...
   } @ inputs: let
@@ -60,7 +58,6 @@
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
-                inputs.stylix.homeManagerModules.stylix
               ];
             };
           }
@@ -87,7 +84,6 @@
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
-                inputs.stylix.homeManagerModules.stylix
               ];
             };
           }
