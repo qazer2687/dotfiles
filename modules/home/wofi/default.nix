@@ -22,8 +22,6 @@
       style = ''
         * {
           all: unset;
-          font-family: "Agave";
-          font-size: 14px;
         }
 
         #window {
