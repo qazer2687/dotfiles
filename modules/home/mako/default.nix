@@ -15,7 +15,6 @@
       width = 600;
 
       # Theme
-      backgroundColor = "#000000";
       borderColor = "#000000";
       padding = "8,8,8,8";
     };
