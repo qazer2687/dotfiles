@@ -19,9 +19,14 @@
         matching = "multi-contains";
         dynamic_lines = "true";
       };
-      style = ''
+      style = lib.mkDefault ''
         * {
           all: unset;
+          font-family: "Agave";
+          font-size: 14px;
+        }
+
+        #window {
           background-color: #000000;
           border-radius: 6px;
         }
