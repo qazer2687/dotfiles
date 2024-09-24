@@ -19,7 +19,7 @@
         matching = "multi-contains";
         dynamic_lines = "true";
       };
-      style = lib.mkDefault ''
+      style = ''
         * {
           all: unset;
           font-family: "Agave";
