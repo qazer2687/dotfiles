@@ -13,9 +13,6 @@
       margin = "8";
       anchor = "top-right";
       width = 600;
-
-      # Theme
-      borderColor = "#000000";
       padding = "8,8,8,8";
     };
   };
