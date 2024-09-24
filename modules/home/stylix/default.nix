@@ -28,16 +28,6 @@
           noto-fonts-cjk-sans
           terminus_font
         ];
-        monospace = {
-          package = pkgs.agave;
-          name = "Agave";
-        };
-        sansSerif = config.stylix.fonts.monospace;
-        serif = config.stylix.fonts.monospace;
-        emoji = {
-          package = pkgs.noto-fonts-color-emoji;
-          name = "Noto Color Emoji";
-        };
       };
 
       cursor = {
