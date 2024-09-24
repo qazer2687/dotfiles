@@ -20,10 +20,6 @@
         dynamic_lines = "true";
       };
       style = ''
-        * {
-          all: unset;
-        }
-
         #window {
           background-color: #000000;
           border-radius: 6px;
