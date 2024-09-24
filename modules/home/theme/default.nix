@@ -51,7 +51,9 @@
 
     fonts.fontconfig = {
       enable = true;
-      defaultFonts.monospace = "Agave";
+      defaultFonts.monospace = [
+        "Agave"
+      ];
     };
 
     home.packages = with pkgs; [
