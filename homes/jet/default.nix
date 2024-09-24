@@ -32,7 +32,8 @@
     foot.enable = true;
     mako.enable = true;
     wofi.enable = true;
-    theme.enable = true;
+    #theme.enable = true;
+    stylix.enable = true;
     firefox.enable = true;
     fish.enable = true;
     keyring.enable = true;

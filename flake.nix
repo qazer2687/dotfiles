@@ -11,6 +11,7 @@
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -23,6 +24,7 @@
     nixvim,
     nix-homebrew,
     asahi,
+    stylix,
     nix-vscode-extensions,
     ...
   } @ inputs: let
@@ -36,12 +38,10 @@
     #? function you pass to it, with each system as an argument.
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    # Misc
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     overlays = import ./overlays {inherit inputs;};
 
-    # Jade
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -60,6 +60,7 @@
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
+                inputs.stylix.homeManagerModules.stylix
               ];
             };
           }
@@ -67,7 +68,6 @@
       };
     };
 
-    # Jet
     nixosConfigurations = {
       jet = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -87,6 +87,7 @@
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
+                inputs.stylix.homeManagerModules.stylix
               ];
             };
           }
@@ -94,7 +95,6 @@
       };
     };
 
-    # Ruby
     nixosConfigurations = {
       ruby = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
@@ -119,7 +119,6 @@
       };
     };
 
-    # Onyx
     darwinConfigurations = {
       onyx = darwin.lib.darwinSystem {
         pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
@@ -129,7 +128,6 @@
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
           {
-            # Home-Manager
             home-manager = {
               users.alex = ./homes/onyx;
               extraSpecialArgs = {inherit inputs;};
@@ -141,7 +139,6 @@
               ];
             };
 
-            # Homebrew
             nix-homebrew = {
               enable = true;
               enableRosetta = true;
@@ -153,7 +150,6 @@
       };
     };
 
-    # Opal
     nixosConfigurations = {
       opal = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};

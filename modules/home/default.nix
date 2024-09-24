@@ -26,5 +26,6 @@
     ./hyprland
     ./dwl
     ./neovim
+    ./stylix
   ];
 }
