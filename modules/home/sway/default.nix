@@ -81,7 +81,11 @@ in {
 
         colors = {
           focused = {
-            border  = "#ffffff";
+              background = "#000000";
+              border = "#ffffff";
+              childBorder = "#000000";
+              indicator = "#000000";
+              text = "#000000";
           };
         };
 
