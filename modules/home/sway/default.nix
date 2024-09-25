@@ -32,7 +32,8 @@ in {
       enable = true;
       #package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       #? Not sure what the performance impact is with swayfx, I will just use sway for now.
-      #? The only "effect" I use is rounded corners but these aren't so important to me.
+      #? The only "effect" I use is rounded corners but these aren't so important to me and
+      #? end up cutting off tabs in firefox which looks like shit.
       package = pkgs.sway.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       checkConfig = false;
       config = {
@@ -81,11 +82,11 @@ in {
 
         colors = {
           focused = {
-              background = "#000000";
+              background = "#ffffff";
               border = "#ffffff";
-              childBorder = "#000000";
-              indicator = "#000000";
-              text = "#000000";
+              childBorder = "#ffffff";
+              indicator = "#ffffff";
+              text = "#ffffff";
           };
         };
 
