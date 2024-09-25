@@ -76,7 +76,11 @@ in {
         # Decorations
         window = {
           titlebar = false;
-          border = 0;
+          border = 2;
+        };
+
+        colors = {
+          border = "#ffffff";
         };
 
         keybindings = lib.mkOptionDefault rec {
