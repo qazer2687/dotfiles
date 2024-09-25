@@ -80,7 +80,9 @@ in {
         };
 
         colors = {
-          border = "#ffffff";
+          focused = {
+            border  = "#ffffff";
+          };
         };
 
         keybindings = lib.mkOptionDefault rec {
