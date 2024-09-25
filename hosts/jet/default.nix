@@ -8,7 +8,7 @@
 
   users.users = {
     alex = {
-      initialPassword = "toor";
+      initialPassword = "xela";
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
       shell = pkgs.fish;
@@ -109,10 +109,9 @@
     bluetooth.enable = true;
     #? Sound is managed via the setupAsahiSound option
     #? and I do not need easyeffects installed on Jet.
-    #? pipewire.enable = true;
+    #pipewire.enable = true;
     systemd-boot.enable = true;
     filesystem.enable = true;
-    #fonts.enable = true;
     zram.enable = true;
     nh.enable = true;
   };
