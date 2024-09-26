@@ -1,4 +1,7 @@
-{...}: {
+{
+  pkgs,
+  ...
+  }: {
   imports = [
     ../../modules/home
   ];
