@@ -25,9 +25,9 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "sway/workspaces"];
+          modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = [ "mpris" "network" "pulseaudio" "battery"];
+          modules-right = [ "network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "{icon} {volume}%";
@@ -90,7 +90,7 @@
             player-icons = {
               default = " ";
             };
-            title-len = 30;
+            title-len = 40;
             status-icons = {
               paused = " ";
             };
@@ -181,6 +181,12 @@
           outline: none;
           box-shadow: none;
           text-decoration: none;
+        }
+
+        /* White MPRIS Background */
+        #mpris {
+          background-color: #fff;
+          color: #000;
         }
 
         /* EDGE MARGINS */
