@@ -6,7 +6,6 @@
   home.packages = with pkgs; [
     obsidian
     nautilus
-    microsoft-edge
   ];
 
   modules = {
