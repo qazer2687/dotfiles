@@ -11,7 +11,7 @@
     services.gvfs.enable = true;
     services.udisks2.enable = true;
 
-    #? For iOS support.
+    # For iOS support.
     services.usbmuxd.enable = true;
     environment.systemPackages = with pkgs; [
       ifuse

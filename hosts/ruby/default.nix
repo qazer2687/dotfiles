@@ -25,7 +25,7 @@
   #    [[ "$(tty)" == /dev/tty1 ]] && sway
   #  '';
 
-  ##### temp
+
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
