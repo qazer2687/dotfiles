@@ -40,8 +40,6 @@
     systemd-boot.enable = true;
     bluetooth.enable = true;
     filesystem.enable = true;
-    fonts.enable = true;
-    keymap.enable = true;
     zram.enable = true;
 
     # Utilities
