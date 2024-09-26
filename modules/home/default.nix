@@ -17,7 +17,6 @@
     ./polybar
     ./dunst
     ./emacs
-    ./edge
     ./direnv
     ./starship
     ./bat

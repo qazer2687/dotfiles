@@ -13,5 +13,6 @@
       services.NetworkManager-wait-online.enable = false;
       network.wait-online.enable = false;
     };
+    # TODO: Disable firewall explicitly.
   };
 }

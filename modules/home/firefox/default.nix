@@ -9,14 +9,17 @@
   config = lib.mkIf config.modules.firefox.enable {
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox-devedition; #? Required for paxmod to work.
+      #? Required for paxmod to work.
+      package = pkgs.firefox-devedition;
+      #? The profile is named like this because firefox devedition 
+      #? refuses to open normal profiles.
       profiles."dev-edition-default" = {
         name = "dev-edition-default";
         isDefault = true;
         id = 0;
-        #search.default = "Google"; # i need calculator
-
-        # Extensions
+        
+        #! This doesn't work properly, it leads to issues with rebuilding and leaves
+        #! extensions stuck as disabled.
         /*
           extensions = with config.nur.repos.rycee.firefox-addons; [
           ublock-origin
@@ -119,7 +122,9 @@
       };
     };
 
-    # Asahi Widevine Support
+    #? Asahi Widevine Support
+    #? Note that in order for Netflix to work, this needs to be paried with
+    #? a web user-agent spoofer configured to emulate Chrome on ChromeOS.
     home.file."firefox-widevinecdm" = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       enable = true;
       target = ".mozilla/firefox/dev-edition-default/gmp-widevinecdm";
