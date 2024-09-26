@@ -90,6 +90,7 @@
             player-icons = {
               default = "󰐊";
             };
+            title-len = 20;
             status-icons = {
               paused = "󰏤";
             };
