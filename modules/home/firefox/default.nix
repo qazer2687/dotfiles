@@ -118,6 +118,19 @@
             height: 14px !important; /* Adjust the height to your desired size */
           }
 
+          /* hide tab border and add a grey effect to currently selected tab */
+          #tabbrowser-tabs {
+            border: none !important;
+          }
+
+          .tabbrowser-tab {
+            border: none !important;
+          }
+
+          .tabbrowser-tab[selected="true"] {
+            background-color: #242424 !important;
+          }
+
         '';
       };
     };
