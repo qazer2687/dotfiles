@@ -31,9 +31,9 @@ in {
     wayland.windowManager.sway = {
       enable = true;
       #package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
-      #? Not sure what the performance impact is with swayfx, I will just use sway for now.
-      #? The only "effect" I use is rounded corners but these aren't so important to me and
-      #? end up cutting off tabs in firefox which looks like shit.
+      # Not sure what the performance impact is with swayfx, I will just use sway for now.
+      # The only "effect" I use is rounded corners but these aren't so important to me and
+      # end up cutting off tabs in firefox which looks like shit.
       package = pkgs.sway.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       checkConfig = false;
       config = {
@@ -68,9 +68,9 @@ in {
         # Display & Wallpaper
         output = {
           "*".bg = "~/.config/wallpaper/wallpaper.png fill";
-          #? Settings for my external Asus monitor.
+          # Settings for my external Asus monitor.
           "DP-1".mode = "2560x1440@143.972000Hz";
-          #? Settings for the internal display on Jet.
+          # Settings for the internal display on Jet.
           "eDP-1".mode = "2560x1664@60Hz scale 2";
         };
 
@@ -163,16 +163,16 @@ in {
         #smart_gaps on
 
         # Eye Comfort
-        #? Gammastep currently doesn't work on Asahi Linux.
-        #? exec gammastep -xO 3000
+        # Gammastep currently doesn't work on Asahi Linux.
+        # exec gammastep -xO 3000
 
         # Waybar
         bar {
           swaybar_command waybar
         }
 
-        #? Move to workspace one on startup, because for some
-        #? reason it defaults to workspace ten on startup.
+        # Move to workspace one on startup, because for some
+        # reason it defaults to workspace ten on startup.
         exec swaymsg workspace 1
       '';
 

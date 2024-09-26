@@ -15,23 +15,23 @@
     };
   };
 
-  #? Stop the power button from
-  #? shutting down the machine.
+  # Stop the power button from
+  # shutting down the machine.
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
     HandleSuspendKey=ignore
     HandleHibernateKey=ignore
   '';
 
-  #? These are configured through home-manager but this
-  #? option is required so they appear as desktop entries.
+  # These are configured through home-manager but this
+  # option is required so they appear as desktop entries.
   programs.sway.enable = true;
   #programs.hyprland.enable = true;
 
   programs.fish.enable = true;
   
-  #? This allows links to be
-  #? opened across applications.
+  # This allows links to be
+  # opened across applications.
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -49,9 +49,9 @@
     asahi = {
       withRust = true;
       useExperimentalGPUDriver = true;
-      #? Using the driver mode breaks sway and using the
-      #? overlay mode fails to compile so I can only use
-      #? the replace mode, but it makes my config impure.
+      # Using the driver mode breaks sway and using the
+      # overlay mode fails to compile so I can only use
+      # the replace mode, but it makes my config impure.
       experimentalGPUInstallMode = "replace";
       setupAsahiSound = true;
       peripheralFirmwareDirectory = ../../firmware/jet;
@@ -60,7 +60,7 @@
 
   boot = {
     kernelParams = [
-      "apple_dcp.show_notch=1" #? Enables the pixels horizontal of the notch.
+      "apple_dcp.show_notch=1" # Enables the pixels horizontal of the notch.
       "kernel.nmi_watchdog=0"
       "fbcon=nodefer"
       "bgrt_disable"
@@ -90,16 +90,16 @@
 
   environment = {
     systemPackages = with pkgs; [
-      #? Put system packages here...
+      # Put system packages here...
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      #? This option scales menu bars, causing
-      #? them to appear way too large.
-      #? GDK_SCALE = "2";
+      # This option scales menu bars, causing
+      # them to appear way too large.
+      # GDK_SCALE = "2";
     };
   };
 
@@ -107,8 +107,8 @@
     core.enable = true;
     networkmanager.enable = true;
     bluetooth.enable = true;
-    #? Sound is managed via the setupAsahiSound option
-    #? and I do not need easyeffects installed on Jet.
+    # Sound is managed via the setupAsahiSound option
+    # and I do not need easyeffects installed on Jet.
     #pipewire.enable = true;
     systemd-boot.enable = true;
     filesystem.enable = true;

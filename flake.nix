@@ -32,8 +32,8 @@
       "x86_64-linux"
       "aarch64-darwin"
     ];
-    #? A function which generations an attribute by calling a
-    #? function you pass to it, with each system as an argument.
+    # A function which generations an attribute by calling a
+    # function you pass to it, with each system as an argument.
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
