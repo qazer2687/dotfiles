@@ -34,7 +34,6 @@
 
   # Modules
   modules = {
-    kernel.enable = true;
     networkmanager.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
