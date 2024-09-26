@@ -100,6 +100,15 @@
             position: fixed !important;
             z-index: 10000 !important;
           }
+          #popup-notification {
+            margin-top: 0 !important;
+            margin-left: 0 !important;
+            top: 0 !important;
+            right: unset !important;
+            left: 0 !important;
+            transform: unset !important;
+          }
+
 
           /* center the text on tabs properly */
           .tabbrowser-tab .tab-label {
@@ -125,6 +134,7 @@
 
           .tabbrowser-tab {
             border: none !important;
+            box-shadow: none !important;
           }
 
           .tabbrowser-tab[selected="true"] {
