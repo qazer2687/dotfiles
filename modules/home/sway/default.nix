@@ -77,7 +77,7 @@ in {
         # Decorations
         window = {
           titlebar = false;
-          border = 2;
+          border = 1;
         };
 
         colors = {
