@@ -126,7 +126,6 @@
     systemd-boot.enable = true;
     steam.enable = true;
     filesystem.enable = true;
-    fonts.enable = true;
     keymap.enable = true;
     zram.enable = true;
     gamemode.enable = true;
