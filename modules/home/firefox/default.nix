@@ -127,20 +127,49 @@
             height: 14px !important; /* Adjust the height to your desired size */
           }
 
-          /* hide tab border and add a grey effect to currently selected tab */
-          #tabbrowser-tabs {
-            border: none !important;
-          }
-
-          .tabbrowser-tab {
-            border: none !important;
+          /* hide tab border */
+          .tab-background{
+            outline: none !important;
             box-shadow: none !important;
           }
 
-          .tabbrowser-tab[selected="true"] {
-            background-color: #242424 !important;
-          }
 
+          /* TEST */
+          menuseparator {
+              border-color: var(--panel-separator-color, #50505090) !important;
+              margin-left: 5px !important;
+              margin-right: 5px !important;
+            /*border-image: var(--panel-separator-zap-gradient) 1 !important;*/
+            /*border-image: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) 1 !important;*/
+          }
+          /*Colores generales*/
+          menupopup{background: var(--gradient) !important; border-radius: 6px !important;}
+          #PlacesToolbar menupopup { padding: 0px !important;}
+          #PlacesToolbar menupopup menupopup{ margin-inline-start: 0px !important; }
+          .menupopup-arrowscrollbox {
+              background: var(--arrowpanel-background, #50505090) !important;
+              background-color: var(--arrowpanel-background, #50505090) !important;
+              color: var(--arrowpanel-color, #50505090) !important;
+              border: 1px solid transparent !important;
+              border-radius: 6px !important;
+              margin: 0px !important;
+              background-clip: padding-box !important;
+              /*ColorFondoAlPasarElMouseSobreItems*/
+              --menuitem-hover-background-color: color-mix(in srgb, var(--button-hover-bgcolor) 95%, var(--organizer-color, var(--arrowpanel-color))) !important;
+          }
+          /*ColoresMenú*/
+          .menupopup {
+              --panel-color: var(--arrowpanel-color, FieldText) !important;
+              /*ColorLetrasDelMenú*/
+              --panel-border-color: var(--arrowpanel-border-color, Field)!important;
+              /*bordeMenú*/
+              --panel-background: var(--arrowpanel-background, Field) !important;
+              /*FondoMenú*/
+              --menu-color: var(--arrowpanel-color, FieldText) !important;
+              /*ColorLetrasAlPasarElMouseSobreItems*/
+              --menu-border-color: var(--panel-separator-color, Field) !important;
+              /*LineaSeparadoraItems*/
+          }
         '';
       };
     };
