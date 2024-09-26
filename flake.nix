@@ -93,7 +93,7 @@
 
     nixosConfigurations = {
       ruby = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/ruby
           nur.nixosModules.nur
