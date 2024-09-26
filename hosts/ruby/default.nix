@@ -1,4 +1,7 @@
-{...}: {
+{
+  pkgs,
+  ...
+}: {
   imports = [
     ../../hardware/ruby
     ../../modules/nixos
