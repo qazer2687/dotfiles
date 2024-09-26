@@ -6,6 +6,18 @@
 
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  users.users = {
+    alex = {
+      initialPassword = "xela";
+      isNormalUser = true;
+      openssh.authorizedKeys.keys = [
+        # TODO: Add your SSH public key(s) here...
+      ];
+      extraGroups = ["networkmanager" "wheel" "video" "audio"];
+      shell = pkgs.fish;
+    };
+  };
+
   environment.etc = {
     issue = {
       text = ''\e[31mWelcome to Ruby!\e[0m'';
