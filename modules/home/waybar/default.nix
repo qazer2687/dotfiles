@@ -23,9 +23,8 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "battery"];
+          modules-right = [ "mpris" "network" "pulseaudio" "battery"];
 
-          # Pulseaudio
           pulseaudio = {
             format = "{icon} {volume}%";
             tooltip = false;
@@ -34,14 +33,11 @@
               default = [" " " " " "];
             };
           };
-
-          # Clock
           clock = {
             format-alt = "{:%Y/%m/%d | %H:%M:%S}";
             tooltip = false;
           };
 
-          # Battery
           battery = {
             tooltip = false;
             format = "{icon} {capacity}%";
@@ -50,7 +46,6 @@
             interval = 5;
           };
 
-          # Workspaces
           "sway/workspaces" = {
             format = "{icon}";
             format-icons = {
@@ -68,7 +63,6 @@
             sort-by-number = true;
           };
 
-          # Backlight
           backlight = {
             device = "apple-panel-bl";
             format = "{icon}";
@@ -77,13 +71,24 @@
             format-icons = ["󰃞 " "󰃟 " "󰃠 "];
           };
 
-          # Network
           network = {
             tooltip = false;
             format-wifi = "  {ipaddr}"; # 󱐋 {frequency}
             format-disconnected = " ";
             format-ethernet = " ";
             interval = 5;
+          };
+
+          mpris = {
+            tooltip = false;
+            format = "{player_icon} {artist} - {title}";
+            format-paused = "{status_icon} {artist} - {title}";
+            player-icons = {
+              default = "󰐊";
+            };
+            status-icons = {
+              paused = "󰏤";
+            };
           };
         }
       ];
