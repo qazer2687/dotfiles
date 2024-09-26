@@ -88,11 +88,11 @@
             format = "{player_icon} {artist} - {title}";
             format-paused = "{status_icon} {artist} - {title}";
             player-icons = {
-              default = "";
+              default = " ";
             };
-            title-len = 25;
+            title-len = 30;
             status-icons = {
-              paused = "";
+              paused = " ";
             };
           };
         }
