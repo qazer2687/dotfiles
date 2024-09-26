@@ -13,7 +13,11 @@
       }
     ];
 
-    # Config
+    home.packages = with pkgs; [
+      # MPRIS Dependency
+      playerctl
+    ];
+
     programs.waybar = {
       enable = true;
       settings = [
