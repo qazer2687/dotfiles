@@ -37,6 +37,9 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
+
+    # Gaming
+    prismlauncher.enable = true;
   };
 
   home.stateVersion = "24.11";
