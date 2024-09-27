@@ -21,33 +21,39 @@
     };
   };
 
-  programs.fish.enable = true;
+  # These are configured through home-manager but this
+  # option is required so they appear as desktop entries.
+  programs.sway.enable = true;
+  #programs.hyprland.enable = true;
 
-  environment.etc = {
-    issue = {
-      text = ''\e[31mWelcome to Ruby!\e[0m'';
-    };
+  programs.fish.enable = true;
+  
+  # This allows links to be
+  # opened across applications.
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      #pkgs.xdg-desktop-portal-hyprland
+    ];
   };
 
-  # Hostname
+
   networking.hostName = "ruby";
 
-  # SSH
-  services.openssh.enable = true;
-  networking.firewall.allowedTCPPorts = [
-    22 # SSH
+  services.getty.autologinUser = "alex";
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session sway
+  '';
+
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 2 * 1024;
+    }
   ];
-
-  # environment.loginShellInit = ''
-  #    [[ "$(tty)" == /dev/tty1 ]] && sway
-  #  '';
-
-
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
 
   # Modules
   modules = {
@@ -59,7 +65,6 @@
     filesystem.enable = true;
     zram.enable = true;
 
-    # Utilities
     nh.enable = true;
   };
 

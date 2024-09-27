@@ -13,10 +13,22 @@
   ];
 
   modules = {
+    sway.enable = true;
+    waybar.enable = true;
     foot.enable = true;
-    git.enable = true;
+    mako.enable = true;
+    wofi.enable = true;
     theme.enable = true;
+
+
+    firefox.enable = true;
     fish.enable = true;
+    webcam.enable = true;
+    bat.enable = true;
+    eza.enable = true;
+    vscode.enable = true;
+    git.enable = true;
+    direnv.enable = true;
   };
 
   home.stateVersion = "23.05";
