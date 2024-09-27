@@ -10,6 +10,8 @@
   home.packages = with pkgs; [
     obsidian
     nautilus
+    gammastep
+    vlc
   ];
 
   modules = {
