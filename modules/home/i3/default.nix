@@ -29,6 +29,14 @@
             }
             {
               always = true;
+              command = "xrandr --output HDMI-0 --mode 2560x1080 --rate 74.99";
+            }
+            {
+              always = true;
+              command = "redshift -x && redshift -O 3000";
+            }
+            {
+              always = true;
               command = "$HOME/.config/polybar/launch.sh &";
             }
             {

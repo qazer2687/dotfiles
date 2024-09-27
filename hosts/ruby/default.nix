@@ -1,10 +1,27 @@
-{...}: {
+{
+  pkgs,
+  ...
+}: {
   imports = [
     ../../hardware/ruby
     ../../modules/nixos
   ];
 
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
+  users.users = {
+    alex = {
+      initialPassword = "xela";
+      isNormalUser = true;
+      openssh.authorizedKeys.keys = [
+        # TODO: Add your SSH public key(s) here...
+      ];
+      extraGroups = ["networkmanager" "wheel" "video" "audio"];
+      shell = pkgs.fish;
+    };
+  };
+
+  programs.fish.enable = true;
 
   environment.etc = {
     issue = {
@@ -34,14 +51,12 @@
 
   # Modules
   modules = {
-    kernel.enable = true;
+    core.enable = true;
     networkmanager.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
     bluetooth.enable = true;
     filesystem.enable = true;
-    fonts.enable = true;
-    keymap.enable = true;
     zram.enable = true;
 
     # Utilities
