@@ -41,40 +41,6 @@
           layout.css.devPixelsPerPx = 16
           */
 
-          #urlbar[breakout]{
-  margin-inline-start: 0px !important;
-  width: 100% !important;
-  left: 0 !important;
-  top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2 ) !important;
-}
-#urlbar[breakout]:not([open]){
-  bottom: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
-}
-.urlbarView{
-  margin-inline: 0 !important;
-  width: auto !important;
-}
-.urlbarView-row{
-  padding: 0 2px !important;
-}
-.urlbarView-row-inner{
-  padding-inline-start: 4px !important;
-}
-#urlbar-background{
-  animation: none !important;
-}
-.urlbar-input-container{
-  padding: 0px 1px !important;
-  height: initial !important; 
-}
-#identity-icon{
-  margin-block: var(--urlbar-icon-padding);
-}
-.urlbarView > .search-one-offs:not([hidden]){
-  padding-block: 0px !important;
-}
-
-
           /* hide enhanced tracking protection shield icon */
           #tracking-protection-icon-container {
             display: none;
