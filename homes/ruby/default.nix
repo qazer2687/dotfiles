@@ -1,4 +1,8 @@
-{...}: {
+{
+  pkgs,
+  lib,
+  ...
+  }: {
   imports = [
     ../../modules/home
   ];
@@ -6,7 +10,6 @@
   home.packages = with pkgs; [
     obsidian
     nautilus
-    microsoft-edge
   ];
 
   modules = {
@@ -17,7 +20,7 @@
   };
 
   home.stateVersion = "23.05";
-  home.homeDirectory = "/home/alex";
+  home.homeDirectory = lib.mkForce "/home/alex";
 
   sops.defaultSopsFile = ../../../secrets/default.yaml;
   sops.age.sshKeyPaths = ["/home/alex/.ssh/id_ed25519"];

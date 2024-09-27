@@ -93,7 +93,7 @@
 
     nixosConfigurations = {
       ruby = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/ruby
           nur.nixosModules.nur
@@ -108,6 +108,7 @@
               sharedModules = [
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
+                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
