@@ -29,11 +29,12 @@
             }
             {
               always = true;
+              # LG monitor fullres 75hz
               command = "xrandr --output HDMI-0 --mode 2560x1080 --rate 74.99";
             }
             {
               always = true;
-              command = "redshift -x && redshift -O 3000";
+              command = "redshift -x && redshift -O 3500";
             }
             {
               always = true;
@@ -49,6 +50,7 @@
             }
             {
               always = true;
+              # Stop i3 opening by default on workspace 10/0.
               command = "i3-msg workspace number 1";
             }
           ];
