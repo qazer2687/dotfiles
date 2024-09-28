@@ -11,6 +11,7 @@
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs = {
@@ -24,6 +25,7 @@
     nix-homebrew,
     asahi,
     nix-vscode-extensions,
+    nix-flatpak,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -58,6 +60,7 @@
                 inputs.nur.hmModules.nur
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
+                inputs.nix-flatpak.homeManagerModules.nix-flatpak
               ];
             };
           }

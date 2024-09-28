@@ -16,6 +16,15 @@
     vesktop
   ];
 
+  /*
+  services.flatpak.packages = [
+    # Can't install from flatpakref.
+    # https://github.com/gmodena/nix-flatpak/issues/78
+  ];
+  */
+  # In the meantime...
+  services.flatpak.enable = true;
+
   modules = {
     # Environment
     i3.enable = true;
