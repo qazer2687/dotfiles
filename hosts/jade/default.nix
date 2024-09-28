@@ -8,12 +8,6 @@
     ../../modules/nixos
   ];
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
-
   networking.hostName = "jade";
 
   users.users = {
@@ -138,6 +132,8 @@
     gamemode.enable = true;
     nh.enable = true;
   };
+
+  services.flatpak.enable = true;
 
   sops.defaultSopsFile = ./secrets/default.yaml;
 
