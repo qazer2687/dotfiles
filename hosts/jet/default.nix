@@ -76,6 +76,8 @@
     m1n1CustomLogo = ../../assets/m1n1CustomLogo.png;
   };
 
+  services.flatpak.enable = true;
+
   services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session sway
