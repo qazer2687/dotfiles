@@ -31,75 +31,88 @@
         */
 
         userChrome = ''
-          @-moz-document url(chrome://browser/content/browser.xhtml){
-
-          /* Additional options required - about:config
-          browser.tabs.tabmanager.enabled = false
-          xpinstall.signatures.required = false
-          extensions.experiments.enabled = true
-          widget.use-xdg-desktop-portal.file-picker = 1
-          layout.css.devPixelsPerPx = 16
-          */
-
-          /* hide enhanced tracking protection shield icon */
-          #tracking-protection-icon-container {
-            display: none;
+          /* Make interface on a single bar */
+          #navigator-toolbox {
+            display: flex !important;
+            height: 7mm !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            border-bottom: 0 !important;
           }
-          .bookmark-item[container] {
-            list-style-image: url("chrome://global/skin/dirListing/folder.png") !important;
+          #nav-bar {
+            order: 1 !important;
+            background-color: transparent !important;
           }
-
-          /* hide extensions button */
-          /* DISABLED  #unified-extensions-button { display: none } */
-
-          /* hide bookmarks star */
-          #star-button-box {display: none !important;}
-
-          /* remove main close button*/
-          .titlebar-buttonbox-container{ display:none } 
-          
-          /* keep popups on top */
-          #popup, #menupopup {
-            position: fixed !important;
-            z-index: 10000 !important;
-          }
-          #popup-notification {
-            margin-top: 0 !important;
-            margin-left: 0 !important;
-            top: 0 !important;
-            right: unset !important;
-            left: 0 !important;
-            transform: unset !important;
+          #titlebar {
+            order: 2 !important;
+            flex-grow: 1 !important;
+            background-color: transparent !important;
           }
 
-          /* center the text on tabs properly */
-          .tabbrowser-tab .tab-label {
-            transform: translateY(0.5px); /* how much to move text down */
-          }
-
-          /* remove rounding from the edges of tabs */
-          :root {
-            --tab-block-margin: 0 !important;
-            --tab-border-radius: 0 !important;
-          }
-
-          /* shrink tab favicon size */
-          .tab-icon-image {
-            width: 14px !important; /* Adjust the width to your desired size */
-            height: 14px !important; /* Adjust the height to your desired size */
-          }
-
-          /* hide tab border */
-          .tab-background{
-            outline: none !important;
+          /* Remove all shadows and round corners */
+          * {
+            border-radius: 0 !important;
+            text-shadow: none !important;
             box-shadow: none !important;
           }
 
-          /* tab background */
-          .tab-background[selected="true"] {
-            background-color: grey !important;
+          /* Auto hide tab bar */
+          #main-window:not([customizing]) #navigator-toolbox:focus-within #TabsToolbar,
+          #main-window:not([customizing]) #nav-bar:focus-within #back-button {
+            visibility: collapse !important;
           }
 
+          /* Auto hide URL bar */
+          #main-window:not([customizing]) #nav-bar #urlbar-container {
+            width: 0 !important;
+            margin: 0 !important;
+          }
+          #main-window:not([customizing]) #nav-bar:focus-within {
+            width: 100% !important;
+          }
+
+          /* Remove border/separators from search results */
+          #urlbar-background {
+            outline: none !important;
+          }
+          #urlbar-input {
+            margin-inline: 1mm !important;
+          }
+          .urlbarView-body-inner {
+            border-top: none !important;
+          }
+
+          /* Remove padding, margins, and close buttons from non-selected/non-pinned tabs */
+          .tabbrowser-tab {
+            padding: 0 !important;
+          }
+          .tabbrowser-tab:not([pinned]) {
+            margin-inline-start: 0 !important;
+          }
+          .tabbrowser-tab:not([pinned]):not([selected]) .tab-close-button {
+            display: none !important;
+          }
+          .tab-background {
+            margin: 0 !important;
+          }
+
+          /* Remove all these elements */
+          .titlebar-buttonbox-container, /* close/minimize/maximize buttons container */
+          .urlbar-go-button, /* arrow icon in the URL bar (submit button) */
+          #identity-box, /* magnify glass in the URL bar */
+          #PersonalToolbar, /* bookmark toolbar */
+          #context-navigation, /* back/forward options in the right-click context menu */
+          #context-sep-navigation, /* separator in the back/forward context menu */
+          #toolbar-menubar, /* traditional menu bar (File, Edit, View, etc.) */
+          #identity-icon-label, /* security label (like "Secure" or padlock in the URL bar) */
+          #tracking-protection-icon-container, /* container for the tracking protection shield icon */
+          #page-action-buttons > :not(#urlbar-zoom-button), /* all page action buttons except zoom */
+          #unified-extensions-button, /* unified extensions button in the toolbar */
+          #unified-extensions-button > .toolbarbutton-icon, /* icon of the unified extensions button */
+          #alltabs-button, /* button for showing all open tabs in a dropdown menu */
+          #forward-button, /* forward navigation button */
+          #PanelUI-menu-button /* main menu button (hamburger menu) */ {
+            display: none !important;
           }
         '';
       };
