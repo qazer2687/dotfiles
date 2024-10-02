@@ -85,7 +85,7 @@
           /* Remove padding, margins, and close buttons from non-selected/non-pinned tabs */
           .tabbrowser-tab {
             padding: 0 !important;
-            height: 7mm; /* fix */
+            height: 8mm; /* fix for tab height */
           }
           .tabbrowser-tab:not([pinned]) {
             margin-inline-start: 0 !important;
