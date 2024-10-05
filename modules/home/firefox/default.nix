@@ -108,8 +108,10 @@
           #identity-icon-label, /* security label (like "Secure" or padlock in the URL bar) */
           #tracking-protection-icon-container, /* container for the tracking protection shield icon */
           #page-action-buttons > :not(#urlbar-zoom-button), /* all page action buttons except zoom */
-          #unified-extensions-button, /* unified extensions button in the toolbar */
-          #unified-extensions-button > .toolbarbutton-icon, /* icon of the unified extensions button */
+          /*
+          #unified-extensions-button,
+          #unified-extensions-button > .toolbarbutton-icon,
+          */
           #alltabs-button, /* button for showing all open tabs in a dropdown menu */
           #forward-button, /* forward navigation button */
           #PanelUI-menu-button /* main menu button (hamburger menu) */ {
