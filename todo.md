@@ -1,3 +1,3 @@
 ## TODO
 
-convert ruby to jet conf without asahi stuff
+DONE | convert ruby to jet conf without asahi stuff

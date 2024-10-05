@@ -12,6 +12,7 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs = {
@@ -26,6 +27,7 @@
     asahi,
     nix-vscode-extensions,
     nix-flatpak,
+    nix-minecraft,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -156,6 +158,7 @@
         modules = [
           ./hosts/opal
           sops-nix.nixosModules.sops
+          # Add nix-minecraft module.
         ];
       };
     };
