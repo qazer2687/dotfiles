@@ -82,10 +82,10 @@
                 path = "~/Vault";
               }
             ];
+            extraConfig = [
+              "conceallevel = 2"
+            ];
           };
-          extraConfig = [
-            "conceallevel = 2"
-          ];
         };
       };
 
