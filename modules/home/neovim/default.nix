@@ -83,6 +83,9 @@
               }
             ];
           };
+          extraConfig = {
+            "conceallevel = 2"
+          };
         };
       };
 
