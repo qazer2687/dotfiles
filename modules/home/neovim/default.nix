@@ -76,12 +76,13 @@
         obsidian = {
           enable = true;
           settings = {
-          workspaces = [
-            {
-              name = "Vault";
-              path = "~/Vault";
-            }
-          ];
+            workspaces = [
+              {
+                name = "Vault";
+                path = "~/Vault";
+              }
+            ];
+          };
         };
       };
 
