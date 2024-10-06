@@ -73,6 +73,8 @@
           };
         };
 
+        cmp.enable = true;
+
         obsidian = {
           enable = true;
           settings = {
@@ -82,12 +84,13 @@
                 path = "~/Vault";
               }
             ];
-            extraConfig = ''
-              :set conceallevel=2,
-              completion = {
-                nvim_cmp = true,
-              },
-            '';
+            completion = {
+              nvim_cmp = true;
+              min_chars = 2;
+            };
+            extraConfig = [
+              ":set conceallevel=2"
+            ];
           };
         };
       };
