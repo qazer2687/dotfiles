@@ -83,7 +83,7 @@
               }
             ];
             extraConfig = [
-              "conceallevel = 2"
+              ":set conceallevel=2"
             ];
           };
         };
