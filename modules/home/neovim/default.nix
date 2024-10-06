@@ -73,11 +73,9 @@
           };
         };
 
-        render-markdown = {
+        obsidian = {
           enable = true;
-          preset = "obsidian";
         };
-      };
 
       colorschemes = {
         catppuccin.enable = true;
