@@ -76,6 +76,7 @@
         obsidian = {
           enable = true;
         };
+      };
 
       colorschemes = {
         catppuccin.enable = true;
