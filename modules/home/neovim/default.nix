@@ -72,6 +72,11 @@
             nixd.enable = true;
           };
         };
+
+        render-markdown = {
+          enable = true;
+          preset = "obsidian";
+        };
       };
 
       colorschemes = {

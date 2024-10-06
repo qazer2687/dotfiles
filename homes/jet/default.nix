@@ -37,6 +37,7 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
+    neovim.enable = true;
 
     # Gaming
     prismlauncher.enable = true;
