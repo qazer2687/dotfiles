@@ -83,9 +83,9 @@
               }
             ];
           };
-          extraConfig = {
+          extraConfig = [
             "conceallevel = 2"
-          };
+          ];
         };
       };
 
