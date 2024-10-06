@@ -82,9 +82,12 @@
                 path = "~/Vault";
               }
             ];
-            extraConfig = [
-              ":set conceallevel=2"
-            ];
+            extraConfig = ''
+              :set conceallevel=2,
+              completion = {
+                nvim_cmp = true,
+              },
+            '';
           };
         };
       };
