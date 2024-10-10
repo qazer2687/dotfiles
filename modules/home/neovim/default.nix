@@ -98,7 +98,7 @@
       };
 
       colorschemes = {
-        catppuccin.enable = true;
+        ayu.enable = true;
       };
 
       extraConfigLua = ''
