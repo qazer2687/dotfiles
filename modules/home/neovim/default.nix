@@ -47,7 +47,6 @@
           ];
         };
 
-
         lightline = {
           enable = true;
           settings = {
@@ -102,8 +101,8 @@
         ayu.enable = true;
       };
 
-      extraPlugins = [
-        pkgs.vimPlugins.render-markdown-nvim
+      extraPlugins = with pkgs; [
+        vimPlugins.render-markdown-nvim
       ];
 
       extraConfigLua =  builtins.readFile ./config/init.lua;
