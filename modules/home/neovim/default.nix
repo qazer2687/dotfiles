@@ -65,8 +65,9 @@
         image = {
           enable = true;
           integrations.markdown = {
+            enabled = true;
             clearInInsertMode = true;
-            onlyRenderImageAtCursor = true;
+            onlyRenderImageAtCursor = false;
           };
         };
 
