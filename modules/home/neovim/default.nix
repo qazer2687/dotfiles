@@ -62,7 +62,7 @@
           enable = true;
         };
 
-        image-nvim = {
+        image = {
           enable = true;
         };
 
