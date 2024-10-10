@@ -8,6 +8,11 @@
   options.modules.neovim.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.neovim.enable {
+    home.packages = [
+      # CMP Dependency
+      ripgrep
+    ];
+
     programs.nixvim = {
       enable = true;
 
