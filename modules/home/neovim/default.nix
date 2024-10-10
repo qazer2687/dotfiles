@@ -50,7 +50,7 @@
         lightline = {
           enable = true;
           settings = {
-            colorscheme = "ayu-dark";
+            colorscheme = "ayu_dark";
           };
         };
 
