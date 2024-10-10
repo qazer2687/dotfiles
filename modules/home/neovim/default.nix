@@ -103,7 +103,7 @@
       };
 
       extraPlugins = [
-        pkgs.render-markdown-nvim
+        pkgs.vimPlugins.render-markdown-nvim
       ];
 
       extraConfigLua =  builtins.readFile ./config/init.lua;
