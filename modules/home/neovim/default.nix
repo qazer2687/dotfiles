@@ -59,8 +59,8 @@
         };
 
         auto-save = {
-          enable = false;
-          # This doesn't enable the plugin, it just enables autosaving when the plugin has been enabled.
+          enable = true;
+          # This doesn't enable the plugin, it just enables autosaving when the plugin has been enabled. Idk why.
           settings = {
             enabled = true;
           };
@@ -88,9 +88,6 @@
               nvim_cmp = true;
               min_chars = 2;
             };
-            extraConfig = [
-              ":set conceallevel=2"
-            ];
           };
         };
       };
@@ -98,6 +95,11 @@
       colorschemes = {
         catppuccin.enable = true;
       };
+
+      extraConfigLua = ''
+        set conceallevel=2
+        highlight Normal guibg=black guifg=white
+      '';
     };
   };
 }
