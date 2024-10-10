@@ -62,6 +62,10 @@
           enable = true;
         };
 
+        image-nvim = {
+          enable = true;
+        };
+
         nvim-tree = {
           enable = true;
           autoReloadOnWrite = true;
