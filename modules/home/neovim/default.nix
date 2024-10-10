@@ -50,7 +50,7 @@
         lightline = {
           enable = true;
           settings = {
-            colorscheme = "material";
+            colorscheme = "ayu-dark";
           };
         };
 
@@ -103,6 +103,7 @@
 
       extraConfigLua = ''
         vim.cmd("set conceallevel=2")
+        vim.cmd("set background=dark")
         vim.cmd("highlight Normal guibg=black guifg=white")
       '';
     };
