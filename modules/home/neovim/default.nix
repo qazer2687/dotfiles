@@ -64,6 +64,10 @@
 
         image = {
           enable = true;
+          filetypes = [
+            "markdown"
+            "text"
+          ];
         };
 
         nvim-tree = {
