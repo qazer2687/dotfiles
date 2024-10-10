@@ -58,6 +58,10 @@
           enable = true;
         };
 
+        render-markdown = {
+          enable = true;
+        };
+
         nvim-tree = {
           enable = true;
           autoReloadOnWrite = true;
@@ -100,10 +104,6 @@
       colorschemes = {
         ayu.enable = true;
       };
-
-      extraPlugins = with pkgs; [
-        vimPlugins.render-markdown-nvim
-      ];
 
       extraConfigLua =  builtins.readFile ./config/init.lua;
     };
