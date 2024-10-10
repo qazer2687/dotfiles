@@ -22,9 +22,9 @@ if vim.g.neovide then
 
   -- Theme
   vim.g.neovide_theme = 'dark'
-  
+
   -- Cursor
   vim.g.neovide_hide_mouse_when_typing = true
-  vim.g.neovide_cursor_animation_length = 0.5
+  vim.g.neovide_cursor_animation_length = 0.05
   vim.g.neovide_cursor_trail_size = 0.1
 end
