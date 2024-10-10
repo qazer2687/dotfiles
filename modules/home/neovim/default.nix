@@ -64,10 +64,10 @@
 
         image = {
           enable = true;
-          filetypes = [
-            "markdown"
-            "text"
-          ];
+          integrations.markdown = {
+            clearInInsertMode = true;
+            onlyRenderImageAtCursor = false;
+          };
         };
 
         nvim-tree = {
