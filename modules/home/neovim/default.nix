@@ -10,7 +10,7 @@
   config = lib.mkIf config.modules.neovim.enable {
     home.packages = [
       # CMP Dependency
-      ripgrep
+      pkgs.ripgrep
     ];
 
     programs.nixvim = {
