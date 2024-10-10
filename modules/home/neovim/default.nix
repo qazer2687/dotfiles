@@ -97,8 +97,8 @@
       };
 
       extraConfigLua = ''
-        set conceallevel=2
-        highlight Normal guibg=black guifg=white
+        vim.cmd("set conceallevel=2")
+        vim.cmd("highlight Normal guibg=black guifg=white")
       '';
     };
   };
