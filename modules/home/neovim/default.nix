@@ -102,9 +102,9 @@
         ayu.enable = true;
       };
 
-      extraPlugins = {
+      extraPlugins = [
         pkgs.render-markdown-nvim
-      };
+      ];
 
       extraConfigLua =  builtins.readFile ./config/init.lua;
     };
