@@ -58,6 +58,10 @@
           enable = true;
         };
 
+        render-markdown = {
+          enable = true;
+        };
+
         nvim-tree = {
           enable = true;
           autoReloadOnWrite = true;
