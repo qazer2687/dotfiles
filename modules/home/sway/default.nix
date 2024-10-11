@@ -54,6 +54,10 @@ in {
             accel_profile = "flat";
             pointer_accel = "0.0";
           };
+          "Apple_MTP_multi-touch" = {
+            tap = "enabled";
+            accel_profile = "flat";
+          };
           "type:keyboard" = {
             xkb_layout = "gb";
             xkb_variant = "colemak";
