@@ -52,6 +52,7 @@ in {
           };
           "type:touchpad" = {
             tap = "enabled";
+            pointer_accel = "2";
             accel_profile = "flat";
           };
           "type:keyboard" = {
