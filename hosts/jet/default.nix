@@ -60,7 +60,8 @@
 
   boot = {
     kernelParams = [
-      "apple_dcp.show_notch=1" # Enables the pixels horizontal of the notch.
+      # Enables the pixels horizontal of the notch.
+      "apple_dcp.show_notch=1"
       "kernel.nmi_watchdog=0"
       "fbcon=nodefer"
       "bgrt_disable"
@@ -76,8 +77,6 @@
     m1n1CustomLogo = ../../assets/m1n1CustomLogo.png;
   };
 
-  services.flatpak.enable = true;
-
   services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session sway
@@ -86,7 +85,7 @@
   swapDevices = [
     {
       device = "/swapfile";
-      size = 2 * 1024;
+      size = 4 * 1024;
     }
   ];
 
@@ -104,6 +103,12 @@
       # GDK_SCALE = "2";
     };
   };
+
+  # This gives write permission to @users so my scripts which
+  # control keyboard backlight have the correct permissions.
+  systemd.tmpfiles.rules = [
+    "w /sys/class/leds/kbd_backlight/brightness 0664 root users"
+  ];
 
   modules = {
     core.enable = true;

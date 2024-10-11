@@ -51,10 +51,6 @@ in {
       screenshot
     ];
 
-    systemd.tmpfiles.rules = [
-      "w /sys/class/leds/kbd_backlight/brightness 0664 root users"
-    ];
-
     wayland.windowManager.sway = {
       enable = true;
       #package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
