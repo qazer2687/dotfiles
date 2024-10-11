@@ -118,8 +118,8 @@ in {
           XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%-";
 
           # Backlight Controls
-          "${modifier}+XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl  --class leds --device kbd_backlight set 2%+";
-          "${modifier}+XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl  --class leds --device kbd_backlight set 2%-";
+          "${modifier}+XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl  --class leds --device kbd_backlight set 10%+";
+          "${modifier}+XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl  --class leds --device kbd_backlight set 10%-";
 
           # Workspace Navigation
           "${modifier}+1" = "workspace number 1";
