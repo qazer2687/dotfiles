@@ -107,7 +107,7 @@
   # This gives write permission to @users so my scripts which
   # control keyboard backlight have the correct permissions.
   systemd.tmpfiles.rules = [
-    "w /sys/class/leds/kbd_backlight/brightness 0664 root users"
+    "w /sys/class/leds/kbd_backlight/brightness 0777 root users"
   ];
 
   modules = {
