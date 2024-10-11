@@ -46,15 +46,11 @@ in {
 
         input = {
           "TPPS/2 IBM TrackPoint" = {
-            pointer_accel = "0.5";
+            pointer_accel = "0.8";
             accel_profile = "flat";
             tap = "enabled";
           };
-          "Synaptics TM3276-022" = {
-            accel_profile = "flat";
-            pointer_accel = "0.0";
-          };
-          "Apple_MTP_multi-touch" = {
+          "type:touchpad" = {
             tap = "enabled";
             accel_profile = "flat";
           };
