@@ -17,6 +17,31 @@
       grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy -t image/png
     '';
   };
+
+  # Written by ChatGPT.
+  backlightup = pkgs.writeShellApplication {
+    name = "backlightup";
+    text = ''
+      echo $(( 
+      $(cat /sys/class/leds/kbd_backlight/brightness) + 5 > \
+      $(cat /sys/class/leds/kbd_backlight/max_brightness) ? \
+      $(cat /sys/class/leds/kbd_backlight/max_brightness) : \
+      $(cat /sys/class/leds/kbd_backlight/brightness) + 5 
+    )) | sudo tee /sys/class/leds/kbd_backlight/brightness
+    '';
+  };
+
+  # Written by ChatGPT.
+  backlightdown = pkgs.writeShellApplication {
+    name = "backlightdown";
+    text = ''   
+      echo $(( 
+        $(cat /sys/class/leds/kbd_backlight/brightness) - 5 < 0 ? \
+        0 : \
+        $(cat /sys/class/leds/kbd_backlight/brightness) - 5 
+      )) | sudo tee /sys/class/leds/kbd_backlight/brightness
+    '';
+  };
 in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
@@ -118,6 +143,10 @@ in {
           # Brightness Controls
           XF86MonBrightnessUp = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%+";
           XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%-";
+
+          # Backlight Controls
+          "${modifier}+XF86MonBrightnessUp" = "${lib.getExe backlightup}";
+          "${modifier}+XF86MonBrightnessDown" = "${lib.getExe backlightdown}";
 
           # Workspace Navigation
           "${modifier}+1" = "workspace number 1";
