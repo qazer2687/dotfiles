@@ -18,7 +18,8 @@
     '';
   };
 
-  # Written by ChatGPT.
+  # These two scripts were written by ChatGPT.
+  # I don't know whether this is the optimal way of doing it.
   backlightup = pkgs.writeShellApplication {
     name = "backlightup";
     text = ''
@@ -30,8 +31,6 @@
     )) | sudo tee /sys/class/leds/kbd_backlight/brightness
     '';
   };
-
-  # Written by ChatGPT.
   backlightdown = pkgs.writeShellApplication {
     name = "backlightdown";
     text = ''   
@@ -46,13 +45,15 @@ in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.sway.enable {
-    # Packages
     home.packages = with pkgs; [
       libnotify
       screenshot
     ];
 
-    # Sway
+    systemd.tmpfiles.rules = [
+      "w /sys/class/leds/kbd_backlight/brightness 0664 root users"
+    ];
+
     wayland.windowManager.sway = {
       enable = true;
       #package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
@@ -64,13 +65,11 @@ in {
       config = {
         inherit modifier;
 
-        # Gaps
         gaps = {
           inner = 6;
           outer = 0;
         };
 
-        # Input
         input = {
           "TPPS/2 IBM TrackPoint" = {
             pointer_accel = "0.5";
