@@ -18,29 +18,6 @@
     '';
   };
 
-  # These two scripts were written by ChatGPT.
-  # I don't know whether this is the optimal way of doing it.
-  backlightup = pkgs.writeShellApplication {
-    name = "backlightup";
-    text = ''
-      echo $(( 
-      $(cat /sys/class/leds/kbd_backlight/brightness) + 5 > \
-      $(cat /sys/class/leds/kbd_backlight/max_brightness) ? \
-      $(cat /sys/class/leds/kbd_backlight/max_brightness) : \
-      $(cat /sys/class/leds/kbd_backlight/brightness) + 5 
-    )) | sudo tee /sys/class/leds/kbd_backlight/brightness
-    '';
-  };
-  backlightdown = pkgs.writeShellApplication {
-    name = "backlightdown";
-    text = ''   
-      echo $(( 
-        $(cat /sys/class/leds/kbd_backlight/brightness) - 5 < 0 ? \
-        0 : \
-        $(cat /sys/class/leds/kbd_backlight/brightness) - 5 
-      )) | sudo tee /sys/class/leds/kbd_backlight/brightness
-    '';
-  };
 in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
@@ -141,8 +118,8 @@ in {
           XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%-";
 
           # Backlight Controls
-          "${modifier}+XF86MonBrightnessUp" = "${lib.getExe backlightup}";
-          "${modifier}+XF86MonBrightnessDown" = "${lib.getExe backlightdown}";
+          "${modifier}+XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl  --class leds --device kbd_backlight set 2%+";
+          "${modifier}+XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl  --class leds --device kbd_backlight set 2%-";
 
           # Workspace Navigation
           "${modifier}+1" = "workspace number 1";
