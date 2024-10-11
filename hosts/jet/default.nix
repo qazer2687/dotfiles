@@ -104,11 +104,10 @@
     };
   };
 
-  # This gives write permission to @users so my scripts which
-  # control keyboard backlight have the correct permissions.
-  systemd.tmpfiles.rules = [
-    "w /sys/class/leds/kbd_backlight/brightness 0777 root users"
-  ];
+  # This lets my keyboard backlight scripts have the correct permissions.
+  security.sudo.extraRules = ''
+    alex ALL=(ALL) NOPASSWD: ${pkgs.coreutils}/bin/echo, ${pkgs.coreutils}/bin/tee /sys/class/leds/kbd_backlight/brightness
+  '';
 
   modules = {
     core.enable = true;
