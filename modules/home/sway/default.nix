@@ -46,6 +46,7 @@ in {
 
   config = lib.mkIf config.modules.sway.enable {
     home.packages = with pkgs; [
+      # This is a dependency of Mako.
       libnotify
       screenshot
     ];
