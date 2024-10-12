@@ -51,7 +51,7 @@ in {
             tap = "enabled";
           };
           "type:touchpad" = {
-            tap = "enabled";
+            tap = "disabled";
           };
           "type:keyboard" = {
             xkb_layout = "gb";
