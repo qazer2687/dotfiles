@@ -167,36 +167,11 @@
 
           /* Show icon on hover */
           .toolbarbutton-1:hover .toolbarbutton-icon {
-              opacity: 1; /* Make icon visible */
-              height: 20px; /* Set height when hovered */
-              width: 20px; /* Set width when hovered */
-          }
-
-          /* Hide the extension dropdown button */
-          .toolbarbutton-1 {
-              width: 24px; /* Set a small width to maintain layout */
-              height: 24px; /* Set a small height to maintain layout */
-              overflow: hidden; /* Hide overflow */
-          }
-
-          /* Hide the icon */
-          .toolbarbutton-1 .toolbarbutton-icon {
-              visibility: hidden; /* Make icon invisible */
-              max-height: 0; /* Collapse height */
-              max-width: 0; /* Collapse width */
-          }
-
-          /* Show the dropdown menu when hovering over the toolbar button */
-          .toolbarbutton-1:hover .toolbarbutton-icon {
-              visibility: visible; /* Show icon on hover */
-              max-height: 20px; /* Icon size */
-              max-width: 20px; /* Icon size */
-          }
-
-          /* Optionally, adjust the size of the button text (if needed) */
-          .toolbarbutton-1 .toolbarbutton-text {
-              font-size: 12px; /* Adjust font size */
-              line-height: 20px; /* Align text vertically */
+              opacity: 0; /* Make icon visible */
+              height: 5px; /* Set height when hovered */
+              width: 5px; /* Set width when hovered */
+              position: absolute; /* Position the icon absolutely */
+              right: 0; /* Align it to the right */
           }
         '';
 
