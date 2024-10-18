@@ -132,6 +132,28 @@
             margin: 0 !important; /* Remove default margin */
             text-align: center !important; /* Center text */
           }
+
+          .tabbrowser-tab {
+            height: 20px; /* or your desired height */
+          }
+
+          /* Ensure selected tab has the same height */
+          .tabbrowser-tab[selected] {
+            height: 20px !important; /* Match the height of non-selected tabs */
+          }
+
+          /* Shrink font size for tab labels */
+          .tab-label {
+            font-size: 12px !important; /* Adjust the size as needed */
+            line-height: 28px !important; /* Match with the tab height for vertical centering */
+          }
+
+          /* Shrink icon size for tabs */
+          .tab-icon {
+            width: 16px !important; /* Adjust the width as needed */
+            height: 16px !important; /* Adjust the height as needed */
+            margin: 0 !important; /* Remove any default margins */
+          }
         '';
       };
     };
