@@ -81,8 +81,7 @@
 
           #urlbar-input {
             margin-inline: 1mm !important;
-            font-size: 12px !important; /* Adjust as needed */
-            line-height: 20px !important; /* Match with the search bar height */
+            font-size: 16px !important; /* Adjust as needed */
             height: 20px !important; /* Set height */
             padding: 0 !important; /* Remove padding */
           }
