@@ -83,10 +83,15 @@
             margin-inline: 1mm !important;
             font-size: 12px !important; /* Adjust as needed */
             line-height: 20px !important; /* Match with the search bar height */
+            height: 20px !important; /* Set height */
+            padding: 0 !important; /* Remove padding */
           }
 
-          .urlbarView-body-inner {
-            border-top: none !important;
+          /* Center icons and text in URL bar */
+          #urlbar-container {
+            height: 20px !important; /* Match with the tab height */
+            display: flex !important;
+            align-items: center !important;
           }
 
           /* Remove padding, margins, and close buttons from non-selected/non-pinned tabs */
@@ -125,6 +130,15 @@
             height: 20px !important; /* Set to 20px */
             min-height: 20px !important; /* Ensure it doesn't expand */
             padding: 0 !important; /* Remove any default padding */
+          }
+
+          /* Center icons and text in tabs */
+          .tabbrowser-tab > .tab-close-button,
+          .tabbrowser-tab .tab-icon {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 20px !important; /* Match the height */
           }
 
           /* Remove specified elements */
