@@ -161,6 +161,19 @@
             line-height: 20px !important; /* Match with the search bar height */
           }
 
+          /* Ensure tab height is set correctly */
+          .tabbrowser-tab {
+            height: 20px !important; /* Set to 20px */
+            min-height: 20px !important; /* Prevent expansion */
+            max-height: 20px !important; /* Prevent any potential expansion */
+            padding: 0 !important; /* Remove any default padding */
+          }
+
+          /* Adjust the tab label height */
+          .tab-label {
+            line-height: 20px !important; /* Match with the tab height */
+          }
+
         '';
       };
     };
