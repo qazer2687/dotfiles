@@ -142,18 +142,25 @@
             height: 20px !important; /* Match the height of non-selected tabs */
           }
 
-          /* Shrink font size for tab labels */
-          .tab-label {
-            font-size: 12px !important; /* Adjust the size as needed */
-            line-height: 28px !important; /* Match with the tab height for vertical centering */
+          /* Set a consistent height for the tab bar */
+          #TabsToolbar {
+            height: 20px !important; /* Set to 20px */
+            min-height: 20px !important; /* Ensure it doesn't expand */
           }
 
-          /* Shrink icon size for tabs */
-          .tab-icon {
-            width: 16px !important; /* Adjust the width as needed */
-            height: 16px !important; /* Adjust the height as needed */
-            margin: 0 !important; /* Remove any default margins */
+          /* Set a consistent height for the search bar */
+          #urlbar-container {
+            height: 20px !important; /* Match with the tab height */
+            min-height: 20px !important; /* Prevent expansion */
+            padding: 0 !important; /* Remove any default padding */
           }
+
+          /* Shrink font size for the search input */
+          #urlbar-input {
+            font-size: 12px !important; /* Adjust as needed */
+            line-height: 20px !important; /* Match with the search bar height */
+          }
+
         '';
       };
     };
