@@ -157,13 +157,25 @@
             height: 20px; /* Match tab height */
           }
 
-          /* Shrink the icon for the extension dropdown button */
+          /* Make the extension dropdown button icon invisible and small */
           .toolbarbutton-1 .toolbarbutton-icon {
-              max-height: 16px; /* Adjust icon size */
-              max-width: 16px; /* Adjust icon size */
-              width: 16px; /* Ensure the icon width is consistent */
-              height: 16px; /* Ensure the icon height is consistent */
-              margin: auto; /* Center the icon */
+              opacity: 0; /* Make icon invisible */
+              height: 0; /* Reduce height to minimal */
+              width: 0; /* Reduce width to minimal */
+              transition: opacity 0.2s ease, height 0.2s ease, width 0.2s ease; /* Smooth transition */
+          }
+
+          /* Show icon on hover */
+          .toolbarbutton-1:hover .toolbarbutton-icon {
+              opacity: 1; /* Make icon visible */
+              height: 20px; /* Set height when hovered */
+              width: 20px; /* Set width when hovered */
+          }
+
+          /* Optionally, adjust the size of the button text */
+          .toolbarbutton-1 .toolbarbutton-text {
+              font-size: 12px; /* Adjust font size */
+              line-height: 20px; /* Align text vertically */
           }
         '';
 
