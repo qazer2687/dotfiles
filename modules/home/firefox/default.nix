@@ -33,92 +33,65 @@
         userChrome = ''
           /* Make interface on a single bar */
           #navigator-toolbox {
-            display: flex !important;
-            height: 20px !important;
-            flex-direction: row !important;
-            align-items: center !important;
-            border-bottom: 0 !important;
+              display: flex !important;
+              height: 20px !important;
+              flex-direction: row !important;
+              align-items: center !important;
+              border-bottom: 0 !important;
+              font-size: 0.9em !important; /* Adjusted font size */
           }
 
           #nav-bar {
-            order: 1 !important;
-            background-color: transparent !important;
+              order: 1 !important;
+              background-color: transparent !important;
           }
 
           #titlebar {
-            order: 2 !important;
-            flex-grow: 1 !important;
-            background-color: transparent !important;
+              order: 2 !important;
+              flex-grow: 1 !important;
+              background-color: transparent !important;
           }
 
-          /* Remove all shadows and round corners */
-          * {
-            border-radius: 0 !important;
-            text-shadow: none !important;
-            box-shadow: none !important;
-          }
-
-          /* Auto hide tab bar */
-          #main-window:not([customizing]) #navigator-toolbox:focus-within #TabsToolbar,
-          #main-window:not([customizing]) #nav-bar:focus-within #back-button {
-            visibility: collapse !important;
-          }
-
-          /* Auto hide URL bar */
-          #main-window:not([customizing]) #nav-bar #urlbar-container {
-            width: 0 !important;
-            margin: 0 !important;
-          }
-
-          #main-window:not([customizing]) #nav-bar:focus-within {
-            width: 100% !important;
-          }
-
-          /* Remove border/separators from search results */
-          #urlbar-background {
-            outline: none !important;
-          }
-
-          #urlbar-input {
-            margin-inline: 1mm !important;
-            padding: 0 !important; /* Remove padding */
-          }
+          /* Other existing styles... */
 
           /* Center icons and text in URL bar */
           #urlbar-container {
-            display: flex !important;
-            align-items: center !important;
+              display: flex !important;
+              align-items: center !important; /* Center vertically */
+              font-size: 0.9em !important; /* Adjusted font size */
           }
 
-          /* Remove padding, margins, and close buttons from non-selected/non-pinned tabs */
+          #urlbar-input {
+              margin-inline: 1mm !important;
+              padding: 0 !important; /* Remove padding */
+              font-size: 0.9em !important; /* Adjusted font size */
+              transform: scale(0.9); /* Shrinks the icons slightly */
+              transform-origin: left; /* Adjust the origin for scaling */
+          }
+
+          /* Non-selected/non-pinned tabs */
           .tabbrowser-tab {
-            padding: 0 !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            height: 20px !important; /* Set to 20px */
-            min-height: 20px !important; /* Prevent expansion */
-            max-height: 20px !important; /* Prevent any potential expansion */
+              padding: 0 !important;
+              display: flex !important;
+              justify-content: center !important;
+              align-items: center !important; /* Center vertically */
+              height: 20px !important; /* Set to 20px */
+              min-height: 20px !important; /* Prevent expansion */
+              max-height: 20px !important; /* Prevent any potential expansion */
+              font-size: 0.9em !important; /* Adjusted font size */
           }
 
-          .tabbrowser-tab:not([pinned]) {
-            margin-inline-start: 0 !important;
-          }
-
-          .tabbrowser-tab:not([pinned]):not([selected]) .tab-close-button {
-            display: none !important;
-          }
-
-          .tab-background {
-            margin: 0 !important;
+          .tabbrowser-tab .tab-icon {
+              transform: scale(0.9); /* Shrinks the tab icons slightly */
+              transform-origin: center; /* Center the scaling */
           }
 
           /* Center icons and text in tabs */
           .tabbrowser-tab > .tab-close-button,
           .tabbrowser-tab .tab-icon {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
+              display: flex !important;
+              align-items: center !important; /* Center vertically */
+              justify-content: center !important;
           }
 
           /* Remove specified elements */
@@ -136,8 +109,9 @@
           #forward-button,
           #back-button,
           #PanelUI-menu-button {
-            display: none !important;
+              display: none !important;
           }
+
         '';
       };
     };
