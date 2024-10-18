@@ -78,17 +78,8 @@
             outline: none !important;
           }
 
-          #urlbar-input {
-            margin-inline: 1mm !important;
-            font-size: 12px !important; /* Adjust as needed */
-            line-height: 20px !important; /* Match with the search bar height */
-            height: 20px !important; /* Set height */
-            padding: 0 !important; /* Remove padding */
-          }
-
           /* Center icons and text in URL bar */
           #urlbar-container {
-            height: 20px !important; /* Match with the tab height */
             display: flex !important;
             align-items: center !important;
           }
