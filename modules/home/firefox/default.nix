@@ -125,9 +125,6 @@
             justify-content: center !important; /* Center horizontally */
             align-items: center !important; /* Center vertically */
           }
-          .tabbrowser-tab {
-            height: 28px; /* Fix for tab height, adjust if needed */
-          }
           .tab-label {
             margin: 0 !important; /* Remove default margin */
             text-align: center !important; /* Center text */
