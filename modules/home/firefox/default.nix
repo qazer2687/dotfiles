@@ -34,7 +34,6 @@
           /* Make interface on a single bar */
           #navigator-toolbox {
             display: flex !important;
-            height: 7mm !important;
             flex-direction: row !important;
             align-items: center !important;
             border-bottom: 0 !important;
