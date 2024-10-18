@@ -81,14 +81,11 @@
 
           #urlbar-input {
             margin-inline: 1mm !important;
-            font-size: 16px !important; /* Adjust as needed */
-            height: 20px !important; /* Set height */
             padding: 0 !important; /* Remove padding */
           }
 
           /* Center icons and text in URL bar */
           #urlbar-container {
-            height: 20px !important; /* Match with the tab height */
             display: flex !important;
             align-items: center !important;
           }
@@ -102,23 +99,18 @@
             height: 20px !important; /* Set to 20px */
             min-height: 20px !important; /* Prevent expansion */
             max-height: 20px !important; /* Prevent any potential expansion */
-            width: auto !important; /* Allow width to adjust */
-            flex-grow: 1 !important; /* Allow tabs to fill available space */
           }
 
-          /* Set a consistent height for the tab bar and search bar */
-          #TabsToolbar,
-          #urlbar-container {
-            height: 20px !important; /* Set to 20px */
-            min-height: 20px !important; /* Ensure it doesn't expand */
-            padding: 0 !important; /* Remove any default padding */
+          .tabbrowser-tab:not([pinned]) {
+            margin-inline-start: 0 !important;
           }
 
-          /* Adjust tab labels */
-          .tab-label {
-            margin: 0 !important; /* Remove default margin */
-            text-align: center !important; /* Center text */
-            line-height: 20px !important; /* Match with the tab height */
+          .tabbrowser-tab:not([pinned]):not([selected]) .tab-close-button {
+            display: none !important;
+          }
+
+          .tab-background {
+            margin: 0 !important;
           }
 
           /* Center icons and text in tabs */
@@ -127,7 +119,6 @@
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            height: 20px !important; /* Match the height */
           }
 
           /* Remove specified elements */
@@ -147,7 +138,6 @@
           #PanelUI-menu-button {
             display: none !important;
           }
-
         '';
       };
     };
