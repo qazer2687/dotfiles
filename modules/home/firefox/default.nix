@@ -116,28 +116,12 @@
             margin: 0 !important;
           }
 
-          /* Adjust tab labels */
-          .tab-label {
-            margin: 0 !important; /* Remove default margin */
-            text-align: center !important; /* Center text */
-            line-height: 20px !important; /* Match with the tab height */
-          }
-
-          /* Set a consistent height for the tab bar and search bar */
-          #TabsToolbar,
-          #urlbar-container {
-            height: 20px !important; /* Set to 20px */
-            min-height: 20px !important; /* Ensure it doesn't expand */
-            padding: 0 !important; /* Remove any default padding */
-          }
-
           /* Center icons and text in tabs */
           .tabbrowser-tab > .tab-close-button,
           .tabbrowser-tab .tab-icon {
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            height: 20px !important; /* Match the height */
           }
 
           /* Remove specified elements */
