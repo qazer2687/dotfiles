@@ -141,16 +141,20 @@
 
           /* Shrink tab text and icons */
           .tabbrowser-tab .tab-icon-image {
-              max-height: 16px; /* Adjust icon size */
-              max-width: 16px; /* Adjust icon size */
+            max-height: 14px; /* Adjust icon size */
+            max-width: 14px; /* Adjust icon size */
+            display: flex;
+            align-items: center; /* Center vertically */
+            margin-top: auto; /* Center in tab */
+            margin-bottom: auto; /* Center in tab */ */
           }
 
           .tabbrowser-tab .tab-label {
-              font-size: 12px; /* Adjust font size */
-              line-height: 16px; /* Align text vertically */
-              display: flex;
-              align-items: center; /* Center vertically */
-              height: 20px; /* Match tab height */
+            font-size: 14px; /* Adjust font size */
+            line-height: 16px; /* Align text vertically */
+            display: flex;
+            align-items: center; /* Center vertically */
+            height: 20px; /* Match tab height */
           }
         '';
       };
