@@ -138,6 +138,20 @@
           #PanelUI-menu-button {
             display: none !important;
           }
+
+          /* Shrink tab text and icons */
+          .tabbrowser-tab .tab-icon-image {
+              max-height: 16px; /* Adjust icon size */
+              max-width: 16px; /* Adjust icon size */
+          }
+
+          .tabbrowser-tab .tab-label {
+              font-size: 12px; /* Adjust font size */
+              line-height: 16px; /* Align text vertically */
+              display: flex;
+              align-items: center; /* Center vertically */
+              height: 20px; /* Match tab height */
+          }
         '';
       };
     };
