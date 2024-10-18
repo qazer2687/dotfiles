@@ -156,7 +156,18 @@
             align-items: center; /* Center vertically */
             height: 20px; /* Match tab height */
           }
+
+          /* Shrink the icon for the extension dropdown button */
+          .toolbarbutton-1 .toolbarbutton-icon {
+              max-height: 16px; /* Adjust icon size */
+              max-width: 16px; /* Adjust icon size */
+              width: 16px; /* Ensure the icon width is consistent */
+              height: 16px; /* Ensure the icon height is consistent */
+              margin: auto; /* Center the icon */
+          }
         '';
+
+        
       };
     };
 
