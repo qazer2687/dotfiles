@@ -34,6 +34,7 @@
           /* Make interface on a single bar */
           #navigator-toolbox {
             display: flex !important;
+            height: 20px !important;
             flex-direction: row !important;
             align-items: center !important;
             border-bottom: 0 !important;
@@ -76,6 +77,11 @@
           /* Remove border/separators from search results */
           #urlbar-background {
             outline: none !important;
+          }
+
+          #urlbar-input {
+            margin-inline: 1mm !important;
+            padding: 0 !important; /* Remove padding */
           }
 
           /* Center icons and text in URL bar */
