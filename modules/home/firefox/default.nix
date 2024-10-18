@@ -118,6 +118,21 @@
           #PanelUI-menu-button /* main menu button (hamburger menu) */ {
             display: none !important;
           }
+
+
+          /* chatgpt solution idk to center the tabs properly*/
+          .tabbrowser-tab {
+            display: flex !important; /* Use flexbox */
+            justify-content: center !important; /* Center horizontally */
+            align-items: center !important; /* Center vertically */
+          }
+          .tabbrowser-tab {
+            height: 28px; /* Fix for tab height, adjust if needed */
+          }
+          .tab-label {
+            margin: 0 !important; /* Remove default margin */
+            text-align: center !important; /* Center text */
+          }
         '';
       };
     };
