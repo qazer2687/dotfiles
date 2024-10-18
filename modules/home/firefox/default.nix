@@ -114,6 +114,7 @@
           */
           #alltabs-button, /* button for showing all open tabs in a dropdown menu */
           #forward-button, /* forward navigation button */
+          #back-buytton, /* back navigation button */
           #PanelUI-menu-button /* main menu button (hamburger menu) */ {
             display: none !important;
           }
