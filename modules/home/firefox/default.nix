@@ -39,10 +39,12 @@
             align-items: center !important;
             border-bottom: 0 !important;
           }
+
           #nav-bar {
             order: 1 !important;
             background-color: transparent !important;
           }
+
           #titlebar {
             order: 2 !important;
             flex-grow: 1 !important;
@@ -67,6 +69,7 @@
             width: 0 !important;
             margin: 0 !important;
           }
+
           #main-window:not([customizing]) #nav-bar:focus-within {
             width: 100% !important;
           }
@@ -75,9 +78,13 @@
           #urlbar-background {
             outline: none !important;
           }
+
           #urlbar-input {
             margin-inline: 1mm !important;
+            font-size: 12px !important; /* Adjust as needed */
+            line-height: 20px !important; /* Match with the search bar height */
           }
+
           .urlbarView-body-inner {
             border-top: none !important;
           }
@@ -85,92 +92,58 @@
           /* Remove padding, margins, and close buttons from non-selected/non-pinned tabs */
           .tabbrowser-tab {
             padding: 0 !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            height: 20px !important; /* Set to 20px */
+            min-height: 20px !important; /* Prevent expansion */
+            max-height: 20px !important; /* Prevent any potential expansion */
           }
+
           .tabbrowser-tab:not([pinned]) {
             margin-inline-start: 0 !important;
           }
+
           .tabbrowser-tab:not([pinned]):not([selected]) .tab-close-button {
             display: none !important;
           }
+
           .tab-background {
             margin: 0 !important;
           }
 
-          /* Remove all these elements */
-          .titlebar-buttonbox-container, /* close/minimize/maximize buttons container */
-          .urlbar-go-button, /* arrow icon in the URL bar (submit button) */
-          #identity-box, /* magnify glass in the URL bar */
-          #PersonalToolbar, /* bookmark toolbar */
-          #context-navigation, /* back/forward options in the right-click context menu */
-          #context-sep-navigation, /* separator in the back/forward context menu */
-          #toolbar-menubar, /* traditional menu bar (File, Edit, View, etc.) */
-          #identity-icon-label, /* security label (like "Secure" or padlock in the URL bar) */
-          #tracking-protection-icon-container, /* container for the tracking protection shield icon */
-          #page-action-buttons > :not(#urlbar-zoom-button), /* all page action buttons except zoom */
-          /*
-          #unified-extensions-button,
-          #unified-extensions-button > .toolbarbutton-icon,
-          */
-          #alltabs-button, /* button for showing all open tabs in a dropdown menu */
-          #forward-button, /* forward navigation button */
-          #back-button, /* back navigation button */
-          #PanelUI-menu-button /* main menu button (hamburger menu) */ {
-            display: none !important;
-          }
-
-
-          /* chatgpt solution idk to center the tabs properly*/
-          .tabbrowser-tab {
-            display: flex !important; /* Use flexbox */
-            justify-content: center !important; /* Center horizontally */
-            align-items: center !important; /* Center vertically */
-          }
+          /* Adjust tab labels */
           .tab-label {
             margin: 0 !important; /* Remove default margin */
             text-align: center !important; /* Center text */
-          }
-
-          .tabbrowser-tab {
-            height: 20px; /* or your desired height */
-          }
-
-          /* Ensure selected tab has the same height */
-          .tabbrowser-tab[selected] {
-            height: 20px !important; /* Match the height of non-selected tabs */
-          }
-
-          /* Set a consistent height for the tab bar */
-          #TabsToolbar {
-            height: 20px !important; /* Set to 20px */
-            min-height: 20px !important; /* Ensure it doesn't expand */
-          }
-
-          /* Set a consistent height for the search bar */
-          #urlbar-container {
-            height: 20px !important; /* Match with the tab height */
-            min-height: 20px !important; /* Prevent expansion */
-            padding: 0 !important; /* Remove any default padding */
-          }
-
-          /* Shrink font size for the search input */
-          #urlbar-input {
-            font-size: 12px !important; /* Adjust as needed */
-            line-height: 20px !important; /* Match with the search bar height */
-          }
-
-          /* Ensure tab height is set correctly */
-          .tabbrowser-tab {
-            height: 20px !important; /* Set to 20px */
-            min-height: 20px !important; /* Prevent expansion */
-            max-height: 20px !important; /* Prevent any potential expansion */
-            padding: 0 !important; /* Remove any default padding */
-          }
-
-          /* Adjust the tab label height */
-          .tab-label {
             line-height: 20px !important; /* Match with the tab height */
           }
 
+          /* Set a consistent height for the tab bar and search bar */
+          #TabsToolbar,
+          #urlbar-container {
+            height: 20px !important; /* Set to 20px */
+            min-height: 20px !important; /* Ensure it doesn't expand */
+            padding: 0 !important; /* Remove any default padding */
+          }
+
+          /* Remove specified elements */
+          .titlebar-buttonbox-container,
+          .urlbar-go-button,
+          #identity-box,
+          #PersonalToolbar,
+          #context-navigation,
+          #context-sep-navigation,
+          #toolbar-menubar,
+          #identity-icon-label,
+          #tracking-protection-icon-container,
+          #page-action-buttons > :not(#urlbar-zoom-button),
+          #alltabs-button,
+          #forward-button,
+          #back-button,
+          #PanelUI-menu-button {
+            display: none !important;
+          }
         '';
       };
     };
