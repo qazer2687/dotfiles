@@ -160,16 +160,8 @@
           /* Make the extension dropdown button icon invisible and small */
           .toolbarbutton-1 .toolbarbutton-icon {
               opacity: 0; /* Make icon invisible */
-              height: 0; /* Reduce height to minimal */
-              width: 0; /* Reduce width to minimal */
-              transition: opacity 0.2s ease, height 0.2s ease, width 0.2s ease; /* Smooth transition */
-          }
-
-          /* Show icon on hover */
-          .toolbarbutton-1:hover .toolbarbutton-icon {
-              opacity: 0; /* Make icon visible */
-              height: 5px; /* Set height when hovered */
-              width: 5px; /* Set width when hovered */
+              height: 2px; /* Reduce height to minimal */
+              width: 2px; /* Reduce width to minimal */
               position: absolute; /* Position the icon absolutely */
               right: 0; /* Align it to the right */
           }
