@@ -50,6 +50,11 @@
             }
             {
               always = true;
+              # Disable middle click emulation so I can aim and shoot in games.
+              command = "xinput set-prop 14 'libinput Middle Emulation Enabled' 0";
+            }
+            {
+              always = true;
               # Stop i3 opening by default on workspace 10/0.
               command = "i3-msg workspace number 1";
             }
