@@ -60,6 +60,7 @@
             "${modifier}+space" = "floating toggle";
             "${modifier}+q" = "kill";
             "${modifier}+Shift+q" = "exec --no-startup-id xkill";
+            "${modifier}+f" = "fullscreen";
             "${modifier}+e" = "exec --no-startup-id dmenu_run -i -b -nb '#000000' -sb '#ffffff' -nf '#ffffff' -sf '#000000' -fn 'FiraCode Nerd Font'";
             "${modifier}+Left" = "move left";
             "${modifier}+Down" = "move down";
