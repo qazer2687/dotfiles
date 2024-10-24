@@ -207,15 +207,7 @@
               align-items:left !important;
           }
 
-          :root {
-            --scrollbar-thumb: rgb(210, 210, 210); /* Thumb color */
-            --scrollbar-track: rgb(42, 42, 46); /* Track color */
-          }
-
-          * {
-            scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); /* Set thumb and track colors */
-            scrollbar-width: thin; /* Thin scrollbar */
-          }
+          
         '';
 
         
