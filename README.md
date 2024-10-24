@@ -10,7 +10,7 @@
 | `jade`       | My desktop PC.                                                                                    | Desktop | x86_64-linux  |
 | `jet`        | The Asahi/NixOS install on my Macbook.                                                                  | Laptop  | aarch64-linux  |
 | `opal`       | My homeserver.                                                                                    | Server  | x86_64-linux  |
-| `ruby`       | ~~My Thinkpad T480.~~ DEPRECATED                                                                  | Laptop  | x86_64-linux  |
+| `ruby`       | My Thinkpad T480.                                                                 | Laptop  | x86_64-linux  |
 | `onyx`       | ~~The MacOS install on my Macbook.~~ DEPRECATED                                                   | Laptop  | aarch64-darwin  |
 
 <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
