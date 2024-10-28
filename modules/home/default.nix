@@ -25,5 +25,6 @@
     ./hyprland
     ./dwl
     ./neovim
+    ./gpg
   ];
 }
