@@ -39,6 +39,9 @@
     direnv.enable = true;
     neovim.enable = true;
 
+    # Security
+    gpg.enable = true;
+
     # Gaming
     prismlauncher.enable = true;
   };
