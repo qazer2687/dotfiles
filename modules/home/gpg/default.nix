@@ -24,7 +24,7 @@
       publicKeys = [
         # Michaili
         {
-          text = builtins.fetchurl {
+          source = builtins.fetchurl {
             url = "https://github.com/MichailiK.gpg";
             sha256 = "b97af827ff77670cb174f5a6ed040e651b89ab90df02ecb1655209ac6b9efea7";
           };
