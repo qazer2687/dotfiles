@@ -10,7 +10,7 @@
     programs.gpg = {
       enable = true;
       homedir = "${config.home.homeDirectory}/.gnupg";
-      mutableKeys = true;
+      mutableKeys = false;
       mutableTrust = false;
       package = pkgs.gnupg;
 
