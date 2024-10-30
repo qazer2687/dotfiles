@@ -3,7 +3,15 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+# Contacts
+michailiKey = builtins.fetchurl {
+  url = "https://github.com/MichailiK.gpg";
+  sha256 = "b97af827ff77670cb174f5a6ed040e651b89ab90df02ecb1655209ac6b9efea7";
+};
+
+
+in {
   options.modules.gpg.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.gpg.enable {
@@ -22,10 +30,7 @@
       # 5 = Ultimate
 
       publicKeys."michaili" = {
-        text = (pkgs.fetchurl {
-          url = "https://github.com/MichailiK.gpg";
-          sha256 = "b97af827ff77670cb174f5a6ed040e651b89ab90df02ecb1655209ac6b9efea7";
-        });
+        text = michailiKey;
         trust = 4;
       };
     };
