@@ -42,6 +42,7 @@
 
     # Gaming
     prismlauncher.enable = true;
+    mangohud.enable = true;
   };
 
   home.stateVersion = "23.05";
