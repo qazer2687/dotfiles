@@ -71,6 +71,9 @@
             "${modifier}+Down" = "move down";
             "${modifier}+Up" = "move up";
             "${modifier}+Right" = "move right";
+            "XF86AudioRaiseVolume" = "exec ${pkgs.pamixer}/bin/pamixer -i 5";
+            "XF86AudioLowerVolume" = " exec ${pkgs.pamixer}/bin/pamixer -d 5";
+            "XF86AudioMute" = "exec ${pkgs.pamixer}/bin/pamixer -t";
             "${modifier}+Shift+Right" = "resize shrink width 5 px or 5 ppt";
             "${modifier}+Shift+Up" = "resize grow height 5 px or 5 ppt";
             "${modifier}+Shift+Down" = "resize shrink height 5 px or 5 ppt";
