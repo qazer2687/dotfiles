@@ -26,12 +26,13 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      # Not really low latency, but using 48 quant was very choppy.
       extraConfig.pipewire."92-low-latency" = {
         context.properties = {
           default.clock.rate = 48000;
-          default.clock.quantum = 48;
-          default.clock.min-quantum = 48;
-          default.clock.max-quantum = 48;
+          default.clock.quantum = 128;
+          default.clock.min-quantum = 128;
+          default.clock.max-quantum = 128;
         };
       };
     };
