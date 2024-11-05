@@ -22,6 +22,14 @@
       # 5 = Ultimate
 
       publicKeys = [
+        # Qazer (That's me!)
+        {
+          source = builtins.fetchurl {
+            url = "https://github.com/qazer2687.gpg";
+            sha256 = "fb48ea2ffe842e4666f773d244729964969bb07a9cbc6dacbdd732342c6c0869";
+          };
+          trust = 5;
+        }
         # Michaili
         {
           source = builtins.fetchurl {
