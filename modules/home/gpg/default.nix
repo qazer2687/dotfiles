@@ -28,7 +28,7 @@
             url = "https://github.com/qazer2687.gpg";
             sha256 = "fb48ea2ffe842e4666f773d244729964969bb07a9cbc6dacbdd732342c6c0869";
           };
-          trust = 5;
+          trust = "ultimate";
         }
         # Michaili
         {
@@ -36,7 +36,7 @@
             url = "https://github.com/MichailiK.gpg";
             sha256 = "b97af827ff77670cb174f5a6ed040e651b89ab90df02ecb1655209ac6b9efea7";
           };
-          trust = 4;
+          trust = "full";
         }
         # Sako
         {
@@ -45,7 +45,7 @@
             url = "https://github.com/Sakooooo.gpg";
             sha256 = "442f1d709a3e227d4240d32a4db59afd363a760379e5a44b90566def705c3be8";
           };
-          trust = 3;
+          trust = "marginal";
         }
       ];
     };
