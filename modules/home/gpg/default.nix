@@ -30,6 +30,15 @@
           };
           trust = 4;
         }
+        {
+          
+          source = builtins.fetchurl {
+            url = "https://github.com/Sakooooo.gpg";
+            sha256 = "442f1d709a3e227d4240d32a4db59afd363a760379e5a44b90566def705c3be8";
+          };
+          trust = 3;
+
+        }
       ];
     };
 
