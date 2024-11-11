@@ -78,9 +78,9 @@
   };
 
   services.getty.autologinUser = "alex";
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session sway
-  '';
+  #environment.loginShellInit = ''
+  #  [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session sway
+  #'';
 
   swapDevices = [
     {
