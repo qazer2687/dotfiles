@@ -26,7 +26,7 @@
     ];
     keep-derivations = true;
     keep-outputs = true;
-    auto-optimise-store = true;
+    nix.optimise.automatic = true;
     sandbox = true;
   };
 
