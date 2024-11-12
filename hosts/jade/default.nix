@@ -131,7 +131,6 @@
     filesystem.enable = true;
     zram.enable = true;
     gamemode.enable = true;
-    nh.enable = true;
   };
 
   services.flatpak.enable = true;
