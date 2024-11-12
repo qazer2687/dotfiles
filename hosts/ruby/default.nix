@@ -80,7 +80,6 @@
     filesystem.enable = true;
     zram.enable = true;
 
-    nh.enable = true;
   };
 
   # Did you read the comment?
