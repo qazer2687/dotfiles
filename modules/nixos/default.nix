@@ -15,5 +15,6 @@
     ./core
     ./sddm
     ./gamemode
+    ./tailscale
   ];
 }
