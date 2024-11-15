@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.modules.minecraft.enable = lib.mkEnableOption "";
+  options.modules.server.minecraft.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.minecraft.enable {
+  config = lib.mkIf config.modules.server.minecraft.enable {
     
   };
 }
