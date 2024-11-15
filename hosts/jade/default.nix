@@ -106,13 +106,13 @@
   }];
 
   services.getty.autologinUser = "alex";
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && startx
-  '';
-  services.xserver = {
-    enable = true;
-    displayManager.startx.enable = true;
-  };
+  #environment.loginShellInit = ''
+  #  [[ "$(tty)" == /dev/tty1 ]] && startx
+  #'';
+  #services.xserver = {
+  #  enable = true;
+  #  displayManager.startx.enable = true;
+  #};
 
   swapDevices = [
     {
@@ -140,6 +140,22 @@
 
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
+
+  # experimental wayland
+  environment = {
+    systemPackages = with pkgs; [
+      # Put system packages here...
+    ];
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      MOZ_ENABLE_WAYLAND = "1";
+      XDG_SESSION_TYPE = "wayland";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      # This option scales menu bars, causing
+      # them to appear way too large.
+      # GDK_SCALE = "2";
+    };
+  };
 
   # Did you read the comment?
   system.stateVersion = "23.05";

@@ -43,6 +43,14 @@
     # Gaming
     prismlauncher.enable = true;
     mangohud.enable = true;
+
+    # Experimental
+    sway.enable = true;
+    hyprland.enable = true;
+    waybar.enable = true;
+    foot.enable = true;
+    mako.enable = true;
+    wofi.enable = true;
   };
 
   home.stateVersion = "23.05";
