@@ -8,9 +8,9 @@
     nur.url = "github:nix-community/NUR";
     darwin.url = "github:lnl7/nix-darwin/master";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    #asahi.url = "github:tpwrules/nixos-apple-silicon";
+    asahi.url = "github:tpwrules/nixos-apple-silicon";
     # My experimental fork of nixos-apple-silicon.
-    asahi.url = "github:qazer2687/asahi";
+    #asahi.url = "github:qazer2687/asahi";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
@@ -65,6 +65,32 @@
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
+              ];
+            };
+          }
+        ];
+      };
+    };
+
+    nixosConfigurations = {
+      jet = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/jet
+          nur.nixosModules.nur
+          sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
+          asahi.nixosModules.apple-silicon-support
+          {
+            home-manager = {
+              users.alex = ./homes/jet;
+              extraSpecialArgs = {inherit inputs outputs;};
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = [
+                inputs.nur.hmModules.nur
+                inputs.sops-nix.homeManagerModules.sops
+                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
