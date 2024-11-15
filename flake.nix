@@ -45,11 +45,7 @@
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     overlays = import ./overlays {inherit inputs;};
-
-    nixosConfigurations = (
-      import ./flake
-    );
-  
+    
     outputs = inputs: {
       nixosConfigurations = builtins.listToAttrs (map (hostDir: {
         name = builtins.baseNameOf hostDir;
