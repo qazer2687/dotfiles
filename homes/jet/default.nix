@@ -8,13 +8,14 @@
   ];
 
   home.packages = with pkgs; [
-    obsidian
-    nautilus
-    gammastep
-    fragments
-    calibre
-    vlc
-    teams-for-linux
+    obsidian # Note Taking
+    nautilus # File Browser
+    gammastep # Blue Light Filter
+    fragments # Torrent Client
+    calibre # Manage Books
+    vlc # Video Player
+    teams-for-linux # :/
+    loupe # Image Viewer
   ];
 
   modules = {
