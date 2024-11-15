@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.modules.docker.enable = lib.mkEnableOption "";
+  options.modules.server.docker.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.docker.enable {
+  config = lib.mkIf config.modules.server.docker.enable {
     virtualisation.docker = {
       enable = true;
       daemon.settings = {
