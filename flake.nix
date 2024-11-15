@@ -46,15 +46,8 @@
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     overlays = import ./overlays {inherit inputs;};
     
-    outputs = inputs: {
-      nixosConfigurations = builtins.listToAttrs (map (hostDir: {
-        name = builtins.baseNameOf hostDir;
-        value = import (hostDir + "/default.nix") {};
-      }) (builtins.attrNames (builtins.readDir ./flake/hosts)));
-    };
-
-
-/*      jade = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = {
+      jade = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/jade
@@ -154,6 +147,6 @@
           # Add nix-minecraft module.
         ];
       };
-    };*/
+    };
   };
 }
