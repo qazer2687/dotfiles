@@ -79,7 +79,7 @@
     bluetooth.enable = true;
     filesystem.enable = true;
     zram.enable = true;
-
+    tailscale.enable = true;
   };
 
   # Did you read the comment?
