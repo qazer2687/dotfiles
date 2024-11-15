@@ -41,8 +41,8 @@
     direnv.enable = true;
 
     # Gaming
-    prismlauncher.enable = true;
-    mangohud.enable = true;
+    #prismlauncher.enable = true;
+    #mangohud.enable = true;
 
     # Experimental
     sway.enable = true;
