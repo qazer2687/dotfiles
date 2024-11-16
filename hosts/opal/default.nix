@@ -46,6 +46,7 @@
     # Server Modules
     server = {
       docker.enable = true;
+      caddy.enable = true;
     };
   };
 
