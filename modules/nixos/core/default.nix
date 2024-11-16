@@ -5,6 +5,11 @@
   outputs,
   ...
 }: {
+
+   imports = [
+        inputs.sops-nix.nixosModules.sops
+      ];
+      
   options.modules.core.enable = lib.mkEnableOption "";
 
   # This module is a replacement to having a shared
@@ -20,10 +25,6 @@
     nix = let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in {
-      imports = [
-        inputs.sops-nix.nixosModules.sops
-      ];
-
       settings = {
         experimental-features = [
           "nix-command"
