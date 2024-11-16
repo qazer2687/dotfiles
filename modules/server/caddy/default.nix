@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  inputs,
   ...
 }: {
   options.modules.server.caddy.enable = lib.mkEnableOption "";
