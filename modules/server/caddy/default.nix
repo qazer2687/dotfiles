@@ -12,7 +12,7 @@
       extraConfig = ''
         tls {
           dns cloudflare {
-            api_token "$(cat ${config.sops.secrets."cloudflare-api-key".path})"
+            api_token "$(cat ${config.sops.secrets.cloudflare-api-key.path})"
         }
       '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
