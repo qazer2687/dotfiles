@@ -51,6 +51,6 @@
   home.stateVersion = "24.11";
   home.homeDirectory = lib.mkForce "/home/alex";
 
-  sops.defaultSopsFile = ../../../secrets/default.yaml;
+  sops.defaultSopsFile = ../../../secrets/secrets.yaml;
   sops.age.sshKeyPaths = ["/home/alex/.ssh/id_ed25519"];
 }
