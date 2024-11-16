@@ -41,6 +41,7 @@
     fonts.enable = true;
     keymap.enable = true;
     zram.enable = true;
+    tailscale.enable = true;
 
     # Server Modules
     docker.enable = true;

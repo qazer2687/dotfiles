@@ -17,7 +17,7 @@ _: {
     };
 
     zed-editor = prev.zed-editor.override {
-      # TODO zed-editor withGLES false
+      # zed-editor withGLES false (might work without as of the new asahi updates 15/11/24, hyprland works when it didn't before)
     };
 
     dwl = (prev.dwl.overrideAttrs (oldAttrs: rec {
