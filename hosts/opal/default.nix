@@ -34,12 +34,10 @@
   nix.linux-builder.enable = true;
 
   modules = {
-    kernel.enable = true;
+    core.enable = true;
     systemd-boot.enable = true;
     pipewire.enable = true;
     networkmanager.enable = true;
-    fonts.enable = true;
-    keymap.enable = true;
     zram.enable = true;
     tailscale.enable = true;
 
