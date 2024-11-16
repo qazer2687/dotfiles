@@ -77,7 +77,9 @@
     security.polkit.enable = true;
     systemd.coredump.enable = false;
 
+    sops.defaultSopsFormat = "yaml";
     sops.defaultSopsFile = ./secrets/default.yaml;
+    sops.age.keyFile = "~/.config/sops/age/keys.txt";
 
     environment = {
       defaultPackages = lib.mkForce [];
