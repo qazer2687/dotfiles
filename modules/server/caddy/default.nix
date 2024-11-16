@@ -8,6 +8,9 @@
   config = lib.mkIf config.modules.server.caddy.enable {
     services.caddy = {
       enable = true;
+      globalConfig = ''
+        http_port 801
+      '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://opal:3000
       '';
