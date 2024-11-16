@@ -77,6 +77,10 @@
     security.polkit.enable = true;
     systemd.coredump.enable = false;
 
+    imports = [
+      inputs.sops-nix.nixosModules.sops
+    ];
+
     sops.defaultSopsFormat = "yaml";
     sops.defaultSopsFile = ./secrets/default.yaml;
     sops.age.keyFile = "~/.config/sops/age/keys.txt";
