@@ -166,7 +166,7 @@
 
     nixosConfigurations = {
       opal = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/opal
           sops-nix.nixosModules.sops
