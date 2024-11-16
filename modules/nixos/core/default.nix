@@ -78,7 +78,7 @@
     systemd.coredump.enable = false;
 
     sops.defaultSopsFormat = "yaml";
-    sops.defaultSopsFile = ./secrets/secrets.yaml;
+    sops.defaultSopsFile = ./secrets/default.yaml;
     sops.age.keyFile = "~/.config/sops/age/keys.txt";
 
     environment = {
