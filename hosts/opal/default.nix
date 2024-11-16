@@ -22,6 +22,7 @@
     53 # Pihole DNS
     3000 # Grafana
     3001 # Pihole
+    8000 # Portainer
     9090 # Prometheus
     9100 # Node Exporter (Prometheus)
     10000 # Cockpit
