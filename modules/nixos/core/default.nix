@@ -5,11 +5,7 @@
   outputs,
   ...
 }: {
-
-   imports = [
-        inputs.sops-nix.nixosModules.sops
-      ];
-      
+  
   options.modules.core.enable = lib.mkEnableOption "";
 
   # This module is a replacement to having a shared
