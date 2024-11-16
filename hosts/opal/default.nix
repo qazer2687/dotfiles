@@ -44,7 +44,9 @@
     tailscale.enable = true;
 
     # Server Modules
-    docker.enable = true;
+    server = {
+      docker.enable = true;
+    };
   };
 
   system.stateVersion = "23.05";
