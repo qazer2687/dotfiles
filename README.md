@@ -12,5 +12,6 @@
 | `opal`       | My homeserver.                                                                                    | Server  | x86_64-linux  |
 | `ruby`       | My Thinkpad T480.                                                                 | Laptop  | x86_64-linux  |
 | `onyx`       | The nix-darwin MacOS install on my Macbook.                                               | Laptop  | aarch64-darwin  |
+| `amber`       | My VM for testing things.                                               | Virtual  | x86_64-linux  |
 
 <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">

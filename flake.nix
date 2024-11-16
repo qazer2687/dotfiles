@@ -1,5 +1,5 @@
 {
-  description = "Qazer's NixOS Flake";
+  description = "Qazer2687's NixOS Flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -45,16 +45,9 @@
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     overlays = import ./overlays {inherit inputs;};
-    
-    outputs = inputs: {
-      nixosConfigurations = builtins.listToAttrs (map (hostDir: {
-        name = builtins.baseNameOf hostDir;
-        value = import (hostDir + "/default.nix") {};
-      }) (builtins.attrNames (builtins.readDir ./flake/hosts)));
-    };
 
-
-/*      jade = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = {
+      jade = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/jade
@@ -72,6 +65,32 @@
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
+              ];
+            };
+          }
+        ];
+      };
+    };
+
+    nixosConfigurations = {
+      jet = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/jet
+          nur.nixosModules.nur
+          sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
+          asahi.nixosModules.apple-silicon-support
+          {
+            home-manager = {
+              users.alex = ./homes/jet;
+              extraSpecialArgs = {inherit inputs outputs;};
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = [
+                inputs.nur.hmModules.nur
+                inputs.sops-nix.homeManagerModules.sops
+                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
@@ -140,7 +159,7 @@
       amber = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/ametrine
+          ./hosts/amber
         ];
       };
     };
@@ -154,6 +173,6 @@
           # Add nix-minecraft module.
         ];
       };
-    };*/
+    };
   };
 }

@@ -15,7 +15,7 @@
       initialPassword = "xela";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here...
+        # Add your SSH public key(s) here...
       ];
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
       shell = pkgs.fish;
@@ -88,7 +88,7 @@
     };
     initrd.verbose = false;
     consoleLogLevel = 0;
-    # TODO: Use Cachyos kernel.
+    # Use Cachyos kernel.
     kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
