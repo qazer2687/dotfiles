@@ -106,18 +106,18 @@
   }];
 
   services.getty.autologinUser = "alex";
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && startx
-  '';
-  services.xserver = {
-    enable = true;
-    displayManager.startx.enable = true;
-  };
+  #environment.loginShellInit = ''
+  #  [[ "$(tty)" == /dev/tty1 ]] && startx
+  #'';
+  #services.xserver = {
+  #  enable = true;
+  #  displayManager.startx.enable = true;
+  #};
 
   swapDevices = [
     {
       device = "/swapfile";
-      size = 16 * 1024;
+      size = 4 * 1024;
     }
   ];
 
@@ -127,10 +127,12 @@
     nvidia.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
-    steam.enable = true;
+    # I'm going to use my windows partition for gaming.
+    #steam.enable = true;
     filesystem.enable = true;
     zram.enable = true;
     gamemode.enable = true;
+    tailscale.enable = true;
   };
 
   services.flatpak.enable = true;
@@ -139,6 +141,22 @@
 
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
+
+  # experimental wayland
+  environment = {
+    systemPackages = with pkgs; [
+      # Put system packages here...
+    ];
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      MOZ_ENABLE_WAYLAND = "1";
+      XDG_SESSION_TYPE = "wayland";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      # This option scales menu bars, causing
+      # them to appear way too large.
+      # GDK_SCALE = "2";
+    };
+  };
 
   # Did you read the comment?
   system.stateVersion = "23.05";
