@@ -9,7 +9,7 @@
     services.caddy = {
       enable = true;
       globalConfig = ''
-        http_port 801
+        admin 0.0.0.0:2021
       '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://opal:3000
