@@ -7,14 +7,17 @@
   options.modules.server.caddy.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.caddy.enable {
+    environment.variables = {
+      CLOUDFARE_API_KEY = config.sops.secrets.cloudflare-api-key;
+    };
     services.caddy = {
       enable = true;
-      extraConfig = ''
+      /*extraConfig = ''
         tls {
           dns cloudflare {
             api_token "$(cat ${config.sops.secrets.cloudflare-api-key.path})"
         }
-      '';
+      '';*/
       virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://opal:3000
         import cloudflare
@@ -42,3 +45,5 @@
     };
   };
 }
+
+
