@@ -137,7 +137,7 @@
 
   services.flatpak.enable = true;
 
-  sops.defaultSopsFile = ./secrets/default.yaml;
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
 
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
