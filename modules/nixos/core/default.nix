@@ -20,6 +20,10 @@
     nix = let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in {
+      imports = [
+        inputs.sops-nix.nixosModules.sops
+      ];
+
       settings = {
         experimental-features = [
           "nix-command"
@@ -77,9 +81,6 @@
     security.polkit.enable = true;
     systemd.coredump.enable = false;
 
-    imports = [
-      inputs.sops-nix.nixosModules.sops
-    ];
 
     sops.defaultSopsFormat = "yaml";
     sops.defaultSopsFile = ./secrets/default.yaml;
