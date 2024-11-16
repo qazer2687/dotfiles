@@ -35,8 +35,6 @@
 
   services.xserver.displayManager.gdm.autoSuspend = false;
 
-  nix.linux-builder.enable = true;
-
   modules = {
     core.enable = true;
     systemd-boot.enable = true;
