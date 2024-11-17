@@ -16,27 +16,27 @@
         }
       '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
-        reverse_proxy http://opal:3000
+        reverse_proxy http://100.100.101.66:3000
         import cloudflare
       '';
       virtualHosts."pihole.example.org".extraConfig = ''
-        reverse_proxy http://opal:3001
+        reverse_proxy http://100.100.101.66:3001
         import cloudflare
       '';
       virtualHosts."prometheus.qazer.org".extraConfig = ''
-        reverse_proxy http://opal:9090
+        reverse_proxy http://100.100.101.66:9090
         import cloudflare
       '';
       virtualHosts."node-exporter.qazer.org".extraConfig = ''
-        reverse_proxy http://opal:9100
+        reverse_proxy http://100.100.101.66:9100
         import cloudflare
       '';
       virtualHosts."cockpit.qazer.org".extraConfig = ''
-        reverse_proxy http://opal:10000
+        reverse_proxy http://100.100.101.66:10000
         import cloudflare
       '';
       virtualHosts."minecraft.qazer.org".extraConfig = ''
-        reverse_proxy http://opal:25565
+        reverse_proxy http://100.100.101.66:25565
         import cloudflare
       '';
     };
