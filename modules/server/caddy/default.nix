@@ -7,6 +7,7 @@
   options.modules.server.caddy.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.caddy.enable {
+    sops.secrets.cloudflare-api-token = {};
     services.caddy = {
       enable = true;
       extraConfig = ''
