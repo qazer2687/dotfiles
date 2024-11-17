@@ -34,8 +34,6 @@
     port = 10000;
   };
 
-  sops.defaultSopsFile = ./secrets/default.yaml;
-
   services.xserver.displayManager.gdm.autoSuspend = false;
 
   modules = {
