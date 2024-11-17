@@ -80,7 +80,7 @@
 
 
     sops.defaultSopsFormat = "yaml";
-    sops.defaultSopsFile = ./secrets/default.yaml;
+    sops.defaultSopsFile = /secrets/default.yaml;
     sops.age.keyFile = "~/.config/sops/age/keys.txt";
 
     environment = {
