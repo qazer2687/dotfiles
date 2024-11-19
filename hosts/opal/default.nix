@@ -17,6 +17,23 @@
   # Hostname
   networking.hostName = "opal";
 
+boot = {
+    kernelParams = [
+      "kernel.nmi_watchdog=0"
+      "fbcon=nodefer"
+      "bgrt_disable"
+      "quiet"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=0"
+      "udev.log_priority=3"
+      "vt.global_cursor_default=0"
+      "mitigations=off"
+    ];
+    initrd.verbose = false;
+    consoleLogLevel = 0;
+    kernelPackages = pkgs.linuxPackages_cachyos;
+  };
+
   networking.firewall.allowedTCPPorts = [
     22 # SSH
     53 # Pihole DNS

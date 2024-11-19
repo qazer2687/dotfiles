@@ -88,8 +88,7 @@
     };
     initrd.verbose = false;
     consoleLogLevel = 0;
-    # Use Cachyos kernel.
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelPackages = pkgs.linuxPackages_cachyos;
   };
 
   # EXPERIMENTAL - This service distributes CPU interrupts
@@ -134,11 +133,6 @@
     gamemode.enable = true;
     tailscale.enable = true;
   };
-
-  services.flatpak.enable = true;
-
-  time.timeZone = "Europe/London";
-  i18n.defaultLocale = "en_GB.UTF-8";
 
   # experimental wayland
   environment = {
