@@ -88,7 +88,9 @@
     };
     initrd.verbose = false;
     consoleLogLevel = 0;
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    # Compiles from source.
+    #kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
   # EXPERIMENTAL - This service distributes CPU interrupts
