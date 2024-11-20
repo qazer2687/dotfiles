@@ -31,12 +31,20 @@ boot = {
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
-    kernelPackages = pkgs.linuxPackages_cachyos;
+
+    # I didn't realise this would compile from source, my server will probably
+    # explode trying to accomplish that. CachyOS' server kernel is also optimized
+    # for throughput, but I don't really run anything intensive yet so I don't
+    # think it matters.
+    #kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
   networking.firewall.allowedTCPPorts = [
     22 # SSH
     53 # Pihole DNS
+    80
+    443
     3000 # Grafana
     3001 # Pihole
     8000 # Portainer
@@ -51,6 +59,8 @@ boot = {
     port = 10000;
   };
 
+  # I have installed gnome before so autosuspend
+  # seems to be set statefully somewhere.
   services.xserver.displayManager.gdm.autoSuspend = false;
 
   modules = {

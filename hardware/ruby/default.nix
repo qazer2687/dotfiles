@@ -28,6 +28,10 @@
       device = "/dev/disk/by-uuid/812854c5-bd84-475d-8604-7677769b1754";
     }
   ];
+  
+  # This should enable config.hardware.enableRedistributableFirmware
+  # which in turn will enable cpu.<cpu>.updateMicrocode.
+  hardware.enableAllFirmware = true;
 
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
