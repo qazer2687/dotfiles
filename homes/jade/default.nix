@@ -33,7 +33,6 @@
     fish.enable = true;
     polybar.enable = true;
     dunst.enable = true;
-    keyring.enable = true;
 
     # Development
     vscode.enable = true;
