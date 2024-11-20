@@ -9,7 +9,9 @@
     zramSwap = {
       enable = true;
       algorithm = "zstd";
-      memoryPercent = 400;
+      # Add a writeback device for uncompressable files.
+      # I can use 100% but will this result in a lot of CPU for compression irrelevant things?
+      memoryPercent = 80;
     };
   };
 }
