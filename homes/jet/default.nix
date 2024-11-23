@@ -16,7 +16,6 @@
     vlc # Video Player
     teams-for-linux # :/
     loupe # Image Viewer
-    moonlight-qt # Remote Desktop
   ];
 
   modules = {
