@@ -12,7 +12,7 @@
     nautilus # File Browser
     gammastep # Blue Light Filter
     fragments # Torrent Client
-    calibre # Manage Books
+    #calibre # Manage Books
     vlc # Video Player
     teams-for-linux # :/
     loupe # Image Viewer
