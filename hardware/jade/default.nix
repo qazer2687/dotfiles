@@ -23,12 +23,6 @@
     fsType = "vfat";
   };
 
-  swapDevices = [
-    {
-      device = "/dev/disk/by-uuid/c41eb498-55ba-47fd-baf9-42b81cb107d1";
-    }
-  ];
-
   # This should enable config.hardware.enableRedistributableFirmware
   # which in turn will enable cpu.<cpu>.updateMicrocode.
   hardware.enableAllFirmware = true;

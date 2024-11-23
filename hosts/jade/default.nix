@@ -22,12 +22,17 @@
     };
   };
 
+  # This allows links to be
+  # opened across applications.
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
     xdgOpenUsePortal = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
     ];
+    # Not sure what this does...
     config.common.default = "*";
   };
 
@@ -107,13 +112,9 @@
   }];
 
   services.getty.autologinUser = "alex";
-  #environment.loginShellInit = ''
-  #  [[ "$(tty)" == /dev/tty1 ]] && startx
-  #'';
-  #services.xserver = {
-  #  enable = true;
-  #  displayManager.startx.enable = true;
-  #};
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
+  '';
 
   swapDevices = [
     {
@@ -135,6 +136,14 @@
     gamemode.enable = true;
     tailscale.enable = true;
   };
+
+  # For sober.
+  services.flatpak.enable = true;
+
+  sops.defaultSopsFile = ./secrets/default.yaml;
+
+  time.timeZone = "Europe/London";
+  i18n.defaultLocale = "en_GB.UTF-8";
 
   # experimental wayland
   environment = {
