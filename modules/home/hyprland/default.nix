@@ -35,6 +35,7 @@
         monitor=,highrr,auto,1
 
         general { 
+          layout = hy3
           gaps_in = 3
           gaps_out = 6
           border_size = 0
@@ -53,10 +54,6 @@
             passes = 1
             vibrancy = 0.1696
           }
-        }
-
-        dwindle {
-          force_split = 1
         }
 
         animations {
