@@ -24,6 +24,9 @@
     wayland.windowManager.hyprland = {
       enable = true;
       package = pkgs.hyprland;
+      plugins = [
+        pkgs.hyprlandPlugins.hy3
+      ];
       extraConfig = ''
         # Modifier
         $mod = MOD4
