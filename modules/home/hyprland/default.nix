@@ -31,11 +31,6 @@
         # Apply max refresh rate to all monitors.
         monitor=,highrr,auto,1
 
-        # Fix nvidia choppy cursor.
-        pointer = {
-          no_hardware_cursors = true
-        }
-
         general { 
           gaps_in = 3
           gaps_out = 6
@@ -48,8 +43,7 @@
           rounding = 6
           active_opacity = 1.0
           inactive_opacity = 0.9
-          shadow_render_power = 3
-          col.shadow = rgba(1a1a1aee)
+
           blur {
             enabled = true
             size = 3
