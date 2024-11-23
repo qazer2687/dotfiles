@@ -25,32 +25,21 @@
 
   modules = {
     # Environment
-    i3.enable = true;
-    alacritty.enable = true;
-    git.enable = true;
-    theme.enable = true;
-    firefox.enable = true;
-    fish.enable = true;
-    polybar.enable = true;
-    dunst.enable = true;
-    keyring.enable = true;
-
-    # Development
-    vscode.enable = true;
-    emacs.enable = true;
-    direnv.enable = true;
-
-    # Gaming
-    #prismlauncher.enable = true;
-    #mangohud.enable = true;
-
-    # Experimental
     sway.enable = true;
     hyprland.enable = true;
     waybar.enable = true;
     foot.enable = true;
     mako.enable = true;
     wofi.enable = true;
+    git.enable = true;
+    theme.enable = true;
+    firefox.enable = true;
+    fish.enable = true;
+
+
+    # Development
+    vscode.enable = true;
+    direnv.enable = true;
   };
 
   home.stateVersion = "23.05";

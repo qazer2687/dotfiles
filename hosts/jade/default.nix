@@ -22,12 +22,17 @@
     };
   };
 
+  # This allows links to be
+  # opened across applications.
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
     xdgOpenUsePortal = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
     ];
+    # Not sure what this does...
     config.common.default = "*";
   };
 
@@ -135,6 +140,7 @@
     tailscale.enable = true;
   };
 
+  # For sober.
   services.flatpak.enable = true;
 
   sops.defaultSopsFile = ./secrets/default.yaml;

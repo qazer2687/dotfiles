@@ -16,7 +16,7 @@
           "/home/alex/.config/wallpaper/wallpaper.png"
         ];
         wallpaper = [
-          "eDP-1,/home/alex/.config/wallpaper/wallpaper.png"
+          "HDMI-A-1,/home/alex/.config/wallpaper/wallpaper.png"
         ];
       };
     };
@@ -27,6 +27,14 @@
       extraConfig = ''
         # Modifier
         $mod = MOD4
+
+        # Apply max refresh rate to all monitors.
+        monitor=,highrr,auto,1
+
+        # Fix nvidia choppy cursor.
+        cursor = {
+          no_hardware_cursors = true
+        }
 
         general { 
           gaps_in = 3
