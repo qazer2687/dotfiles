@@ -52,16 +52,20 @@
           }
         }
 
+        dwindle {
+          force_split = 1
+        }
+
         animations {
           enabled = true
           # easeInOutExpo
           bezier = myBezier, 0.87, 0, 0.13, 1
-          animation = windows, 1, 5, myBezier
-          animation = windowsOut, 1, 5, myBezier
-          animation = border, 1, 5, myBezier
-          animation = borderangle, 1, 5, myBezier
-          animation = fade, 1, 5, myBezier
-          animation = workspaces, 1, 5, myBezier
+          animation = windows, 1, 2, myBezier
+          animation = windowsOut, 1, 2, myBezier
+          animation = border, 1, 2, myBezier
+          animation = borderangle, 1, 2, myBezier
+          animation = fade, 1, 2, myBezier
+          animation = workspaces, 1, 2, myBezier
         }
 
         # Input
