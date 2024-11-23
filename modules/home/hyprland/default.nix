@@ -56,12 +56,12 @@
           enabled = true
           # easeInOutExpo
           bezier = myBezier, 0.87, 0, 0.13, 1
-          animation = windows, 1, 15, myBezier
-          animation = windowsOut, 1, 15, default
-          animation = border, 1, 15, default
-          animation = borderangle, 1, 15, default
-          animation = fade, 1, 15, default
-          animation = workspaces, 1, 15, default
+          animation = windows, 1, 5, myBezier
+          animation = windowsOut, 1, 5, myBezier
+          animation = border, 1, 5, myBezier
+          animation = borderangle, 1, 5, myBezier
+          animation = fade, 1, 5, myBezier
+          animation = workspaces, 1, 5, myBezier
         }
 
         # Input
