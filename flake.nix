@@ -1,5 +1,5 @@
 {
-  description = "Qazer's NixOS Flake";
+  description = "qazer2687's NixOS Flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -8,13 +8,14 @@
     nur.url = "github:nix-community/NUR";
     darwin.url = "github:lnl7/nix-darwin/master";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    asahi.url = "github:tpwrules/nixos-apple-silicon";
-    # My experimental fork of nixos-apple-silicon.
-    #asahi.url = "github:qazer2687/asahi";
+    # Fork of tpwrules/nixos-apple-silicon with performance 
+    # tweaks, vulkan, louder speakers and some other things.
+    asahi.url = "github:zzywysm/nixos-asahi";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {
@@ -30,6 +31,7 @@
     nix-vscode-extensions,
     nix-flatpak,
     nix-minecraft,
+    nyx,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -53,6 +55,7 @@
           ./hosts/jade
           nur.nixosModules.nur
           sops-nix.nixosModules.sops
+          nyx.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -159,17 +162,18 @@
       amber = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/ametrine
+          ./hosts/amber
         ];
       };
     };
 
     nixosConfigurations = {
       opal = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/opal
           sops-nix.nixosModules.sops
+          nyx.nixosModules.default
           # Add nix-minecraft module.
         ];
       };

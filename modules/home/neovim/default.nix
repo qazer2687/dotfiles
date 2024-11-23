@@ -9,7 +9,6 @@
 
   config = lib.mkIf config.modules.neovim.enable {
     home.packages = [
-      pkgs.neovide
       # CMP Dependency
       pkgs.ripgrep
     ];

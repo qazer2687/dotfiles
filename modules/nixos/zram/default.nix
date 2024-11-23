@@ -9,7 +9,8 @@
     zramSwap = {
       enable = true;
       algorithm = "zstd";
-      memoryPercent = 50;
+      # Add a writeback device for uncompressable files.
+      memoryPercent = 100;
     };
   };
 }

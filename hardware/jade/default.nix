@@ -29,6 +29,10 @@
     }
   ];
 
+  # This should enable config.hardware.enableRedistributableFirmware
+  # which in turn will enable cpu.<cpu>.updateMicrocode.
+  hardware.enableAllFirmware = true;
+
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
