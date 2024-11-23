@@ -16,7 +16,7 @@
           "/home/alex/.config/wallpaper/wallpaper.png"
         ];
         wallpaper = [
-          "eDP-1,/home/alex/.config/wallpaper/wallpaper.png"
+          "HDMI-A-1,/home/alex/.config/wallpaper/wallpaper.png"
         ];
       };
     };
@@ -24,11 +24,18 @@
     wayland.windowManager.hyprland = {
       enable = true;
       package = pkgs.hyprland;
+      plugins = [
+        pkgs.hyprlandPlugins.hy3
+      ];
       extraConfig = ''
         # Modifier
         $mod = MOD4
 
+        # Apply max refresh rate to all monitors.
+        monitor=,highrr,auto,1
+
         general { 
+          layout = hy3
           gaps_in = 3
           gaps_out = 6
           border_size = 0
@@ -40,10 +47,7 @@
           rounding = 6
           active_opacity = 1.0
           inactive_opacity = 0.9
-          drop_shadow = true
-          shadow_range = 4
-          shadow_render_power = 3
-          col.shadow = rgba(1a1a1aee)
+
           blur {
             enabled = true
             size = 3
@@ -54,13 +58,14 @@
 
         animations {
           enabled = true
-          bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-          animation = windows, 1, 7, myBezier
-          animation = windowsOut, 1, 7, default, popin 80%
-          animation = border, 1, 10, default
-          animation = borderangle, 1, 8, default
-          animation = fade, 1, 7, default
-          animation = workspaces, 1, 6, default
+          # easeInOutExpo
+          bezier = myBezier, 0.87, 0, 0.13, 1
+          animation = windows, 1, 2, myBezier
+          animation = windowsOut, 1, 2, myBezier
+          animation = border, 1, 2, myBezier
+          animation = borderangle, 1, 2, myBezier
+          animation = fade, 1, 2, myBezier
+          animation = workspaces, 1, 2, myBezier
         }
 
         # Input
