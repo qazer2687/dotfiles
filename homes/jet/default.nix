@@ -16,20 +16,19 @@
     vlc # Video Player
     teams-for-linux # :/
     loupe # Image Viewer
+    moonlight-qt # Remote Desktop
   ];
 
   modules = {
     # Environment
     sway.enable = true;
-    hyprland.enable = true;
+    hyprland.enable = false;
     waybar.enable = true;
     foot.enable = true;
     mako.enable = true;
     wofi.enable = true;
     theme.enable = true;
-    # I don't even know what this does, I don't think it does anything.
-    #keyring.enable = true;
-
+    
     # Programs
     firefox.enable = true;
     fish.enable = true;
@@ -39,13 +38,13 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
-    neovim.enable = true;
+    neovim.enable = false;
 
     # Security
     gpg.enable = true;
 
     # Gaming
-    prismlauncher.enable = true;
+    prismlauncher.enable = false;
   };
 
   home.stateVersion = "24.11";

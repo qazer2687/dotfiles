@@ -14,7 +14,7 @@
       initialPassword = "xela";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here...
+        # Add your SSH public key(s) here...
       ];
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
       shell = pkgs.fish;

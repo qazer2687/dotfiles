@@ -13,7 +13,6 @@
     ./theme
     ./mako
     ./fish
-    ./keyring
     ./polybar
     ./dunst
     ./emacs

@@ -2,5 +2,6 @@
   imports = [
     ./docker
     ./minecraft
+    ./caddy
   ];
 }

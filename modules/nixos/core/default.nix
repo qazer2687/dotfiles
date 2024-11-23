@@ -5,6 +5,7 @@
   outputs,
   ...
 }: {
+  
   options.modules.core.enable = lib.mkEnableOption "";
 
   # This module is a replacement to having a shared
@@ -77,7 +78,10 @@
     security.polkit.enable = true;
     systemd.coredump.enable = false;
 
-    sops.defaultSopsFile = ./secrets/default.yaml;
+
+    sops.defaultSopsFormat = "yaml";
+    sops.defaultSopsFile = ../../../secrets/default.yaml;
+    sops.age.keyFile = "/home/alex/.config/sops/age/keys.txt";
 
     environment = {
       defaultPackages = lib.mkForce [];
