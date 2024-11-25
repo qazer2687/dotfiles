@@ -15,26 +15,16 @@
       openFirewall = true;
       settings = {
         global = {
-          "workgroup" = "WORKGROUP";
-          "server string" = "opal";
-          "netbios name" = "opal";
-          "security" = "user";
-          "encrypt passwords" = "yes";
           # Allow local network and tailnet.
           "hosts allow" = "192.168.0. localhost 100.64.0.0/10";
           "hosts deny" = "0.0.0.0/0";
-          "guest account" = "nobody";
+          "guest account" = "alex";
           "map to guest" = "bad user";
         };
-        "Samba" = {
+        nas = {
           "path" = "/home/alex/Samba";
-          "browseable" = "yes";
           "read only" = "no";
-          "guest ok" = "no";
-          "create mask" = "0777";
-          "directory mask" = "0777";
-          "force user" = "alex";
-          "force group" = "alex";
+          "guest ok" = "yes";
         };
       };
     };
@@ -44,6 +34,17 @@
       enable = true;
       openFirewall = true;
       interface = "tailscale0";
+    };
+
+    # No idea what this does.
+    services.avahi = {
+      publish.enable = true;
+      publish.userServices = true;
+      # ^^ Needed to allow samba to automatically register mDNS records (without the need for an `extraServiceFile`
+      nssmdns4 = true;
+      # ^^ Not one hundred percent sure if this is needed- if it aint broke, don't fix it
+      enable = true;
+      openFirewall = true;
     };
 
     networking.firewall.enable = true;
