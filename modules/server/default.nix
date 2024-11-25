@@ -3,5 +3,6 @@
     ./docker
     ./minecraft
     ./caddy
+    ./samba
   ];
 }
