@@ -17,7 +17,7 @@
   # Hostname
   networking.hostName = "opal";
 
-boot = {
+  boot = {
     kernelParams = [
       "kernel.nmi_watchdog=0"
       "fbcon=nodefer"
@@ -75,6 +75,7 @@ boot = {
     server = {
       docker.enable = true;
       caddy.enable = true;
+      samba.enable = true;
     };
   };
 
