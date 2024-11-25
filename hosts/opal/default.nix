@@ -74,7 +74,7 @@
     # Server Modules
     server = {
       docker.enable = true;
-      caddy.enable = true;
+      caddy.enable = false;
       samba.enable = true;
     };
   };
