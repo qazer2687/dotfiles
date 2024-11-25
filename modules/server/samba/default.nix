@@ -21,7 +21,7 @@
           "guest account" = "alex";
           "map to guest" = "bad user";
         };
-        nas = {
+        samba = {
           "path" = "/home/alex/Samba";
           "read only" = "no";
           "guest ok" = "yes";
