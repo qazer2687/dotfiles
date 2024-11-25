@@ -20,12 +20,12 @@
           "netbios name" = "opal";
           "security" = "user";
           # Allow local network and tailnet.
-          "hosts allow" = "192.168.0. 100.64.0.0/10";
+          "hosts allow" = "192.168.0. localhost 100.64.0.0/10";
           "hosts deny" = "0.0.0.0/0";
           "guest account" = "nobody";
           "map to guest" = "bad user";
         };
-        "private" = {
+        "Samba" = {
           "path" = "/home/alex/Samba";
           "browseable" = "yes";
           "read only" = "no";
@@ -42,6 +42,7 @@
     services.samba-wsdd = {
       enable = true;
       openFirewall = true;
+      interface = "tailscale0";
     };
 
     networking.firewall.enable = true;
