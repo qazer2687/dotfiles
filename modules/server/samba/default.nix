@@ -25,6 +25,8 @@
           "path" = "/home/alex/Samba";
           "read only" = "no";
           "guest ok" = "yes";
+          "create mask" = "0777";
+          "directory mask" = "0777";
         };
       };
     };
