@@ -2,7 +2,21 @@
   lib,
   config,
   ...
-}: {
+}: let
+  domain = "alq.ae";
+  mkRP =
+    sub: port:
+    let
+      dom = if sub == "" then domain else "${sub}.${domain}";
+    in {
+      "${dom}" = {
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:${port}";
+        };
+      };
+    };
+in {
+
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.nginx.enable {
