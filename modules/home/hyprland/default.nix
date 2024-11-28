@@ -74,13 +74,14 @@
         input {
           kb_layout = gb
           kb_variant = colemak
-          natural_scroll = true
           
           touchpad = {
+            natural_scroll = true
             middle_button_emulation = true
             disable_while_typing = false
           }
         }
+
 
         # Open Terminal
         bind = $mod, Return, exec, foot
