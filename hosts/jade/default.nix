@@ -111,10 +111,20 @@
     domain = "@users"; item = "rtprio"; type = "-"; value = 1;
   }];
 
-  services.getty.autologinUser = "alex";
+ /* services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
+  ''; */ # for wayland
+
+  services.getty.autologinUser = "alex";
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && startx
   '';
+  services.xserver = {
+    enable = true;
+    displayManager.startx.enable = true;
+  };
+
 
   swapDevices = [
     {
