@@ -34,7 +34,7 @@ in {
       # Not sure what the performance impact is with swayfx, I will just use sway for now.
       # The only "effect" I use is rounded corners but these aren't so important to me and
       # end up cutting off tabs in firefox which looks like shit.
-      package = pkgs.sway.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+      package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       checkConfig = false;
       config = {
         inherit modifier;
