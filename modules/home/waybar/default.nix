@@ -25,7 +25,7 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "sway/workspaces" "mpris"];
+          modules-left = ["clock" "hyprland/workspaces" "mpris"];
           modules-center = [];
           modules-right = [ "network" "pulseaudio" "battery"];
 
@@ -50,6 +50,23 @@
             interval = 5;
           };
 
+          "hyprland/workspaces" = {
+            format = "{icon}";
+            format-icons = {
+              "1" = "1";
+              "2" = "2";
+              "3" = "3";
+              "4" = "4";
+              "5" = "5";
+              "6" = "6";
+              "7" = "7";
+              "8" = "8";
+              "9" = "9";
+              "0" = "10";
+            };
+            sort-by-number = true;
+          };
+
           "sway/workspaces" = {
             format = "{icon}";
             format-icons = {
@@ -66,6 +83,8 @@
             };
             sort-by-number = true;
           };
+
+
 
           backlight = {
             device = "apple-panel-bl";

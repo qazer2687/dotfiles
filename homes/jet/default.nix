@@ -21,7 +21,7 @@
   modules = {
     # Environment
     sway.enable = true;
-    hyprland.enable = false;
+    hyprland.enable = true;
     waybar.enable = true;
     foot.enable = true;
     mako.enable = true;

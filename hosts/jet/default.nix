@@ -79,7 +79,7 @@
 
   services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session sway
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
   '';
 
   swapDevices = [
