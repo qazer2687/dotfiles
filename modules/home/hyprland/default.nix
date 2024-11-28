@@ -46,8 +46,8 @@
 
         decoration {
           rounding = 6
-          active_opacity = 0.7
-          inactive_opacity = 0.6
+          active_opacity = 1
+          inactive_opacity = 0.9
 
           blur {
             enabled = true
@@ -65,12 +65,12 @@
           enabled = true
           # easeInOutExpo
           bezier = myBezier, 0.87, 0, 0.13, 1
-          animation = windows, 1, 2, myBezier
-          animation = windowsOut, 1, 2, myBezier
-          animation = border, 1, 2, myBezier
-          animation = borderangle, 1, 2, myBezier
-          animation = fade, 1, 2, myBezier
-          animation = workspaces, 1, 2, myBezier
+          animation = windows, 1, 4, myBezier
+          animation = windowsOut, 1, 4, myBezier
+          animation = border, 1, 4, myBezier
+          animation = borderangle, 1, 4, myBezier
+          animation = fade, 1, 4, myBezier
+          animation = workspaces, 1, 4, myBezier
         }
 
         # Input
