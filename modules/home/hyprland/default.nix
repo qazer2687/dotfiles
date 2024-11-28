@@ -51,7 +51,7 @@
 
           blur {
             enabled = true
-            size = 3
+            size = 15
             passes = 1
             vibrancy = 0.1696
           }
