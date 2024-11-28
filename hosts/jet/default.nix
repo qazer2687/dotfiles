@@ -100,7 +100,7 @@
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       # Temporary fix for nautilus not launching on hyprland.
       # https://bbs.archlinux.org/viewtopic.php?pid=2196562#p2196562
-      GSK_RENDERER=ngl
+      GSK_RENDERER = "ngl";
     };
   };
   
