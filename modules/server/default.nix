@@ -4,5 +4,7 @@
     ./minecraft
     ./caddy
     ./samba
+    ./nginx
+    ./homepage-dashboard
   ];
 }
