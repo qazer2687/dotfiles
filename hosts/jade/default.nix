@@ -130,7 +130,7 @@
     pipewire.enable = true;
     systemd-boot.enable = true;
     # I'm going to use my windows partition for gaming.
-    #steam.enable = true;
+    steam.enable = true;
     filesystem.enable = true;
     zram.enable = true;
     gamemode.enable = true;
