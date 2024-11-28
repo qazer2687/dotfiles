@@ -52,7 +52,7 @@
           blur {
             enabled = true
             ignore_opacity = true
-            size = 1
+            size = 20
             passes = 5
             vibrancy = 0.1696
           }
