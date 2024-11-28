@@ -57,6 +57,9 @@
       ];
     };
 
+    # Allow all the IP's in the tailscale range to bypass firewall.
+    networking.firewall.extraAllowedIPs = [ "100.64.0.0/10" ];
+
     services.openssh = {
       enable = true;
       settings = {
