@@ -75,7 +75,7 @@ in {
         window = {
           titlebar = false;
           # Disable border while using rounded corners.
-          border = 0;
+          border = 1;
         };
 
         colors = {
@@ -160,7 +160,7 @@ in {
       extraConfig = ''
         # Corner Radius
         # Make sure to turn off borders while using this, as the borders do not conform to this setting.
-        corner_radius 6
+        #corner_radius 6
 
         # Smart Gaps
         #smart_gaps on
