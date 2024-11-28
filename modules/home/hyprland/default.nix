@@ -51,8 +51,9 @@
 
           blur {
             enabled = true
+            ignore_opacity = true
             size = 15
-            passes = 1
+            passes = 4
             vibrancy = 0.1696
           }
         }
@@ -74,6 +75,11 @@
           kb_layout = gb
           kb_variant = colemak
           natural_scroll = true
+          touchpad = {
+            clickfinger_behavior = 1
+            middle_button_emulation = true
+            disable_while_typing = false
+          }
         }
 
         # Open Terminal
