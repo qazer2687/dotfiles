@@ -67,9 +67,9 @@
           bezier = myBezier, 0.87, 0, 0.13, 1
           #animation = windows, 1, 4, myBezier
           #animation = windowsOut, 1, 4, myBezier
-          animation = border, 1, 4, myBezier
-          animation = borderangle, 1, 4, myBezier
-          animation = fade, 1, 4, myBezier
+          #animation = border, 1, 4, myBezier
+          #animation = borderangle, 1, 4, myBezier
+          #animation = fade, 1, 4, myBezier
           animation = workspaces, 1, 4, myBezier
         }
 
