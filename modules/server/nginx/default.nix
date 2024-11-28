@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  domain = "alq.ae";
+  domain = "qazer.org";
   mkRP =
     sub: port:
     let
