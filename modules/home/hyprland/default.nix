@@ -81,7 +81,6 @@
           }
         }
 
-
         # Open Terminal
         bind = $mod, Return, exec, foot
 
