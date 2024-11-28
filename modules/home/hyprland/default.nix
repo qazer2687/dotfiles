@@ -46,14 +46,14 @@
 
         decoration {
           rounding = 6
-          active_opacity = 0.9
+          active_opacity = 0.98
           inactive_opacity = 0.9
 
           blur {
             enabled = true
             ignore_opacity = true
-            size = 10
-            passes = 2
+            size = 8
+            passes = 3
             vibrancy = 0.1696
           }
         }
