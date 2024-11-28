@@ -39,7 +39,7 @@
           layout = hy3
           gaps_in = 3
           gaps_out = 6
-          border_size = 0
+          border_size = 1
           resize_on_border = true 
           allow_tearing = false
         }
@@ -60,8 +60,6 @@
         # Disable blur on firefox.
         windowrule = noblur,^(firefox)$
 
-        natural_scroll = true
-        
 
         animations {
           enabled = true
@@ -79,6 +77,7 @@
         input {
           kb_layout = gb
           kb_variant = colemak
+          natural_scroll = true
         }
 
         # Open Terminal
