@@ -76,6 +76,8 @@
       docker.enable = true;
       caddy.enable = false;
       samba.enable = true;
+      nginx.enable = true;
+      homepage-dashboard.enable = true;
     };
   };
 
