@@ -17,6 +17,7 @@
         ];
         wallpaper = [
           "HDMI-A-1,/home/alex/.config/wallpaper/wallpaper.png"
+          "eDP-1,/home/alex/.config/wallpaper/wallpaper.png"
         ];
       };
     };
@@ -31,8 +32,8 @@
         # Modifier
         $mod = MOD4
 
-        # Apply max refresh rate to all monitors.
-        monitor=,highrr,auto,1
+        # Apply max refresh rate to all monitors. Scale to 200%.
+        monitor=,highrr,auto,2
 
         general { 
           layout = hy3
