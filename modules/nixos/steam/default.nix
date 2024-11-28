@@ -31,7 +31,7 @@
 
     programs.gamescope = {
       enable = true;
-      capSysNice = true;
+      capSysNice = false;
       args = [
         "-w 2560" # width
         "-h 1080" # height
