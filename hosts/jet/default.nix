@@ -98,9 +98,9 @@
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      # This option scales menu bars, causing
-      # them to appear way too large.
-      # GDK_SCALE = "2";
+      # Temporary fix for nautilus not launching on hyprland.
+      # https://bbs.archlinux.org/viewtopic.php?pid=2196562#p2196562
+      GSK_RENDERER=ngl
     };
   };
   
