@@ -54,7 +54,7 @@
             ignore_opacity = true
             size = 5
             passes = 5
-            vibrancy = 0.1696
+            vibrancy = 0.4
           }
         }
 
