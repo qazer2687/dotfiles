@@ -46,8 +46,8 @@
 
         decoration {
           rounding = 6
-          active_opacity = 1.0
-          inactive_opacity = 0.9
+          active_opacity = 0.7
+          inactive_opacity = 0.6
 
           blur {
             enabled = true
@@ -56,6 +56,12 @@
             vibrancy = 0.1696
           }
         }
+
+        # Disable blur on firefox.
+        windowrule = noblur,^(firefox)$
+
+        natural_scroll = true
+        
 
         animations {
           enabled = true
