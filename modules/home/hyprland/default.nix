@@ -70,16 +70,23 @@
           animation = workspaces, 1, 4, myBezier
         }
 
-        # Input
+        # https://wiki.hyprland.org/Configuring/Variables/#input
         input {
-          kb_layout = gb
-          kb_variant = colemak
-          
-          touchpad = {
-            natural_scroll = true
-            middle_button_emulation = true
-            disable_while_typing = false
-          }
+            kb_layout = gb
+            kb_variant = colemak
+            kb_model =
+            kb_options =
+            kb_rules =
+
+            follow_mouse = 1
+
+            sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+
+            touchpad {
+                natural_scroll = true
+                middle_button_emulation = true
+                disable_while_typing = false
+            }
         }
 
 
