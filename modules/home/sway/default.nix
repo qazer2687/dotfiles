@@ -34,7 +34,7 @@ in {
       # Not sure what the performance impact is with swayfx, I will just use sway for now.
       # The only "effect" I use is rounded corners but these aren't so important to me and
       # end up cutting off tabs in firefox which looks like shit.
-      package = pkgs.sway.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
+      package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       checkConfig = false;
       config = {
         inherit modifier;
@@ -74,6 +74,7 @@ in {
         # Decorations
         window = {
           titlebar = false;
+          # Disable border while using rounded corners.
           border = 1;
         };
 
@@ -158,6 +159,7 @@ in {
 
       extraConfig = ''
         # Corner Radius
+        # Make sure to turn off borders while using this, as the borders do not conform to this setting.
         #corner_radius 6
 
         # Smart Gaps
