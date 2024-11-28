@@ -58,7 +58,7 @@
         }
 
         # Disable blur on firefox.
-        windowrule = noblur,^(firefox)$
+        windowrule = noblur,^(firefox-devedition)$
 
 
         animations {
