@@ -72,14 +72,13 @@
 
         # Input
         input {
-          kb_layout = gb
-          kb_variant = colemak
-          natural_scroll = true
           touchpad = {
-            clickfinger_behavior = 1
             middle_button_emulation = true
             disable_while_typing = false
           }
+          kb_layout = gb
+          kb_variant = colemak
+          natural_scroll = true
         }
 
         # Open Terminal
