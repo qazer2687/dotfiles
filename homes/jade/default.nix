@@ -24,13 +24,22 @@
   */
 
   modules = {
-    # Environment
+    # X11
+    i3.enable = true;
+    alacritty.enable = true;
+    polybar.enable = true;
+    dunst.enable = true;
+
+
+    # Wayland
     sway.enable = true;
     hyprland.enable = true;
     waybar.enable = true;
     foot.enable = true;
     mako.enable = true;
     wofi.enable = true;
+    
+    
     git.enable = true;
     theme.enable = true;
     firefox.enable = true;
