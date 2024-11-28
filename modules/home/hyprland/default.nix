@@ -76,7 +76,7 @@
           kb_variant = colemak
           touchpad {
             natural_scroll = true
-            clickfinger_behaviour = true
+            clickfinger_behavior = true
             middle_button_emulation = true
             disable_while_typing = true
           }
