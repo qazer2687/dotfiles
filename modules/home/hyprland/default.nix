@@ -72,13 +72,13 @@
 
         # https://wiki.hyprland.org/Configuring/Variables/#input
         input {
-            kb_layout = gb
-            kb_variant = colemak
-            touchpad {
-              natural_scroll = true
-              middle_button_emulation = true
-              disable_while_typing = false
-            }
+          kb_layout = gb
+          kb_variant = colemak
+          touchpad {
+            natural_scroll = true
+            middle_button_emulation = true
+            disable_while_typing = false
+          }
         }
 
 
