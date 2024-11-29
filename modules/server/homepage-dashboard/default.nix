@@ -179,8 +179,8 @@
             {
               "Grafana" = {
                 description = "Observability Platform";
-                href = "https://grafana.qazer.org/";
-                siteMonitor = "https://grafana.qazer.org/";
+                href = "http://grafana.qazer.org/";
+                siteMonitor = "http://grafana.qazer.org/";
                 icon = "mdi-chart-box-multiple";
               };
             }
