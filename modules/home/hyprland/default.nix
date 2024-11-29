@@ -101,7 +101,7 @@
         bindel = ,XF86AudioMicMute, exec, ${pkgs.pamixer}/bin/pamixer --default-source -t
 
         # Brightness Controls
-        bind = ,XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%
+        bind = ,XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%+
         bind = ,XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%-
 
         # Floating
