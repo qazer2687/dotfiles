@@ -20,6 +20,7 @@ in {
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.nginx.enable {
+    networking.firewall.allowedTCPPorts = [ 80 ];
     services.nginx = {
       enable = true;
       config = ''
@@ -31,9 +32,6 @@ in {
           }
         }
       '';
-    };
-    networking.firewall.allowedTCPPorts = [ 80 ];
-  };
       recommendedProxySettings = true;
       recommendedOptimisation = true;
       virtualHosts = lib.mkMerge [
