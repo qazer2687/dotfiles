@@ -23,15 +23,6 @@ in {
     networking.firewall.allowedTCPPorts = [ 80 ];
     services.nginx = {
       enable = true;
-      config = ''
-        http {
-          server {
-            listen 0.0.0.0:80;
-            listen [::]:80;
-            server_name localhost;
-          }
-        }
-      '';
       recommendedProxySettings = true;
       recommendedOptimisation = true;
       virtualHosts = lib.mkMerge [
