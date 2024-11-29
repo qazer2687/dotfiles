@@ -50,7 +50,7 @@
                 href = "http://grafana.qazer.org/";
                 server = "opal";
                 container = "grafana";
-                icon = "sh-grafana"
+                icon = "sh-grafana";
               };
             }
             {
@@ -59,7 +59,7 @@
                 href = "http://prometheus.qazer.org/";
                 server = "opal";
                 container = "prometheus";
-                icon = "sh-prometheus"
+                icon = "sh-prometheus";
               };
             }
             {
@@ -68,7 +68,7 @@
                 href = "http://portainer.qazer.org/";
                 server = "opal";
                 container = "portainer";
-                icon = "sh-portainer"
+                icon = "sh-portainer";
               };
             }
             {
@@ -77,7 +77,7 @@
                 href = "http://pihole.qazer.org/";
                 server = "opal";
                 container = "pihole";
-                icon = "sh-pi-hole"
+                icon = "sh-pi-hole";
               };
             }
           ];
