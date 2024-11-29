@@ -10,25 +10,24 @@
       enable = true;
       listenPort = 8082;
       settings = {
-        title = "alq.ae";
-        startURL = "https://alq.ae";
-        background = "https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=2560&q=80";
+        title = "dashboard.qazer.org";
+        startURL = "https://dashboard.qazer.org";
+        theme = "dark";
+        color = "slate";
+        hideVersion = "true";
+
       };
       widgets = [
         {
-          search = {
-            provider = "custom";
-            url = "https://search.alq.ae/search?q=";
-            target = "_blank";
-            suggestionUrl = "https://search.alq.ae/autocompleter?q=";
-            showSearchSuggestions = true;
+          greeting = {
+            text = "Hey!";
           };
         }
         {
           openmeteo = {
-            latitude = "25.4018";
-            longitude = "55.4788";
-            timezone = "Asia/Dubai";
+            latitude = "51.5072";
+            longitude = "0.1276";
+            timezone = "Europe/London";
             units = "metric";
             cache = 15;
           };
@@ -180,8 +179,8 @@
             {
               "Grafana" = {
                 description = "Observability Platform";
-                href = "https://grafana.alq.ae/";
-                siteMonitor = "https://grafana.alq.ae/";
+                href = "https://grafana.qazer.org/";
+                siteMonitor = "https://grafana.qazer.org/";
                 icon = "mdi-chart-box-multiple";
               };
             }
