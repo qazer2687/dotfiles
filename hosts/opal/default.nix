@@ -54,10 +54,10 @@
     # 25565 # Minecraft
   ];
 
-  services.cockpit = {
+ /* services.cockpit = {
     enable = true;
     port = 10000;
-  };
+  };*/
 
   # I have installed gnome before so autosuspend
   # seems to be set statefully somewhere.
