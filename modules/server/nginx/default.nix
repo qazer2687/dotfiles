@@ -17,6 +17,10 @@
     };
 in {
 
+  # Cloudflare DNS Configuration
+  # A - @ -> 100.100.101.66
+  # A - *.qazer.org -> 100.100.101.66
+
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.nginx.enable {
@@ -28,7 +32,7 @@ in {
       virtualHosts = lib.mkMerge [
         (mkRP "grafana" "3000")
         (mkRP "pihole" "3001")
-        (mkRP "portainer" "8000")
+        (mkRP "portainer" "9443")
         (mkRP "prometheus" "9090")
         (mkRP "node-exporter" "9100")
         (mkRP "cockpit" (builtins.toString config.services.cockpit.port))
