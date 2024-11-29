@@ -50,6 +50,34 @@
                 href = "http://grafana.qazer.org/";
                 server = "opal";
                 container = "grafana";
+                icon = "sh-grafana"
+              };
+            }
+            {
+              "Prometheus" = {
+                description = "Monitoring System";
+                href = "http://prometheus.qazer.org/";
+                server = "opal";
+                container = "prometheus";
+                icon = "sh-prometheus"
+              };
+            }
+            {
+              "Portainer" = {
+                description = "Container Management";
+                href = "http://portainer.qazer.org/";
+                server = "opal";
+                container = "portainer";
+                icon = "sh-portainer"
+              };
+            }
+            {
+              "Pihole" = {
+                description = "DNS Server";
+                href = "http://pihole.qazer.org/";
+                server = "opal";
+                container = "pihole";
+                icon = "sh-pi-hole"
               };
             }
           ];
