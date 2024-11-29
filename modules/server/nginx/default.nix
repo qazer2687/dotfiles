@@ -22,6 +22,18 @@ in {
   config = lib.mkIf config.modules.server.nginx.enable {
     services.nginx = {
       enable = true;
+      config = ''
+        http {
+          server {
+            listen 0.0.0.0:80;
+            listen [::]:80;
+            server_name localhost;
+          }
+        }
+      '';
+    };
+    networking.firewall.allowedTCPPorts = [ 80 ];
+  };
       recommendedProxySettings = true;
       recommendedOptimisation = true;
       virtualHosts = lib.mkMerge [
