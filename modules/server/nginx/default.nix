@@ -1,20 +1,56 @@
-{ lib, config, ... }: 
+{ lib, config, ... }:
 {
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.nginx.enable {
-    # Open firewall ports
     networking.firewall.allowedTCPPorts = [ 80 443 ];
 
-    # Global ACME Configuration
     security.acme = {
       acceptTerms = true;
       defaults.email = "qazer2687@gmail.com";
+      
+      certs = {
+        "grafana.qazer.org" = {
+          webroot = "/var/www/acme-challenge";
+          extraDomainNames = [ "grafana.qazer.org" ];
+        };
+        "pihole.qazer.org" = {
+          webroot = "/var/www/acme-challenge";
+          extraDomainNames = [ "pihole.qazer.org" ];
+        };
+        "dashboard.qazer.org" = {
+          webroot = "/var/www/acme-challenge";
+          extraDomainNames = [ "dashboard.qazer.org" ];
+        };
+        "prometheus.qazer.org" = {
+          webroot = "/var/www/acme-challenge";
+          extraDomainNames = [ "prometheus.qazer.org" ];
+        };
+        "portainer.qazer.org" = {
+          webroot = "/var/www/acme-challenge";
+          extraDomainNames = [ "portainer.qazer.org" ];
+        };
+        "node-exporter.qazer.org" = {
+          webroot = "/var/www/acme-challenge";
+          extraDomainNames = [ "node-exporter.qazer.org" ];
+        };
+        "cockpit.qazer.org" = {
+          webroot = "/var/www/acme-challenge";
+          extraDomainNames = [ "cockpit.qazer.org" ];
+        };
+        "nextcloud.qazer.org" = {
+          webroot = "/var/www/acme-challenge";
+          extraDomainNames = [ "nextcloud.qazer.org" ];
+        };
+      };
     };
 
-    # Nginx Service Configuration
     services.nginx = {
       enable = true;
+      clientMaxBodySize = "0";
+      recommendedProxySettings = true;
+      recommendedOptimisation = true;
+      
       virtualHosts = {
         "grafana.qazer.org" = {
           forceSSL = true;
@@ -74,5 +110,10 @@
         };
       };
     };
+
+    # Ensure ACME challenge directory exists
+    systemd.tmpfiles.rules = [
+      "d /var/www/acme-challenge 0755 nginx root -"
+    ];
   };
 }
