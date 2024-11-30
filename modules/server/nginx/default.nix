@@ -1,17 +1,20 @@
 { lib, config, ... }: let
   domain = "qazer.org";
 
-  # Function to create virtualHosts with SSL and ACME configuration
-  mkRP = sub: port: let
+  # Function to create ACME certificates
+  mkCert = sub: let
     dom = if sub == "" then domain else "${sub}.${domain}";
   in {
-    # Define an ACME certificate for this domain
     security.acme.certs."${dom}" = {
       domain = dom;
       webroot = "/var/www/acme"; # Ensure this directory exists and is writable
     };
+  };
 
-    # Define the Nginx virtual host for this domain
+  # Function to create virtual hosts
+  mkRP = sub: port: let
+    dom = if sub == "" then domain else "${sub}.${domain}";
+  in {
     services.nginx.virtualHosts."${dom}" = {
       listen = [ "443 ssl" "80" ];
       sslCertificate = "/var/lib/acme/${dom}/fullchain.pem";
@@ -27,13 +30,25 @@ in {
   config = lib.mkIf config.modules.server.nginx.enable {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
 
-    # ACME global configuration
+    # Global ACME configuration
     security.acme = {
       acceptTerms = true;
       defaults = {
         email = "qazer2687@gmail.com"; # Replace with your email
-        webroot = "/var/www/acme"; # Default webroot for all certificates
+        webroot = "/var/www/acme";       # Default webroot for certificates
       };
+
+      # Define certificates for all subdomains
+      certs = lib.mkMerge [
+        (mkCert "grafana")
+        (mkCert "pihole")
+        (mkCert "dashboard")
+        (mkCert "prometheus")
+        (mkCert "portainer")
+        (mkCert "node-exporter")
+        (mkCert "cockpit")
+        (mkCert "nextcloud")
+      ];
     };
 
     # Nginx service configuration
@@ -43,7 +58,7 @@ in {
       recommendedProxySettings = true;
       recommendedOptimisation = true;
 
-      # Combine all virtual host definitions
+      # Define virtual hosts for all subdomains
       virtualHosts = lib.mkMerge [
         (mkRP "grafana" "3000")
         (mkRP "pihole" "3001")
