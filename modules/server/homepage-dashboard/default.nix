@@ -44,7 +44,7 @@
 
       services = [
         {
-          "Links" = [
+          "Networking" = [
             {
               "Cloudflare" = {
                 description = "CDN, DNS & DDoS Protection";
@@ -59,9 +59,19 @@
                 icon = "sh-tailscale";
               };
             }
+            {
+              "Pihole" = {
+                description = "DNS Server";
+                href = "http://pihole.qazer.org/";
+                server = "opal";
+                container = "pihole";
+                icon = "sh-pi-hole";
+              };
+            }
           ];
-
-          "Services" = [
+        }
+        {
+          "Monitoring" = [
             {
               "Grafana" = {
                 description = "Observability Platform";
@@ -90,13 +100,23 @@
                 icon = "sh-portainer";
               };
             }
+          ];
+        }
+        {
+          "Media/Storage" = [
             {
-              "Pihole" = {
-                description = "DNS Server";
-                href = "http://pihole.qazer.org/";
+              "Nextcloud" = {
+                description = "Cloud Storage";
+                href = "https://nextcloud.qazer.org/";
                 server = "opal";
-                container = "pihole";
-                icon = "sh-pi-hole";
+                container = "nextcloud";
+                icon = "sh-nextcloud";
+              };
+              "MariaDB" = {
+                description = "Database Management System";
+                server = "opal";
+                container = "mariadb";
+                icon = "sh-mariadb";
               };
             }
           ];
