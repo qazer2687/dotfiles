@@ -12,8 +12,11 @@
     in {
       "${dom}" = {
         locations."/" = {
-          proxyPass = "http://127.0.0.1:${port}/";
+          proxyPass = "https://127.0.0.1:${port}/";
         };
+        listen = [ "443 ssl" "80" ];
+        sslCertificate = "/etc/letsencrypt/live/${dom}/fullchain.pem";
+        sslCertificateKey = "/etc/letsencrypt/live/${dom}/privkey.pem";
       };
     };
 in {
@@ -26,13 +29,15 @@ in {
 
   config = lib.mkIf config.modules.server.nginx.enable {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
+
+    services.certbot = {
+      enable = true;
+      email = "qazer2687@gmail.com";  # TODO: Replace with SOPS email.
+      domains = [ qazer.org ];
+    };
+
     services.nginx = {
       enable = true;
-      /*httpConfig = ''
-        server {
-          listen 80;
-        }
-      '';*/
       # Disables checking body size, allowing nextcloud to recieve large files.
       clientMaxBodySize = "0";
       recommendedProxySettings = true;
