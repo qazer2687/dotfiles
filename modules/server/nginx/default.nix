@@ -15,7 +15,7 @@
   mkRP = sub: port: let
     dom = if sub == "" then domain else "${sub}.${domain}";
   in {
-    services.nginx.virtualHosts."${dom}" = {
+    "${dom}" = {
       listen = [ "443 ssl" "80" ];
       sslCertificate = "/var/lib/acme/${dom}/fullchain.pem";
       sslCertificateKey = "/var/lib/acme/${dom}/privkey.pem";
