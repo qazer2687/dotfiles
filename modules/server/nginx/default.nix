@@ -1,14 +1,15 @@
 { lib, config, ... }: let
-
+  # Read Cloudflare API token and email from SOPS secrets
   cloudflare-api-token = builtins.readFile config.sops.secrets.cloudflare-api-token.path;
   cloudflare-email = builtins.readFile config.sops.secrets.cloudflare-email.path;
-
-in {
+in
+{
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.nginx.enable {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
 
+    # ACME setup for wildcard certificates using Cloudflare DNS challenge
     security.acme = {
       acceptTerms = true;
       defaults.email = "qazer2687@gmail.com";
@@ -17,13 +18,14 @@ in {
         "*.qazer.org" = {
           dnsChallenge = {
             provider = "cloudflare";
-            apiKey = cloudflare-api-token;
-            email = cloudflare-email;
+            apiKey = cloudflare-api-token;  # API token
+            email = cloudflare-email;  # Cloudflare email
           };
         };
       };
     };
 
+    # Nginx service setup
     services.nginx = {
       enable = true;
       clientMaxBodySize = "0";
