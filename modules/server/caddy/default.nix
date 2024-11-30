@@ -23,7 +23,7 @@
       globalConfig = ''
         (cloudflare) {
           tls {
-            dns cloudflare ''${cloudflare-api-token}
+            dns cloudflare {env.cloudflare-api-token}
           }
         }
       '';
