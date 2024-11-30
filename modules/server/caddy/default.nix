@@ -19,6 +19,9 @@
 
     services.caddy = {
       enable = true;
+      globalConfig = ''
+        tls off
+      '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:3000
       '';
