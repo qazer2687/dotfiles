@@ -11,15 +11,13 @@
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     services.caddy = {
       enable = true;
-      settings = {
-        admin = {
-          identity = {
-            identifiers = [ "qazer.org" ];
-            issuers = [ zerossl ];
-          };
-        };
-      };
-
+      configFile = ''
+        qazer.org {
+          tls {
+            issuer zerossl
+          }
+        }
+      '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:3000
       '';
