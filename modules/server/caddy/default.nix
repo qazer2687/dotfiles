@@ -11,7 +11,7 @@
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     services.caddy = {
       enable = true;
-      configFile = ''
+      extraConfig = ''
         qazer.org {
           tls {
             issuer zerossl
