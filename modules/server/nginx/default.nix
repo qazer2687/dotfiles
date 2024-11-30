@@ -33,6 +33,7 @@ in {
       virtualHosts = lib.mkMerge [
         (mkRP "grafana" "3000")
         (mkRP "pihole" "3001")
+        (mkRP "nextcloud" "8888")
         (mkRP "portainer" "9443")
         (mkRP "prometheus" "9090")
         (mkRP "node-exporter" "9100")
