@@ -1,7 +1,7 @@
 { lib, config, ... }: let
 
-  cloudflare-api-token = builtins.readFile ${config.sops.secrets.cloudflare-api-token.path};
-  cloudflare-email = builtins.readFile ${config.sops.secrets.cloudflare-email.path};
+  cloudflare-api-token = builtins.readFile config.sops.secrets.cloudflare-api-token.path;
+  cloudflare-email = builtins.readFile config.sops.secrets.cloudflare-email.path;
 
 in {
   options.modules.server.nginx.enable = lib.mkEnableOption "";
