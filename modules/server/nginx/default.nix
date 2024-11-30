@@ -4,6 +4,7 @@
   ...
 }: let
   domain = "qazer.org";
+  # Function to create virtualHosts.
   mkRP =
     sub: port:
     let
