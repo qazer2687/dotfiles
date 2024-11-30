@@ -1,15 +1,11 @@
-{
-  lib,
-  config,
-  ...
-}: let
+{ lib, config, ... }: let
   domain = "qazer.org";
 
   # Function to create virtualHosts with SSL and ACME configuration
   mkRP = sub: port: let
     dom = if sub == "" then domain else "${sub}.${domain}";
   in {
-    security.acme.certificates."${dom}" = {
+    security.acme.certs."${dom}" = {
       domain = dom;
       webroot = "/var/www/acme";
     };
@@ -24,11 +20,6 @@
     };
   };
 in {
-
-  # Cloudflare DNS Configuration
-  # A - @ -> 100.100.101.66
-  # A - *.qazer.org -> 100.100.101.66
-
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.nginx.enable {
@@ -36,15 +27,19 @@ in {
 
     security.acme = {
       acceptTerms = true;
-      defaultCertificate.email = "qazer2687@gmail.com"; # TODO: Replace with SOPS email.
+
+      defaults = {
+        email = "youremail@example.com"; # Replace with your email
+        webroot = "/var/www/acme";
+      };
     };
 
     services.nginx = {
       enable = true;
-      # Disables checking body size, allowing nextcloud to recieve large files.
       clientMaxBodySize = "0";
       recommendedProxySettings = true;
       recommendedOptimisation = true;
+
       virtualHosts = lib.mkMerge [
         (mkRP "grafana" "3000")
         (mkRP "pihole" "3001")
