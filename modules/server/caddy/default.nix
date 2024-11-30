@@ -21,7 +21,7 @@
       enable = true;
       extraConfig = ''
         :80 {
-          tls off
+          auto_https off
         }
       '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
