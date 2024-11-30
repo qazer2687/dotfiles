@@ -28,11 +28,11 @@ in {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     services.nginx = {
       enable = true;
-      httpConfig = ''
+      /*httpConfig = ''
         server {
           listen 80;
         }
-      '';
+      '';*/
       # Disables checking body size, allowing nextcloud to recieve large files.
       clientMaxBodySize = "0";
       recommendedProxySettings = true;
