@@ -21,13 +21,12 @@
         # This doesn't work properly, it leads to issues with rebuilding and leaves
         # extensions stuck as disabled.
         
-          extensions = with config.nur.repos.rycee.firefox-addons; [
+        extensions = with config.nur.repos.rycee.firefox-addons; [
           ublock-origin
           keepa
           auto-tab-discard
           return-youtube-dislikes
           user-agent-string-switcher
-
         ];
         
 
