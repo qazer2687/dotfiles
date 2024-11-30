@@ -13,7 +13,16 @@
       "${dom}" = {
         locations."/" = {
           proxyPass = "http://127.0.0.1:${port}/";
+          extraConfig = {
+
+          };
         };
+        extraConfig = ''
+          server {
+            listen 80;
+            listen 443;
+          }
+        '';
       };
     };
 in {
@@ -25,7 +34,7 @@ in {
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.nginx.enable {
-    networking.firewall.allowedTCPPorts = [ 80 ];
+    networking.firewall.allowedTCPPorts = [ 80 443 ];
     services.nginx = {
       enable = true;
       # Disables checking body size, allowing nextcloud to recieve large files.
