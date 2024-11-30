@@ -14,44 +14,53 @@
 
     services.caddy = {
       enable = true;
-      globalConfig = ''
-        (cloudflare) {
-          tls {
-            dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
-          }
-        }
-      '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:3000
-        import cloudflare
+        tls {
+          dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
+        }
       '';
       virtualHosts."pihole.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:3001
-        import cloudflare
+        tls {
+          dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
+        }
       '';
       virtualHosts."dashboard.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:8082
-        import cloudflare
+        tls {
+          dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
+        }
       '';
       virtualHosts."prometheus.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:9090
-        import cloudflare
+        tls {
+          dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
+        }
       '';
       virtualHosts."portainer.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:9443
-        import cloudflare
+        tls {
+          dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
+        }
       '';
       virtualHosts."node-exporter.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:9100
-        import cloudflare
+        tls {
+          dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
+        }
       '';
       virtualHosts."cockpit.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:10000
-        import cloudflare
+        tls {
+          dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
+        }
       '';
       virtualHosts."nextcloud.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:11000
-        import cloudflare
+        tls {
+          dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
+        }
       '';
     };
   };
