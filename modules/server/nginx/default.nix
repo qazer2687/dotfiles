@@ -28,17 +28,22 @@ in {
     networking.firewall.allowedTCPPorts = [ 80 ];
     services.nginx = {
       enable = true;
+      config = ''
+        server = {
+          client_max_body_size 0
+        }
+      '';
       recommendedProxySettings = true;
       recommendedOptimisation = true;
       virtualHosts = lib.mkMerge [
         (mkRP "grafana" "3000")
         (mkRP "pihole" "3001")
-        (mkRP "nextcloud" "8888")
-        (mkRP "portainer" "9443")
+        (mkRP "nextcloud" "8080")
+        (mkRP "dashboard" "8082")
         (mkRP "prometheus" "9090")
+        (mkRP "portainer" "9443")
         (mkRP "node-exporter" "9100")
-        (mkRP "cockpit" (builtins.toString config.services.cockpit.port))
-        (mkRP "dashboard" (builtins.toString config.services.homepage-dashboard.listenPort))
+        (mkRP "cockpit" "10000")
       ];
     };
   };
