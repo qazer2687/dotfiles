@@ -29,7 +29,7 @@ in {
       acceptTerms = true;
 
       defaults = {
-        email = "youremail@example.com"; # Replace with your email
+        email = "qazer2687@gmail.com"; # TODO: Use SOPS for email.
         webroot = "/var/www/acme";
       };
     };
