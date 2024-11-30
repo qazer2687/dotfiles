@@ -12,18 +12,12 @@
 
     sops.secrets.cloudflare-api-token = {};
 
-    systemd.services.caddy = {
-      serviceConfig = {
-        EnvironmentFile = config.sops.secrets.cloudflare-api-token.path;
-      };
-    };
-
     services.caddy = {
       enable = true;
       globalConfig = ''
         (cloudflare) {
           tls {
-            dns cloudflare {env.cloudflare-api-token}
+            dns cloudflare ${builtins.readFile /run/secrets/cloudflare-api-token}
           }
         }
       '';
