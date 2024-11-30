@@ -1,5 +1,9 @@
-{ lib, config, ... }:
-{
+{ lib, config, ... }: let
+
+  cloudflare-api-token = builtins.readFile ${config.sops.secrets.cloudflare-api-token.path};
+  cloudflare-email = builtins.readFile ${config.sops.secrets.cloudflare-email.path};
+
+in {
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.nginx.enable {
@@ -10,37 +14,12 @@
       defaults.email = "qazer2687@gmail.com";
       
       certs = {
-        "grafana.qazer.org" = {
-          webroot = "/var/www/acme-challenge";
-          extraDomainNames = [ "grafana.qazer.org" ];
-        };
-        "pihole.qazer.org" = {
-          webroot = "/var/www/acme-challenge";
-          extraDomainNames = [ "pihole.qazer.org" ];
-        };
-        "dashboard.qazer.org" = {
-          webroot = "/var/www/acme-challenge";
-          extraDomainNames = [ "dashboard.qazer.org" ];
-        };
-        "prometheus.qazer.org" = {
-          webroot = "/var/www/acme-challenge";
-          extraDomainNames = [ "prometheus.qazer.org" ];
-        };
-        "portainer.qazer.org" = {
-          webroot = "/var/www/acme-challenge";
-          extraDomainNames = [ "portainer.qazer.org" ];
-        };
-        "node-exporter.qazer.org" = {
-          webroot = "/var/www/acme-challenge";
-          extraDomainNames = [ "node-exporter.qazer.org" ];
-        };
-        "cockpit.qazer.org" = {
-          webroot = "/var/www/acme-challenge";
-          extraDomainNames = [ "cockpit.qazer.org" ];
-        };
-        "nextcloud.qazer.org" = {
-          webroot = "/var/www/acme-challenge";
-          extraDomainNames = [ "nextcloud.qazer.org" ];
+        "*.qazer.org" = {
+          dnsChallenge = {
+            provider = "cloudflare";
+            apiKey = cloudflare-api-token;
+            email = cloudflare-email;
+          };
         };
       };
     };
