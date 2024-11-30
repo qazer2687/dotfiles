@@ -1,74 +1,49 @@
-{ lib, config, ... }: let
+{ lib, config, ... }: 
+let
   domain = "qazer.org";
-
-  # Function to create ACME certificates
-  mkCert = sub: let
-    dom = if sub == "" then domain else "${sub}.${domain}";
-  in {
-    security.acme.certs."${dom}" = {
-      domain = dom;
-      webroot = "/var/www/acme"; # Ensure this directory exists and is writable
-    };
-  };
-
-  # Function to create virtual hosts
-  mkRP = sub: port: let
-    dom = if sub == "" then domain else "${sub}.${domain}";
-  in {
-    "${dom}" = {
-      listen = [ "443 ssl" "80" ];
-      sslCertificate = "/var/lib/acme/${dom}/fullchain.pem";
-      sslCertificateKey = "/var/lib/acme/${dom}/privkey.pem";
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:${port}/";
-      };
-    };
-  };
+  subdomains = [ "grafana" "pihole" "dashboard" "prometheus" "portainer" "node-exporter" "cockpit" "nextcloud" ];
 in {
-  options.modules.server.nginx.enable = lib.mkEnableOption "";
+  options.modules.server.nginx.enable = lib.mkEnableOption "nginx with ACME";
 
   config = lib.mkIf config.modules.server.nginx.enable {
+    # Open ports
     networking.firewall.allowedTCPPorts = [ 80 443 ];
 
-    # Global ACME configuration
+    # ACME Certificates
     security.acme = {
       acceptTerms = true;
-      defaults = {
-        email = "qazer2687@gmail.com"; # Replace with your email
-        webroot = "/var/www/acme";       # Default webroot for certificates
-      };
-
-      # Define certificates for all subdomains
-      certs = lib.mkMerge [
-        (mkCert "grafana")
-        (mkCert "pihole")
-        (mkCert "dashboard")
-        (mkCert "prometheus")
-        (mkCert "portainer")
-        (mkCert "node-exporter")
-        (mkCert "cockpit")
-        (mkCert "nextcloud")
-      ];
+      defaults.email = "qazer2687@gmail.com";
+      certs = lib.genAttrs 
+        (map (sub: "${sub}.${domain}") subdomains) 
+        (domain: { 
+          webroot = "/var/www/acme";
+          extraDomainNames = [ domain ]; 
+        });
     };
 
-    # Nginx service configuration
+    # Nginx Configuration
     services.nginx = {
       enable = true;
-      clientMaxBodySize = "0";
-      recommendedProxySettings = true;
-      recommendedOptimisation = true;
-
-      # Define virtual hosts for all subdomains
-      virtualHosts = lib.mkMerge [
-        (mkRP "grafana" "3000")
-        (mkRP "pihole" "3001")
-        (mkRP "dashboard" "8082")
-        (mkRP "prometheus" "9090")
-        (mkRP "portainer" "9443")
-        (mkRP "node-exporter" "9100")
-        (mkRP "cockpit" "10000")
-        (mkRP "nextcloud" "11000")
-      ];
+      virtualHosts = lib.genAttrs 
+        (map (sub: "${sub}.${domain}") subdomains) 
+        (sub: {
+          forceSSL = true;
+          enableACME = true;
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:${
+              {
+                "grafana" = "3000";
+                "pihole" = "3001";
+                "dashboard" = "8082";
+                "prometheus" = "9090";
+                "portainer" = "9443";
+                "node-exporter" = "9100";
+                "cockpit" = "10000";
+                "nextcloud" = "11000";
+              }.${sub}
+            }/";
+          };
+        });
     };
   };
 }
