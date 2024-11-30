@@ -28,11 +28,8 @@ in {
     networking.firewall.allowedTCPPorts = [ 80 ];
     services.nginx = {
       enable = true;
-      config = ''
-        server = {
-          client_max_body_size 0;
-        }
-      '';
+      # Disables checking body size, allowing nextcloud to recieve large files.
+      clientMaxBodySize = "0";
       recommendedProxySettings = true;
       recommendedOptimisation = true;
       virtualHosts = lib.mkMerge [
