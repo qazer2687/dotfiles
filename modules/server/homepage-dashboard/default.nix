@@ -109,7 +109,7 @@
                 description = "Cloud Storage";
                 href = "https://nextcloud.qazer.org/";
                 server = "opal";
-                container = "nextcloud";
+                container = "nextcloud-aio-mastercontainer";
                 icon = "sh-nextcloud";
               };
             }
