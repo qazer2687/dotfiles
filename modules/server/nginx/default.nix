@@ -40,12 +40,12 @@ in {
       virtualHosts = lib.mkMerge [
         (mkRP "grafana" "3000")
         (mkRP "pihole" "3001")
-        (mkRP "nextcloud" "8080")
         (mkRP "dashboard" "8082")
         (mkRP "prometheus" "9090")
         (mkRP "portainer" "9443")
         (mkRP "node-exporter" "9100")
         (mkRP "cockpit" "10000")
+        (mkRP "nextcloud" "11000")
       ];
     };
   };
