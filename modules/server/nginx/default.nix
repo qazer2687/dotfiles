@@ -113,7 +113,9 @@
 
     # Ensure ACME challenge directory exists
     systemd.tmpfiles.rules = [
-      "d /var/www/acme-challenge 0755 nginx root -"
+      "d /var/www/acme-challenge 0755 acme nginx -"
+      "d /var/www/acme-challenge/.well-known 0755 acme nginx -"
+      "d /var/www/acme-challenge/.well-known/acme-challenge 0755 acme nginx -"
     ];
   };
 }
