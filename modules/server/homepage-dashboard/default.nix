@@ -121,6 +121,14 @@
                 icon = "sh-mariadb";
               };
             }
+            {
+              "Redis" = {
+                description = "Database Cache";
+                server = "opal";
+                container = "redis";
+                icon = "sh-redis";
+              };
+            }
           ];
         }
       ];
