@@ -2,27 +2,17 @@
 let
   domain = "qazer.org";
 
-  # Unified function for creating certificates and reverse proxies
-  mkService = sub: port: let
-    fullDomain = if sub == "" then domain else "${sub}.${domain}";
-  in {
-    # ACME Certificate Configuration
-    security.acme.certs."${fullDomain}" = {
-      domain = fullDomain;
-      webroot = "/var/www/acme";
-    };
-
-    # Nginx Virtual Host Configuration
-    services.nginx.virtualHosts."${fullDomain}" = {
-      listen = [ "443 ssl" "80" ];
-      sslCertificate = "/var/lib/acme/${fullDomain}/fullchain.pem";
-      sslCertificateKey = "/var/lib/acme/${fullDomain}/privkey.pem";
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:${port}/";
-      };
-    };
+  # Services configuration
+  services = {
+    grafana = 3000;
+    pihole = 3001;
+    dashboard = 8082;
+    prometheus = 9090;
+    portainer = 9443;
+    "node-exporter" = 9100;
+    cockpit = 10000;
+    nextcloud = 11000;
   };
-
 in {
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
@@ -37,6 +27,13 @@ in {
         email = "qazer2687@gmail.com";
         webroot = "/var/www/acme";
       };
+      
+      # Generate certificates for each service
+      certs = lib.mapAttrs' (sub: port: 
+        lib.nameValuePair 
+          "${sub}.${domain}" 
+          { domain = "${sub}.${domain}"; }
+      ) services;
     };
 
     # Nginx Service Configuration
@@ -45,19 +42,20 @@ in {
       clientMaxBodySize = "0";
       recommendedProxySettings = true;
       recommendedOptimisation = true;
-    };
 
-    # Combine certificate and virtual host configurations
-    # Using lib.mkMerge to combine multiple service configurations
-    services.nginx.virtualHosts = lib.mkMerge [
-      (mkService "grafana" "3000")
-      (mkService "pihole" "3001")
-      (mkService "dashboard" "8082")
-      (mkService "prometheus" "9090")
-      (mkService "portainer" "9443")
-      (mkService "node-exporter" "9100")
-      (mkService "cockpit" "10000")
-      (mkService "nextcloud" "11000")
-    ];
+      # Virtual hosts for each service
+      virtualHosts = lib.mapAttrs' (sub: port: 
+        lib.nameValuePair 
+          "${sub}.${domain}" 
+          {
+            listen = [ "443 ssl" "80" ];
+            sslCertificate = "/var/lib/acme/${sub}.${domain}/fullchain.pem";
+            sslCertificateKey = "/var/lib/acme/${sub}.${domain}/privkey.pem";
+            locations."/" = {
+              proxyPass = "http://127.0.0.1:${toString port}/";
+            };
+          }
+      ) services;
+    };
   };
 }
