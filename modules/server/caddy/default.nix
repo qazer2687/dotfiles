@@ -12,7 +12,7 @@
     services.caddy = {
       enable = true;
       globalConfig = ''
-        auto_https disable_certs
+        auto_https off
       '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:3000
