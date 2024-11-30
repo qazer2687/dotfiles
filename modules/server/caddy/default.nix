@@ -3,7 +3,25 @@
   config,
   inputs,
   ...
-}: {
+}: let
+
+  cloudflare-api-token = builtins.readFile config.sops.secrets.cloudflare-api-token.path;
+  cloudflare-email = builtins.readFile config.sops.secrets.cloudflare-email.path;
+
+  # Function to create virtualHosts for Caddy
+  mkRP = sub: port: let
+    dom = if sub == "" then "qazer.org" else "${sub}.qazer.org";
+  in {
+    "${dom}" = {
+      extraConfig = ''
+        reverse_proxy http://100.100.101.66:${port}
+        import cloudflare
+      '';
+    };
+  };
+
+in {
+
   options.modules.server.caddy.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.caddy.enable {
@@ -13,35 +31,20 @@
       extraConfig = ''
         tls {
           dns cloudflare {
-            api_token "$(cat ${config.sops.secrets.cloudflare-api-token.path})"
+            api_token "${cloudflare-api-token}"
+          }
         }
       '';
-      virtualHosts."grafana.qazer.org".extraConfig = ''
-        reverse_proxy http://100.100.101.66:3000
-        import cloudflare
-      '';
-      virtualHosts."pihole.example.org".extraConfig = ''
-        reverse_proxy http://100.100.101.66:3001
-        import cloudflare
-      '';
-      virtualHosts."prometheus.qazer.org".extraConfig = ''
-        reverse_proxy http://100.100.101.66:9090
-        import cloudflare
-      '';
-      virtualHosts."node-exporter.qazer.org".extraConfig = ''
-        reverse_proxy http://100.100.101.66:9100
-        import cloudflare
-      '';
-      virtualHosts."cockpit.qazer.org".extraConfig = ''
-        reverse_proxy http://100.100.101.66:10000
-        import cloudflare
-      '';
-      virtualHosts."minecraft.qazer.org".extraConfig = ''
-        reverse_proxy http://100.100.101.66:25565
-        import cloudflare
-      '';
+      virtualHosts = lib.mkMerge [
+        (mkRP "grafana" "3000")
+        (mkRP "pihole" "3001")
+        (mkRP "dashboard" "8082")
+        (mkRP "prometheus" "9090")
+        (mkRP "portainer" "9443")
+        (mkRP "node-exporter" "9100")
+        (mkRP "cockpit" "10000")
+        (mkRP "nextcloud" "11000")
+      ];
     };
   };
 }
-
-
