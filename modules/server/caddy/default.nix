@@ -19,7 +19,7 @@
 
     services.caddy = {
       enable = true;
-      globalConfig = ''
+      extraConfig = ''
         tls off
       '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
