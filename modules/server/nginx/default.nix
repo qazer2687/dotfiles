@@ -4,21 +4,25 @@
   ...
 }: let
   domain = "qazer.org";
-  # Function to create virtualHosts.
-  mkRP =
-    sub: port:
-    let
-      dom = if sub == "" then domain else "${sub}.${domain}";
-    in {
-      "${dom}" = {
-        locations."/" = {
-          proxyPass = "https://127.0.0.1:${port}/";
-        };
-        listen = [ "443 ssl" "80" ];
-        sslCertificate = "/etc/letsencrypt/live/${dom}/fullchain.pem";
-        sslCertificateKey = "/etc/letsencrypt/live/${dom}/privkey.pem";
+
+  # Function to create virtualHosts with SSL and ACME configuration
+  mkRP = sub: port: let
+    dom = if sub == "" then domain else "${sub}.${domain}";
+  in {
+    security.acme.certificates."${dom}" = {
+      domain = dom;
+      webroot = "/var/www/acme";
+    };
+
+    services.nginx.virtualHosts."${dom}" = {
+      listen = [ "443 ssl" "80" ];
+      sslCertificate = "/var/lib/acme/${dom}/fullchain.pem";
+      sslCertificateKey = "/var/lib/acme/${dom}/privkey.pem";
+      locations."/" = {
+        proxyPass = "https://127.0.0.1:${port}/";
       };
     };
+  };
 in {
 
   # Cloudflare DNS Configuration
@@ -30,10 +34,9 @@ in {
   config = lib.mkIf config.modules.server.nginx.enable {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
 
-    services.certbot = {
-      enable = true;
-      email = "qazer2687@gmail.com";  # TODO: Replace with SOPS email.
-      domains = [ qazer.org ];
+    security.acme = {
+      acceptTerms = true;
+      defaultCertificate.email = "qazer2687@gmail.com"; # TODO: Replace with SOPS email.
     };
 
     services.nginx = {
