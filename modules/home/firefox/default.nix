@@ -9,18 +9,12 @@
   config = lib.mkIf config.modules.firefox.enable {
     programs.firefox = {
       enable = true;
-      # Required for paxmod to work.
-      package = pkgs.firefox-devedition;
-      # The profile is named like this because firefox devedition 
-      # refuses to open normal profiles.
-      profiles."dev-edition-default" = {
-        name = "dev-edition-default";
+      package = pkgs.firefox;
+      profiles."0" = {
+        name = "0";
         isDefault = true;
         id = 0;
-        
-        # This doesn't work properly, it leads to issues with rebuilding and leaves
-        # extensions stuck as disabled.
-        
+
         extensions = with config.nur.repos.rycee.firefox-addons; [
           ublock-origin
           keepa
@@ -29,8 +23,6 @@
           user-agent-string-switcher
         ];
         
-
-        # Extra configuration to append to the user.js file.
         extraConfig = ''
           user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
           user_pref("svg.context-properties.content.enabled", true);
@@ -261,18 +253,10 @@
           // visit https://github.com/yokoffing/Betterfox/blob/main/Smoothfox.js
           // Enter your scrolling overrides below this line:
 
+          // recommended for 60hz+ displays
           user_pref("apz.overscroll.enabled", true); // DEFAULT NON-LINUX
           user_pref("general.smoothScroll", true); // DEFAULT
-          user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 12);
-          user_pref("general.smoothScroll.msdPhysics.enabled", true);
-          user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 600);
-          user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 650);
-          user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 25);
-          user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaRatio", "2");
-          user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 250);
-          user_pref("general.smoothScroll.currentVelocityWeighting", "1");
-          user_pref("general.smoothScroll.stopDecelerationWeighting", "1");
-          user_pref("mousewheel.default.delta_multiplier_y", 300); // 250-400; adjust this number to your liking
+          user_pref("mousewheel.default.delta_multiplier_y", 275); // 250-400; adjust this number to your liking
 
           /****************************************************************************
           * END: BETTERFOX                                                           *
@@ -808,7 +792,7 @@
     # a web user-agent spoofer configured to emulate Chrome on ChromeOS.
     home.file."firefox-widevinecdm" = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       enable = true;
-      target = ".mozilla/firefox/dev-edition-default/gmp-widevinecdm";
+      target = ".mozilla/firefox/0/gmp-widevinecdm";
       source = pkgs.runCommandLocal "firefox-widevinecdm" {} ''
         out=$out/${pkgs.widevinecdm-aarch64.version}
         mkdir -p $out
@@ -817,7 +801,7 @@
       '';
       recursive = true;
     };
-    programs.firefox.profiles."dev-edition-default".settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
+    programs.firefox.profiles."0".settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       "media.gmp-widevinecdm.version" = pkgs.widevinecdm-aarch64.version;
       "media.gmp-widevinecdm.visible" = true;
       "media.gmp-widevinecdm.enabled" = true;
