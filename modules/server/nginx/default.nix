@@ -30,7 +30,8 @@ in {
       enable = true;
       config = ''
         server = {
-          client_max_body_size 0
+          client_max_body_size 0;
+          proxy_buffering off;
         }
       '';
       recommendedProxySettings = true;
