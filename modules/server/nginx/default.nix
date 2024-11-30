@@ -25,14 +25,20 @@ in {
       acceptTerms = true;
       defaults = {
         email = "qazer2687@gmail.com";
-        webroot = "/var/www/acme";
+        # Use DNS challenge if HTTP challenge fails
+        dnsProvider = null;  # Set to your DNS provider if using DNS challenge
       };
       
       # Generate certificates for each service
       certs = lib.mapAttrs' (sub: port: 
         lib.nameValuePair 
           "${sub}.${domain}" 
-          { domain = "${sub}.${domain}"; }
+          { 
+            domain = "${sub}.${domain}";
+            # Only attempt ACME if domain is publicly accessible
+            # You might want to manually manage certs for internal services
+            extraDomainNames = [ "${sub}.${domain}" ];
+          }
       ) services;
     };
 
@@ -48,8 +54,9 @@ in {
         lib.nameValuePair 
           "${sub}.${domain}" 
           {
-            forceSSL = true;
-            enableACME = true;
+            # Use self-signed for internal services
+            # Optionally: set up your own local CA
+            useACMEHost = "${sub}.${domain}";
             locations."/" = {
               proxyPass = "http://127.0.0.1:${toString port}/";
             };
