@@ -2,6 +2,7 @@
   lib,
   config,
   inputs,
+  pkgs,
   ...
 }: {
 
@@ -14,6 +15,7 @@
 
     services.caddy = {
       enable = true;
+      package = pkgs.xcaddy;
       virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:3000
         tls {
