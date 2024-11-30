@@ -31,7 +31,6 @@ in {
       httpConfig = ''
         server {
           listen 80;
-          listen 443;
         }
       '';
       # Disables checking body size, allowing nextcloud to recieve large files.
