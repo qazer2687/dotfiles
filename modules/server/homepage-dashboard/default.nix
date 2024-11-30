@@ -112,6 +112,8 @@
                 container = "nextcloud";
                 icon = "sh-nextcloud";
               };
+            }
+            {
               "MariaDB" = {
                 description = "Database Management System";
                 server = "opal";
