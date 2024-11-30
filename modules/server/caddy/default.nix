@@ -15,7 +15,6 @@
     "${dom}" = {
       extraConfig = ''
         reverse_proxy http://100.100.101.66:${port}
-        import cloudflare
       '';
     };
   };
@@ -29,11 +28,7 @@ in {
     services.caddy = {
       enable = true;
       extraConfig = ''
-        tls {
-          dns cloudflare {
-            api_token "${cloudflare-api-token}"
-          }
-        }
+        qazer.org
       '';
       virtualHosts = lib.mkMerge [
         (mkRP "grafana" "3000")
