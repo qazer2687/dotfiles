@@ -13,6 +13,12 @@ in
     security.acme = {
       acceptTerms = true;
       defaults.email = "qazer2687@gmail.com";
+      certs."qazer.org" = {
+      webroot = "/var/lib/acme/challenges-org";
+      email = "qazer2687@gmail.com";
+      group = "nginx";
+      extraDomainNames = [ "www.example.com" ];
+    };
     };
 
     # Nginx service setup
