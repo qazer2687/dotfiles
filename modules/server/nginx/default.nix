@@ -48,9 +48,8 @@ in {
         lib.nameValuePair 
           "${sub}.${domain}" 
           {
-            listen = [ "443 ssl" "80" ];
-            sslCertificate = "/var/lib/acme/${sub}.${domain}/fullchain.pem";
-            sslCertificateKey = "/var/lib/acme/${sub}.${domain}/privkey.pem";
+            forceSSL = true;
+            enableACME = true;
             locations."/" = {
               proxyPass = "http://127.0.0.1:${toString port}/";
             };
