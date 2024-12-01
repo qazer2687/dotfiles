@@ -19,31 +19,28 @@
 
     services.caddy = {
       enable = true;
-      globalConfig = ''
-        auto_https off
-      '';
-      virtualHosts."http://grafana.qazer.org".extraConfig = ''
+      virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:3000
       '';
-      virtualHosts."http://pihole.qazer.org".extraConfig = ''
+      virtualHosts."pihole.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:3001
       '';
-      virtualHosts."http://dashboard.qazer.org".extraConfig = ''
+      virtualHosts."dashboard.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:8082
       '';
-      virtualHosts."http://prometheus.qazer.org".extraConfig = ''
+      virtualHosts."prometheus.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:9090
       '';
-      virtualHosts."http://portainer.qazer.org".extraConfig = ''
+      virtualHosts."portainer.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:9443
       '';
-      virtualHosts."http://node-exporter.qazer.org".extraConfig = ''
+      virtualHosts."node-exporter.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:9100
       '';
-      virtualHosts."http://cockpit.qazer.org".extraConfig = ''
+      virtualHosts."cockpit.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:10000
       '';
-      virtualHosts."http://nextcloud.qazer.org".extraConfig = ''
+      virtualHosts."nextcloud.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:11000
       '';
     };
