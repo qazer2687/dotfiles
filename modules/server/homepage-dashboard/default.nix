@@ -36,7 +36,7 @@
             units = "imperial";
             refresh = 3000;
             diskUnits = "bytes";
-          }
+          };
         }
         {
           openmeteo = {
