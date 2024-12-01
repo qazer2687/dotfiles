@@ -51,7 +51,7 @@
 
       bookmarks = [
         {
-          "Bookmarks" = {
+          "Bookmarks" = [
             {
               "Cloudflare" = {
                 description = "CDN, DNS & DDoS Protection";
@@ -66,7 +66,7 @@
                 icon = "sh-tailscale";
               };
             }
-          };  
+          ];  
         }
       ];
 
