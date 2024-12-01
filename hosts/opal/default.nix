@@ -45,6 +45,7 @@
     22 # SSH
     53 # Pihole DNS
     80
+    81
     443
     3000 # Grafana
     3001 # Pihole
