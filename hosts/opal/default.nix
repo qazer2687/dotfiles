@@ -55,11 +55,6 @@
     # 25565 # Minecraft
   ];
 
- /* services.cockpit = {
-    enable = true;
-    port = 10000;
-  };*/
-
   # I have installed gnome before so autosuspend
   # seems to be set statefully somewhere.
   services.xserver.displayManager.gdm.autoSuspend = false;
@@ -76,7 +71,6 @@
     server = {
       docker.enable = true;
       samba.enable = true;
-      nginx.enable = true;
       homepage-dashboard.enable = true;
     };
   };
