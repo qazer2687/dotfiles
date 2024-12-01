@@ -13,7 +13,7 @@
         title = "Dashboard";
         startURL = "https://dashboard.qazer.org";
         theme = "dark";
-        background = "https://upload.wikimedia.org/wikipedia/commons/6/68/Solid_black.png";
+        background = "https://i.redd.it/tmxyw1pfnll81.png";
         color = "slate";
         hideVersion = "true";
         showStats = "true";
