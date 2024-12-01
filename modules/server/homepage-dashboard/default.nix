@@ -126,7 +126,7 @@
               "Nextcloud MariaDB" = {
                 description = "Database Management System";
                 server = "opal";
-                container = "nextcloud-db";
+                container = "nextcloud-mariadb";
                 icon = "sh-mariadb";
               };
             }
