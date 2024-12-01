@@ -19,6 +19,9 @@
 
     services.caddy = {
       enable = true;
+      globalConfig = ''
+        auto_https off
+      '';
       extraConfig = ''
         qazer.org {
           tls /etc/caddy/opal.taila82ec7.ts.net.crt /etc/caddy/opal.taila82ec7.ts.net.key
