@@ -17,7 +17,7 @@
         color = "slate";
         hideVersion = "true";
         showStats = "true";
-        #statusStyle = "dot";
+        statusStyle = "basic";
       };
 
       docker = {
@@ -53,16 +53,16 @@
         {
           "Bookmarks" = [
             {
-              "Cloudflare" = {
+              "Cloudflare" = [{
                 href = "https://dash.cloudflare.com";
                 icon = "sh-cloudflare";
-              };
+              }];
             }
             {
-              "Tailscale" = {
+              "Tailscale" = [{
                 href = "https://login.tailscale.com/admin/machines";
                 icon = "sh-tailscale";
-              };
+              }];
             }
           ];  
         }
