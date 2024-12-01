@@ -18,7 +18,17 @@
         hideVersion = "true";
         showStats = "true";
         statusStyle = "basic";
+
+        layout = {
+          Bookmarks = {
+            style = "column";
+            header = "true";
+            rows = "4";
+          };
+        };
       };
+
+      
 
       docker = {
         opal = {
