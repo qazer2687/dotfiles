@@ -75,7 +75,7 @@
     server = {
       docker.enable = true;
       samba.enable = true;
-      caddy.enable = true;
+      nginx.enable = true;
       homepage-dashboard.enable = true;
     };
   };
