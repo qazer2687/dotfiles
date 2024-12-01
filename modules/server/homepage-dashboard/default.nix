@@ -54,14 +54,12 @@
           "Bookmarks" = [
             {
               "Cloudflare" = {
-                description = "CDN, DNS & DDoS Protection";
                 href = "https://dash.cloudflare.com";
                 icon = "sh-cloudflare";
               };
             }
             {
               "Tailscale" = {
-                description = "VPN Service";
                 href = "https://login.tailscale.com/admin/machines";
                 icon = "sh-tailscale";
               };
