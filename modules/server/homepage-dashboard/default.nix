@@ -25,6 +25,20 @@
           };
         }
         {
+          resources = {
+            cpu = true;
+            memory = true;
+            disk = "/";
+            cputemp = true;
+            tempmin = 0;
+            tempmax = 100;
+            uptime = true;
+            units = "imperial";
+            refresh = 3000;
+            diskUnits = "bytes";
+          }
+        }
+        {
           openmeteo = {
             latitude = "51.5072";
             longitude = "0.1276";
