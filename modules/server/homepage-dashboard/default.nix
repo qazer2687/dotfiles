@@ -10,10 +10,10 @@
       enable = true;
       listenPort = 8082;
       settings = {
-        title = "dashboard.qazer.org";
+        title = "Dashboard";
         startURL = "https://dashboard.qazer.org";
         theme = "dark";
-        background = "https://i.imgur.com/GgtJC5a.jpeg";
+        background = "https://upload.wikimedia.org/wikipedia/commons/6/68/Solid_black.png";
         color = "slate";
         hideVersion = "true";
         showStats = "true";
