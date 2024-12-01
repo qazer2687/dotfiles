@@ -62,7 +62,7 @@
             {
               "Pihole" = {
                 description = "DNS Server";
-                href = "http://pihole.qazer.org/";
+                href = "pihole.qazer.org";
                 server = "opal";
                 container = "pihole";
                 icon = "sh-pi-hole";
@@ -71,7 +71,7 @@
             {
               "Nginx Proxy Manager" = {
                 description = "SSL & Proxy";
-                href = "http://pihole.qazer.org/";
+                href = "pihole.qazer.org";
                 server = "opal";
                 container = "pihole";
                 icon = "sh-nginx-proxy-manager";
@@ -84,7 +84,7 @@
             {
               "Grafana" = {
                 description = "Observability Platform";
-                href = "http://grafana.qazer.org/";
+                href = "grafana.qazer.org";
                 server = "opal";
                 container = "grafana";
                 icon = "sh-grafana";
@@ -93,7 +93,7 @@
             {
               "Prometheus" = {
                 description = "Monitoring System";
-                href = "http://prometheus.qazer.org/";
+                href = "prometheus.qazer.org";
                 server = "opal";
                 container = "prometheus";
                 icon = "sh-prometheus";
@@ -103,7 +103,7 @@
               "Portainer" = {
                 description = "Container Management";
                 # Needs to use HTTPS.
-                href = "https://portainer.qazer.org/";
+                href = "portainer.qazer.org";
                 server = "opal";
                 container = "portainer";
                 icon = "sh-portainer";
@@ -116,7 +116,7 @@
             {
               "Nextcloud" = {
                 description = "Cloud Storage";
-                href = "https://nextcloud.qazer.org/";
+                href = "nextcloud.qazer.org";
                 server = "opal";
                 container = "nextcloud";
                 icon = "sh-nextcloud";
