@@ -21,7 +21,7 @@
       enable = true;
       extraConfig = ''
         qazer.org {
-          tls /etc/caddy/tailscale/opal.taila82ec7.ts.net.crt /etc/caddy/tailscale/opal.taila82ec7.ts.net.key
+          tls /etc/caddy/opal.taila82ec7.ts.net.crt /etc/caddy/opal.taila82ec7.ts.net.key
         }
       '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
