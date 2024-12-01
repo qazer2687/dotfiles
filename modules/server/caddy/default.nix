@@ -19,6 +19,11 @@
 
     services.caddy = {
       enable = true;
+      extraConfig = ''
+        qazer.org {
+          tls /etc/caddy/tailscale/opal.taila82ec7.ts.net.crt /etc/caddy/tailscale/opal.taila82ec7.ts.net.key
+        }
+      '';
       virtualHosts."grafana.qazer.org".extraConfig = ''
         reverse_proxy http://127.0.0.1:3000
       '';
