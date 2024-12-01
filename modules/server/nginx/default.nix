@@ -1,99 +1,47 @@
-{ lib, config, ... }: let
-  # Read Cloudflare API token and email from SOPS secrets
-  cloudflare-api-token = builtins.readFile config.sops.secrets.cloudflare-api-token.path;
-  cloudflare-email = builtins.readFile config.sops.secrets.cloudflare-email.path;
-in
 {
+  lib,
+  config,
+  ...
+}: let
+  domain = "qazer.org";
+  # Function to create virtualHosts.
+  mkRP =
+    sub: port:
+    let
+      dom = if sub == "" then domain else "${sub}.${domain}";
+    in {
+      "${dom}" = {
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:${port}/";
+        };
+      };
+    };
+in {
+
+  # Cloudflare DNS Configuration
+  # A - @ -> 100.100.101.66
+  # A - *.qazer.org -> 100.100.101.66
+
   options.modules.server.nginx.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.nginx.enable {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
-
-    # ACME setup for wildcard domain using Cloudflare DNS challenge
-    security.acme = {
-      acceptTerms = true;
-      defaults.email = "qazer2687@gmail.com";
-      certs."qazer.org" = {
-      webroot = "/var/lib/acme/challenges-org";
-      email = "qazer2687@gmail.com";
-      group = "nginx";
-      extraDomainNames = [ "www.example.com" ];
-    };
-    };
-
-    # Nginx service setup
     services.nginx = {
       enable = true;
+      # Disables checking body size, allowing nextcloud to recieve large files.
       clientMaxBodySize = "0";
       recommendedProxySettings = true;
       recommendedOptimisation = true;
-      
-      virtualHosts = {
-        "grafana.qazer.org" = {
-          addSSL = true;
-          enableACME = true;
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:3000/";
-          };
-        };
-        "pihole.qazer.org" = {
-          addSSL = true;
-          enableACME = true;
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:3001/";
-          };
-        };
-        "dashboard.qazer.org" = {
-          addSSL = true;
-          enableACME = true;
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:8082/";
-          };
-        };
-        "prometheus.qazer.org" = {
-          addSSL = true;
-          enableACME = true;
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:9090/";
-          };
-        };
-        "portainer.qazer.org" = {
-          addSSL = true;
-          enableACME = true;
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:9443/";
-          };
-        };
-        "node-exporter.qazer.org" = {
-          addSSL = true;
-          enableACME = true;
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:9100/";
-          };
-        };
-        "cockpit.qazer.org" = {
-          addSSL = true;
-          enableACME = true;
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:10000/";
-          };
-        };
-        "nextcloud.qazer.org" = {
-          addSSL = true;
-          enableACME = true;
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:11000/";
-          };
-        };
-      };
+      virtualHosts = lib.mkMerge [
+        (mkRP "grafana" "3000")
+        (mkRP "pihole" "3001")
+        (mkRP "dashboard" "8082")
+        (mkRP "nextcloud" "8083")
+        (mkRP "prometheus" "9090")
+        (mkRP "portainer" "9443")
+        (mkRP "node-exporter" "9100")
+        (mkRP "cockpit" "10000")
+      ];
     };
-
-    # Ensure ACME challenge directory exists
-    systemd.tmpfiles.rules = [
-      "d /var/www/acme-challenge 0755 acme nginx -"
-      "d /var/www/acme-challenge/.well-known 0755 acme nginx -"
-      "d /var/www/acme-challenge/.well-known/acme-challenge 0755 acme nginx -"
-    ];
   };
 }
-
