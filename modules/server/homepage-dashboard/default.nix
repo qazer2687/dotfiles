@@ -16,15 +16,23 @@
         background = "https://imgur.com/GgtJC5a";
         color = "slate";
         hideVersion = "true";
-        #showStats = "true";
-        statusStyle = "dot";
+        showStats = "true";
+        #statusStyle = "dot";
       };
+
+      docker = {
+        opal = {
+          host = "127.0.0.1";
+          port = "2376";
+        };
+      };
+
       widgets = [
-        {
+        /*{
           greeting = {
             text = "Qazer's Homelab Dashboard";
           };
-        }
+        }*/
         {
           resources = {
             cpu = true;
@@ -41,16 +49,9 @@
         }
       ];
 
-      docker = {
-        opal = {
-          host = "127.0.0.1";
-          port = "2376";
-        };
-      };
-
-      services = [
+      bookmarks = [
         {
-          "Networking" = [
+          "Bookmarks" = {
             {
               "Cloudflare" = {
                 description = "CDN, DNS & DDoS Protection";
@@ -65,6 +66,13 @@
                 icon = "sh-tailscale";
               };
             }
+          };  
+        }
+      ];
+
+      services = [
+        {
+          "Networking" = [
             {
               "Pihole" = {
                 description = "DNS Server";
