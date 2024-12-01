@@ -28,6 +28,7 @@
       "udev.log_priority=3"
       "vt.global_cursor_default=0"
       "mitigations=off"
+      "modprobe.blacklist=iTCO_wdt"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
