@@ -13,7 +13,7 @@
         title = "Dashboard";
         startURL = "https://dashboard.qazer.org";
         theme = "dark";
-        background = "https://i.redd.it/tmxyw1pfnll81.png";
+        background = "https://i.imgur.com/GgtJC5a.jpeg";
         color = "slate";
         hideVersion = "true";
         showStats = "true";
