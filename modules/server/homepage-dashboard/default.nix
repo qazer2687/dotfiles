@@ -68,6 +68,15 @@
                 icon = "sh-pi-hole";
               };
             }
+            {
+              "Nginx Proxy Manager" = {
+                description = "SSL & Proxy";
+                href = "http://pihole.qazer.org/";
+                server = "opal";
+                container = "pihole";
+                icon = "sh-nginx-proxy-manager";
+              };
+            }
           ];
         }
         {
@@ -109,23 +118,23 @@
                 description = "Cloud Storage";
                 href = "https://nextcloud.qazer.org/";
                 server = "opal";
-                container = "nextcloud-aio-mastercontainer";
+                container = "nextcloud";
                 icon = "sh-nextcloud";
               };
             }
             {
-              "MariaDB" = {
+              "Nextcloud MariaDB" = {
                 description = "Database Management System";
                 server = "opal";
-                container = "mariadb";
+                container = "nextcloud-db";
                 icon = "sh-mariadb";
               };
             }
             {
-              "Redis" = {
+              "Nextcloud Redis" = {
                 description = "Database Cache";
                 server = "opal";
-                container = "redis";
+                container = "nextcloud-redis";
                 icon = "sh-redis";
               };
             }
