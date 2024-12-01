@@ -33,7 +33,7 @@
             tempmin = 0;
             tempmax = 100;
             uptime = true;
-            units = "imperial";
+            units = "metric";
             refresh = 3000;
             diskUnits = "bytes";
           };
