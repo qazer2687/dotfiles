@@ -13,8 +13,10 @@
         "hosts" = [ "tcp://0.0.0.0:2376" "unix:///var/run/docker.sock" ];
       };
     };
-    users.users.alex.extraGroups = ["docker"];
-    # Allow the system to boot independantly of dockers status, speeding up boot.
-    systemd.services.docker.wantedBy = [];
-  };
+    # Starts docker directly after multi-user.target is reached.
+    systemd.timers.docker = {
+      unitConfig.OnBootSec = "1sec";
+      wantedBy = [ "timers.target" ];
+    };
+  }
 }

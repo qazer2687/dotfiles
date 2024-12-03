@@ -14,6 +14,8 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
+  
+
   networking.hostName = "opal";
 
   # I have installed gnome before so autosuspend
