@@ -9,7 +9,7 @@
     virtualisation.docker = {
       enable = true;
       daemon.settings = {
-        data-root = "/home/alex/.docker"; # sudo chown -R alex ~/.docker
+        data-root = "/var/lib/docker";
         "hosts" = [ "tcp://0.0.0.0:2376" "unix:///var/run/docker.sock" ];
       };
     };
