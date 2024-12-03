@@ -14,9 +14,28 @@
       };
     };
     users.users.alex.extraGroups = ["docker"];
-    # Allow the SSH daemon to load before docker.
-    systemd.services.docker = {
-      after = [ "sshd.service" ];
+    # Allow the system to boot independantly of docker.
+    systemd = {
+      timers.docker = {
+        unitConfig.OnBootSec = "10sec";
+        wantedBy = [ "timers.target" ];
+      };
+      services.docker = {
+        before = [];
+        after = [];
+        wants = [];
+        wantedBy = [];
+        requires = [];
+        requiredBy = [];
+      };
+      sockets.docker = {
+        before = [];
+        after = [];
+        wants = [];
+        wantedBy = [];
+        requires = [];
+        requiredBy = [];
+      };
     };
   };
 }
