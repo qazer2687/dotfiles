@@ -74,10 +74,11 @@
     };
     systemd = {
       services.NetworkManager-wait-online.enable = false;
-      network.wait-online.enable = false;
+      # Disable the service, which hangs on boot.
+      services.NetworkManager-dispatcher.enable = false;
     };
 
-    # TODO: Use Tailscale SSH.
+    # TODO: UseTailscale SSH.
     services.openssh = {
       enable = true;
       settings = {
