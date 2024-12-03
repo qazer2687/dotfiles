@@ -13,10 +13,10 @@
         "hosts" = [ "tcp://0.0.0.0:2376" "unix:///var/run/docker.sock" ];
       };
     };
-    # Starts docker directly after multi-user.target is reached.
-    systemd.timers.docker = {
-      unitConfig.OnBootSec = "1sec";
-      wantedBy = [ "timers.target" ];
+    users.users.alex.extraGroups = ["docker"];
+    # Allow the SSH daemon to load before docker.
+    systemd.services.docker = {
+      after = [ "sshd.service" ];
     };
   };
 }
