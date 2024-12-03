@@ -18,5 +18,5 @@
       unitConfig.OnBootSec = "1sec";
       wantedBy = [ "timers.target" ];
     };
-  }
+  };
 }
