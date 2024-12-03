@@ -14,5 +14,7 @@
       };
     };
     users.users.alex.extraGroups = ["docker"];
+    # Allow the system to boot independantly of dockers status, speeding up boot.
+    systemd.services.docker.wantedBy = [];
   };
 }
