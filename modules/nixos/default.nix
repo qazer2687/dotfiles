@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./networkmanager
     ./nvidia
     ./pipewire
     ./systemd-boot

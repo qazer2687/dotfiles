@@ -109,7 +109,6 @@
   
   modules = {
     core.enable = true;
-    networkmanager.enable = true;
     bluetooth.enable = true;
     # Sound is managed via the setupAsahiSound option
     # and I do not need easyeffects installed on Jet.

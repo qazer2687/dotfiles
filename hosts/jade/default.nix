@@ -135,7 +135,6 @@
 
   modules = {
     core.enable = true;
-    networkmanager.enable = true;
     nvidia.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;

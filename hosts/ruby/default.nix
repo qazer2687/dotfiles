@@ -73,7 +73,6 @@
   # Modules
   modules = {
     core.enable = true;
-    networkmanager.enable = true;
     pipewire.enable = true;
     systemd-boot.enable = true;
     bluetooth.enable = true;
