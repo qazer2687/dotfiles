@@ -14,7 +14,20 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
-  
+    boot = {
+    kernelParams = [
+      "quiet"
+      "mitigations=off"
+    ];
+    blacklistedKernelModules = [
+      "iTCO_wdt"
+    ];
+    initrd.verbose = false;
+    consoleLogLevel = 0;
+
+    #kernelPackages = pkgs.linuxPackages_cachyos;
+    #kernelPackages = pkgs.linuxPackages_xanmod;
+  };
 
   networking.hostName = "opal";
 
