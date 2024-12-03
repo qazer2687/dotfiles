@@ -18,6 +18,9 @@
   # lib.mkForce in the configuration files for specific hosts.
 
   config = lib.mkIf config.modules.core.enable {
+
+    ########## NIX ##########
+
     nix = let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in {
@@ -41,6 +44,8 @@
       nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
+    ########## NIXPKGS ##########
+
     nixpkgs = {
       config = {
         # Permit the install of packages
@@ -57,12 +62,22 @@
       ];
     };
 
-    # Allow all the IP's in the tailscale range to bypass firewall.
-    networking.firewall.extraInputRules = ''
+    ########## NETWORKING ##########
+
+    networking = {
+      networkmanager.enable = true;
+      # Allow all the IP's in the tailscale range to bypass firewall.
+      firewall.extraInputRules = ''
       -A INPUT -i tailscale0 -j ACCEPT
       -A INPUT -s 100.64.0.0/10 -j ACCEPT
     '';
+    };
+    systemd = {
+      services.NetworkManager-wait-online.enable = false;
+      network.wait-online.enable = false;
+    };
 
+    # TODO: Use Tailscale SSH.
     services.openssh = {
       enable = true;
       settings = {
@@ -71,23 +86,26 @@
       };
     };
 
+    ########## KEYMAP ##########
+
     console.keyMap = "colemak";
     services.xserver.xkb = {
       layout = "gb";
       variant = "colemak";
     };
 
+    ########## LOCALE ##########
+
     time.timeZone = "Europe/London";
     i18n.defaultLocale = "en_GB.UTF-8";
 
-    programs.dconf.enable = true;
-    security.polkit.enable = true;
-    systemd.coredump.enable = false;
-
+    ########## SOPS ##########
 
     sops.defaultSopsFormat = "yaml";
     sops.defaultSopsFile = ../../../secrets/default.yaml;
     sops.age.keyFile = "/home/alex/.config/sops/age/keys.txt";
+
+    ########## ENVIRONMENT ##########
 
     environment = {
       defaultPackages = lib.mkForce [];
@@ -99,5 +117,11 @@
         NIXPKGS_ALLOW_INSECURE = "1";
       };
     };
+
+    ########## MISC ##########
+
+    programs.dconf.enable = true;
+    security.polkit.enable = true;
+    systemd.coredump.enable = false;
   };
 }
