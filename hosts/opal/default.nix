@@ -20,6 +20,8 @@
       "mitigations=off"
     ];
     blacklistedKernelModules = [
+      # Disable the watchdog timer to stop
+      # watchdog from hanging on poweroff.
       "iTCO_wdt"
     ];
     initrd.verbose = false;
