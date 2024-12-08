@@ -50,8 +50,8 @@
 
         decoration {
           rounding = 6
-          active_opacity = 0.92
-          inactive_opacity = 0.92
+        #  active_opacity = 0.92
+        #  inactive_opacity = 0.92
 
         #  blur {
         #    enabled = true
@@ -123,10 +123,10 @@
         bind = $mod, down, movewindow, d
 
         # Resize windows
-        bind = $mod, Shift, LEFT, resizeactive -5 0
-        bind = $mod, Shift, UP, resizeactive 0 -5
-        bind = $mod, Shift, DOWN, resizeactive 0 5
-        bind = $mod, Shift, RIGHT, resizeactive 5 0
+        bind = $mod, Shift, left, resizeactive -5 0
+        bind = $mod, Shift, up, resizeactive 0 -5
+        bind = $mod, Shift, down, resizeactive 0 5
+        bind = $mod, Shift, right, resizeactive 5 0
 
         # Workspace Navigation
         bind = $mod, 1, workspace, 1
