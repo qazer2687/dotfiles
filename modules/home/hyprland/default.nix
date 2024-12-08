@@ -123,10 +123,10 @@
         bind = $mod, down, movewindow, d
 
         # Resize windows
-        bind = $mod, Shift, left, resizeactive -5 0
-        bind = $mod, Shift, up, resizeactive 0 -5
-        bind = $mod, Shift, down, resizeactive 0 5
-        bind = $mod, Shift, right, resizeactive 5 0
+       # bind = $mod, Shift, left, resizeactive -5 0
+       # bind = $mod, Shift, up, resizeactive 0 -5
+       # bind = $mod, Shift, down, resizeactive 0 5
+       # bind = $mod, Shift, right, resizeactive 5 0
 
         # Workspace Navigation
         bind = $mod, 1, workspace, 1
