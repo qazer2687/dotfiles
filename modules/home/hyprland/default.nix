@@ -7,6 +7,10 @@
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprland.enable {
+    environment.packages = [
+      pkgs.hyprsunset
+    ];
+
     services.hyprpaper = {
       enable = true;
       settings = {
@@ -49,13 +53,13 @@
           active_opacity = 0.92
           inactive_opacity = 0.92
 
-          blur {
-            enabled = true
-            ignore_opacity = true
-            size = 5
-            passes = 5
-            vibrancy = 0.4
-          }
+        #  blur {
+        #    enabled = true
+        #    ignore_opacity = true
+        #    size = 5
+        #    passes = 5
+        #    vibrancy = 0.4
+        #  }
         }
 
         animations {
@@ -104,14 +108,25 @@
         bindel = ,XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%+
         bindel = ,XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%-
 
+        # Keyboard Backlight Controls
+        bindel = $mod ,XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%+
+        bindel = $mod, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%-
+
+
         # Floating
         bind = $mod, SPACE, togglefloating,
 
-        # Move windows
+        # Move
         bind = $mod, left, movewindow, l
         bind = $mod, right, movewindow, r
         bind = $mod, up, movewindow, u
         bind = $mod, down, movewindow, d
+
+        # Resize windows
+        bind = $mod, Shift, LEFT, resizeactive -5 0
+        bind = $mod, Shift, UP, resizeactive 0 -5
+        bind = $mod, Shift, DOWN, resizeactive 0 5
+        bind = $mod, Shift, RIGHT, resizeactive 5 0
 
         # Workspace Navigation
         bind = $mod, 1, workspace, 1
@@ -136,6 +151,9 @@
         bind = $mod SHIFT, 8, movetoworkspace, 8
         bind = $mod SHIFT, 9, movetoworkspace, 9
         bind = $mod SHIFT, 0, movetoworkspace, 10
+
+        # Eye Comfort
+        exec = hyprsunset -t 3000
       '';
     };
   };
