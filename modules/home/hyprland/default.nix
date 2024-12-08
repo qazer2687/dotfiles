@@ -7,7 +7,7 @@
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprland.enable {
-    environment.packages = [
+    home.packages = [
       pkgs.hyprsunset
     ];
 
