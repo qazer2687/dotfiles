@@ -34,7 +34,7 @@
         };
 
         colors = {
-          alpha = "0.5"; # Transparency
+          #alpha = "0.5"; # Transparency
           foreground = "ffffff"; # Text
           background = "000000"; # Base
           regular0 = "494d64"; # Surface 1
