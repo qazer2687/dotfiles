@@ -145,19 +145,11 @@
               };
             }
             {
-              "Nextcloud MariaDB" = {
-                description = "Database Management System";
+              "Immich" = {
+                description = "Photo & Video Management";
                 server = "opal";
-                container = "nextcloud-mariadb";
-                icon = "sh-mariadb";
-              };
-            }
-            {
-              "Nextcloud Redis" = {
-                description = "Database Cache";
-                server = "opal";
-                container = "nextcloud-redis";
-                icon = "sh-redis";
+                container = "immich_server";
+                icon = "sh-immich";
               };
             }
           ];
