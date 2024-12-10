@@ -21,7 +21,7 @@
         };
 
         scrollback = {
-          lines = "1000";
+          lines = "10000";
         };
 
         cursor = {
