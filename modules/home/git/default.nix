@@ -20,6 +20,7 @@
           Hostname opal
           Port 22
       '';
+    };
 
     home.file.".ssh/config" = {
       # This is a fix from stackoverflow that allows connecting to github over SSH when port 22 is blocked.
