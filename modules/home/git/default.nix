@@ -16,6 +16,15 @@
       # This is a fix from stackoverflow that allows connecting to github over SSH when port 22 is blocked.
       # https://stackoverflow.com/questions/7953806/github-ssh-via-public-wifi-port-22-blocked
       text = ''
+        Host opal
+          Hostname opal
+          Port 22
+      '';
+
+    home.file.".ssh/config" = {
+      # This is a fix from stackoverflow that allows connecting to github over SSH when port 22 is blocked.
+      # https://stackoverflow.com/questions/7953806/github-ssh-via-public-wifi-port-22-blocked
+      text = ''
         Host github.com
           Hostname ssh.github.com
           Port 443
