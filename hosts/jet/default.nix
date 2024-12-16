@@ -25,7 +25,7 @@
 
   # These are configured through home-manager but this
   # option is required so they appear as desktop entries.
-  programs.sway.enable = true;
+  #programs.sway.enable = true;
   #programs.hyprland.enable = true;
 
   programs.fish.enable = true;
@@ -38,7 +38,7 @@
     xdgOpenUsePortal = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      #pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
@@ -62,19 +62,11 @@
     kernelParams = [
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
-      "kernel.nmi_watchdog=0"
-      "fbcon=nodefer"
-      "bgrt_disable"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=0"
-      "udev.log_priority=2"
-      "vt.global_cursor_default=0"
-      "mitigations=off"
       "quiet"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
-    m1n1CustomLogo = ../../assets/m1n1CustomLogo.png;
+    #m1n1CustomLogo = ../../assets/m1n1CustomLogo.png;
   };
 
   services.getty.autologinUser = "alex";
