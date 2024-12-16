@@ -8,13 +8,13 @@
   ];
 
   home.packages = with pkgs; [
-    obsidian # Note Taking
-    nautilus # File Browser
-    gammastep # Blue Light Filter
+    obsidian
+    nautilus
+    gammastep
     fragments # Torrent Client
-    #calibre # Manage Books
-    vlc # Video Player
-    teams-for-linux # :/
+    calibre
+    vlc
+    teams-for-linux
     loupe # Image Viewer
   ];
 
@@ -37,13 +37,13 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
-    neovim.enable = false;
+    #neovim.enable = true;
 
     # Security
-    gpg.enable = true;
+    #gpg.enable = true;
 
     # Gaming
-    prismlauncher.enable = false;
+    #prismlauncher.enable = true;
   };
 
   home.stateVersion = "24.11";
