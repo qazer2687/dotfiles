@@ -86,6 +86,11 @@
           }
         }
 
+        misc {
+          disable_splash_rendering = true
+          disable_hyprland_logo = true  
+        }
+
         # Open Terminal
         bind = $mod, Return, exec, foot
 
