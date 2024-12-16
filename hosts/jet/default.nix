@@ -63,11 +63,23 @@
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
       "quiet"
+      # Redirect console messages.
+      "console=tty3"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
     #m1n1CustomLogo = ../../assets/m1n1CustomLogo.png;
   };
+
+  # Hide the 'File descriptor leaked on LVM invocation' warning on boot.
+  environment.etc."lvm/lvm.conf".text = ''
+    devices {
+        suppress_fd_warnings = 1;
+    }
+    logging {
+        level = 0;
+    }
+  '';
 
   services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
