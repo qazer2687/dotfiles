@@ -65,6 +65,8 @@
       "quiet"
       # Redirect console messages.
       "console=tty3"
+      # Disable cursor to stop blinking.
+      "vt.global_cursor_default=0"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
@@ -81,7 +83,16 @@
     }
   '';
 
-  services.getty.autologinUser = "alex";
+  # Autologin and hide getty messages.
+  services.getty = {
+    autologinUser = "alex";
+    extraArgs = [
+      "--skip-login"
+      "--nonewline"
+      "--noissue"
+      "--noclear"
+    ];
+  };
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
   '';
