@@ -78,7 +78,6 @@
       services.NetworkManager-dispatcher.enable = false;
     };
 
-    # TODO: UseTailscale SSH.
     services.openssh = {
       enable = true;
       settings = {
@@ -120,6 +119,12 @@
     };
 
     ########## MISC ##########
+
+    # Fix 'command-not-found' error 'failed to open database'.
+    programs.nix-index = {
+      enable = true;
+      enableFishIntegration = true;
+    };
 
     programs.dconf.enable = true;
     security.polkit.enable = true;
