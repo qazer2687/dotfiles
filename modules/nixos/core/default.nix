@@ -121,11 +121,7 @@
     ########## MISC ##########
 
     # Fix 'command-not-found' error 'failed to open database'.
-    programs.nix-index = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-
+    programs.nix-index.enable = true;
     programs.dconf.enable = true;
     security.polkit.enable = true;
     systemd.coredump.enable = false;
