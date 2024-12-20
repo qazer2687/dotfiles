@@ -121,7 +121,7 @@
     ########## MISC ##########
 
     # Fix 'command-not-found' error 'failed to open database'.
-    programs.command-not-found.enable = true;
+    programs.command-not-found.enable = false;
     programs.nix-index = {
       enable = true;
       enableFishIntegration = true;
