@@ -122,11 +122,6 @@
 
     # Fix 'command-not-found' error 'failed to open database'.
     programs.command-not-found.enable = false;
-    programs.nix-index = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-
     programs.dconf.enable = true;
     security.polkit.enable = true;
     systemd.coredump.enable = false;
