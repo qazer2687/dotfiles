@@ -129,7 +129,10 @@
     # and I do not need easyeffects installed on Jet.
     #pipewire.enable = true;
     systemd-boot.enable = true;
-    filesystem.enable = true;
+    filesystem = {
+      enable = true;
+      apfsSupport = true;
+    };
     zram.enable = true;
     tailscale.enable = true;
   };
