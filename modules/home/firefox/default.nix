@@ -21,6 +21,7 @@
           auto-tab-discard
           return-youtube-dislikes
           user-agent-string-switcher
+          sponsorblock
         ];
         
         extraConfig = ''
