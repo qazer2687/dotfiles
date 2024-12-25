@@ -67,6 +67,8 @@
       "console=tty3"
       # Disable cursor to stop blinking.
       "vt.global_cursor_default=0"
+      # Wipe the vendor logo earlier.
+      "fbcon=nodefer"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;

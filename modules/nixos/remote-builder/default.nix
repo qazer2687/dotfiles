@@ -6,15 +6,12 @@
   options.modules.remote-builder.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.remote-builder.enable {
-    # enable ssh to connect to remote builder
     services.openssh.enable = true;
 
-    # open firewall to allow connections over ssh
     networking.firewall.allowedTCPPorts = [
       22 # SSH
     ];
 
-    # configure builder
     nix = {
       settings = {
         system-features = [
