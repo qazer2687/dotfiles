@@ -15,7 +15,7 @@
         isDefault = true;
         id = 0;
 
-        extensions = with config.nur.repos.rycee.firefox-addons; [
+        extensions = with config.default.repos.rycee.firefox-addons; [
           ublock-origin
           keepa
           auto-tab-discard
