@@ -10,7 +10,8 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     # Fork of tpwrules/nixos-apple-silicon with performance 
     # tweaks, vulkan, louder speakers and some other things.
-    asahi.url = "github:zzywysm/nixos-asahi";
+    #asahi.url = "github:zzywysm/nixos-asahi";
+    asahi.url = "github:tpwrules/nixos-apple-silicon";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
