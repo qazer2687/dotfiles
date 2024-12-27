@@ -57,19 +57,16 @@
     };
 
     home.packages = with pkgs; [
-      (nerdfonts.override {
-          fonts = [
-            "FiraCode"
-            "FiraMono"
-            "Iosevka"
-            "LiberationMono"
-          ];
-        })
-        atkinson-hyperlegible
-        noto-fonts-color-emoji
-        noto-fonts-cjk-sans
-        agave
-        terminus_font
+      atkinson-hyperlegible
+      noto-fonts-color-emoji
+      noto-fonts-cjk-sans
+      agave
+      terminus_font
+
+      nerd-fonts.FiraCode
+      nerd-fonts.FiraMono
+      nerd-fonts.Iosevka
+      nerd-fonts.LiberationMono
     ];
   };
 }
