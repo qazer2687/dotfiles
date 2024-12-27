@@ -63,10 +63,10 @@
       agave
       terminus_font
 
-      nerd-fonts.FiraCode
-      nerd-fonts.FiraMono
-      nerd-fonts.Iosevka
-      nerd-fonts.LiberationMono
+      nerd-fonts.fira-code
+      nerd-fonts.fira-mono
+      nerd-fonts.iosevka
+      nerd-fonts.liberation
     ];
   };
 }
