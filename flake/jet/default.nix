@@ -14,7 +14,7 @@
           useGlobalPkgs = true;
           useUserPackages = true;
           sharedModules = [
-            inputs.nur.hmModules.nur
+            inputs.nur.modules.homeManager.default
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
           ];

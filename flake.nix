@@ -64,7 +64,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
-                inputs.nur.hmModules.nur
+                inputs.nur.modules.homeManager.default
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
@@ -91,7 +91,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
-                inputs.nur.hmModules.nur
+                inputs.nur.modules.homeManager.default
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
               ];
@@ -116,7 +116,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
-                inputs.nur.hmModules.nur
+                inputs.nur.modules.homeManager.default
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
               ];
@@ -141,7 +141,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
-                inputs.nur.hmModules.nur
+                inputs.nur.modules.homeManager.default
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
               ];
