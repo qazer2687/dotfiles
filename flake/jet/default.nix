@@ -3,7 +3,7 @@
     specialArgs = {inherit inputs outputs;};
     modules = [
       ./hosts/jet
-      nur.nixosModules.nur
+      nur.modules.nixos.default
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
       asahi.nixosModules.apple-silicon-support
