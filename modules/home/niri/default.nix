@@ -31,7 +31,7 @@
           "Mod+Return".action = spawn "foot";
           
           # Application launcher
-          "Mod+e".action = spawn "wofi --show drun";
+          "Mod+e".action = spawn "wofi" "-show" "drun";
           
           # Window management
           "Mod+q".action = close-window;
@@ -89,11 +89,11 @@
         };
 
         spawn-at-startup = [
-          { command = [ "waybar" ]; }
           # This isn't possible yet on Asahi.
           # { command = [ "gammastep" "-t" "6500:3000" ]; }
           { command = [ "swww-daemon" ]; }
           { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
+          { command = [ "systemctl" "--user" "reset-failed" "waybar.service" ]; }
         ];
       };
     };
