@@ -19,6 +19,9 @@
       enable = true;
       #package = pkgs.niri-unstable;
       settings = {
+
+        hotkey-overlay.skip-at-startup = true;
+
         input = {
           keyboard.xkb = {
             layout = "gb";
@@ -30,10 +33,13 @@
             dwt = true;
           };
         };
+
         outputs."eDP-1".scale = 2.0;
 
         window-rules = [
           {
+            clip-to-geometry = true;
+
             geometry-corner-radius = {
               bottom-left = 6.0;
               bottom-right = 6.0;
@@ -55,6 +61,10 @@
             };
           }
         ];
+
+        layout = {
+          gaps = 6;
+        };
 
         binds = with config.lib.niri.actions; {
           # Terminal
