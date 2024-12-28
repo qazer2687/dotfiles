@@ -132,11 +132,11 @@
         };
 
         spawn-at-startup = [
+          { command = [ "waybar" "-c" "/home/alex/.config/waybar/config" ]; }
           # This isn't possible yet on Asahi.
           # { command = [ "gammastep" "-t" "6500:3000" ]; }
           { command = [ "swww-daemon" ]; }
           { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
-          { command = [ "systemctl" "--user" "reset-failed" "waybar.service" ]; }
         ];
       };
     };
