@@ -14,10 +14,10 @@
 
     # I assume this is to replace the niri package.
     nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-    
+
     programs.niri = {
       enable = true;
-      package = pkgs.niri-unstable;
+      #package = pkgs.niri-unstable;
       settings = {
         input = {
           keyboard.xkb = {
