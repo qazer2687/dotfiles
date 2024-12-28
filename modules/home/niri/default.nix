@@ -35,7 +35,7 @@
           
           # Window management
           "Logo+q".action = close-window;
-          "Logo+Space".action = toggle-float;
+          #"Logo+Space".action = toggle-float;
           
           # Volume controls
           "XF86AudioRaiseVolume".action = spawn "${pkgs.pamixer}/bin/pamixer" "-i" "5";
