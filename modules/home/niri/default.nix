@@ -56,7 +56,7 @@
 
               active = {
                 gradient = {
-                  from = "#ffbb66";
+                  from = "#ff4444";
                   to = "#ffc880";
                   angle = 45;
                   relative-to = "workspace-view";
@@ -79,7 +79,7 @@
           gaps = 6;
 
         };
-        
+
         binds = with config.lib.niri.actions; {
           # Terminal
           "Mod+Return".action = spawn "foot";
