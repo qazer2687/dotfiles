@@ -11,10 +11,12 @@
     home.packages = with pkgs; [
       inputs.swww.packages.${pkgs.system}.swww
     ];
+
+    # I assume this is to replace the niri package.
+    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+    
     programs.niri = {
       enable = true;
-      # I assume this is to replace the niri package.
-      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
       package = pkgs.niri-unstable;
       settings = {
         input = {
