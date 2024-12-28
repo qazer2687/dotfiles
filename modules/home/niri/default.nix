@@ -34,6 +34,13 @@
 
         window-rules."*" = {
           geometry-corner-radius = 6;
+
+          focus-ring ={ 
+            enable = true;
+            width = 2;
+            active = "#ffffff";
+            inactive = "#333333";
+          };
         };
 
         binds = with config.lib.niri.actions; {
