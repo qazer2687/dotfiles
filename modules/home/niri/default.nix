@@ -35,7 +35,7 @@
         window-rules."*" = {
           geometry-corner-radius = 6;
 
-          focus-ring ={ 
+          focus-ring = { 
             enable = true;
             width = 2;
             active = "#ffffff";
