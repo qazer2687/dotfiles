@@ -65,7 +65,7 @@
 
               inactive = {
                 gradient = {
-                  from = "#505050";
+                  from = "#444444";
                   to = "#808080";
                   angle = 45;
                   relative-to = "workspace-view";
@@ -147,7 +147,8 @@
           # { command = [ "gammastep" "-t" "6500:3000" ]; }
           { command = [ "swww-daemon" ]; }
           { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
-          { command = [ "waybar -c /home/alex/.config/waybar/config" ]; }
+          # A fix for waybar reporting it is unable to find a display on launch. This command does not work on fish.
+          { command = [ "WAYLAND_DISPLAY=wayland-1" "waybar -c /home/alex/.config/waybar/config" ]; }
         ];
       };
     };
