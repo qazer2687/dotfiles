@@ -82,7 +82,12 @@
           "Mod+Shift+0".action = move-window-to-workspace 10;
         };
 
-        # Autostart applications
+        debug = {
+          # Fixes a black screen bug on Asahi.
+          # https://github.com/YaLTeR/niri/wiki/Getting-Started#asahi-arm-and-other-kmsro-devices
+          render-drm-device = "/dev/dri/renderD128";
+        };
+
         spawn-at-startup = [
           { command = [ "waybar" ]; }
           # This isn't possible yet on Asahi.
