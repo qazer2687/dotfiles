@@ -83,14 +83,13 @@
         };
 
         # Autostart applications
-        spawn-at-startup = [
-          { command = "waybar"; }
-          # This isn't possible yet on Asahi.
-          #{ command = "gammastep -t 6500:3000"; }
-          { command = "swww-daemon"; }
-          { command = "swww img /home/alex/.config/wallpaper/wallpaper.gif"; }
-        ];
-      };
+       spawn-at-startup = [
+        { command = [ "waybar" ]; }
+        # This isn't possible yet on Asahi.
+        # { command = [ "gammastep" "-t" "6500:3000" ]; }
+        { command = [ "swww-daemon" ]; }
+        { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
+      ];
     };
   };
 }
