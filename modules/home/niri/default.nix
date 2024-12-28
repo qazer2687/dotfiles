@@ -32,16 +32,19 @@
         };
         outputs."eDP-1".scale = 2.0;
 
-        window-rules."*" = {
-          geometry-corner-radius = 6;
+        window-rules = [
+          {
+            match = "*";
+            geometry-corner-radius = 6;
 
-          focus-ring = { 
-            enable = true;
-            width = 2;
-            active = "#ffffff";
-            inactive = "#333333";
-          };
-        };
+            focus-ring = { 
+              enable = true;
+              width = 2;
+              active = "#ffffff";
+              inactive = "#333333";
+            };
+          }
+        ];
 
         binds = with config.lib.niri.actions; {
           # Terminal
