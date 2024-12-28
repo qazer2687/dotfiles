@@ -26,5 +26,6 @@
     ./neovim
     ./gpg
     ./mangohud
+    ./niri
   ];
 }

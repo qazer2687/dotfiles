@@ -27,6 +27,7 @@
   # option is required so they appear as desktop entries.
   #programs.sway.enable = true;
   #programs.hyprland.enable = true;
+  programs.niri.enable = true;
 
   programs.fish.enable = true;
   
@@ -37,7 +38,7 @@
     wlr.enable = true;
     xdgOpenUsePortal = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
+      #pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
     ];
     # Fix 'xdg-desktop-portal 1.17 reworked how
@@ -99,7 +100,7 @@
     ];
   };
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session niri
   '';
 
   swapDevices = [
