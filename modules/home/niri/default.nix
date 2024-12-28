@@ -31,6 +31,11 @@
           };
         };
         outputs."eDP-1".scale = 2.0;
+
+        window-rules."*" = {
+          geometry-corner-radius = 6;
+        };
+
         binds = with config.lib.niri.actions; {
           # Terminal
           "Mod+Return".action = spawn "foot";
