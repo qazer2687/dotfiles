@@ -20,7 +20,7 @@
 
   modules = {
     # Environment
-    sway.enable = true;
+    #sway.enable = true;
     hyprland.enable = true;
     waybar.enable = true;
     foot.enable = true;
