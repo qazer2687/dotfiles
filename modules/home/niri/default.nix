@@ -34,9 +34,6 @@
 
         window-rules = [
           {
-            matches = [ "*" ];
-          
-
             geometry-corner-radius = {
               bottom-left = 6.0;
               bottom-right = 6.0;
