@@ -55,11 +55,21 @@
               width = 2;
 
               active = {
-                color = "#ffffff";
+                gradient = {
+                  from = "#ffbb66";
+                  to = "#ffc880";
+                  angle = 45;
+                  relative-to = "workspace-view";
+                };
               };
 
               inactive = {
-                color = "#333333";
+                gradient = {
+                  from = "#505050";
+                  to = "#808080";
+                  angle = 45;
+                  relative-to = "workspace-view";
+                };
               };
             };
           }
@@ -67,8 +77,9 @@
 
         layout = {
           gaps = 6;
-        };
 
+        };
+        
         binds = with config.lib.niri.actions; {
           # Terminal
           "Mod+Return".action = spawn "foot";
@@ -132,11 +143,11 @@
         };
 
         spawn-at-startup = [
-          { command = [ "waybar" "-c" "/home/alex/.config/waybar/config" ]; }
           # This isn't possible yet on Asahi.
           # { command = [ "gammastep" "-t" "6500:3000" ]; }
           { command = [ "swww-daemon" ]; }
           { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
+          { command = [ "waybar -c /home/alex/.config/waybar/config" ]; }
         ];
       };
     };
