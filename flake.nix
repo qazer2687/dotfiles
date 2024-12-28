@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     sops-nix.url = "github:Mic92/sops-nix";
-    nur.url = "github:nix-community/NUR";
+    nur.url = "github:nix-community/NUR/main";
     darwin.url = "github:lnl7/nix-darwin/master";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     # Fork of tpwrules/nixos-apple-silicon with performance 
