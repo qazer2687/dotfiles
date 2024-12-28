@@ -34,10 +34,10 @@
 
         window-rules = [
           {
-            match = "*";
+            matches = [ "*" ]; # A list of rules for matching windows (e.g., wildcard "*")
             geometry-corner-radius = 6;
 
-            focus-ring = { 
+            focus-ring = {
               enable = true;
               width = 2;
               active = "#ffffff";
