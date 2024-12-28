@@ -56,7 +56,7 @@
 
               active = {
                 gradient = {
-                  from = "#ffb3d9";
+                  from = "#ff13f0";
                   to = "#9b00ff";
                   angle = 45;
                   relative-to = "workspace-view";
