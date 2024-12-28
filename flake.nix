@@ -17,6 +17,8 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    niri.url = "github:sodiboo/niri-flake/main";
+    swww.url = "github:LGFae/swww";
   };
 
   outputs = {
@@ -33,6 +35,8 @@
     nix-flatpak,
     nix-minecraft,
     nyx,
+    niri,
+    swww,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -92,6 +96,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
+                inputs.niri.homeModules.niri
                 inputs.nur.modules.homeManager.default
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
