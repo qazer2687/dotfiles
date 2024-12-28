@@ -21,8 +21,13 @@
       settings = {
         input = {
           keyboard.xkb = {
-            layout = "us";
+            layout = "gb";
             variant = "colemak";
+          };
+          touchpad = {
+            tap = false;
+            # Enable palm rejection.
+            dwt = true;
           };
         };
         outputs."eDP-1".scale = 2.0;
