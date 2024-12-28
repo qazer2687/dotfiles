@@ -5,13 +5,13 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     sops-nix.url = "github:Mic92/sops-nix";
-    nur.url = "github:nix-community/NUR/master";
-    darwin.url = "github:lnl7/nix-darwin/master";
+    nur.url = "github:nix-community/NUR";
+    darwin.url = "github:lnl7/nix-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     # Fork of tpwrules/nixos-apple-silicon with performance 
     # tweaks, vulkan, louder speakers and some other things.
-    #asahi.url = "github:zzywysm/nixos-asahi";
-    asahi.url = "github:tpwrules/nixos-apple-silicon";
+    asahi.url = "github:zzywysm/nixos-asahi";
+    #asahi.url = "github:tpwrules/nixos-apple-silicon";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
