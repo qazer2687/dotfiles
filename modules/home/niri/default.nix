@@ -148,7 +148,7 @@
           { command = [ "swww-daemon" ]; }
           { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
           # A fix for waybar reporting it is unable to find a display on launch. This command does not work on fish.
-          { command = [ "WAYLAND_DISPLAY=wayland-1" "waybar -c /home/alex/.config/waybar/config" ]; }
+          { command = [ "DISPLAY=:1" "WAYLAND_DISPLAY=wayland-1" "waybar" "-c" "/home/alex/.config/waybar/config" ]; }
         ];
       };
     };
