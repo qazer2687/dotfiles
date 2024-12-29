@@ -27,7 +27,7 @@
   # option is required so they appear as desktop entries.
   #programs.sway.enable = true;
   #programs.hyprland.enable = true;
-  programs.niri.enable = true;
+  #programs.niri.enable = true;
 
   programs.fish.enable = true;
   
@@ -100,7 +100,7 @@
     ];
   };
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && niri-session niri
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session niri
   '';
 
   swapDevices = [
