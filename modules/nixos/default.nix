@@ -15,5 +15,6 @@
     ./sddm
     ./gamemode
     ./tailscale
+    ./rustdesk
   ];
 }

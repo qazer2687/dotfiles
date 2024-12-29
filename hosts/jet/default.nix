@@ -141,6 +141,7 @@
     };
     zram.enable = true;
     tailscale.enable = true;
+    rustdesk.enable = true;
   };
 
   # Did you read the comment?
