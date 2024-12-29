@@ -9,7 +9,10 @@
   config = lib.mkIf config.modules.rustdesk.enable {
     services.rustdesk-server = {
       enable = true;
-      openFirewall = true;
+      #openFirewall = true;
+      relay.enable = false;
+      signal.enable = false;
+      
     };
   };
 }
