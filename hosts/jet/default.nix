@@ -35,7 +35,7 @@
   # opened across applications.
   xdg.portal = {
     enable = true;
-    #wlr.enable = true;
+    wlr.enable = lib.mkForce true;
     xdgOpenUsePortal = true;
     extraPortals = [
       #pkgs.xdg-desktop-portal-hyprland
@@ -141,7 +141,6 @@
     };
     zram.enable = true;
     tailscale.enable = true;
-    rustdesk.enable = true;
   };
 
   # Did you read the comment?

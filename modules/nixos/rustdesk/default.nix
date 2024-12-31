@@ -15,7 +15,6 @@
         enable = true;
         relayHosts = [ "100.69.81.103" ];
       };
-
     };
   };
 }
