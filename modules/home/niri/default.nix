@@ -11,7 +11,7 @@
     home.packages = with pkgs; [
       inputs.swww.packages.${pkgs.system}.swww
     ];
-    
+
     programs.niri = {
       enable = true;
       settings = {
@@ -85,7 +85,7 @@
           
           # Window management
           "Mod+q".action = close-window;
-          "Mod+Space".action = toggle-window-floating;
+          #"Mod+Space".action = toggle-window-floating;
           "Mod+t".action = fullscreen-window;
           
           # Volume controls
