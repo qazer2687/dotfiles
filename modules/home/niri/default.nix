@@ -13,7 +13,7 @@
     ];
 
     # I assume this is to replace the niri package.
-    nixpkgs.overlays = [ niri.overlays.niri ];
+    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
     programs.niri = {
       enable = true;
