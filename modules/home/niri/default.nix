@@ -13,11 +13,11 @@
     ];
 
     # I assume this is to replace the niri package.
-    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+    nixpkgs.overlays = [ niri.overlays.niri ];
 
     programs.niri = {
       enable = true;
-      #package = pkgs.niri-unstable;
+      package = pkgs.niri-unstable;
       settings = {
 
         hotkey-overlay.skip-at-startup = true;
@@ -89,7 +89,8 @@
           
           # Window management
           "Mod+q".action = close-window;
-          #"Mod+Space".action = toggle-float;
+          "Mod+Space".action = toggle-window-floating;
+          "Mod+t".action = fullscreen-window;
           
           # Volume controls
           "XF86AudioRaiseVolume".action = spawn "${pkgs.pamixer}/bin/pamixer" "-i" "5";
