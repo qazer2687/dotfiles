@@ -21,7 +21,7 @@
   modules = {
     # Environment
     #sway.enable = true;
-    hyprland.enable = true;
+    #hyprland.enable = true;
     niri.enable = true;
     waybar.enable = true;
     foot.enable = true;
@@ -44,7 +44,8 @@
     #gpg.enable = true;
 
     # Gaming
-    #prismlauncher.enable = true;
+    prismlauncher.enable = true;
+    mangohud.enable = true;
   };
 
   home.stateVersion = "24.11";
