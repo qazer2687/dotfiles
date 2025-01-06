@@ -9,7 +9,8 @@
 
   config = lib.mkIf config.modules.niri.enable {
     home.packages = with pkgs; [
-      inputs.swww.packages.${pkgs.system}.swww
+      #inputs.swww.packages.${pkgs.system}.swww
+      swaybg
     ];
 
     programs.niri = {
@@ -28,6 +29,9 @@
             tap = false;
             # Enable palm rejection.
             dwt = true;
+          };
+          focus-follows-mouse = {
+            enable = true;
           };
         };
 
@@ -142,10 +146,16 @@
         spawn-at-startup = [
           # This isn't possible yet on Asahi.
           # { command = [ "gammastep" "-t" "6500:3000" ]; }
-          { command = [ "swww-daemon" ]; }
-          { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
+
+          # Swww is great but the hit on battery life is too much for a laptop.
+          # { command = [ "swww-daemon" ]; }
+          # { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
+
           # A fix for waybar reporting it is unable to find a display on launch.
           { command = [ "fish" "-c" "'waybar'"]; }
+
+          { command = [ "swaybg" "-i" "/home/alex/.config/wallpaper/wallpaper.png"]; }
+
         ];
       };
     };
