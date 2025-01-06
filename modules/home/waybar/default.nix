@@ -167,7 +167,7 @@
           border-radius: 6px;
           color: #606060;
         }
-        #workspaces button.visible {
+        #workspaces button.active {
           color: #ffffff;
         }
 
