@@ -111,6 +111,10 @@
           "Mod+right".action = move-column-right;
           "Mod+up".action = move-window-up;
           "Mod+down".action = move-window-down;
+
+          # Window Resizing
+          "Mod+Shift+right".action = set-column-width "+10%";
+          "Mod+Shift+right".action = set-column-width "-10%";
           
           # Workspace switching
           "Mod+1".action = focus-workspace 1;
