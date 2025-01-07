@@ -114,8 +114,8 @@
           "Mod+down".action = move-window-down;
 
           # Window Resizing
-          #"Mod+Shift+right".action = set-window-width "+10%";
-          #"Mod+Shift+left".action = set-window-width "-10%";
+          "Mod+Shift+right".action = set-window-width "+10%";
+          "Mod+Shift+left".action = set-window-width "-10%";
           
           # Workspace switching
           "Mod+1".action = focus-workspace 1;
