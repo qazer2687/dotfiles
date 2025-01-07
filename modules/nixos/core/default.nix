@@ -66,7 +66,7 @@
 
     networking = {
       networkmanager.enable = true;
-      # Allow all the IP's in the tailscale range to bypass firewall.
+      # Allow all the IP's in the tailscale subnet to bypass firewall.
       firewall.extraInputRules = ''
       -A INPUT -i tailscale0 -j ACCEPT
       -A INPUT -s 100.64.0.0/10 -j ACCEPT
@@ -74,7 +74,7 @@
     };
     systemd = {
       services.NetworkManager-wait-online.enable = false;
-      # Disable the service, which hangs on boot.
+      # Disables the service because it hangs on boot.
       services.NetworkManager-dispatcher.enable = false;
     };
 
@@ -122,8 +122,12 @@
 
     # Fix 'command-not-found' error 'failed to open database'.
     programs.command-not-found.enable = false;
+
     programs.dconf.enable = true;
     security.polkit.enable = true;
     systemd.coredump.enable = false;
+
+    # High performance implementation of the dbus specification.
+    services.dbus.implementation = "broker";
   };
 }
