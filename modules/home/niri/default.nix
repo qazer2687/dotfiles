@@ -13,11 +13,9 @@
       swaybg
     ];
 
-    nixpkgs.overlays = [inputs.niri.overlays.niri];
-
     programs.niri = {
       enable = true;
-      package = pkgs.niri-unstable;
+      package = inputs.niri.packages.${pkgs.system}.niri-unstable;
       settings = {
 
         hotkey-overlay.skip-at-startup = true;
