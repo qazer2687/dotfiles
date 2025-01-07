@@ -35,15 +35,15 @@
   # opened across applications.
   xdg.portal = {
     enable = true;
-    wlr.enable = lib.mkForce true;
-    xdgOpenUsePortal = true;
-    extraPortals = [
+    #wlr.enable = lib.mkForce true;
+    #xdgOpenUsePortal = true;
+    #extraPortals = [
       #pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
-    ];
+    #];
     # Fix 'xdg-desktop-portal 1.17 reworked how
     # portal implementations are loaded' warning.
-    config.common.default = "*";
+    #config.common.default = "*";
   };
 
   hardware = {
