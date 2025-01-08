@@ -57,8 +57,8 @@
 
               active = {
                 gradient = {
-                  from = "#ff13f0";
-                  to = "#9b00ff";
+                  from = "#aaaaaa";
+                  to = "#ffffff";
                   angle = 45;
                   relative-to = "workspace-view";
                 };
@@ -78,7 +78,6 @@
 
         layout = {
           gaps = 6;
-
         };
 
         binds = with config.lib.niri.actions; {
@@ -100,8 +99,8 @@
           "XF86AudioMicMute".action = spawn "${pkgs.pamixer}/bin/pamixer" "--default-source" "-t";
           
           # Brightness controls
-          "XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "set" "1%+";
-          "XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "set" "1%-";
+          "XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "s" "1%+";
+          "XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "s" "1%-";
           
           # Keyboard backlight
           "Mod+XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%+";
