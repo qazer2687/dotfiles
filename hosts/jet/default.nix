@@ -76,7 +76,7 @@
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
-    #m1n1CustomLogo = ../../assets/m1n1CustomLogo.png;
+    m1n1CustomLogo = ../../assets/m1n1CustomLogo_sus.png;
   };
 
   # Hide the 'File descriptor leaked on LVM invocation' warning on boot.
