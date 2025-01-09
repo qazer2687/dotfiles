@@ -62,6 +62,7 @@
       noto-fonts-cjk-sans
       agave
       terminus_font
+      departure-mono
 
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
