@@ -42,8 +42,7 @@
           {
             clip-to-geometry = true;
 
-            # 7:8 of display.
-            min-width = 1120;
+            min-width = 1280;
 
             geometry-corner-radius = {
               bottom-left = 6.0;
