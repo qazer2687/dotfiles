@@ -23,6 +23,10 @@
           user-agent-string-switcher
           sponsorblock
         ];
+
+        userChrome = ''
+          #navigator-toolbox { font-family: DepartureMono !important }
+        '';
         
         extraConfig = ''
 
