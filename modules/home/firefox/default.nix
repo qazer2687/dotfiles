@@ -25,7 +25,9 @@
         ];
 
         userChrome = ''
-          #navigator-toolbox { font-family: DepartureMono !important }
+          * {
+            font-family: "DepartureMono", sans-serif !important;
+          }
         '';
         
         extraConfig = ''
