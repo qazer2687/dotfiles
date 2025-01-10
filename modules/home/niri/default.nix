@@ -46,12 +46,14 @@
             min-width = 1240;
             max-width = 1240;
 
+            /*
             geometry-corner-radius = {
               bottom-left = 6.0;
               bottom-right = 6.0;
               top-left = 6.0;
               top-right = 6.0;
             };
+            */
 
             focus-ring = {
               enable = true;
@@ -59,7 +61,7 @@
 
               active = {
                 gradient = {
-                  from = "#aaaaaa";
+                  from = "#ffffff";
                   to = "#ffffff";
                   angle = 45;
                   relative-to = "workspace-view";
