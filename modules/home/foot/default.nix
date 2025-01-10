@@ -16,7 +16,7 @@
         main = {
           font = "Departure Mono:size=11, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
           font-bold = "DepartureMono:size=11:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
-          line-height = "24px";
+          line-height = "18px";
           pad = "16x16";
         };
 
