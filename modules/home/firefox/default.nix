@@ -28,14 +28,6 @@
           * {
             font-family: "DepartureMono", sans-serif !important;
           }
-
-          #tabs-tabstrip {
-            border-radius: 0 !important;
-          }
-
-          .tabbrowser-tab {
-            border-radius: 0 !important;
-          }
         '';
         
         extraConfig = ''

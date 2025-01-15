@@ -82,6 +82,7 @@
 
         layout = {
           gaps = 6;
+          center-focused-column = true;
         };
 
         binds = with config.lib.niri.actions; {
