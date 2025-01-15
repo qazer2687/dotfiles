@@ -42,9 +42,9 @@
           {
             clip-to-geometry = true;
 
-            # 31:32 of display.
-            min-width = 1240;
-            max-width = 1240;
+            # 31:32 of display + -20px idk???
+            min-width = 1220;
+            max-width = 1220;
 
             /*
             geometry-corner-radius = {
@@ -61,8 +61,8 @@
 
               active = {
                 gradient = {
-                  from = "#808080";
-                  to = "#808080";
+                  from = "#ffffff";
+                  to = "#ffffff";
                   angle = 45;
                   relative-to = "workspace-view";
                 };
@@ -70,8 +70,8 @@
 
               inactive = {
                 gradient = {
-                  from = "#444444";
-                  to = "#808080";
+                  from = "#bbbbbb";
+                  to = "#bbbbbb";
                   angle = 45;
                   relative-to = "workspace-view";
                 };
