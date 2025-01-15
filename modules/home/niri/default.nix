@@ -42,7 +42,7 @@
           {
             clip-to-geometry = true;
 
-            # 31:32 of display + -20px idk???
+            # 31:32 + -20px idk???
             min-width = 1220;
             max-width = 1220;
 
