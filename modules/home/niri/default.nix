@@ -42,7 +42,8 @@
           {
             clip-to-geometry = true;
 
-            # 31:32 + -120px idk???
+            # 31:32 + -120px idk??? I need to find a way to see the surrounding windows
+            # without sacrificing screen space because making this too small kinda sucks.
             min-width = 1120;
             max-width = 1120;
 
