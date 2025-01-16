@@ -18,6 +18,9 @@
     loupe # Image Viewer
   ];
 
+  # Enable rich presence support for Discord on the web.
+  arrpc.enable = true;
+
   modules = {
     # Environment
     #sway.enable = true;
