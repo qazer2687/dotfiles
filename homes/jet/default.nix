@@ -19,7 +19,7 @@
   ];
 
   # Enable rich presence support for Discord on the web.
-  arrpc.enable = true;
+  services.arrpc.enable = true;
 
   modules = {
     # Environment

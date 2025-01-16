@@ -42,9 +42,9 @@
           {
             clip-to-geometry = true;
 
-            # 31:32 + -20px idk???
-            min-width = 1220;
-            max-width = 1220;
+            # 31:32 + -120px idk???
+            min-width = 1120;
+            max-width = 1120;
 
             /*
             geometry-corner-radius = {
