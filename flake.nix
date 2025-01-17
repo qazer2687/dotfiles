@@ -56,7 +56,7 @@
 
     nixosConfigurations = {
       jet = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs inputs.self; };
+        specialArgs = { inherit inputs; inherit (inputs) self; };
         modules = [
           ./hosts/jet
           nur.modules.nixos.default
@@ -66,7 +66,7 @@
           {
             home-manager = {
               users.alex = ./homes/jet;
-              extraSpecialArgs = { inherit inputs inputs.self; };
+              extraSpecialArgs = { inherit inputs; inherit (inputs) self; };
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
@@ -83,7 +83,7 @@
     
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs inputs.self;};
+        specialArgs = {inherit inputs; inherit (inputs) self;};
         modules = [
           ./hosts/jade
           nur.modules.nixos.default
@@ -93,7 +93,7 @@
           {
             home-manager = {
               users.alex = ./homes/jade;
-              extraSpecialArgs = {inherit inputs inputs.self;};
+              extraSpecialArgs = {inherit inputs; inherit (inputs) self;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
@@ -110,7 +110,7 @@
 
     nixosConfigurations = {
       ruby = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs inputs.self;};
+        specialArgs = {inherit inputs; inherit (inputs) self;};
         modules = [
           ./hosts/ruby
           nur.modules.nixos.default
@@ -119,7 +119,7 @@
           {
             home-manager = {
               users.alex = ./homes/ruby;
-              extraSpecialArgs = {inherit inputs inputs.self;};
+              extraSpecialArgs = {inherit inputs; inherit (inputs) self;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
@@ -136,7 +136,7 @@
     darwinConfigurations = {
       onyx = darwin.lib.darwinSystem {
         pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
-        specialArgs = {inherit inputs inputs.self;};
+        specialArgs = {inherit inputs; inherit (inputs) self;};
         modules = [
           ./hosts/onyx
           home-manager.darwinModules.home-manager
@@ -144,7 +144,7 @@
           {
             home-manager = {
               users.alex = ./homes/onyx;
-              extraSpecialArgs = {inherit inputs inputs.self;};
+              extraSpecialArgs = {inherit inputs; inherit (inputs) self;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
@@ -167,7 +167,7 @@
 
     nixosConfigurations = {
       amber = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs inputs.self;};
+        specialArgs = {inherit inputs; inherit (inputs) self;};
         modules = [
           ./hosts/amber
         ];
@@ -176,7 +176,7 @@
 
     nixosConfigurations = {
       opal = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs inputs.self;};
+        specialArgs = {inherit inputs; inherit (inputs) self;};
         modules = [
           ./hosts/opal
           sops-nix.nixosModules.sops
