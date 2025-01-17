@@ -53,6 +53,8 @@
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     overlays = import ./overlays {inherit inputs;};
+
+    jet = import ./flake/jet { inherit inputs outputs nixpkgs; };
     
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
@@ -74,33 +76,6 @@
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeManagerModules.nixvim
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
-              ];
-            };
-          }
-        ];
-      };
-    };
-
-    nixosConfigurations = {
-      jet = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/jet
-          nur.modules.nixos.default
-          sops-nix.nixosModules.sops
-          home-manager.nixosModules.home-manager
-          asahi.nixosModules.apple-silicon-support
-          {
-            home-manager = {
-              users.alex = ./homes/jet;
-              extraSpecialArgs = {inherit inputs outputs;};
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              sharedModules = [
-                inputs.niri.homeModules.niri
-                inputs.nur.modules.homeManager.default
-                inputs.sops-nix.homeManagerModules.sops
-                inputs.nixvim.homeManagerModules.nixvim
               ];
             };
           }
