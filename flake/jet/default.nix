@@ -6,7 +6,7 @@
   ...
 }: {
   jet = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit inputs inputs.self; };
+    specialArgs = { inherit inputs; inherit (inputs) self; };
     modules = [
       ./hosts/jet
       nur.modules.nixos.default
@@ -16,7 +16,7 @@
       {
         home-manager = {
           users.alex = ./homes/jet;
-          extraSpecialArgs = { inherit inputs inputs.self; };
+          extraSpecialArgs = { inherit inputs; inherit (inputs) self; };
           useGlobalPkgs = true;
           useUserPackages = true;
           sharedModules = [
