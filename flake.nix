@@ -45,6 +45,7 @@
   flake-parts.lib.mkFlake { inherit inputs; } {
     flake = {
       overlays = import ./overlays {inherit inputs;};
+      packages = perSystem (system: import ./packages nixpkgs.legacyPackages.${system});
     };
     systems = [
       "aarch64-linux"
