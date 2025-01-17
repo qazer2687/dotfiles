@@ -53,7 +53,7 @@
     ];
     perSystem = { config, ... }: {
 
-      packages = perSystem (system: import ./packages nixpkgs.legacyPackages.${system});
+      #packages = perSystem (system: import ./packages nixpkgs.legacyPackages.${system});
 
       nixosConfigurations = {
         jet = nixpkgs.lib.nixosSystem {
