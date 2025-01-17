@@ -2,7 +2,7 @@
   lib,
   config,
   inputs,
-  inputs.self,
+  self,
   ...
 }: {
   
@@ -53,12 +53,12 @@
         allowUnfree = true;
       };
       overlays = [
-        outputs.overlays.additions
+        self.overlays.additions
         # Enabling the modifications overlay for all machines
         # means that any package which has an overlay will be
         # changed for all hosts. I may remove this in the future
         # but it works fine with my configuration for now.
-        outputs.overlays.modifications
+        self.overlays.modifications
       ];
     };
 
