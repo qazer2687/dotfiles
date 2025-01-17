@@ -55,7 +55,7 @@
     overlays = import ./overlays {inherit (inputs) self;};
 
     nixosConfigurations = {
-      jet = import ./flake/jet { inherit inputs inputs.self nixpkgs; };
+      jet = import ./flake/jet { inherit (inputs) self nixpkgs; };
     };
     
     nixosConfigurations = {
