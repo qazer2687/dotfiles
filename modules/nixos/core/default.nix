@@ -2,7 +2,7 @@
   lib,
   config,
   inputs,
-  outputs,
+  inputs.self,
   ...
 }: {
   
