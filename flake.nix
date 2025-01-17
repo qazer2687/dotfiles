@@ -52,15 +52,15 @@
   in {
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-    overlays = import ./overlays {inherit inputs inputs.self;};
+    overlays = import ./overlays {inherit (inputs) self inputs inputs.self;};
 
     nixosConfigurations = {
-      jet = import ./flake/jet { inherit inputs inputs.self outputs nixpkgs; };
+      jet = import ./flake/jet { inherit inputs inputs.self nixpkgs; };
     };
     
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs inputs.self outputs;};
+        specialArgs = {inherit inputs inputs.self;};
         modules = [
           ./hosts/jade
           nur.modules.nixos.default
@@ -70,7 +70,7 @@
           {
             home-manager = {
               users.alex = ./homes/jade;
-              extraSpecialArgs = {inherit inputs inputs.self outputs;};
+              extraSpecialArgs = {inherit inputs inputs.self;};
               useGlobalPkgs = true;
               useUserPackages = true;
               sharedModules = [
@@ -87,7 +87,7 @@
 
     nixosConfigurations = {
       ruby = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs inputs.self outputs;};
+        specialArgs = {inherit inputs inputs.self;};
         modules = [
           ./hosts/ruby
           nur.modules.nixos.default
@@ -144,7 +144,7 @@
 
     nixosConfigurations = {
       amber = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs inputs.self outputs;};
+        specialArgs = {inherit inputs inputs.self;};
         modules = [
           ./hosts/amber
         ];
@@ -153,7 +153,7 @@
 
     nixosConfigurations = {
       opal = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs inputs.self outputs;};
+        specialArgs = {inherit inputs inputs.self;};
         modules = [
           ./hosts/opal
           sops-nix.nixosModules.sops
