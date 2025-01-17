@@ -52,7 +52,7 @@
   in {
     packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-    overlays = import ./overlays {inherit inputs inputs.self (inputs) self;};
+    overlays = import ./overlays {inherit inputs (inputs) self;};
 
     nixosConfigurations = {
       jet = import ./flake/jet { inherit inputs inputs.self nixpkgs; };
