@@ -24,7 +24,7 @@
   };
 
   outputs = inputs:
-  inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
     flake = {
       overlays = import ./overlays {inherit inputs;};
     };
