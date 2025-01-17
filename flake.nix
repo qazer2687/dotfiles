@@ -23,26 +23,8 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs@{
-    self,
-    nixpkgs,
-    home-manager,
-    sops-nix,
-    nur,
-    darwin,
-    nixvim,
-    nix-homebrew,
-    asahi,
-    nix-vscode-extensions,
-    nix-flatpak,
-    nix-minecraft,
-    nyx,
-    niri,
-    swww,
-    flake-parts,
-    ...
-  }: 
-  flake-parts.lib.mkFlake { inherit inputs; } {
+  outputs = inputs:
+  inputs.flake-parts.lib.mkFlake { inherit inputs; } {
     flake = {
       overlays = import ./overlays {inherit inputs;};
     };
