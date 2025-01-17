@@ -126,12 +126,14 @@
           ];
         };
 
+        /*
         amber = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; inherit (inputs) self; };
           modules = [
             ./hosts/amber
           ];
         };
+        */
 
         opal = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; inherit (inputs) self; };
