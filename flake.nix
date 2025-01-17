@@ -54,7 +54,9 @@
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     overlays = import ./overlays {inherit inputs;};
 
-    jet = import ./flake/jet { inherit inputs outputs nixpkgs; };
+    nixosConfigurations = {
+      jet = import ./flake/jet { inherit inputs outputs nixpkgs; };
+    };
     
     nixosConfigurations = {
       jade = nixpkgs.lib.nixosSystem {
