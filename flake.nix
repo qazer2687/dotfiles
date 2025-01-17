@@ -44,7 +44,7 @@
   }: 
   flake-parts.lib.mkFlake { inherit inputs; } {
     flake = {
-      # Put your original flake attributes here.
+      overlays = import ./overlays {inherit inputs;};
     };
     systems = [
       "aarch64-linux"
