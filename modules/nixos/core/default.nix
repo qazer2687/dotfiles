@@ -5,7 +5,6 @@
   self,
   ...
 }: {
-  
   options.modules.core.enable = lib.mkEnableOption "";
 
   # This module is a replacement to having a shared
@@ -18,7 +17,6 @@
   # lib.mkForce in the configuration files for specific hosts.
 
   config = lib.mkIf config.modules.core.enable {
-
     ########## NIX ##########
 
     nix = let
@@ -68,9 +66,9 @@
       networkmanager.enable = true;
       # Allow all the IP's in the tailscale subnet to bypass firewall.
       firewall.extraInputRules = ''
-      -A INPUT -i tailscale0 -j ACCEPT
-      -A INPUT -s 100.64.0.0/10 -j ACCEPT
-    '';
+        -A INPUT -i tailscale0 -j ACCEPT
+        -A INPUT -s 100.64.0.0/10 -j ACCEPT
+      '';
     };
     systemd = {
       services.NetworkManager-wait-online.enable = false;

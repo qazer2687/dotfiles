@@ -32,7 +32,7 @@
     mako.enable = true;
     wofi.enable = true;
     theme.enable = true;
-    
+
     # Programs
     firefox.enable = true;
     fish.enable = true;

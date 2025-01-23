@@ -29,7 +29,7 @@
             font-family: "DepartureMono", sans-serif !important;
           }
         '';
-        
+
         extraConfig = ''
 
           user_pref("sidebar.verticalTabs", true);

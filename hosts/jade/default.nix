@@ -107,14 +107,22 @@
 
   # EXPERIMENTAL - Enable realtime priority
   # to improve latency and reduce stuttering.
-  security.pam.loginLimits = [{
-    domain = "@users"; item = "rtprio"; type = "-"; value = 1;
-  }];
+  security.pam.loginLimits = [
+    {
+      domain = "@users";
+      item = "rtprio";
+      type = "-";
+      value = 1;
+    }
+  ];
 
- /* services.getty.autologinUser = "alex";
+  /*
+    services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
-  ''; */ # for wayland
+  '';
+  */
+  # for wayland
 
   services.getty.autologinUser = "alex";
   environment.loginShellInit = ''
@@ -124,7 +132,6 @@
     enable = true;
     displayManager.startx.enable = true;
   };
-
 
   swapDevices = [
     {

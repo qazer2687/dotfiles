@@ -17,7 +17,6 @@
       enable = true;
       package = inputs.niri.packages.${pkgs.system}.niri-unstable;
       settings = {
-
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;
 
@@ -89,29 +88,29 @@
         binds = with config.lib.niri.actions; {
           # Terminal
           "Mod+Return".action = spawn "foot";
-          
+
           # Application launcher
           "Mod+e".action = spawn "wofi" "--show" "drun";
-          
+
           # Window management
           "Mod+q".action = close-window;
           #"Mod+Space".action = toggle-window-floating;
           "Mod+t".action = fullscreen-window;
-          
+
           # Volume controls
           "XF86AudioRaiseVolume".action = spawn "${pkgs.pamixer}/bin/pamixer" "-i" "5";
           "XF86AudioLowerVolume".action = spawn "${pkgs.pamixer}/bin/pamixer" "-d" "5";
           "XF86AudioMute".action = spawn "${pkgs.pamixer}/bin/pamixer" "-t";
           "XF86AudioMicMute".action = spawn "${pkgs.pamixer}/bin/pamixer" "--default-source" "-t";
-          
+
           # Brightness controls
           "XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "s" "1%+";
           "XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "s" "1%-";
-          
+
           # Keyboard backlight
           "Mod+XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%+";
           "Mod+XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%-";
-          
+
           # Window movement
           "Mod+left".action = move-column-left;
           "Mod+right".action = move-column-right;
@@ -121,7 +120,7 @@
           # Window Resizing
           #"Mod+Shift+right".action = set-window-width "+10%";
           #"Mod+Shift+left".action = set-window-width "-10%";
-          
+
           # Workspace switching
           "Mod+1".action = focus-workspace 1;
           "Mod+2".action = focus-workspace 2;
@@ -133,7 +132,7 @@
           "Mod+8".action = focus-workspace 8;
           "Mod+9".action = focus-workspace 9;
           "Mod+0".action = focus-workspace 10;
-          
+
           # Move windows to workspaces
           "Mod+Shift+1".action = move-window-to-workspace 1;
           "Mod+Shift+2".action = move-window-to-workspace 2;
@@ -162,10 +161,9 @@
           # { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
 
           # A fix for waybar reporting it is unable to find a display on launch.
-          { command = [ "fish" "-c" "'waybar'"]; }
+          {command = ["fish" "-c" "'waybar'"];}
 
-          { command = [ "swaybg" "-i" "/home/alex/.config/wallpaper/wallpaper.png"]; }
-
+          {command = ["swaybg" "-i" "/home/alex/.config/wallpaper/wallpaper.png"];}
         ];
       };
     };

@@ -28,8 +28,6 @@
         };
       };
 
-      
-
       docker = {
         opal = {
           host = "127.0.0.1";
@@ -38,11 +36,13 @@
       };
 
       widgets = [
-        /*{
+        /*
+          {
           greeting = {
             text = "Qazer's Homelab Dashboard";
           };
-        }*/
+        }
+        */
         {
           resources = {
             cpu = true;
@@ -63,18 +63,22 @@
         {
           "Bookmarks" = [
             {
-              "Cloudflare" = [{
-                href = "https://dash.cloudflare.com";
-                icon = "sh-cloudflare";
-              }];
+              "Cloudflare" = [
+                {
+                  href = "https://dash.cloudflare.com";
+                  icon = "sh-cloudflare";
+                }
+              ];
             }
             {
-              "Tailscale" = [{
-                href = "https://login.tailscale.com/admin/machines";
-                icon = "sh-tailscale";
-              }];
+              "Tailscale" = [
+                {
+                  href = "https://login.tailscale.com/admin/machines";
+                  icon = "sh-tailscale";
+                }
+              ];
             }
-          ];  
+          ];
         }
       ];
 

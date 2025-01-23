@@ -17,7 +17,6 @@
       grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy -t image/png
     '';
   };
-
 in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
@@ -80,11 +79,11 @@ in {
 
         colors = {
           focused = {
-              background = "#ffffff";
-              border = "#ffffff";
-              childBorder = "#ffffff";
-              indicator = "#ffffff";
-              text = "#ffffff";
+            background = "#ffffff";
+            border = "#ffffff";
+            childBorder = "#ffffff";
+            indicator = "#ffffff";
+            text = "#ffffff";
           };
         };
 

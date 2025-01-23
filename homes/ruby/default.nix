@@ -2,7 +2,7 @@
   pkgs,
   lib,
   ...
-  }: {
+}: {
   imports = [
     ../../modules/home
   ];
@@ -21,7 +21,6 @@
     mako.enable = true;
     wofi.enable = true;
     theme.enable = true;
-
 
     firefox.enable = true;
     fish.enable = true;

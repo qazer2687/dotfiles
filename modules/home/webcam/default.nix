@@ -17,6 +17,6 @@ in {
   options.modules.webcam.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.webcam.enable {
-    home.packages = [ webcam ];
+    home.packages = [webcam];
   };
 }

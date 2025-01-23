@@ -17,9 +17,10 @@ in {
     services.udisks2.enable = true;
 
     services.usbmuxd.enable = cfg.apfsSupport;
-    environment.systemPackages = with pkgs; lib.optionals cfg.apfsSupport [
-      ifuse
-      libimobiledevice
-    ];
+    environment.systemPackages = with pkgs;
+      lib.optionals cfg.apfsSupport [
+        ifuse
+        libimobiledevice
+      ];
   };
 }

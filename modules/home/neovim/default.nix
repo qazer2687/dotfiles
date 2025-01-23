@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: {
   options.modules.neovim.enable = lib.mkEnableOption "";
@@ -113,7 +112,7 @@
         ayu.enable = true;
       };
 
-      extraConfigLua =  builtins.readFile ./config/init.lua;
+      extraConfigLua = builtins.readFile ./config/init.lua;
     };
   };
 }
