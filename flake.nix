@@ -3,16 +3,15 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sops-nix.url = "github:Mic92/sops-nix";
     nur.url = "github:nix-community/NUR";
     darwin.url = "github:lnl7/nix-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    # Fork of tpwrules/nixos-apple-silicon with performance 
-    # tweaks, vulkan, louder speakers and some other things.
-
-      #packages = perSystem (system: import ./packages nixpkgs.legacyPackages.${system});
-	 asahi.url = "github:tpwrules/nixos-apple-silicon";
+    asahi.url = "github:tpwrules/nixos-apple-silicon";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
@@ -23,130 +22,111 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs @ {
-    self,
-    flake-parts,
-    nixpkgs,
-    home-manager,
-    sops-nix,
-    nur,
-    darwin,
-    nix-homebrew,
-    asahi,
-    nix-vscode-extensions,
-    nixvim,
-    nix-flatpak,
-    nix-minecraft,
-    nyx,
-    niri,
-    swww,
-    ...
-  }:
-  flake-parts.lib.mkFlake { inherit inputs; } {
-    flake = {
-      overlays = import ./overlays {inherit inputs;};
-    };
-    systems = [
-      "aarch64-linux"
-      "x86_64-linux"
-      #"aarch64-darwin"
-    ];
-    perSystem = { nixpkgs, config, ... }: {
+  outputs = inputs @ { self, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "aarch64-linux"
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
 
-      nixosConfigurations = {
-        jet = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; inherit (inputs) self; };
-          modules = [
-            ./hosts/jet
-            nur.modules.nixos.default
-            sops-nix.nixosModules.sops
-            home-manager.nixosModules.home-manager
-            asahi.nixosModules.apple-silicon-support
-            {
-              home-manager = {
-                users.alex = ./homes/jet;
-                extraSpecialArgs = { inherit inputs; inherit (inputs) self; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                sharedModules = [
-                  inputs.niri.homeModules.niri
-                  inputs.nur.modules.homeManager.default
-                  inputs.sops-nix.homeManagerModules.sops
-                  inputs.nixvim.homeManagerModules.nixvim
-                ];
-              };
-            }
-          ];
-        };
+      flake = {
+        overlays = import ./overlays { inherit inputs; };
 
-        jade = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; inherit (inputs) self; };
-          modules = [
-            ./hosts/jade
-            nur.modules.nixos.default
-            sops-nix.nixosModules.sops
-            nyx.nixosModules.default
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                users.alex = ./homes/jade;
-                extraSpecialArgs = { inherit inputs; inherit (inputs) self; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                sharedModules = [
-                  inputs.nur.modules.homeManager.default
-                  inputs.sops-nix.homeManagerModules.sops
-                  inputs.nixvim.homeManagerModules.nixvim
-                  inputs.nix-flatpak.homeManagerModules.nix-flatpak
-                ];
-              };
-            }
-          ];
-        };
+        nixosConfigurations = {
+          jet = inputs.nixpkgs.lib.nixosSystem {
+            system = "aarch64-linux";
+            specialArgs = { inherit inputs self; };
+            modules = [
+              ./hosts/jet
+              inputs.nur.nixosModules.nur
+              inputs.sops-nix.nixosModules.sops
+              inputs.home-manager.nixosModules.home-manager
+              inputs.asahi.nixosModules.apple-silicon-support
+              {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  users.alex = {
+                    imports = [
+                      ./homes/jet
+                      inputs.niri.homeManagerModules.niri
+                      inputs.nur.hmModules.nur
+                      inputs.sops-nix.homeManagerModules.sops
+                      inputs.nixvim.homeManagerModules.nixvim
+                      inputs.swww.homeManagerModules.default
+                    ];
+                  };
+                };
+              }
+            ];
+          };
 
-        ruby = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; inherit (inputs) self; };
-          modules = [
-            ./hosts/ruby
-            nur.modules.nixos.default
-            sops-nix.nixosModules.sops
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                users.alex = ./homes/ruby;
-                extraSpecialArgs = { inherit inputs; inherit (inputs) self; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                sharedModules = [
-                  inputs.nur.modules.homeManager.default
-                  inputs.sops-nix.homeManagerModules.sops
-                  inputs.nixvim.homeManagerModules.nixvim
-                ];
-              };
-            }
-          ];
-        };
+          jade = inputs.nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = { inherit inputs self; };
+            modules = [
+              ./hosts/jade
+              inputs.nur.nixosModules.nur
+              inputs.sops-nix.nixosModules.sops
+              inputs.nyx.nixosModules.default
+              inputs.home-manager.nixosModules.home-manager
+              {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  users.alex = {
+                    imports = [
+                      ./homes/jade
+                      inputs.nur.hmModules.nur
+                      inputs.sops-nix.homeManagerModules.sops
+                      inputs.nixvim.homeManagerModules.nixvim
+                      inputs.nix-flatpak.homeManagerModules.nix-flatpak
+                      inputs.swww.homeManagerModules.default
+                    ];
+                  };
+                };
+              }
+            ];
+          };
 
-        /*
-        amber = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; inherit (inputs) self; };
-          modules = [
-            ./hosts/amber
-          ];
-        };
-        */
+          ruby = inputs.nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = { inherit inputs self; };
+            modules = [
+              ./hosts/ruby
+              inputs.nur.nixosModules.nur
+              inputs.sops-nix.nixosModules.sops
+              inputs.home-manager.nixosModules.home-manager
+              {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  users.alex = {
+                    imports = [
+                      ./homes/ruby
+                      inputs.nur.hmModules.nur
+                      inputs.sops-nix.homeManagerModules.sops
+                      inputs.nixvim.homeManagerModules.nixvim
+                      inputs.swww.homeManagerModules.default
+                    ];
+                  };
+                };
+              }
+            ];
+          };
 
-        opal = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; inherit (inputs) self; };
-          modules = [
-            ./hosts/opal
-            sops-nix.nixosModules.sops
-            nyx.nixosModules.default
-            # Add nix-minecraft module.
-          ];
+          opal = inputs.nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = { inherit inputs self; };
+            modules = [
+              ./hosts/opal
+              inputs.sops-nix.nixosModules.sops
+              inputs.nyx.nixosModules.default
+              inputs.nix-minecraft.nixosModules.default
+            ];
+          };
         };
       };
     };
-  };
 }
-
