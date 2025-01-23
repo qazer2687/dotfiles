@@ -19,13 +19,14 @@
   ];
 
   # Enable rich presence support for Discord on the web.
-  services.arrpc.enable = true;
+  #services.arrpc.enable = true;
 
   modules = {
     # Environment
-    #sway.enable = true;
+    sway.enable = true;
     #hyprland.enable = true;
-    niri.enable = true;
+    #niri.enable = true;
+
     waybar.enable = true;
     foot.enable = true;
     mako.enable = true;

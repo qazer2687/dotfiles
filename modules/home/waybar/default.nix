@@ -26,7 +26,7 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "niri/workspaces" "mpris"];
+          modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
           modules-right = [ "network" "pulseaudio" "battery"];
 
@@ -84,8 +84,6 @@
             };
             sort-by-number = true;
           };
-
-
 
           backlight = {
             device = "apple-panel-bl";
