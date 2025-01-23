@@ -109,8 +109,8 @@
         specialArgs = {inherit inputs self;};
         modules = [
           ./hosts/opal
-          sops-nix.nixosModules.sops
-          nyx.nixosModules.default
+          inputs.sops-nix.nixosModules.sops
+          inputs.nyx.nixosModules.default
           # Add nix-minecraft module.
         ];
       };
