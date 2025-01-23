@@ -24,12 +24,6 @@
     HandleHibernateKey=ignore
   '';
 
-  # These are configured through home-manager but this
-  # option is required so they appear as desktop entries.
-  #programs.sway.enable = true;
-  #programs.hyprland.enable = true;
-  #programs.niri.enable = true;
-
   programs.fish.enable = true;
   
   # This allows links to be
@@ -54,10 +48,6 @@
     asahi = {
       withRust = true;
       useExperimentalGPUDriver = true;
-      # Using the driver mode breaks sway and using the
-      # overlay mode fails to compile so I can only use
-      # the replace mode, but it makes my config impure.
-      experimentalGPUInstallMode = "replace";
       setupAsahiSound = true;
       peripheralFirmwareDirectory = ../../firmware/jet;
     };
@@ -101,7 +91,7 @@
     ];
   };
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session niri
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session sway
   '';
 
   swapDevices = [
@@ -120,12 +110,13 @@
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+
       # Temporary fix for nautilus not launching on hyprland.
       # https://bbs.archlinux.org/viewtopic.php?pid=2196562#p2196562
-      GSK_RENDERER = "ngl";
-      # Temporary fix for the cursor being offset slightly.
+      # GSK_RENDERER = "ngl";
+      # Temporary fix for the cursor being offset slightly on hyprland.
       # https://github.com/hyprwm/Hyprland/issues/7244
-      AQ_NO_ATOMIC = "0";
+      # AQ_NO_ATOMIC = "0";
     };
   };
   
