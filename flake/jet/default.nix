@@ -5,7 +5,7 @@
   nixpkgs,
   ...
 }: {
-  jet = nixpkgs.lib.nixosSystem {
+  jet = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs; inherit (inputs) self; };
     modules = [
       ./hosts/jet
