@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   imports = [
     ../../hardware/opal
     ../../modules/server
@@ -14,7 +10,7 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   };
 
-    boot = {
+  boot = {
     kernelParams = [
       "quiet"
       "mitigations=off"

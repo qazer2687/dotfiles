@@ -20,13 +20,15 @@ _: {
       # zed-editor withGLES false (might work without as of the new asahi updates 15/11/24, hyprland works when it didn't before)
     };
 
-    dwl = (prev.dwl.overrideAttrs (oldAttrs: rec {
-      patches = [
-        ../patches/dwl/autostart.patch
-        ../patches/dwl/vanitygaps.patch
-        ../patches/dwl/movestack.patch
-        ../patches/dwl/push.patch
-      ];
-    })).override{ configH = ../modules/home/dwl/config/config.h; };
+    dwl =
+      (prev.dwl.overrideAttrs (_oldAttrs: rec {
+        patches = [
+          ../patches/dwl/autostart.patch
+          ../patches/dwl/vanitygaps.patch
+          ../patches/dwl/movestack.patch
+          ../patches/dwl/push.patch
+        ];
+      }))
+      .override {configH = ../modules/home/dwl/config/config.h;};
   };
 }

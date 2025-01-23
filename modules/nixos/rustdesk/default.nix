@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.modules.rustdesk.enable = lib.mkEnableOption "";
@@ -13,7 +12,7 @@
       relay.enable = true;
       signal = {
         enable = true;
-        relayHosts = [ "100.69.81.103" ];
+        relayHosts = ["100.69.81.103"];
       };
     };
   };

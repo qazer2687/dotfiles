@@ -1,4 +1,4 @@
-{pkgs, lib, ...}: {
+{pkgs, ...}: {
   imports = [
     ../../hardware/jet
     ../../modules/nixos
@@ -25,7 +25,7 @@
   '';
 
   programs.fish.enable = true;
-  
+
   # This allows links to be
   # opened across applications.
   xdg.portal = {
@@ -119,7 +119,7 @@
       # AQ_NO_ATOMIC = "0";
     };
   };
-  
+
   modules = {
     core.enable = true;
     bluetooth.enable = true;

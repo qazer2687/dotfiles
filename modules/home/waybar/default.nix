@@ -28,7 +28,7 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "sway/workspaces" "mpris"];
           modules-center = [];
-          modules-right = [ "network" "pulseaudio" "battery"];
+          modules-right = ["network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "{icon} {volume}%";

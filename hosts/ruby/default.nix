@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../hardware/ruby
     ../../modules/nixos
@@ -27,7 +24,7 @@
   #programs.hyprland.enable = true;
 
   programs.fish.enable = true;
-  
+
   # This allows links to be
   # opened across applications.
   xdg.portal = {
@@ -39,7 +36,6 @@
       #pkgs.xdg-desktop-portal-hyprland
     ];
   };
-
 
   networking.hostName = "ruby";
 

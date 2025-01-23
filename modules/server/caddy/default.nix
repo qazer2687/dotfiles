@@ -1,15 +1,12 @@
 {
   lib,
   config,
-  inputs,
-  pkgs,
   ...
 }: {
-
   options.modules.server.caddy.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.caddy.enable {
-    networking.firewall.allowedTCPPorts = [ 80 443 ];
+    networking.firewall.allowedTCPPorts = [80 443];
 
     #sops.secrets.cloudflare-api-token = {};
 
