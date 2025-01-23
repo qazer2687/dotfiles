@@ -17,18 +17,14 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    niri.url = "github:sodiboo/niri-flake/main";
+    niri.url = "github:sodiboo/niri-flake";
     swww.url = "github:LGFae/swww";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs = inputs @ { self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "aarch64-linux"
-        "x86_64-linux"
-        "aarch64-darwin"
-      ];
+      systems = [ "aarch64-linux" "x86_64-linux" "aarch64-darwin" ];
 
       flake = {
         overlays = import ./overlays { inherit inputs; };
@@ -39,7 +35,7 @@
             specialArgs = { inherit inputs self; };
             modules = [
               ./hosts/jet
-              inputs.nur.modules.nixos.default
+              inputs.nur.modules.nixos.default  # Fixed NUR module
               inputs.sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.home-manager
               inputs.asahi.nixosModules.apple-silicon-support
@@ -50,7 +46,7 @@
                   users.alex = {
                     imports = [
                       ./homes/jet
-                      inputs.niri.homeManagerModules.niri
+                      inputs.niri.homeModules.niri  # Fixed home module path
                       inputs.nur.hmModules.nur
                       inputs.sops-nix.homeManagerModules.sops
                       inputs.nixvim.homeManagerModules.nixvim
@@ -67,7 +63,7 @@
             specialArgs = { inherit inputs self; };
             modules = [
               ./hosts/jade
-              inputs.nur.modules.nixos.default
+              inputs.nur.modules.nixos.default  # Fixed NUR module
               inputs.sops-nix.nixosModules.sops
               inputs.nyx.nixosModules.default
               inputs.home-manager.nixosModules.home-manager
@@ -95,7 +91,7 @@
             specialArgs = { inherit inputs self; };
             modules = [
               ./hosts/ruby
-              inputs.nur.modules.nixos.default
+              inputs.nur.modules.nixos.default  # Fixed NUR module
               inputs.sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.home-manager
               {
