@@ -10,8 +10,9 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     # Fork of tpwrules/nixos-apple-silicon with performance 
     # tweaks, vulkan, louder speakers and some other things.
-    #asahi.url = "github:zzywysm/nixos-asahi";
-    asahi.url = "github:tpwrules/nixos-apple-silicon";
+
+      #packages = perSystem (system: import ./packages nixpkgs.legacyPackages.${system});
+	 asahi.url = "github:tpwrules/nixos-apple-silicon";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
@@ -22,8 +23,26 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+  outputs = inputs @ {
+    self,
+    flake-parts,
+    nixpkgs,
+    home-manager,
+    sops-nix,
+    nur,
+    darwin,
+    nix-homebrew,
+    asahi,
+    nix-vscode-extensions,
+    nixvim,
+    nix-flatpak,
+    nix-minecraft,
+    nyx,
+    niri,
+    swww,
+    ...
+  }:
+  flake-parts.lib.mkFlake { inherit inputs; } {
     flake = {
       overlays = import ./overlays {inherit inputs;};
     };
@@ -32,9 +51,7 @@
       "x86_64-linux"
       #"aarch64-darwin"
     ];
-    perSystem = { config, ... }: {
-
-      #packages = perSystem (system: import ./packages nixpkgs.legacyPackages.${system});
+    perSystem = { nixpkgs, config, ... }: {
 
       nixosConfigurations = {
         jet = nixpkgs.lib.nixosSystem {
