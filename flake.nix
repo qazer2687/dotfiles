@@ -35,7 +35,7 @@
             specialArgs = { inherit inputs self; };
             modules = [
               ./hosts/jet
-              inputs.nur.modules.nixos.default  # Fixed NUR module
+              inputs.nur.modules.nixos.default
               inputs.sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.home-manager
               inputs.asahi.nixosModules.apple-silicon-support
@@ -46,12 +46,12 @@
                   users.alex = {
                     imports = [
                       ./homes/jet
-                      inputs.niri.homeModules.niri  # Fixed home module path
-                      inputs.nur.modules.homeManager.default
+                      inputs.niri.homeManagerModules.niri
+                      inputs.nur.modules.homeManager.default  # Updated NUR HM module
                       inputs.sops-nix.homeManagerModules.sops
                       inputs.nixvim.homeManagerModules.nixvim
-                      inputs.swww.homeManagerModules.default
                     ];
+                    home.packages = [ inputs.swww.packages.${inputs.system}.default ];
                   };
                 };
               }
@@ -63,7 +63,7 @@
             specialArgs = { inherit inputs self; };
             modules = [
               ./hosts/jade
-              inputs.nur.modules.nixos.default  # Fixed NUR module
+              inputs.nur.modules.nixos.default
               inputs.sops-nix.nixosModules.sops
               inputs.nyx.nixosModules.default
               inputs.home-manager.nixosModules.home-manager
@@ -74,12 +74,12 @@
                   users.alex = {
                     imports = [
                       ./homes/jade
-                      inputs.nur.modules.homeManager.default
+                      inputs.nur.modules.homeManager.default  # Updated NUR HM module
                       inputs.sops-nix.homeManagerModules.sops
                       inputs.nixvim.homeManagerModules.nixvim
                       inputs.nix-flatpak.homeManagerModules.nix-flatpak
-                      inputs.swww.homeManagerModules.default
                     ];
+                    home.packages = [ inputs.swww.packages.${inputs.system}.default ];
                   };
                 };
               }
@@ -91,7 +91,7 @@
             specialArgs = { inherit inputs self; };
             modules = [
               ./hosts/ruby
-              inputs.nur.modules.nixos.default  # Fixed NUR module
+              inputs.nur.modules.nixos.default
               inputs.sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.home-manager
               {
@@ -101,11 +101,11 @@
                   users.alex = {
                     imports = [
                       ./homes/ruby
-                      inputs.nur.modules.homeManager.default
+                      inputs.nur.modules.homeManager.default  # Updated NUR HM module
                       inputs.sops-nix.homeManagerModules.sops
                       inputs.nixvim.homeManagerModules.nixvim
-                      inputs.swww.homeManagerModules.default
                     ];
+                    home.packages = [ inputs.swww.packages.${inputs.system}.default ];
                   };
                 };
               }
@@ -120,6 +120,17 @@
               inputs.sops-nix.nixosModules.sops
               inputs.nyx.nixosModules.default
               inputs.nix-minecraft.nixosModules.default
+            ];
+          };
+        };
+
+        darwinConfigurations = {
+          amber = inputs.darwin.lib.darwinSystem {
+            system = "aarch64-darwin";
+            specialArgs = { inherit inputs self; };
+            modules = [
+              ./hosts/amber
+              inputs.nix-homebrew.darwinModules.nix-homebrew
             ];
           };
         };
