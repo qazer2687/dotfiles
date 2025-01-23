@@ -55,64 +55,64 @@
             }
           ];
         };
-      };
 
-      jet = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs self;};
-        modules = [
-          ./hosts/jet
-          inputs.nur.modules.nixos.default
-          inputs.sops-nix.nixosModules.sops
-          inputs.home-manager.nixosModules.home-manager
-          inputs.asahi.nixosModules.apple-silicon-support
-          {
-            home-manager = {
-              users.alex = ./homes/jet;
-              extraSpecialArgs = {inherit inputs self;};
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              sharedModules = [
-                inputs.niri.homeModules.niri
-                inputs.nur.modules.homeManager.default
-                inputs.sops-nix.homeManagerModules.sops
-                inputs.nixvim.homeManagerModules.nixvim
-              ];
-            };
-          }
-        ];
-      };
+        jet = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs self;};
+          modules = [
+            ./hosts/jet
+            inputs.nur.modules.nixos.default
+            inputs.sops-nix.nixosModules.sops
+            inputs.home-manager.nixosModules.home-manager
+            inputs.asahi.nixosModules.apple-silicon-support
+            {
+              home-manager = {
+                users.alex = ./homes/jet;
+                extraSpecialArgs = {inherit inputs self;};
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                sharedModules = [
+                  inputs.niri.homeModules.niri
+                  inputs.nur.modules.homeManager.default
+                  inputs.sops-nix.homeManagerModules.sops
+                  inputs.nixvim.homeManagerModules.nixvim
+                ];
+              };
+            }
+          ];
+        };
 
-      ruby = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs self;};
-        modules = [
-          ./hosts/ruby
-          inputs.nur.modules.nixos.default
-          inputs.sops-nix.nixosModules.sops
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              users.alex = ./homes/ruby;
-              extraSpecialArgs = {inherit inputs;};
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              sharedModules = [
-                inputs.nur.modules.homeManager.default
-                inputs.sops-nix.homeManagerModules.sops
-                inputs.nixvim.homeManagerModules.nixvim
-              ];
-            };
-          }
-        ];
-      };
+        ruby = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs self;};
+          modules = [
+            ./hosts/ruby
+            inputs.nur.modules.nixos.default
+            inputs.sops-nix.nixosModules.sops
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                users.alex = ./homes/ruby;
+                extraSpecialArgs = {inherit inputs;};
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                sharedModules = [
+                  inputs.nur.modules.homeManager.default
+                  inputs.sops-nix.homeManagerModules.sops
+                  inputs.nixvim.homeManagerModules.nixvim
+                ];
+              };
+            }
+          ];
+        };
 
-      opal = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs self;};
-        modules = [
-          ./hosts/opal
-          inputs.sops-nix.nixosModules.sops
-          inputs.nyx.nixosModules.default
-          # Add nix-minecraft module.
-        ];
+        opal = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs self;};
+          modules = [
+            ./hosts/opal
+            inputs.sops-nix.nixosModules.sops
+            inputs.nyx.nixosModules.default
+            # Add nix-minecraft module.
+          ];
+        };
       };
     };
   };
