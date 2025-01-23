@@ -47,7 +47,7 @@
                     imports = [
                       ./homes/jet
                       inputs.niri.homeModules.niri  # Fixed home module path
-                      inputs.nur.hmModules.nur
+                      inputs.nur.modules.homeManager.default
                       inputs.sops-nix.homeManagerModules.sops
                       inputs.nixvim.homeManagerModules.nixvim
                       inputs.swww.homeManagerModules.default
@@ -74,7 +74,7 @@
                   users.alex = {
                     imports = [
                       ./homes/jade
-                      inputs.nur.hmModules.nur
+                      inputs.nur.modules.homeManager.default
                       inputs.sops-nix.homeManagerModules.sops
                       inputs.nixvim.homeManagerModules.nixvim
                       inputs.nix-flatpak.homeManagerModules.nix-flatpak
@@ -101,7 +101,7 @@
                   users.alex = {
                     imports = [
                       ./homes/ruby
-                      inputs.nur.hmModules.nur
+                      inputs.nur.modules.homeManager.default
                       inputs.sops-nix.homeManagerModules.sops
                       inputs.nixvim.homeManagerModules.nixvim
                       inputs.swww.homeManagerModules.default
