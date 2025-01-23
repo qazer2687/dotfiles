@@ -39,7 +39,7 @@
             specialArgs = { inherit inputs self; };
             modules = [
               ./hosts/jet
-              inputs.nur.nixosModules.nur
+              inputs.nur.modules.nixos.default
               inputs.sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.home-manager
               inputs.asahi.nixosModules.apple-silicon-support
@@ -67,7 +67,7 @@
             specialArgs = { inherit inputs self; };
             modules = [
               ./hosts/jade
-              inputs.nur.nixosModules.nur
+              inputs.nur.modules.nixos.default
               inputs.sops-nix.nixosModules.sops
               inputs.nyx.nixosModules.default
               inputs.home-manager.nixosModules.home-manager
@@ -95,7 +95,7 @@
             specialArgs = { inherit inputs self; };
             modules = [
               ./hosts/ruby
-              inputs.nur.nixosModules.nur
+              inputs.nur.modules.nixos.default
               inputs.sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.home-manager
               {
