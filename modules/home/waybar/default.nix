@@ -168,6 +168,10 @@
         #workspaces button.active {
           color: #ffffff;
         }
+        #workspaces button.focused{
+          color: #ffffff;
+        }
+
 
         #pulseaudio-slider {
           all: unset;
