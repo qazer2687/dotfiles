@@ -30,12 +30,12 @@
   # opened across applications.
   xdg.portal = {
     enable = true;
-    #wlr.enable = lib.mkForce true;
-    #xdgOpenUsePortal = true;
-    extraPortals = [
-      #pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    wlr.enable = lib.mkForce true;
+    xdgOpenUsePortal = true;
+    #extraPortals = [
+    #  #pkgs.xdg-desktop-portal-hyprland
+    #  pkgs.xdg-desktop-portal-gtk
+    #];
     # Fix 'xdg-desktop-portal 1.17 reworked how
     # portal implementations are loaded' warning.
     #config.common.default = "*";
@@ -46,7 +46,6 @@
       enable = true;
     };
     asahi = {
-      withRust = true;
       useExperimentalGPUDriver = true;
       setupAsahiSound = true;
       peripheralFirmwareDirectory = ../../firmware/jet;
