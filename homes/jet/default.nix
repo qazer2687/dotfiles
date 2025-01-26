@@ -25,8 +25,8 @@
   modules = {
     # Environment
     # sway.enable = true;
-    hyprland.enable = true;
-    # niri.enable = true;
+    # hyprland.enable = true;
+    niri.enable = true;
 
     waybar.enable = true;
     foot.enable = true;

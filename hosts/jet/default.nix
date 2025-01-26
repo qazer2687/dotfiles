@@ -30,11 +30,11 @@
   # opened across applications.
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    #wlr.enable = true;
     xdgOpenUsePortal = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      #pkgs.xdg-desktop-portal-gtk
+      #pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
     ];
     # Fix 'xdg-desktop-portal 1.17 reworked how
     # portal implementations are loaded' warning.
@@ -90,7 +90,7 @@
     ];
   };
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session niri
   '';
 
   swapDevices = [
