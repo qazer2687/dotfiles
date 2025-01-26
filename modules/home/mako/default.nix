@@ -27,7 +27,6 @@
       extraConfig = ''
         # These settings aren't exposed in the module
         text-alignment=left
-        icons=left
         max-icon-size=64
         group-by=app-name
         history=yes
