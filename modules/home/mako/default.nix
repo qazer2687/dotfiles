@@ -29,7 +29,6 @@
         text-alignment=left
         max-icon-size=64
         group-by=app-name
-        history=yes
         ignore-timeout=yes
         markup=yes
         actions=inline
