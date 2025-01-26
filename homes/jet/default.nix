@@ -8,13 +8,13 @@
   ];
 
   home.packages = with pkgs; [
-    obsidian
+    #obsidian
     nautilus
     gammastep
     fragments # Torrent Client
     calibre
     vlc
-    teams-for-linux
+    #teams-for-linux
     loupe # Image Viewer
   ];
 
