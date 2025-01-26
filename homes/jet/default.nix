@@ -11,21 +11,22 @@
     obsidian
     nautilus
     gammastep
-    fragments # Torrent Client
+    fragments
     calibre
     vlc
-    #teams-for-linux
-    loupe # Image Viewer
+    # Causes electron-unwrapped to build from source.
+    # teams-for-linux
+    loupe
   ];
 
   # Enable rich presence support for Discord on the web.
-  #services.arrpc.enable = true;
+  # services.arrpc.enable = true;
 
   modules = {
     # Environment
-    sway.enable = true;
-    #hyprland.enable = true;
-    #niri.enable = true;
+    # sway.enable = true;
+    hyprland.enable = true;
+    # niri.enable = true;
 
     waybar.enable = true;
     foot.enable = true;
@@ -42,10 +43,10 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
-    #neovim.enable = true;
+    # neovim.enable = true;
 
     # Security
-    #gpg.enable = true;
+    # gpg.enable = true;
 
     # Gaming
     prismlauncher.enable = true;

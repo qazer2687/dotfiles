@@ -32,10 +32,10 @@
     enable = true;
     wlr.enable = true;
     xdgOpenUsePortal = true;
-    #extraPortals = [
-    #  #pkgs.xdg-desktop-portal-hyprland
-    #  pkgs.xdg-desktop-portal-gtk
-    #];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      #pkgs.xdg-desktop-portal-gtk
+    ];
     # Fix 'xdg-desktop-portal 1.17 reworked how
     # portal implementations are loaded' warning.
     config.common.default = "*";
@@ -90,7 +90,7 @@
     ];
   };
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session sway
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
   '';
 
   swapDevices = [
@@ -101,9 +101,6 @@
   ];
 
   environment = {
-    systemPackages = with pkgs; [
-      # Put system packages here...
-    ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
@@ -112,10 +109,10 @@
 
       # Temporary fix for nautilus not launching on hyprland.
       # https://bbs.archlinux.org/viewtopic.php?pid=2196562#p2196562
-      # GSK_RENDERER = "ngl";
+      GSK_RENDERER = "ngl";
       # Temporary fix for the cursor being offset slightly on hyprland.
       # https://github.com/hyprwm/Hyprland/issues/7244
-      # AQ_NO_ATOMIC = "0";
+      AQ_NO_ATOMIC = "0";
     };
   };
 
@@ -124,7 +121,7 @@
     bluetooth.enable = true;
     # Sound is managed via the setupAsahiSound option
     # and I do not need easyeffects installed on Jet.
-    #pipewire.enable = true;
+    # pipewire.enable = true;
     systemd-boot.enable = true;
     filesystem = {
       enable = true;
