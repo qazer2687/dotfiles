@@ -29,10 +29,7 @@
         text-alignment=left
         max-icon-size=64
         group-by=app-name
-        markup=yes
-        actions=inline
-        inline-replies=yes
-        
+
         # Only override urgency levels
         [urgency=low]
         background-color=#E8F2FC
