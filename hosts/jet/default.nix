@@ -38,7 +38,7 @@
     #];
     # Fix 'xdg-desktop-portal 1.17 reworked how
     # portal implementations are loaded' warning.
-    #config.common.default = "*";
+    config.common.default = "*";
   };
 
   hardware = {
