@@ -31,7 +31,7 @@
         monitor = [ ",highrr,auto,2" ];
         
         general = {
-          layout = "hy3";
+          #layout = "hy3";
           gaps_in = 3;
           gaps_out = 6;
           border_size = 1;
