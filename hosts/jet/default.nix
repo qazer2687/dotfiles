@@ -35,6 +35,7 @@
     extraPortals = [
       #pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
     ];
     # Fix 'xdg-desktop-portal 1.17 reworked how
     # portal implementations are loaded' warning.
@@ -90,7 +91,7 @@
     ];
   };
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session niri
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session niri --session
   '';
 
   swapDevices = [
