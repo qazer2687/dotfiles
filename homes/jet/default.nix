@@ -8,7 +8,7 @@
   ];
 
   home.packages = with pkgs; [
-    #obsidian
+    obsidian
     nautilus
     gammastep
     fragments # Torrent Client
