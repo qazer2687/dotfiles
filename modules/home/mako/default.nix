@@ -19,8 +19,8 @@
       font = "Departure Mono 8";
       width = 300;
       height = 80;
-      margin = "10";
-      padding = "2";
+      margin = "4";
+      padding = "10";
       defaultTimeout = 5000;
       layer = "top";
       anchor = "top-right";
