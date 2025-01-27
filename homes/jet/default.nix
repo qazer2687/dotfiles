@@ -34,6 +34,8 @@
     wofi.enable = true;
     theme.enable = true;
 
+    ags.enable = true;
+
     # Programs
     firefox.enable = true;
     fish.enable = true;
