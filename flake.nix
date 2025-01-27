@@ -17,6 +17,7 @@
     niri.url = "github:sodiboo/niri-flake";
     swww.url = "github:LGFae/swww";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    ags.url = "github:aylur/ags"; 
   };
 
   outputs = inputs @ {
@@ -72,6 +73,7 @@
                   useUserPackages = true;
                   sharedModules = [
                     inputs.niri.homeModules.niri
+                    inputs.ags.homeManagerModules.default
                     inputs.nur.modules.homeManager.default
                     inputs.sops-nix.homeManagerModules.sops
                     inputs.nixvim.homeManagerModules.nixvim
