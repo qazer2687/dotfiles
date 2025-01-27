@@ -17,8 +17,8 @@
       borderSize = 1;
       progressColor = "source #ff0000";
       font = "Departure Mono 8";
-      width = 300;
-      height = 80;
+      width = 500;
+      height = 120;
       margin = "4";
       padding = "10";
       defaultTimeout = 5000;
