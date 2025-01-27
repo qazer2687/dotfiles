@@ -12,6 +12,15 @@
       enable = true;
     
       configDir = ./config;
+
+      extraPackages = with pkgs; [
+        astal.hyprland
+        astal.mpris
+        astal.battery
+        astal.network
+        astal.pulseaudio
+        astal.tray
+      ];
     };
   };
 }
