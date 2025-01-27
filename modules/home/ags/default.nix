@@ -18,7 +18,6 @@
         astal.mpris
         astal.battery
         astal.network
-        astal.pulseaudio
         astal.tray
       ];
     };
