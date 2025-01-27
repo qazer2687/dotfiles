@@ -27,5 +27,6 @@
     ./gpg
     ./mangohud
     ./niri
+    ./ags
   ];
 }
