@@ -93,13 +93,14 @@ in {
               };
             };
           }
-
+          /*
           {
             matches = [
               { app-id = "^foot$"; }
             ];
             opacity = 0.6;
           }
+          */
         ];
 
         layout = {
