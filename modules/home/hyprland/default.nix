@@ -71,13 +71,20 @@
             "border, 1, 4, myBezier"
             "borderangle, 1, 4, myBezier"
             "fade, 1, 4, myBezier"
-            "workspaces, 1, 5, default, slidevert"
+            "workspaces, 1, 5, myBezier, slidevert"
           ];
         };
 
         input = {
+					# Mouse/Pointer
+					follow_mouse = 2;
+					mouse_refocus = false;
+
+					# Keyboard
           kb_layout = "gb";
           kb_variant = "colemak";
+
+					# Touchpad
           touchpad = {
             natural_scroll = true;
             clickfinger_behavior = true;
