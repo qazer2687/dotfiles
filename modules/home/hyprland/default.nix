@@ -100,13 +100,13 @@
         };
 
         bind = [
-          # Basic controls
+          # Core
           "SUPER, Return, exec, foot"
           "SUPER, E, exec, wofi --show drun"
           "SUPER, Q, killactive"
           "SUPER, SPACE, togglefloating"
 
-          # Window movement
+          # Window Management
           "SUPER, left, movewindow, l"
           "SUPER, right, movewindow, r"
           "SUPER, up, movewindow, u"
@@ -124,10 +124,6 @@
           "SUPER, 9, workspace, 9"
           "SUPER, 0, workspace, 10"
 
-					# Workspace Gestures
-
-
-          # Window to workspace
           "SUPER SHIFT, 1, movetoworkspace, 1"
           "SUPER SHIFT, 2, movetoworkspace, 2"
           "SUPER SHIFT, 3, movetoworkspace, 3"
@@ -139,19 +135,19 @@
           "SUPER SHIFT, 9, movetoworkspace, 9"
           "SUPER SHIFT, 0, movetoworkspace, 10"
 
-          # Media controls
-          ",XF86AudioRaiseVolume, exec, pamixer -i 5"
-          ",XF86AudioLowerVolume, exec, pamixer -d 5"
-          ",XF86AudioMute, exec, pamixer -t"
-          ",XF86AudioMicMute, exec, pamixer --default-source -t"
+          # Volume
+          ",XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -i 5"
+          ",XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer -d 5"
+          ",XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer -t"
+          ",XF86AudioMicMute, exec, ${pkgs.pamixer}/bin/pamixer --default-source -t"
 
-          # Brightness controls
-          ",XF86MonBrightnessUp, exec, brightnessctl set 1%+"
-          ",XF86MonBrightnessDown, exec, brightnessctl set 1%-"
+          # Brightness
+          ",XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%+"
+          ",XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%-"
 
-          # Keyboard backlight
-          "SUPER, XF86MonBrightnessUp, exec, brightnessctl --class leds --device kbd_backlight set 10%+"
-          "SUPER, XF86MonBrightnessDown, exec, brightnessctl --class leds --device kbd_backlight set 10%-"
+          # Backlight
+          "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%+"
+          "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%-"
         ];
 
         exec-once = [
