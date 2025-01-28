@@ -41,6 +41,14 @@
           allow_tearing = false;
         };
 
+				plugin = {
+					scroller = {
+						column_default_width = "seveneighths";
+						center_row_if_space_available = true;
+
+					};
+				};
+
         decoration = {
           rounding = 6;
           active_opacity = 0.92;
@@ -107,6 +115,9 @@
           "SUPER, 8, workspace, 8"
           "SUPER, 9, workspace, 9"
           "SUPER, 0, workspace, 10"
+
+					# Workspace Gestures
+
 
           # Window to workspace
           "SUPER SHIFT, 1, movetoworkspace, 1"
