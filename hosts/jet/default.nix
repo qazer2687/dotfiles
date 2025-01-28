@@ -91,7 +91,7 @@
     ];
   };
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session niri --session
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
   '';
 
   swapDevices = [

@@ -8,15 +8,17 @@
   ];
 
   home.packages = with pkgs; [
-    obsidian
-    nautilus
-    gammastep
-    fragments
-    calibre
-    vlc
+    obsidian # Note Taking
+    nautilus # File Browser
+    fragments # Torrent Client
+    calibre # E-Book Library
+    vlc # Media Player
     # Causes electron-unwrapped to build from source.
-    # teams-for-linux
-    loupe
+    # teams-for-linux # Team Communication
+    loupe # Image Viewer
+
+    # Development
+    sqlitebrowser # SQLite Database Browser
   ];
 
   # Enable rich presence support for Discord on the web.
@@ -25,8 +27,8 @@
   modules = {
     # Environment
     # sway.enable = true;
-    # hyprland.enable = true;
-    niri.enable = true;
+    hyprland.enable = true;
+    #niri.enable = true;
 
     waybar.enable = true;
     foot.enable = true;
