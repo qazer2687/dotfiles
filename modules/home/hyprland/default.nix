@@ -86,6 +86,7 @@
 
 					# Touchpad
           touchpad = {
+						scroll_factor = 0.5;
             natural_scroll = true;
             clickfinger_behavior = true;
             middle_button_emulation = true;
