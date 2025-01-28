@@ -18,6 +18,7 @@
         astal.mpris
         astal.battery
         astal.network
+        astal.tray
       ];
     };
   };
