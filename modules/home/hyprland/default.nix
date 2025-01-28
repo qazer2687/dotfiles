@@ -66,12 +66,12 @@
           enabled = true;
           bezier = "myBezier, 0.87, 0, 0.13, 1";
           animation = [
-            "windows, 1, 4, myBezier"
-            "windowsOut, 1, 4, myBezier"
-            "border, 1, 4, myBezier"
-            "borderangle, 1, 4, myBezier"
-            "fade, 1, 4, myBezier"
-            "workspaces, 1, 5, myBezier, slidevert"
+            "windows, 0, 3, myBezier"
+            "windowsOut, 0, 3, myBezier"
+            "border, 1, 3, myBezier"
+            "borderangle, 1, 3, myBezier"
+            "fade, 1, 3, myBezier"
+            "workspaces, 1, 3, myBezier, slidevert"
           ];
         };
 
