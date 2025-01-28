@@ -134,8 +134,11 @@
           "SUPER SHIFT, 8, movetoworkspace, 8"
           "SUPER SHIFT, 9, movetoworkspace, 9"
           "SUPER SHIFT, 0, movetoworkspace, 10"
+        ];
 
-          # Volume
+				# Will repeat when held.
+				binde =[
+					# Volume
           ",XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -i 5"
           ",XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer -d 5"
           ",XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer -t"
@@ -148,7 +151,7 @@
           # Backlight
           "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%+"
           "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%-"
-        ];
+				];
 
         exec-once = [
           "waybar"
