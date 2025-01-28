@@ -50,7 +50,7 @@
 				};
 
 				gestures = {
-					workspace_swipe = true;
+					workspace_swipe = false;
 				};
 
         decoration = {
