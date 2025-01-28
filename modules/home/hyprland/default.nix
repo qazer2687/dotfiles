@@ -83,7 +83,6 @@
 					# Mouse/Pointer
 					follow_mouse = 0;
 					mouse_refocus = false;
-					no_warps = true;
 
 					# Keyboard
           kb_layout = "gb";
@@ -98,6 +97,10 @@
             disable_while_typing = true;
           };
         };
+
+				cursor = {
+					no_warps = true;
+				};
 
         misc = {
           disable_splash_rendering = true;
