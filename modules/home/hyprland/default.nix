@@ -49,6 +49,10 @@
 					};
 				};
 
+				gestures = {
+					workspace_swipe = false;
+				};
+
         decoration = {
           rounding = 6;
           active_opacity = 0.92;
@@ -77,8 +81,9 @@
 
         input = {
 					# Mouse/Pointer
-					follow_mouse = 2;
+					follow_mouse = 0;
 					mouse_refocus = false;
+					no_warps = true;
 
 					# Keyboard
           kb_layout = "gb";
