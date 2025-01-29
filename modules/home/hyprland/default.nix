@@ -57,6 +57,7 @@
           rounding = 6;
           active_opacity = 0.92;
           inactive_opacity = 0.92;
+					# TODO: I need to look into the power usage impact of this feature.
           blur = {
             enabled = true;
             ignore_opacity = true;
@@ -69,13 +70,16 @@
         animations = {
           enabled = true;
           bezier = "myBezier, 0.87, 0, 0.13, 1";
+					# I'm not sure what the animation is to
+					# stop windows from fading in and out because
+					# it's not "fade".
           animation = [
             "windows, 1, 3, myBezier"
-            "windowsOut, 0, 3, myBezier"
+            "windowsOut, 1, 3, myBezier"
             "border, 1, 3, myBezier"
             "borderangle, 1, 3, myBezier"
             "fade, 0, 3, myBezier"
-            "workspaces, 1, 2, myBezier, slidevert"
+            "workspaces, 1, 3, myBezier, slidevert"
           ];
         };
 
@@ -90,6 +94,7 @@
 
 					# Touchpad
           touchpad = {
+						tap-to-click = false;
 						scroll_factor = 0.5;
             natural_scroll = true;
             clickfinger_behavior = true;
