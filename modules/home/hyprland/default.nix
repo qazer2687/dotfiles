@@ -50,6 +50,7 @@
 				};
 
 				gestures = {
+					# Breaks hyprscroller, required to be disabled.
 					workspace_swipe = false;
 				};
 
