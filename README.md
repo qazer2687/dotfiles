@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fqazer2687%2Fdotfiles.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fqazer2687%2Fdotfiles?ref=badge_shield)
+
 <p align="center">
   <img src="https://fontmeme.com/permalink/240731/041b9d3cb0609bbc73c878d56c35af05.png" border="0">
   <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
@@ -15,3 +17,7 @@
 | `amber`       | My VM for testing things.                                               | Virtual  | x86_64-linux  |
 
 <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fqazer2687%2Fdotfiles.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fqazer2687%2Fdotfiles?ref=badge_large)
