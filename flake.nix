@@ -18,6 +18,13 @@
     swww.url = "github:LGFae/swww";
     flake-parts.url = "github:hercules-ci/flake-parts";
     ags.url = "github:aylur/ags"; 
+
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
   };
 
   outputs = inputs @ {
