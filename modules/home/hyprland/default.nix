@@ -43,8 +43,12 @@ in {
 
     wayland.windowManager.hyprland = {
       enable = true;
-      package = pkgs.hyprland;
-      plugins = [ pkgs.hyprlandPlugins.hyprscroller ];
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      plugins = [ 
+        pkgs.hyprlandPlugins.hyprscroller
+        inputs.hyprland-plugins.packages.${pkgs.system}.borders-plus-plus
+      ];
 
       settings = {
         monitor = [ ",highrr,auto,2" ];
