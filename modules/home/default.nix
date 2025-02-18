@@ -28,5 +28,6 @@
     ./mangohud
     ./niri
     ./ags
+    ./mpd
   ];
 }
