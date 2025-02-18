@@ -8,7 +8,7 @@
     nur.url = "github:nix-community/NUR";
     darwin.url = "github:lnl7/nix-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    asahi.url = "github:tpwrules/nixos-apple-silicon";
+    asahi.url = "github:tpwrules/nixos-apple-silicon/releasep2-2024-12-25";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
