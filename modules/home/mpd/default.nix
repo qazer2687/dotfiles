@@ -14,7 +14,7 @@
     };
 
     services.mpd = {
-      enable = false;
+      enable = true;
       musicDirectory = "/home/alex/music";
       extraConfig = ''
         audio_output {
