@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }: let
 
@@ -98,7 +99,7 @@ in {
 					# stop windows from fading in and out because
 					# it's not "fade".
           animation = [
-            "windows, 1, 3, myBezier"
+            "windows, 0, 3, myBezier"
             "windowsOut, 1, 3, myBezier"
             "border, 1, 3, myBezier"
             "borderangle, 1, 3, myBezier"
@@ -176,8 +177,8 @@ in {
 				# Will repeat when held.
 				binde =[
 					# Volume
-          ",XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -i 5"
-          ",XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer -d 5"
+          ",XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -i 2"
+          ",XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer -d 2"
           ",XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer -t"
           ",XF86AudioMicMute, exec, ${pkgs.pamixer}/bin/pamixer --default-source -t"
 
