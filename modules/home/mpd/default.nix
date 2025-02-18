@@ -53,7 +53,6 @@
 				user_interface = "alternative";
 				default_find_mode = "wrapped";
 				lyrics_directory = "~/.lyrics";
-				lyrics_fetchers = [ "azlyrics" "genius" "musixmatch" "sing365" "metrolyrics" "justsomelyrics" "jahlyrics" "plyrics" "tekstowo" "zeneszoveg" "internet" ];
 				follow_now_playing_lyrics = true;
 				store_lyrics_in_song_dir = false;
 				ignore_leading_the = true;
