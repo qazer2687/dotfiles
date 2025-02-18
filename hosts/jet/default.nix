@@ -78,6 +78,11 @@
       # Wipe the vendor logo earlier in the boot sequence.
       "fbcon=nodefer"
     ];
+    blacklistedKernelModules = [
+      # Disable the watchdog timer to stop
+      # watchdog from hanging on poweroff.
+      "iTCO_wdt"
+    ];
     initrd.verbose = false;
     consoleLogLevel = 0;
     m1n1CustomLogo = ../../assets/m1n1CustomLogo_sus.png;

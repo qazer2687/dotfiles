@@ -49,6 +49,7 @@
     vscode.enable = true;
     git.enable = true;
     direnv.enable = true;
+    mpd.enable = true;
     # neovim.enable = true;
 
     # Security
