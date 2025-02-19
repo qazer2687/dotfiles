@@ -72,7 +72,7 @@ in {
 
 					};
 
-					borders-plus-plus {
+					borders-plus-plus = {
 						add_borders = 1;
 						col.border_1 = "#ffffff";
 						col.border_2 = "#000000";
