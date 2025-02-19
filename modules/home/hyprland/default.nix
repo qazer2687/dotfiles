@@ -73,12 +73,14 @@ in {
 					};
 
 					borders-plus-plus = {
-						add_borders = 1;
-						col.border_1 = "#ffffff";
-						col.border_2 = "#000000";
+						add_borders = 2;
+						col.border_1 = "#000000";
+						col.border_2 = "#ffffff";
+						col.border_3 = "#000000";
 
-						border_size_1 = 4;
-        		border_size_2 = 8;
+						border_size_1 = 8;
+						border_size_2 = 8;
+        		border_size_3 = 8;
     			};
 				};
 
