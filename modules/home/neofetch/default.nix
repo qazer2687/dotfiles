@@ -62,7 +62,7 @@
       bar_color_elapsed="distro"
       bar_color_total="distro"
       image_backend="kitty"
-      image_source="/etc/nixos/home/images/misc/neofetch.png"
+      image_source="${config.home.homeDirectory}/.config/assets/neofetch.png"
       image_size="250px"
       image_loop="on"
       ascii_distro="nixos"
