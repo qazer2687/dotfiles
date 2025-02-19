@@ -60,7 +60,7 @@ in {
           
           gaps_in = 3;
           gaps_out = 6;
-          border_size = 8;
+          border_size = 4;
           resize_on_border = true;
           allow_tearing = false;
         };
