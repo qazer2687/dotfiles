@@ -77,8 +77,8 @@ in {
 						col.border_1 = "#ffffff";
 						col.border_2 = "#000000";
 
-						border_size_1 = 2;
-        		border_size_2 = 2;
+						border_size_1 = 4;
+        		border_size_2 = 8;
     			};
 				};
 
