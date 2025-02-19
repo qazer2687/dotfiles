@@ -71,6 +71,15 @@ in {
 						center_row_if_space_available = true;
 
 					};
+
+					borders-plus-plus {
+						add_borders = 1;
+						col.border_1 = "#ffffff";
+						col.border_2 = "#000000";
+
+						border_size_1 = 2;
+        		border_size_2 = 2;
+    			};
 				};
 
 				gestures = {
@@ -79,12 +88,12 @@ in {
 				};
 
         decoration = {
-          rounding = 6;
-          active_opacity = 0.92;
-          inactive_opacity = 0.92;
+          rounding = 0;
+          active_opacity = 1;
+          inactive_opacity = 1;
 					# TODO: I need to look into the power usage impact of this feature.
           blur = {
-            enabled = true;
+            enabled = false;
             ignore_opacity = true;
             size = 5;
             passes = 5;
@@ -95,11 +104,8 @@ in {
         animations = {
           enabled = true;
           bezier = "myBezier, 0.87, 0, 0.13, 1";
-					# I'm not sure what the animation is to
-					# stop windows from fading in and out because
-					# it's not "fade".
           animation = [
-            "windows, 0, 3, myBezier"
+            "windows, 1, 3, myBezier"
             "windowsOut, 1, 3, myBezier"
             "border, 1, 3, myBezier"
             "borderangle, 1, 3, myBezier"
