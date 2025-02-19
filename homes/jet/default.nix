@@ -37,6 +37,7 @@
     mako.enable = true;
     wofi.enable = true;
     theme.enable = true;
+    neofetch.enable = true;
 
     ags.enable = true;
 
