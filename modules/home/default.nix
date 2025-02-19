@@ -29,5 +29,6 @@
     ./niri
     ./ags
     ./mpd
+    ./neofetch
   ];
 }
