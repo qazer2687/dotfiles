@@ -60,7 +60,7 @@ in {
           
           gaps_in = 3;
           gaps_out = 6;
-          border_size = 1;
+          border_size = 16;
           resize_on_border = true;
           allow_tearing = false;
         };
@@ -74,11 +74,8 @@ in {
 
 					borders-plus-plus = {
 						add_borders = 1;
-						col.border_1 = "#ffffff";
-						col.border_2 = "#000000";
-
+						col.border_1 = "#000000";
 						border_size_1 = 8;
-						border_size_2 = 8;
     			};
 				};
 
