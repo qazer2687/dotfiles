@@ -48,7 +48,7 @@ in {
       #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       plugins = [ 
         pkgs.hyprlandPlugins.hyprscroller
-        inputs.hyprland-plugins.packages.${pkgs.system}.borders-plus-plus
+        pkgs.hyprlandPlugins.borders-plus-plus
       ];
 
       settings = {
