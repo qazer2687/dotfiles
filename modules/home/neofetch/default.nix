@@ -16,7 +16,6 @@
     home.file.".config/assets/neofetch.png" = {
       source = ../../../assets/neofetch.png;
     };
-    
 
     # This doesn't work properly for displaying images so 
     # I will make this a fastfetch config at some point. 
