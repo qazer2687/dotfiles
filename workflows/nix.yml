@@ -1,4 +1,13 @@
-- name: nix
-  uses: DeterminateSystems/flake-checker-action@v4
-  with:
-    fail-mode: true
+on:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    name: nix
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/flake-checker-action@v4
+        with:
+          fail-mode: true
