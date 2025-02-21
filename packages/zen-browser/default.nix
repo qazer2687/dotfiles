@@ -1,42 +1,27 @@
-{ stdenv, fetchurl, lib, appimage-run }:
+{ lib, appimageTools, fetchurl }:
 
-stdenv.mkDerivation rec {
-  pname = "zen-browser";
+let
   version = "latest";
-
+  pname = "zen-browser";
   src = fetchurl {
     url = "https://github.com/zen-browser/desktop/releases/latest/download/zen-aarch64.AppImage";
     sha256 = "K53Kb/EGzG3dxPb1UUvkP6xpK9rni0rNDqM3xE55KHo=";
-  
   };
 
-  dontUnpack = true;
+  appimageContents = appimageTools.extractType1 { name = pname; src = src; };
+in
+appimageTools.wrapType2 rec {
+  inherit pname version src;
 
-  buildInputs = [ appimage-run ];
-
-  installPhase = ''
-    # Copy the AppImage into the package output.
-    mkdir -p $out/bin
-    cp ${src} $out/bin/zen-browser.AppImage
-    chmod +x $out/bin/zen-browser.AppImage
-
-    # Install a desktop entry for integration with XDG menus.
-    mkdir -p $out/share/applications
-    cat > $out/share/applications/zen-browser.desktop <<EOF
-    [Desktop Entry]
-    Name=Zen Browser
-    GenericName=Zen
-    Exec=appimage-run $out/bin/zen-browser.AppImage
-    Terminal=false
-    Type=Application
-    Categories=Network;WebBrowser;
-    EOF
+  extraInstallCommands = ''
+    substituteInPlace $out/share/applications/${pname}.desktop \
+      --replace-fail 'Exec=AppRun' 'Exec=${meta.mainProgram}'
   '';
 
-  meta = with lib; {
-    description = "Zen Browser launcher using appimage.";
+  meta = {
+    description = "Zen Browser launcher using AppImage.";
     homepage = "https://github.com/zen-browser/desktop";
-    license = "unfree";
+    license = lib.licenses.unfree;
     platforms = [ "aarch64-linux" ];
   };
 }
