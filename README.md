@@ -1,9 +1,17 @@
 <p align="center">
-  <img src="https://fontmeme.com/permalink/240731/041b9d3cb0609bbc73c878d56c35af05.png" border="0">
+  <img src="https://fontmeme.com/permalink/250221/b16cf5b125a581dd730fa677b2e5888d.png" border="0">
   <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
 </p>
 
-<a href="https://fontmeme.com/pixel-fonts/"><img src="https://fontmeme.com/permalink/240731/e66805a31dee7a247f1155f6d8ffeae3.png" alt="pixel-fonts" border="0"></a>
+
+<p align="center">
+		<img alt="Stargazers" src="https://img.shields.io/github/stars/qazer2687/dotfiles?style=for-the-badge&color=ffffff&labelColor=222222"></a>
+		<img alt="Repo Size" src="https://img.shields.io/github/repo-size/qazer2687/dotfiles.svg?style=for-the-badge&color=ffffff&labelColor=222222"/></a>
+    <img alt="License" src="https://img.shields.io/badge/License-GPLv3-907385605422448742?style=for-the-badge&color=ffffff&labelColor=222222"></a>
+    <img alt="Status" src=" https://img.shields.io/github/actions/workflow/status/qazer2687/dotfiles/nix?style=for-the-badge&label=Status&color=ffffff&labelColor=222222"></a>
+</p>
+
+Hosts
 
 | Name         | Description                                                                                       |  Type   |     Arch      |
 | :----------- | :------------------------------------------------------------------------------------------------ | :-----: | :-----------: |
