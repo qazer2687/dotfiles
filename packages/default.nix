@@ -4,4 +4,5 @@ pkgs: {
   # example = pkgs.callPackage ./example { };
   widevinecdm-aarch64 = pkgs.callPackage ./widevinecdm-aarch64 {};
   arnis = pkgs.callPackage ./arnis {};
+	zen-browser = pkgs.callPackage ./zen-browser
 }
