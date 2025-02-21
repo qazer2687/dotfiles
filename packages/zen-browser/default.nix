@@ -6,7 +6,8 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/zen-browser/desktop/releases/latest/download/zen-aarch64.AppImage";
-    sha256 = "16k37ngl4qpqwwj6f9q8jpn20pk8887q8zc0l7qivshmhfib36qq";
+    sha256 = "K53Kb/EGzG3dxPb1UUvkP6xpK9rni0rNDqM3xE55KHo=";
+  
   };
 
   buildInputs = [ appimage-run ];
