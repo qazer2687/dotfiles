@@ -5,7 +5,7 @@ stdenv.mkDerivation rec {
   version = "latest";
 
   src = fetchurl {
-    url = "https://github.com/zen-browser/desktop/releases/latest/download/zen-x86_64.AppImage";
+    url = "https://github.com/zen-browser/desktop/releases/latest/download/zen-aarch64.AppImage";
     sha256 = "16k37ngl4qpqwwj6f9q8jpn20pk8887q8zc0l7qivshmhfib36qq";
   };
 
@@ -34,6 +34,6 @@ stdenv.mkDerivation rec {
     description = "Zen Browser launcher using appimage.";
     homepage = "https://github.com/zen-browser/desktop";
     license = "unfree";
-    platforms = [ "x86_64-linux" ];
+    platforms = [ "aarch64-linux" ];
   };
 }

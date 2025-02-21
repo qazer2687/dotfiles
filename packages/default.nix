@@ -5,4 +5,4 @@ pkgs: {
   widevinecdm-aarch64 = pkgs.callPackage ./widevinecdm-aarch64 {};
   arnis = pkgs.callPackage ./arnis {};
 	zen-browser = pkgs.callPackage ./zen-browser {};
-}
+}  # Ensure that appimage-run is available at runtime.
