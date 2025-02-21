@@ -17,7 +17,10 @@
     # teams-for-linux # Team Communication
     loupe # Image Viewer
 
+
+    # Custom Packages
     arnis
+    zen-browser
 
     # Development
     sqlitebrowser # SQLite Database Browser
