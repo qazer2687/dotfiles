@@ -17,6 +17,9 @@
       source = ../../../assets/neofetch.png;
     };
     
+
+    # This doesn't work properly for displaying images so 
+    # I will make this a fastfetch config at some point. 
     home.file.".config/neofetch/config.conf".text = ''
       print_info() {
           prin ""
