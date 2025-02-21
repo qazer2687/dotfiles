@@ -1,4 +1,4 @@
-{ lib, appimageTools, fetchurl }:
+{ pkgs, lib, appimageTools, fetchurl }:
 
 let
   version = "latest";
@@ -8,7 +8,7 @@ let
     sha256 = "K53Kb/EGzG3dxPb1UUvkP6xpK9rni0rNDqM3xE55KHo=";
   };
 
-  desktopItem = makeDesktopItem {
+  desktopItem = pkgs.makeDesktopItem {
     name = pname;
     exec = "${pname}";
     icon = pname;
