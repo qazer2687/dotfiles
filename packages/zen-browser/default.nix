@@ -10,6 +10,8 @@ stdenv.mkDerivation rec {
   
   };
 
+  dontUnpack = true;
+
   buildInputs = [ appimage-run ];
 
   installPhase = ''
