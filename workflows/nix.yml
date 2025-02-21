@@ -1,9 +1,4 @@
-name: "Build Status"
-on:
-  push:
-  tests:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: cachix/install-nix-action@v19
-    - run: nix flake check
+- name: nix
+  uses: DeterminateSystems/flake-checker-action@v4
+  with:
+    fail-mode: true
