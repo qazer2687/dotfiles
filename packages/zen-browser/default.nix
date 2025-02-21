@@ -13,16 +13,10 @@ in
 appimageTools.wrapType2 rec {
   inherit pname version src;
 
-  extraInstallCommands = ''
-    substituteInPlace $out/share/applications/${pname}.desktop \
-      --replace 'Exec=AppRun' 'Exec=${meta.mainProgram}'
-  '';
-
   meta = with lib; {
     description = "Zen Browser launcher using AppImage.";
     homepage = "https://github.com/zen-browser/desktop";
     license = licenses.unfree;
     platforms = [ "aarch64-linux" ];
-    mainProgram = "zen-browser";
   };
 }
