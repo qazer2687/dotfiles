@@ -19,19 +19,19 @@
 
 				auth = {
 					"pam:enabled" = true;
-
 				};
 
         background = {
-          color = "rgba(0, 0, 0, 0.5)";
-          blur_passes = 2;
+          color = "rgba(0, 0, 0, 0.2)";
+          blur_passes = 10;
           brightness = 0.5;
+					#path = ../../../assets/hyprlock-background.png
         };
 
         label = {
-          text = "パスワードをご入力ください";
-          color = "rgba(222, 222, 222, 1.0)";
-          font_size = 50;
+          text = "LOCKED";
+          color = "rgba(200, 50, 50, 1.0)";
+          font_size = 100;
           font_family = "Departure Mono";
           position = "0, 70";
           halign = "center";
@@ -45,7 +45,6 @@
           outer_color = "rgba(25, 20, 20, 0)";
           inner_color = "rgba(25, 20, 20, 0)";
           font_color = "rgba(222, 222, 222, 1.0)";
-          placeholder_text = "パスワード";
         };
       };
     };
