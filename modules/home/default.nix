@@ -30,5 +30,6 @@
     ./ags
     ./mpd
     ./neofetch
+    ./hyprpanel
   ];
 }
