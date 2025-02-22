@@ -20,7 +20,7 @@
       source = ../../../assets/konata.png;
     };
 
-    home.file.".config/fastfetch/config.conf".text = ''
+    home.file.".config/fastfetch/config.jsonc".text = ''
       title_fqdn = false
       kernel_shorthand = true
       distro_shorthand = false
