@@ -21,45 +21,60 @@
     };
 
     home.file.".config/fastfetch/config.jsonc".text = ''
-      title_fqdn = false
-      kernel_shorthand = true
-      distro_shorthand = false
-      uptime_shorthand = "tiny"
+      // ~/.config/fastfetch/config.jsonc
+      {
+          "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 
-      image_backend = "chafa"
-      image_source = "$HOME/.config/assets/konata.png"
-      image_size = "250px"
-      image_loop = true
-      thumbnail_dir = "$HOME/.cache/thumbnails/fastfetch"
-      crop_mode = "fit"
-      crop_offset = "center"
-      xoffset = 0
-      yoffset = 0
-      stdout = false
+          // Modules to display
+          "modules": [
+              "title",
+              {
+                  "type": "os",
+                  "key": "\u001b[34m  " // Blue colored OS label
+              },
+              {
+                  "type": "kernel",
+                  "key": "\u001b[31m  " // Red colored Kernel label
+              },
+              {
+                  "type": "uptime",
+                  "key": "\u001b[33m  " // Yellow colored Uptime label
+              },
+              {
+                  "type": "shell",
+                  "key": "\u001b[32m  " // Green colored Shell label
+              },
+              {
+                  "type": "wm",
+                  "key": "\u001b[35m  " // Magenta colored WM label
+              },
+              {
+                  "type": "custom",
+                  "key": "",
+                  "value": "\u001b[31m▂▂ \u001b[32m▂▂ \u001b[33m▂▂ \u001b[34m▂▂ \u001b[35m▂▂ \u001b[36m▂▂ "
+              }
+          ],
 
-      color_blocks = true
-      block_width = 3
-      block_height = 1
-      col_offset = "auto"
-      bar_char_elapsed = "-"
-      bar_char_total = "="
-      bar_border = true
-      bar_length = 15
-      bar_color_elapsed = "distro"
-      bar_color_total = "distro"
+          // Image settings
+          "image": {
+              "path": "$HOME/.config/assets/konata.png",
+              "type": "chafa",
+              "width": 250,
+              "height": 250,
+              "preserveAspectRatio": true
+          },
 
-      # Fastfetch lets you define the order (and custom strings) of the info to be printed.
-      # In this example, we mimic your custom print_info() function:
-      info_order = [
-          "",
-          "title",
-          "\u001b[34m  os",      # Blue colored OS label
-          "\u001b[31m  kernel",  # Red colored Kernel label
-          "\u001b[33m  uptime",  # Yellow colored Uptime label
-          "\u001b[32m  shell",   # Green colored Shell label
-          "\u001b[35m  wm",      # Magenta colored WM label
-          "$(color 1)▂▂ $(color 2)▂▂ $(color 3)▂▂ $(color 4)▂▂ $(color 5)▂▂ $(color 6)▂▂ "
-      ]
+          // General display settings
+          "title": {
+              "fqdn": false
+          },
+          "kernel": {
+              "shorthand": true
+          },
+          "uptime": {
+              "shorthand": "tiny"
+          }
+      }
     '';
   };
 }
