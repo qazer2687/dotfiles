@@ -40,11 +40,15 @@
     systems = ["aarch64-linux" "x86_64-linux" "aarch64-darwin"];
 
     flake = {
-      overlays = [
-        (import ./overlays { inherit inputs; }).additions
-        (import ./overlays { inherit inputs; }).modifications
-        inputs.hyprpanel.overlay
-      ];
+      overlays = {
+        default = final: prev: let
+        overlays = [
+          (import ./overlays { inherit inputs; }).additions
+          (import ./overlays { inherit inputs; }).modifications
+          inputs.hyprpanel.overlay
+        ];
+      in builtins.foldl' (acc: overlay: overlay final acc) prev overlays;
+      };
 
       nixosConfigurations = {
         jade = inputs.nixpkgs.lib.nixosSystem {
