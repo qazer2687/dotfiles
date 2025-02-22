@@ -8,7 +8,6 @@
 		<img alt="Stargazers" src="https://img.shields.io/github/stars/qazer2687/dotfiles?style=for-the-badge&color=ffffff&labelColor=222222"></a>
 		<img alt="Repo Size" src="https://img.shields.io/github/repo-size/qazer2687/dotfiles.svg?style=for-the-badge&color=ffffff&labelColor=222222"/></a>
     <img alt="License" src="https://img.shields.io/badge/License-GPLv3-907385605422448742?style=for-the-badge&color=ffffff&labelColor=222222"></a>
-    <img alt="Status" src=" https://img.shields.io/github/actions/workflow/status/qazer2687/dotfiles/nix?style=for-the-badge&label=Status&color=ffffff&labelColor=222222"></a>
 </p>
 
 Hosts
