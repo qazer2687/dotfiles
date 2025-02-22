@@ -31,5 +31,6 @@
     ./mpd
     ./neofetch
     ./hyprpanel
+    ./hyprlock
   ];
 }

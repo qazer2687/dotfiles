@@ -32,8 +32,8 @@
 
     # Desktop Environment
     hyprland.enable = true;
-    hyprpanel.enable = true;
-    # waybar.enable = true;
+    hyprlock.enable = true;
+    waybar.enable = true;
     mako.enable = true;
     wofi.enable = true;
     theme.enable = true;

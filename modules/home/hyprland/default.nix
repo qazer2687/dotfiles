@@ -196,8 +196,11 @@ in {
 				];
 
         exec-once = [
-          # "waybar"
-          "hyprpanel"
+          # Launch hyprlock after hyprland starts and terminate the session if hyprlock
+          # fails to launch. This does not consider the possibility of exec-once not working.
+          "hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
+          "waybar"
+          # "hyprpanel"
           "${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
         ];
       };
