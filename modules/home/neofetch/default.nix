@@ -21,60 +21,72 @@
     };
 
     home.file.".config/fastfetch/config.jsonc".text = ''
-      // ~/.config/fastfetch/config.jsonc
       {
-          "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-
-          // Modules to display
-          "modules": [
-              "title",
-              {
-                  "type": "os",
-                  "key": "\u001b[34m  " // Blue colored OS label
-              },
-              {
-                  "type": "kernel",
-                  "key": "\u001b[31m  " // Red colored Kernel label
-              },
-              {
-                  "type": "uptime",
-                  "key": "\u001b[33m  " // Yellow colored Uptime label
-              },
-              {
-                  "type": "shell",
-                  "key": "\u001b[32m  " // Green colored Shell label
-              },
-              {
-                  "type": "wm",
-                  "key": "\u001b[35m  " // Magenta colored WM label
-              },
-              {
-                  "type": "custom",
-                  "key": "",
-                  "value": "\u001b[31m▂▂ \u001b[32m▂▂ \u001b[33m▂▂ \u001b[34m▂▂ \u001b[35m▂▂ \u001b[36m▂▂ "
-              }
-          ],
-
-          // Image settings
-          "image": {
-              "path": "$HOME/.config/assets/konata.png",
-              "type": "chafa",
-              "width": 250,
-              "height": 250,
-              "preserveAspectRatio": true
-          },
-
-          // General display settings
-          "title": {
-              "fqdn": false
-          },
-          "kernel": {
-              "shorthand": true
-          },
-          "uptime": {
-              "shorthand": "tiny"
+        "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+        "logo": {
+          "source": "~/.config/assets/konata.png",
+          "type": "sixel",
+          "height": 14,
+          "padding": {
+            "top": 1
           }
-      }
+        },
+        "display": {
+            "separator": " •  "
+        },
+        "modules": [
+      "break",
+      "break",
+      {
+                "type": "title",
+                "color": {
+                    "user": "32",  // = color2
+                    "at": "37",
+                    "host": "32"
+                }
+            },
+            "break",
+            {
+                "type": "os",
+                "key": "distribution   ",
+                "keyColor": "33",
+            },
+            {
+                "type": "kernel",
+                "key": "linux kernel   ",
+                "keyColor": "33",
+            },
+            {
+                "type": "packages",
+                "format": "{} (pacman)",
+                "key": "packages       ",
+                "keyColor": "33",  
+            },
+            {
+                "type": "shell",
+                "key": "unix shell     ",
+                "keyColor": "33", 
+            },
+            {
+                "type": "terminal",
+                "key": "terminal       ",
+                "keyColor": "33", 
+            },
+            {
+                "type": "wm",
+                "format": "{} ({3})",
+                "key": "window manager ",
+                "keyColor": "33", 
+            },
+            "break",
+            {
+                "type": "colors",
+                "symbol": "circle",
+            },
+            "break",
+            "break",
+        ]
+    }  
     '';
   };
 }
