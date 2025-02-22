@@ -20,6 +20,7 @@
     swww.url = "github:LGFae/swww";
     flake-parts.url = "github:hercules-ci/flake-parts";
     ags.url = "github:aylur/ags"; 
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
     /* Undo because broken.
     hyprland.url = "github:hyprwm/Hyprland";
@@ -83,6 +84,7 @@
                 useUserPackages = true;
                 sharedModules = [
                   inputs.niri.homeModules.niri
+                  inputs.hyprpanel.homeManagerModules.hyprpanel
                   inputs.ags.homeManagerModules.default
                   inputs.nur.modules.homeManager.default
                   inputs.sops-nix.homeManagerModules.sops

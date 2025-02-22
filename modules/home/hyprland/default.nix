@@ -196,7 +196,7 @@ in {
 				];
 
         exec-once = [
-          "waybar"
+          # "waybar"
           "${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
         ];
       };

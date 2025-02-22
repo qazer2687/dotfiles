@@ -8,15 +8,14 @@
   ];
 
   home.packages = with pkgs; [
-    obsidian # Note Taking
-    nautilus # File Browser
-    fragments # Torrent Client
-    calibre # E-Book Library
-    vlc # Media Player
-    # Causes electron-unwrapped to build from source.
-    # teams-for-linux # Team Communication
-    loupe # Image Viewer
 
+    # Graphical
+    obsidian
+    nautilus
+    fragments
+    calibre
+    vlc
+    loupe
 
     # Custom Packages
     arnis
@@ -30,38 +29,38 @@
   # services.arrpc.enable = true;
 
   modules = {
-    # Environment
-    # sway.enable = true;
-    hyprland.enable = true;
-    #niri.enable = true;
 
-    waybar.enable = true;
-    foot.enable = true;
+    # Desktop Environment
+    hyprland.enable = true;
+    hyprpanel.enable = true;
+    # waybar.enable = true;
     mako.enable = true;
     wofi.enable = true;
     theme.enable = true;
-    neofetch.enable = true;
 
-    ags.enable = true;
 
-    # Programs
-    firefox.enable = true;
+    # CLI
     fish.enable = true;
+    foot.enable = true;
+    neofetch.enable = true;
     webcam.enable = true;
-    bat.enable = true;
     eza.enable = true;
-    vscode.enable = true;
-    git.enable = true;
-    direnv.enable = true;
     mpd.enable = true;
-    # neovim.enable = true;
+    direnv.enable = true;
+    git.enable = true;
+    bat.enable = true;
+
+
+    # GUI
+    # firefox.enable = true;
+    vscode.enable = true;
 
     # Security
     # gpg.enable = true;
 
     # Gaming
-    prismlauncher.enable = true;
-    mangohud.enable = true;
+    # prismlauncher.enable = true;
+    # mangohud.enable = true;
   };
 
   home.stateVersion = "24.11";
