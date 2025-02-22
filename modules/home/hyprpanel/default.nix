@@ -8,6 +8,10 @@
   options.modules.hyprpanel.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprpanel.enable {
+
+		# This module works but it only serves as a proof of concept. There is no
+		# configuration here as I did it all via the GUI configuration editor. I found
+		# that the performance was poor and the feature-set was too bloated for my use case.
     programs.hyprpanel = {
 			enable = true;
 
