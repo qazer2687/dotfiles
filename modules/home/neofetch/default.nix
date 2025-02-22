@@ -12,6 +12,8 @@
     home.packages = with pkgs; [
       neofetch
       chafa
+      # Required dependancy for displaying images.
+      imagemagick
     ];
 
     home.file.".config/assets/konata.png" = {
