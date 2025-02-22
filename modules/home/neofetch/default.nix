@@ -26,9 +26,10 @@
         "logo": {
           "source": "~/.config/assets/konata.png",
           "type": "sixel",
-          "height": 14,
+          "height": 8,
           "padding": {
-            "top": 1
+            "top": 5
+            "bottom": 5
           }
         },
         "display": {
