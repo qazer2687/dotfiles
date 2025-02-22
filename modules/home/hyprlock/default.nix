@@ -14,8 +14,13 @@
 			settings = {
         general = {
           hide_cursor = true;
-          grace = 2;
+          grace = 0;
         };
+
+				auth = {
+					"pam:enabled" = true;
+
+				};
 
         background = {
           color = "rgba(25, 20, 20, 1.0)";
