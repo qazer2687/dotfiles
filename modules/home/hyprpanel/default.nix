@@ -18,7 +18,7 @@
 
 			# Add '/nix/store/.../hyprpanel' to your
 			# Hyprland config 'exec-once'.
-			hyprland.enable = true;
+			#hyprland.enable = true;
 
 			# Fix the overwrite issue with HyprPanel.
 			# See below for more information.
