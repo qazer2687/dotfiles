@@ -41,9 +41,10 @@
 
     flake = {
       overlays = [
-      (import ./overlays { inherit inputs; })
-      inputs.hyprpanel.overlay
-    ];
+        (import ./overlays { inherit inputs; }).additions
+        (import ./overlays { inherit inputs; }).modifications
+        inputs.hyprpanel.overlay
+      ];
 
       nixosConfigurations = {
         jade = inputs.nixpkgs.lib.nixosSystem {
