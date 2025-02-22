@@ -10,7 +10,6 @@
   config = lib.mkIf config.modules.hyprpanel.enable {
     programs.hyprpanel = {
 			enable = true;
-			overlay.enable = true;
 
 			# Automatically restart HyprPanel with systemd.
 			# Useful when updating your config so that you
