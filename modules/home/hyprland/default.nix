@@ -197,6 +197,7 @@ in {
 
         exec-once = [
           # "waybar"
+          hyprpanel
           "${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
         ];
       };
