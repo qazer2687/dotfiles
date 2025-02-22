@@ -23,7 +23,7 @@
 				};
 
         background = {
-          color = "rgba(25, 20, 20, 1.0)";
+          color = "rgba(0, 0, 0, 0.5)";
           blur_passes = 2;
           brightness = 0.5;
         };
