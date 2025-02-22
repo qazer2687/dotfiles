@@ -25,7 +25,7 @@
           #color = "rgba(0, 0, 0, 0.2)";
           blur_passes = 2;
           brightness = 0.5;
-					path = "screenshot";
+					#path = "screenshot";
 					#path = ../../../assets/hyprlock-background.png
         };
 
