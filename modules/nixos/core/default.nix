@@ -62,6 +62,8 @@
         # changed for all hosts. I may remove this in the future
         # but it works fine with my configuration for now.
         self.overlays.modifications
+
+        inputs.hyprpanel.overlay
       ];
     };
 
