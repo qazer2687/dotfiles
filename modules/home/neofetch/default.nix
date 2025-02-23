@@ -59,7 +59,7 @@
             },
             {
                 "type": "packages",
-                "format": "{} (pacman)",
+                "format": "{}",
                 "key": "packages       ",
                 "keyColor": "33",  
             },
