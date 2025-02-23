@@ -29,6 +29,7 @@
           "height": 12,
           "padding": {
             "top": 5,
+            "left": 5,
             "bottom": 5
           }
         },
