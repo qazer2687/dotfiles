@@ -212,7 +212,8 @@ in {
 
         exec-once = [
           # Launch hyprlock after hyprland starts and terminate the session if hyprlock
-          # fails to launch. This does not consider the possibility of exec-once not working.
+          # fails to launch. This does not consider the possibility of exec-once not
+					# working - but then again I'm using autologin so there's no security here anyway.
           "hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
           "waybar"
           # "hyprpanel"
