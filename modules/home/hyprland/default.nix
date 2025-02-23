@@ -147,6 +147,7 @@ in {
           "SUPER, E, exec, wofi --show drun"
           "SUPER, Q, killactive"
           "SUPER, SPACE, togglefloating"
+          "SUPER, F, fullscreen"
 
           # Window Management
           "SUPER, left, movewindow, l"
@@ -176,6 +177,10 @@ in {
           "SUPER SHIFT, 8, movetoworkspace, 8"
           "SUPER SHIFT, 9, movetoworkspace, 9"
           "SUPER SHIFT, 0, movetoworkspace, 10"
+
+          # Window Resize
+
+
         ];
 
 				# Will repeat when held.
@@ -198,6 +203,11 @@ in {
         bindl = [
           # Lock the screen when the lid is closed.
           ",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
+        ];
+
+        bindm = [
+          "SUPER, mouse:273, resizewindow"
+          "SUPER, mouse:272, movewindow"
         ];
 
         exec-once = [
