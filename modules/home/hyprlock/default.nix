@@ -18,47 +18,61 @@
 
 			settings = {
         general = {
-          hide_cursor = true;
-          grace = 0;
-        };
+					disable_loading_bar = true;
+					hide_cursor = true;
+				
 
-				auth = {
-					"pam:enabled" = true;
+					# BACKGROUND
+					background = {
+						path = "$HOME/.config/assets/lockscreen.png";
+						blur_passes = 2;
+					};
+
+					# LAYOUT
+					/*
+					label = {
+						text = "LOCKED";
+						color = "rgba(200, 50, 50, 1.0)";
+						font_size = 25;
+						font_family = "Departure Mono";
+						position = "30, -30";
+						halign = "left";
+						valign = "top";
+					};*/
+
+					# TIME
+					label = {
+						text = "$TIME";
+						color = "rgba(200, 50, 50, 1.0)";
+						font_size = 90;
+						font_family = "Departure Mono";
+						position = "-30, 0";
+						halign = "right";
+						valign = "top";
+					};
+
+
+					# INPUT FIELD
+					input-field = {
+						size = "300, 60";
+						outline_thickness = 4;
+						dots_size = 0.33;
+						dots_spacing = 0.2;
+						dots_center = true;
+						outer_color = "rgba(0, 0, 0, 1.0)";
+						inner_color = "rgba(0, 0, 0, 1.0)";
+						font_color = "rgba(200, 50, 50, 1.0)";
+						fade_on_empty = false;
+						placeholder_text = "";
+						hide_input = false;
+						check_color = "rgba(0, 0, 0, 1.0)";
+						fail_color = "rgba(0, 0, 0, 1.0)";
+						fail_text = "KILL YOURSELF";
+						position = "0, -47";
+						halign = "center";
+						valign = "center";
+					};
 				};
-
-        background = {
-          #color = "rgba(0, 0, 0, 0.2)";
-          blur_passes = 2;
-          brightness = 0.2;
-					#path = "screenshot";
-					path = "$HOME/.config/assets/lockscreen.png";
-        };
-
-        label = {
-          text = "LOCKED";
-          color = "rgba(200, 50, 50, 1.0)";
-          font_size = 50;
-          font_family = "Departure Mono";
-          position = "0, 80";
-          halign = "center";
-          valign = "center";
-        };
-
-        input-field = {
-					font_color = "rgba(200, 50, 50, 1.0)";
-					font_family = "Departure Mono";
-					dots_text_format = "X";
-					swap_font_color = "false";
-          size = "10000, 10000";
-					outline_thickness = 0;
-					check_color = "rgb(0,0,0)";
-					placeholder_text = "";
-					rounding = 2;
-          dots_size = 0.0000001;
-          dots_spacing = 0.15;
-          outer_color = "rgb(0, 0, 0)";
-          inner_color = "rgb(0, 0, 0)";
-        };
       };
     };
   };
