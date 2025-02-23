@@ -179,7 +179,7 @@ in {
         ];
 
 				# Will repeat when held.
-				binde =[
+				binde = [
 					# Volume
           ",XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -i 2"
           ",XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer -d 2"
@@ -194,6 +194,11 @@ in {
           "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%+"
           "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%-"
 				];
+
+        bindl = [
+          # Lock the screen when the lid is closed.
+          ",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
+        ];
 
         exec-once = [
           # Launch hyprlock after hyprland starts and terminate the session if hyprlock
