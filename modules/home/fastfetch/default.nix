@@ -5,9 +5,9 @@
   inputs,
   ...
 }: {
-  options.modules.neofetch.enable = lib.mkEnableOption "";
+  options.modules.fastfetch.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.neofetch.enable {
+  config = lib.mkIf config.modules.fastfetch.enable {
 
     home.packages = with pkgs; [
       fastfetch

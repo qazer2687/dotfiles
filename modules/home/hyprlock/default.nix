@@ -8,6 +8,11 @@
   options.modules.hyprlock.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprlock.enable {
+
+		home.file.".config/assets/lockscreen.png" = {
+      source = ../../../assets/lockscreen.png;
+    };
+
     programs.hyprlock = {
       enable = true;
 
@@ -26,7 +31,7 @@
           blur_passes = 2;
           brightness = 0.1;
 					#path = "screenshot";
-					path = ../../../assets/lockscreen.png;
+					path = ~/.config/assets/lockscreen.png;
         };
 
         label = {
