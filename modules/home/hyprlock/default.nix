@@ -71,9 +71,9 @@
 
 				# INPUT FIELD
 				input-field = {
-					size = "300, 100";
+					size = "300, 300";
 					outline_thickness = 0;
-					dots_size = 0.1;
+					dots_size = 0.01;
 					font_family = "Departure Mono";
 					dots_text_format = "X";
 					dots_spacing = 0.2;
