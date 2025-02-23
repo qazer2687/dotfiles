@@ -73,7 +73,7 @@
 				input-field = {
 					size = "1000, 100";
 					outline_thickness = 0;
-					dots_size = 0.5;
+					dots_size = 0.33;
 					font_family = "Departure Mono";
 					dots_text_format = "X";
 					dots_spacing = 0.2;
