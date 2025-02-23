@@ -53,7 +53,7 @@
 					outline_thickness = 0;
 					check_color = "rgba(0,0,0,0.1)";
 					placeholder_text = "";
-					rounding = 0.2;
+					rounding = 2;
           dots_size = 0.33;
           dots_spacing = 0.15;
           outer_color = "rgba(0, 0, 0, 0.1)";
