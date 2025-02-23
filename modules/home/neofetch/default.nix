@@ -42,9 +42,9 @@
       {
                 "type": "title",
                 "color": {
-                    "user": "34",  // = color2
+                    "user": "33",  // = color2
                     "at": "37",
-                    "host": "34"
+                    "host": "33"
                 }
             },
             "break",
