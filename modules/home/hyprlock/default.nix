@@ -61,19 +61,21 @@
 				input-field = {
 					size = "300, 60";
 					outline_thickness = 0;
-					dots_size = 0.33;
+					dots_size = 0.5;
+					font_family = "Departure Mono";
+					dots_text_format = "X";
 					dots_spacing = 0.2;
 					dots_center = true;
 					outer_color = "rgba(0, 0, 0, 0)";
 					inner_color = "rgba(0, 0, 0, 0)";
-					font_color = "rgba(0, 0, 0, 1.0)";
+					font_color = "rgba(200, 50, 50, 1.0)";
 					fade_on_empty = false;
 					placeholder_text = "";
 					hide_input = false;
-					check_color = "rgba(0, 0, 0, 1.0)";
-					fail_color = "rgba(0, 0, 0, 1.0)";
+					check_color = "rgba(0, 0, 0, 0)";
+					fail_color = "rgba(0, 0, 0, 0)";
 					fail_text = "KILL YOURSELF";
-					position = "0, -47";
+					position = "0, 0";
 					halign = "center";
 					valign = "center";
 				};
