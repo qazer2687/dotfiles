@@ -30,6 +30,7 @@
 				background = {
 					path = "$HOME/.config/assets/lockscreen.png";
 					blur_passes = 2;
+					brightness = 0.2;
 				};
 
 				# LAYOUT
@@ -63,9 +64,9 @@
 					dots_size = 0.33;
 					dots_spacing = 0.2;
 					dots_center = true;
-					outer_color = "rgba(0, 0, 0, 1.0)";
-					inner_color = "rgba(0, 0, 0, 1.0)";
-					font_color = "rgba(200, 50, 50, 1.0)";
+					outer_color = "rgba(0, 0, 0, 0)";
+					inner_color = "rgba(0, 0, 0, 0)";
+					font_color = "rgba(0, 0, 0, 1.0)";
 					fade_on_empty = false;
 					placeholder_text = "";
 					hide_input = false;
