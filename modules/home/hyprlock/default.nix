@@ -31,7 +31,7 @@
           blur_passes = 2;
           brightness = 0.1;
 					#path = "screenshot";
-					path = ~/.config/assets/lockscreen.png;
+					path = "$HOME/.config/assets/lockscreen.png";
         };
 
         label = {
