@@ -42,48 +42,48 @@
       {
                 "type": "title",
                 "color": {
-                    "user": "32",  // = color2
+                    "user": "34",  // = color2
                     "at": "37",
-                    "host": "32"
+                    "host": "34"
                 }
             },
             "break",
             {
                 "type": "os",
                 "key": "distribution   ",
-                "keyColor": "33",
+                "keyColor": "34",
             },
             {
                 "type": "kernel",
                 "key": "linux kernel   ",
-                "keyColor": "33",
+                "keyColor": "34",
             },
             {
                 "type": "packages",
                 "format": "{}",
                 "key": "packages       ",
-                "keyColor": "33",  
+                "keyColor": "34",  
             },
             {
                 "type": "shell",
                 "key": "unix shell     ",
-                "keyColor": "33", 
+                "keyColor": "34", 
             },
             {
                 "type": "terminal",
                 "key": "terminal       ",
-                "keyColor": "33", 
+                "keyColor": "34", 
             },
             {
                 "type": "wm",
                 "format": "{} ({3})",
                 "key": "window manager ",
-                "keyColor": "33", 
+                "keyColor": "34", 
             },
             "break",
             {
                 "type": "colors",
-                "symbol": "block",
+                "symbol": "triangle",
             },
             "break",
             "break",
