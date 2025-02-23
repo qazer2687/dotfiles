@@ -60,7 +60,7 @@
 				# INPUT FIELD
 				input-field = {
 					size = "300, 60";
-					outline_thickness = 4;
+					outline_thickness = 0;
 					dots_size = 0.33;
 					dots_spacing = 0.2;
 					dots_center = true;
