@@ -37,9 +37,9 @@
         label = {
           text = "LOCKED";
           color = "rgba(200, 50, 50, 1.0)";
-          font_size = 200;
+          font_size = 50;
           font_family = "Departure Mono";
-          position = "0, 120";
+          position = "0, 150";
           halign = "center";
           valign = "center";
         };
