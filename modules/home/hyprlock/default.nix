@@ -71,7 +71,7 @@
 
 				# INPUT FIELD
 				input-field = {
-					size = "300, 300";
+					size = "300, 100";
 					outline_thickness = 0;
 					dots_size = 0.1;
 					font_family = "Departure Mono";
@@ -87,7 +87,7 @@
 					check_color = "rgba(0, 0, 0, 0)";
 					fail_color = "rgba(0, 0, 0, 0)";
 					fail_text = "KILL YOURSELF";
-					position = "0, -100";
+					position = "0, -200";
 					halign = "center";
 					valign = "center";
 				};
