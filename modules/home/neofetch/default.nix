@@ -28,9 +28,9 @@
           "type": "sixel",
           "height": 10,
           "padding": {
-            "top": 2,
+            "top": 1,
             "left": 5,
-            "bottom": 2
+            "bottom": -1
           }
         },
         "display": {
