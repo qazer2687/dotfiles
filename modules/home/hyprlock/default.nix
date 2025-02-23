@@ -26,7 +26,7 @@
           blur_passes = 2;
           brightness = 0.1;
 					#path = "screenshot";
-					path = ../../../assets/lockscreen.png
+					path = ../../../assets/lockscreen.png;
         };
 
         label = {
