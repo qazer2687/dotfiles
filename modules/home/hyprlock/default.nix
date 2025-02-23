@@ -30,7 +30,7 @@
 				background = {
 					path = "$HOME/.config/assets/lockscreen.png";
 					blur_passes = 2;
-					brightness = 0.2;
+					brightness = 0;
 				};
 
 				# LAYOUT
@@ -46,6 +46,7 @@
 				};*/
 
 				# TIME
+				/*
 				label = {
 					text = "$TIME";
 					color = "rgba(200, 50, 50, 1.0)";
@@ -55,6 +56,17 @@
 					halign = "right";
 					valign = "top";
 				};
+				*/
+
+				label = {
+          text = "LOCKED";
+          color = "rgba(200, 50, 50, 1.0)";
+          font_size = 100;
+          font_family = "Departure Mono";
+          position = "0, 100";
+          halign = "center";
+          valign = "center";
+        };
 
 
 				# INPUT FIELD
