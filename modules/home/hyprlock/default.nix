@@ -63,7 +63,7 @@
           color = "rgba(200, 50, 50, 1.0)";
           font_size = 100;
           font_family = "Departure Mono";
-          position = "0, 100";
+          position = "0, 0";
           halign = "center";
           valign = "center";
         };
@@ -71,7 +71,7 @@
 
 				# INPUT FIELD
 				input-field = {
-					size = "300, 60";
+					size = "300, 300";
 					outline_thickness = 0;
 					dots_size = 0.5;
 					font_family = "Departure Mono";
@@ -87,7 +87,7 @@
 					check_color = "rgba(0, 0, 0, 0)";
 					fail_color = "rgba(0, 0, 0, 0)";
 					fail_text = "KILL YOURSELF";
-					position = "0, 0";
+					position = "0, -100";
 					halign = "center";
 					valign = "center";
 				};
