@@ -35,7 +35,6 @@
         };
 
         label = {
-					text = {t}"furt";
           text = "LOCKED";
           color = "rgba(200, 50, 50, 1.0)";
           font_size = 50;
