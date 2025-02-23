@@ -35,22 +35,26 @@
         };
 
         label = {
+					text = {t}"furt";
           text = "LOCKED";
           color = "rgba(200, 50, 50, 1.0)";
           font_size = 50;
           font_family = "Departure Mono";
-          position = "0, 150";
+          position = "0, 80";
           halign = "center";
           valign = "center";
         };
 
         input-field = {
-          size = "50, 50";
+					font_color = "rgba(200, 50, 50, 1.0)";
+					dots_text_format = "X";
+          size = "100, 100";
+					outline_thickness = 0;
+					check_color = "rgba(0,0,0,0)";
           dots_size = 0.33;
           dots_spacing = 0.15;
           outer_color = "rgba(25, 20, 20, 0)";
           inner_color = "rgba(25, 20, 20, 0)";
-          font_color = "rgba(222, 222, 222, 1.0)";
         };
       };
     };
