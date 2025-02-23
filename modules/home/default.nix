@@ -29,7 +29,7 @@
     ./niri
     ./ags
     ./mpd
-    ./neofetch
+    ./fastfetch
     ./hyprpanel
     ./hyprlock
   ];

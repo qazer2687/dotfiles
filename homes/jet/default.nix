@@ -42,7 +42,7 @@
     # CLI
     fish.enable = true;
     foot.enable = true;
-    neofetch.enable = true;
+    fastfetch.enable = true;
     webcam.enable = true;
     eza.enable = true;
     mpd.enable = true;
