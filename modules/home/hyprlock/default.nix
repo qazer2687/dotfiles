@@ -24,9 +24,9 @@
         background = {
           #color = "rgba(0, 0, 0, 0.2)";
           blur_passes = 2;
-          brightness = 0.5;
+          brightness = 0.1;
 					#path = "screenshot";
-					#path = ../../../assets/hyprlock-background.png
+					path = ../../../assets/lockscreen.png
         };
 
         label = {
