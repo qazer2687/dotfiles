@@ -29,7 +29,7 @@
         background = {
           #color = "rgba(0, 0, 0, 0.2)";
           blur_passes = 2;
-          brightness = 0.1;
+          brightness = 0.2;
 					#path = "screenshot";
 					path = "$HOME/.config/assets/lockscreen.png";
         };
