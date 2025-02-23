@@ -48,9 +48,10 @@
 					font_color = "rgba(200, 50, 50, 1.0)";
 					font_family = "Departure Mono";
 					dots_text_format = "X";
+					swap_font_color = "false";
           size = "100, 100";
 					outline_thickness = 0;
-					check_color = "rgba(0,0,0,1)";
+					check_color = "rgba(0,0,0,0)";
 					placeholder_text = "";
 					rounding = "0.2";
           dots_size = 0.33;
