@@ -51,13 +51,13 @@
 					swap_font_color = "false";
           size = "10000, 10000";
 					outline_thickness = 0;
-					check_color = "rgba(0,0,0,0.1)";
+					check_color = "rgb(0,0,0)";
 					placeholder_text = "";
 					rounding = 2;
           dots_size = 0.33;
           dots_spacing = 0.15;
-          outer_color = "rgba(0, 0, 0, 0.1)";
-          inner_color = "rgba(0, 0, 0, 0.1)";
+          outer_color = "rgb(0, 0, 0)";
+          inner_color = "rgb(0, 0, 0)";
         };
       };
     };
