@@ -54,7 +54,7 @@
 					check_color = "rgb(0,0,0)";
 					placeholder_text = "";
 					rounding = 2;
-          dots_size = 0.0001;
+          dots_size = 0.0000001;
           dots_spacing = 0.15;
           outer_color = "rgb(0, 0, 0)";
           inner_color = "rgb(0, 0, 0)";
