@@ -37,7 +37,7 @@
         label = {
           text = "LOCKED";
           color = "rgba(200, 50, 50, 1.0)";
-          font_size = 100;
+          font_size = 200;
           font_family = "Departure Mono";
           position = "0, 120";
           halign = "center";
@@ -46,7 +46,7 @@
 
         input-field = {
           size = "50, 50";
-          dots_size = 0.66;
+          dots_size = 0.33;
           dots_spacing = 0.15;
           outer_color = "rgba(25, 20, 20, 0)";
           inner_color = "rgba(25, 20, 20, 0)";
