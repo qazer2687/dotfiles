@@ -16,6 +16,7 @@
     calibre
     vlc
     loupe
+    ffmpeg-full
 
     # Custom Packages
     arnis

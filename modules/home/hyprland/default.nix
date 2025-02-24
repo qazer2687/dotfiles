@@ -48,7 +48,7 @@ in {
       #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       plugins = [ 
         pkgs.hyprlandPlugins.hyprscroller
-        pkgs.hyprlandPlugins.borders-plus-plus
+        #pkgs.hyprlandPlugins.borders-plus-plus
       ];
 
       settings = {
@@ -73,11 +73,13 @@ in {
 						#fitsize = "visible";
 					};
 
+					/*
 					borders-plus-plus = {
 						add_borders = 1;
 						col.border_1 = "#000000";
 						border_size_1 = 4;
     			};
+					*/
 				};
 
 				gestures = {
@@ -86,7 +88,7 @@ in {
 				};
 
         decoration = {
-          rounding = 0;
+          rounding = 4;
           active_opacity = 1;
           inactive_opacity = 1;
 					# TODO: I need to look into the power usage impact of this feature.
