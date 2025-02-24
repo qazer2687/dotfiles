@@ -18,6 +18,7 @@
         server_name = "matrix.opal";
         address = "::1";
         database_backend = "rocksdb";
+        database_path = "/var/lib/matrix-conduit/";
       };
     };
   };
