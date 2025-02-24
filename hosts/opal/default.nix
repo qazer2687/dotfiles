@@ -29,6 +29,16 @@
 
   networking.hostName = "opal";
 
+  # Start a dummy X server for /dev/dri
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "dummy" "nvidia" ];  # use both: dummy forces X to run, nvidia loads the proper module
+    desktopManager.enable = false;
+    windowManager.enable = false;
+    displayManager.enable = false;
+  };
+
+
   # I have installed gnome before so autosuspend
   # seems to be set statefully somewhere.
   #services.xserver.displayManager.gdm.autoSuspend = false;
