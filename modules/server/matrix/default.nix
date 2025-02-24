@@ -10,12 +10,16 @@
   config = lib.mkIf config.modules.server.matrix.enable {
     services.matrix-conduit = {
       enable = true;
+
+      package = pkgs.conduwuit-latest;
+
+
       settings.global = {
 
         address = "127.0.0.1";
         port = 8008;
         # Tailscale MagicDNS
-        server_name = "opal.taila82ec7.ts.net";
+        server_name = "opal";
 
 
 
