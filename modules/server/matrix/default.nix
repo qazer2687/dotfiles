@@ -13,7 +13,8 @@
     services.matrix-conduit = {
       enable = true;
       settings.global = {
-        allow_registration = true;
+        # Set this to false when initializing.
+        allow_registration = false;
         registration_token = "f3d0dd56";
         server_name = "matrix.opal";
         address = "::1";
