@@ -68,9 +68,9 @@ in {
 
 				plugin = {
 					scroller = {
-						column_default_width = "onehalf";
+						#column_default_width = "onehalf";
 						center_row_if_space_available = true;
-						fitsize = "visible";
+						fitsize = "all";
 					};
 
 					borders-plus-plus = {
