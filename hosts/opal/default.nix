@@ -38,6 +38,7 @@
     systemd-boot.enable = true;
     zram.enable = true;
     tailscale.enable = true;
+    nvidia.enable = true;
 
     server = {
       docker.enable = true;

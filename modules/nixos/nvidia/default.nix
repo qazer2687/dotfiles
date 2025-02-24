@@ -17,8 +17,7 @@
       # Enable the nvidia settings menu.
       nvidiaSettings = true;
 
-      # EXPERIMENTAL - Use the beta vulkan nvidia drivers.
-      package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
 }
