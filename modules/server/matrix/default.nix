@@ -13,11 +13,18 @@
     services.matrix-conduit = {
       enable = true;
       settings.global = {
+
+        address = "127.0.0.1";
+        port = 8008;
+        # Tailscale MagicDNS
+        server_name = "opal";
+
+
+
         # Set this to false when initializing.
         allow_registration = false;
+        allow_encryption = true;
         registration_token = "f3d0dd56";
-        server_name = "matrix.opal";
-        address = "::1";
         database_backend = "rocksdb";
       };
     };
