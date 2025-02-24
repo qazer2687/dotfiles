@@ -21,8 +21,7 @@ _: {
     };
 
     ffmpeg-full = prev.ffmpeg-full.override {
-      enableNonFreeCodecs = true;
-      enableGpl3 = true;
+      withFullDeps = true;
     };
 
     dwl =

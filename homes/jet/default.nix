@@ -17,6 +17,7 @@
     vlc
     loupe
     ffmpeg-full
+    libheif
 
     # Custom Packages
     arnis
