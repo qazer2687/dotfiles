@@ -17,7 +17,7 @@
         address = "127.0.0.1";
         port = 8008;
         # Tailscale MagicDNS
-        server_name = "opal";
+        server_name = "opal.taila82ec7.ts.net";
 
 
 
