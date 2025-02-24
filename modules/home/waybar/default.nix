@@ -48,7 +48,7 @@
             format = "{icon} {capacity}%";
             format-icons = [" " " " " " " " " "];
             format-charging = "󱐋 {capacity}%";
-            interval = 5;
+            interval = 10;
           };
 
           "niri/workspaces" = {
@@ -115,7 +115,7 @@
             format-wifi = "  {ipaddr}"; # 󱐋 {frequency}
             format-disconnected = " ";
             format-ethernet = " ";
-            interval = 5;
+            interval = 10;
           };
 
           mpris = {
