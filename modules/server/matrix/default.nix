@@ -21,7 +21,7 @@
 
 
         # Set this to false when initializing.
-        allow_registration = true;
+        allow_registration = false;
         allow_encryption = true;
         registration_token = "f3d0dd56";
         database_backend = "rocksdb";
