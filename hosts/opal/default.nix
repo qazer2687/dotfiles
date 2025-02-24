@@ -33,7 +33,6 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "dummy" "nvidia" ];  # use both: dummy forces X to run, nvidia loads the proper module
-    desktopManager.enable = false;
     windowManager.enable = false;
     displayManager.enable = false;
   };
