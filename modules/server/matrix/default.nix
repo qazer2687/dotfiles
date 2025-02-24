@@ -16,7 +16,7 @@
         allow_registration = true;
         registration_token = "f3d0dd560091aa99d8e97e48b36e73924e14b8b50a39280b5df751c5394b9a15";
         server_name = "matrix.opal";
-        address = "100.100.101.66";
+        address = "::1";
         database_backend = "rocksdb";
       };
     };
