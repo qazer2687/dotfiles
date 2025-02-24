@@ -99,6 +99,9 @@ in {
             passes = 5;
             vibrancy = 0.4;
           };
+          shadow = {
+            enabled = false;
+          };
         };
 
         animations = {
@@ -141,6 +144,7 @@ in {
         misc = {
           disable_splash_rendering = true;
           disable_hyprland_logo = true;
+          vfr = true;
         };
 
         bind = [

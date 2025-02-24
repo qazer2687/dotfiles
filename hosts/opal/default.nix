@@ -35,6 +35,8 @@
     videoDrivers = [ "dummy" "nvidia" ];  # use both: dummy forces X to run, nvidia loads the proper module
   };
 
+  hardware.nvidia-container-toolkit.enable = true;
+
 
   # I have installed gnome before so autosuspend
   # seems to be set statefully somewhere.

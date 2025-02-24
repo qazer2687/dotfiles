@@ -6,5 +6,6 @@
     ./samba
     ./nginx
     ./homepage-dashboard
+    ./matrix
   ];
 }
