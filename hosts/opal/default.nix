@@ -53,6 +53,7 @@
       docker.enable = true;
       #samba.enable = true;
       homepage-dashboard.enable = true;
+      matrix.enable = true;
     };
   };
 
