@@ -20,6 +20,11 @@ _: {
       # zed-editor withGLES false (might work without as of the new asahi updates 15/11/24, hyprland works when it didn't before)
     };
 
+    ffmpeg-full = prev.ffmpeg-full.override {
+      enableNonFreeCodecs = true;
+      enableGpl3 = true;
+    };
+
     dwl =
       (prev.dwl.overrideAttrs (_oldAttrs: rec {
         patches = [
