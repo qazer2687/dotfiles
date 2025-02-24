@@ -8,8 +8,6 @@
   options.modules.server.matrix.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.server.matrix.enable {
-    # See https://search.nixos.org/options?channel=unstable&query=services.matrix-conduit.
-    # and https://docs.conduit.rs/configuration.html
     services.matrix-conduit = {
       enable = true;
       settings.global = {
