@@ -11,7 +11,7 @@
     services.matrix-conduit = {
       enable = true;
 
-      package = pkgs.conduwuit-latest;
+      package = pkgs.conduwuit;
 
 
       settings.global = {
