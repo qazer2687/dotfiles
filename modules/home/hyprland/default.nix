@@ -58,7 +58,7 @@ in {
           # Hyprscroller
           layout = "scroller";
           
-          gaps_in = 2;
+          gaps_in = 1;
           gaps_out = 2;
           border_size = 1;
 
