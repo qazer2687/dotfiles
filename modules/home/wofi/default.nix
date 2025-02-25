@@ -22,8 +22,8 @@
       style = ''
         * {
           all: unset;
-          font-family: "Agave";
-          font-size: 14px;
+          font-family: "Departure Mono";
+          font-size: 11px;
         }
 
         #window {
@@ -35,7 +35,8 @@
           margin: 8px;
           padding: 0.5rem;
           border-radius: 6px;
-          background-color: #262626;
+          background-color:rgb(255, 255, 255);
+          color:rgb(0, 0, 0);
         }
 
         #entry {
