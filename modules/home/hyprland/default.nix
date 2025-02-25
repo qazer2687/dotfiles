@@ -58,11 +58,11 @@ in {
           # Hyprscroller
           layout = "scroller";
           
-          gaps_in = 3;
-          gaps_out = 6;
-          border_size = 2;
+          gaps_in = 2;
+          gaps_out = 4;
+          border_size = 1;
 
-          resize_on_border = true;
+          resize_on_border = false;
           allow_tearing = false;
         };
 
@@ -73,11 +73,13 @@ in {
 						#fitsize = "visible";
 					};
 
+          /*
 					borders-plus-plus = {
 						add_borders = 1;
 						col.border_1 = "#000000";
 						border_size_1 = 2;
     			};
+          */
 		
 				};
 
