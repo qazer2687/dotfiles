@@ -108,12 +108,12 @@ in {
           enabled = true;
           bezier = "myBezier, 0.87, 0, 0.13, 1";
           animation = [
-            "windows, 1, 3, myBezier"
-            "windowsOut, 1, 3, myBezier"
-            "border, 1, 3, myBezier"
-            "borderangle, 1, 3, myBezier"
-            "fade, 0, 3, myBezier"
-            "workspaces, 1, 3, myBezier, slidevert"
+            "windows, 1, 2, myBezier"
+            "windowsOut, 1, 2, myBezier"
+            "border, 1, 2, myBezier"
+            "borderangle, 1, 2, myBezier"
+            "fade, 0, 2, myBezier"
+            "workspaces, 1, 2, myBezier, slidevert"
           ];
         };
 
