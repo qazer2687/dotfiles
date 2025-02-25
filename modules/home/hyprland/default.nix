@@ -149,7 +149,7 @@ in {
         bind = [
           # Core
           "SUPER, Return, exec, foot"
-          "SUPER, E, exec, wofi --show drun"
+          "SUPER, E, exec, wofi --show drun -H 20%"
           "SUPER, Q, killactive"
           "SUPER, SPACE, togglefloating"
           "SUPER, F, fullscreen"

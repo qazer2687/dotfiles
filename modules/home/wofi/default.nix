@@ -32,7 +32,7 @@
         }
 
         #input{
-          margin: 8px;
+          margin: 4px;
           padding: 0.5rem;
           border-radius: 4px;
           background-color:rgb(255, 255, 255);
@@ -40,9 +40,9 @@
         }
 
         #entry {
-          margin-left: 8px;
-          margin-right: 8px;
-          padding: 8px;
+          margin-left: 4px;
+          margin-right: 4px;
+          padding: 4px;
           color: #ffffff;
           border-radius: 4px;
         }
