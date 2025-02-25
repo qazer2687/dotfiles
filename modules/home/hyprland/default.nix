@@ -73,17 +73,16 @@ in {
 						#fitsize = "visible";
 					};
 
-					/*
 					borders-plus-plus = {
 						add_borders = 1;
 						col.border_1 = "#000000";
-						border_size_1 = 4;
+						border_size_1 = 2;
     			};
-					*/
+		
 				};
 
 				gestures = {
-					# Breaks hyprscroller, required to be disabled.
+					# Breaks hyprscroller, needs to be disabled.
 					workspace_swipe = false;
 				};
 
@@ -91,13 +90,10 @@ in {
           rounding = 4;
           active_opacity = 1;
           inactive_opacity = 1;
-					# TODO: I need to look into the power usage impact of this feature.
+
+          # Disabled for performance.
           blur = {
             enabled = false;
-            ignore_opacity = true;
-            size = 5;
-            passes = 5;
-            vibrancy = 0.4;
           };
           shadow = {
             enabled = false;
@@ -112,7 +108,7 @@ in {
             "windowsMove, 1, 2, b"
             "windowsOut, 1, 2, b"
 
-            "fadeIn, 0, 2, b"
+            "fadeIn, 1, 1, b"
 
             "workspaces, 1, 3, b, slidevert"
           ];
