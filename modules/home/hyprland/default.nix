@@ -112,7 +112,7 @@ in {
             "windowsMove, 1, 2, b"
             "windowsOut, 1, 2, b"
 
-            "fadeIn, 1, 2, b"
+            "fadeIn, 0, 2, b"
 
             "workspaces, 1, 3, b, slidevert"
           ];
