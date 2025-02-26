@@ -24,9 +24,15 @@
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in {
       settings = {
-        # Enable cache for the Hyprland flake.
-        substituters = ["https://hyprland.cachix.org"];
-        trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+        substituters = [
+          # Hyprland
+          "https://hyprland.cachix.org"
+          
+          ];
+        trusted-public-keys = [
+          # Hyprland
+          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          ];
 
         experimental-features = [
           "nix-command"
@@ -106,9 +112,11 @@
 
     ########## SOPS ##########
 
-    sops.defaultSopsFormat = "yaml";
-    sops.defaultSopsFile = ../../../secrets/default.yaml;
-    sops.age.keyFile = "/home/alex/.config/sops/age/keys.txt";
+    sops = {
+      defaultSopsFormat = "yaml";
+      defaultSopsFile = ../../../secrets/default.yaml;
+      age.keyFile = "/home/alex/.config/sops/age/keys.txt";
+    };
 
     ########## ENVIRONMENT ##########
 
@@ -130,16 +138,20 @@
 
     programs.dconf.enable = true;
     security.polkit.enable = true;
+
+    # Intended to stop 'core' files being created and taking
+    # up space but this doesn't appear to do anything.
     systemd.coredump.enable = false;
 
     # High performance implementation of the dbus specification.
     services.dbus.implementation = "broker";
 
-    # Here for testing purposes, I will move this
-    # into a seperate module if I decide to use it.
+    # For testing purposes.
+    /*
     programs.nix-ld = {
       enable = true;
       libraries = with pkgs; [ glibc libcxx libclang ];
     };
+    */
   };
 }

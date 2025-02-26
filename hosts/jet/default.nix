@@ -55,11 +55,6 @@
   };
 
   services.udev = {
-		# Required for PlatformIO
-		packages = [ 
-    	pkgs.platformio-core
-    	pkgs.openocd
-  	];
 		# ESP32-CYD2USB Support
 		extraRules = ''
     	SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
@@ -141,13 +136,14 @@
     bluetooth.enable = true;
     # Sound is managed via the setupAsahiSound option
     # and I do not need easyeffects installed on Jet.
-    # pipewire.enable = true;
+    #pipewire.enable = true;
     systemd-boot.enable = true;
     filesystem = {
       enable = true;
       apfsSupport = true;
     };
-    zram.enable = true;
+    # Marcan said something about it being ineffective on apple silicon.
+    #zram.enable = true;
     tailscale.enable = true;
 
     server = {

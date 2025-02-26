@@ -7,5 +7,6 @@
     ./nginx
     ./homepage-dashboard
     ./matrix
+    ./murmur
   ];
 }
