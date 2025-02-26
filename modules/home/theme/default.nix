@@ -63,6 +63,7 @@
       agave
       terminus_font
       departure-mono
+      eb-garamond
 
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
