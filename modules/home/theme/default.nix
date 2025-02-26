@@ -64,6 +64,7 @@
       terminus_font
       departure-mono
       eb-garamond
+      garamond-libre
 
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
