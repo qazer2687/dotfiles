@@ -7,12 +7,13 @@
 
   config = lib.mkIf config.modules.nvidia.enable {
     services.xserver.videoDrivers = ["nvidia"];
+    hardware.graphics.enable = true;
     hardware.nvidia = {
       # Modesetting is required.
       modesetting.enable = true;
 
       # Use the nvidia open source kernel module.
-      open = true;
+      open = false;
 
       # Enable the nvidia settings menu.
       nvidiaSettings = true;

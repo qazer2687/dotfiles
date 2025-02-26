@@ -31,7 +31,6 @@
 
   hardware.nvidia-container-toolkit.enable = true;
 
-
   # I have installed gnome before so autosuspend
   # seems to be set statefully somewhere.
   #services.xserver.displayManager.gdm.autoSuspend = false;
