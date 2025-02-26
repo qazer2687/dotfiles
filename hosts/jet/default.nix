@@ -63,6 +63,10 @@
 
   boot = {
     kernelParams = [
+      # Disable core dumps.
+      "kern.coredump=0"
+
+
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
       "quiet"
