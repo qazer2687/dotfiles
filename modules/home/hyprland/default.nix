@@ -107,7 +107,7 @@ in {
           bezier = "b, 0.87, 0, 0.13, 1";
           animation = [
             "windowsIn, 0, 1, b"
-            "windowsMove, 1, 2, b"
+            "windowsMove, 1, 1, b"
             "windowsOut, 1, 2, b"
 
             "fadeIn, 1, 1, b"
