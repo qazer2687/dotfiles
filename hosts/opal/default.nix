@@ -45,10 +45,7 @@
 
     server = {
       docker.enable = true;
-      #samba.enable = true;
       homepage-dashboard.enable = true;
-      #matrix.enable = true;
-      murmur.enable = true;
     };
   };
 
