@@ -155,6 +155,16 @@
     };
   };
 
+  # Experimental
+
+  security = {
+    sudo.enable = false;
+    sudo-rs = {
+      enable = true;
+      wheelNeedsPassword = true;
+    };
+  };
+
   # Did you read the comment?
   system.stateVersion = "24.11";
 }

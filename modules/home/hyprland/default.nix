@@ -70,7 +70,6 @@ in {
 					scroller = {
 						column_default_width = "seveneighths";
 						center_row_if_space_available = true;
-						#fitsize = "visible";
 					};
 
           /*
@@ -90,6 +89,7 @@ in {
 
         decoration = {
           rounding = 4;
+
           active_opacity = 1;
           inactive_opacity = 1;
 
@@ -206,7 +206,7 @@ in {
 				];
 
         bindl = [
-          # Lock the screen when the lid is closed.
+          # Lock the screen with hyprlock when the lid is closed.
           ",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
         ];
 
