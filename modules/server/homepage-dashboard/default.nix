@@ -25,10 +25,10 @@
             header = "true";
             rows = "4";
           };
-          "Network / Communication" = {
+          "Network" = {
             style = "row";
             header = "true";
-            columns = "4";
+            columns = "5";
           };
         };
       };
@@ -87,7 +87,7 @@
 
       services = [
         {
-          "Networking / Communication" = [
+          "Networking" = [
             {
               "Pihole" = {
                 description = "DNS Server";
