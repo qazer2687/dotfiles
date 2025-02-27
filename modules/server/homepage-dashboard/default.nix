@@ -25,7 +25,7 @@
             header = "true";
             rows = "4";
           };
-          Network = {
+          Networking = {
             style = "row";
             header = "true";
             columns = "5";
