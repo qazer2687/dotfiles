@@ -25,7 +25,7 @@
             header = "true";
             rows = "4";
           };
-          "Network" = {
+          Network = {
             style = "row";
             header = "true";
             columns = "5";
@@ -43,7 +43,7 @@
       widgets = [
         {
           greeting = {
-            text = "qazer.org";
+            text = "Qazer's Dashboard";
           };
         }
         {
