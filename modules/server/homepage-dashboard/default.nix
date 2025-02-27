@@ -107,8 +107,16 @@
               "Mumble" = {
                 description = "Voice Chat";
                 server = "opal";
-                container = "mumble-server";
+                container = "mumble";
                 icon = "sh-mumble";
+              };
+            }
+            {
+              "Fail2Ban" = {
+                description = "Malicious IP Blocking";
+                server = "opal";
+                container = "fail2ban";
+                icon = "sh-fail2ban";
               };
             }
           ];
