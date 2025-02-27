@@ -25,8 +25,9 @@
             header = "true";
             rows = "4";
           };
-          Services = {
+          "Network / Communication" = {
             style = "row";
+            header = "true";
             columns = "4";
           };
         };
@@ -40,13 +41,11 @@
       };
 
       widgets = [
-        /*
-          {
+        {
           greeting = {
-            text = "Qazer's Homelab Dashboard";
+            text = "qazer.org";
           };
         }
-        */
         {
           resources = {
             cpu = true;
@@ -57,7 +56,7 @@
             tempmax = 100;
             uptime = true;
             units = "metric";
-            refresh = 3000;
+            refresh = 10000;
             diskUnits = "bytes";
           };
         }
