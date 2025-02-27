@@ -84,7 +84,7 @@
 
       services = [
         {
-          "Networking" = [
+          "Networking / Communication" = [
             {
               "Pihole" = {
                 description = "DNS Server";
@@ -97,16 +97,25 @@
             {
               "Nginx Proxy Manager" = {
                 description = "SSL & Proxy";
-                href = "https://pihole.qazer.org";
+                href = "https://npm.qazer.org";
                 server = "opal";
-                container = "pihole";
+                container = "nginx-proxy-manager";
                 icon = "sh-nginx-proxy-manager";
+              };
+            }
+            {
+              "Mumble" = {
+                description = "Voice Chat";
+                server = "opal";
+                container = "mumble-server";
+                icon = "sh-mumble";
               };
             }
           ];
         }
         {
           "Monitoring" = [
+            /*
             {
               "Grafana" = {
                 description = "Observability Platform";
@@ -125,6 +134,7 @@
                 icon = "sh-prometheus";
               };
             }
+            */
             {
               "Portainer" = {
                 description = "Container Management";
@@ -138,16 +148,18 @@
           ];
         }
         {
-          "Media/Storage" = [
+          "Media / Storage" = [
+            /*
             {
               "Nextcloud" = {
                 description = "Cloud Storage";
                 href = "https://nextcloud.qazer.org";
-                server = "opal";
-                container = "nextcloud";
+                #server = "opal";
+                #container = "nextcloud";
                 icon = "sh-nextcloud";
               };
             }
+            */
             {
               "Immich" = {
                 description = "Photo & Video Management";
