@@ -16,7 +16,7 @@
         background = "https://i.imgur.com/GgtJC5a.jpeg";
         color = "slate";
         hideVersion = "true";
-        showStats = "true";
+        showStats = "false";
         statusStyle = "basic";
 
         layout = {
@@ -24,6 +24,10 @@
             style = "column";
             header = "true";
             rows = "4";
+          };
+          Services = {
+            style = "row";
+            columns = "4";
           };
         };
       };
