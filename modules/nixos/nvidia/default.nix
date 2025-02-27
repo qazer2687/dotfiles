@@ -12,7 +12,8 @@
       # Modesetting is required.
       modesetting.enable = true;
 
-      # Use the nvidia open source kernel module.
+			# Don't use the nvidia open source kernel module
+			# as it breaks nvidia-ctk and nvidia-smi.
       open = false;
 
       # Enable the nvidia settings menu.

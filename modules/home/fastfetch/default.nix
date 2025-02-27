@@ -16,6 +16,10 @@
       imagemagick
     ];
 
+    home.shellAliases = {
+      "fetch" = "fastfetch";
+    };
+
     home.file.".config/assets/konata.png" = {
       source = ../../../assets/konata.png;
     };
