@@ -187,6 +187,15 @@
                 icon = "sh-immich";
               };
             }
+						{
+							"Code" = {
+								description = "Visual Studio Code Server";
+								server = "opal";
+								container = "code-server";
+								icon = "sh-visual-studio-code";
+								href = "https://code.qazer.org";
+							};
+						}
           ];
         }
       ];
