@@ -160,6 +160,14 @@
                 icon = "sh-portainer";
               };
             }
+						{
+              "cAdvisor" = {
+                description = "Container Management";
+                server = "opal";
+                container = "cadvisor";
+                icon = "sh-cadvisor";
+              };
+            }
           ];
         }
         {
