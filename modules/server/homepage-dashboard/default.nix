@@ -24,22 +24,22 @@
         layout = {
           Bookmarks = {
             style = "row";
-            header = "true";
+            header = "false";
             columns = "2";
           };
           Networking = {
             style = "column";
-            header = "true";
+            header = "false";
             rows = "4";
           };
 					Monitoring = {
             style = "column";
-            header = "true";
+            header = "false";
             rows = "4";
           };
 					Media = {
             style = "column";
-            header = "true";
+            header = "false";
             rows = "4";
           };
         };
@@ -121,14 +121,6 @@
               };
             }
             {
-              "Mumble" = {
-                description = "Voice Chat";
-                server = "opal";
-                container = "mumble";
-                icon = "sh-mumble";
-              };
-            }
-            {
               "Fail2Ban" = {
                 description = "Malicious IP Blocking";
                 server = "opal";
@@ -200,6 +192,14 @@
 								href = "https://code.qazer.org";
 							};
 						}
+						{
+              "Mumble" = {
+                description = "Voice Chat";
+                server = "opal";
+                container = "mumble";
+                icon = "sh-mumble";
+              };
+            }
           ];
         }
       ];
