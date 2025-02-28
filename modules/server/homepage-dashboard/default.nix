@@ -13,11 +13,11 @@
         title = "Dashboard";
         startURL = "https://dashboard.qazer.org";
         theme = "dark";
-        background = "https://i.imgur.com/GgtJC5a.jpeg";
+        #background = "https://i.imgur.com/GgtJC5a.jpeg";
         color = "slate";
         hideVersion = "true";
         showStats = "true";
-        statusStyle = "dot"; # dot / basic
+        statusStyle = "basic"; # dot / basic
 
         layout = {
           Bookmarks = {
