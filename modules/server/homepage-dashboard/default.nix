@@ -24,22 +24,22 @@
         layout = {
           Bookmarks = {
             style = "row";
-            header = "false";
+            header = false;
             columns = "2";
           };
           Networking = {
             style = "column";
-            header = "false";
+            header = false;
             rows = "4";
           };
 					Monitoring = {
             style = "column";
-            header = "false";
+            header = false;
             rows = "4";
           };
 					Media = {
             style = "column";
-            header = "false";
+            header = false;
             rows = "4";
           };
         };
