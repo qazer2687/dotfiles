@@ -16,8 +16,8 @@
         background = "https://i.imgur.com/GgtJC5a.jpeg";
         color = "slate";
         hideVersion = "true";
-        showStats = "false";
-        statusStyle = "basic";
+        #showStats = "true";
+        statusStyle = "dot"; # dot / basic
 
         layout = {
           Bookmarks = {
