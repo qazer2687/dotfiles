@@ -28,7 +28,17 @@
           Networking = {
             style = "row";
             header = "true";
-            columns = "5";
+            columns = "3";
+          };
+					Monitoring = {
+            style = "row";
+            header = "true";
+            columns = "3";
+          };
+					Media = {
+            style = "row";
+            header = "true";
+            columns = "3";
           };
         };
       };
@@ -159,7 +169,7 @@
           ];
         }
         {
-          "Media / Storage" = [
+          "Media" = [
             /*
             {
               "Nextcloud" = {
