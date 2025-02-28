@@ -53,11 +53,13 @@
       };
 
       widgets = [
+				/*
         {
           greeting = {
             text = "Qazer's Dashboard";
           };
         }
+				*/
         {
           resources = {
             cpu = true;
