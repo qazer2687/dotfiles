@@ -21,24 +21,24 @@
 
         layout = {
           Bookmarks = {
-            style = "column";
+            style = "row";
             header = "true";
-            rows = "4";
+            columns = "2";
           };
           Networking = {
             style = "row";
             header = "true";
-            columns = "3";
+            columns = "4";
           };
 					Monitoring = {
             style = "row";
             header = "true";
-            columns = "3";
+            columns = "4";
           };
 					Media = {
             style = "row";
             header = "true";
-            columns = "3";
+            columns = "4";
           };
         };
       };
@@ -136,7 +136,6 @@
         }
         {
           "Monitoring" = [
-            /*
             {
               "Grafana" = {
                 description = "Observability Platform";
@@ -155,7 +154,6 @@
                 icon = "sh-prometheus";
               };
             }
-            */
             {
               "Portainer" = {
                 description = "Container Management";
