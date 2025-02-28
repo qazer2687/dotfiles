@@ -18,6 +18,8 @@
         hideVersion = "true";
         showStats = "true";
         statusStyle = "basic"; # dot / basic
+				headerStyle = "boxedWidgets";
+
 
         layout = {
           Bookmarks = {
