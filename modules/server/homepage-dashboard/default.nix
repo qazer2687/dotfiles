@@ -16,7 +16,7 @@
         background = "https://i.imgur.com/GgtJC5a.jpeg";
         color = "slate";
         hideVersion = "true";
-        #showStats = "true";
+        showStats = "true";
         statusStyle = "dot"; # dot / basic
 
         layout = {
@@ -26,19 +26,19 @@
             columns = "2";
           };
           Networking = {
-            style = "row";
+            style = "column";
             header = "true";
-            columns = "4";
+            rows = "4";
           };
 					Monitoring = {
-            style = "row";
+            style = "column";
             header = "true";
-            columns = "4";
+            rows = "4";
           };
 					Media = {
-            style = "row";
+            style = "column";
             header = "true";
-            columns = "4";
+            rows = "4";
           };
         };
       };
