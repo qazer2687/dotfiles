@@ -70,7 +70,7 @@
             tempmax = 100;
             uptime = true;
             units = "metric";
-            refresh = 10000;
+            refresh = 15000;
             diskUnits = "bytes";
           };
         }
@@ -153,7 +153,6 @@
             {
               "Portainer" = {
                 description = "Container Management";
-                # Needs to use HTTPS.
                 href = "https://portainer.qazer.org";
                 server = "opal";
                 container = "portainer";
@@ -162,7 +161,7 @@
             }
 						{
               "cAdvisor" = {
-                description = "Container Management";
+                description = "Container Analyzer";
                 server = "opal";
                 container = "cadvisor";
                 icon = "sh-cadvisor";
