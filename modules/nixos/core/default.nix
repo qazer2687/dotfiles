@@ -24,14 +24,21 @@
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in {
       settings = {
-        substituters = [
+        trusted-substituters = [
           # Hyprland
           "https://hyprland.cachix.org"
-          
-          ];
+
+          # Garnix
+          "https://cache.garnix.io"
+        ];
+
         trusted-public-keys = [
           # Hyprland
           "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          
+          "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+          
+          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
           ];
 
         experimental-features = [
