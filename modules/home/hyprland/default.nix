@@ -59,7 +59,7 @@ in {
           layout = "scroller";
           
           gaps_in = 2;
-          gaps_out = "4,15,4,15";
+          gaps_out = "4,120,4,120";
           border_size = 1;
 
           resize_on_border = false;
