@@ -158,7 +158,6 @@ in {
           "rounding 0, floating:0, onworkspace:f[1]"
         ];
   
-
         bind = [
           # Core
           "SUPER, Return, exec, foot"
