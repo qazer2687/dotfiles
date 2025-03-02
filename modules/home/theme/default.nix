@@ -51,20 +51,18 @@
 
     fonts.fontconfig = {
       enable = true;
-      defaultFonts.monospace = [
-        "Agave"
-      ];
     };
 
     home.packages = with pkgs; [
-      atkinson-hyperlegible
       noto-fonts-color-emoji
       noto-fonts-cjk-sans
+
+      atkinson-hyperlegible
       agave
       terminus_font
       departure-mono
       eb-garamond
-      garamond-libre
+      fixedsys-excelsior
 
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
