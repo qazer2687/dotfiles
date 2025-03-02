@@ -81,16 +81,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1740930678,
-        "narHash": "sha256-PJpFTHDeZfzYTtSo4pEt5zDtAuTX0vXNB3KBzcOVSKA=",
+        "lastModified": 1740937851,
+        "narHash": "sha256-Z6yAce5L57irpiPi7XJlOIWcbSPHw2qkU9HMjSLQOIw=",
         "owner": "qazer2687",
-        "repo": "asahi",
-        "rev": "83f8d3da83f25dd281c4c9adbf37afb5961f3344",
+        "repo": "nixos-apple-silicon",
+        "rev": "47281f75ff65163d6d606a5c4b3635bfd65201e2",
         "type": "github"
       },
       "original": {
         "owner": "qazer2687",
-        "repo": "asahi",
+        "repo": "nixos-apple-silicon",
         "type": "github"
       }
     },
