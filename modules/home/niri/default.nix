@@ -41,6 +41,7 @@ in {
             variant = "colemak";
           };
           touchpad = {
+            # Disable tap-to-click.
             tap = false;
             # Enable palm rejection.
             dwt = true;
