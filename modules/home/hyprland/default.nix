@@ -156,8 +156,6 @@ in {
           "rounding 0, floating:0, onworkspace:w[tv1]"
           "bordersize 0, floating:0, onworkspace:f[1]"
           "rounding 0, floating:0, onworkspace:f[1]"
-          "plugin:scroller:columnwidth one, onworkspace:w[tv1]"
-          "plugin:scroller:columnwidth one, onworkspace:f[1]"
         ];
   
 
