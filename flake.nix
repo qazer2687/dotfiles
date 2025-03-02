@@ -11,7 +11,7 @@
 		# Ref required for 24.11 machines.
     #asahi.url = "github:tpwrules/nixos-apple-silicon?ref=releasep2-2024-12-25";
 		#asahi.url = "github:tpwrules/nixos-apple-silicon/3daf0637409689d7a1304cedc50d20542bc47905";
-    asahi.url = "github:qazer2687/asahi";
+    asahi.url = "github:qazer2687/nixos-apple-silicon";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
