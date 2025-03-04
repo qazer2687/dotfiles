@@ -36,7 +36,7 @@
         colors = {
           #alpha = "0.8"; # Transparency
           foreground = "ffffff"; # Text
-          background = "000000"; # Base
+          background = "161616"; # Base
           regular0 = "494d64"; # Surface 1
           regular1 = "ed8796"; # red
           regular2 = "a6da95"; # green
