@@ -35,24 +35,26 @@
 
         colors = {
           #alpha = "0.8"; # Transparency
-          foreground = "ffffff"; # Text
-          background = "161616"; # Base
-          regular0 = "494d64"; # Surface 1
-          regular1 = "ed8796"; # red
-          regular2 = "a6da95"; # green
-          regular3 = "eed49f"; # yellow
-          regular4 = "8aadf4"; # blue
-          regular5 = "f5bde6"; # pink
-          regular6 = "8bd5ca"; # teal
-          regular7 = "b8c0e0"; # Subtext 1
-          bright0 = "5b6078"; # Surface 2
-          bright1 = "ed8796"; # red
-          bright2 = "a6da95"; # green
-          bright3 = "eed49f"; # yellow
-          bright4 = "8aadf4"; # blue
-          bright5 = "f5bde6"; # pink
-          bright6 = "8bd5ca"; # teal
-          bright7 = "a5adcb"; # Subtext 0
+          foreground = "#ffffff"; # base06 white
+          background = "#161616"; # base01 black
+
+          regular0 = "#262626"; # black
+          regular1 = "#ff7eb6"; # magenta
+          regular2 = "#42be65"; # green
+          regular3 = "#ffe97b"; # yellow
+          regular4 = "#33b1ff"; # blue
+          regular5 = "#ee5396"; # red
+          regular6 = "#3ddbd9"; # cyan
+          regular7 = "#dde1e6"; # white
+
+          bright0 = "#393939"; # black
+          bright1 = "#ff7eb6"; # magenta
+          bright2 = "#42be65"; # green
+          bright3 = "#ffe97b"; # yellow
+          bright4 = "#33b1ff"; # blue
+          bright5 = "#ee5396"; # red
+          bright6 = "#3ddbd9"; # cyan
+          bright7 = "#ffffff"; # white
         };
 
         key-bindings = {
