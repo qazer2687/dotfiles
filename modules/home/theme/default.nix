@@ -64,6 +64,7 @@
       eb-garamond
       fixedsys-excelsior
       monaspace
+      pragmatapro
 
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
