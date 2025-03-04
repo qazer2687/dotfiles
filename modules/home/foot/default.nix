@@ -14,8 +14,8 @@
       server.enable = true;
       settings = {
         main = {
-          font = "Departure Mono:size=11, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
-          font-bold = "DepartureMono:size=11:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
+          font = "Fixedsys Excelsior 3.01:size=11, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
+          font-bold = "Fixedsys Excelsior 3.01:size=11:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
           line-height = "18px";
           pad = "16x16";
         };
