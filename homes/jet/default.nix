@@ -23,7 +23,7 @@
     ncdu
     neovim
     # Neovim Dependancies
-    make
+    gnumake
     unzip
     gcc
     ripgrep
