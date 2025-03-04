@@ -63,6 +63,7 @@
       departure-mono
       eb-garamond
       fixedsys-excelsior
+      monaspace
 
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
