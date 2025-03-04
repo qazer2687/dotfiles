@@ -40,7 +40,6 @@
     wofi.enable = true;
     theme.enable = true;
 
-
     # CLI
     fish.enable = true;
     foot.enable = true;
@@ -51,10 +50,9 @@
     direnv.enable = true;
     git.enable = true;
     bat.enable = true;
-
+    neovim.enable = true;
 
     # GUI
-    # firefox.enable = true;
     vscode.enable = true;
 
     # Security
