@@ -16,7 +16,7 @@
         main = {
           font = "PragmataPro:size=14, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
           font-bold = "PragmataPro:size=14:style=Bold, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
-          line-height = "18px";
+          line-height = "22px";
           pad = "16x16";
         };
 
