@@ -34,27 +34,28 @@
         };
 
         colors = {
+          # oxocarbon theme
           #alpha = "0.8"; # Transparency
-          foreground = "#ffffff"; # base06 white
-          background = "#161616"; # base01 black
+          foreground = "ffffff"; # base06 white
+          background = "161616"; # base01 black
 
-          regular0 = "#262626"; # black
-          regular1 = "#ff7eb6"; # magenta
-          regular2 = "#42be65"; # green
-          regular3 = "#ffe97b"; # yellow
-          regular4 = "#33b1ff"; # blue
-          regular5 = "#ee5396"; # red
-          regular6 = "#3ddbd9"; # cyan
-          regular7 = "#dde1e6"; # white
+          regular0 = "262626"; # black
+          regular1 = "ff7eb6"; # magenta
+          regular2 = "42be65"; # green
+          regular3 = "ffe97b"; # yellow
+          regular4 = "33b1ff"; # blue
+          regular5 = "ee5396"; # red
+          regular6 = "3ddbd9"; # cyan
+          regular7 = "dde1e6"; # white
 
-          bright0 = "#393939"; # black
-          bright1 = "#ff7eb6"; # magenta
-          bright2 = "#42be65"; # green
-          bright3 = "#ffe97b"; # yellow
-          bright4 = "#33b1ff"; # blue
-          bright5 = "#ee5396"; # red
-          bright6 = "#3ddbd9"; # cyan
-          bright7 = "#ffffff"; # white
+          bright0 = "393939"; # black
+          bright1 = "ff7eb6"; # magenta
+          bright2 = "42be65"; # green
+          bright3 = "ffe97b"; # yellow
+          bright4 = "33b1ff"; # blue
+          bright5 = "ee5396"; # red
+          bright6 = "3ddbd9"; # cyan
+          bright7 = "ffffff"; # white
         };
 
         key-bindings = {
