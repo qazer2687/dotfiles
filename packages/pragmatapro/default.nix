@@ -3,7 +3,7 @@
 stdenv.mkDerivation rec {
   pname = "pragmatapro";
   version = "0.820";
-  src = ./config/PragmataPro.ttf;
+  src = ./PragmataPro.ttf;
 
   dontUnpack = true;
 
