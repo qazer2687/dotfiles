@@ -56,19 +56,6 @@
           enable = true;
         };
 
-        render-markdown = {
-          enable = true;
-        };
-
-        image = {
-          enable = true;
-          integrations.markdown = {
-            enabled = true;
-            clearInInsertMode = true;
-            onlyRenderImageAtCursor = false;
-          };
-        };
-
         nvim-tree = {
           enable = true;
           autoReloadOnWrite = true;
@@ -76,7 +63,6 @@
 
         auto-save = {
           enable = true;
-          # This doesn't enable the plugin, it just enables autosaving when the plugin has been enabled. Idk why.
           settings = {
             enabled = true;
           };
@@ -86,26 +72,12 @@
           enable = true;
           servers = {
             nixd.enable = true;
+            csharp-ls.enable = true;
           };
         };
 
         cmp.enable = true;
 
-        obsidian = {
-          enable = true;
-          settings = {
-            workspaces = [
-              {
-                name = "Vault";
-                path = "~/Vault";
-              }
-            ];
-            completion = {
-              nvim_cmp = true;
-              min_chars = 2;
-            };
-          };
-        };
       };
 
       colorschemes = {

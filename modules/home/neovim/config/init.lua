@@ -3,10 +3,17 @@ vim.cmd("set background=dark")
 --vim.cmd("highlight Normal guibg=black guifg=white")
 vim.cmd("NvimTreeOpen")
 
+
+
+
+
+
+
+
 -- These options are only used by Neovide.
 if vim.g.neovide then
   -- Font
-  vim.o.guifont = "Agave:h12"
+  vim.o.guifont = "Fixedsys Excelsior 3.01:h12"
 
   -- Scale
   vim.g.neovide_scale_factor = 0.8
