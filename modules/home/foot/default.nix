@@ -14,10 +14,10 @@
       server.enable = true;
       settings = {
         main = {
-          font = "Fixedsys Excelsior 3.01:size=14, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
-          font-bold = "Fixedsys Excelsior 3.01:size=14:style=Bold, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
+          font = "PragmataPro:size=14, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
+          font-bold = "PragmataPro:size=14:style=Bold, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
           line-height = "18px";
-          pad = "8x8";
+          pad = "16x16";
         };
 
         scrollback = {
