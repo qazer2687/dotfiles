@@ -27,6 +27,7 @@
     unzip
     gcc
     ripgrep
+    lua
 
     # Custom Packages
     arnis
