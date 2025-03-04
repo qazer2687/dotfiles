@@ -8,7 +8,7 @@
   ];
 
   home.packages = with pkgs; [
-
+    
     # Graphical
     obsidian
     nautilus
@@ -18,6 +18,9 @@
     loupe
     ffmpeg-full
     libheif
+
+    # Terminal
+    neovim
 
     # Custom Packages
     arnis
@@ -50,7 +53,7 @@
     direnv.enable = true;
     git.enable = true;
     bat.enable = true;
-    neovim.enable = true;
+    #neovim.enable = true;
 
     # GUI
     vscode.enable = true;
