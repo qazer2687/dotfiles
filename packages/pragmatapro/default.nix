@@ -3,7 +3,9 @@
 stdenv.mkDerivation rec {
   pname = "pragmatapro";
   version = "0.820";
-  src = ./PragmataPro.ttf;
+  src = ./config/PragmataPro.ttf;
+
+  dontUnpack = true;
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype/pragmatapro
