@@ -20,7 +20,13 @@
     libheif
 
     # Terminal
+    ncdu
     neovim
+    # Neovim Dependancies
+    make
+    unzip
+    gcc
+    ripgrep
 
     # Custom Packages
     arnis
