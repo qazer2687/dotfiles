@@ -22,13 +22,15 @@
     # Terminal
     ncdu
     neovim
-    # Neovim Dependancies
+    # Neovim Dependencies
     gnumake
     unzip
     gcc
     ripgrep
-    lua
-
+    # LSP Dependencies
+    dotnet-sdk
+    nixd
+    lua-language-server
     # Custom Packages
     arnis
     zen-browser
