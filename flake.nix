@@ -22,7 +22,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     ags.url = "github:aylur/ags";
 
-    tolerable-nvim = github:wires-org/tolerable-nvim-nix#nightly;
+    tolerable-nvim = github:wires-org/tolerable-nvim-nix;
 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
