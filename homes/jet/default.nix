@@ -21,16 +21,7 @@
 
     # Terminal
     ncdu
-    neovim
-    # Neovim Dependencies
-    gnumake
-    unzip
-    gcc
-    ripgrep
-    # LSP Dependencies
-    dotnet-sdk
-    nixd
-    lua-language-server
+  
     # Custom Packages
     arnis
     zen-browser
@@ -62,7 +53,7 @@
     direnv.enable = true;
     git.enable = true;
     bat.enable = true;
-    #neovim.enable = true;
+    neovim.enable = true;
 
     # GUI
     vscode.enable = true;
