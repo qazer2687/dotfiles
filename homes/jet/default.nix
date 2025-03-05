@@ -8,7 +8,6 @@
   ];
 
   home.packages = with pkgs; [
-    
     # Graphical
     obsidian
     nautilus
@@ -21,7 +20,7 @@
 
     # Terminal
     ncdu
-  
+
     # Custom Packages
     arnis
     zen-browser
@@ -34,7 +33,6 @@
   # services.arrpc.enable = true;
 
   modules = {
-
     # Desktop Environment
     hyprland.enable = true;
     hyprlock.enable = true;

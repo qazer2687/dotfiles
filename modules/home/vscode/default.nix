@@ -24,37 +24,36 @@ in {
       # There seems to be an issue with applications that haven't been previously
       # configured having no directory in .vscode-oss when "installed" through nix's
       # build system. stupid shit, maybe FHS being stupid, stupid
-			extensions = [
-				# UI Theme
-				ext.open-vsx.ankitpati.vscodium-amoled
+      extensions = [
+        # UI Theme
+        ext.open-vsx.ankitpati.vscodium-amoled
 
-				# Icon Theme
-				ext.open-vsx.wilfriedago.vscode-symbols-icon-theme
+        # Icon Theme
+        ext.open-vsx.wilfriedago.vscode-symbols-icon-theme
 
-				# Nix
-				ext.vscode-marketplace.jnoortheen.nix-ide
+        # Nix
+        ext.vscode-marketplace.jnoortheen.nix-ide
 
-				# HTML
-				ext.vscode-marketplace.yandeu.five-server
+        # HTML
+        ext.vscode-marketplace.yandeu.five-server
 
-				# C#
-				ext.vscode-marketplace.ms-dotnettools.csharp
+        # C#
+        ext.vscode-marketplace.ms-dotnettools.csharp
 
-				# C
-				ext.vscode-marketplace.llvm-vs-code-extensions.vscode-clangd
+        # C
+        ext.vscode-marketplace.llvm-vs-code-extensions.vscode-clangd
 
-				# ESP32
-				#ext.vscode-marketplace.platformio.platformio-ide
-				#pkgs.vscode-extensions.ms-vscode.cpptools
+        # ESP32
+        #ext.vscode-marketplace.platformio.platformio-ide
+        #pkgs.vscode-extensions.ms-vscode.cpptools
 
-				# Other
-				ext.vscode-marketplace.naumovs.color-highlight
-				ext.vscode-marketplace.aaron-bond.better-comments
-				ext.vscode-marketplace.mkhl.direnv
+        # Other
+        ext.vscode-marketplace.naumovs.color-highlight
+        ext.vscode-marketplace.aaron-bond.better-comments
+        ext.vscode-marketplace.mkhl.direnv
 
         ext.vscode-marketplace.ms-vscode-remote.remote-containers
-			];
-
+      ];
 
       # Not in use because this is a very impractical option.
       # My configuration has to be perfect otherwise I have to

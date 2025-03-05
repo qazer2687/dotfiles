@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: {
   options.modules.server.murmur.enable = lib.mkEnableOption "";

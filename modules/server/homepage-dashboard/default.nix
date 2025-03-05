@@ -18,8 +18,7 @@
         hideVersion = "true";
         showStats = "true";
         statusStyle = "basic"; # dot / basic
-				headerStyle = "boxedWidgets";
-
+        headerStyle = "boxedWidgets";
 
         layout = {
           Bookmarks = {
@@ -32,12 +31,12 @@
             header = false;
             rows = "4";
           };
-					Monitoring = {
+          Monitoring = {
             style = "column";
             header = false;
             rows = "4";
           };
-					Media = {
+          Media = {
             style = "column";
             header = false;
             rows = "4";
@@ -53,13 +52,13 @@
       };
 
       widgets = [
-				/*
+        /*
         {
           greeting = {
             text = "Qazer's Dashboard";
           };
         }
-				*/
+        */
         {
           resources = {
             cpu = true;
@@ -159,7 +158,7 @@
                 icon = "sh-portainer";
               };
             }
-						{
+            {
               "cAdvisor" = {
                 description = "Container Analyzer";
                 server = "opal";
@@ -190,16 +189,16 @@
                 icon = "sh-immich";
               };
             }
-						{
-							"Code" = {
-								description = "Visual Studio Code Server";
-								server = "opal";
-								container = "code-server";
-								icon = "sh-visual-studio-code";
-								href = "https://code.qazer.org";
-							};
-						}
-						{
+            {
+              "Code" = {
+                description = "Visual Studio Code Server";
+                server = "opal";
+                container = "code-server";
+                icon = "sh-visual-studio-code";
+                href = "https://code.qazer.org";
+              };
+            }
+            {
               "Mumble" = {
                 description = "Voice Chat";
                 server = "opal";

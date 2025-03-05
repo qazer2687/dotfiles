@@ -2,10 +2,8 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: let
-
   screenshot = pkgs.writeShellApplication {
     name = "screenshot";
     runtimeInputs = with pkgs; [
@@ -17,7 +15,6 @@
       grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy -t image/png
     '';
   };
-
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -25,7 +22,6 @@ in {
     home.packages = with pkgs; [
       screenshot
     ];
-
 
     services.hyprpaper = {
       enable = true;
@@ -46,18 +42,18 @@ in {
       enable = true;
       #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-      plugins = [ 
+      plugins = [
         pkgs.hyprlandPlugins.hyprscroller
         #pkgs.hyprlandPlugins.borders-plus-plus
       ];
 
       settings = {
-        monitor = [ ",highrr,auto,2" ];
-        
+        monitor = [",highrr,auto,2"];
+
         general = {
           # Hyprscroller
           layout = "scroller";
-          
+
           gaps_in = 2;
           gaps_out = "4,30,4,30";
           border_size = 1;
@@ -66,26 +62,25 @@ in {
           allow_tearing = false;
         };
 
-				plugin = {
-					scroller = {
-						column_default_width = "one";
-						center_row_if_space_available = true;
-					};
+        plugin = {
+          scroller = {
+            column_default_width = "one";
+            center_row_if_space_available = true;
+          };
 
           /*
-					borders-plus-plus = {
-						add_borders = 1;
-						col.border_1 = "#000000";
-						border_size_1 = 2;
-    			};
+          borders-plus-plus = {
+          	add_borders = 1;
+          	col.border_1 = "#000000";
+          	border_size_1 = 2;
+          		};
           */
-		
-				};
+        };
 
-				gestures = {
-					# Breaks hyprscroller, needs to be disabled.
-					workspace_swipe = false;
-				};
+        gestures = {
+          # Breaks hyprscroller, needs to be disabled.
+          workspace_swipe = false;
+        };
 
         decoration = {
           rounding = 4;
@@ -117,18 +112,19 @@ in {
         };
 
         input = {
-					# Mouse/Pointer
-					follow_mouse = 0;
-					mouse_refocus = false;
+          # Mouse/Pointer
+          follow_mouse = 0;
+          mouse_refocus = false;
 
-					# Keyboard
+          # Keyboard
           kb_layout = "gb";
           kb_variant = "colemak";
+          kb_options = "ctrl:nocaps";
 
-					# Touchpad
+          # Touchpad
           touchpad = {
-						tap-to-click = false;
-						scroll_factor = 0.5;
+            tap-to-click = false;
+            scroll_factor = 0.5;
             natural_scroll = true;
             clickfinger_behavior = true;
             middle_button_emulation = true;
@@ -136,9 +132,9 @@ in {
           };
         };
 
-				cursor = {
-					no_warps = true;
-				};
+        cursor = {
+          no_warps = true;
+        };
 
         misc = {
           disable_splash_rendering = true;
@@ -157,7 +153,7 @@ in {
           "bordersize 1, floating:0, onworkspace:f[1]"
           "rounding 4, floating:0, onworkspace:f[1]"
         ];
-  
+
         bind = [
           # Core
           "SUPER, Return, exec, foot"
@@ -196,13 +192,11 @@ in {
           "SUPER SHIFT, 0, movetoworkspace, 10"
 
           # Window Resize
-
-
         ];
 
-				# Will repeat when held.
-				binde = [
-					# Volume
+        # Will repeat when held.
+        binde = [
+          # Volume
           ",XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -i 2"
           ",XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer -d 2"
           ",XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer -t"
@@ -215,7 +209,7 @@ in {
           # Backlight
           "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%+"
           "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%-"
-				];
+        ];
 
         bindl = [
           # Lock the screen with hyprlock when the lid is closed.
@@ -230,7 +224,7 @@ in {
         exec-once = [
           # Launch hyprlock after hyprland starts and terminate the session if hyprlock
           # fails to launch. This does not consider the possibility of exec-once not
-					# working - but then again I'm using autologin so there's no security here anyway.
+          # working - but then again I'm using autologin so there's no security here anyway.
           "hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
           "waybar"
           # "hyprpanel"

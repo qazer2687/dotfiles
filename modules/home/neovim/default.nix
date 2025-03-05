@@ -29,7 +29,6 @@
         };
 
         cmp.enable = true;
-
       };
     };
   };
