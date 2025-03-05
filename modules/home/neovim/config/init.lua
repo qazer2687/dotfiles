@@ -1,1 +1,0 @@
-dofile(vim.fn.expand("~/.config/nvim/conf.lua"))

@@ -2,38 +2,32 @@
   lib,
   config,
   pkgs,
+  inputs,
+  outputs,
   ...
-}: {
+}: let
+  inherit (pkgs) lib;
+  neovim = pkgs.tolerable-nvim.makeNeovimConfig "tolerable" {
+    inherit pkgs;
+
+    config = {
+      plugins = with pkgs.vimPlugins; [
+        nvim-lspconfig
+        lazy-nvim
+      ];
+    };
+    path = with pkgs; [
+      lua-language-server
+      nixd
+      dotnet-sdk
+    ];
+};
+in {
   options.modules.neovim.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.neovim.enable {
-    home.packages = with pkgs; [
-      # CMP Dependency
-      gnumake
-      unzip
-      gcc
-      ripgrep
+    home.packages = [
+        neovim
     ];
-
-    programs.nixvim = {
-      enable = true;
-
-      plugins = {
-        lsp = {
-          enable = true;
-          servers = {
-            nixd.enable = true;
-            csharp_ls.enable = true;
-            lua_ls.enable = true;
-          };
-        };
-
-        cmp.enable = true;
-
-       # lazy.enable = true;
-      };
-
-      extraConfigLuaPre = builtins.readFile ./config/init.lua;
-    };
   };
 }

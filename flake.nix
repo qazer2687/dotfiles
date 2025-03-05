@@ -22,6 +22,8 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     ags.url = "github:aylur/ags";
 
+    tolerable-nvim = github:wires-org/tolerable-nvim-nix#nightly;
+
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland-plugins = {
@@ -37,8 +39,6 @@
   }:
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["aarch64-linux" "x86_64-linux" "aarch64-darwin"];
-
-      # ily cam
 
       flake = {
         overlays = import ./overlays {inherit inputs;};
@@ -89,7 +89,8 @@
                     inputs.ags.homeManagerModules.default
                     inputs.nur.modules.homeManager.default
                     inputs.sops-nix.homeManagerModules.sops
-                    inputs.nixvim.homeManagerModules.nixvim
+                    #inputs.nixvim.homeManagerModules.nixvim
+                    inputs.tolerable-nvim.homeManagerModules.nvim
                   ];
                 };
               }
