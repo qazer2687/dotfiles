@@ -1,5 +1,4 @@
-{ stdenv }:
-
+{stdenv}:
 stdenv.mkDerivation rec {
   pname = "pragmatapro";
   version = "0.820";

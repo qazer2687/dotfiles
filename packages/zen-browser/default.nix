@@ -1,6 +1,9 @@
-{ pkgs, lib, appimageTools, fetchurl }:
-
-let
+{
+  pkgs,
+  lib,
+  appimageTools,
+  fetchurl,
+}: let
   version = "latest";
   pname = "zen-browser";
   src = fetchurl {
@@ -14,22 +17,20 @@ let
     icon = pname;
     desktopName = "Zen Browser";
     comment = "A privacy-focused browser";
-    categories = [ "Network" "WebBrowser" ];
+    categories = ["Network" "WebBrowser"];
   };
-
-  appimageContents = appimageTools.extractType1 { inherit pname src; };
 in
-appimageTools.wrapType2 rec {
-  inherit pname version src;
+  appimageTools.wrapType2 rec {
+    inherit pname version src;
 
-  extraInstallCommands = ''
-    install -Dm644 ${desktopItem}/share/applications/*.desktop $out/share/applications/${pname}.desktop
-  '';
+    extraInstallCommands = ''
+      install -Dm644 ${desktopItem}/share/applications/*.desktop $out/share/applications/${pname}.desktop
+    '';
 
-  meta = with lib; {
-    description = "A privacy-focused browser";
-    homepage = "https://github.com/zen-browser/desktop";
-    license = licenses.unfree;
-    platforms = [ "aarch64-linux" ];
-  };
-}
+    meta = with lib; {
+      description = "A privacy-focused browser";
+      homepage = "https://github.com/zen-browser/desktop";
+      license = licenses.unfree;
+      platforms = ["aarch64-linux"];
+    };
+  }

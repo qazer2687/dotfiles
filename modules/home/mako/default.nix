@@ -7,7 +7,7 @@
   options.modules.mako.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.mako.enable {
-    home.packages = [ pkgs.libnotify ];
+    home.packages = [pkgs.libnotify];
     services.mako = {
       enable = true;
       backgroundColor = "#000000";

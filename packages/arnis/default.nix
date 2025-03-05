@@ -23,10 +23,10 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-CgZU4DHu2r8uCKSDWtkClLMmXVmbMGWM2qNbk+isasA=";
 
-  nativeBuildInputs = [ pkg-config autoPatchelfHook ];
+  nativeBuildInputs = [pkg-config autoPatchelfHook];
 
   # Common system libraries Rust projects often depend on
-  buildInputs = [ openssl zlib glib gtk3 webkitgtk_4_1 ];
+  buildInputs = [openssl zlib glib gtk3 webkitgtk_4_1];
 
   # Enable autoPatchelf for automatic library linking
   dontPatchELF = false;
@@ -40,7 +40,7 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/louis-e/arnis";
     changelog = "https://github.com/louis-e/arnis/releases/tag/v${version}";
     license = lib.licenses.asl20;
-    maintainers = with lib.maintainers; [ nartsiss ];
+    maintainers = with lib.maintainers; [nartsiss];
     mainProgram = "arnis";
   };
 }

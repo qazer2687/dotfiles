@@ -55,17 +55,16 @@
   };
 
   services.udev = {
-		# ESP32-CYD2USB Support
-		extraRules = ''
-    	SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
-  	'';
-	};
+    # ESP32-CYD2USB Support
+    extraRules = ''
+      SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
+    '';
+  };
 
   boot = {
     kernelParams = [
       # Disable core dumps.
       "kern.coredump=0"
-
 
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
@@ -156,7 +155,7 @@
   };
 
   # Experimental
-  
+
   /*
   security = {
     sudo.enable = false;

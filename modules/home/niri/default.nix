@@ -5,7 +5,6 @@
   inputs,
   ...
 }: let
-
   screenshot = pkgs.writeShellApplication {
     name = "screenshot";
     runtimeInputs = with pkgs; [
@@ -17,7 +16,6 @@
       grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy -t image/png
     '';
   };
-
 in {
   options.modules.niri.enable = lib.mkEnableOption "";
 
