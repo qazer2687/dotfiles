@@ -24,7 +24,7 @@
           servers = {
             nixd.enable = true;
             csharp_ls.enable = true;
-            lua_ls = true;
+            lua_ls.enable = true;
           };
         };
 
