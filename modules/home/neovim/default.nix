@@ -29,7 +29,11 @@
         };
 
         cmp.enable = true;
+
+       # lazy.enable = true;
       };
+
+      extraConfigLuaPre = builtins.readFile ./config/init.lua;
     };
   };
 }
