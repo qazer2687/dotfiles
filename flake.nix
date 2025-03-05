@@ -22,8 +22,6 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     ags.url = "github:aylur/ags";
 
-    tolerable-nvim = "github:wires-org/tolerable-nvim-nix#stable";
-
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland-plugins = {
@@ -89,8 +87,7 @@
                     inputs.ags.homeManagerModules.default
                     inputs.nur.modules.homeManager.default
                     inputs.sops-nix.homeManagerModules.sops
-                    #inputs.nixvim.homeManagerModules.nixvim
-                    inputs.tolerable-nvim.homeManagerModules.nvim
+                    inputs.nixvim.homeManagerModules.nixvim
                   ];
                 };
               }
