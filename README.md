@@ -10,15 +10,13 @@
     <img alt="License" src="https://img.shields.io/badge/License-GPLv3-907385605422448742?style=for-the-badge&color=ffffff&labelColor=222222"></a>
 </p>
 
-Hosts
-
-| Name         | Description                                                                                       |  Type   |     Arch      |
-| :----------- | :------------------------------------------------------------------------------------------------ | :-----: | :-----------: |
-| `jade`       | My desktop PC.                                                                                    | Desktop | x86_64-linux  |
-| `jet`        | The Asahi/NixOS install on my Macbook.                                                                  | Laptop  | aarch64-linux  |
-| `opal`       | My homeserver.                                                                                    | Server  | x86_64-linux  |
-| `ruby`       | My Thinkpad T480.                                                                 | Laptop  | x86_64-linux  |
-| `onyx`       | The nix-darwin MacOS install on my Macbook.                                               | Laptop  | aarch64-darwin  |
-| `amber`       | My VM for testing things.                                               | Virtual  | x86_64-linux  |
+| Name         | OS   | Description                                                                                       |  Type   |     Arch      |
+| :----------- | :--: | :------------------------------------------------------------------------------------------------ | :-----: | :-----------: |
+| `jade`       | NixOS| My desktop PC.                                                                                    | Desktop | x86_64-linux  |
+| `jet`        | NixOS | The Asahi/NixOS install on my Macbook.                                                            | Laptop  | aarch64-linux  |
+| `opal`       | NixOS | My homeserver.                                                                                    | Server  | x86_64-linux  |
+| `ruby`       | NixOS | My Thinkpad T480.                                                                 	           | Laptop  | x86_64-linux  |
+| `onyx`       | macOS | The nix-darwin MacOS install on my Macbook.                                                       | Laptop  | aarch64-darwin  |
+| `amber`      | NixOS | My VM for testing things.                                                                        | Virtual  | x86_64-linux  |
 
 <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
