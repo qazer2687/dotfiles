@@ -18,7 +18,7 @@
       };
       spiceUSBRedirection.enable = true;
     };
-    
+
     services.spice-vdagentd.enable = true;
 
     environment.systemPackages = with pkgs; [
@@ -29,7 +29,7 @@
       spice-protocol
       win-virtio
       win-spice
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
     ];
 
     users.users.alex.extraGroups = ["libvirtd"];
