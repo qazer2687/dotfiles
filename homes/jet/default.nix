@@ -29,7 +29,7 @@
     zen-browser
     
     # External Flake
-    inputs.zen-browser.packages."${system}".default
+    inputs.zen.packages."${system}".default
 
     # Development
     sqlitebrowser # SQLite Database Browser
