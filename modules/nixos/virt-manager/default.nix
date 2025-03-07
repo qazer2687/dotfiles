@@ -34,4 +34,3 @@
 
     users.users.alex.extraGroups = ["libvirtd"];
   };
-}
