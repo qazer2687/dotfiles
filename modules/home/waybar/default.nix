@@ -136,7 +136,7 @@
 
       style = ''
         * {
-          font-family: PragmataPro, FiraCode Mono Nerd Font;
+          font-family: Departure Mono, FiraCode Mono Nerd Font;
           font-size: 11px;
           background-color: transparent;
           margin-left: 4px;
