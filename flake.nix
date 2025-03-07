@@ -22,6 +22,8 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     ags.url = "github:aylur/ags";
 
+    zen.url = "github:0xc000022070/zen-browser-flake";
+
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland-plugins = {
@@ -61,6 +63,7 @@
                     inputs.sops-nix.homeManagerModules.sops
                     inputs.nixvim.homeManagerModules.nixvim
                     inputs.nix-flatpak.homeManagerModules.nix-flatpak
+                    inputs.zen.packages."${system}".default
                   ];
                 };
               }
