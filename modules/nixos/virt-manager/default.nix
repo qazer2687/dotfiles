@@ -19,10 +19,13 @@
       spiceUSBRedirection.enable = true;
     };
 
+    programs.virt-manager = {
+      enable = true;
+    };
+
     services.spice-vdagentd.enable = true;
 
     environment.systemPackages = with pkgs; [
-      virt-manager
       virt-viewer
       spice
       spice-gtk
@@ -34,3 +37,4 @@
 
     users.users.alex.extraGroups = ["libvirtd"];
   };
+}
