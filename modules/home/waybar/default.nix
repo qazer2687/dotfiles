@@ -113,6 +113,7 @@
           network = {
             tooltip = false;
             format-wifi = "  {ipaddr}"; # 󱐋 {frequency}
+            family = "ipv4";
             format-disconnected = " ";
             format-ethernet = " ";
             interval = 10;
