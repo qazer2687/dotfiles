@@ -63,7 +63,6 @@
                     inputs.sops-nix.homeManagerModules.sops
                     inputs.nixvim.homeManagerModules.nixvim
                     inputs.nix-flatpak.homeManagerModules.nix-flatpak
-                    inputs.zen.packages."aarch64-linux".default
                   ];
                 };
               }
