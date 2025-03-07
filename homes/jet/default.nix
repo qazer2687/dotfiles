@@ -24,7 +24,11 @@
 
     # Custom Packages
     arnis
+    # Appimage Version
     zen-browser
+    
+    # External Flake
+    inputs.zen-browser.packages."${system}".default
 
     # Development
     sqlitebrowser # SQLite Database Browser
