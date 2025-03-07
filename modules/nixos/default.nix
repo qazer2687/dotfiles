@@ -16,5 +16,6 @@
     ./gamemode
     ./tailscale
     ./rustdesk
+    ./virt-manager
   ];
 }
