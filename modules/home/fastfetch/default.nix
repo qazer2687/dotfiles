@@ -30,7 +30,7 @@
             "type": "sixel",
             "height": 10,
             "padding": {
-              "top": 1,
+              "top": 2,
               "left": 2,
               "bottom": 0
             }
