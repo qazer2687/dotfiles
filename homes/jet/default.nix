@@ -25,7 +25,9 @@
 
     # Custom Packages
     arnis
+
     # Appimage Version
+    # TODO: Remove this.
     zen-browser
     
     # External Flake
