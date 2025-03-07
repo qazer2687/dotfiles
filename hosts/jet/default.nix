@@ -65,7 +65,6 @@
     kernelParams = [
       # Disable core dumps.
       "kern.coredump=0"
-
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
       "quiet"
@@ -148,6 +147,8 @@
     # Marcan said something about it being ineffective on apple silicon.
     #zram.enable = true;
     tailscale.enable = true;
+
+    virt-manager.enable = true;
 
     server = {
       docker.enable = true;
