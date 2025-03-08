@@ -206,6 +206,14 @@
                 icon = "sh-mumble";
               };
             }
+            {
+              "Conduwuit" = {
+                description = "Matrix Homeserver";
+                server = "opal";
+                container = "conduwuit";
+                icon = "sh-conduwuit";
+              };
+            }
           ];
         }
       ];
