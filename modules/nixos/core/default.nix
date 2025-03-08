@@ -63,7 +63,7 @@
 
     nixpkgs = {
       config = {
-        # Permit the install of packages
+        # Permit the installation of packages
         # that have unfree licences.
         allowUnfree = true;
       };
