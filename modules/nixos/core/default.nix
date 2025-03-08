@@ -128,6 +128,7 @@
 
     environment = {
       defaultPackages = lib.mkForce [];
+      /*
       sessionVariables = {
         # Additional session variables can be used via
         # delcaring environment.sessionVariables in
@@ -135,6 +136,7 @@
         NIXPKGS_ALLOW_UNFREE = "1";
         NIXPKGS_ALLOW_INSECURE = "1";
       };
+      */
     };
 
     ########## MISC ##########
