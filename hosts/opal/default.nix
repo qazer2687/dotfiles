@@ -38,6 +38,7 @@
     allowedTCPPorts = [
       # Nginx Proxy Manager
       80
+      81
       443
       # Conduwuit
       8448
