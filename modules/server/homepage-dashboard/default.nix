@@ -127,6 +127,14 @@
                 icon = "sh-fail2ban";
               };
             }
+            {
+              "DDClient" = {
+                description = "Dynamic DNS";
+                server = "opal";
+                container = "ddclient";
+                icon = "sh-ddclient";
+              };
+            }
           ];
         }
         {
