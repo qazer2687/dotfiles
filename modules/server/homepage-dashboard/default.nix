@@ -28,17 +28,17 @@
           };
           Networking = {
             style = "column";
-            header = false;
+            header = true;
             rows = "4";
           };
           Monitoring = {
             style = "column";
-            header = false;
+            header = true;
             rows = "4";
           };
           Media = {
             style = "column";
-            header = false;
+            header = true;
             rows = "4";
           };
         };
@@ -133,6 +133,14 @@
                 server = "opal";
                 container = "ddclient";
                 icon = "sh-ddclient";
+              };
+            }
+            {
+              "Caddy" = {
+                description = "SSL & Proxy";
+                server = "opal";
+                container = "caddy";
+                icon = "sh-caddy";
               };
             }
           ];
