@@ -36,6 +36,7 @@
     # The services on these ports are public,
     # everything else is routed through my tailnet.
     allowedTCPPorts = [
+      22
       # Nginx Proxy Manager
       80
       81
