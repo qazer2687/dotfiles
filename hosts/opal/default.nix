@@ -35,6 +35,16 @@
   # seems to be set statefully somewhere.
   #services.xserver.displayManager.gdm.autoSuspend = false;
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      # Nginx
+      80
+      # Conduwuit
+      6167
+    ];
+  };
+
   modules = {
     core.enable = true;
     systemd-boot.enable = true;
