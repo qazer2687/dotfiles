@@ -33,12 +33,14 @@
 
   networking.firewall = {
     enable = true;
+    # The services on these ports are public,
+    # everything else is routed through my tailnet.
     allowedTCPPorts = [
-      # Nginx
+      # Nginx Proxy Manager
       80
       443
       # Conduwuit
-      6167
+      8448
     ];
   };
 
