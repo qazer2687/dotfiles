@@ -111,15 +111,6 @@
               };
             }
             {
-              "Nginx Proxy Manager" = {
-                description = "SSL & Proxy";
-                href = "https://npm.qazer.org";
-                server = "opal";
-                container = "nginx-proxy-manager";
-                icon = "sh-nginx-proxy-manager";
-              };
-            }
-            {
               "Fail2Ban" = {
                 description = "Malicious IP Blocking";
                 server = "opal";
