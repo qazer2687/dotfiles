@@ -63,8 +63,8 @@
 
     nixpkgs = {
       config = {
-        # Permit the installation of packages
-        # that have unfree licences.
+        # Permit the installation of
+        # packages with unfree licences.
         allowUnfree = true;
       };
       overlays = [
@@ -128,15 +128,11 @@
 
     environment = {
       defaultPackages = lib.mkForce [];
-      /*
       sessionVariables = {
         # Additional session variables can be used via
-        # delcaring environment.sessionVariables in
+        # declaring environment.sessionVariables in
         # the configuration for a specific host.
-        NIXPKGS_ALLOW_UNFREE = "1";
-        NIXPKGS_ALLOW_INSECURE = "1";
       };
-      */
     };
 
     ########## MISC ##########
