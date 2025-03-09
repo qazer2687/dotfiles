@@ -31,15 +31,12 @@
 
   hardware.nvidia-container-toolkit.enable = true;
 
-  # I have installed gnome before so autosuspend
-  # seems to be set statefully somewhere.
-  #services.xserver.displayManager.gdm.autoSuspend = false;
-
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [
       # Nginx
       80
+      443
       # Conduwuit
       6167
     ];
