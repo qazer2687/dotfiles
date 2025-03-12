@@ -145,11 +145,11 @@
         }
 
         window#waybar {
-          background-color: #000;
+          background-color: #161616;
         }
 
         tooltip {
-          background: rgba(0, 0, 0, 1);
+          background: #161616;
           border: 1px solid rgba(255, 255, 255, 1);
         }
         tooltip label {
@@ -173,7 +173,7 @@
           padding: 2px 4px;
           margin-top: 4px;
           margin-bottom: 4px;
-          color: #ffffff;
+          color: #ffffba;
         }
 
         #workspaces button {
@@ -181,13 +181,13 @@
           min-width: 0; /* Fix weird spacing in materia (waybar #450) */
           padding: 4px 0px;
           border-radius: 6px;
-          color: #606060;
+          color:rgb(138, 138, 138);
         }
         #workspaces button.active {
-          color: #ffffff;
+          color: #ffffba;
         }
         #workspaces button.focused{
-          color: #ffffff;
+          color: #ffffba;
         }
 
 
@@ -215,7 +215,7 @@
         }
         #pulseaudio-slider highlight {
           border-radius: 1px;
-          background-color: #FFFFFF;
+          background-color: #FFFFba;
           padding: 0;
           margin: 0;
           border: none;
@@ -226,16 +226,16 @@
 
         /* White MPRIS Background */
         #mpris {
-          background-color: #FFFFFF;
-          color: #000000;
+          background-color: #FFFFba;
+          color: #161616;
         }
 
         /* EDGE MARGINS */
         #clock {
           margin-left: 10px;
           margin-right: 4px;
-          background-color: #FFFFFF;
-          color: #000000;
+          background-color: #FFFFba;
+          color: #161616;
         }
         #battery {
           margin-right: 10px;
