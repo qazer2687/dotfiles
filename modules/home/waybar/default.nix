@@ -50,56 +50,28 @@
             format-charging = "󱐋 {capacity}%";
             interval = 10;
           };
-
-          "niri/workspaces" = {
-            format = "{icon}";
-            format-icons = {
-              "1" = "1";
-              "2" = "2";
-              "3" = "3";
-              "4" = "4";
-              "5" = "5";
-              "6" = "6";
-              "7" = "7";
-              "8" = "8";
-              "9" = "9";
-              "0" = "10";
+          
+          workspaces = let
+            cfg = {
+              format = "{icon}";
+              format-icons = {
+                "1" = "1";
+                "2" = "2";
+                "3" = "3";
+                "4" = "4";
+                "5" = "5";
+                "6" = "6";
+                "7" = "7";
+                "8" = "8";
+                "9" = "9";
+                "0" = "10";
+              };
+              sort-by-number = true;
             };
-            sort-by-number = true;
-          };
-
-          "sway/workspaces" = {
-            format = "{icon}";
-            format-icons = {
-              "1" = "1";
-              "2" = "2";
-              "3" = "3";
-              "4" = "4";
-              "5" = "5";
-              "6" = "6";
-              "7" = "7";
-              "8" = "8";
-              "9" = "9";
-              "0" = "10";
-            };
-            sort-by-number = true;
-          };
-
-          "hyprland/workspaces" = {
-            format = "{icon}";
-            format-icons = {
-              "1" = "1";
-              "2" = "2";
-              "3" = "3";
-              "4" = "4";
-              "5" = "5";
-              "6" = "6";
-              "7" = "7";
-              "8" = "8";
-              "9" = "9";
-              "0" = "10";
-            };
-            sort-by-number = true;
+          in {
+            "niri/workspaces" = cfg;
+            "sway/workspaces" = cfg;
+            "hyprland/workspaces" = cfg;
           };
 
           backlight = {
@@ -126,8 +98,8 @@
             player-icons = {
               default = " ";
             };
-            artist-len = 25;
-            title-len = 35;
+            artist-len = 24;
+            title-len = 34;
             status-icons = {
               paused = " ";
             };
@@ -145,7 +117,7 @@
         }
 
         window#waybar {
-          background-color: transparent;
+          background-color: #000000;
         }
 
         tooltip {
@@ -173,7 +145,7 @@
           padding: 2px 4px;
           margin-top: 4px;
           margin-bottom: 4px;
-          color: #ffffd6;
+          color: #ffffff;
         }
 
         #workspaces button {
@@ -184,49 +156,15 @@
           color:rgb(138, 138, 138);
         }
         #workspaces button.active {
-          color: #ffffd6;
+          color: #ffffff;
         }
         #workspaces button.focused{
-          color: #ffffd6;
-        }
-
-
-        #pulseaudio-slider {
-          all: unset;
-        }
-        #pulseaudio-slider slider {
-          min-height: 0px;
-          min-width: 0px;
-          padding: 0;
-          margin: 0;
-          opacity: 0;
-          background-image: none;
-          border: none;
-          box-shadow: none;
-          border-color: transparent;
-        }
-        #pulseaudio-slider trough {
-          min-width: 50px;
-          min-height: 10px;
-          border-radius: 2px;
-          padding: 0;
-          margin: 0;
-          border-color: #606060;
-        }
-        #pulseaudio-slider highlight {
-          border-radius: 1px;
-          background-color: #ffffd6;
-          padding: 0;
-          margin: 0;
-          border: none;
-          outline: none;
-          box-shadow: none;
-          text-decoration: none;
+          color: #ffffff;
         }
 
         /* White MPRIS Background */
         #mpris {
-          background-color: #ffffd6;
+          background-color: #ffffff;
           color: #000000;
         }
 
@@ -234,7 +172,7 @@
         #clock {
           margin-left: 10px;
           margin-right: 4px;
-          background-color: #ffffd6;
+          background-color: #ffffff;
           color: #000000;
         }
         #battery {
