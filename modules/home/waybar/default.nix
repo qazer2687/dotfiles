@@ -39,7 +39,8 @@
             };
           };
           clock = {
-            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
+            format = "{%H:%M:%S}";
+            format-alt = "{:%Y/%m/%d}";
             tooltip = false;
           };
 
@@ -50,7 +51,7 @@
             format-charging = "󱐋 {capacity}%";
             interval = 10;
           };
-          
+
           workspaces = let
             cfg = {
               format = "{icon}";
