@@ -145,11 +145,11 @@
         }
 
         window#waybar {
-          background-color: #161616;
+          background-color: #00000000;
         }
 
         tooltip {
-          background: #161616;
+          background: #000000;
           border: 1px solid rgba(255, 255, 255, 1);
         }
         tooltip label {
@@ -227,7 +227,7 @@
         /* White MPRIS Background */
         #mpris {
           background-color: #ffffd6;
-          color: #161616;
+          color: #000000;
         }
 
         /* EDGE MARGINS */
@@ -235,7 +235,7 @@
           margin-left: 10px;
           margin-right: 4px;
           background-color: #ffffd6;
-          color: #161616;
+          color: #000000;
         }
         #battery {
           margin-right: 10px;
