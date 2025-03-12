@@ -173,7 +173,7 @@
           padding: 2px 4px;
           margin-top: 4px;
           margin-bottom: 4px;
-          color: #ffffba;
+          color: #ffffd6;
         }
 
         #workspaces button {
@@ -184,10 +184,10 @@
           color:rgb(138, 138, 138);
         }
         #workspaces button.active {
-          color: #ffffba;
+          color: #ffffd6;
         }
         #workspaces button.focused{
-          color: #ffffba;
+          color: #ffffd6;
         }
 
 
@@ -215,7 +215,7 @@
         }
         #pulseaudio-slider highlight {
           border-radius: 1px;
-          background-color: #FFFFba;
+          background-color: #ffffd6;
           padding: 0;
           margin: 0;
           border: none;
@@ -226,7 +226,7 @@
 
         /* White MPRIS Background */
         #mpris {
-          background-color: #FFFFba;
+          background-color: #ffffd6;
           color: #161616;
         }
 
@@ -234,7 +234,7 @@
         #clock {
           margin-left: 10px;
           margin-right: 4px;
-          background-color: #FFFFba;
+          background-color: #ffffd6;
           color: #161616;
         }
         #battery {
