@@ -136,22 +136,26 @@
   modules = {
     core.enable = true;
     bluetooth.enable = true;
+    
     # Sound is managed via the setupAsahiSound option
     # and I do not need easyeffects installed on Jet.
-    #pipewire.enable = true;
+    # pipewire.enable = true;
+
     systemd-boot.enable = true;
     filesystem = {
       enable = true;
       apfsSupport = true;
     };
+
     # Marcan said something about it being ineffective on apple silicon.
-    #zram.enable = true;
+    # zram.enable = true;
+
     tailscale.enable = true;
 
-    virt-manager.enable = true;
+    virt-manager.enable = false;
 
     server = {
-      docker.enable = true;
+      docker.enable = false;
     };
   };
 
