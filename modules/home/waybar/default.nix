@@ -39,7 +39,7 @@
             };
           };
           clock = {
-            format = "{%H:%M:%S}";
+            format = "{:%H:%M:%S}";
             format-alt = "{:%Y/%m/%d}";
             tooltip = false;
           };
