@@ -69,7 +69,7 @@
 
     # Gaming
     # prismlauncher.enable = true;
-    # mangohud.enable = true;
+    mangohud.enable = true;
 
   };
 
