@@ -140,9 +140,6 @@ in {
           disable_splash_rendering = true;
           disable_hyprland_logo = true;
           vfr = true;
-          # Keep waybar visible in fullscreen applications while 
-          # preventing them from being covered by the notch.
-          fullscreen_padding = "28 0 0 0";
         };
 
         # Smart Gaps
