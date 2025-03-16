@@ -18,7 +18,7 @@
         hideVersion = "true";
         showStats = "true";
         statusStyle = "basic"; # dot / basic
-        headerStyle = "boxedWidgets";
+        headerStyle = "boxed";
 
         layout = {
           Bookmarks = {
@@ -28,17 +28,17 @@
           };
           Networking = {
             style = "column";
-            header = true;
+            header = false;
             rows = "4";
           };
           Monitoring = {
             style = "column";
-            header = true;
+            header = false;
             rows = "4";
           };
           Media = {
             style = "column";
-            header = true;
+            header = false;
             rows = "4";
           };
         };
@@ -75,6 +75,7 @@
         }
       ];
 
+      /*
       bookmarks = [
         {
           "Bookmarks" = [
@@ -97,6 +98,7 @@
           ];
         }
       ];
+      */
 
       services = [
         {
