@@ -29,7 +29,7 @@
           Docker = {
             style = "row";
             header = false;
-            columns = "5";
+            columns = "3";
           };
         };
       };
