@@ -26,17 +26,7 @@
             header = false;
             columns = "2";
           };
-          Networking = {
-            style = "column";
-            header = false;
-            rows = "4";
-          };
-          Monitoring = {
-            style = "column";
-            header = false;
-            rows = "4";
-          };
-          Media = {
+          Docker = {
             style = "column";
             header = false;
             rows = "4";
@@ -102,7 +92,7 @@
 
       services = [
         {
-          "Networking" = [
+          "Docker" = [
             {
               "Pihole" = {
                 description = "DNS Server";
@@ -144,10 +134,6 @@
                 icon = "sh-authelia";
               };
             }
-          ];
-        }
-        {
-          "Monitoring" = [
             {
               "Grafana" = {
                 description = "Observability Platform";
@@ -183,10 +169,6 @@
                 icon = "sh-cadvisor";
               };
             }
-          ];
-        }
-        {
-          "Media" = [
             /*
             {
               "Nextcloud" = {
