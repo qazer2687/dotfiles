@@ -134,6 +134,14 @@
                 icon = "sh-caddy";
               };
             }
+            {
+              "Authelia" = {
+                description = "2FA & SSO";
+                server = "opal";
+                container = "authelia";
+                icon = "sh-authelia";
+              };
+            }
           ];
         }
         {
