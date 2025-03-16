@@ -27,9 +27,9 @@
             columns = "2";
           };
           Docker = {
-            style = "column";
+            style = "row";
             header = false;
-            rows = "4";
+            columns = "5";
           };
         };
       };
