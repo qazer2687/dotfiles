@@ -26,10 +26,6 @@
     # Custom Packages
     arnis
 
-    # Appimage Version
-    # TODO: Remove this.
-    zen-browser
-    
     # External Flake
     inputs.zen.packages."${system}".default
 
