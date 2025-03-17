@@ -213,6 +213,22 @@
                 icon = "sh-conduwuit";
               };
             }
+            {
+              "File Browser" = {
+                description = "Web File Manager";
+                server = "opal";
+                container = "filebrowser";
+                icon = "sh-file-browser";
+              };
+            }
+            {
+              "OpenTTD" = {
+                description = "Business Simulation Game";
+                server = "opal";
+                container = "openttd";
+                icon = "sh-openttd";
+              };
+            }
           ];
         }
       ];
