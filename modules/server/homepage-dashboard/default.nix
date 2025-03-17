@@ -16,7 +16,8 @@
         background = "https://preview.redd.it/7680-4320-gradient-blur-4k-wallapapers-v0-6u0dhbv51tbb1.png?width=7680&format=png&auto=webp&s=dd3e47bbdf3f8726432b5742748bef422fad10a8";
         color = "slate";
         hideVersion = "true";
-        showStats = "false";
+        # Changing to false does not work, needs to be commented out.
+        #showStats = "true";
         statusStyle = "basic"; # dot / basic
         headerStyle = "boxed";
 
