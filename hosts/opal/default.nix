@@ -28,8 +28,9 @@
     consoleLogLevel = 0;
 
     kernelPackages = pkgs.linuxPackages_cachyos;
-    services.scx.enable = true;
   };
+
+  services.scx.enable = true;
 
   networking.firewall = {
     enable = true;
