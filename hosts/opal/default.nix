@@ -4,6 +4,8 @@
     ../../modules/nixos
   ];
 
+  networking.hostName = "opal";
+
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
@@ -22,13 +24,9 @@
     initrd.verbose = false;
     consoleLogLevel = 0;
 
-    #kernelPackages = pkgs.linuxPackages_cachyos;
-    #kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelPackages = pkgs.linuxPackages_cachyos;
+    services.scx.enable = true;
   };
-
-  networking.hostName = "opal";
-
-  hardware.nvidia-container-toolkit.enable = true;
 
   networking.firewall = {
     enable = true;
