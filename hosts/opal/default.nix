@@ -52,7 +52,6 @@
     systemd-boot.enable = true;
     zram.enable = true;
     tailscale.enable = true;
-    nvidia.enable = true;
     docker.enable = true;
   };
 

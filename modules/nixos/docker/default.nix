@@ -12,7 +12,7 @@
     virtualisation.docker = {
       enable = true;
       daemon.settings = {
-        features.cdi = true;
+        #features.cdi = true;
         data-root = "/var/lib/docker";
         "hosts" = ["tcp://0.0.0.0:2376" "unix:///var/run/docker.sock"];
       };
