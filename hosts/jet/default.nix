@@ -2,7 +2,6 @@
   imports = [
     ../../hardware/jet
     ../../modules/nixos
-    ../../modules/server
   ];
 
   networking.hostName = "jet";
@@ -154,9 +153,8 @@
 
     virt-manager.enable = false;
 
-    server = {
-      docker.enable = false;
-    };
+    docker.enable = false;
+
   };
 
   # Experimental
