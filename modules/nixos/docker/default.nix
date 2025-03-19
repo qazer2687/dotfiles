@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.modules.server.docker.enable = lib.mkEnableOption "";
+  options.modules.docker.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.server.docker.enable {
+  config = lib.mkIf config.modules.docker.enable {
     
     users.users.alex.extraGroups = ["docker"];
 

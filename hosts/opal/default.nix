@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ../../hardware/opal
-    ../../modules/server
     ../../modules/nixos
   ];
 
@@ -52,11 +51,7 @@
     zram.enable = true;
     tailscale.enable = true;
     nvidia.enable = true;
-
-    server = {
-      docker.enable = true;
-      homepage-dashboard.enable = true;
-    };
+    docker.enable = true;
   };
 
   # Did you read the comment?

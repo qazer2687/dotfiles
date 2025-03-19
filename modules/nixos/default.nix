@@ -17,5 +17,6 @@
     ./tailscale
     ./rustdesk
     ./virt-manager
+    ./docker
   ];
 }

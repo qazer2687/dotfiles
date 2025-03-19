@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ../../hardware/amber
-    ../../modules/server
     ../../modules/nixos
   ];
 
