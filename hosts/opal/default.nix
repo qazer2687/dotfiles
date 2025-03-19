@@ -32,15 +32,15 @@
 
   networking.firewall = {
     enable = true;
-    # The services on these ports are public,
-    # everything else is routed through my tailnet.
+    # I use a reverse proxy for everything but these things require ports to be open.
     allowedTCPPorts = [
+      # SSH
       22
-      # Nginx Proxy Manager
+      # Caddy
       80
       81
       443
-      # Conduwuit
+      # Conduwuit (Matrix)
       8448
     ];
   };
