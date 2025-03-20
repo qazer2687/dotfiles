@@ -49,22 +49,14 @@
     fastfetch.enable = true;
     webcam.enable = true;
     eza.enable = true;
-    #mpd.enable = true;
+    # mpd.enable = true;
     direnv.enable = true;
     git.enable = true;
     bat.enable = true;
-    #neovim.enable = true;
+    # neovim.enable = true;
 
     # GUI
     vscode.enable = true;
-
-    # Security
-    # gpg.enable = true;
-
-    # Gaming
-    # prismlauncher.enable = true;
-    #mangohud.enable = true;
-
   };
 
   home.stateVersion = "24.11";
