@@ -51,7 +51,7 @@
     fastfetch.enable = true;
     webcam.enable = true;
     eza.enable = true;
-    mpd.enable = true;
+    #mpd.enable = true;
     direnv.enable = true;
     git.enable = true;
     bat.enable = true;
@@ -65,7 +65,7 @@
 
     # Gaming
     # prismlauncher.enable = true;
-    mangohud.enable = true;
+    #mangohud.enable = true;
 
   };
 
