@@ -26,6 +26,10 @@
       # Disable the watchdog timer to stop
       # watchdog from hanging on poweroff.
       "iTCO_wdt"
+      # Wi-Fi
+      "iwlwifi"
+      # Bluetooth
+      "btusb" 
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
@@ -34,6 +38,11 @@
   };
 
   services.scx.enable = true;
+
+  # Prevent log files from becoming too large.
+  services.journald.extraConfig = ''
+    SystemMaxUse=100M
+  '';
 
   networking.firewall = {
     enable = true;
