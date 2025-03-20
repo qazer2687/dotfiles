@@ -18,6 +18,9 @@
     kernelParams = [
       "quiet"
       "mitigations=off"
+
+      # https://wiki.cachyos.org/configuration/general_system_tweaks/?utm_source=chatgpt.com#enable-rcu-lazy
+      "rcutree.enable_rcu_lazy=1"
     ];
     blacklistedKernelModules = [
       # Disable the watchdog timer to stop
