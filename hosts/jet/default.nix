@@ -150,11 +150,6 @@
     # zram.enable = true;
 
     tailscale.enable = true;
-
-    virt-manager.enable = false;
-
-    docker.enable = false;
-
   };
 
   # Experimental
