@@ -12,8 +12,9 @@
     # Graphical
     obsidian
     nautilus
-    fragments
-    calibre
+    #fragments
+    # Broken on unstable.
+    # calibre
     vlc
     loupe
     ffmpeg-full
@@ -23,14 +24,11 @@
     ncdu
     neovim
 
-    # Custom Packages
-    arnis
+    # Internal
+    #arnis
 
-    # External Flake
+    # External
     inputs.zen.packages."${system}".default
-
-    # Development
-    sqlitebrowser # SQLite Database Browser
   ];
 
   # Enable rich presence support for Discord on the web.
