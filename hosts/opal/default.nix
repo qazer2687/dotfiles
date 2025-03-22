@@ -44,6 +44,8 @@
     SystemMaxUse=100M
   '';
 
+  services.vscode-server.enable = true;
+
   networking.firewall = {
     enable = true;
     # I use a reverse proxy for everything but these things require ports to be open.
