@@ -54,6 +54,8 @@
       80
       81
       443
+      # qBittorrent
+      6881
       # Conduwuit (Matrix)
       8448
     ];
