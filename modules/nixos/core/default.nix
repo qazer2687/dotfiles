@@ -132,14 +132,6 @@
         # Additional session variables can be used via
         # declaring environment.sessionVariables in
         # the configuration for a specific host.
-
-        # XDG Specification
-        XDG_CACHE_HOME = lib.mkDefault "$HOME/.cache";
-        XDG_CONFIG_DIRS = lib.mkDefault "/etc/xdg";
-        XDG_CONFIG_HOME = lib.mkDefault "$HOME/.config";
-        XDG_DATA_DIRS = lib.mkDefault "/usr/local/share/:/usr/share/";
-        XDG_DATA_HOME = lib.mkDefault "$HOME/.local/share";
-        XDG_STATE_HOME = lib.mkDefault "$HOME/.local/state";
       };
     };
 
