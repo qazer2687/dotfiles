@@ -8,8 +8,7 @@
     nur.url = "github:nix-community/NUR";
     darwin.url = "github:lnl7/nix-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
-
+    
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     #asahi.url = "github:qazer2687/nixos-apple-silicon";
 
@@ -125,7 +124,6 @@
             specialArgs = {inherit inputs self;};
             modules = [
               ./hosts/opal
-              inputs.vscode-server.nixosModules.default
               inputs.sops-nix.nixosModules.sops
               inputs.nyx.nixosModules.default
             ];
