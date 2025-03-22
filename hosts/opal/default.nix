@@ -63,6 +63,13 @@
     git
   ];
 
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
+    };
+  };
+
   modules = {
     core.enable = true;
     systemd-boot.enable = true;
