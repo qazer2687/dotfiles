@@ -61,6 +61,10 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    git
+  ];
+
   modules = {
     core.enable = true;
     systemd-boot.enable = true;
