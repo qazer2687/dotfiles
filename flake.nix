@@ -26,7 +26,7 @@
     zen.url = "github:0xc000022070/zen-browser-flake/7de16ae319e6f6852274fa90b0d41c00049767c9";
 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland-plugins = {
     #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
