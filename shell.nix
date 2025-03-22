@@ -6,5 +6,7 @@ pkgs.mkShell {
     deadnix
     sops
     llvmPackages_12.clang-tools
+
+    nixd
   ];
 }
