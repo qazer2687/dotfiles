@@ -44,8 +44,6 @@
     SystemMaxUse=100M
   '';
 
-  services.vscode-server.enable = true;
-
   networking.firewall = {
     enable = true;
     # I use a reverse proxy for everything but these things require ports to be open.
@@ -72,6 +70,8 @@
     tailscale.enable = true;
     docker.enable = true;
   };
+
+  programs.nix-ld.enable = true;
 
   # Did you read the comment?
   system.stateVersion = "23.05";
