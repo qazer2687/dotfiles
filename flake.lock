@@ -1255,6 +1255,7 @@
       "original": {
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
+        "rev": "7de16ae319e6f6852274fa90b0d41c00049767c9",
         "type": "github"
       }
     }
