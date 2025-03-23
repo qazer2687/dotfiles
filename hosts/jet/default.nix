@@ -152,6 +152,31 @@
     tailscale.enable = true;
   };
 
+  # There's no point making this a module as almost
+  # all the options are specific to the host.
+  services.syncthing = {
+    enable = true;
+    user = "alex";
+    openDefaultPorts = true;
+    guiAddress = "127.0.0.1:8384";
+    settings = {
+      devices = {
+        "opal" = {
+          id = "QWAKCNB-A7RZGQ3-JPZYY2B-NVUAWJT-S66JN2G-ERNYBDJ-6NFT2WB-BILFRQ4";
+          address = "dynamic";
+        };
+      };
+
+      folders = {
+        # Obsidian Vault
+        "vault" = {
+          path = "/home/alex/Vault";
+          devices = [ "opal" ];
+        };
+      };
+    };
+  };
+
   # Experimental
 
   /*
