@@ -154,7 +154,6 @@
 
   # There's no point making this a module as almost
   # all the options are specific to the host.
-
   services.syncthing = {
     enable = true;
     user = "alex";
