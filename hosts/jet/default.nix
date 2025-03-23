@@ -154,17 +154,15 @@
 
   # There's no point making this a module as almost
   # all the options are specific to the host.
+
   services.syncthing = {
     enable = true;
-    user = "alex";
+    openDefaultPorts = true;
     settings = {
       devices = {
-        "opal" = {
-          id = "QWAKCNB-A7RZGQ3-JPZYY2B-NVUAWJT-S66JN2G-ERNYBDJ-6NFT2WB-BILFRQ4";
-          address = "dynamic";
-        };
+        "opal" = { id = "QWAKCNB-A7RZGQ3-JPZYY2B-NVUAWJT-S66JN2G-ERNYBDJ-6NFT2WB-BILFRQ4"; };
+      #  "device2" = { id = "DEVICE-ID-GOES-HERE"; };
       };
-
       folders = {
         # Obsidian Vault
         "vault" = {
