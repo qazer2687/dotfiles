@@ -59,6 +59,10 @@
       # Conduwuit (Matrix)
       8448
     ];
+    allowedUDPPorts = [
+      # qBittorrent
+      6881
+    ];
   };
 
   environment.systemPackages = with pkgs; [
