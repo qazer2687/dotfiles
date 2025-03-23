@@ -157,6 +157,8 @@
   services.syncthing = {
     enable = true;
     user = "alex";
+    dataDir = "/home/alex/syncthing";    # Default folder for new synced folders
+    configDir = "/home/alex/.config/syncthing";   # Folder for Syncthing's settings and keys
     openDefaultPorts = true;
     settings = {
       devices = {
