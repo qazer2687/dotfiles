@@ -152,6 +152,7 @@
     tailscale.enable = true;
   };
 
+
   # There's no point making this a module as almost
   # all the options are specific to the host.
   services.syncthing = {
@@ -163,17 +164,18 @@
     settings = {
       devices = {
         "opal" = { id = "QWAKCNB-A7RZGQ3-JPZYY2B-NVUAWJT-S66JN2G-ERNYBDJ-6NFT2WB-BILFRQ4"; };
-      #  "device2" = { id = "DEVICE-ID-GOES-HERE"; };
+        "jadeite" = { id = "XTUFON3-NBWX2JE-67545KM-4SAEZP7-56HNZAK-UHGRM4B-5CFGWJR-5WTKSQ6"; };
       };
       folders = {
         # Obsidian Vault
         "vault" = {
           path = "/home/alex/Vault";
-          devices = [ "opal" ];
+          devices = [ "opal" "jadeite" ];
         };
       };
     };
   };
+
 
   # Experimental
 
