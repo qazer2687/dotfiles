@@ -158,8 +158,6 @@
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
-    dataDir = "/home/alex";
-    configDir = "/home/alex/.config/syncthing";
     settings = {
       devices = {
         "opal" = { id = "QWAKCNB-A7RZGQ3-JPZYY2B-NVUAWJT-S66JN2G-ERNYBDJ-6NFT2WB-BILFRQ4"; };
