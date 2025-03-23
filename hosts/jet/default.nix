@@ -157,6 +157,7 @@
 
   services.syncthing = {
     enable = true;
+    user = "alex";
     openDefaultPorts = true;
     settings = {
       devices = {
