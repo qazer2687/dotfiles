@@ -37,6 +37,7 @@
       mode = "0400";
       path = "${config.home.homeDirectory}/.config/nix/githubAccessTokens.conf";
     };
-    nix.extraOptions = "!include ${config.sops.secrets."github"."qazer2687"."access-tokens".path}";
+    nix.extraOptions = "!include ${config.sops.secrets.githubAccessTokens.github.qazer2687.access-token.path}";
+
   };
 }
