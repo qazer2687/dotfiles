@@ -150,12 +150,8 @@
     # High performance implementation of the dbus specification.
     services.dbus.implementation = "broker";
 
-    # For testing purposes.
-    /*
-    programs.nix-ld = {
-      enable = true;
-      libraries = with pkgs; [ glibc libcxx libclang ];
-    };
-    */
+    # For vscode server until I configure the vscode server flake:
+    # https://github.com/nix-community/nixos-vscode-server.
+    programs.nix-ld.enable = true;
   };
 }
