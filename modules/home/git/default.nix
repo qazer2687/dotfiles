@@ -42,15 +42,15 @@
       '';
     };
 
-    # Create a sops object for the ssh-keys.
+    # SSH Keys
     sops.secrets.ssh-keys = {
       sopsFile = ../../../secrets/ssh-keys.yaml;
-      mode = "0440"; # RO
+      mode = "0400";
       path = "${config.home.homeDirectory}/.config/nix/ssh-keys";
       key = "github-qazer2687";
     };
 
-    # Create a sops object for the access-token.
+    # Access Tokens
     sops.secrets.access-tokens = {
       sopsFile = ../../../secrets/access-tokens.yaml;
       mode = "0400";
