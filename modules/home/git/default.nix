@@ -15,6 +15,13 @@
       userEmail = "114782572+qazer2687@users.noreply.github.com";
     };
 
+    # Aliases to convert a git repository from https to ssh and vice versa.
+    # https://stackoverflow.com/a/52348042
+    home.shellAliases = {
+      "git-https" = "git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')";
+      "git-ssh" = "git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')";
+    };
+
     home.file.".ssh/config" = {
       # This is a fix from stackoverflow that allows connecting to github over SSH when port 22 is blocked.
       # https://stackoverflow.com/questions/7953806/github-ssh-via-public-wifi-port-22-blocked
