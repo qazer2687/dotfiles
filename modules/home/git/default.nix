@@ -31,13 +31,12 @@
       '';
     };
 
-    # Add github tokens encrypted via sops to nix.conf.
+    # Create a sops object for the access-token.
     sops.secrets.githubAccessTokens = {
       sopsFile = ../../../secrets/githubAccessTokens.yaml;
       mode = "0440"; # RO
       #path = "${config.home.homeDirectory}/.config/nix/githubAccessTokens.conf";
       key = "qazer2687";
     };
-    nix.extraOptions = "!include ${config.sops.secrets."githubAccessTokens".path}";
   };
 }
