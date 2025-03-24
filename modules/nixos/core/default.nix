@@ -40,9 +40,6 @@
           "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         ];
 
-        # Load git access-tokens into conf.nix.
-        extraOptions = "!include ${config.sops.secrets."githubAccessTokens".path}";
-
         experimental-features = [
           "nix-command"
           "flakes"
