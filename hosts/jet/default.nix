@@ -11,6 +11,7 @@
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "video" "audio" "dialout"];
       hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
+      shell = pkgs.fish;
     };
   };
 
