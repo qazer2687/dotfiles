@@ -27,7 +27,6 @@
     ./gpg
     ./mangohud
     ./niri
-    ./ags
     ./mpd
     ./fastfetch
     ./hyprpanel
