@@ -40,6 +40,6 @@
       #mode = "0400";
       #sopsFile = "${self}/secrets/users/nmelzer/default.yaml";
     };
-    nix.extraOptions = "!include ${config.sops.secrets."access-tokens".path}";
+    nix.extraOptions = "!include ${config.sops.secrets."githubAccessTokens".path}";
   };
 }
