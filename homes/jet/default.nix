@@ -62,6 +62,9 @@
   home.stateVersion = "24.11";
   home.homeDirectory = lib.mkForce "/home/alex";
 
-  sops.defaultSopsFile = ../../../secrets/default.yaml;
-  
+  sops = {
+      defaultSopsFormat = "yaml";
+      defaultSopsFile = ../../../secrets/default.yaml;
+      age.keyFile = "/home/alex/.config/sops/age/keys.txt";
+    };
 }
