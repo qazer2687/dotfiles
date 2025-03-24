@@ -38,6 +38,6 @@
       #path = "${config.home.homeDirectory}/.config/nix/githubAccessTokens.conf";
       key = "github.qazer2687.access-token";
     };
-    nix.extraOptions = "!include ${config.sops.secrets.githubAccessTokens.path}";
+    nix.extraOptions = "!include ${config.sops.secrets."githubAccessTokens".path}";
   };
 }
