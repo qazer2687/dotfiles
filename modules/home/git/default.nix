@@ -18,10 +18,14 @@
     home.file.".ssh/config" = {
       # This is a fix from stackoverflow that allows connecting to github over SSH when port 22 is blocked.
       # https://stackoverflow.com/questions/7953806/github-ssh-via-public-wifi-port-22-blocked
+      # I also add an identity file which allows me to use my github ssh key to authenticate with github
+      # which is managed by sops. I know it's not technically correct to say 'ssh-keys' given it's a single one
+      # but this serves as a proof of concept for the time being.
       text = ''
         Host github.com
           Hostname ssh.github.com
           Port 443
+          IdentityFile ~/.config/nix/ssh-keys
       '';
       # This is a fix from github that handles the 'bad owner or permissions on ~/.ssh/config' error.
       # https://github.com/nix-community/home-manager/issues/322#issuecomment-1856128020
@@ -31,15 +35,23 @@
       '';
     };
 
-    # Create a sops object for the access-token.
-    sops.secrets.githubAccessTokens = {
-      sopsFile = ../../../secrets/githubAccessTokens.yaml;
+    # Create a sops object for the ssh-keys.
+    sops.secrets.ssh-keys = {
+      sopsFile = ../../../secrets/ssh-keys.yaml;
       mode = "0440"; # RO
-      path = "${config.home.homeDirectory}/.config/nix/githubAccessTokens.conf";
+      path = "${config.home.homeDirectory}/.config/nix/ssh-keys";
+      key = "github-qazer2687";
+    };
+
+    # Create a sops object for the access-token.
+    sops.secrets.access-tokens = {
+      sopsFile = ../../../secrets/access-tokens.yaml;
+      mode = "0440"; # RO
+      path = "${config.home.homeDirectory}/.config/nix/access-tokens.conf";
       key = "qazer2687";
     };
 
-    # Load the sops object into conf.nix.
-    nix.extraOptions = "!include ${config.sops.secrets."githubAccessTokens".path}";
+    # Load the from the sops plaintext file into conf.nix.
+    nix.extraOptions = "!include ${config.sops.secrets."access-tokens".path}";
   };
 }
