@@ -35,7 +35,7 @@
     sops.secrets.githubAccessTokens = {
       sopsFile = "../../secrets/githubAccessTokens.yaml";
       mode = "0400";
-      #path = "${config.home.homeDirectory}/.config/nix/githubAccessTokens.conf";
+      path = "${config.home.homeDirectory}/.config/nix/githubAccessTokens.conf";
     };
     nix.extraOptions = "!include ${config.sops.secrets."githubAccessTokens".path}";
   };
