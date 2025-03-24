@@ -126,6 +126,17 @@
               ./hosts/opal
               inputs.sops-nix.nixosModules.sops
               inputs.nyx.nixosModules.default
+              {
+                home-manager = {
+                  users.alex = ./homes/opal;
+                  extraSpecialArgs = {inherit inputs self;};
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  sharedModules = [
+                    inputs.sops-nix.homeManagerModules.sops
+                  ];
+                };
+              }
             ];
           };
         };
