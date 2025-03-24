@@ -53,7 +53,7 @@
     # Create a sops object for the access-token.
     sops.secrets.access-tokens = {
       sopsFile = ../../../secrets/access-tokens.yaml;
-      mode = "0440"; # RO
+      mode = "0400";
       path = "${config.home.homeDirectory}/.config/nix/access-tokens.conf";
       key = "qazer2687";
     };
