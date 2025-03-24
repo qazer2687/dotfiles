@@ -229,7 +229,7 @@ in {
           "hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
           "waybar"
           # "hyprpanel"
-          "${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
+          "${pkgs.hyprsunset}/bin/hyprsunset -t 2500"
         ];
       };
 

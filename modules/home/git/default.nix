@@ -1,8 +1,11 @@
 {
   lib,
   config,
+  inputs,
   ...
 }: {
+
+  
   options.modules.git.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.git.enable {
@@ -26,6 +29,17 @@
       onChange = ''
         cat ~/.ssh/config_source > ~/.ssh/config && chmod 400 ~/.ssh/config
       '';
+    };
+
+    # Add github tokens encrypted via sops to nix.conf.
+    nix = {
+      extraOptions = ''
+        !include ${config.sops.secrets.githubAccessTokens.path}
+      '';
+    };
+    sops.secrets.githubAccessTokens = {
+      path = "/secrets/githubAccessTokens.yaml";
+      mode = "0440"; # RO
     };
   };
 }
