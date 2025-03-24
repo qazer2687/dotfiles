@@ -33,13 +33,9 @@
 
     # Add github tokens encrypted via sops to nix.conf.
     sops.secrets.githubAccessTokens = {
-      path = "/secrets/githubAccessTokens.yaml";
+      path = "${self}/secrets/githubAccessTokens.yaml";
       mode = "0440"; # RO
     };
-    nix = {
-      extraOptions = ''
-        !include ${config.sops.secrets.githubAccessTokens.path}
-      '';
-    };
+    nix.extraOptions = "!include ${config.sops.secrets."access-tokens".path}";
   };
 }
