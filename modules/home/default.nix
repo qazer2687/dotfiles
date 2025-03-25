@@ -29,7 +29,7 @@
     ./niri
     ./mpd
     ./fastfetch
-    ./hyprpanel
+    #./hyprpanel
     ./hyprlock
   ];
 }
