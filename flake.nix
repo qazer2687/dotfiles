@@ -134,7 +134,12 @@
                   useGlobalPkgs = true;
                   useUserPackages = true;
                   sharedModules = [
+                    inputs.niri.homeModules.niri
+                    inputs.hyprpanel.homeManagerModules.hyprpanel
+                    inputs.ags.homeManagerModules.default
+                    inputs.nur.modules.homeManager.default
                     inputs.sops-nix.homeManagerModules.sops
+                    inputs.nixvim.homeManagerModules.nixvim
                   ];
                 };
               }
