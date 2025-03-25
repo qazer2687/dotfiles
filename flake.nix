@@ -126,6 +126,7 @@
               ./hosts/opal
               inputs.sops-nix.nixosModules.sops
               inputs.nyx.nixosModules.default
+              inputs.home-manager.nixosModules.home-manager
               {
                 home-manager = {
                   users.alex = ./homes/opal;
