@@ -16,6 +16,8 @@
     shell = pkgs.fish;
   };
 
+  programs.fish.enable = true;
+
   boot = {
     kernelParams = [
       "quiet"
