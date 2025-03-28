@@ -3,6 +3,7 @@ keys:
   - &jet age1g2ajxczmr86fua0a8qyj09laz4c4wl3yngx0rjces28seq8gk4mqthc4mp
   - &ruby age1vpwvdgz268pqt7m3xk0w6vu5z5j27quwn4p6xnghnyncqqn2m4ks9wlqg7
   - &opal age1lxmhrxyqjev4vznfsmve6fumlpqnudlyyur3wu6tymgj9gns7qlsnyv7wj
+  - &mica age1knudcwfp6gjpwsgwks8ljcg836zvpgjukv5tzzqcnzwv8hsnlslq6990lj
 creation_rules:
   - path_regex: secrets/[^/]+\.ya?ml$
     key_groups:
@@ -11,4 +12,5 @@ creation_rules:
       - *jet
       - *ruby
       - *opal
+      - *mica
 
