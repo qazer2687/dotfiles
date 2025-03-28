@@ -145,6 +145,32 @@
               }
             ];
           };
+
+          mica = inputs.nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs self;};
+            modules = [
+              ./hosts/mica
+              inputs.sops-nix.nixosModules.sops
+              inputs.nyx.nixosModules.default
+              inputs.home-manager.nixosModules.home-manager
+              {
+                home-manager = {
+                  users.alex = ./homes/mica;
+                  extraSpecialArgs = {inherit inputs self;};
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  sharedModules = [
+                    inputs.niri.homeModules.niri
+                    inputs.hyprpanel.homeManagerModules.hyprpanel
+                    inputs.ags.homeManagerModules.default
+                    inputs.nur.modules.homeManager.default
+                    inputs.sops-nix.homeManagerModules.sops
+                    inputs.nixvim.homeManagerModules.nixvim
+                  ];
+                };
+              }
+            ];
+          };
         };
       };
     };
