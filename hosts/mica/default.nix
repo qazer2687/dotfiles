@@ -62,6 +62,8 @@
       6881
       # Conduwuit (Matrix)
       8448
+      # Netdata (Maybe)
+      19999
     ];
     allowedUDPPorts = [
       # qBittorrent
