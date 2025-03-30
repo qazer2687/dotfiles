@@ -41,7 +41,8 @@
     kernelPackages = pkgs.linuxPackages_cachyos;
   };
 
-  services.scx.enable = true;
+  # CPU usage too high.
+  # services.scx.enable = true;
 
   # Prevent log files from becoming too large.
   services.journald.extraConfig = ''
@@ -52,8 +53,6 @@
     enable = true;
     # I use a reverse proxy for everything but these things require ports to be open.
     allowedTCPPorts = [
-      # SSH
-      22
       # Caddy
       80
       81
@@ -62,8 +61,6 @@
       6881
       # Conduwuit (Matrix)
       8448
-      # Netdata (Maybe)
-      19999
     ];
     allowedUDPPorts = [
       # qBittorrent
