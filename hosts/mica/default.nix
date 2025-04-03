@@ -23,6 +23,9 @@
       "quiet"
       "mitigations=off"
 
+      # Enable Intel GuC/HuC
+      "i915.enable_guc=3"
+
       # https://wiki.cachyos.org/configuration/general_system_tweaks/?utm_source=chatgpt.com#enable-rcu-lazy
       "rcutree.enable_rcu_lazy=1"
     ];
