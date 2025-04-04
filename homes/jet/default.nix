@@ -17,8 +17,7 @@
     # calibre
     vlc
     loupe
-    ffmpeg-full
-    libheif
+    jellyfin-media-player
 
     # Terminal
     ncdu
@@ -29,6 +28,10 @@
 
     # External
     inputs.zen.packages."${system}".default
+
+    # Misc
+    ffmpeg-full
+    libheif
   ];
 
   # Enable rich presence support for Discord on the web.
