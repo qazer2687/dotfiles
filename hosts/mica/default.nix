@@ -40,7 +40,8 @@
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
-
+    # Support for my external HDD.
+    supportedFilesystems = [ "exfat" ];
     kernelPackages = pkgs.linuxPackages_cachyos;
   };
 
@@ -69,6 +70,19 @@
       # qBittorrent
       6881
     ];
+  };
+
+  # Mount the external HDD.
+  fileSystems."/mnt/external" = {
+    device = "/dev/sda1";
+    fsType = "exfat";
+    options = [ "umask=0000" ]; # 777
+  };
+
+  # Bind my media directory to the external HDD.
+  fileSystems."/home/alex/media" = {
+    device = "/mnt/external/media";
+    options = [ "bind" ];
   };
 
   # Spin down the external HDD after 10 minutes of inactivity.
