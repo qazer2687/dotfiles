@@ -86,14 +86,17 @@
   };
 
   # Spin down the external HDD after 10 minutes of inactivity.
-  systemd.services.hd-idle = {
-    description = "HDD Daemon";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      Type = "forking";
-      ExecStart = "${pkgs.hd-idle}/bin/hd-idle -i 0 -a sda -i 600";
-    };
-  };
+  services.udev.extraRules =
+  let
+    mkRule = as: lib.concatStringsSep ", " as;
+    mkRules = rs: lib.concatStringsSep "\n" rs;
+  in mkRules ([( mkRule [
+    ''ACTION=="add|change"''
+    ''SUBSYSTEM=="block"''
+    ''KERNEL=="sd[a-z]"''
+    ''ATTR{queue/rotational}=="1"''
+    ''RUN+="${pkgs.hdparm}/bin/hdparm -B 90 -S 120 /dev/%k"''
+  ])]);
 
   programs.bash = {
     shellAliases = {
