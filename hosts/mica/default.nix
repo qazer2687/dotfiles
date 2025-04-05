@@ -71,9 +71,15 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    git
-  ];
+  # Spin down the external HDD after 10 minutes of inactivity.
+  systemd.services.hd-idle = {
+    description = "HDD Daemon";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "forking";
+      ExecStart = "${pkgs.hd-idle}/bin/hd-idle -i 0 -a sda -i 600";
+    };
+  };
 
   programs.bash = {
     shellAliases = {
