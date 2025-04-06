@@ -18,5 +18,6 @@
     ./rustdesk
     ./virt-manager
     ./docker
+    ./samba
   ];
 }
