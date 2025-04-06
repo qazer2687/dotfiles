@@ -19,7 +19,7 @@
         };
         samba = {
           "path" = "/mnt/external/media";
-          "read only" = "no";
+          "read only" = "yes";
           "guest ok" = "yes";
         };
       };
