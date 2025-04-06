@@ -111,6 +111,7 @@
     zram.enable = true;
     tailscale.enable = true;
     docker.enable = true;
+    samba.enable = true;
   };
 
   # Did you read the comment?
