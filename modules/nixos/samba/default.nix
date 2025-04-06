@@ -21,6 +21,8 @@
           "path" = "/mnt/external/media";
           "read only" = "yes";
           "guest ok" = "yes";
+          # Hide the downloads folder.
+          "veto files" = "/downloads/";
         };
       };
     };
