@@ -87,17 +87,15 @@
   };
 
   # Spin down the external HDD after 10 minutes of inactivity.
-  services.udev.extraRules =
-  let
-    mkRule = as: lib.concatStringsSep ", " as;
-    mkRules = rs: lib.concatStringsSep "\n" rs;
-  in mkRules ([( mkRule [
-    ''ACTION=="add|change"''
-    ''SUBSYSTEM=="block"''
-    ''KERNEL=="sd[a-z]"''
-    ''ATTR{queue/rotational}=="1"''
-    ''RUN+="${pkgs.hdparm}/bin/hdparm -B 90 -S 120 /dev/%k"''
-  ])]);
+  systemd.services.hdparm = {
+    description = "/dev/sda Spin Down ";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "local-fs.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.hdparm}/bin/hdparm -S 60 /dev/sda";
+    };
+  };
 
   programs.bash = {
     shellAliases = {
