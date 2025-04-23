@@ -24,19 +24,13 @@
     in {
       settings = {
         trusted-substituters = [
-          # Hyprland
           "https://hyprland.cachix.org"
-
-          # Garnix
           "https://cache.garnix.io"
         ];
 
         trusted-public-keys = [
-          # Hyprland
           "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-
           "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-
           "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         ];
 
@@ -150,8 +144,10 @@
     # High performance implementation of the dbus specification.
     services.dbus.implementation = "broker";
 
-    # For vscode server until I configure the vscode server flake:
-    # https://github.com/nix-community/nixos-vscode-server.
-    programs.nix-ld.enable = true;
+
+    # Add a global rebuild command to bash for any hosts that aren't using fish or home-manager.
+    programs.bash.shellAliases = {
+      "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
+    };
   };
 }
