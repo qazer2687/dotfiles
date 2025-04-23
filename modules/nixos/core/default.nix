@@ -11,14 +11,17 @@
   # folder in the hosts directory.
   #
   # All options defined in this module are meant to be
-  # enabled on all hosts.
+  # enabled on all hosts INCLUDING SERVER HOSTS.
   #
   # All settings defined here can be overridden using
-  # lib.mkForce in the configuration files for specific hosts.
+  # lib.mkForce in the configuration files for specific
+  # hosts, although if you really need to do that, it
+  # probably doesn't belong in this file.
 
   config = lib.mkIf config.modules.core.enable {
-    ########## NIX ##########
 
+    ########## NIX ##########
+    
     nix = let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in {
