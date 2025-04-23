@@ -8,7 +8,6 @@
   config = lib.mkIf config.modules.samba.enable {
     services.samba = {
       enable = true;
-      #openFirewall = true;
       settings = {
         global = {
           # Allow local network and tailnet.

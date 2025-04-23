@@ -46,7 +46,7 @@
     kernelPackages = pkgs.linuxPackages_cachyos;
   };
 
-  # CPU usage too high.
+  # CPU usage too high with this enabled.
   # services.scx.enable = true;
 
   # Prevent log files from becoming too large.
@@ -97,11 +97,9 @@
     };
   };
 
-  programs.bash = {
-    shellAliases = {
-      "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
-    };
-  };
+  # For vscode server until I configure the vscode server flake:
+  # https://github.com/nix-community/nixos-vscode-server.
+  programs.nix-ld.enable = true;
 
   modules = {
     core.enable = true;

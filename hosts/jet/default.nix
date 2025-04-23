@@ -66,6 +66,7 @@
       "kern.coredump=0"
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
+
       "quiet"
       # Redirect console messages.
       "console=tty3"
@@ -151,44 +152,6 @@
 
     tailscale.enable = true;
   };
-
-/*
-  # There's no point making this a module as almost
-  # all the options are specific to the host.
-  services.syncthing = {
-    enable = true;
-    user = "alex";
-    dataDir = "/home/alex/syncthing";    # Default folder for new synced folders
-    configDir = "/home/alex/.config/syncthing";   # Folder for Syncthing's settings and keys
-    openDefaultPorts = true;
-    settings = {
-      devices = {
-        "opal" = { id = "QWAKCNB-A7RZGQ3-JPZYY2B-NVUAWJT-S66JN2G-ERNYBDJ-6NFT2WB-BILFRQ4"; };
-        "jadeite" = { id = "XTUFON3-NBWX2JE-67545KM-4SAEZP7-56HNZAK-UHGRM4B-5CFGWJR-5WTKSQ6"; };
-      };
-      folders = {
-        # Obsidian Vault
-        "vault" = {
-          path = "/home/alex/Vault";
-          devices = [ "opal" "jadeite" ];
-        };
-      };
-    };
-  };
-  */
-
-
-  # Experimental
-
-  /*
-  security = {
-    sudo.enable = false;
-    sudo-rs = {
-      enable = true;
-      wheelNeedsPassword = true;
-    };
-  };
-  */
 
   # Did you read the comment?
   system.stateVersion = "24.11";
