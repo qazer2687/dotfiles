@@ -21,7 +21,7 @@
           "read only" = "yes";
           "guest ok" = "yes";
           # Hide the downloads folder.
-          #"veto files" = "/downloads/";
+          "veto files" = "/downloads/";
         };
       };
     };
