@@ -145,7 +145,7 @@
     systemd.coredump.enable = false;
 
     # High performance implementation of the dbus specification.
-    # services.dbus.implementation = "broker";
+    services.dbus.implementation = "broker";
 
 
     # Add a global rebuild command to bash for any hosts that aren't using fish or home-manager.
