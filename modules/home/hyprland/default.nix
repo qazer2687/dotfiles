@@ -22,6 +22,7 @@ in {
   config = lib.mkIf config.modules.hyprland.enable {
     home.packages = with pkgs; [
       screenshot
+      kaneru
     ];
 
     services.hyprpaper = {
@@ -227,7 +228,8 @@ in {
           # fails to launch. This does not consider the possibility of exec-once not
           # working - but then again I'm using autologin so there's no security here anyway.
           "hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
-          "waybar"
+          "kaneru"
+          #"waybar"
           # "hyprpanel"
           "${pkgs.hyprsunset}/bin/hyprsunset -t 2500"
         ];
