@@ -20,9 +20,9 @@ in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprland.enable {
-    home.packages = with pkgs; [
-      screenshot
-      inputs.astal.packages.${system}.default
+    home.packages = [
+      pkgs.screenshot
+      inputs.astal.packages.aarch64-linux.kaneru
     ];
 
     services.hyprpaper = {
