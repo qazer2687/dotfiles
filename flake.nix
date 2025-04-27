@@ -31,6 +31,9 @@
     #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
     # };
+
+    # The package is called kaneru.
+    astal.url = "github:qazer2687/astal";
   };
 
   outputs = inputs @ {
