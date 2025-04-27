@@ -22,7 +22,7 @@ in {
   config = lib.mkIf config.modules.hyprland.enable {
     home.packages = with pkgs; [
       screenshot
-      kaneru
+      self.packages.aarch64-linux.kaneru
     ];
 
     services.hyprpaper = {
