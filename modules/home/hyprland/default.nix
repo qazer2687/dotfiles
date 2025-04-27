@@ -21,7 +21,7 @@ in {
 
   config = lib.mkIf config.modules.hyprland.enable {
     home.packages = [
-      pkgs.screenshot
+      screenshot
       inputs.astal.packages.aarch64-linux.kaneru
     ];
 
