@@ -3,6 +3,7 @@
   config,
   pkgs,
   inputs,
+  self,
   ...
 }: let
   screenshot = pkgs.writeShellApplication {
