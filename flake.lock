@@ -88,11 +88,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1745798522,
-        "narHash": "sha256-1HP3U3uSEyZBpwIbe9D/d9AO3D++kvKxFTZS1ZSwRm4=",
+        "lastModified": 1745798803,
+        "narHash": "sha256-Qxaje1h9r4r/kH/oXK8rZdF4lCfniFIGKqsfKJ1M6rc=",
         "owner": "qazer2687",
         "repo": "astal",
-        "rev": "5ebaa6bafe2f56c21d4fe7f11af3a712a052ee34",
+        "rev": "f8bb5b66744f3e1c84256a22a4738a94a3044c43",
         "type": "github"
       },
       "original": {
