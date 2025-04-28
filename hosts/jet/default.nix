@@ -109,6 +109,9 @@
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
   '';
+  
+  # Enable for astal battery info.
+  services.upower.enable = true;
 
   swapDevices = [
     {
