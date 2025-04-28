@@ -22,7 +22,7 @@ in {
   config = lib.mkIf config.modules.hyprland.enable {
     home.packages = [
       screenshot
-      inputs.astal.packages.aarch64-linux.default
+      inputs.astal.packages.aarch64-linux.kaneru
     ];
 
     services.hyprpaper = {
