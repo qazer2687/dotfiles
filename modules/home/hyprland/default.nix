@@ -149,10 +149,8 @@ in {
           "f[1], gapsout:4, gapsin:0"
         ];
         windowrulev2 = [
-          "bordersize 1, floating:0, onworkspace:w[tv1]"
-          "rounding 4, floating:0, onworkspace:w[tv1]"
-          "bordersize 1, floating:0, onworkspace:f[1]"
-          "rounding 4, floating:0, onworkspace:f[1]"
+          # Disable animations for wofi.
+          "noanim,class:.wofi-wrapped"
         ];
 
         bind = [
