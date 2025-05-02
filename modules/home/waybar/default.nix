@@ -25,10 +25,10 @@
         {
           layer = "top";
           height = 28;
-          margin = "0 0 0 0";
-          modules-left = ["clock" "hyprland/workspaces" "mpris"];
+          margin = "0 10 0 10";
+          modules-left = ["clock" "hyprland/workspaces"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "battery"];
+          modules-right = ["pulseaudio" "battery"];
 
           pulseaudio = {
             format = "{icon} {volume}%";
@@ -39,7 +39,8 @@
             };
           };
           clock = {
-            format-alt = "{:%Y/%m/%d | %H:%M:%S}";
+            format = "%A %d, %H:%M";
+            #format-alt = "{:%Y/%m/%d | %H:%M:%S}";
             tooltip = false;
           };
 

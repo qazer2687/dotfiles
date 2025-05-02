@@ -152,6 +152,7 @@ in {
 
         ];
         layerrule = [
+          # Disable wofi animation.
           "noanim,^(wofi)$"
         ];
 
