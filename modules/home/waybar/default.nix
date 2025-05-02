@@ -25,7 +25,7 @@
         {
           layer = "top";
           height = 28;
-          margin = "0 10 0 10";
+          margin = "0 100 0 100";
           modules-left = ["clock" "hyprland/workspaces"];
           modules-center = [];
           modules-right = ["pulseaudio" "battery"];
@@ -39,7 +39,7 @@
             };
           };
           clock = {
-            format = "%A %d, %H:%M";
+            format = "{:%A %d, %H:%M}";
             #format-alt = "{:%Y/%m/%d | %H:%M:%S}";
             tooltip = false;
           };
@@ -119,6 +119,7 @@
 
         window#waybar {
           background-color: #000000;
+          border-radius: 4px;
         }
 
         tooltip {
