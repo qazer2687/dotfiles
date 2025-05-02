@@ -149,8 +149,10 @@ in {
           "f[1], gapsout:4, gapsin:0"
         ];
         windowrulev2 = [
-          # Disable animations for wofi.
-          "noanim,class:.wofi-wrapped"
+
+        ];
+        layerrule = [
+          "noanim,^(wofi)$"
         ];
 
         bind = [
