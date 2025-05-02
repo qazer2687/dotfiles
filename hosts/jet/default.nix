@@ -106,7 +106,7 @@
     ];
   };
   programs.hyprland.enable = true;
-  environment.loginShellInit = ''
+  environment.loginShell2Init = ''
     [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
   '';
   
