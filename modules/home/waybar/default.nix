@@ -168,7 +168,7 @@
           margin-left: 0px;
           margin-right: 4px;
           border-radius: 2px;
-          padding: 2px 4px;
+          padding: 2px 0px;
           margin-top: 4px;
           margin-bottom: 4px;
           background-color: #ffffff;
