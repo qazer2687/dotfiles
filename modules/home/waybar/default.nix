@@ -53,7 +53,7 @@
           };
 
           "hyprland/workspaces" = {
-            format = "";
+            format = "󱓻";
             format-icons = {
               "1" = "1";
               "2" = "2";
@@ -164,7 +164,7 @@
         }
 
         #clock {
-          margin: 4px 0 4px -2px;
+          margin: 4px 0 4px -4px;
           margin-right: 4px;
           padding: 2px 4px;
           border-radius: 2px;
