@@ -104,24 +104,28 @@
 
       style = ''
         * {
-          font-family: Departure Mono, FiraCode Mono Nerd Font;
+          font-family: "Departure Mono", "FiraCode Mono Nerd Font";
           font-size: 11px;
           background-color: transparent;
         }
 
+        /* Base styles */
         window#waybar {
           background-color: #000000;
-          border-radius: 0px 0px 4px 4px;
+          border-radius: 0 0 4px 4px;
         }
 
+        /* Tooltip styling */
         tooltip {
           background: #000000;
           border: 1px solid rgba(255, 255, 255, 1);
         }
+
         tooltip label {
           color: white;
         }
 
+        /* Common module styling */
         #memory,
         #custom-power,
         #battery,
@@ -129,48 +133,41 @@
         #pulseaudio,
         #network,
         #cpu,
-        #memory,
         #temperature,
         #disk,
         #mpris,
         #tray {
-          margin-left: 4px;
-          margin-right: 4px;
-          border-radius: 2px;
+          margin: 4px 4px;
           padding: 2px 4px;
-          margin-top: 4px;
-          margin-bottom: 4px;
+          border-radius: 2px;
           color: #ffffff;
         }
 
+        /* Workspace button styling */
         #workspaces button {
-          all: initial; /* Remove GTK theme values (waybar #1351) */
-          min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-          padding: 4px 0px;
+          all: initial;
+          min-width: 0;
+          padding: 4px 0;
           border-radius: 6px;
-          color:rgb(138, 138, 138);
+          color: rgb(138, 138, 138);
         }
-        #workspaces button.active {
-          color: #ffffff;
-        }
-        #workspaces button.focused{
+
+        #workspaces button.active,
+        #workspaces button.focused {
           color: #ffffff;
         }
 
-        /* White MPRIS Background */
+        /* Special module styling */
         #mpris {
           background-color: #ffffff;
           color: #000000;
         }
 
-        /* EDGE MARGINS */
         #clock {
-          margin-left: 0px;
+          margin: 4px 0 4px 0;
           margin-right: 4px;
+          padding: 2px 4px;
           border-radius: 2px;
-          padding: 2px 0px;
-          margin-top: 4px;
-          margin-bottom: 4px;
           background-color: #ffffff;
           color: #000000;
         }
