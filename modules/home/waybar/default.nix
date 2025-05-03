@@ -170,8 +170,8 @@
           color: #000000;
         }
 
-       /* EDGE MARGINS */
-       /*
+      /* EDGE MARGINS */
+      /*
         #clock {
           margin-left: 10px;
           margin-right: 4px;
@@ -181,7 +181,7 @@
         #battery {
           margin-right: 10px;
         }
-        */
+      */
       '';
     };
   };
