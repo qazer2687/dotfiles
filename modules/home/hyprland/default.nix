@@ -102,13 +102,13 @@ in {
           enabled = true;
           bezier = "b, 0.87, 0, 0.13, 1";
           animation = [
-            "windowsIn, 0, 0.75, b"
-            "windowsMove, 1, 0.75, b"
-            "windowsOut, 1, 0.75, b"
+            "windowsIn, 0, 0.25, b"
+            "windowsMove, 1, 0.25, b"
+            "windowsOut, 1, 0.25, b"
 
-            "fadeIn, 1, 0.75, b"
+            "fadeIn, 1, 0.25, b"
 
-            "workspaces, 1, 2.5, b, slidevert"
+            "workspaces, 1, 2, b, slidevert"
           ];
         };
 
