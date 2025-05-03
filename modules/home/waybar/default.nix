@@ -137,7 +137,7 @@
         #disk,
         #mpris,
         #tray {
-          margin: 4px 4px;
+          margin: 4px 0px;
           padding: 2px 4px;
           border-radius: 2px;
           color: #ffffff;
@@ -146,7 +146,7 @@
         /* Workspace button styling */
         #workspaces button {
           all: initial;
-          min-width: 0;
+          min-width: ;
           padding: 4px 0;
           border-radius: 6px;
           color: rgb(138, 138, 138);
