@@ -111,7 +111,7 @@
   '';
   
   # Enable for astal battery info.
-  services.upower.enable = true;
+  #services.upower.enable = true;
 
   swapDevices = [
     {
