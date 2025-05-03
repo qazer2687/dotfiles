@@ -107,8 +107,6 @@
           font-family: Departure Mono, FiraCode Mono Nerd Font;
           font-size: 11px;
           background-color: transparent;
-          margin-left: 4px;
-          margin-right: 4px;
         }
 
         window#waybar {
@@ -130,13 +128,14 @@
         #backlight,
         #pulseaudio,
         #network,
-        #clock,
         #cpu,
         #memory,
         #temperature,
         #disk,
         #mpris,
         #tray {
+          margin-left: 4px;
+          margin-right: 4px;
           border-radius: 2px;
           padding: 2px 4px;
           margin-top: 4px;
@@ -167,6 +166,11 @@
         /* EDGE MARGINS */
         #clock {
           margin-left: 0px;
+          margin-right: 4px;
+          border-radius: 2px;
+          padding: 2px 4px;
+          margin-top: 4px;
+          margin-bottom: 4px;
           background-color: #ffffff;
           color: #000000;
         }
