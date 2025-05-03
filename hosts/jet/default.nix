@@ -96,7 +96,7 @@
   '';
 
   # Autologin and hide getty messages.
-  services.getty = {
+  services.getty."tty1" = {
     autologinUser = "alex";
     extraArgs = [
       "--skip-login"
