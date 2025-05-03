@@ -56,7 +56,7 @@
             cfg = {
               format = "{icon}";
               format-icons = {
-                "" = "";
+                "1" = "";
                 "2" = "";
                 "3" = "";
                 "4" = "";
@@ -67,7 +67,7 @@
                 "9" = "";
                 "0" = "10";
               };
-              sort-by-number = true;
+              sort-by-number = false;
             };
           in {
             "niri/workspaces" = cfg;
