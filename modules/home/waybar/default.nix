@@ -164,7 +164,7 @@
         }
 
         #clock {
-          margin: 4px 0 4px 0;
+          margin: 4px 0 4px -2px;
           margin-right: 4px;
           padding: 2px 4px;
           border-radius: 2px;
