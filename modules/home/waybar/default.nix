@@ -28,7 +28,7 @@
           margin = "0 250 0 250";
           modules-left = ["clock" "hyprland/workspaces"];
           modules-center = [];
-          modules-right = ["pulseaudio" "battery"];
+          modules-right = ["network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "{icon} {volume}%";
@@ -55,8 +55,8 @@
           "hyprland/workspaces" = {
             format = "";
             format-icons = {
-              "1" = "a";
-              "2" = "";
+              "1" = "1";
+              "2" = "2";
               "3" = "3";
               "4" = "4";
               "5" = "5";
@@ -164,18 +164,11 @@
           color: #000000;
         }
 
-      /* EDGE MARGINS */
-      /*
+        /* EDGE MARGINS */
         #clock {
-          margin-left: 10px;
-          margin-right: 4px;
           background-color: #ffffff;
           color: #000000;
         }
-        #battery {
-          margin-right: 10px;
-        }
-      */
       '';
     };
   };
