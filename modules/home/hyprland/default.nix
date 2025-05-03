@@ -86,12 +86,12 @@ in {
         decoration = {
           rounding = 4;
 
-          active_opacity = 1;
-          inactive_opacity = 1;
+          active_opacity = 0.98;
+          inactive_opacity = 0.9;
 
           # Disabled for performance.
           blur = {
-            enabled = false;
+            enabled = true;
           };
           shadow = {
             enabled = false;
