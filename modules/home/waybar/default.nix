@@ -166,6 +166,7 @@
 
         /* EDGE MARGINS */
         #clock {
+          margin-left: 0px;
           background-color: #ffffff;
           color: #000000;
         }
