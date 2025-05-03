@@ -86,7 +86,7 @@ in {
         decoration = {
           rounding = 4;
 
-          active_opacity = 0.98;
+          active_opacity = 0.9;
           inactive_opacity = 0.9;
 
           # Disabled for performance.
