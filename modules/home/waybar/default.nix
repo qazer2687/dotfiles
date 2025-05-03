@@ -25,7 +25,7 @@
         {
           layer = "top";
           height = 28;
-          margin = "0 100 0 100";
+          margin = "0 200 0 200";
           modules-left = ["clock" "hyprland/workspaces"];
           modules-center = [];
           modules-right = ["pulseaudio" "battery"];
