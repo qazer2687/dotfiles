@@ -106,7 +106,9 @@
     ];
   };
   programs.hyprland.enable = true;
+  # Add correct sudo path to PATH so that it actually works and start hyprland.
   environment.extraInit = ''
+    export PATH="/run/wrappers/bin:$PATH"
     [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
   '';
   
