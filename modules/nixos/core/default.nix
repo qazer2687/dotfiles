@@ -147,7 +147,13 @@
     # High performance implementation of the dbus specification.
     services.dbus.implementation = "broker";
 
-    security.sudo.enable = true;
+    # Enable sudo-rs as a drop in replacement for sudo
+    # because it randomly stopped working for no reason.
+    security.sudo.enable = false;
+    security.sudo-rs = {
+      enable = true;
+      wheelNeedsPassword = false;
+    };
 
     # Add a global rebuild command to bash for any hosts that aren't using fish or home-manager.
     programs.bash.shellAliases = {
