@@ -146,7 +146,7 @@
         /* Workspace button styling */
         #workspaces button {
           all: initial;
-          min-width: ;
+          min-width: 0;
           padding: 4px 0;
           border-radius: 6px;
           color: rgb(138, 138, 138);
