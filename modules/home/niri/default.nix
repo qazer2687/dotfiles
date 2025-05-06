@@ -156,16 +156,16 @@ in {
           "Mod+0".action = focus-workspace 10;
 
           # Move windows to workspaces
-          "Mod+Shift+1".action = move-window-to-workspace 1;
-          "Mod+Shift+2".action = move-window-to-workspace 2;
-          "Mod+Shift+3".action = move-window-to-workspace 3;
-          "Mod+Shift+4".action = move-window-to-workspace 4;
-          "Mod+Shift+5".action = move-window-to-workspace 5;
-          "Mod+Shift+6".action = move-window-to-workspace 6;
-          "Mod+Shift+7".action = move-window-to-workspace 7;
-          "Mod+Shift+8".action = move-window-to-workspace 8;
-          "Mod+Shift+9".action = move-window-to-workspace 9;
-          "Mod+Shift+0".action = move-window-to-workspace 10;
+          #"Mod+Shift+1".action = move-window-to-workspace 1;
+          #"Mod+Shift+2".action = move-window-to-workspace 2;
+          #"Mod+Shift+3".action = move-window-to-workspace 3;
+          #"Mod+Shift+4".action = move-window-to-workspace 4;
+          #"Mod+Shift+5".action = move-window-to-workspace 5;
+          #"Mod+Shift+6".action = move-window-to-workspace 6;
+          #"Mod+Shift+7".action = move-window-to-workspace 7;
+          #"Mod+Shift+8".action = move-window-to-workspace 8;
+          #"Mod+Shift+9".action = move-window-to-workspace 9;
+          #"Mod+Shift+0".action = move-window-to-workspace 10;
         };
 
         debug = {
