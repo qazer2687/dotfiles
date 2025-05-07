@@ -107,7 +107,7 @@
     ];
   };
   environment.loginShellInit = ''
-    #[[ "$(tty)" == /dev/tty1 ]] && niri-session
+    [[ "$(tty)" == /dev/tty1 ]] && niri-session
   '';
 
   swapDevices = [
