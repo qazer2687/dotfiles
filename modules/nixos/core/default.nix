@@ -142,10 +142,10 @@
 
     # Intended to stop 'core' files being created and taking
     # up space but this doesn't appear to do anything.
-    systemd.coredump.enable = false;
+    #systemd.coredump.enable = false;
 
     # High performance implementation of the dbus specification.
-    services.dbus.implementation = "broker";
+    #services.dbus.implementation = "broker";
 
     # Add a global rebuild command to bash for any hosts that aren't using fish or home-manager.
     programs.bash.shellAliases = {
