@@ -23,7 +23,6 @@
     ./webcam
     ./hyprland
     ./dwl
-    ./neovim
     ./gpg
     ./mangohud
     ./niri

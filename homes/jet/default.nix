@@ -21,7 +21,8 @@
 
     # Terminal
     ncdu
-    neovim
+    btop
+    #neovim
 
     # Internal
     #arnis
