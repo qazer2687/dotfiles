@@ -7,5 +7,6 @@ pkgs.mkShell {
     sops
     llvmPackages_12.clang-tools
     nixd
+    nil
   ];
 }

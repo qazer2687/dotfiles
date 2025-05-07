@@ -37,7 +37,7 @@
           # oxocarbon
           #alpha = "0.8"; # Transparency
           foreground = "ffffff"; # base06 white
-          background = "161616"; # base01 black
+          background = "000000"; # base01 black
 
           regular0 = "262626"; # black
           regular1 = "ff7eb6"; # magenta
