@@ -50,28 +50,27 @@ in {
         };
 
         outputs."eDP-1".scale = 2.0;
+        
 
         window-rules = [
           {
             clip-to-geometry = true;
 
-            # 31:32 + -120px idk??? I need to find a way to see the surrounding windows
-            # without sacrificing screen space because making this too small kinda sucks.
-            min-width = 1120;
-            max-width = 1120;
+            # A ratio of screen space used against the total, out of
+            # 1280 which is half of my display width and I use 2x scaling.
+            min-width = 1100;
+            max-width = 1100;
 
-            /*
             geometry-corner-radius = {
-              bottom-left = 6.0;
-              bottom-right = 6.0;
-              top-left = 6.0;
-              top-right = 6.0;
+              bottom-left = 4.0;
+              bottom-right = 4.0;
+              top-left = 4.0;
+              top-right = 4.0;
             };
-            */
 
             focus-ring = {
               enable = true;
-              width = 2;
+              width = 1;
 
               active = {
                 gradient = {
