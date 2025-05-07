@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }: {
@@ -164,9 +163,7 @@
 
   # experimental wayland
   environment = {
-    systemPackages = with pkgs; [
-      # Put system packages here...
-    ];
+
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
