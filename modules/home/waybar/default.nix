@@ -147,7 +147,7 @@
         #workspaces button {
           all: initial;
           min-width: 0;
-          padding: 4px 2px;
+          padding: 4px 4px;
           border-radius: 6px;
           color: rgb(138, 138, 138);
         }
@@ -162,9 +162,13 @@
           background-color: #ffffff;
           color: #000000;
         }
+        
+        #battery {
+          margin-right: 8px;
+        }
 
         #clock {
-          margin: 4px 0 4px 8px;
+          margin: 4px 0 4px 16px;
           margin-right: 4px;
           padding: 2px 4px;
           border-radius: 2px;
