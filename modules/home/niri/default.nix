@@ -55,6 +55,10 @@ in {
         window-rules = [
           {
             clip-to-geometry = true;
+            
+            open-maximized = true;
+            
+            baba-is-float = true;
 
             # A ratio of screen space used against the total, out of
             # 1280 which is half of my display width and I use 2x scaling.
