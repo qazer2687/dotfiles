@@ -14,7 +14,8 @@ in {
       enable = true;
       #enableUpdateCheck = false;
       #enableExtensionUpdateCheck = false;
-      package = pkgs.vscodium-fhs;
+      #package = pkgs.vscodium-fhs;
+      package = pkgs.vscode-fhs;
 
       # The extensions folder is mutable by default as far as
       # I'm aware. I don't know whether this is for installations
