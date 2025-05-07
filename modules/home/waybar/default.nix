@@ -25,8 +25,8 @@
         {
           layer = "top";
           height = 28;
-          margin = "0 250 0 250";
-          modules-left = ["clock" "hyprland/workspaces"];
+          margin = "0 0 0 0";
+          modules-left = ["clock" "niri/workspaces"];
           modules-center = [];
           modules-right = ["network" "pulseaudio" "battery"];
 
@@ -52,7 +52,7 @@
             interval = 10;
           };
 
-          "hyprland/workspaces" = {
+          "niri/workspaces" = {
             format = "󱓻";
             format-icons = {
               "1" = "1";
@@ -137,7 +137,7 @@
         #disk,
         #mpris,
         #tray {
-          margin: 4px 0px;
+          margin: 4px 2px;
           padding: 2px 4px;
           border-radius: 2px;
           color: #ffffff;
