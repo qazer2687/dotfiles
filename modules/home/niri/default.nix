@@ -28,7 +28,7 @@ in {
 
     programs.niri = {
       enable = true;
-      package = inputs.niri.packages.${pkgs.system}.niri-stable;
+      package = inputs.niri.packages.${pkgs.system}.niri-unstable;
       settings = {
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;
@@ -56,8 +56,6 @@ in {
           {
             clip-to-geometry = true;
             
-            open-maximized = true;
-
             # A ratio of screen space used against the total, out of
             # 1280 which is half of my display width and I use 2x scaling.
             min-width = 1220;
