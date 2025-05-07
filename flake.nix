@@ -23,7 +23,8 @@
     ags.url = "github:aylur/ags";
 
     # Use an older version as the new version is unusable while listening to music.
-    zen.url = "github:0xc000022070/zen-browser-flake/7de16ae319e6f6852274fa90b0d41c00049767c9";
+    #zen.url = "github:0xc000022070/zen-browser-flake/7de16ae319e6f6852274fa90b0d41c00049767c9";#
+    zen.url = "github:0xc000022070/zen-browser-flake";
 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
