@@ -147,7 +147,7 @@
         #workspaces button {
           all: initial;
           min-width: 0;
-          padding: 4px 0;
+          padding: 4px 2px;
           border-radius: 6px;
           color: rgb(138, 138, 138);
         }
@@ -164,7 +164,7 @@
         }
 
         #clock {
-          margin: 4px 0 4px -4px;
+          margin: 4px 0 4px 8px;
           margin-right: 4px;
           padding: 2px 4px;
           border-radius: 2px;
