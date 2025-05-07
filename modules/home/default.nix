@@ -31,5 +31,6 @@
     ./fastfetch
     #./hyprpanel
     ./hyprlock
+    ./zed
   ];
 }
