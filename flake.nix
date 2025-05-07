@@ -33,7 +33,8 @@
     #   inputs.hyprland.follows = "hyprland";
     # };
 
-    # The package is called kaneru.
+    # The package is called kaneru. This isn't in use right now but
+    # it serves as a placeholder for when I've finished configuring astal.
     astal.url = "github:qazer2687/astal";
   };
 
