@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: {
   options.modules.zed.enable = lib.mkEnableOption "";
@@ -16,5 +14,3 @@
     };
   };
 }
-
-

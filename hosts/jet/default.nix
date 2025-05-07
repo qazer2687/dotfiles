@@ -8,9 +8,9 @@
 
   users.users = {
     alex = {
+      initialPassword = "xela";
       isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "video" "audio" "dialout"];
-      hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
+      extraGroups = ["networkmanager" "wheel" "video" "audio" "dialout" "docker"];
       shell = pkgs.fish;
     };
   };
@@ -34,8 +34,8 @@
     xdgOpenUsePortal = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
-      #pkgs.xdg-desktop-portal-gtk
-      #pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
     ];
     # Fix 'xdg-desktop-portal 1.17 reworked how
     # portal implementations are loaded' warning.
@@ -66,7 +66,6 @@
       "kern.coredump=0"
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
-
       "quiet"
       # Redirect console messages.
       "console=tty3"
@@ -106,15 +105,9 @@
     ];
   };
   programs.hyprland.enable = true;
-  # Add correct sudo path to PATH so that it actually works and start hyprland.
-  environment.extraInit = ''
-    export PATH="/run/wrappers/bin:$PATH"
-    [[ "$(tty)" == /dev/tty1 ]] && niri-session
-    #[[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
   '';
-  
-  # Enable for astal battery info.
-  services.upower.enable = true;
 
   swapDevices = [
     {
@@ -142,7 +135,7 @@
   modules = {
     core.enable = true;
     bluetooth.enable = true;
-    
+
     # Sound is managed via the setupAsahiSound option
     # and I do not need easyeffects installed on Jet.
     # pipewire.enable = true;
@@ -158,6 +151,18 @@
 
     tailscale.enable = true;
   };
+
+  # Experimental
+
+  /*
+  security = {
+    sudo.enable = false;
+    sudo-rs = {
+      enable = true;
+      wheelNeedsPassword = true;
+    };
+  };
+  */
 
   # Did you read the comment?
   system.stateVersion = "24.11";
