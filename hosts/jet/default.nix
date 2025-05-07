@@ -53,9 +53,12 @@
   };
 
   services.udev = {
-    # ESP32-CYD2USB Support
     extraRules = ''
+      # Enable support for the ESP32-CYD2USB.
       SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
+      
+      # Allow backlight control for non-root users.
+      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
     '';
   };
 
