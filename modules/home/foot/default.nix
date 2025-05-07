@@ -34,7 +34,7 @@
         };
 
         colors = {
-          # oxocarbon theme
+          # oxocarbon
           #alpha = "0.8"; # Transparency
           foreground = "ffffff"; # base06 white
           background = "161616"; # base01 black
