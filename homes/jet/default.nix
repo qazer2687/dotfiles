@@ -61,6 +61,7 @@
 
     # GUI
     vscode.enable = true;
+    zed.enable = true;
   };
 
   home.stateVersion = "24.11";
