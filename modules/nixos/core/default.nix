@@ -146,9 +146,6 @@
     # up space but this doesn't appear to do anything.
     #systemd.coredump.enable = false;
 
-    # High performance implementation of the dbus specification.
-    #services.dbus.implementation = "broker";
-
     # Add a global rebuild command to bash for any hosts that aren't using fish or home-manager.
     programs.bash.shellAliases = {
       "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";

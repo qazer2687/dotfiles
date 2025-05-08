@@ -19,5 +19,6 @@
     ./virt-manager
     ./docker
     ./samba
+    ./xdg
   ];
 }
