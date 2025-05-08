@@ -15,8 +15,14 @@
     services.dbus = {
       enable = true;
       # EXPERIMENTAL - High performance implementation of the dbus specification.
-      implementation = "broker";
+      # implementation = "broker";
     };
+    
+    environment.systemPackages = with pkgs; [ 
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+    ];
     
     xdg = {
       portal = {
@@ -26,7 +32,7 @@
           pkgs.xdg-desktop-portal-gtk
           pkgs.xdg-desktop-portal-gnome
         ];
-        #xdgOpenUsePortal = true;
+        xdgOpenUsePortal = true;
         # Fix 'xdg-desktop-portal 1.17 reworked how
         # portal implementations are loaded' warning.
         config.common.default = "*";
