@@ -58,8 +58,8 @@ in {
             
             # A ratio of screen space used against the total, out of
             # 1280 which is half of my display width and I use 2x scaling.
-            min-width = 1220;
-            max-width = 1220;
+            min-width = 1230;
+            max-width = 1230;
 
             geometry-corner-radius = {
               bottom-left = 4.0;
@@ -102,7 +102,7 @@ in {
         ];
 
         layout = {
-          gaps = 6;
+          gaps = 4;
           center-focused-column = "always";
         };
 
