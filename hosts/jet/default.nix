@@ -8,9 +8,9 @@
 
   users.users = {
     alex = {
-      isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "video" "audio" "dialout" "docker"];
-      shell = pkgs.fish;
+	    isNormalUser = true;
+	    extraGroups = ["networkmanager" "wheel" "video" "audio" "dialout" "docker"];
+	    shell = pkgs.fish;
     };
   };
 
@@ -24,20 +24,6 @@
   '';
 
   programs.fish.enable = true;
-
-  # This allows links to be
-  # opened across applications.
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    xdgOpenUsePortal = true;
-    /*extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];*/
-    # Fix 'xdg-desktop-portal 1.17 reworked how
-    # portal implementations are loaded' warning.
-    config.common.default = "*";
-  };
 
   hardware = {
     graphics = {
@@ -145,24 +131,14 @@
     #  enable = true;
     #  apfsSupport = true;
     #};
+    
+    xdg.enable = true;
 
     # Marcan said something about it being ineffective on apple silicon.
     # zram.enable = true;
 
     tailscale.enable = true;
   };
-
-  # Experimental
-
-  /*
-  security = {
-    sudo.enable = false;
-    sudo-rs = {
-      enable = true;
-      wheelNeedsPassword = true;
-    };
-  };
-  */
 
   # Did you read the comment?
   system.stateVersion = "24.11";
