@@ -62,10 +62,10 @@ in {
             max-width = 1230;
 
             geometry-corner-radius = {
-              bottom-left = 4.0;
-              bottom-right = 4.0;
-              top-left = 4.0;
-              top-right = 4.0;
+              bottom-left = 2.0;
+              bottom-right = 2.0;
+              top-left = 2.0;
+              top-right = 2.0;
             };
 
             focus-ring = {
@@ -74,8 +74,8 @@ in {
 
               active = {
                 gradient = {
-                  from = "#ffffff";
-                  to = "#ffffff";
+                  from = "333333";
+                  to = "#222222";
                   angle = 45;
                   relative-to = "workspace-view";
                 };
@@ -83,8 +83,8 @@ in {
 
               inactive = {
                 gradient = {
-                  from = "#bbbbbb";
-                  to = "#bbbbbb";
+                  from = "#222222";
+                  to = "#111111";
                   angle = 45;
                   relative-to = "workspace-view";
                 };
