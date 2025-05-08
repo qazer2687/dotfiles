@@ -66,6 +66,11 @@ in {
             top-left = 4.0;
             top-right = 4.0;
           };
+
+          focus-ring = {
+            enable = false;
+            width = 1;
+          };
         }];
 
         layout = {
