@@ -52,54 +52,21 @@ in {
         outputs."eDP-1".scale = 2.0;
         
 
-        window-rules = [
-          {
-            clip-to-geometry = true;
-            
-            # A ratio of screen space used against the total, out of
-            # 1280 which is half of my display width and I use 2x scaling.
-            min-width = 1230;
-            max-width = 1230;
+        window-rules = [{
+          clip-to-geometry = true;
+          
+          # A ratio of screen space used against the total, out of
+          # 1280 which is half of my display width and I use 2x scaling.
+          min-width = 1230;
+          max-width = 1230;
 
-            geometry-corner-radius = {
-              bottom-left = 4.0;
-              bottom-right = 4.0;
-              top-left = 4.0;
-              top-right = 4.0;
-            };
-
-            focus-ring = {
-              enable = false;
-              width = 1;
-
-              active = {
-                gradient = {
-                  from = "#ffffff";
-                  to = "#ffffff";
-                  angle = 45;
-                  relative-to = "workspace-view";
-                };
-              };
-
-              inactive = {
-                gradient = {
-                  from = "#bbbbbb";
-                  to = "#bbbbbb";
-                  angle = 45;
-                  relative-to = "workspace-view";
-                };
-              };
-            };
-          }
-          /*
-          {
-            matches = [
-              { app-id = "^foot$"; }
-            ];
-            opacity = 0.6;
-          }
-          */
-        ];
+          geometry-corner-radius = {
+            bottom-left = 4.0;
+            bottom-right = 4.0;
+            top-left = 4.0;
+            top-right = 4.0;
+          };
+        }];
 
         layout = {
           gaps = 4;
