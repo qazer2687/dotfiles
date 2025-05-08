@@ -8,10 +8,6 @@
 
   config = lib.mkIf config.modules.xdg.enable {
 
-    environment.systemPackages = with pkgs; [
-	    xdg-utils
-    ];
-    
     services.dbus = {
       enable = true;
       # EXPERIMENTAL - High performance implementation of the dbus specification.
@@ -19,6 +15,7 @@
     };
     
     environment.systemPackages = with pkgs; [ 
+      xdg-utils
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
       xdg-desktop-portal-wlr
