@@ -8,7 +8,6 @@
 
   users.users = {
     alex = {
-      initialPassword = "xela";
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "video" "audio" "dialout" "docker"];
       shell = pkgs.fish;
@@ -32,10 +31,9 @@
     enable = true;
     wlr.enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = [
+    /*extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-gnome
-    ];
+    ];*/
     # Fix 'xdg-desktop-portal 1.17 reworked how
     # portal implementations are loaded' warning.
     config.common.default = "*";
@@ -126,26 +124,27 @@
 
       # Temporary fix for nautilus not launching on hyprland.
       # https://bbs.archlinux.org/viewtopic.php?pid=2196562#p2196562
-      GSK_RENDERER = "ngl";
+      # GSK_RENDERER = "ngl";
+      
       # Temporary fix for the cursor being offset slightly on hyprland.
       # https://github.com/hyprwm/Hyprland/issues/7244
-      AQ_NO_ATOMIC = "0";
+      # AQ_NO_ATOMIC = "0";
     };
   };
 
   modules = {
     core.enable = true;
-    bluetooth.enable = true;
+    #bluetooth.enable = true;
 
     # Sound is managed via the setupAsahiSound option
     # and I do not need easyeffects installed on Jet.
     # pipewire.enable = true;
 
     systemd-boot.enable = true;
-    filesystem = {
-      enable = true;
-      apfsSupport = true;
-    };
+    #filesystem = {
+    #  enable = true;
+    #  apfsSupport = true;
+    #};
 
     # Marcan said something about it being ineffective on apple silicon.
     # zram.enable = true;
