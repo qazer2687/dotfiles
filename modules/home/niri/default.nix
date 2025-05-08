@@ -69,7 +69,7 @@ in {
 
           focus-ring = {
             enable = false;
-            width = 1;
+            width = 0;
           };
         }];
 
