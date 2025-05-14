@@ -11,7 +11,7 @@
     services.dbus = {
       enable = true;
       # EXPERIMENTAL - High performance implementation of the dbus specification.
-      # implementation = "broker";
+      implementation = "broker";
     };
     
     environment.systemPackages = with pkgs; [ 
