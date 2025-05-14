@@ -139,6 +139,9 @@ in {
           "Mod+Shift+9".action = move-window-to-workspace 9;
           "Mod+Shift+0".action = move-window-to-workspace 10;
           */
+          
+          # Screenshot
+          "Mod+Option".action = spawn "screenshot";
         };
 
         debug = {
