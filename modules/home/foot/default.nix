@@ -14,14 +14,18 @@
       server.enable = true;
       settings = {
         main = {
-          font = "PragmataPro:size=14, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
-          font-bold = "PragmataPro:size=14:style=Bold, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
+          #font = "PragmataPro:size=14, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
+          #font-bold = "PragmataPro:size=14:style=Bold, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
+          font = "DepartureMono:size=14, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
+          font-bold = "DepartureMono:size=14:style=Bold, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
           line-height = "22px";
           pad = "16x16";
         };
 
         scrollback = {
-          lines = "10000";
+          # I don't really need that much scrollback,
+          # I think it just wastes a bit more memory.
+          lines = "1000";
         };
 
         cursor = {
