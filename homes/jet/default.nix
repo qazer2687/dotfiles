@@ -42,7 +42,7 @@
     # Desktop Environment
     niri.enable = true;
     #hyprland.enable = true;
-    hyprlock.enable = true;
+    #hyprlock.enable = true;
     waybar.enable = true;
     mako.enable = true;
     wofi.enable = true;
@@ -61,7 +61,7 @@
     # neovim.enable = true;
 
     # GUI
-    vscode.enable = true;
+    #vscode.enable = true;
     zed.enable = true;
   };
 

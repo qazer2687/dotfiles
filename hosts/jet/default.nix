@@ -48,8 +48,6 @@
 
   boot = {
     kernelParams = [
-      # Disable core dumps.
-      #"kern.coredump=0"
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
       "quiet"
@@ -90,14 +88,19 @@
       "--noclear"
     ];
   };
+  
+  # niri-session refuses to work a lot of the time unless manually invoked.
+  /*
   environment.loginShellInit = ''
-    #[[ "$(tty)" == /dev/tty1 ]] && niri-session
+    [[ "$(tty)" == /dev/tty1 ]] && niri-session
   '';
+  */
 
   swapDevices = [
     {
       device = "/swapfile";
-      size = 4 * 1024;
+      # 1x RAM
+      size = 8 * 1024;
     }
   ];
 
