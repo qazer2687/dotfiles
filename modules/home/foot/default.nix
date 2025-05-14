@@ -8,9 +8,6 @@
   config = lib.mkIf config.modules.foot.enable {
     programs.foot = {
       enable = true;
-      # This option starts foot as a service and opens clients on demand, I
-      # ran into read-only issues when trying this and it's speed feels
-      # basically the same as having the setting off, so it doesn't matter.
       server.enable = true;
       settings = {
         main = {
