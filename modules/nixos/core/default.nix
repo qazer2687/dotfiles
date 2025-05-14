@@ -88,7 +88,7 @@
     };
     systemd = {
       services.NetworkManager-wait-online.enable = false;
-      # Disables the service because it hangs on boot.
+      # Disable the service because it hangs on boot.
       services.NetworkManager-dispatcher.enable = false;
     };
 
@@ -142,9 +142,10 @@
     programs.dconf.enable = true;
     security.polkit.enable = true;
 
-    # Intended to stop 'core' files being created and taking
-    # up space but this doesn't appear to do anything.
-    #systemd.coredump.enable = false;
+    # Disable the core dump service.
+    systemd.coredump.enable = false;
+    # Discard all core dumps.
+    boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
 
     # Add a global rebuild command to bash for any hosts that aren't using fish or home-manager.
     programs.bash.shellAliases = {
