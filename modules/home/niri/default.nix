@@ -141,7 +141,7 @@ in {
           */
           
           # Screenshot
-          "Mod+Option".action = spawn "screenshot";
+          #"Mod+Option".action = spawn "screenshot";
         };
 
         debug = {
