@@ -42,7 +42,7 @@
     consoleLogLevel = 0;
     # Support for my external HDD.
     supportedFilesystems = [ "exfat" ];
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    #kernelPackages = pkgs.linuxPackages_cachyos;
   };
 
   # CPU usage too high with this enabled.
