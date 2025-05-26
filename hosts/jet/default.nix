@@ -81,7 +81,7 @@
   '';
 
   # Autologin and hide getty messages.
-  services.getty = {
+  /*services.getty = {
     #autologinUser = "alex";
     extraArgs = [
       "--skip-login"
@@ -90,7 +90,8 @@
       "--noclear"
     ];
   };
-  
+  */
+  services.xserver.displayManager.sessionPackages = [ pkgs.niri ];
   services.xserver.displayManager.gdm = {
     enable = true;
     wayland = true;
