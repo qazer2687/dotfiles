@@ -83,13 +83,21 @@
 
   # Autologin and hide getty messages.
   services.getty = {
-    autologinUser = "alex";
+    #autologinUser = "alex";
     extraArgs = [
       "--skip-login"
       "--nonewline"
       "--noissue"
       "--noclear"
     ];
+  };
+  
+  services.xserver.displayManager = {
+    defaultSession = "niri";
+    gdm = {
+      enable = true;
+      wayland = true;
+    };
   };
   
   # niri-session refuses to work a lot of the time unless manually invoked.
