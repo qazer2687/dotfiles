@@ -92,12 +92,9 @@
     ];
   };
   
-  services.xserver.displayManager = {
-    defaultSession = "niri";
-    gdm = {
-      enable = true;
-      wayland = true;
-    };
+  services.xserver.displayManager.gdm = {
+    enable = true;
+    wayland = true;
   };
   
   # niri-session refuses to work a lot of the time unless manually invoked.
