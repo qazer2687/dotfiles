@@ -62,6 +62,8 @@
       6881
       # Conduwuit (Matrix)
       8448
+      # Minecraft
+      25565
     ];
     allowedUDPPorts = [
       # qBittorrent
