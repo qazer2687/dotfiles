@@ -5,6 +5,7 @@
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     home-manager.url = "github:nix-community/home-manager";
+    home-manaegr.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:Mic92/sops-nix";
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     niri.url = "github:sodiboo/niri-flake";
