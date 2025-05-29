@@ -4,15 +4,15 @@
   inputs = {
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sops-nix.url = "github:Mic92/sops-nix";
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     niri.url = "github:sodiboo/niri-flake";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    
-    # Use an older version as the new version is unusable while listening to music.
-    #zen.url = "github:0xc000022070/zen-browser-flake/7de16ae319e6f6852274fa90b0d41c00049767c9";#
+
     zen.url = "github:0xc000022070/zen-browser-flake";
     
     # Anything listed below I don't currently use but I
