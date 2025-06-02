@@ -68,6 +68,7 @@
       nerd-fonts.fira-mono
       nerd-fonts.iosevka
       nerd-fonts.liberation
+      nerd-fonts.jetbrains-mono
     ];
   };
 }
