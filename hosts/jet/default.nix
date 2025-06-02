@@ -31,7 +31,7 @@
       enable = true;
     };
     asahi = {
-      #useExperimentalGPUDriver = true;
+      useExperimentalGPUDriver = true;
       setupAsahiSound = true;
       peripheralFirmwareDirectory = ../../firmware/jet;
     };
