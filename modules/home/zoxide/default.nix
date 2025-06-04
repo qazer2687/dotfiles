@@ -12,9 +12,6 @@
     };
     home.shellAliases = {
       "cd" = "z";
-      "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
-
-      #"nvim" = "nix run $HOME/.config/nvim#neovim";
     };
   };
 }
