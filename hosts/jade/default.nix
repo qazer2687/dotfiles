@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../hardware/jade
     ../../modules/nixos
@@ -163,7 +160,6 @@
 
   # experimental wayland
   environment = {
-
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";

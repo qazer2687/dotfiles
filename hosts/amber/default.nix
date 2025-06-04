@@ -13,7 +13,6 @@
   # Hostname
   networking.hostName = "amber";
 
-
   modules = {
     kernel.enable = true;
     systemd-boot.enable = true;

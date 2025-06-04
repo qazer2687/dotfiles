@@ -6,7 +6,7 @@
   ...
 }: let
   a = 1;
-/*
+  /*
   useHostResolvConf = config.networking.resolvconf.enable && config.networking.useHostResolvConf;
   bootStage2 = pkgs.replaceVars {
     src = pkgs.runCommand "stage-2-init.sh" {} ''
@@ -30,7 +30,8 @@
         ${config.boot.postBootCommands}
         ${config.powerManagement.powerUpCommands}
       '';
-      };*/
+      };
+  */
 in {
   options.modules.systemd-boot.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.systemd-boot.enable {

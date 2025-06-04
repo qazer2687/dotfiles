@@ -9,7 +9,7 @@
     programs.zed-editor = {
       enable = true;
     };
-    
+
     home.shellAliases = {
       "zed" = "zeditor";
     };

@@ -25,7 +25,8 @@ in {
       # There seems to be an issue with applications that haven't been previously
       # configured having no directory in .vscode-oss when "installed" through nix's
       # build system. stupid shit, maybe FHS being stupid, stupid
-      /* Disabled as this is broken in latest. Refuses to build because of
+      /*
+         Disabled as this is broken in latest. Refuses to build because of
          unfree packages even though they are allowed.
       extensions = [
         # UI Theme
