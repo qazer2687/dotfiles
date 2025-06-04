@@ -59,6 +59,7 @@
     git.enable = true;
     bat.enable = true;
     # neovim.enable = true;
+    zoxide.enable = true;
 
     # GUI
     #vscode.enable = true;
