@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../hardware/opal
     ../../modules/nixos
@@ -33,7 +30,7 @@
       # Wi-Fi
       "iwlwifi"
       # Bluetooth
-      "btusb" 
+      "btusb"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;

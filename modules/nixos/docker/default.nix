@@ -5,7 +5,7 @@
   ...
 }: {
   options.modules.docker.enable = lib.mkEnableOption "";
-  
+
   config = lib.mkIf config.modules.docker.enable {
     environment.systemPackages = with pkgs; [
       crun

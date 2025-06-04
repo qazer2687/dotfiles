@@ -9,23 +9,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
       };
     */
-    
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     sops-nix.url = "github:Mic92/sops-nix";
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     niri.url = "github:sodiboo/niri-flake";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     zen.url = "github:0xc000022070/zen-browser-flake";
-    
+
     # Anything listed below I don't currently use but I
     # will leave here in case I need to bring something back.
-    # 
+    #
     # ags.url = "github:aylur/ags";
     # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     # darwin.url = "github:lnl7/nix-darwin";

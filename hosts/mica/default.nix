@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../hardware/mica
     ../../modules/nixos
@@ -36,12 +33,12 @@
       # Wi-Fi
       "iwlwifi"
       # Bluetooth
-      "btusb" 
+      "btusb"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
     # Support for my external HDD.
-    supportedFilesystems = [ "exfat" ];
+    supportedFilesystems = ["exfat"];
     #kernelPackages = pkgs.linuxPackages_cachyos;
   };
 
@@ -52,7 +49,7 @@
   services.journald.extraConfig = ''
     SystemMaxUse=100M
   '';
-  
+
   networking.firewall = {
     enable = true;
     # I use a reverse proxy for everything but these things require ports to be open.
@@ -76,20 +73,20 @@
   fileSystems."/mnt/external" = {
     device = "/dev/sda1";
     fsType = "exfat";
-    options = [ "umask=0000" ]; # 777
+    options = ["umask=0000"]; # 777
   };
 
   # Bind my media directory to the external HDD.
   fileSystems."/home/alex/media" = {
     device = "/mnt/external/media";
-    options = [ "bind" ];
+    options = ["bind"];
   };
 
   # Spin down the external HDD after 10 minutes of inactivity.
   systemd.services.hdparm = {
     description = "/dev/sda Spin Down ";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "local-fs.target" ];
+    wantedBy = ["multi-user.target"];
+    after = ["local-fs.target"];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.hdparm}/bin/hdparm -S 60 /dev/sda";

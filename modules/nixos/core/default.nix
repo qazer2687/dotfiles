@@ -19,9 +19,8 @@
   # probably doesn't belong in this file.
 
   config = lib.mkIf config.modules.core.enable {
-
     ########## NIX ##########
-    
+
     nix = let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in {
@@ -71,7 +70,7 @@
         # changed for all hosts. I may remove this in the future
         # but it works fine with my configuration for now.
         self.overlays.modifications
-        
+
         # inputs.<name>.overlay...
       ];
     };
@@ -92,7 +91,8 @@
       services.NetworkManager-dispatcher.enable = false;
     };
 
-    /* Rely on tailscale for SSH.
+    /*
+       Rely on tailscale for SSH.
     services.openssh = {
       enable = true;
       settings = {

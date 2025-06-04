@@ -7,20 +7,19 @@
   options.modules.xdg.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.xdg.enable {
-
     services.dbus = {
       enable = true;
       # EXPERIMENTAL - High performance implementation of the dbus specification.
       implementation = "broker";
     };
-    
-    environment.systemPackages = with pkgs; [ 
+
+    environment.systemPackages = with pkgs; [
       xdg-utils
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
       xdg-desktop-portal-wlr
     ];
-    
+
     xdg = {
       portal = {
         enable = true;

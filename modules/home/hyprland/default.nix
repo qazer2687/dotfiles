@@ -149,7 +149,6 @@ in {
           "f[1], gapsout:4, gapsin:0"
         ];
         windowrulev2 = [
-
         ];
         layerrule = [
           # Disable wofi animation.

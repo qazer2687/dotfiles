@@ -3,8 +3,6 @@
   config,
   ...
 }: {
-
-  
   options.modules.git.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.git.enable {

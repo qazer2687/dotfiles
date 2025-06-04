@@ -8,10 +8,10 @@
 
   users.users = {
     alex = {
-	    isNormalUser = true;
-	    extraGroups = ["networkmanager" "wheel" "video" "audio" "dialout" "docker"];
-	    shell = pkgs.fish;
-			hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
+      isNormalUser = true;
+      extraGroups = ["networkmanager" "wheel" "video" "audio" "dialout" "docker"];
+      shell = pkgs.fish;
+      hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
     };
   };
 
@@ -41,7 +41,7 @@
     extraRules = ''
       # Enable support for the ESP32-CYD2USB.
       SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
-      
+
       # Allow backlight control for non-root users.
       ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
     '';
@@ -64,7 +64,7 @@
       # watchdog from hanging on poweroff.
       "iTCO_wdt"
       # Bluetooth
-      "btusb" 
+      "btusb"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
@@ -91,7 +91,7 @@
       "--noclear"
     ];
   };
-  
+
   # niri-session refuses to work a lot of the time unless manually invoked.
   /*
   environment.loginShellInit = ''
@@ -117,7 +117,7 @@
       # Temporary fix for nautilus not launching on hyprland.
       # https://bbs.archlinux.org/viewtopic.php?pid=2196562#p2196562
       # GSK_RENDERER = "ngl";
-      
+
       # Temporary fix for the cursor being offset slightly on hyprland.
       # https://github.com/hyprwm/Hyprland/issues/7244
       # AQ_NO_ATOMIC = "0";
@@ -137,7 +137,7 @@
     #  enable = true;
     #  apfsSupport = true;
     #};
-    
+
     xdg.enable = true;
 
     # Marcan said something about it being ineffective on apple silicon.

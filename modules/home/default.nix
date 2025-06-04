@@ -28,8 +28,9 @@
     ./niri
     ./mpd
     ./fastfetch
-    #./hyprpanel 
+    #./hyprpanel
     ./hyprlock
     ./zed
+    ./zoxide
   ];
 }
