@@ -93,7 +93,7 @@ index 8a587d1..7a4949b 100644
  	struct wlr_scene_output *scene_output;
  	struct wlr_scene_rect *fullscreen_bg; /* See createmon() for info */
 @@ -286,6 +294,17 @@ static void destroysessionlock(struct wl_listener *listener, void *data);
- static void destroysessionlock(struct wl_listener *listener, void *data);
+ static void destroysessionmgr(struct wl_listener *listener, void *data);
  static void destroykeyboardgroup(struct wl_listener *listener, void *data);
  static Monitor *dirtomon(enum wlr_direction dir);
 +static void dwl_ipc_manager_bind(struct wl_client *client, void *data, uint32_t version, uint32_t id);
@@ -125,9 +125,9 @@ index 8a587d1..7a4949b 100644
 +static struct zdwl_ipc_manager_v2_interface dwl_manager_implementation = {.release = dwl_ipc_manager_release, .get_output = dwl_ipc_manager_get_output};
 +static struct zdwl_ipc_output_v2_interface dwl_output_implementation = {.release = dwl_ipc_output_release, .set_tags = dwl_ipc_output_set_tags, .set_layout = dwl_ipc_output_set_layout, .set_client_tags = dwl_ipc_output_set_client_tags};
 +
- /* global event handlers */
- static struct wl_listener cursor_axis = {.notify = axisnotify};
- static struct wl_listener cursor_button = {.notify = buttonpress};
+ #ifdef XWAYLAND
+ static void activatex11(struct wl_listener *listener, void *data);
+ static void associatex11(struct wl_listener *listener, void *data);
 @@ -703,6 +726,10 @@ cleanupmon(struct wl_listener *listener, void *data)
  	LayerSurface *l, *tmp;
  	size_t i;
@@ -383,8 +383,8 @@ index 8a587d1..7a4949b 100644
  
  void
 @@ -2584,6 +2770,8 @@ setup(void)
- 	wl_signal_add(&output_mgr->events.apply, &output_mgr_apply);
- 	wl_signal_add(&output_mgr->events.test, &output_mgr_test);
+ 	LISTEN_STATIC(&output_mgr->events.apply, outputmgrapply);
+ 	LISTEN_STATIC(&output_mgr->events.test, outputmgrtest);
  
 +	wl_global_create(dpy, &zdwl_ipc_manager_v2_interface, 2, NULL, dwl_ipc_manager_bind);
 +
