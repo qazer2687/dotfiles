@@ -1,4 +1,4 @@
-From 23f9113fd746081a6c32d9c6367f19eabe9a91b3 Mon Sep 17 00:00:00 2001
+From 01290daca2b01131c5c022389afd0b593b4707eb Mon Sep 17 00:00:00 2001
 From: "Devin J. Pohly" <djpohly@gmail.com>
 Date: Thu, 4 Mar 2021 00:45:50 -0600
 Subject: [PATCH] port dwm "push" patch to dwl
@@ -17,10 +17,10 @@ Signed-off-by: Leonardo Hernández Hernández <leohdz172@proton.me>
  create mode 100644 push.h
 
 diff --git a/Makefile b/Makefile
-index 8db7409c..e742ed3f 100644
+index 3358bae9..87bf3160 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -19,7 +19,7 @@ LDLIBS    = `$(PKG_CONFIG) --libs $(PKGS)` $(WLR_LIBS) -lm $(LIBS)
+@@ -19,7 +19,7 @@ LDLIBS    = `$(PKG_CONFIG) --libs $(PKGS)` -lm $(LIBS)
  all: dwl
  dwl: dwl.o util.o
  	$(CC) dwl.o util.o $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
@@ -30,10 +30,10 @@ index 8db7409c..e742ed3f 100644
  	wlr-output-power-management-unstable-v1-protocol.h xdg-shell-protocol.h
  util.o: util.c util.h
 diff --git a/dwl.c b/dwl.c
-index 9021e442..f9e44f33 100644
+index a2711f67..c3d78aa3 100644
 --- a/dwl.c
 +++ b/dwl.c
-@@ -425,7 +425,9 @@ static xcb_atom_t netatom[NetLast];
+@@ -427,7 +427,9 @@ static xcb_atom_t netatom[NetLast];
  #endif
  
  /* configuration, allows nested code to access above variables */
