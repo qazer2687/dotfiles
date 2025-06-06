@@ -158,13 +158,13 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_Return, spawn, {.v = termcmd}},
 
     // Volume Control
-    {XKB_KEY_XF86AudioRaiseVolume, spawn, {.v = volumeup}},
-    {XKB_KEY_XF86AudioLowerVolume, spawn, {.v = volumedown}},
-    {XKB_KEY_XF86AudioMute, spawn, {.v = volumemute}},
+    {0, XKB_KEY_XF86AudioRaiseVolume, spawn, {.v = volumeup}},
+    {0, XKB_KEY_XF86AudioLowerVolume, spawn, {.v = volumedown}},
+    {0, XKB_KEY_XF86AudioMute, spawn, {.v = volumemute}},
     
     // Brightness Control
-    {XKB_KEY_XF86MonBrightnessUp, spawn, {.v = brightnessup}},
-    {XKB_KEY_XF86MonBrightnessDown, spawn, {.v = brightnessdown}},
+    {0, XKB_KEY_XF86MonBrightnessUp, spawn, {.v = brightnessup}},
+    {0, XKB_KEY_XF86MonBrightnessDown, spawn, {.v = brightnessdown}},
 
     // Backlight Control
     {MODKEY, XKB_KEY_XF86MonBrightnessUp, spawn, {.v = backlightup}},
