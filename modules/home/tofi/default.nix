@@ -15,13 +15,13 @@
         width = "100%";
         height = 30;
         horizontal = true;
-        font-size = 14;
-        prompt-text = " run: ";
+        font-size = 12;
+        prompt-text = " > ";
         font = "${pkgs.departure-mono}/share/fonts/otf/DepartureMono-Regular.otf";
         outline-width = 0;
         border-width = 0;
         background-color = "#000000";
-        min-input-width = 120;
+        min-input-width = 160;
         result-spacing = 15;
         padding-top = 0;
         padding-bottom = 0;
