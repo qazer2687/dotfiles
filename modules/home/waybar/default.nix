@@ -26,7 +26,7 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "niri/workspaces"];
+          modules-left = ["clock" "dwl/workspaces"];
           modules-center = [];
           modules-right = ["network" "pulseaudio" "battery"];
 
@@ -52,7 +52,7 @@
             interval = 10;
           };
 
-          "niri/workspaces" = {
+          "dwl/workspaces" = {
             format = "󱓻";
             format-icons = {
               "1" = "1";
