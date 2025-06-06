@@ -2,26 +2,45 @@
 .SUFFIXES:
 include config.mk
 
-# Extreme optimization flags
+# Detect if we're in Nix environment
+NIX_BUILD := $(if $(NIX_ENFORCE_NO_NATIVE),1,0)
+
+# Extreme optimization flags (Nix-compatible)
 DWLCPPFLAGS = -I. -DWLR_USE_UNSTABLE -D_POSIX_C_SOURCE=200809L \
 	-DVERSION=\"$(VERSION)\" $(XWAYLAND) -DNDEBUG -DNDEBUG_PARANOID
-DWLDEVCFLAGS = -Ofast -flto=auto -fuse-linker-plugin -march=native -mtune=native \
-	-funroll-loops -fomit-frame-pointer -ffast-math -fno-stack-protector \
-	-fno-unwind-tables -fno-asynchronous-unwind-tables -fmerge-all-constants \
+
+# Base optimization flags
+BASE_OPT = -Ofast -flto -fuse-linker-plugin -funroll-loops -fomit-frame-pointer \
+	-ffast-math -fno-stack-protector -fno-unwind-tables -fno-asynchronous-unwind-tables \
+	-fmerge-all-constants -ftree-vectorize -fprefetch-loop-arrays \
+	-finline-functions -finline-small-functions -findirect-inlining \
+	-fpartial-inlining -finline-functions-called-once -fsection-anchors \
+	-fschedule-insns2 -frename-registers -freorder-blocks-and-partition \
+	-fno-semantic-interposition -fno-plt -fno-common -fstrict-aliasing -fstrict-overflow
+
+# CPU-specific flags (only if not in Nix)
+ifeq ($(NIX_BUILD),0)
+CPU_OPT = -march=native -mtune=native
+else
+CPU_OPT = -O3
+endif
+
+# Advanced GCC-specific optimizations (check if available)
+ADVANCED_OPT = $(shell $(CC) -v 2>&1 | grep -q "gcc version" && echo "\
 	-fmodulo-sched -fmodulo-sched-allow-regmoves -fgcse-after-reload \
-	-ftree-vectorize -fvect-cost-model=unlimited -fsimd-cost-model=unlimited \
-	-fprefetch-loop-arrays -floop-nest-optimize -floop-interchange \
+	-fvect-cost-model=unlimited -floop-nest-optimize -floop-interchange \
 	-floop-block -floop-strip-mine -ftree-loop-distribute-patterns \
 	-fwhole-program -fipa-pta -fdevirtualize-speculatively \
-	-finline-functions -finline-small-functions -findirect-inlining \
-	-fpartial-inlining -finline-functions-called-once \
-	-fsection-anchors -fbranch-target-load-optimize2 \
-	-fschedule-insns2 -frename-registers -freorder-blocks-algorithm=stc \
-	-freorder-blocks-and-partition -fno-semantic-interposition \
-	-fno-plt -fno-common -fstrict-aliasing -fstrict-overflow \
-	-Wl,--gc-sections -Wl,--icf=all -Wl,--strip-all -Wl,-O2 \
-	-Wl,--as-needed -Wl,--hash-style=gnu -Wl,-z,relro,-z,now \
-	-Wl,--build-id=none -Wl,--no-eh-frame-hdr \
+	-fbranch-target-load-optimize2 -freorder-blocks-algorithm=stc")
+
+# Linker optimization flags (compatible with older binutils)
+LINKER_OPT = -Wl,--gc-sections -Wl,--strip-all -Wl,-O2 -Wl,--as-needed \
+	-Wl,--hash-style=gnu -Wl,-z,relro,-z,now -Wl,--build-id=none
+
+# Check if linker supports ICF (identical code folding)
+LINKER_ICF := $(shell $(CC) -Wl,--icf=all -Wl,--help 2>/dev/null | grep -q icf && echo "-Wl,--icf=all")
+
+DWLDEVCFLAGS = $(BASE_OPT) $(CPU_OPT) $(ADVANCED_OPT) $(LINKER_OPT) $(LINKER_ICF) \
 	-pedantic -Wall -Wextra -Wdeclaration-after-statement \
 	-Wno-unused-parameter -Wshadow -Wunused-macros -Werror=strict-prototypes \
 	-Werror=implicit -Werror=return-type -Werror=incompatible-pointer-types \
@@ -33,6 +52,12 @@ PKGS_LIBS := $(shell $(PKG_CONFIG) --libs wlroots-0.18 wayland-server xkbcommon 
 
 DWLCFLAGS = $(PKGS_CFLAGS) $(DWLCPPFLAGS) $(DWLDEVCFLAGS) $(CFLAGS)
 LDLIBS = $(PKGS_LIBS) -lm $(LIBS)
+
+# Nix-friendly build info
+$(info Building with: NIX_BUILD=$(NIX_BUILD))
+$(info Compiler: $(CC))
+$(info CPU optimizations: $(CPU_OPT))
+$(info ICF support: $(if $(LINKER_ICF),yes,no))
 
 # Objects
 OBJS = dwl.o util.o dwl-ipc-unstable-v2-protocol.o
@@ -46,11 +71,9 @@ WAYLAND_PROTOCOLS := $(shell $(PKG_CONFIG) --variable=pkgdatadir wayland-protoco
 
 all: dwl
 
-# Ultra-aggressive linking with profile-guided optimization preparation
+# Ultra-aggressive linking with compatibility checks
 dwl: $(OBJS) | strip-binary
-	$(CC) $(OBJS) $(DWLCFLAGS) $(LDFLAGS) -Wl,--gc-sections -Wl,--icf=all \
-		-Wl,--strip-all -Wl,-O2 -Wl,--as-needed -Wl,--hash-style=gnu \
-		-Wl,-z,relro,-z,now -Wl,--build-id=none $(LDLIBS) -o $@
+	$(CC) $(OBJS) $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
 
 # Parallel protocol generation
 protocols: $(PROTOCOLS)
