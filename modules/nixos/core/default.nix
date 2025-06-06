@@ -141,6 +141,13 @@
 
     programs.dconf.enable = true;
     security.polkit.enable = true;
+    
+    # OOM Killer
+    services.earlyoom.enable = true;
+    
+    # Use dash as /bin/sh. Although the performance boost
+    # will be small to negligible, I might as well use it.
+    environment.binsh = "${pkgs.dash}/bin/dash";
 
     # Disable the core dump service.
     systemd.coredump.enable = false;
