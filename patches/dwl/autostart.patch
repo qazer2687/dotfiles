@@ -1,4 +1,4 @@
-From d2829ed5c970c7e7692e39c451526b3860dabb2f Mon Sep 17 00:00:00 2001
+From 3b0b0249d900121a90528616f4d11f733c7a5ca2 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Leonardo=20Hern=C3=A1ndez=20Hern=C3=A1ndez?=
  <leohdz172@proton.me>
 Date: Sat, 8 Jul 2023 17:11:36 -0600
@@ -11,11 +11,11 @@ https://dwm.suckless.org/patches/cool_autostart/
 Signed-off-by: Leonardo Hernández Hernández <leohdz172@proton.me>
 ---
  config.def.h |  7 +++++++
- dwl.c        | 59 +++++++++++++++++++++++++++++++++++++++++++++++-----
- 2 files changed, 61 insertions(+), 5 deletions(-)
+ dwl.c        | 58 +++++++++++++++++++++++++++++++++++++++++++++++++---
+ 2 files changed, 62 insertions(+), 3 deletions(-)
 
 diff --git a/config.def.h b/config.def.h
-index 22d2171..1d0f935 100644
+index 22d2171d..8dc6502c 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -20,6 +20,13 @@ static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You ca
@@ -33,10 +33,10 @@ index 22d2171..1d0f935 100644
  static const Rule rules[] = {
  	/* app_id             title       tags mask     isfloating   monitor */
 diff --git a/dwl.c b/dwl.c
-index 00e9cc1e..5de32831 100644
+index ad21e1ba..3118e07f 100644
 --- a/dwl.c
 +++ b/dwl.c
-@@ -249,6 +249,7 @@ static void arrange(Monitor *m);
+@@ -246,6 +246,7 @@ static void arrange(Monitor *m);
  static void arrangelayer(Monitor *m, struct wl_list *list,
  		struct wlr_box *usable_area, int exclusive);
  static void arrangelayers(Monitor *m);
@@ -44,7 +44,7 @@ index 00e9cc1e..5de32831 100644
  static void axisnotify(struct wl_listener *listener, void *data);
  static void buttonpress(struct wl_listener *listener, void *data);
  static void chvt(const Arg *arg);
-@@ -429,6 +430,9 @@ static xcb_atom_t netatom[NetLast];
+@@ -455,6 +456,9 @@ static struct wlr_xwayland *xwayland;
  /* attempt to encapsulate suck into one file */
  #include "client.h"
  
@@ -54,7 +54,7 @@ index 00e9cc1e..5de32831 100644
  /* function implementations */
  void
  applybounds(Client *c, struct wlr_box *bbox)
-@@ -577,6 +581,27 @@ arrangelayers(Monitor *m)
+@@ -599,6 +603,27 @@ arrangelayers(Monitor *m)
  	}
  }
  
@@ -82,11 +82,13 @@ index 00e9cc1e..5de32831 100644
  void
  axisnotify(struct wl_listener *listener, void *data)
  {
-@@ -672,11 +697,21 @@ checkidleinhibitor(struct wlr_surface *exclude)
+@@ -695,12 +720,23 @@ checkidleinhibitor(struct wlr_surface *exclude)
  void
  cleanup(void)
  {
 +	size_t i;
++
+ 	cleanuplisteners();
  #ifdef XWAYLAND
  	wlr_xwayland_destroy(xwayland);
  	xwayland = NULL;
@@ -104,44 +106,36 @@ index 00e9cc1e..5de32831 100644
  	if (child_pid > 0) {
  		kill(-child_pid, SIGTERM);
  		waitpid(child_pid, NULL, 0);
-@@ -1438,18 +1473,31 @@ void
+@@ -1551,10 +1587,25 @@ gpureset(struct wl_listener *listener, void *data)
+ void
  handlesig(int signo)
  {
- 	if (signo == SIGCHLD) {
--#ifdef XWAYLAND
- 		siginfo_t in;
- 		/* wlroots expects to reap the XWayland process itself, so we
- 		 * use WNOWAIT to keep the child waitable until we know it's not
- 		 * XWayland.
- 		 */
- 		while (!waitid(P_ALL, 0, &in, WEXITED|WNOHANG|WNOWAIT) && in.si_pid
--				&& (!xwayland || in.si_pid != xwayland->server->pid))
--			waitpid(in.si_pid, NULL, 0);
--#else
+-	if (signo == SIGCHLD)
 -		while (waitpid(-1, NULL, WNOHANG) > 0);
-+#ifdef XWAYLAND
-+			   && (!xwayland || in.si_pid != xwayland->server->pid)
- #endif
-+			   ) {
-+			pid_t *p, *lim;
-+			waitpid(in.si_pid, NULL, 0);
-+			if (in.si_pid == child_pid)
+-	else if (signo == SIGINT || signo == SIGTERM)
++	if (signo == SIGCHLD) {
++		pid_t pid, *p, *lim;
++		while ((pid = waitpid(-1, NULL, WNOHANG)) > 0) {
++			if (pid == child_pid)
 +				child_pid = -1;
 +			if (!(p = autostart_pids))
 +				continue;
 +			lim = &p[autostart_len];
 +
 +			for (; p < lim; p++) {
-+				if (*p == in.si_pid) {
++				if (*p == pid) {
 +					*p = -1;
 +					break;
 +				}
 +			}
 +		}
- 	} else if (signo == SIGINT || signo == SIGTERM) {
++	} else if (signo == SIGINT || signo == SIGTERM) {
  		quit(NULL);
- 	}
-@@ -2169,6 +2217,7 @@ run(char *startup_cmd)
++	}
+ }
+ 
+ void
+@@ -2241,6 +2292,7 @@ run(char *startup_cmd)
  		die("startup: backend_start");
  
  	/* Now that the socket exists and the backend is started, run the startup command */
@@ -150,4 +144,4 @@ index 00e9cc1e..5de32831 100644
  		int piperw[2];
  		if (pipe(piperw) < 0)
 -- 
-2.45.2
+2.48.0
