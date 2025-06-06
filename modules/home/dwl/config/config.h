@@ -171,8 +171,8 @@ static const Key keys[] = {
     // Window Manipulation
     {MODKEY, XKB_KEY_Left, movestack, {.i = +1}},
     {MODKEY, XKB_KEY_Right, movestack, {.i = -1}},
-    {MODKEY, XKB_KEY_Up, pushup, {0}},
-    {MODKEY, XKB_KEY_Down, pushdown, {0}},
+    //{MODKEY, XKB_KEY_Up, pushup, {0}},
+    //{MODKEY, XKB_KEY_Down, pushdown, {0}},
 
     {MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q, quit, {0}},
 
