@@ -27,7 +27,7 @@ _: {
     dwl =
       (prev.dwl.overrideAttrs (_oldAttrs: rec {
         patches = [
-          ../patches/dwl/ipc.patch
+          ../patches/dwl/ipc-no-makefile.patch
         #  ../patches/dwl/hot-reload-0.7.patch
           ../patches/dwl/autostart.patch
           ../patches/dwl/vanitygaps.patch
