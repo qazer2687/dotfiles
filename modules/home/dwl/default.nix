@@ -13,6 +13,8 @@
       # can add dependencies here.
       dwl
       swaybg
+      brightnessctl
+      pamixer
     ];
   };
 }

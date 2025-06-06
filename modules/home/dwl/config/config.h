@@ -138,12 +138,39 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 static const char *termcmd[] = { "foot", NULL };
 static const char *menucmd[] = { "wofi", NULL };
 
+// Volume Control
+static const char *volumeup[] = { "pamixer -i 2", NULL };
+static const char *volumedown[] = { "pamixer -d 2", NULL };
+static const char *volumemute[] = { "pamixer -t", NULL };
+
+// Brightness Control
+static const char *brightnessup[] = { "brightnessctl set 1%+", NULL };
+static const char *brightnessdown[] = { "brightnessctl set 1%-", NULL };
+
+// Backlight Control
+static const char *backlightup[] = { "brightnessctl --class leds --device kbd_backlight set 10%+", NULL };
+static const char *backlightdown[] = { "brightnessctl --class leds --device kbd_backlight set 10%-", NULL };
+
 static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
     /* modifier-key-function-argument */
     {MODKEY, XKB_KEY_e, spawn, {.v = menucmd}},
     {MODKEY, XKB_KEY_Return, spawn, {.v = termcmd}},
 
+    // Volume Control
+    {XKB_KEY_XF86AudioRaiseVolume, spawn, {.v = volumeup}},
+    {XKB_KEY_XF86AudioLowerVolume, spawn, {.v = volumedown}},
+    {XKB_KEY_XF86AudioMute, spawn, {.v = volumemute}},
+    
+    // Brightness Control
+    {XKB_KEY_XF86MonBrightnessUp, spawn, {.v = brightnessup}},
+    {XKB_KEY_XF86MonBrightnessDown, spawn, {.v = brightnessdown}},
+
+    // Backlight Control
+    {MODKEY, XKB_KEY_XF86MonBrightnessUp, spawn, {.v = backlightup}},
+    {MODKEY, XKB_KEY_XF86MonBrightnessDown, spawn, {.v = backlightdown}},
+    
+    
     {MODKEY, XKB_KEY_j, focusstack, {.i = +1}},
     {MODKEY, XKB_KEY_k, focusstack, {.i = -1}},
     {MODKEY, XKB_KEY_i, incnmaster, {.i = +1}},
@@ -151,9 +178,7 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_h, setmfact, {.f = -0.05f}},
     {MODKEY, XKB_KEY_l, setmfact, {.f = +0.05f}},
 
-    {MODKEY, XKB_KEY_Return, zoom, {0}},
     {MODKEY, XKB_KEY_q, killclient, {0}},
-    {MODKEY, XKB_KEY_space, togglefloating, {0}},
     {MODKEY, XKB_KEY_f, togglefullscreen, {0}},
 
     // Tag Navigation & Manipulation
@@ -167,12 +192,9 @@ static const Key keys[] = {
     TAGKEYS(XKB_KEY_8, XKB_KEY_asterisk, 7),
     TAGKEYS(XKB_KEY_9, XKB_KEY_parenleft, 8),
 
-
     // Window Manipulation
-    {MODKEY, XKB_KEY_Left, movestack, {.i = +1}},
-    {MODKEY, XKB_KEY_Right, movestack, {.i = -1}},
-    //{MODKEY, XKB_KEY_Up, pushup, {0}},
-    //{MODKEY, XKB_KEY_Down, pushdown, {0}},
+    {MODKEY, XKB_KEY_Left, movestack, {.i = -1}},
+    {MODKEY, XKB_KEY_Right, movestack, {.i = +1}},
 
     {MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q, quit, {0}},
 
