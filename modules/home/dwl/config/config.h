@@ -134,42 +134,28 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* commands */
-static const char *termcmd[] = { "foot", NULL };
-static const char *menucmd[] = { "wofi", NULL };
-
-// Volume Control
-static const char *volumeup[] = { "pamixer -i 2", NULL };
-static const char *volumedown[] = { "pamixer -d 2", NULL };
-static const char *volumemute[] = { "pamixer -t", NULL };
-
-// Brightness Control
-static const char *brightnessup[] = { "brightnessctl set 1%+", NULL };
-static const char *brightnessdown[] = { "brightnessctl set 1%-", NULL };
-
-// Backlight Control
-static const char *backlightup[] = { "brightnessctl --class leds --device kbd_backlight set 10%+", NULL };
-static const char *backlightdown[] = { "brightnessctl --class leds --device kbd_backlight set 10%-", NULL };
-
 static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
     /* modifier-key-function-argument */
-    {MODKEY, XKB_KEY_e, spawn, {.v = menucmd}},
-    {MODKEY, XKB_KEY_Return, spawn, {.v = termcmd}},
-
+    
+    // Launcher
+    {MODKEY, XKB_KEY_e, spawn, SHCMD("wofi")},
+    
+    // Terminal
+    {MODKEY, XKB_KEY_Return, spawn, SHCMD("foot")},
+    
     // Volume Control
-    {0, XKB_KEY_XF86AudioRaiseVolume, spawn, {.v = volumeup}},
-    {0, XKB_KEY_XF86AudioLowerVolume, spawn, {.v = volumedown}},
-    {0, XKB_KEY_XF86AudioMute, spawn, {.v = volumemute}},
+    {0, XKB_KEY_XF86AudioRaiseVolume, spawn, SHCMD("pamixer -i 2")},
+    {0, XKB_KEY_XF86AudioLowerVolume, spawn, SHCMD("pamixer -d 2")},
+    {0, XKB_KEY_XF86AudioMute, spawn, SHCMD("pamixer -t")},
     
     // Brightness Control
-    {0, XKB_KEY_XF86MonBrightnessUp, spawn, {.v = brightnessup}},
-    {0, XKB_KEY_XF86MonBrightnessDown, spawn, {.v = brightnessdown}},
-
-    // Backlight Control
-    {MODKEY, XKB_KEY_XF86MonBrightnessUp, spawn, {.v = backlightup}},
-    {MODKEY, XKB_KEY_XF86MonBrightnessDown, spawn, {.v = backlightdown}},
+    {0, XKB_KEY_XF86MonBrightnessUp, spawn, SHCMD("brightnessctl set 1%+")},
+    {0, XKB_KEY_XF86MonBrightnessDown, spawn, SHCMD("brightnessctl set 1%-")},
     
+    // Backlight Control
+    {MODKEY, XKB_KEY_XF86MonBrightnessUp, spawn, SHCMD("brightnessctl --class leds --device kbd_backlight set 10%+")},
+    {MODKEY, XKB_KEY_XF86MonBrightnessDown, spawn, SHCMD("brightnessctl --class leds --device kbd_backlight set 10%-")},
     
     {MODKEY, XKB_KEY_j, focusstack, {.i = +1}},
     {MODKEY, XKB_KEY_k, focusstack, {.i = -1}},
