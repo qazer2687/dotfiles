@@ -27,10 +27,10 @@ _: {
     dwl =
       (prev.dwl.overrideAttrs (_oldAttrs: rec {
         patches = [
-          #../patches/dwl/autostart.patch
+          ../patches/dwl/autostart.patch
           ../patches/dwl/vanitygaps.patch
           ../patches/dwl/movestack.patch
-          #../patches/dwl/push.patch
+          ../patches/dwl/push.patch
           ../patches/dwl/ipc.patch
         ];
       }))
