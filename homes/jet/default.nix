@@ -41,6 +41,7 @@
   modules = {
     # Desktop Environment
     niri.enable = true;
+    dwl.enable = true;
     #hyprland.enable = true;
     #hyprlock.enable = true;
     waybar.enable = true;
