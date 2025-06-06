@@ -31,7 +31,7 @@ _: {
           ../patches/dwl/vanitygaps.patch
           ../patches/dwl/movestack.patch
           ../patches/dwl/push.patch
-          ../patches/dwl/ipc.patch
+        #  ../patches/dwl/ipc.patch
         ];
       }))
       .override {configH = ../modules/home/dwl/config/config.h;};
