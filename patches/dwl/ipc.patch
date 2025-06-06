@@ -1,35 +1,40 @@
-From 0d70fa63c9a76ee67968c2a6932c05b8fbe33da4 Mon Sep 17 00:00:00 2001
+From dc4dc1965732d0995cd8c202c3daa7ab087399a2 Mon Sep 17 00:00:00 2001
 From: choc <notchoc@proton.me>
 Date: Mon, 23 Oct 2023 10:35:17 +0800
 Subject: [PATCH] implement dwl-ipc-unstable-v2
  https://codeberg.org/dwl/dwl-patches/wiki/ipc
 
 ---
- Makefile                          |  11 +-
+ Makefile                          |  14 +-
  config.def.h                      |   1 +
  dwl.c                             | 257 ++++++++++++++++++++++++++----
  protocols/dwl-ipc-unstable-v2.xml | 181 +++++++++++++++++++++
- 4 files changed, 414 insertions(+), 36 deletions(-)
+ 4 files changed, 416 insertions(+), 37 deletions(-)
  create mode 100644 protocols/dwl-ipc-unstable-v2.xml
 
 diff --git a/Makefile b/Makefile
-index fdc581a..9559655 100644
+index 9308656..941d4ad 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -15,9 +15,10 @@ LDLIBS    = `$(PKG_CONFIG) --libs $(PKGS)` $(LIBS)
+@@ -17,12 +17,14 @@ DWLCFLAGS = `$(PKG_CONFIG) --cflags $(PKGS)` $(DWLCPPFLAGS) $(DWLDEVCFLAGS) $(CF
+ LDLIBS    = `$(PKG_CONFIG) --libs $(PKGS)` $(LIBS)
  
  all: dwl
- dwl: dwl.o util.o
+-dwl: dwl.o util.o
 -	$(CC) dwl.o util.o $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
--dwl.o: dwl.c client.h config.h config.mk cursor-shape-v1-protocol.h pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h wlr-output-power-management-unstable-v1-protocol.h xdg-shell-protocol.h
++dwl: dwl.o util.o dwl-ipc-unstable-v2-protocol.o
 +	$(CC) dwl.o util.o dwl-ipc-unstable-v2-protocol.o $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
-+dwl.o: dwl.c client.h config.h config.mk cursor-shape-v1-protocol.h pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h wlr-output-power-management-unstable-v1-protocol.h xdg-shell-protocol.h dwl-ipc-unstable-v2-protocol.h
+ dwl.o: dwl.c client.h config.h config.mk cursor-shape-v1-protocol.h \
+ 	pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h \
+-	wlr-output-power-management-unstable-v1-protocol.h xdg-shell-protocol.h
++	wlr-output-power-management-unstable-v1-protocol.h xdg-shell-protocol.h \
++	dwl-ipc-unstable-v2-protocol.h
  util.o: util.c util.h
 +dwl-ipc-unstable-v2-protocol.o: dwl-ipc-unstable-v2-protocol.c dwl-ipc-unstable-v2-protocol.h
  
  # wayland-scanner is a tool which generates C headers and rigging for Wayland
  # protocols, which are specified in XML. wlroots requires you to rig these up
-@@ -40,6 +41,12 @@ wlr-output-power-management-unstable-v1-protocol.h:
+@@ -45,6 +47,12 @@ wlr-output-power-management-unstable-v1-protocol.h:
  xdg-shell-protocol.h:
  	$(WAYLAND_SCANNER) server-header \
  		$(WAYLAND_PROTOCOLS)/stable/xdg-shell/xdg-shell.xml $@
@@ -43,10 +48,10 @@ index fdc581a..9559655 100644
  config.h:
  	cp config.def.h $@
 diff --git a/config.def.h b/config.def.h
-index a784eb4..d615bf2 100644
+index 22d2171..1593033 100644
 --- a/config.def.h
 +++ b/config.def.h
-@@ -124,6 +124,7 @@ static const Key keys[] = {
+@@ -127,6 +127,7 @@ static const Key keys[] = {
  	/* modifier                  key                 function        argument */
  	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = menucmd} },
  	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = termcmd} },
@@ -55,7 +60,7 @@ index a784eb4..d615bf2 100644
  	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
  	{ MODKEY,                    XKB_KEY_i,          incnmaster,     {.i = +1} },
 diff --git a/dwl.c b/dwl.c
-index 2cdc819..f3a0907 100644
+index 9fb50a7..dfd7298 100644
 --- a/dwl.c
 +++ b/dwl.c
 @@ -65,6 +65,7 @@
@@ -66,7 +71,7 @@ index 2cdc819..f3a0907 100644
  #include "util.h"
  
  /* macros */
-@@ -142,6 +143,12 @@ typedef struct {
+@@ -143,6 +144,12 @@ typedef struct {
  	uint32_t resize; /* configure serial of a pending resize */
  } Client;
  
@@ -79,7 +84,7 @@ index 2cdc819..f3a0907 100644
  typedef struct {
  	uint32_t mod;
  	xkb_keysym_t keysym;
-@@ -188,6 +195,7 @@ typedef struct {
+@@ -189,6 +196,7 @@ typedef struct {
  
  struct Monitor {
  	struct wl_list link;
@@ -87,7 +92,7 @@ index 2cdc819..f3a0907 100644
  	struct wlr_output *wlr_output;
  	struct wlr_scene_output *scene_output;
  	struct wlr_scene_rect *fullscreen_bg; /* See createmon() for info */
-@@ -283,6 +291,17 @@ static void destroysessionlock(struct wl_listener *listener, void *data);
+@@ -284,6 +292,17 @@ static void destroysessionlock(struct wl_listener *listener, void *data);
  static void destroysessionmgr(struct wl_listener *listener, void *data);
  static void destroykeyboardgroup(struct wl_listener *listener, void *data);
  static Monitor *dirtomon(enum wlr_direction dir);
@@ -105,7 +110,7 @@ index 2cdc819..f3a0907 100644
  static void focusclient(Client *c, int lift);
  static void focusmon(const Arg *arg);
  static void focusstack(const Arg *arg);
-@@ -336,6 +355,7 @@ static void startdrag(struct wl_listener *listener, void *data);
+@@ -337,6 +356,7 @@ static void startdrag(struct wl_listener *listener, void *data);
  static void tag(const Arg *arg);
  static void tagmon(const Arg *arg);
  static void tile(Monitor *m);
@@ -113,7 +118,7 @@ index 2cdc819..f3a0907 100644
  static void togglefloating(const Arg *arg);
  static void togglefullscreen(const Arg *arg);
  static void toggletag(const Arg *arg);
-@@ -410,6 +430,9 @@ static struct wlr_box sgeom;
+@@ -411,6 +431,9 @@ static struct wlr_box sgeom;
  static struct wl_list mons;
  static Monitor *selmon;
  
@@ -123,7 +128,7 @@ index 2cdc819..f3a0907 100644
  #ifdef XWAYLAND
  static void activatex11(struct wl_listener *listener, void *data);
  static void associatex11(struct wl_listener *listener, void *data);
-@@ -699,6 +722,10 @@ cleanupmon(struct wl_listener *listener, void *data)
+@@ -700,6 +723,10 @@ cleanupmon(struct wl_listener *listener, void *data)
  	LayerSurface *l, *tmp;
  	size_t i;
  
@@ -134,7 +139,7 @@ index 2cdc819..f3a0907 100644
  	/* m->layers[i] are intentionally not unlinked */
  	for (i = 0; i < LENGTH(m->layers); i++) {
  		wl_list_for_each_safe(l, tmp, &m->layers[i], link)
-@@ -931,6 +958,8 @@ createmon(struct wl_listener *listener, void *data)
+@@ -934,6 +961,8 @@ createmon(struct wl_listener *listener, void *data)
  	m = wlr_output->data = ecalloc(1, sizeof(*m));
  	m->wlr_output = wlr_output;
  
@@ -143,7 +148,7 @@ index 2cdc819..f3a0907 100644
  	for (i = 0; i < LENGTH(m->layers); i++)
  		wl_list_init(&m->layers[i]);
  
-@@ -1300,6 +1329,190 @@ dirtomon(enum wlr_direction dir)
+@@ -1303,6 +1332,190 @@ dirtomon(enum wlr_direction dir)
  	return selmon;
  }
  
@@ -334,7 +339,7 @@ index 2cdc819..f3a0907 100644
  void
  focusclient(Client *c, int lift)
  {
-@@ -1982,41 +2195,9 @@ void
+@@ -1984,41 +2197,9 @@ void
  printstatus(void)
  {
  	Monitor *m = NULL;
@@ -378,7 +383,7 @@ index 2cdc819..f3a0907 100644
  }
  
  void
-@@ -2558,6 +2739,7 @@ setup(void)
+@@ -2562,6 +2743,7 @@ setup(void)
  	LISTEN_STATIC(&output_mgr->events.test, outputmgrtest);
  
  	wlr_scene_set_presentation(scene, wlr_presentation_create(dpy, backend));
@@ -386,7 +391,7 @@ index 2cdc819..f3a0907 100644
  
  	/* Make sure XWayland clients don't connect to the parent X server,
  	 * e.g when running in the x11 backend or the wayland backend and the
-@@ -2656,6 +2838,13 @@ tile(Monitor *m)
+@@ -2660,6 +2842,13 @@ tile(Monitor *m)
  	}
  }
  
