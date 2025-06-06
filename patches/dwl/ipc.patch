@@ -1,4 +1,4 @@
-From 8f08405c8b620f00be765d98edc2ee4bd0b71e58 Mon Sep 17 00:00:00 2001
+From fd3525019b9044c385009a9c0d10ee21ebf0f41f Mon Sep 17 00:00:00 2001
 From: choc <notchoc@proton.me>
 Date: Mon, 23 Oct 2023 10:35:17 +0800
 Subject: [PATCH] implement dwl-ipc-unstable-v2
@@ -13,7 +13,7 @@ Subject: [PATCH] implement dwl-ipc-unstable-v2
  create mode 100644 protocols/dwl-ipc-unstable-v2.xml
 
 diff --git a/Makefile b/Makefile
-index a67fdd3..2b45b2c 100644
+index e3e6426..15caf43 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -14,10 +14,11 @@ DWLCFLAGS = `$(PKG_CONFIG) --cflags $(PKGS)` $(DWLCPPFLAGS) $(DWLDEVCFLAGS) $(CF
@@ -21,11 +21,11 @@ index a67fdd3..2b45b2c 100644
  
  all: dwl
 -dwl: dwl.o util.o
--	$(CC) dwl.o util.o $(LDLIBS) $(LDFLAGS) $(DWLCFLAGS) -o $@
--dwl.o: dwl.c config.mk config.h client.h cursor-shape-v1-protocol.h pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h xdg-shell-protocol.h
+-	$(CC) dwl.o util.o $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
+-dwl.o: dwl.c client.h config.h config.mk cursor-shape-v1-protocol.h pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h xdg-shell-protocol.h
 +dwl: dwl.o util.o dwl-ipc-unstable-v2-protocol.o
-+	$(CC) dwl.o util.o dwl-ipc-unstable-v2-protocol.o $(LDLIBS) $(LDFLAGS) $(DWLCFLAGS) -o $@
-+dwl.o: dwl.c config.mk config.h client.h cursor-shape-v1-protocol.h pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h xdg-shell-protocol.h dwl-ipc-unstable-v2-protocol.h
++	$(CC) dwl.o util.o dwl-ipc-unstable-v2-protocol.o $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
++dwl.o: dwl.c client.h config.h config.mk cursor-shape-v1-protocol.h pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h xdg-shell-protocol.h dwl-ipc-unstable-v2-protocol.h
  util.o: util.c util.h
 +dwl-ipc-unstable-v2-protocol.o: dwl-ipc-unstable-v2-protocol.c dwl-ipc-unstable-v2-protocol.h
  
@@ -57,7 +57,7 @@ index a784eb4..d615bf2 100644
  	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
  	{ MODKEY,                    XKB_KEY_i,          incnmaster,     {.i = +1} },
 diff --git a/dwl.c b/dwl.c
-index 6f041a0..5e7f342 100644
+index 5a31aee..e9c2075 100644
 --- a/dwl.c
 +++ b/dwl.c
 @@ -64,6 +64,7 @@
@@ -115,7 +115,7 @@ index 6f041a0..5e7f342 100644
  static void togglefloating(const Arg *arg);
  static void togglefullscreen(const Arg *arg);
  static void toggletag(const Arg *arg);
-@@ -407,6 +427,9 @@ static struct wlr_box sgeom;
+@@ -406,6 +426,9 @@ static struct wlr_box sgeom;
  static struct wl_list mons;
  static Monitor *selmon;
  
@@ -125,7 +125,7 @@ index 6f041a0..5e7f342 100644
  #ifdef XWAYLAND
  static void activatex11(struct wl_listener *listener, void *data);
  static void associatex11(struct wl_listener *listener, void *data);
-@@ -698,6 +721,10 @@ cleanupmon(struct wl_listener *listener, void *data)
+@@ -695,6 +718,10 @@ cleanupmon(struct wl_listener *listener, void *data)
  	LayerSurface *l, *tmp;
  	size_t i;
  
@@ -136,7 +136,7 @@ index 6f041a0..5e7f342 100644
  	/* m->layers[i] are intentionally not unlinked */
  	for (i = 0; i < LENGTH(m->layers); i++) {
  		wl_list_for_each_safe(l, tmp, &m->layers[i], link)
-@@ -927,6 +954,8 @@ createmon(struct wl_listener *listener, void *data)
+@@ -924,6 +951,8 @@ createmon(struct wl_listener *listener, void *data)
  	m = wlr_output->data = ecalloc(1, sizeof(*m));
  	m->wlr_output = wlr_output;
  
@@ -145,7 +145,7 @@ index 6f041a0..5e7f342 100644
  	for (i = 0; i < LENGTH(m->layers); i++)
  		wl_list_init(&m->layers[i]);
  
-@@ -1296,6 +1325,190 @@ dirtomon(enum wlr_direction dir)
+@@ -1293,6 +1322,190 @@ dirtomon(enum wlr_direction dir)
  	return selmon;
  }
  
@@ -336,7 +336,7 @@ index 6f041a0..5e7f342 100644
  void
  focusclient(Client *c, int lift)
  {
-@@ -1971,41 +2184,9 @@ void
+@@ -1969,41 +2182,9 @@ void
  printstatus(void)
  {
  	Monitor *m = NULL;
@@ -380,7 +380,7 @@ index 6f041a0..5e7f342 100644
  }
  
  void
-@@ -2522,6 +2703,7 @@ setup(void)
+@@ -2520,6 +2701,7 @@ setup(void)
  	LISTEN_STATIC(&output_mgr->events.test, outputmgrtest);
  
  	wlr_scene_set_presentation(scene, wlr_presentation_create(dpy, backend));
@@ -388,7 +388,7 @@ index 6f041a0..5e7f342 100644
  
  	/* Make sure XWayland clients don't connect to the parent X server,
  	 * e.g when running in the x11 backend or the wayland backend and the
-@@ -2620,6 +2802,13 @@ tile(Monitor *m)
+@@ -2618,6 +2800,13 @@ tile(Monitor *m)
  	}
  }
  
