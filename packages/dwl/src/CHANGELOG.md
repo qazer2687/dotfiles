@@ -8,15 +8,6 @@
 
 ## Unreleased
 ### Added
-
-* Support for the linux-drm-syncobj-v1 protocol ([wlroots!4715][wlroots!4715], [#685][685])
-* Allow the use of non-system wlroots library ([#646][646])
-
-[wlroots!4715]: https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4715
-[685]: https://codeberg.org/dwl/dwl/pulls/685
-[646]: https://codeberg.org/dwl/dwl/pulls/646
-
-
 ### Changed
 ### Deprecated
 ### Removed
@@ -30,7 +21,7 @@
 
 ## 0.7
 
-This version is just 0.6 with wlroots 0.18 compatibility.
+See also [0.6](#0.6) release notes. 0.7 builds against wlroots 0.18.x.
 
 ### Added
 
@@ -41,9 +32,15 @@ This version is just 0.6 with wlroots 0.18 compatibility.
 [601]: https://codeberg.org/dwl/dwl/issues/601
 
 
+### Fixed
+
+* Crash when re-mapping unmapped clients.
+
+
 ### Contributors
 
 Guido Cella
+Lennart Jablonka
 
 
 ## 0.6
