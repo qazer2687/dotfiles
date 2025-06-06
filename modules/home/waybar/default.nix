@@ -157,6 +157,11 @@
           border-radius: 2px;
           color: #ffffff;
         }
+        
+        /* Hide unused dwl tags */
+        #tags button:not(.occupied):not(.focused) {
+          color: #000000;
+        }
 
         /* Workspace button styling */
         #tags button,
@@ -167,7 +172,7 @@
           border-radius: 6px;
           color: rgb(138, 138, 138);
         }
-            
+
         
         #tags button.focused,
         #workspaces button.active,
