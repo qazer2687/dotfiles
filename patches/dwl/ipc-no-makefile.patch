@@ -5,48 +5,12 @@ Subject: [PATCH] implement dwl-ipc-unstable-v2
  https://codeberg.org/dwl/dwl-patches/wiki/ipc
 
 ---
- Makefile                          |  14 +-
  config.def.h                      |   1 +
  dwl.c                             | 260 ++++++++++++++++++++++++++----
  protocols/dwl-ipc-unstable-v2.xml | 181 +++++++++++++++++++++
- 4 files changed, 419 insertions(+), 37 deletions(-)
+ 3 files changed, 405 insertions(+), 37 deletions(-)
  create mode 100644 protocols/dwl-ipc-unstable-v2.xml
 
-diff --git a/Makefile b/Makefile
-index f955e7b..10f3c98 100644
---- a/Makefile
-+++ b/Makefile
-@@ -17,12 +17,14 @@ DWLCFLAGS = `$(PKG_CONFIG) --cflags $(PKGS)` $(DWLCPPFLAGS) $(DWLDEVCFLAGS) $(CF
- LDLIBS    = `$(PKG_CONFIG) --libs $(PKGS)` -lm $(LIBS)
- 
- all: dwl
--dwl: dwl.o util.o
--	$(CC) dwl.o util.o $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
-+dwl: dwl.o util.o dwl-ipc-unstable-v2-protocol.o
-+	$(CC) dwl.o util.o dwl-ipc-unstable-v2-protocol.o $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
- dwl.o: dwl.c client.h config.h config.mk cursor-shape-v1-protocol.h \
- 	pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h \
--	wlr-output-power-management-unstable-v1-protocol.h xdg-shell-protocol.h
-+	wlr-output-power-management-unstable-v1-protocol.h xdg-shell-protocol.h \
-+	dwl-ipc-unstable-v2-protocol.h
- util.o: util.c util.h
-+dwl-ipc-unstable-v2-protocol.o: dwl-ipc-unstable-v2-protocol.c dwl-ipc-unstable-v2-protocol.h
- 
- # wayland-scanner is a tool which generates C headers and rigging for Wayland
- # protocols, which are specified in XML. wlroots requires you to rig these up
-@@ -45,6 +47,12 @@ wlr-output-power-management-unstable-v1-protocol.h:
- xdg-shell-protocol.h:
- 	$(WAYLAND_SCANNER) server-header \
- 		$(WAYLAND_PROTOCOLS)/stable/xdg-shell/xdg-shell.xml $@
-+dwl-ipc-unstable-v2-protocol.h:
-+	$(WAYLAND_SCANNER) server-header \
-+		protocols/dwl-ipc-unstable-v2.xml $@
-+dwl-ipc-unstable-v2-protocol.c:
-+	$(WAYLAND_SCANNER) private-code \
-+		protocols/dwl-ipc-unstable-v2.xml $@
- 
- config.h:
- 	cp config.def.h $@
 diff --git a/config.def.h b/config.def.h
 index 22d2171..1593033 100644
 --- a/config.def.h
@@ -597,4 +561,3 @@ index 0000000..0a6e7e5
 +</protocol>
 -- 
 2.43.0
-
