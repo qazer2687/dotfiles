@@ -1,7 +1,7 @@
 # dwl - dwm for Wayland
 
 Join us on our IRC channel: [#dwl on Libera Chat]  
-Or on the community-maintained [Discord server].
+Or on our [Discord server].
 
 dwl is a compact, hackable compositor for [Wayland] based on [wlroots]. It is
 intended to fill the same space in the Wayland world that dwm does in X11,
@@ -14,12 +14,13 @@ philosophy. Like dwm, dwl is:
 
 ## Getting Started:
 
+### **dwl branch 0.7 and releases based upon 0.7 build against [wlroots] 0.18**
+
 ### Latest semi-stable [release]
-This is probably where you want to start. This builds against the [wlroots]
-versions currently shipping in major distributions. If your
-distribution's `wlroots` version is older, use an earlier dwl [release].
-The `wlroots` version against which a given `dwl` release builds is specified
-with each release on the [release] page
+This is probably where you want to start. This builds against the dependent
+packages' versions currently shipping in major distributions. If your
+distribution's wlroots version is older, use an earlier dwl [release] or [0.x
+branch].
 
 ### Development branch [main]
 Active development progresses on the `main` branch. The `main` branch is built
@@ -182,7 +183,6 @@ inspiration, and to the various contributors to the project, including:
 - Stivvo for output management and fullscreen support, and patch maintenance
 
 
-[wlroots]: https://gitlab.freedesktop.org/wlroots
 [`systemd --user`]: https://wiki.archlinux.org/title/Systemd/User
 [#dwl on Libera Chat]: https://web.libera.chat/?channels=#dwl
 [0.7-rc1]: https://codeberg.org/dwl/dwl/releases/tag/v0.7-rc1
