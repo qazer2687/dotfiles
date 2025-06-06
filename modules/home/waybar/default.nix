@@ -26,7 +26,7 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "dwl/workspaces"];
+          modules-left = ["clock" "dwl/tags"];
           modules-center = [];
           modules-right = ["network" "pulseaudio" "battery"];
 
@@ -51,8 +51,23 @@
             format-charging = "󱐋 {capacity}%";
             interval = 10;
           };
+          
+          "dwl/tags" = {
+            num-tags = 9;
+            tag-labels = {
+              "1" = "1";
+              "2" = "2";
+              "3" = "3";
+              "4" = "4";
+              "5" = "5";
+              "6" = "6";
+              "7" = "7";
+              "8" = "8";
+              "9" = "9";
+            };
+          };
 
-          "dwl/workspaces" = {
+          "niri/workspaces" = {
             format = "󱓻";
             format-icons = {
               "1" = "1";
