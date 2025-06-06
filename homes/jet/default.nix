@@ -47,6 +47,7 @@
     waybar.enable = true;
     mako.enable = true;
     wofi.enable = true;
+    tofi.enable = true;
     theme.enable = true;
 
     # CLI
