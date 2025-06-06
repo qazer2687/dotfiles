@@ -139,7 +139,7 @@ static const Key keys[] = {
     /* modifier-key-function-argument */
     
     // Launcher
-    {MODKEY, XKB_KEY_e, spawn, SHCMD("wofi")},
+    {MODKEY, XKB_KEY_e, spawn, SHCMD("tofi")},
     
     // Terminal
     {MODKEY, XKB_KEY_Return, spawn, SHCMD("foot")},

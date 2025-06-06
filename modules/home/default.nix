@@ -32,5 +32,6 @@
     ./hyprlock
     ./zed
     ./zoxide
+    ./tofi
   ];
 }
