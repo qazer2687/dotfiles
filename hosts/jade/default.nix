@@ -8,29 +8,11 @@
 
   users.users = {
     alex = {
-      initialPassword = "xela";
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # Add your SSH public key(s) here...
-      ];
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
       shell = pkgs.fish;
       hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
     };
-  };
-
-  # This allows links to be
-  # opened across applications.
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-    ];
-    # Not sure what this does...
-    config.common.default = "*";
   };
 
   programs.fish.enable = true;
@@ -40,25 +22,39 @@
       enable = true;
     };
   };
+  
+  services.udev = {
+    extraRules = ''
+      # Enable support for the ESP32-CYD2USB.
+      SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
+
+      # Allow backlight control for non-root users.
+      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
+    '';
+  };
 
   boot = {
     # I don't remember exactly why this is needed but
     # I'm unable to rebuild without this option set.
-    loader.efi.efiSysMountPoint = "/boot/efi";
+    # loader.efi.efiSysMountPoint = "/boot/efi";
     kernelParams = [
       "kernel.nmi_watchdog=0"
-      "fbcon=nodefer"
       "bgrt_disable"
-      "quiet"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=0"
       "udev.log_priority=3"
-      "vt.global_cursor_default=0"
       "mitigations=off"
       # A workaround for wine not being able to use SIDT instructions,
       # this kernel flag disables UMIP. See link below for more info.
       # https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/x86/include/asm/cpufeatures.h?h=v5.2.5#n324
       "clearcpuid=514"
+      "quiet"
+      # Redirect console messages.
+      "console=tty3"
+      # Disable cursor to stop blinking.
+      "vt.global_cursor_default=0"
+      # Wipe the vendor logo earlier in the boot sequence.
+      "fbcon=nodefer"
     ];
     initrd.kernelModules = [
       "nvidia"
@@ -95,13 +91,6 @@
     kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
-  # EXPERIMENTAL - This service distributes CPU interrupts
-  # across all cores, supposedly improving performance.
-  #services.irqbalance.enable = true;
-  # Apparently doesn't work as well anymore as the kernel
-  # does a better job that it does, so it just makes things
-  # worse.
-
   # EXPERIMENTAL - Enable realtime priority
   # to improve latency and reduce stuttering.
   security.pam.loginLimits = [
@@ -113,52 +102,34 @@
     }
   ];
 
-  /*
-    services.getty.autologinUser = "alex";
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session Hyprland
+  # Hide the 'File descriptor leaked on LVM invocation' warning on boot.
+  environment.etc."lvm/lvm.conf".text = ''
+    devices {
+        suppress_fd_warnings = 1;
+    }
+    logging {
+        level = 0;
+    }
   '';
-  */
-  # for wayland
 
-  services.getty.autologinUser = "alex";
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && startx
-  '';
-  services.xserver = {
-    enable = true;
-    displayManager.startx.enable = true;
+  # Autologin and hide getty messages.
+  services.getty = {
+    autologinUser = "alex";
+    extraArgs = [
+      "--skip-login"
+      "--nonewline"
+      "--noissue"
+      "--noclear"
+    ];
   };
 
   swapDevices = [
     {
       device = "/swapfile";
-      size = 4 * 1024;
+      size = x86 * 1024;
     }
   ];
 
-  modules = {
-    core.enable = true;
-    nvidia.enable = true;
-    pipewire.enable = true;
-    systemd-boot.enable = true;
-    # I'm going to use my windows partition for gaming.
-    steam.enable = true;
-    filesystem.enable = true;
-    zram.enable = true;
-    gamemode.enable = true;
-    tailscale.enable = true;
-  };
-
-  # For sober.
-  services.flatpak.enable = true;
-
-  sops.defaultSopsFile = ./secrets/default.yaml;
-
-  time.timeZone = "Europe/London";
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  # experimental wayland
   environment = {
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
@@ -170,7 +141,19 @@
       # GDK_SCALE = "2";
     };
   };
+  
+  modules = {
+    core.enable = true;
+    nvidia.enable = true;
+    pipewire.enable = true;
+    systemd-boot.enable = true;
+    steam.enable = true;
+    xdg.enable = true;
+    zram.enable = true;
+    gamemode.enable = true;
+    tailscale.enable = true;
+  };
 
   # Did you read the comment?
-  system.stateVersion = "23.05";
+  system.stateVersion = "25.05";
 }

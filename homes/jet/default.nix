@@ -9,28 +9,16 @@
   ];
 
   home.packages = with pkgs; [
-    # Graphical
     obsidian
     nautilus
-    # fragments
-    # Broken on unstable.
-    # calibre
     vlc
     loupe
-    jellyfin-media-player
 
-    # Terminal
     ncdu
     btop
-    #neovim
 
-    # Internal
-    #arnis
-
-    # External
     inputs.zen.packages."${system}".default
 
-    # Misc
     ffmpeg-full
     libheif
   ];
@@ -40,13 +28,9 @@
 
   modules = {
     # Desktop Environment
-    niri.enable = true;
     dwl.enable = true;
-    #hyprland.enable = true;
-    #hyprlock.enable = true;
     waybar.enable = true;
     mako.enable = true;
-    wofi.enable = true;
     tofi.enable = true;
     theme.enable = true;
 
