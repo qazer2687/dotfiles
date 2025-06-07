@@ -35,6 +35,6 @@ _: {
         #  ../patches/dwl/push.patch
         ];
       }))
-      .override {configH = ../modules/home/dwl/config/config.h;};
+      .override { configH = if config.networking.hostName == "jet" then ../modules/home/dwl/config/jet/config.h else ../modules/home/dwl/config/jade/config.h; };
   };
 }
