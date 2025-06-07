@@ -126,7 +126,7 @@
   swapDevices = [
     {
       device = "/swapfile";
-      size = x86 * 1024;
+      size = 8 * 1024;
     }
   ];
 
