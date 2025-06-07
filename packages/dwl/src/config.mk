@@ -14,4 +14,4 @@ XLIBS =
 #XWAYLAND = -DXWAYLAND
 #XLIBS = xcb xcb-icccm
 
-CC = gcc
+CC = clang

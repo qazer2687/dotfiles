@@ -11,15 +11,15 @@
   stdenv,
   testers,
   nixosTests,
+  clang,
   wayland,
   wayland-protocols,
   wayland-scanner,
   wlroots,
   writeText,
   xcbutilwm,
-  xwayland,
   # Boolean flags
-  enableXWayland ? true,
+  enableXWayland ? false,
   withCustomConfigH ? (configH != null),
   # Configurable options
   configH ?
