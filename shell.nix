@@ -8,5 +8,6 @@ pkgs.mkShell {
     llvmPackages_12.clang-tools
     nixd
     nil
+    libclang
   ];
 }
