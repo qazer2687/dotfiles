@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -11,44 +12,47 @@
     obsidian
     nautilus
     obs-studio
-    lunar-client
     vlc
     vesktop
+    loupe
+    
+    ncdu
+    btop
+    
+    inputs.zen.packages."${system}".default
+    
+    # Misc
+    ffmpeg-full
+    libheif
   ];
-
-  /*
-  services.flatpak.packages = [
-    # Can't install from flatpakref.
-    # https://github.com/gmodena/nix-flatpak/issues/78
-  ];
-  */
 
   modules = {
-    # X11
-    i3.enable = true;
-    alacritty.enable = true;
-    polybar.enable = true;
-    dunst.enable = true;
-
-    # Wayland
-    sway.enable = true;
-    hyprland.enable = true;
+    # Desktop Environment
+    dwl.enable = true;
     waybar.enable = true;
-    foot.enable = true;
     mako.enable = true;
-    wofi.enable = true;
-
-    git.enable = true;
+    tofi.enable = true;
     theme.enable = true;
-    firefox.enable = true;
+    
+    # CLI
     fish.enable = true;
-
-    # Development
-    vscode.enable = true;
+    foot.enable = true;
+    fastfetch.enable = true;
+    webcam.enable = true;
+    eza.enable = true;
+    # mpd.enable = true;
     direnv.enable = true;
+    git.enable = true;
+    bat.enable = true;
+    # neovim.enable = true;
+    zoxide.enable = true;
+
+    # GUI
+    #vscode.enable = true;
+    zed.enable = true;
   };
 
-  home.stateVersion = "23.05";
+  home.stateVersion = "25.05";
   home.homeDirectory = lib.mkForce "/home/alex";
 
   sops = {

@@ -133,10 +133,6 @@
     # pipewire.enable = true;
 
     systemd-boot.enable = true;
-    #filesystem = {
-    #  enable = true;
-    #  apfsSupport = true;
-    #};
 
     xdg.enable = true;
 

@@ -66,7 +66,6 @@
                   useUserPackages = true;
                   sharedModules = [
                     inputs.sops-nix.homeManagerModules.sops
-                    inputs.nixvim.homeManagerModules.nixvim
                   ];
                 };
               }
