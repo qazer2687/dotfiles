@@ -39,7 +39,7 @@ assert withCustomConfigH -> (configH != null);
 stdenv.mkDerivation (finalAttrs: {
   pname = "dwl";
   version = "0.7";
-  src = ./src
+  src = ./src;
 
   nativeBuildInputs = [
     installShellFiles
