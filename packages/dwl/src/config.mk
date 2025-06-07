@@ -10,10 +10,10 @@ DATADIR = $(PREFIX)/share
 
 CFLAGS = -O3
 
-XWAYLAND =
-XLIBS =
+#XWAYLAND =
+#XLIBS =
 # Uncomment to build XWayland support
-#XWAYLAND = -DXWAYLAND
-#XLIBS = xcb xcb-icccm
+XWAYLAND = -DXWAYLAND
+XLIBS = xcb xcb-icccm
 
 CC = gcc
