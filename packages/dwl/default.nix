@@ -19,7 +19,6 @@
   writeText,
   xcbutilwm,
   # Boolean flags
-  enableXWayland ? false,
   withCustomConfigH ? (configH != null),
   # Configurable options
   configH ?
@@ -57,11 +56,6 @@ stdenv.mkDerivation (finalAttrs: {
       wayland
       wayland-protocols
       wlroots
-    ]
-    ++ lib.optionals enableXWayland [
-      libX11
-      xcbutilwm
-      xwayland
     ];
 
   outputs = [
@@ -85,10 +79,6 @@ stdenv.mkDerivation (finalAttrs: {
       "WAYLAND_SCANNER=wayland-scanner"
       "PREFIX=$(out)"
       "MANDIR=$(man)/share/man"
-    ]
-    ++ lib.optionals enableXWayland [
-      ''XWAYLAND="-DXWAYLAND"''
-      ''XLIBS="xcb xcb-icccm"''
     ];
 
   strictDeps = true;
