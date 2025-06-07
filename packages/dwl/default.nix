@@ -20,14 +20,7 @@
   # Boolean flags
   withCustomConfigH ? (configH != null),
   # Configurable options
-  configH ?
-    if conf != null then
-      lib.warn ''
-        conf parameter is deprecated;
-        use configH instead
-      '' conf
-    else
-      null,
+  configH ? null,
 }:
 
 # If we set withCustomConfigH, let's not forget configH
