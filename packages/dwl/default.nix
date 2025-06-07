@@ -10,17 +10,28 @@
   pkg-config,
   stdenv,
   testers,
-  nixosTests,
   wayland,
   wayland-protocols,
   wayland-scanner,
   wlroots,
   writeText,
   xcbutilwm,
+  xwayland,
   # Boolean flags
+  enableXWayland ? true,
   withCustomConfigH ? (configH != null),
   # Configurable options
-  configH ? null,
+  configH ?
+    if conf != null then
+      lib.warn ''
+        conf parameter is deprecated;
+        use configH instead
+      '' conf
+    else
+      null,
+  # Deprecated options
+  # Remove them before next version of either Nixpkgs or dwl itself
+  conf ? null,
 }:
 
 # If we set withCustomConfigH, let's not forget configH
@@ -28,8 +39,8 @@ assert withCustomConfigH -> (configH != null);
 stdenv.mkDerivation (finalAttrs: {
   pname = "dwl";
   version = "0.7";
-  src = ./src;
-  
+  src = ./src
+
   nativeBuildInputs = [
     installShellFiles
     pkg-config
@@ -45,6 +56,11 @@ stdenv.mkDerivation (finalAttrs: {
       wayland
       wayland-protocols
       wlroots
+    ]
+    ++ lib.optionals enableXWayland [
+      libX11
+      xcbutilwm
+      xwayland
     ];
 
   outputs = [
@@ -68,6 +84,10 @@ stdenv.mkDerivation (finalAttrs: {
       "WAYLAND_SCANNER=wayland-scanner"
       "PREFIX=$(out)"
       "MANDIR=$(man)/share/man"
+    ]
+    ++ lib.optionals enableXWayland [
+      ''XWAYLAND="-DXWAYLAND"''
+      ''XLIBS="xcb xcb-icccm"''
     ];
 
   strictDeps = true;
@@ -76,13 +96,10 @@ stdenv.mkDerivation (finalAttrs: {
   __structuredAttrs = true;
 
   passthru = {
-    tests = {
-      version = testers.testVersion {
-        package = finalAttrs.finalPackage;
-        # `dwl -v` emits its version string to stderr and returns 1
-        command = "dwl -v 2>&1; return 0";
-      };
-      basic = nixosTests.dwl;
+    tests.version = testers.testVersion {
+      package = finalAttrs.finalPackage;
+      # `dwl -v` emits its version string to stderr and returns 1
+      command = "dwl -v 2>&1; return 0";
     };
   };
 
@@ -106,3 +123,4 @@ stdenv.mkDerivation (finalAttrs: {
     mainProgram = "dwl";
   };
 })
+# TODO: custom patches from upstream website
