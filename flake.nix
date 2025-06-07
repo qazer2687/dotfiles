@@ -65,6 +65,7 @@
                   useGlobalPkgs = true;
                   useUserPackages = true;
                   sharedModules = [
+                    inputs.niri.homeModules.niri
                     inputs.sops-nix.homeManagerModules.sops
                   ];
                 };
