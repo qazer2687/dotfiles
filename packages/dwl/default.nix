@@ -49,6 +49,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs =
     [
+      clang
       libinput
       libxcb
       libxkbcommon
