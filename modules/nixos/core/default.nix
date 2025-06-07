@@ -94,10 +94,13 @@
     
     # Block connections to a few LLM's.
     networking.extraHosts = ''
-        127.0.0.1       chat.openai.com
-        127.0.0.1       claude.ai
-        127.0.0.1       gemini.google.com
-      '';
+      127.0.0.1       chat.openai.com
+      127.0.0.1       chatgpt.com
+      
+      127.0.0.1       claude.ai
+      
+      127.0.0.1       gemini.google.com
+    '';
 
     /* Rely on tailscale for SSH.
     services.openssh = {
