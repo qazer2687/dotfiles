@@ -1,161 +1,82 @@
 .POSIX:
 .SUFFIXES:
 include config.mk
-
-# Detect if we're in Nix environment
-NIX_BUILD := $(if $(NIX_ENFORCE_NO_NATIVE),1,0)
-
-# Extreme optimization flags (Nix-compatible)
+# flags for compiling
 DWLCPPFLAGS = -I. -DWLR_USE_UNSTABLE -D_POSIX_C_SOURCE=200809L \
-	-DVERSION=\"$(VERSION)\" $(XWAYLAND) -DNDEBUG -DNDEBUG_PARANOID
-
-# Base optimization flags
-BASE_OPT = -Ofast -flto -fuse-linker-plugin -funroll-loops -fomit-frame-pointer \
-	-ffast-math -fno-stack-protector -fno-unwind-tables -fno-asynchronous-unwind-tables \
-	-fmerge-all-constants -ftree-vectorize -fprefetch-loop-arrays \
-	-finline-functions -finline-small-functions -findirect-inlining \
-	-fpartial-inlining -finline-functions-called-once -fsection-anchors \
-	-fschedule-insns2 -frename-registers -freorder-blocks-and-partition \
-	-fno-semantic-interposition -fno-plt -fno-common -fstrict-aliasing -fstrict-overflow
-
-# CPU-specific flags (only if not in Nix)
-ifeq ($(NIX_BUILD),0)
-CPU_OPT = -march=native -mtune=native
-else
-CPU_OPT = -O3
-endif
-
-# Advanced GCC-specific optimizations (check if available)
-ADVANCED_OPT = $(shell $(CC) -v 2>&1 | grep -q "gcc version" && echo "\
-	-fmodulo-sched -fmodulo-sched-allow-regmoves -fgcse-after-reload \
-	-fvect-cost-model=unlimited -floop-nest-optimize -floop-interchange \
-	-floop-block -floop-strip-mine -ftree-loop-distribute-patterns \
-	-fwhole-program -fipa-pta -fdevirtualize-speculatively \
-	-fbranch-target-load-optimize2 -freorder-blocks-algorithm=stc")
-
-# Linker optimization flags (compatible with older binutils)
-LINKER_OPT = -Wl,--gc-sections -Wl,--strip-all -Wl,-O2 -Wl,--as-needed \
-	-Wl,--hash-style=gnu -Wl,-z,relro,-z,now -Wl,--build-id=none
-
-# Check if linker supports ICF (identical code folding)
-LINKER_ICF := $(shell $(CC) -Wl,--icf=all -Wl,--help 2>/dev/null | grep -q icf && echo "-Wl,--icf=all")
-
-DWLDEVCFLAGS = $(BASE_OPT) $(CPU_OPT) $(ADVANCED_OPT) $(LINKER_OPT) $(LINKER_ICF) \
-	-pedantic -Wall -Wextra -Wdeclaration-after-statement \
+	-DVERSION=\"$(VERSION)\" $(XWAYLAND) -DNDEBUG
+DWLDEVCFLAGS = -Oz -flto -march=native -pedantic -Wall -Wextra -Wdeclaration-after-statement \
 	-Wno-unused-parameter -Wshadow -Wunused-macros -Werror=strict-prototypes \
 	-Werror=implicit -Werror=return-type -Werror=incompatible-pointer-types \
 	-Wfloat-conversion -Wno-unused-function -Wno-missing-field-initializers
-
-# Cached pkg-config results for faster builds
-PKGS_CFLAGS := $(shell $(PKG_CONFIG) --cflags wlroots-0.18 wayland-server xkbcommon libinput $(XLIBS))
-PKGS_LIBS := $(shell $(PKG_CONFIG) --libs wlroots-0.18 wayland-server xkbcommon libinput $(XLIBS))
-
-DWLCFLAGS = $(PKGS_CFLAGS) $(DWLCPPFLAGS) $(DWLDEVCFLAGS) $(CFLAGS)
-LDLIBS = $(PKGS_LIBS) -lm $(LIBS)
-
-# Nix-friendly build info
-$(info Building with: NIX_BUILD=$(NIX_BUILD))
-$(info Compiler: $(CC))
-$(info CPU optimizations: $(CPU_OPT))
-$(info ICF support: $(if $(LINKER_ICF),yes,no))
-
-# Objects
-OBJS = dwl.o util.o dwl-ipc-unstable-v2-protocol.o
-PROTOCOLS = cursor-shape-v1-protocol.h pointer-constraints-unstable-v1-protocol.h \
-	wlr-layer-shell-unstable-v1-protocol.h wlr-output-power-management-unstable-v1-protocol.h \
-	xdg-shell-protocol.h dwl-ipc-unstable-v2-protocol.h dwl-ipc-unstable-v2-protocol.c
-
-# Cached scanner variables
-WAYLAND_SCANNER := $(shell $(PKG_CONFIG) --variable=wayland_scanner wayland-scanner)
-WAYLAND_PROTOCOLS := $(shell $(PKG_CONFIG) --variable=pkgdatadir wayland-protocols)
+# CFLAGS / LDFLAGS
+PKGS      = wlroots-0.18 wayland-server xkbcommon libinput $(XLIBS)
+DWLCFLAGS = `$(PKG_CONFIG) --cflags $(PKGS)` $(DWLCPPFLAGS) $(DWLDEVCFLAGS) $(CFLAGS)
+LDLIBS    = `$(PKG_CONFIG) --libs $(PKGS)` -lm $(LIBS)
 
 all: dwl
+dwl: dwl.o util.o dwl-ipc-unstable-v2-protocol.o
+	$(CC) dwl.o util.o dwl-ipc-unstable-v2-protocol.o $(DWLCFLAGS) $(LDFLAGS) -flto -Wl,--strip-all $(LDLIBS) -o $@
+	strip --strip-all $@
+dwl.o: dwl.c client.h config.h config.mk cursor-shape-v1-protocol.h \
+	pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h \
+	wlr-output-power-management-unstable-v1-protocol.h xdg-shell-protocol.h \
+	dwl-ipc-unstable-v2-protocol.h
+util.o: util.c util.h
+dwl-ipc-unstable-v2-protocol.o: dwl-ipc-unstable-v2-protocol.c dwl-ipc-unstable-v2-protocol.h
 
-# Ultra-aggressive linking with compatibility checks
-dwl: $(OBJS) | strip-binary
-	$(CC) $(OBJS) $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
+# wayland-scanner is a tool which generates C headers and rigging for Wayland
+# protocols, which are specified in XML. wlroots requires you to rig these up
+# to your build system yourself and provide them in the include path.
+WAYLAND_SCANNER   = `$(PKG_CONFIG) --variable=wayland_scanner wayland-scanner`
+WAYLAND_PROTOCOLS = `$(PKG_CONFIG) --variable=pkgdatadir wayland-protocols`
 
-# Parallel protocol generation
-protocols: $(PROTOCOLS)
-
-# Optimized object compilation with dependency tracking
-%.o: %.c config.h $(PROTOCOLS)
-	$(CC) $(CPPFLAGS) $(DWLCFLAGS) -MMD -MP -MF $*.d -o $@ -c $<
-
-# Include auto-generated dependencies
--include $(OBJS:.o=.d)
-
-# Protocol generation rules (parallelizable)
 cursor-shape-v1-protocol.h:
 	$(WAYLAND_SCANNER) enum-header \
 		$(WAYLAND_PROTOCOLS)/staging/cursor-shape/cursor-shape-v1.xml $@
-
 pointer-constraints-unstable-v1-protocol.h:
 	$(WAYLAND_SCANNER) enum-header \
 		$(WAYLAND_PROTOCOLS)/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml $@
-
 wlr-layer-shell-unstable-v1-protocol.h:
 	$(WAYLAND_SCANNER) enum-header \
 		protocols/wlr-layer-shell-unstable-v1.xml $@
-
 wlr-output-power-management-unstable-v1-protocol.h:
 	$(WAYLAND_SCANNER) server-header \
 		protocols/wlr-output-power-management-unstable-v1.xml $@
-
 xdg-shell-protocol.h:
 	$(WAYLAND_SCANNER) server-header \
 		$(WAYLAND_PROTOCOLS)/stable/xdg-shell/xdg-shell.xml $@
-
 dwl-ipc-unstable-v2-protocol.h:
 	$(WAYLAND_SCANNER) server-header \
 		protocols/dwl-ipc-unstable-v2.xml $@
-
 dwl-ipc-unstable-v2-protocol.c:
 	$(WAYLAND_SCANNER) private-code \
 		protocols/dwl-ipc-unstable-v2.xml $@
 
 config.h:
 	cp config.def.h $@
-
-# Ultra-aggressive binary stripping
-strip-binary:
-	@echo "Applying extreme binary optimization..."
-
-# Post-build optimization with upx compression (optional)
-compress: dwl
-	@command -v upx >/dev/null 2>&1 && upx --best --lzma dwl || true
-
-# Profile-guided optimization targets
-pgo-generate: DWLDEVCFLAGS += -fprofile-generate
-pgo-generate: clean dwl
-
-pgo-use: DWLDEVCFLAGS += -fprofile-use -fprofile-correction
-pgo-use: dwl
-
-# Clean with dependency files
 clean:
-	rm -f dwl $(OBJS) $(OBJS:.o=.d) $(PROTOCOLS) *.gcda *.gcno
-
-# Fast clean (only binaries)
-clean-fast:
-	rm -f dwl
-
-# Parallel build support
-.PHONY: all clean clean-fast protocols strip-binary compress pgo-generate pgo-use
-
-# Optimized installation
+	rm -f dwl *.o *-protocol.h
+dist: clean
+	mkdir -p dwl-$(VERSION)
+	cp -R LICENSE* Makefile CHANGELOG.md README.md client.h config.def.h \
+		config.mk protocols dwl.1 dwl.c util.c util.h dwl.desktop \
+		dwl-$(VERSION)
+	tar -caf dwl-$(VERSION).tar.gz dwl-$(VERSION)
+	rm -rf dwl-$(VERSION)
 install: dwl
-	install -Dm755 dwl $(DESTDIR)$(PREFIX)/bin/dwl
-	install -Dm644 dwl.1 $(DESTDIR)$(MANDIR)/man1/dwl.1
-	install -Dm644 dwl.desktop $(DESTDIR)$(DATADIR)/wayland-sessions/dwl.desktop
-
+	mkdir -p $(DESTDIR)$(PREFIX)/bin
+	rm -f $(DESTDIR)$(PREFIX)/bin/dwl
+	cp -f dwl $(DESTDIR)$(PREFIX)/bin
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/dwl
+	mkdir -p $(DESTDIR)$(MANDIR)/man1
+	cp -f dwl.1 $(DESTDIR)$(MANDIR)/man1
+	chmod 644 $(DESTDIR)$(MANDIR)/man1/dwl.1
+	mkdir -p $(DESTDIR)$(DATADIR)/wayland-sessions
+	cp -f dwl.desktop $(DESTDIR)$(DATADIR)/wayland-sessions/dwl.desktop
+	chmod 644 $(DESTDIR)$(DATADIR)/wayland-sessions/dwl.desktop
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/dwl $(DESTDIR)$(MANDIR)/man1/dwl.1 \
 		$(DESTDIR)$(DATADIR)/wayland-sessions/dwl.desktop
-
-# Benchmark target for testing optimizations
-benchmark: dwl
-	@echo "Binary size: $$(stat -c%s dwl) bytes"
-	@echo "Stripped size: $$(strip --strip-all dwl 2>/dev/null && stat -c%s dwl) bytes"
-
 .SUFFIXES: .c .o
+.c.o:
+	$(CC) $(CPPFLAGS) $(DWLCFLAGS) -o $@ -c $<
