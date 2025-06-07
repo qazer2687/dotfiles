@@ -1,5 +1,5 @@
 # This file defines overlays
-{ config }: _: {
+_: {
   # This one brings our custom packages from the 'packages' directory
   additions = final: _prev: import ../packages final.pkgs;
 
@@ -35,6 +35,6 @@
         #  ../patches/dwl/push.patch
         ];
       }))
-      .override { configH = if config.networking.hostName == "jet" then ../modules/home/dwl/config/jet/config.h else ../modules/home/dwl/config/jade/config.h; };
+      #.override { configH = if config.networking.hostName == "jet" then ../modules/home/dwl/config/jet/config.h else ../modules/home/dwl/config/jade/config.h; };
   };
 }
