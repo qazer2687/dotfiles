@@ -28,6 +28,7 @@ in {
       brightnessctl
       pamixer
       screenshot
+      wlr-randr
     ];
   };
 }
