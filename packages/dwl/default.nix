@@ -11,7 +11,6 @@
   stdenv,
   testers,
   nixosTests,
-  clang,
   wayland,
   wayland-protocols,
   wayland-scanner,
@@ -29,9 +28,6 @@
       '' conf
     else
       null,
-  # Deprecated options
-  # Remove them before next version of either Nixpkgs or dwl itself
-  conf ? null,
 }:
 
 # If we set withCustomConfigH, let's not forget configH
@@ -42,7 +38,6 @@ stdenv.mkDerivation (finalAttrs: {
   src = ./src;
   
   nativeBuildInputs = [
-    clang
     installShellFiles
     pkg-config
     wayland-scanner
@@ -50,7 +45,6 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs =
     [
-      clang
       libinput
       libxcb
       libxkbcommon
@@ -119,4 +113,3 @@ stdenv.mkDerivation (finalAttrs: {
     mainProgram = "dwl";
   };
 })
-# TODO: custom patches from upstream website
