@@ -34,7 +34,7 @@ _: {
           ../patches/dwl/movestack.patch
         #  ../patches/dwl/push.patch
         ];
-      }))
+      }));
       #.override { configH = if config.networking.hostName == "jet" then ../modules/home/dwl/config/jet/config.h else ../modules/home/dwl/config/jade/config.h; };
   };
 }
