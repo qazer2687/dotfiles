@@ -49,7 +49,7 @@
       systems = ["aarch64-linux" "x86_64-linux"];
 
       flake = {
-        overlays = import ./overlays { inherit inputs config; };
+        overlays = import ./overlays { inherit inputs; };
 
         nixosConfigurations = {
           jade = inputs.nixpkgs.lib.nixosSystem {
