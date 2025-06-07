@@ -26,8 +26,8 @@ in {
       # can add dependencies here.
       (pkgs.dwl.override {
         configH = if osConfig.networking.hostName == "jet" 
-          then ./jet/config.h 
-          else ./jade/config.h;
+          then ./config/jet/config.h 
+          else ./config/jade/config.h;
       })
       swaybg
       brightnessctl
