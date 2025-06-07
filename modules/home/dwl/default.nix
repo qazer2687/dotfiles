@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  osConfig,
   ...
 }: let
   screenshot = pkgs.writeShellApplication {
@@ -25,8 +26,8 @@ in {
       # can add dependencies here.
       (pkgs.dwl.override {
         configH = if osConfig.networking.hostName == "jet" 
-          then ../modules/home/dwl/config/jet/config.h 
-          else ../modules/home/dwl/config/jade/config.h;
+          then ./jet/config.h 
+          else ./jade/config.h;
       })
       swaybg
       brightnessctl
