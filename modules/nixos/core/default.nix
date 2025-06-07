@@ -92,6 +92,7 @@
       services.NetworkManager-dispatcher.enable = false;
     };
     
+    /*
     # Block connections to a few LLM's.
     networking.extraHosts = ''
       127.0.0.1       chat.openai.com
@@ -101,6 +102,7 @@
       
       127.0.0.1       gemini.google.com
     '';
+    */
 
     /* Rely on tailscale for SSH.
     services.openssh = {
@@ -148,11 +150,6 @@
 
     # Fix 'command-not-found' error 'failed to open database'.
     programs.command-not-found.enable = false;
-    
-    programs.nix-index = {
-      enable = true;
-      enableFishIntegration = true;
-    };
 
     programs.dconf.enable = true;
     security.polkit.enable = true;
