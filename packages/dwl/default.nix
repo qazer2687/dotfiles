@@ -42,6 +42,7 @@ stdenv.mkDerivation (finalAttrs: {
   src = ./src;
   
   nativeBuildInputs = [
+    clang
     installShellFiles
     pkg-config
     wayland-scanner
