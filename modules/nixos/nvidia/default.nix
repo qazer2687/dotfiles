@@ -6,7 +6,6 @@
   options.modules.nvidia.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.nvidia.enable {
-    services.xserver.videoDrivers = ["nvidia"];
     hardware.graphics.enable = true;
     hardware.nvidia = {
       # Modesetting is required.
@@ -22,9 +21,18 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
     
-    # Allow user to modify fan speed (and other options) via nvidia-settings.
-    services.xserver.deviceSection = ''
-      Option "Coolbits" "31"
-    '';
+    services.xserver = {
+        enable = true;
+        videoDrivers = [ "nvidia" ];
+        
+        # Allow user to modify fan speed (and other options) via nvidia-settings.
+        extraConfig = ''
+          Section "Device"
+            Identifier "Device1"
+            Driver "nvidia"
+            Option "Coolbits" "31"
+          EndSection
+        '';
+      };
   };
 }
