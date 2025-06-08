@@ -21,5 +21,10 @@
 
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
+    
+    # Allow user to modify fan speed (and other options) via nvidia-settings.
+    services.xserver.deviceSection = ''
+      Option "Coolbits" "31"
+    '';
   };
 }
