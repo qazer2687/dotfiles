@@ -91,28 +91,29 @@
       # Disable the service because it hangs on boot.
       services.NetworkManager-dispatcher.enable = false;
     };
-    
+
     /*
     # Block connections to a few LLM's.
     networking.extraHosts = ''
       127.0.0.1       chat.openai.com
       127.0.0.1       chatgpt.com
-      
+
       127.0.0.1       claude.ai
-      
+
       127.0.0.1       gemini.google.com
     '';
     */
 
-    /* Rely on tailscale for SSH.
     services.openssh = {
       enable = true;
       settings = {
-        PermitRootLogin = "no";
+        PermitRootLogin = "yes";
         PasswordAuthentication = true;
+        AllowTcpForwarding = "yes";
+        # This enables Unix socket forwarding which waypipe needs
+        StreamLocalBindUnlink = "yes";
       };
     };
-    */
 
     ########## KEYMAP ##########
 
@@ -153,10 +154,10 @@
 
     programs.dconf.enable = true;
     security.polkit.enable = true;
-    
+
     # OOM Killer
     services.earlyoom.enable = true;
-    
+
     # Use dash as /bin/sh. Although the performance boost
     # will be small to negligible, I might as well use it.
     environment.binsh = "${pkgs.dash}/bin/dash";
