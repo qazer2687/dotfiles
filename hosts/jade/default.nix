@@ -154,7 +154,8 @@
     systemd-boot.enable = true;
     steam.enable = true;
     xdg.enable = true;
-    zram.enable = true;
+    #zram.enable = true;
+    zswap.enable = true;
     gamemode.enable = true;
     tailscale.enable = true;
   };

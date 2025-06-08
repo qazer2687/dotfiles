@@ -20,5 +20,6 @@
     ./docker
     ./samba
     ./xdg
+    ./zswap
   ];
 }
