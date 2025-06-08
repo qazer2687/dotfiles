@@ -9,7 +9,8 @@
     zramSwap = {
       enable = true;
       algorithm = "zstd";
-      memoryPercent = 80;
+      # Provides 2GB "extra" RAM with 8GB physical.
+      memoryPercent = 25;
     };
   };
 }
