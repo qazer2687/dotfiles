@@ -19,7 +19,8 @@
     },
 
     "clock": {
-      "format-alt": "{:%Y/%m/%d | %H:%M:%S}"
+      "format": "{:%A %d, %H:%M}",
+      "tooltip": false
     },
 
     "battery": {
