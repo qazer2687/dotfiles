@@ -21,7 +21,9 @@
         "-h 1440" # height
         "-S stretch" # scaling
         "-f" # fullscreen
-        "-e" # steam integration
+        # This option only works if steam is launched within the gamescope session,
+        # otherwise the gamescope session will be invisible.
+        #"-e" # steam integration
       ];
     };
   };
