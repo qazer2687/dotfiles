@@ -9,14 +9,15 @@
   config = lib.mkIf config.modules.steam.enable {
     programs.steam = {
       enable = true;
+      gamescopeSession.enable = true;
     };
 
     programs.gamescope = {
       enable = true;
-      capSysNice = false;
+      capSysNice = true;
       args = [
         "-w 2560" # width
-        "-h 1080" # height
+        "-h 1440" # height
         "-S stretch" # scaling
         "-f" # fullscreen
         "-e" # steam integration

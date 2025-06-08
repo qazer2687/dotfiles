@@ -15,12 +15,12 @@
     vlc
     vesktop
     loupe
-    
+
     ncdu
     btop
-    
+
     inputs.zen.packages."${system}".default
-    
+
     # Misc
     ffmpeg-full
     libheif
@@ -33,7 +33,7 @@
     mako.enable = true;
     tofi.enable = true;
     theme.enable = true;
-    
+
     # CLI
     fish.enable = true;
     foot.enable = true;
@@ -46,6 +46,9 @@
     bat.enable = true;
     # neovim.enable = true;
     zoxide.enable = true;
+
+    # Gaming
+    mangohud.enable = true;
 
     # GUI
     #vscode.enable = true;
