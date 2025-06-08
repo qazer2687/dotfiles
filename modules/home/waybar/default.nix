@@ -31,4 +31,5 @@
       "waybar/config".source = ./config/jade/config;
       "waybar/style.css".source = ./config/jade/style.css;
     };
-};
+  };
+}
