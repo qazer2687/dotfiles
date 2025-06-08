@@ -11,11 +11,11 @@ window#waybar {
     background-color: #000000;
 }
 
-#workspaces {
+#tags {
     background-color: transparent;
 }
 
-#workspaces button {
+#tags button {
     all: initial; /* Remove GTK theme values (waybar #1351) */
     min-width: 0; /* Fix weird spacing in materia (waybar #450) */
     padding: 6px 18px;
@@ -28,12 +28,12 @@ window#waybar {
     color: #ffffff;
 }
 
-#workspaces button.visible {
+#tags button.visible {
     color: #000000;
     background-color: #ffffff;
 }
 
-#workspaces button.active {
+#tags button.active {
     color: #000000;
     background-color: #ffffff;
 }
