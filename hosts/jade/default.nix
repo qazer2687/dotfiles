@@ -122,6 +122,11 @@
       "--noclear"
     ];
   };
+  
+  # Launch DWL after autologin.
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && dwl
+  '';
 
   swapDevices = [
     {
