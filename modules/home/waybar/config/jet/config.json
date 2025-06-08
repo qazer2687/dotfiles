@@ -1,0 +1,92 @@
+{
+  "layer": "top",
+  "height": 28,
+  "margin": "0 0 0 0",
+  "modules-left": ["clock", "dwl/tags"],
+  "modules-center": [],
+  "modules-right": ["network", "pulseaudio", "battery"],
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "tooltip": false,
+    "format-muted": "  MUTED",
+    "format-icons": {
+      "default": [" ", " ", " "]
+    }
+  },
+
+  "clock": {
+    "format": "{:%A %d, %H:%M}",
+    "tooltip": false
+  },
+
+  "battery": {
+    "tooltip": false,
+    "format": "{icon} {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "format-charging": "󱐋 {capacity}%",
+    "interval": 10
+  },
+
+  "dwl/tags": {
+    "num-tags": 9,
+    "tag-labels": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9"
+    }
+  },
+
+  "niri/workspaces": {
+    "format": "󱓻",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "0": "10"
+    }
+  },
+
+  "backlight": {
+    "device": "apple-panel-bl",
+    "format": "{icon}",
+    "tooltip": true,
+    "tooltip-format": "{percent}%",
+    "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "]
+  },
+
+  "network": {
+    "tooltip": false,
+    "format-wifi": "  {essid}",
+    "family": "ipv4",
+    "format-disconnected": " ",
+    "format-ethernet": " ",
+    "interval": 10
+  },
+
+  "mpris": {
+    "tooltip": false,
+    "format": "{player_icon} {artist} - {title}",
+    "format-paused": "{status_icon} {artist} - {title}",
+    "player-icons": {
+      "default": " "
+    },
+    "artist-len": 24,
+    "title-len": 34,
+    "status-icons": {
+      "paused": " "
+    }
+  }
+}
