@@ -1,0 +1,79 @@
+* {
+    font-family: "Departure Mono", "FiraCode Mono Nerd Font";
+    font-size: 11px;
+    background-color: transparent;
+}
+
+/* Base styles */
+window#waybar {
+    background-color: #000000;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Tooltip styling */
+tooltip {
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+tooltip label {
+    color: white;
+}
+
+/* Common module styling */
+#memory,
+#custom-power,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#cpu,
+#temperature,
+#disk,
+#mpris,
+#tray {
+    margin: 4px 2px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #ffffff;
+}
+
+/* Hide unused dwl tags */
+#tags button:not(.occupied):not(.focused) {
+    color: #000000;
+}
+
+/* Workspace button styling */
+#tags button,
+#workspaces button {
+    all: initial;
+    min-width: 0;
+    padding: 4px 4px;
+    border-radius: 6px;
+    color: rgb(138, 138, 138);
+}
+
+#tags button.focused,
+#workspaces button.active,
+#workspaces button.focused {
+    color: #ffffff;
+}
+
+/* Special module styling */
+#mpris {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#battery {
+    margin-right: 8px;
+}
+
+#clock {
+    margin: 4px 0 4px 16px;
+    margin-right: 4px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    color: #000000;
+}
