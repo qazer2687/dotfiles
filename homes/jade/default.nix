@@ -38,20 +38,17 @@
     fish.enable = true;
     foot.enable = true;
     fastfetch.enable = true;
-    webcam.enable = true;
     eza.enable = true;
-    # mpd.enable = true;
-    direnv.enable = true;
-    git.enable = true;
     bat.enable = true;
-    # neovim.enable = true;
     zoxide.enable = true;
 
     # Gaming
     mangohud.enable = true;
+    prismlauncher.enable = true;
 
-    # GUI
-    #vscode.enable = true;
+    # Development
+    direnv.enable = true;
+    git.enable = true;
     zed.enable = true;
   };
 
