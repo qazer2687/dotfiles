@@ -13,6 +13,12 @@
         set fish_greeting # disable greeting
         #fish_add_path /opt/homebrew/bin # add brew binaries to path
       '';
+      # Required for waypipe support.
+      loginShellInit = ''
+        if not set -q XDG_RUNTIME_DIR
+            set -gx XDG_RUNTIME_DIR "/run/user/"(id -u)
+        end
+      '';
     };
     home.shellAliases = {
       "check" = ''nix-shell -p alejandra -p deadnix -p statix --command "alejandra -q . && deadnix -e && statix fix"'';
