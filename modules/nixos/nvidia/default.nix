@@ -22,17 +22,16 @@
     };
     
     services.xserver = {
-        enable = true;
-        videoDrivers = [ "nvidia" ];
-        
-        # Allow user to modify fan speed (and other options) via nvidia-settings.
-        extraConfig = ''
-          Section "Device"
-            Identifier "Device1"
-            Driver "nvidia"
-            Option "Coolbits" "31"
-          EndSection
-        '';
-      };
+      videoDrivers = [ "nvidia" ];
+      
+      # Allow user to modify fan speed (and other options) via nvidia-settings.
+      extraConfig = ''
+        Section "Device"
+          Identifier "Device1"
+          Driver "nvidia"
+          Option "Coolbits" "31"
+        EndSection
+      '';
+    };
   };
 }

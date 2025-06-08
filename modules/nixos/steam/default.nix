@@ -9,7 +9,6 @@
   config = lib.mkIf config.modules.steam.enable {
     programs.steam = {
       enable = true;
-      gamescopeSession.enable = true;
     };
 
     programs.gamescope = {
