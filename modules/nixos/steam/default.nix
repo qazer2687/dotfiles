@@ -14,7 +14,8 @@
 
     programs.gamescope = {
       enable = true;
-      capSysNice = true;
+      # This option does not work, enabling will cause games to fail on launch.
+      capSysNice = false;
       args = [
         "-w 2560" # width
         "-h 1440" # height
