@@ -36,7 +36,7 @@ static const char *const autostart[] = {
     "sh", "-c", "waybar", NULL,
     "sh", "-c", "swaybg -i /home/alex/.config/wallpaper/wallpaper.png -m fill", NULL,
     // Configure monitor resolution and refresh rate.
-    "wlr-randr", "--output", "DP-1", "--mode", "2560x1440@180", NULL,
+    "wlr-randr", "--output", "DP-1", "--mode", "2560x1440@180", "--output", "HDMI-A-1", "--mode", "2560x1080@74.990997", "--pos", "0,0", NULL,
     NULL /* terminate */
 };
 
@@ -85,13 +85,15 @@ static const int repeat_rate = 25;
 static const int repeat_delay = 600;
 
 // Trackpad
-static const int tap_to_click = 1;
+static const int tap_to_click = 0;
 static const int tap_and_drag = 1;
 static const int drag_lock = 1;
 static const int natural_scrolling = 0;
-static const int disable_while_typing = 1;
+static const int disable_while_typing = 0;
 static const int left_handed = 0;
-static const int middle_button_emulation = 1;
+
+// Disable so that aiming and shooting in games does not middle click.
+static const int middle_button_emulation = 0;
 
 /* You can choose between:
 LIBINPUT_CONFIG_SCROLL_NO_SCROLL
@@ -143,25 +145,12 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
     /* modifier-key-function-argument */
-    
+
     // Launcher
     {MODKEY, XKB_KEY_e, spawn, SHCMD("tofi-run | sh")},
-    
+
     // Terminal
     {MODKEY, XKB_KEY_Return, spawn, SHCMD("foot")},
-    
-    // Volume Control
-    {0, XKB_KEY_XF86AudioRaiseVolume, spawn, SHCMD("pamixer -i 2")},
-    {0, XKB_KEY_XF86AudioLowerVolume, spawn, SHCMD("pamixer -d 2")},
-    {0, XKB_KEY_XF86AudioMute, spawn, SHCMD("pamixer -t")},
-    
-    // Brightness Control
-    {0, XKB_KEY_XF86MonBrightnessUp, spawn, SHCMD("brightnessctl set 1%+")},
-    {0, XKB_KEY_XF86MonBrightnessDown, spawn, SHCMD("brightnessctl set 1%-")},
-    
-    // Backlight Control
-    {MODKEY, XKB_KEY_XF86MonBrightnessUp, spawn, SHCMD("brightnessctl --class leds --device kbd_backlight set 10%+")},
-    {MODKEY, XKB_KEY_XF86MonBrightnessDown, spawn, SHCMD("brightnessctl --class leds --device kbd_backlight set 10%-")},
 
     {MODKEY, XKB_KEY_q, killclient, {0}},
     {MODKEY, XKB_KEY_f, togglefullscreen, {0}},
