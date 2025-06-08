@@ -28,14 +28,14 @@ window#waybar {
     color: #ffffff;
 }
 
-#tags button.visible {
+#tags button.focused {
     color: #000000;
     background-color: #ffffff;
 }
 
-#tags button.active {
+#tags button:not(.occupied):not(.focused) {
     color: #000000;
-    background-color: #ffffff;
+    background-color: #000000;
 }
 
 #memory,
