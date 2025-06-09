@@ -1,5 +1,5 @@
 * {
-  font-family: "Departure Mono", "FiraCode Nerd Font", monospace;
+  font-family: "Departure Mono", "FiraCode Mono Nerd Font";
   font-size: 14px;
   background-color: transparent;
   border-radius: 5px;
@@ -54,8 +54,8 @@ window#waybar {
   margin-left: 3px;
   margin-right: 3px;
   padding: 6px 12px;
-  color: #000000;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #000000;
 }
 
 
@@ -66,8 +66,8 @@ window#waybar {
   margin-left: 3px;
   margin-right: 3px;
   border-radius: 5px;
-  background-color: #262626;
-  color: #ffffff;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 #battery {
