@@ -6,17 +6,14 @@
   margin-left: 2px;
   margin-right: 2px;
 }
-
 window#waybar {
   background-color: #000000;
 }
-
 #tags {
   background-color: transparent;
 }
-
 #tags button {
-  padding: 6px 18px;
+  padding: 6px 12px;
   margin-top: 6px;
   margin-bottom: 6px;
   margin-left: 3px;
@@ -25,17 +22,14 @@ window#waybar {
   background-color: #262626;
   color: #ffffff;
 }
-
 #tags button.focused {
   color: #000000;
   background-color: #ffffff;
 }
-
 #tags button:not(.occupied):not(.focused) {
   color: #000000;
   background-color: #000000;
 }
-
 #memory,
 #custom-power,
 #battery,
@@ -57,10 +51,8 @@ window#waybar {
   color: #ffffff;
   background-color: #000000;
 }
-
-
 #mpris {
-  padding: 6px 18px;
+  padding: 6px 12px;
   margin-top: 6px;
   margin-bottom: 6px;
   margin-left: 3px;
@@ -69,12 +61,10 @@ window#waybar {
   color: #000000;
   background-color: #ffffff;
 }
-
 #battery {
   background-color: #ffffff;
   color: #000000;
 }
-
 #battery.warning,
 #battery.critical,
 #battery.urgent {
@@ -86,22 +76,18 @@ window#waybar {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-
 #battery.charging {
   background-color: #00cc00;
   color: #000000;
 }
-
 #network {
   padding-right: 17px;
 }
-
 tooltip {
   border-radius: 8px;
   padding: 15px;
   background-color: #131822;
 }
-
 tooltip label {
   padding: 5px;
   background-color: #131822;
