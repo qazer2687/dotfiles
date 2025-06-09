@@ -13,7 +13,7 @@ window#waybar {
   background-color: transparent;
 }
 #tags button {
-  padding: 6px 12px;
+  padding: 3px 18px;
   margin-top: 6px;
   margin-bottom: 6px;
   margin-left: 3px;
@@ -52,7 +52,7 @@ window#waybar {
   background-color: #000000;
 }
 #mpris {
-  padding: 6px 12px;
+  padding: 3px 18px;
   margin-top: 6px;
   margin-bottom: 6px;
   margin-left: 3px;
