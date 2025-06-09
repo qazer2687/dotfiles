@@ -3,9 +3,9 @@
     "layer": "top",
     "output": "DP-1",
     "margin": "0 0 0 0",
-    "modules-left": ["clock", "dwl/tags", "mpris"],
+    "modules-left": ["clock", "dwl/tags"],
     "modules-center": [],
-    "modules-right": ["memory", "pulseaudio", "disk", "network"],
+    "modules-right": ["mpris", "memory", "pulseaudio", "disk", "network"],
 
     "pulseaudio": {
       "tooltip": false,
