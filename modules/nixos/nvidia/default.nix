@@ -24,8 +24,5 @@
     services.xserver = {
       videoDrivers = [ "nvidia" ];
     };
-    
-    # Enable fan control and other nvidia-settings options.
-    services.xserver.videoDrivers.nvidia.coolbits = 28;
   };
 }
