@@ -95,6 +95,12 @@
     enable = true;
     scheduler = "scx_lavd";
   };
+  
+  # EXPERIMENTAL - Fan control for AIO and GPU.
+  programs.coolercontrol = {
+    enable = true;
+    nvidiaSupport = true;
+  };
 
   # EXPERIMENTAL - Enable realtime priority
   # to improve latency and reduce stuttering.
