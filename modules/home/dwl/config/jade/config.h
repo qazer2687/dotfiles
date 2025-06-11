@@ -171,7 +171,7 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_Right, movestack, {.i = +1}},
     
     // Swap focused window between outputs.
-    {MODKEY, XKB_KEY_s, sendtooutput, {.i = +1 }},
+    {MODKEY, XKB_KEY_s, tagmon, {.i = +1 }},
 
     {MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q, quit, {0}},
 
