@@ -86,9 +86,14 @@
     };
     initrd.verbose = false;
     consoleLogLevel = 0;
-    # Compiles from source.
-    #kernelPackages = pkgs.linuxPackages_cachyos;
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    # EXPERIMENTAL - Use the cachyos kernel.
+    kernelPackages = pkgs.linuxPackages_cachyos;
+  };
+  
+  # EXPERIMENTAL - Use the scx_lavd scheduler.
+  services.scx = {
+    enable = true;
+    scheduler = "scx_lavd";
   };
 
   # EXPERIMENTAL - Enable realtime priority

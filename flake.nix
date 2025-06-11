@@ -20,6 +20,7 @@
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     niri.url = "github:sodiboo/niri-flake";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     zen.url = "github:0xc000022070/zen-browser-flake";
 
@@ -58,6 +59,7 @@
               ./hosts/jade
               inputs.sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.home-manager
+              inputs.chaotic.nixosModules.default
               {
                 home-manager = {
                   users.alex = ./homes/jade;
