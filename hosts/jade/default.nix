@@ -142,7 +142,7 @@
   swapDevices = [
     {
       device = "/swapfile";
-      size = 16 * 1024;
+      size = 4 * 1024;
     }
   ];
 
@@ -165,8 +165,8 @@
     systemd-boot.enable = true;
     steam.enable = true;
     xdg.enable = true;
-    #zram.enable = true;
-    zswap.enable = true;
+    zram.enable = true;
+    #zswap.enable = true;
     gamemode.enable = true;
     tailscale.enable = true;
   };
