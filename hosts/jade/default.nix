@@ -28,9 +28,6 @@
   };
 
   boot = {
-    # I don't remember exactly why this is needed but
-    # I'm unable to rebuild without this option set.
-    # loader.efi.efiSysMountPoint = "/boot/efi";
     kernelParams = [
       "kernel.nmi_watchdog=0"
       "bgrt_disable"
