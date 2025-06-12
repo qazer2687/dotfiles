@@ -8,7 +8,8 @@
   config = lib.mkIf config.modules.zram.enable {
     
     boot.kernel.sysctl = {
-      "vm.swappiness" = 100;
+      # Ensure all uncompressed ram is used first.
+      "vm.swappiness" = 50;
     };
     
     zramSwap = {
