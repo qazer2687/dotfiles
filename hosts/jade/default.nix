@@ -164,20 +164,6 @@
     gamemode.enable = true;
     tailscale.enable = true;
   };
-  
-  # Play music on mumble.
-  services.botamusique = {
-    enable = true;
-    settings = {
-      server = {
-        port = 64738;
-        host = "mica";
-      };
-      bot = {
-        username = "music";
-      };
-    };
-  };
 
   # Did you read the comment?
   system.stateVersion = "25.05";
