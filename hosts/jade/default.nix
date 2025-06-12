@@ -16,12 +16,6 @@
   };
 
   programs.fish.enable = true;
-
-  hardware = {
-    graphics = {
-      enable = true;
-    };
-  };
   
   services.udev = {
     extraRules = ''

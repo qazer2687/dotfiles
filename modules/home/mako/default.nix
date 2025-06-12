@@ -13,12 +13,12 @@
         background-color = "#000000";
         text-color = "#ffffff";
         border-color = "#ffffff";
-        border-radius = 2;
-        border-size = 1;
+        border-radius = 6;
+        border-size = 2;
         progress-color = "source #ff0000";
-        font = "Departure Mono 8";
-        width = 500;
-        height = 120;
+        font = "Departure Mono 14";
+        width = 600;
+        height = 240;
         margin = "4";
         padding = "10";
         default-timeout = 5000;
