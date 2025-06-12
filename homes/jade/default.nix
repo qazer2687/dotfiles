@@ -19,6 +19,8 @@
 
     ncdu
     btop
+    
+    lunar-client
 
     inputs.zen.packages."${system}".default
 
