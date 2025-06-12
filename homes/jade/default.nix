@@ -15,6 +15,7 @@
     vlc
     vesktop
     loupe
+    mumble
 
     ncdu
     btop
