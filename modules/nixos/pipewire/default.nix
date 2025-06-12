@@ -12,6 +12,8 @@
       pulseaudio
       pavucontrol
       pamixer
+      
+      # EasyEffects & Plugins
       easyeffects
       calf
       libebur128
@@ -27,24 +29,16 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       
-      /*
-      # Not really low latency, but using 48 quant was very choppy.
-      extraConfig.pipewire."92-low-latency" = {
-        context.properties = {
-          default.clock.rate = 48000;
-          default.clock.quantum = 1024;
-          default.clock.min-quantum = 32;
-          default.clock.max-quantum = 2048;
-        };
-      };
-      */
-      
+      # I found that 32 quant resulted in choppy audio;
+      # 64 is the next option and results in a latency of 1.33ms.
+      # Quant should be in powers of two for efficiency
+      # with certain audio processing algorithms.
       extraConfig.pipewire."92-low-latency" = {
         "context.properties" = {
           "default.clock.rate" = 48000;
-          "default.clock.quantum" = 32;
-          "default.clock.min-quantum" = 32;
-          "default.clock.max-quantum" = 32;
+          "default.clock.quantum" = 64;
+          "default.clock.min-quantum" = 64;
+          "default.clock.max-quantum" = 64;
         };
       };
     };
