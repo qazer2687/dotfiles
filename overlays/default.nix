@@ -29,8 +29,8 @@ _: {
         # The order these are listed is the same as
         # the order that the patches are applied.
         patches = [
-          ../patches/dwl/ipc.patch
           ../patches/dwl/bar-0.7.patch
+          ../patches/dwl/ipc.patch
         # ../patches/dwl/hot-reload-0.7.patch
           ../patches/dwl/autostart.patch
           ../patches/dwl/vanitygaps.patch
