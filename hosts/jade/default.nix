@@ -16,12 +16,6 @@
   };
 
   programs.fish.enable = true;
-
-  hardware = {
-    graphics = {
-      enable = true;
-    };
-  };
   
   services.udev = {
     extraRules = ''
@@ -34,9 +28,6 @@
   };
 
   boot = {
-    # I don't remember exactly why this is needed but
-    # I'm unable to rebuild without this option set.
-    # loader.efi.efiSysMountPoint = "/boot/efi";
     kernelParams = [
       "kernel.nmi_watchdog=0"
       "bgrt_disable"
@@ -142,7 +133,10 @@
   swapDevices = [
     {
       device = "/swapfile";
-      size = 4 * 1024;
+      # EXERIMENTAL - I assume a larger swapfile won't inherently
+      # cause issues if my swappiness is fairly low anyway. I find
+      # my system using 100% of 4GB so it's worth trying a larger value.
+      size = 12 * 1024;
     }
   ];
 
