@@ -55,7 +55,7 @@ stdenv.mkDerivation (finalAttrs: {
       pixman
       wayland
       wayland-protocols
-      wlroots
+      wlroots_0_18
     ]
     ++ lib.optionals enableXWayland [
       libX11
