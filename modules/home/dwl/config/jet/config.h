@@ -124,7 +124,7 @@ static const double accel_speed = 0.0;
 LIBINPUT_CONFIG_TAP_MAP_LRM -- 1/2/3 finger tap maps to left/right/middle
 LIBINPUT_CONFIG_TAP_MAP_LMR -- 1/2/3 finger tap maps to left/middle/right
 */
-static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TAP_MAP_LRM;
+static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TAP_MAP_LMR;
 
 /* If you want to use the windows key for MODKEY, use WLR_MODIFIER_LOGO */
 #define MODKEY WLR_MODIFIER_LOGO
@@ -149,8 +149,8 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_Return, spawn, SHCMD("foot")},
     
     // Volume Control
-    {0, XKB_KEY_XF86AudioRaiseVolume, spawn, SHCMD("pamixer -i 2")},
-    {0, XKB_KEY_XF86AudioLowerVolume, spawn, SHCMD("pamixer -d 2")},
+    {0, XKB_KEY_XF86AudioRaiseVolume, spawn, SHCMD("pamixer -i 5")},
+    {0, XKB_KEY_XF86AudioLowerVolume, spawn, SHCMD("pamixer -d 5")},
     {0, XKB_KEY_XF86AudioMute, spawn, SHCMD("pamixer -t")},
     
     // Brightness Control
