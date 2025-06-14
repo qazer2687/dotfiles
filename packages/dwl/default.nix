@@ -50,6 +50,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs =
     [
+      fcft
       libinput
       libxcb
       libxkbcommon
