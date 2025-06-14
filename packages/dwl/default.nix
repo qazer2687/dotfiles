@@ -5,6 +5,7 @@
   libX11,
   libinput,
   libxcb,
+  libdrm
   libxkbcommon,
   pixman,
   fcft,
@@ -50,6 +51,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs =
     [
+      libdrm
       fcft
       libinput
       libxcb
