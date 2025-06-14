@@ -5,7 +5,7 @@
   libX11,
   libinput,
   libxcb,
-  libdrm
+  libdrm,
   libxkbcommon,
   pixman,
   fcft,
