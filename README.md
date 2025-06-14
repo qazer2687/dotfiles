@@ -21,3 +21,16 @@
 
 
 <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
+
+### Credits
+
+A huge thank you to the individuals below as I wouldn't have been able to make it this far into my NixOS journey without their help and inspiration. ❤️
+
+
+* Mihai Fufezan ([@fufexan](https://github.com/fufexan))
+* Norbert Melzer ([@NobbZ](https://github.com/NobbZ))
+* Gerg-L ([@Gerg-L](https://github.com/Gerg-L))
+* Raf ([@NotAShelf](https://github.com/NotAShelf))
+* Sioodmy ([@sioodmy](https://github.com/sioodmy))
+* Éclairevoyant  ([@eclairevoyant](https://github.com/eclairevoyant/))
+* Gabriel Fontes ([@Misterio77](https://github.com/Misterio77))
