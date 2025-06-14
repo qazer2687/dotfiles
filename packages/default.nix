@@ -6,5 +6,4 @@ pkgs: {
   arnis = pkgs.callPackage ./arnis {};
   zen-browser = pkgs.callPackage ./zen-browser {};
   pragmatapro = pkgs.callPackage ./pragmatapro {};
-  dwl = pkgs.callPackage ./dwl {};
 }

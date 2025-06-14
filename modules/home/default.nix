@@ -22,7 +22,6 @@
     ./eza
     ./webcam
     ./hyprland
-    ./dwl
     ./gpg
     ./mangohud
     ./niri

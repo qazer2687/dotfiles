@@ -37,7 +37,6 @@
 
   modules = {
     # Desktop Environment
-    dwl.enable = true;
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
