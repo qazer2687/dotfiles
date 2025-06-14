@@ -1,0 +1,127 @@
+From 01290daca2b01131c5c022389afd0b593b4707eb Mon Sep 17 00:00:00 2001
+From: "Devin J. Pohly" <djpohly@gmail.com>
+Date: Thu, 4 Mar 2021 00:45:50 -0600
+Subject: [PATCH] port dwm "push" patch to dwl
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Signed-off-by: Leonardo Hernández Hernández <leohdz172@proton.me>
+---
+ Makefile |  2 +-
+ dwl.c    |  2 ++
+ push.c   | 63 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ push.h   |  4 ++++
+ 4 files changed, 70 insertions(+), 1 deletion(-)
+ create mode 100644 push.c
+ create mode 100644 push.h
+
+diff --git a/Makefile b/Makefile
+index 3358bae9..87bf3160 100644
+--- a/Makefile
++++ b/Makefile
+@@ -19,7 +19,7 @@ LDLIBS    = `$(PKG_CONFIG) --libs $(PKGS)` -lm $(LIBS)
+ all: dwl
+ dwl: dwl.o util.o
+ 	$(CC) dwl.o util.o $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
+-dwl.o: dwl.c client.h config.h config.mk cursor-shape-v1-protocol.h \
++dwl.o: dwl.c client.h config.h config.mk push.h cursor-shape-v1-protocol.h \
+ 	pointer-constraints-unstable-v1-protocol.h wlr-layer-shell-unstable-v1-protocol.h \
+ 	wlr-output-power-management-unstable-v1-protocol.h xdg-shell-protocol.h
+ util.o: util.c util.h
+diff --git a/dwl.c b/dwl.c
+index a2711f67..c3d78aa3 100644
+--- a/dwl.c
++++ b/dwl.c
+@@ -427,7 +427,9 @@ static xcb_atom_t netatom[NetLast];
+ #endif
+ 
+ /* configuration, allows nested code to access above variables */
++#include "push.h"
+ #include "config.h"
++#include "push.c"
+ 
+ /* attempt to encapsulate suck into one file */
+ #include "client.h"
+diff --git a/push.c b/push.c
+new file mode 100644
+index 00000000..323c317e
+--- /dev/null
++++ b/push.c
+@@ -0,0 +1,63 @@
++static Client *
++nexttiled(Client *sel) {
++	Client *c;
++	wl_list_for_each(c, &sel->link, link) {
++		if (&c->link == &clients)
++			break;  /* don't wrap */
++		if (!c->isfloating && VISIBLEON(c, selmon))
++			return c;
++	}
++	return NULL;
++}
++
++static Client *
++prevtiled(Client *sel) {
++	Client *c;
++	wl_list_for_each_reverse(c, &sel->link, link) {
++		if (&c->link == &clients)
++			break;  /* don't wrap */
++		if (!c->isfloating && VISIBLEON(c, selmon))
++			return c;
++	}
++	return NULL;
++}
++
++static void
++pushup(const Arg *arg) {
++	Client *sel = focustop(selmon);
++	Client *c;
++
++	if(!sel || sel->isfloating)
++		return;
++	if((c = prevtiled(sel))) {
++		/* attach before c */
++		wl_list_remove(&sel->link);
++		wl_list_insert(c->link.prev, &sel->link);
++	} else {
++		/* move to the end */
++		wl_list_remove(&sel->link);
++		wl_list_insert(clients.prev, &sel->link);
++	}
++	focusclient(sel, 1);
++	arrange(selmon);
++}
++
++static void
++pushdown(const Arg *arg) {
++	Client *sel = focustop(selmon);
++	Client *c;
++
++	if(!sel || sel->isfloating)
++		return;
++	if((c = nexttiled(sel))) {
++		/* attach after c */
++		wl_list_remove(&sel->link);
++		wl_list_insert(&c->link, &sel->link);
++	} else {
++		/* move to the front */
++		wl_list_remove(&sel->link);
++		wl_list_insert(&clients, &sel->link);
++	}
++	focusclient(sel, 1);
++	arrange(selmon);
++}
+diff --git a/push.h b/push.h
+new file mode 100644
+index 00000000..59c0f80e
+--- /dev/null
++++ b/push.h
+@@ -0,0 +1,4 @@
++static Client *nexttiled(Client *sel);
++static Client *prevtiled(Client *sel);
++static void pushdown(const Arg *arg);
++static void pushup(const Arg *arg);
+-- 
+2.46.0
+

@@ -21,12 +21,6 @@
     btop
     
     lunar-client
-    
-    swaybg
-    brightnessctl
-    pamixer
-    #screenshot
-    wlr-randr
 
     inputs.zen.packages."${system}".default
 
@@ -37,6 +31,7 @@
 
   modules = {
     # Desktop Environment
+    dwl.enable = true;
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;

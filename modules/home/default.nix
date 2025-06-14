@@ -32,5 +32,6 @@
     ./zed
     ./zoxide
     ./tofi
+    ./dwl
   ];
 }
