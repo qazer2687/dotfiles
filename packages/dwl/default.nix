@@ -7,6 +7,7 @@
   libxcb,
   libxkbcommon,
   pixman,
+  fcft,
   pkg-config,
   stdenv,
   testers,
