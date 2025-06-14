@@ -22,9 +22,9 @@
 
 <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
 
-### Credits
+### Credits ❤️
 
-A huge thank you to the individuals below as I wouldn't have been able to make it this far into my NixOS journey without their help and inspiration. ❤️
+A huge thank you to the individuals below as I wouldn't have been able to make it this far into my NixOS journey without their help and inspiration.
 
 
 * Mihai Fufezan ([@fufexan](https://github.com/fufexan))
