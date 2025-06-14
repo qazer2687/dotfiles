@@ -47,11 +47,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1749907838,
-        "narHash": "sha256-ypTL/+uo3PI5qGQ1HnKZLR6rKPcWJfiShEkXTgDOjwg=",
+        "lastModified": 1749908639,
+        "narHash": "sha256-M7z3nKZ2IRXv1u7lP7B5oQgd8PhL7xDKQFcm2a76NiI=",
         "owner": "qazer2687",
         "repo": "dwl",
-        "rev": "a850d07f0540d31ae0381df05ac6cdc99acdd012",
+        "rev": "60ada56e34ed4f5a90eb5895f89415d36cb43a90",
         "type": "github"
       },
       "original": {
