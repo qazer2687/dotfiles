@@ -21,6 +21,12 @@
     btop
     
     lunar-client
+    
+    swaybg
+    brightnessctl
+    pamixer
+    #screenshot
+    wlr-randr
 
     inputs.zen.packages."${system}".default
 

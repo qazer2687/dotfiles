@@ -16,6 +16,14 @@
 
     ncdu
     btop
+    
+    
+    inputs.dwl.packages."${system}".jet
+    swaybg
+    brightnessctl
+    pamixer
+    #screenshot
+    wlr-randr
 
     inputs.zen.packages."${system}".default
 
@@ -28,7 +36,7 @@
 
   modules = {
     # Desktop Environment
-    dwl.enable = true;
+    #dwl.enable = true;
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;

@@ -25,6 +25,9 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     zen.url = "github:0xc000022070/zen-browser-flake";
+    
+    # Personal Flakes
+    dwl.url = "github:qazer2687/dwl";
 
     # Anything listed below I don't currently use but I
     # will leave here in case I need to bring something back.
