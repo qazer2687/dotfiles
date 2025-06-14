@@ -21,13 +21,13 @@ in {
 
   config = lib.mkIf config.modules.dwl.enable {
     home.packages = with pkgs; [
-      # The configuration is set in an overlay and defined in the config folder.
-      # Enabling this is really just the same as adding dwl to packages but I guess I
-      # can add dependencies here.
       (pkgs.dwl.override {
         configH = if osConfig.networking.hostName == "jet"
           then ./config/jet/config.h
           else ./config/jade/config.h;
+        enableXWayland = if osConfig.networking.hostName == "jet"
+          then false
+          else true;
       })
       swaybg
       brightnessctl

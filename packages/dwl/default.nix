@@ -1,6 +1,5 @@
 {
   lib,
-  fetchFromGitea,
   installShellFiles,
   libX11,
   libinput,
@@ -127,4 +126,3 @@ stdenv.mkDerivation (finalAttrs: {
     mainProgram = "dwl";
   };
 })
-# TODO: custom patches from upstream website

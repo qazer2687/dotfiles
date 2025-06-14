@@ -9,16 +9,35 @@
   ];
 
   home.packages = with pkgs; [
+    # Powerful knowledge base that works on top of a
+    # local folder of plain text Markdown files
     obsidian
+    
+    # File manager for GNOME.
     nautilus
+    
+    # Cross-platform media player and streaming server.
     vlc
+    
+    # Simple image viewer application written with GTK4 and Rust
     loupe
+    
+    # Dorion is an alternative Discord client aimed towards lower-spec 
+    # or storage-sensitive PCs that supports themes, plugins, and more!
+    dorion
 
-    ncdu
+    # Disk usage analyzer with console interface.
+    gdu
+    
+    # Monitor of resources.
     btop
+    
+    # Open source clone of the Microprose game “Transport Tycoon Deluxe”.
+    openttd-jgrpp
 
     inputs.zen.packages."${system}".default
 
+    # Misc Libs
     ffmpeg-full
     libheif
   ];
@@ -40,15 +59,12 @@
     fastfetch.enable = true;
     webcam.enable = true;
     eza.enable = true;
-    # mpd.enable = true;
     direnv.enable = true;
     git.enable = true;
     bat.enable = true;
-    # neovim.enable = true;
     zoxide.enable = true;
 
     # GUI
-    #vscode.enable = true;
     zed.enable = true;
   };
 
