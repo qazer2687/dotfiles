@@ -81,7 +81,7 @@
     }
   '';
 
-  
+  programs.dwl.enable = true;
   services.displayManager.ly = {
     enable = true;
   };
