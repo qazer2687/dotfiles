@@ -32,9 +32,6 @@ static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
 static const char *fonts[] = {"Departure Mono:size=12"};
 
-/* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
-static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
-
 // Tags
 //#define TAGCOUNT (9)
 // Used by bar-0.7.patch
