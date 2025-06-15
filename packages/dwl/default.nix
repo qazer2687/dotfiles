@@ -46,11 +46,11 @@ stdenv.mkDerivation (finalAttrs: {
     installShellFiles
     pkg-config
     wayland-scanner
-    libdrm.dev
   ];
 
   buildInputs =
     [
+      libdrm.dev
       libdrm
       fcft
       libinput
