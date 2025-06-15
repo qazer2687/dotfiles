@@ -81,7 +81,14 @@
     }
   '';
 
-  services.displayManager.sessionPackages = with pkgs; [dwl];
+  services.displayManager.sessionPackages = with pkgs; [
+    (dwl.overrideAttrs (oldAttrs: {
+      passthru = (oldAttrs.passthru or {}) // {
+        providedSessions = [ "dwl" ];
+      };
+    }))
+  ];
+  
   services.displayManager.ly = {
     enable = true;
   };
