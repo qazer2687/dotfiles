@@ -13,20 +13,29 @@ static const unsigned int gappoh    = 6;       /* horiz outer gap between window
 static const unsigned int gappov    = 6;       /* vert outer gap between windows and screen edge */
 
 // Colours
-#define COLOR(hex)    { ((hex >> 24) & 0xFF) / 255.0f, \
-                        ((hex >> 16) & 0xFF) / 255.0f, \
-                        ((hex >> 8) & 0xFF) / 255.0f, \
-                        (hex & 0xFF) / 255.0f }
-static const float rootcolor[]             = COLOR(0xaaaaaaff);
+static uint32_t colors[][3] = {
+	/* fg         bg         border   */
+	[SchemeNorm] = { 0xbbbbbbff, 0x222222ff, 0x444444ff },
+	[SchemeSel]  = { 0xeeeeeeff, 0x005577ff, 0x005577ff },
+	[SchemeUrg]  = { 0,          0,          0x770000ff },
+};
+static const float rootcolor[] = COLOR(0x000000ff);
 static const float bordercolor[]           = COLOR(0xaaaaaaff);
 static const float focuscolor[]            = COLOR(0xffffffff);
 static const float urgentcolor[]           = COLOR(0xffffffff);
+
+// Bar
+static const int showbar = 1; /* 0 means no bar */
+static const int topbar = 1;  /* 0 means bottom bar */
+static const char *fonts[] = {"Departure Mono:size=12"};
 
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
 
 // Tags
-#define TAGCOUNT (9)
+//#define TAGCOUNT (9)
+// Used by bar-0.7.patch
+static char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 // Logs
 static int log_level = WLR_ERROR;
@@ -193,7 +202,5 @@ static const Key keys[] = {
 
 // Mouse Binds
 static const Button buttons[] = {
-	//{ MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
-	{ MODKEY, BTN_MIDDLE, togglefloating, {0} },
-	//{ MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
+	// Leave this array empty if you want no button actions
 };
