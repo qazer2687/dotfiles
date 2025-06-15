@@ -98,10 +98,10 @@
   '';
   
   # EXPERIMENTAL - See if keyring works.
-  #services.gnome.gnome-keyring.enable = true;
-  #environment.systemPackages = with pkgs; [
-  #  libsecret # Provides the client-side library for accessing secret services
-  #];
+  services.gnome.gnome-keyring.enable = true;
+  environment.systemPackages = with pkgs; [
+    libsecret # Provides the client-side library for accessing secret services
+  ];
 
   swapDevices = [
     {
