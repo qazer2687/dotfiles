@@ -1,10 +1,11 @@
 {
   lib,
-  fetchFromGitea,
   installShellFiles,
   libX11,
   libinput,
   libxcb,
+  libdrm,
+  fcft,
   libxkbcommon,
   pixman,
   pkg-config,
@@ -40,14 +41,7 @@ assert withCustomConfigH -> (configH != null);
 stdenv.mkDerivation (finalAttrs: {
   pname = "dwl";
   version = "0.7";
-
-  src = fetchFromGitea {
-    domain = "codeberg.org";
-    owner = "dwl";
-    repo = "dwl";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-7SoCITrbMrlfL4Z4hVyPpjB9RrrjLXHP9C5t1DVXBBA=";
-  };
+  src = ./src;
 
   nativeBuildInputs = [
     installShellFiles
@@ -58,6 +52,8 @@ stdenv.mkDerivation (finalAttrs: {
   buildInputs =
     [
       libinput
+      libdrm
+      fcft
       libxcb
       libxkbcommon
       pixman
