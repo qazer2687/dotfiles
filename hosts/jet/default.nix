@@ -81,6 +81,11 @@
     }
   '';
 
+  
+  services.displayManager.ly = {
+    enable = true;
+  };
+/*
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
@@ -96,6 +101,8 @@
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session dwl
   '';
+  
+  */
   
   # EXPERIMENTAL - See if keyring works.
   services.gnome.gnome-keyring.enable = true;
