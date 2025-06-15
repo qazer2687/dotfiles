@@ -46,6 +46,7 @@ stdenv.mkDerivation (finalAttrs: {
     installShellFiles
     pkg-config
     wayland-scanner
+    libdrm.dev
   ];
 
   buildInputs =
