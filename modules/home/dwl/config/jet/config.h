@@ -13,10 +13,10 @@ static const unsigned int gappoh    = 6;       /* horiz outer gap between window
 static const unsigned int gappov    = 6;       /* vert outer gap between windows and screen edge */
 
 // Colours
-#define COLOR(RGBA) ((const float*)(&(float []){((RGBA >> 24) & 0xFF) / 255.0f, \
-                                                ((RGBA >> 16) & 0xFF) / 255.0f, \
-                                                ((RGBA >> 8) & 0xFF) / 255.0f,  \
-                                                ((RGBA >> 0) & 0xFF) / 255.0f}))
+#define COLOR(RGBA) {((RGBA >> 24) & 0xFF) / 255.0f, \
+                     ((RGBA >> 16) & 0xFF) / 255.0f, \
+                     ((RGBA >> 8) & 0xFF) / 255.0f,  \
+                     ((RGBA >> 0) & 0xFF) / 255.0f}
 
 static const float rootcolor[] = COLOR(0x222222ff);
 static const float fullscreen_bg[] = {0.1f, 0.1f, 0.1f, 1.0f};
