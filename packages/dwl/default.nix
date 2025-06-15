@@ -72,6 +72,39 @@ stdenv.mkDerivation (finalAttrs: {
     "out"
     "man"
   ];
+  
+  # Set environment variables that will be available during all build phases
+    NIX_CFLAGS_COMPILE = "-I${libdrm.dev}/include";
+    
+    # Configure environment for pkg-config
+    configurePhase = ''
+      runHook preConfigure
+      
+      # Set up pkg-config paths
+      export PKG_CONFIG_PATH="${fcft}/lib/pkgconfig:${libdrm.dev}/lib/pkgconfig:$PKG_CONFIG_PATH"
+      export CPATH="${libdrm.dev}/include:$CPATH"
+      
+      # Debug output
+      echo "=== ARCHITECTURE & PKG-CONFIG DEBUG ==="
+      echo "Architecture: ${stdenv.hostPlatform.system}"
+      echo "PKG_CONFIG_PATH: $PKG_CONFIG_PATH"
+      echo "CPATH: $CPATH"
+      echo ""
+      echo "Checking fcft package location:"
+      find ${fcft} -name "*.pc" 2>/dev/null || echo "No .pc files found in fcft"
+      echo "Checking libdrm package location:"
+      find ${libdrm.dev} -name "*.pc" 2>/dev/null || echo "No .pc files found in libdrm.dev"
+      echo ""
+      echo "Available packages containing 'fcft' or 'drm':"
+      pkg-config --list-all | grep -E "(fcft|drm)" || echo "No matching packages found"
+      echo "Testing fcft:"
+      pkg-config --exists fcft && echo "fcft found" || echo "fcft NOT found"
+      echo "Testing libdrm:"
+      pkg-config --exists libdrm && echo "libdrm found" || echo "libdrm NOT found"
+      echo "============================================"
+      
+      runHook postConfigure
+    '';
 
   postPatch =
     let
