@@ -94,7 +94,7 @@
 
   # Automatically launch DWL after login.
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && eval $(/run/current-system/sw/bin/gnome-keyring-daemon --start --components=secrets,ssh); exec dbus-run-session dwl
+    [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session dwl
   '';
   
   # EXPERIMENTAL - See if keyring works.
