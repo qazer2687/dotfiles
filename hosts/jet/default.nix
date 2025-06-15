@@ -81,7 +81,7 @@
     }
   '';
 
-  programs.dwl.enable = true;
+  services.displayManager.sessionPackages = with pkgs; [dwl];
   services.displayManager.ly = {
     enable = true;
   };
