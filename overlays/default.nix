@@ -33,8 +33,8 @@ _: {
           ../patches/dwl/bar-0.7.patch
         #  ../patches/dwl/ipc.patch
         # ../patches/dwl/hot-reload-0.7.patch
-        #  ../patches/dwl/autostart-0.7.patch
-        # ../patches/dwl/movestack.patch
+          ../patches/dwl/autostart-0.7.patch
+         ../patches/dwl/movestack.patch
         # ../patches/dwl/push.patch
         ];
       }));
