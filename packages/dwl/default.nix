@@ -9,6 +9,7 @@
   pixman,
   pkg-config,
   stdenv,
+  fcft,
   testers,
   nixosTests,
   wayland,
@@ -53,6 +54,7 @@ stdenv.mkDerivation (finalAttrs: {
       libinput
       libxcb
       libxkbcommon
+      fcft
       pixman
       wayland
       wayland-protocols
