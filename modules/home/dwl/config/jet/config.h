@@ -13,29 +13,18 @@ static const unsigned int gappoh    = 6;       /* horiz outer gap between window
 static const unsigned int gappov    = 6;       /* vert outer gap between windows and screen edge */
 
 // Colours
-#define COLOR(RGBA) {((RGBA >> 24) & 0xFF) / 255.0f, \
-                     ((RGBA >> 16) & 0xFF) / 255.0f, \
-                     ((RGBA >> 8) & 0xFF) / 255.0f,  \
-                     ((RGBA >> 0) & 0xFF) / 255.0f}
-
-static const float rootcolor[] = COLOR(0x222222ff);
-static const float fullscreen_bg[] = {0.1f, 0.1f, 0.1f, 1.0f};
-static uint32_t colors[][3] = {
-	/* fg         bg         border   */
-	[SchemeNorm] = { 0xbbbbbbff, 0x222222ff, 0xaaaaaaff },
-	[SchemeSel]  = { 0xeeeeeeff, 0x005577ff, 0xffffffff },
-	[SchemeUrg]  = { 0,          0,          0xffffffff },
-};
-
-// Bar
-static const int showbar = 1; /* 0 means no bar */
-static const int topbar = 1;  /* 0 means bottom bar */
-static const char *fonts[] = {"Departure Mono:size=12"};
+#define COLOR(hex)    { ((hex >> 24) & 0xFF) / 255.0f, \
+                        ((hex >> 16) & 0xFF) / 255.0f, \
+                        ((hex >> 8) & 0xFF) / 255.0f, \
+                        (hex & 0xFF) / 255.0f }
+static const float rootcolor[]             = COLOR(0xaaaaaaff);
+static const float bordercolor[]           = COLOR(0xaaaaaaff);
+static const float focuscolor[]            = COLOR(0xffffffff);
+static const float urgentcolor[]           = COLOR(0xffffffff);
+static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f};
 
 // Tags
-//#define TAGCOUNT (9)
-// Used by bar-0.7.patch
-static char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+#define TAGCOUNT (9)
 
 // Logs
 static int log_level = WLR_ERROR;
@@ -151,29 +140,29 @@ static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
     /* modifier-key-function-argument */
     
-    // Launcher
+    //// Launcher
     {MODKEY, XKB_KEY_e, spawn, SHCMD("tofi-run | sh")},
     
-    // Terminal
+    //// Terminal
     {MODKEY, XKB_KEY_Return, spawn, SHCMD("foot")},
     
-    // Volume Control
+    //// Volume Control
     {0, XKB_KEY_XF86AudioRaiseVolume, spawn, SHCMD("pamixer -i 5")},
     {0, XKB_KEY_XF86AudioLowerVolume, spawn, SHCMD("pamixer -d 5")},
     {0, XKB_KEY_XF86AudioMute, spawn, SHCMD("pamixer -t")},
     
-    // Brightness Control
+    //// Brightness Control
     {0, XKB_KEY_XF86MonBrightnessUp, spawn, SHCMD("brightnessctl set 1%+")},
     {0, XKB_KEY_XF86MonBrightnessDown, spawn, SHCMD("brightnessctl set 1%-")},
     
-    // Backlight Control
+    //// Backlight Control
     {MODKEY, XKB_KEY_XF86MonBrightnessUp, spawn, SHCMD("brightnessctl --class leds --device kbd_backlight set 10%+")},
     {MODKEY, XKB_KEY_XF86MonBrightnessDown, spawn, SHCMD("brightnessctl --class leds --device kbd_backlight set 10%-")},
 
     {MODKEY, XKB_KEY_q, killclient, {0}},
     {MODKEY, XKB_KEY_f, togglefullscreen, {0}},
 
-    // Tag Navigation & Manipulation
+    //// Tag Navigation & Manipulation
     TAGKEYS(XKB_KEY_1, XKB_KEY_exclam, 0),
     TAGKEYS(XKB_KEY_2, XKB_KEY_quotedbl, 1),
     TAGKEYS(XKB_KEY_3, XKB_KEY_sterling, 2),
@@ -184,9 +173,20 @@ static const Key keys[] = {
     TAGKEYS(XKB_KEY_8, XKB_KEY_asterisk, 7),
     TAGKEYS(XKB_KEY_9, XKB_KEY_parenleft, 8),
 
-    // Window Manipulation
-    {MODKEY, XKB_KEY_Left, movestack, {.i = -1}},
-    {MODKEY, XKB_KEY_Right, movestack, {.i = +1}},
+    //// Window Manipulation
+
+    /* Focus movement with Mod + Arrow Keys */
+    { MODKEY,                       XKB_KEY_Left,       focusstack,     {.i = -1} },
+    { MODKEY,                       XKB_KEY_Right,      focusstack,     {.i = +1} },
+    { MODKEY,                       XKB_KEY_Up,         focusstack,     {.i = -1} },
+    { MODKEY,                       XKB_KEY_Down,       focusstack,     {.i = +1} },
+    
+    /* Move window to master/back with Mod + Space */
+    { MODKEY,                       XKB_KEY_space,      zoom,           {0} },
+    
+    /* Resize master area with Mod + Shift + Left/Right */
+    { MODKEY|WLR_MODIFIER_SHIFT,    XKB_KEY_Left,       setmfact,       {.f = -0.05} },
+    { MODKEY|WLR_MODIFIER_SHIFT,    XKB_KEY_Right,      setmfact,       {.f = +0.05} },
 
     {MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q, quit, {0}},
 
