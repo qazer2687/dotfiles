@@ -5,6 +5,7 @@
   libX11,
   libinput,
   libxcb,
+  libdrm,
   libxkbcommon,
   pixman,
   pkg-config,
@@ -55,6 +56,7 @@ stdenv.mkDerivation (finalAttrs: {
       libxcb
       libxkbcommon
       fcft
+      libdrm
       pixman
       wayland
       wayland-protocols
