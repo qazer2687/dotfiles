@@ -202,7 +202,5 @@ static const Key keys[] = {
 
 // Mouse Binds
 static const Button buttons[] = {
-  // Add a single, harmless entry to prevent "zero or negative size array" error.
-	// This entry won't do anything as it has a NULL function pointer.
-	{ 0, 0, 0, NULL, {0} }
+
 };
