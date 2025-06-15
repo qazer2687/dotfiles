@@ -33,5 +33,6 @@
     ./zoxide
     ./tofi
     ./dwl
+    ./screenshot
   ];
 }

@@ -154,7 +154,14 @@
 
     programs.dconf.enable = true;
     security.polkit.enable = true;
-
+    
+    # Less bloated sudo implementation.
+    security.sudo.enable = false;
+    security.sudo-rs = {
+      enable = true;
+      wheelNeedsPassword = false;
+    };
+    
     # OOM Killer
     services.earlyoom.enable = true;
 

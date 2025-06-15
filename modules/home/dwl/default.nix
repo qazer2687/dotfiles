@@ -4,19 +4,7 @@
   pkgs,
   osConfig,
   ...
-}: let
-  screenshot = pkgs.writeShellApplication {
-    name = "screenshot";
-    runtimeInputs = with pkgs; [
-      grim
-      slurp
-      wl-clipboard
-    ];
-    text = ''
-      grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy -t image/png
-    '';
-  };
-in {
+}: {
   options.modules.dwl.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.dwl.enable {
@@ -29,12 +17,10 @@ in {
           then false
           else true;
       })
-      swaybg
+      wbg
       brightnessctl
       pamixer
-      screenshot
       wlr-randr
-      waypipe
     ];
   };
 }

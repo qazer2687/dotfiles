@@ -44,6 +44,7 @@
     eza.enable = true;
     bat.enable = true;
     zoxide.enable = true;
+    screenshot.enable = true;
 
     # Gaming
     mangohud.enable = true;

@@ -92,12 +92,10 @@
     ];
   };
 
-  # niri-session refuses to work a lot of the time unless manually invoked.
-  /*
+  # Automatically launch DWL after login.
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && niri-session
+    [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session dwl
   '';
-  */
 
   swapDevices = [
     {

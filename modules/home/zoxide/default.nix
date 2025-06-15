@@ -10,8 +10,11 @@
       enable = true;
       enableFishIntegration = true;
     };
+    
+    /* I'm not going to alias to cd.
     home.shellAliases = {
       "cd" = "z";
     };
+    */
   };
 }

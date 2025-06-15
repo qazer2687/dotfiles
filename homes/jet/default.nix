@@ -63,6 +63,7 @@
     git.enable = true;
     bat.enable = true;
     zoxide.enable = true;
+    screenshot.enable = true;
 
     # GUI
     zed.enable = true;

@@ -28,7 +28,7 @@
           pkgs.xdg-desktop-portal-gtk
           pkgs.xdg-desktop-portal-gnome
         ];
-        #xdgOpenUsePortal = true;
+        xdgOpenUsePortal = true;
         # Fix 'xdg-desktop-portal 1.17 reworked how
         # portal implementations are loaded' warning.
         config.common.default = "*";
