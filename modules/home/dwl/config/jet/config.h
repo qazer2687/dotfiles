@@ -13,10 +13,21 @@ static const unsigned int gappoh    = 6;       /* horiz outer gap between window
 static const unsigned int gappov    = 6;       /* vert outer gap between windows and screen edge */
 
 // Colours
+// Colours
 #define COLOR(RGBA) ((float []){((RGBA >> 24) & 0xFF) / 255.0f, \
                                 ((RGBA >> 16) & 0xFF) / 255.0f, \
                                 ((RGBA >> 8) & 0xFF) / 255.0f,  \
                                 ((RGBA >> 0) & 0xFF) / 255.0f})
+
+static const float rootcolor[] = COLOR(0x222222ff);
+static const float fullscreen_bg[] = {0.1f, 0.1f, 0.1f, 1.0f};
+static uint32_t colors[][3] = {
+	/* fg         bg         border   */
+	[SchemeNorm] = { 0xbbbbbbff, 0x222222ff, 0xaaaaaaff },
+	[SchemeSel]  = { 0xeeeeeeff, 0x005577ff, 0xffffffff },
+	[SchemeUrg]  = { 0,          0,          0xffffffff },
+};
+
 
 static const float rootcolor[] = COLOR(0x222222ff);
 static const float fullscreen_bg[] = {0.1f, 0.1f, 0.1f, 1.0f};
@@ -202,5 +213,7 @@ static const Key keys[] = {
 
 // Mouse Binds
 static const Button buttons[] = {
-	// Leave this array empty if you want no button actions
+  // Add a single, harmless entry to prevent "zero or negative size array" error.
+	// This entry won't do anything as it has a NULL function pointer.
+	{ 0, 0, 0, NULL, {0} }
 };
