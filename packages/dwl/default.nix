@@ -1,20 +1,20 @@
+
 {
   lib,
   installShellFiles,
   libX11,
   libinput,
   libxcb,
-  libdrm,
   libxkbcommon,
   pixman,
-  fcft,
   pkg-config,
   stdenv,
   testers,
+  nixosTests,
   wayland,
   wayland-protocols,
   wayland-scanner,
-  wlroots_0_18,
+  wlroots,
   writeText,
   xcbutilwm,
   xwayland,
@@ -41,27 +41,22 @@ stdenv.mkDerivation (finalAttrs: {
   pname = "dwl";
   version = "0.7";
   src = ./src;
-
+  
   nativeBuildInputs = [
     installShellFiles
     pkg-config
     wayland-scanner
   ];
-
+  
   buildInputs =
     [
-      pkg-config
-      libdrm
-      libdrm.dev
-      fcft
-      fcft.dev
       libinput
       libxcb
       libxkbcommon
       pixman
       wayland
       wayland-protocols
-      wlroots_0_18
+      wlroots
     ]
     ++ lib.optionals enableXWayland [
       libX11
@@ -86,7 +81,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   makeFlags =
     [
-     # "PKG_CONFIG=${stdenv.cc.targetPrefix}pkg-config"
+      "PKG_CONFIG=${stdenv.cc.targetPrefix}pkg-config"
       "WAYLAND_SCANNER=wayland-scanner"
       "PREFIX=$(out)"
       "MANDIR=$(man)/share/man"
@@ -102,10 +97,13 @@ stdenv.mkDerivation (finalAttrs: {
   __structuredAttrs = true;
 
   passthru = {
-    tests.version = testers.testVersion {
-      package = finalAttrs.finalPackage;
-      # `dwl -v` emits its version string to stderr and returns 1
-      command = "dwl -v 2>&1; return 0";
+    tests = {
+      version = testers.testVersion {
+        package = finalAttrs.finalPackage;
+        # `dwl -v` emits its version string to stderr and returns 1
+        command = "dwl -v 2>&1; return 0";
+      };
+      basic = nixosTests.dwl;
     };
   };
 
@@ -129,3 +127,4 @@ stdenv.mkDerivation (finalAttrs: {
     mainProgram = "dwl";
   };
 })
+# TODO: custom patches from upstream website
