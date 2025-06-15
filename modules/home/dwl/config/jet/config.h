@@ -27,16 +27,6 @@ static uint32_t colors[][3] = {
 	[SchemeUrg]  = { 0,          0,          0xffffffff },
 };
 
-
-static const float rootcolor[] = COLOR(0x222222ff);
-static const float fullscreen_bg[] = {0.1f, 0.1f, 0.1f, 1.0f};
-static uint32_t colors[][3] = {
-	/* fg         bg         border   */
-	[SchemeNorm] = { 0xbbbbbbff, 0x222222ff, 0xaaaaaaff },
-	[SchemeSel]  = { 0xeeeeeeff, 0x005577ff, 0xffffffff },
-	[SchemeUrg]  = { 0,          0,          0xffffffff },
-};
-
 // Bar
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
