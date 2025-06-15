@@ -33,6 +33,7 @@ static int log_level = WLR_ERROR;
 static const char *const autostart[] = {
     "/bin/sh", "-c", "waybar", NULL,
     "/bin/sh", "-c", "wbg /home/alex/.config/wallpaper/wallpaper.png", NULL,
+    "/bin/sh", "-c", "gnome-keyring-daemon --start --components=secrets", NULL,
     NULL
 };
 
