@@ -8,8 +8,6 @@ PREFIX = /usr/local
 MANDIR = $(PREFIX)/share/man
 DATADIR = $(PREFIX)/share
 
-CFLAGS = -O3
-
 XWAYLAND =
 XLIBS =
 # Uncomment to build XWayland support
