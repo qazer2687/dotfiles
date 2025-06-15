@@ -38,7 +38,7 @@ static const char *const autostart[] = {
 
 // Window Rules
 static const Rule rules[] = {
-	{ "EXAMPLE",     NULL,       0,            1,           -1 },
+	{ "EXAMPLE",     NULL,       0,            0,           -1 },
 };
 
 // Layout
