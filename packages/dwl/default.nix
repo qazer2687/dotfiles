@@ -55,12 +55,13 @@ stdenv.mkDerivation (finalAttrs: {
       libinput
       libxcb
       libxkbcommon
-      fcft
-      libdrm
       pixman
       wayland
       wayland-protocols
       wlroots
+      
+      fcft.dev
+      libdrm.dev  
     ]
     ++ lib.optionals enableXWayland [
       libX11
