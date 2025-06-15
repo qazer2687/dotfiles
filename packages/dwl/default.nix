@@ -50,9 +50,10 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs =
     [
-      libdrm.dev
       libdrm
+      libdrm.dev
       fcft
+      fcft.dev
       libinput
       libxcb
       libxkbcommon
@@ -88,7 +89,6 @@ stdenv.mkDerivation (finalAttrs: {
       "WAYLAND_SCANNER=wayland-scanner"
       "PREFIX=$(out)"
       "MANDIR=$(man)/share/man"
-      "PKG_CONFIG_PATH=${fcft}/lib/pkgconfig:${libdrm}/lib/pkgconfig"
     ]
     ++ lib.optionals enableXWayland [
       ''XWAYLAND="-DXWAYLAND"''
