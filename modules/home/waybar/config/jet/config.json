@@ -24,6 +24,10 @@
     "format-icons": [" ", " ", " ", " ", " "],
     "format-charging": "󱐋 {capacity}%",
     "interval": 10,
+    "states": {
+      "warning": 25,
+      "critical": 15
+    },
     "margin-left": 15
   },
   "dwl/tags": {

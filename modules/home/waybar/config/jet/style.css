@@ -5,6 +5,10 @@
 @define-color lightest #999999;
 @define-color text #b8b8b8;
 
+@define-color warnDarkest #1a0d0d;
+@define-color warnLightest #998a8a;
+@define-color warnText #b8a9a9;
+
 * {
     font-family: "Departure Mono", "FiraCode Mono Nerd Font";
     font-size: 11px;
@@ -129,8 +133,15 @@ window#waybar {
 
 
 /* Battery level colors */
-#battery.warning {
+#battery.warning,
+#battery.critical {
     color: #cc8800;
+    color: @warnText;
+    background-color: @base;
+    border: 1px solid;
+    border-color: @warnLightest @warnDarkest @warnDarkest @warnLightest;
+    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
+    font-weight: normal;
 }
 #battery.critical {
     color: #cc4444;
