@@ -132,15 +132,15 @@ window#waybar {
     color: @text;
   }
   to {
-    color: #aa5555;
+    color: #aa7777;
   }
 }
 
 /* Battery level colors */
 #battery.warning {
   animation-name: warnBlink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -157,7 +157,7 @@ window#waybar {
 #battery.critical {
   animation-name: critBlink;
   animation-duration: 0.1s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
