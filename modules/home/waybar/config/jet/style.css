@@ -46,12 +46,14 @@ window#waybar {
 }
 
 /* Hide unused dwl tags */
+/*
 #tags button:not(.occupied):not(.focused) {
     color: transparent;
     background-color: transparent;
     border: none;
     box-shadow: none;
 }
+*/
 
 /* Base styling for workspace/tag buttons */
 #tags button {
@@ -77,6 +79,40 @@ window#waybar {
 /* Occupied but NOT focused */
 #tags button.occupied:not(.focused) {
     background-color: @base;
+}
+/* Base styling for workspace/tag buttons */
+#tags button {
+    all: initial;
+    min-width: 0;
+    padding: 4px 8px;
+    border-radius: 0;
+    color: @text;
+    background-color: @darker;
+    border: 1px solid;
+    border-color: @lightest @darkest @darkest @lightest;
+    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
+    margin: 2px 1px;
+}
+
+/* Focused tags and active/focused workspaces */
+#tags button.focused {
+    color: @text;
+    border-color: @darkest @lightest @lightest @darkest;
+    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Occupied but NOT focused */
+#tags button.occupied:not(.focused) {
+    background-color: @base;
+}
+
+#tags button.occupied {
+  content: '■'; /* Or any small character like '●' or '◆' */
+  font-size: 8px; /* Adjust size */
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: lightcoral; /* Choose a color that stands out, like your accent color */
 }
 
 
