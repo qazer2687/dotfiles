@@ -167,8 +167,16 @@ static const Key keys[] = {
     TAGKEYS(XKB_KEY_9, XKB_KEY_parenleft, 8),
 
     // Window Manipulation
-    {MODKEY, XKB_KEY_Left, movestack, {.i = -1}},
-    {MODKEY, XKB_KEY_Right, movestack, {.i = +1}},
+    // Window Manipulation
+    {MODKEY,                       XKB_KEY_Left,       focusstack,     {.i = -1}},
+    {MODKEY,                       XKB_KEY_Right,      focusstack,     {.i = +1}},
+    {MODKEY,                       XKB_KEY_Up,         focusstack,     {.i = -1}},
+    {MODKEY,                       XKB_KEY_Down,       focusstack,     {.i = +1}},
+  
+    {MODKEY,                       XKB_KEY_space,      zoom,           {0}},
+  
+    {MODKEY|WLR_MODIFIER_SHIFT,    XKB_KEY_Left,       setmfact,       {.f = -0.0125}},
+    {MODKEY|WLR_MODIFIER_SHIFT,    XKB_KEY_Right,      setmfact,       {.f = +0.0125}},
     
     // Swap focused window between outputs.
     {MODKEY, XKB_KEY_s, tagmon, {.i = +1 }},
@@ -187,7 +195,5 @@ static const Key keys[] = {
 
 // Mouse Binds
 static const Button buttons[] = {
-	{MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
-	{MODKEY, BTN_MIDDLE, togglefloating, {0} },
-	{MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
+	{MODKEY, BTN_LEFT, NULL, {0}},
 };

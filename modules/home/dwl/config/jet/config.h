@@ -143,5 +143,5 @@ static const Key keys[] = {
 
 // Mouse Binds
 static const Button buttons[] = {
-  {MODKEY, BTN_LEFT, NULL, {0} },
+  {MODKEY, BTN_LEFT, NULL, {0}},
 };
