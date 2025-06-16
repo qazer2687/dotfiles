@@ -1,8 +1,8 @@
-@define-color darkest #333333;
-@define-color darker #4c4c4c;
-@define-color base #656565;
-@define-color lighter #7e7e7e;
-@define-color lightest #979797;
+@define-color darkest #1a1a1a;
+@define-color darker #2d2d2d;
+@define-color base #404040;
+@define-color lighter #5a5a5a;
+@define-color lightest #c0c0c0;
 
 * {
     font-family: "Departure Mono", "FiraCode Mono Nerd Font";
@@ -12,8 +12,13 @@
 
 /* Base styles */
 window#waybar {
-    background-color: #000000;
-    border-radius: 0 0 4px 4px;
+    background-color: @darker;
+    border-radius: 0;
+    border-top: 2px solid @lightest;
+    border-left: 2px solid @lightest;
+    border-right: 2px solid @darkest;
+    border-bottom: 2px solid @darkest;
+    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* Common module styling */
@@ -28,15 +33,38 @@ window#waybar {
 #disk,
 #mpris,
 #tray {
-    margin: 4px 2px;
-    padding: 2px 4px;
-    border-radius: 2px;
+    margin: 2px 1px;
+    padding: 3px 6px;
+    border-radius: 0;
     color: @lightest;
+    background-color: @base;
+    border: 1px solid;
+    border-color: @darkest @lightest @lightest @darkest;
+    box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.3), inset 1px 1px 0px rgba(255, 255, 255, 0.1);
+    font-weight: normal;
+}
+
+/* Pressed/active state for modules */
+#memory:hover,
+#custom-power:hover,
+#battery:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#temperature:hover,
+#disk:hover,
+#tray:hover {
+    border-color: @lightest @darkest @darkest @lightest;
+    box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.3), inset -1px -1px 0px rgba(255, 255, 255, 0.1);
 }
 
 /* Hide unused dwl tags */
 #tags button:not(.occupied):not(.focused) {
-    color: #000000;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 /* Workspace button styling */
@@ -44,36 +72,99 @@ window#waybar {
 #workspaces button {
     all: initial;
     min-width: 0;
-    padding: 4px 4px;
-    border-radius: 6px;
-    color: @base;
+    padding: 4px 8px;
+    border-radius: 0;
+    color: @lightest;
+    background-color: @base;
+    border: 1px solid;
+    border-color: @lightest @darkest @darkest @lightest;
+    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
+    margin: 2px 1px;
 }
 
+/* Active/focused workspace styling */
 #tags button.focused,
 #workspaces button.active,
 #workspaces button.focused {
     color: @lightest;
+    background-color: @darker;
+    border-color: @darkest @lightest @lightest @darkest;
+    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Occupied but not focused workspace */
+#tags button.occupied,
+#workspaces button.occupied {
+    color: @lighter;
+    background-color: @base;
 }
 
 /* Special module styling */
 #mpris {
-    background-color: #a8aaab;
-    color: #5d5f60;
+    background-color: @base;
+    color: @lightest;
+    border: 1px solid;
+    border-color: @darkest @lightest @lightest @darkest;
+}
+
+#mpris:hover {
+    border-color: @lightest @darkest @darkest @lightest;
 }
 
 #battery {
-    margin-right: 8px;
+    margin-right: 4px;
 }
 
+/* Windows 95 style clock */
 #clock {
-    margin: 4px 0 4px 16px;
-    margin-right: 4px;
+    margin: 2px 4px 2px 8px;
     padding: 4px 8px;
     border-radius: 0;
     background-color: @base;
     color: @lightest;
     border: 2px solid;
-    border-color: @darkest @lighter @lighter @darkest;
-    box-shadow: inset -1px -1px 0px @darkest, inset 1px 1px 0px @lighter;
+    border-color: @darkest @lightest @lightest @darkest;
+    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
     font-weight: normal;
+}
+
+/* System tray styling */
+#tray > .passive {
+    color: @lighter;
+}
+
+#tray > .needs-attention {
+    color: @lightest;
+    background-color: @darker;
+}
+
+/* Power button special styling */
+#custom-power {
+    background-color: @darker;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+#custom-power:hover {
+    background-color: @darkest;
+    color: #ff4444;
+}
+
+/* Battery level colors */
+#battery.warning {
+    color: #ffaa00;
+}
+
+#battery.critical {
+    color: #ff4444;
+}
+
+/* Network disconnected */
+#network.disconnected {
+    color: @lighter;
+}
+
+/* Temperature warning */
+#temperature.critical {
+    color: #ff4444;
 }
