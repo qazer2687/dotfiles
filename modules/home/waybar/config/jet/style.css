@@ -139,12 +139,12 @@ window#waybar {
 }
 
 @keyframes blink {
-    from {
-      color: @text;
-    }
-    to {
-      color @warnText
-    }
+  from {
+    color: @text;
+  }
+  to {
+    color: @warnText;
+  }
 }
 
 /* Battery level colors */
