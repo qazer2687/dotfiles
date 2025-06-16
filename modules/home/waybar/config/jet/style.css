@@ -1,10 +1,8 @@
-:root {
-  --darkest: #333333;
-  --darker: #4c4c4c;
-  --base: #656565;
-  --lighter: #7e7e7e;
-  --lightest: #979797;
-}
+@define-color darkest #333333;
+@define-color darker #4c4c4c;
+@define-color base #656565;
+@define-color lighter #7e7e7e;
+@define-color lightest #979797;
 
 * {
     font-family: "Departure Mono", "FiraCode Mono Nerd Font";
@@ -33,7 +31,7 @@ window#waybar {
     margin: 4px 2px;
     padding: 2px 4px;
     border-radius: 2px;
-    color: var(--lightest)
+    color: @lightest;
 }
 
 /* Hide unused dwl tags */
@@ -48,13 +46,13 @@ window#waybar {
     min-width: 0;
     padding: 4px 4px;
     border-radius: 6px;
-    color: var(--base)
+    color: @base;
 }
 
 #tags button.focused,
 #workspaces button.active,
 #workspaces button.focused {
-    color: var(--lightest);
+    color: @lightest;
 }
 
 /* Special module styling */
@@ -72,6 +70,6 @@ window#waybar {
     margin-right: 4px;
     padding: 2px 4px;
     border-radius: 2px;
-    background-color: var(--darkest);
-    color: var(--lightest);
+    background-color: @darkest;
+    color: @lightest;
 }
