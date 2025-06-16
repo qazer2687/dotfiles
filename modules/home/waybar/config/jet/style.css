@@ -87,27 +87,27 @@ window#waybar {
     padding: 4px 8px;
     border-radius: 0;
     color: @text;
-    background-color: @darker;
+    background-color: @base;
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
     margin: 2px 1px;
 }
 
-/* Focused tags and active/focused workspaces */
+/* Focused tags */
 #tags button.focused {
-    color: @text;
-    border-color: @darkest @lightest @lightest @darkest;
-    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
+  border-color: @darkest @lightest @lightest @darkest;
+  box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* Occupied but NOT focused */
-#tags button.occupied:not(.focused) {
-  background-color: @base;
-}
-
-#tags button.occupied {
-  box-shadow: inset 0px 0px 0px 4px crimson;
+#tags button.occupied::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: crimson;
+  margin: 2px auto 4px auto;
+  border-radius: 1px;
 }
 
 
