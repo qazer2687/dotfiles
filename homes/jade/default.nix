@@ -27,6 +27,9 @@
     # Misc
     ffmpeg-full
     libheif
+    
+    # Required for nix-flatpak to work.
+    flatpak
   ];
 
   modules = {
