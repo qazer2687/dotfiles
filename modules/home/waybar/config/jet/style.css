@@ -138,23 +138,25 @@ window#waybar {
   }
 }
 
+@keyframes blink {
+    from {
+      color: @text;
+    }
+    to {
+      color @warnText
+    }
+}
+
 /* Battery level colors */
-#battery.warning {
-  animation-name: quick-switch-blink;
-  animation-duration: 1s; /* Super fast blink */
-  animation-timing-function: steps(1); /* Instant switch between colors */
-  animation-iteration-count: infinite; /* Blink forever */
-  animation-direction: alternate; /* Flashes from @text to @warnText and back */
-  color: @text;
-}
+#battery.warning,
 #battery.critical {
-  animation-name: quick-switch-blink;
-  animation-duration: 1s; /* Super fast blink */
-  animation-timing-function: steps(1); /* Instant switch between colors */
-  animation-iteration-count: infinite; /* Blink forever */
-  animation-direction: alternate; /* Flashes from @text to @warnText and back */
-  color: @text;
+  animation-name: blink;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
+
 /* Network disconnected */
 #network.disconnected {
     color: @text;
