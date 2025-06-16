@@ -145,6 +145,7 @@ window#waybar {
   animation-timing-function: steps(1); /* Instant switch between colors */
   animation-iteration-count: infinite; /* Blink forever */
   animation-direction: alternate; /* Flashes from @text to @warnText and back */
+  color: @text;
 }
 #battery.critical {
   animation-name: quick-switch-blink;
@@ -152,6 +153,7 @@ window#waybar {
   animation-timing-function: steps(1); /* Instant switch between colors */
   animation-iteration-count: infinite; /* Blink forever */
   animation-direction: alternate; /* Flashes from @text to @warnText and back */
+  color: @text;
 }
 /* Network disconnected */
 #network.disconnected {
