@@ -100,14 +100,13 @@ window#waybar {
   box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-#tags button.occupied::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  background-color: crimson;
-  margin: 2px auto 4px auto;
-  border-radius: 1px;
+#tags button.occupied {
+  background-image: linear-gradient(crimson, crimson);
+  background-repeat: no-repeat;
+  background-size: 6px 6px;
+  background-position: top left;
+  padding-top: 6px; /* to prevent content overlap */
+  padding-left: 6px;
 }
 
 
