@@ -132,8 +132,7 @@ window#waybar {
     color: @text;
   }
   to {
-    /* Very similar to @te. */
-    color: @lightest;
+    color: #d8d8d8;
   }
 }
 
