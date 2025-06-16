@@ -69,7 +69,7 @@ window#waybar {
 
 /* Focused tags and active/focused workspaces */
 #tags button.focused {
-    color: #e0e0e0;
+    color: @text;
     border-color: @darkest @lightest @lightest @darkest;
     box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
