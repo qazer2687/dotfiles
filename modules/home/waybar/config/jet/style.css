@@ -45,17 +45,6 @@ window#waybar {
     border-color: @lightest @darkest @darkest @lightest;
 }
 
-/* Hide unused dwl tags */
-/*
-#tags button:not(.occupied):not(.focused) {
-    color: transparent;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-}
-*/
-
-/* Base styling for workspace/tag buttons */
 #tags button {
     all: initial;
     min-width: 0;
@@ -69,47 +58,18 @@ window#waybar {
     margin: 2px 1px;
 }
 
-/* Focused tags and active/focused workspaces */
 #tags button.focused {
     color: @text;
     border-color: @darkest @lightest @lightest @darkest;
     box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* Occupied but NOT focused */
-#tags button.occupied:not(.focused) {
-    background-color: @base;
-}
-/* Base styling for workspace/tag buttons */
-#tags button {
-    all: initial;
-    min-width: 0;
-    padding: 4px 8px;
-    border-radius: 0;
-    color: @text;
-    background-color: @base;
-    border: 1px solid;
-    border-color: @lightest @darkest @darkest @lightest;
-    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
-    margin: 2px 1px;
-}
-
-/* Focused tags */
-#tags button.focused {
-  border-color: @darkest @lightest @lightest @darkest;
-  box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
-}
-
 #tags button.occupied {
-  background-image: linear-gradient(crimson, crimson);
+  background-image: linear-gradient(@text, @text);
   background-repeat: no-repeat;
-  background-size: 6px 6px;
+  background-size: 4px 4px;
   background-position: top left;
-  padding-top: 6px; /* to prevent content overlap */
-  padding-left: 6px;
 }
-
-
 
 #battery {
   margin-right: 16px;
