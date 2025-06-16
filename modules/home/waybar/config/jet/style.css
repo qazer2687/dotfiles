@@ -1,8 +1,8 @@
-@define-color darkest #1a1a1a;
-@define-color darker #2d2d2d;
-@define-color base #404040;
-@define-color lighter #5a5a5a;
-@define-color lightest #c0c0c0;
+@define-color darkest #0d0d0d;
+@define-color darker #1a1a1a;
+@define-color base #2d2d2d;
+@define-color lighter #404040;
+@define-color lightest #999999;
 
 * {
     font-family: "Departure Mono", "FiraCode Mono Nerd Font";
@@ -12,7 +12,7 @@
 
 /* Base styles */
 window#waybar {
-    background-color: @darker;
+    background-color: #000000;
     border-radius: 0;
     border-top: 2px solid @lightest;
     border-left: 2px solid @lightest;
@@ -39,24 +39,17 @@ window#waybar {
     color: @lightest;
     background-color: @base;
     border: 1px solid;
-    border-color: @darkest @lightest @lightest @darkest;
-    box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.3), inset 1px 1px 0px rgba(255, 255, 255, 0.1);
+    border-color: @lightest @darkest @darkest @lightest;
+    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
     font-weight: normal;
 }
 
-/* Pressed/active state for modules */
-#memory:hover,
-#custom-power:hover,
-#battery:hover,
-#backlight:hover,
-#pulseaudio:hover,
-#network:hover,
-#cpu:hover,
-#temperature:hover,
-#disk:hover,
-#tray:hover {
+/* Special module styling */
+#mpris {
+    background-color: @base;
+    color: @lightest;
+    border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
-    box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.3), inset -1px -1px 0px rgba(255, 255, 255, 0.1);
 }
 
 /* Hide unused dwl tags */
@@ -99,18 +92,6 @@ window#waybar {
     background-color: @base;
 }
 
-/* Special module styling */
-#mpris {
-    background-color: @base;
-    color: @lightest;
-    border: 1px solid;
-    border-color: @darkest @lightest @lightest @darkest;
-}
-
-#mpris:hover {
-    border-color: @lightest @darkest @darkest @lightest;
-}
-
 #battery {
     margin-right: 4px;
 }
@@ -123,8 +104,8 @@ window#waybar {
     background-color: @base;
     color: @lightest;
     border: 2px solid;
-    border-color: @darkest @lightest @lightest @darkest;
-    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
+    border-color: @lightest @darkest @darkest @lightest;
+    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
     font-weight: normal;
 }
 
@@ -141,22 +122,17 @@ window#waybar {
 /* Power button special styling */
 #custom-power {
     background-color: @darker;
-    color: #ff6b6b;
+    color: #cc5555;
     font-weight: bold;
-}
-
-#custom-power:hover {
-    background-color: @darkest;
-    color: #ff4444;
 }
 
 /* Battery level colors */
 #battery.warning {
-    color: #ffaa00;
+    color: #cc8800;
 }
 
 #battery.critical {
-    color: #ff4444;
+    color: #cc4444;
 }
 
 /* Network disconnected */
@@ -166,5 +142,5 @@ window#waybar {
 
 /* Temperature warning */
 #temperature.critical {
-    color: #ff4444;
+    color: #cc4444;
 }
