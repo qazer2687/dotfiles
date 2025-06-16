@@ -132,7 +132,8 @@ window#waybar {
     color: @text;
   }
   to {
-    color: #aa7777;
+    /* Very similar to @text with a red tint. */
+    color: #ddb8b8;
   }
 }
 
