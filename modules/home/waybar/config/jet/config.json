@@ -4,7 +4,7 @@
   "margin": "0 0 0 0",
   "modules-left": ["clock", "dwl/tags"],
   "modules-center": [],
-  "modules-right": ["network", "pulseaudio", "battery"],
+  "modules-right": ["backlight", "network", "pulseaudio", "battery"],
   "pulseaudio": {
     "format": "VOL: {volume}%",
     "tooltip": false,
@@ -58,10 +58,8 @@
   },
   "backlight": {
     "device": "apple-panel-bl",
-    "format": "{icon}",
-    "tooltip": true,
-    "tooltip-format": "{percent}%",
-    "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "]
+    "format": "BKL: {percent}%",
+    "tooltip": false
   },
   "network": {
     "tooltip": false,
