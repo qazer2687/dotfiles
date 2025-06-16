@@ -3,19 +3,16 @@
 @define-color base #2d2d2d;
 @define-color lighter #404040;
 @define-color lightest #999999;
-
 * {
     font-family: "Departure Mono", "FiraCode Mono Nerd Font";
     font-size: 11px;
     background-color: transparent;
 }
-
 /* Base styles */
 window#waybar {
     background-color: #000000;
     border-radius: 0;
 }
-
 /* Common module styling */
 #memory,
 #custom-power,
@@ -38,7 +35,6 @@ window#waybar {
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
     font-weight: normal;
 }
-
 /* Special module styling */
 #mpris {
     background-color: @base;
@@ -46,7 +42,6 @@ window#waybar {
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
 }
-
 /* Hide unused dwl tags */
 #tags button:not(.occupied):not(.focused) {
     color: transparent;
@@ -54,7 +49,6 @@ window#waybar {
     border: none;
     box-shadow: none;
 }
-
 /* Workspace button styling */
 #tags button,
 #workspaces button {
@@ -69,7 +63,6 @@ window#waybar {
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
     margin: 2px 1px;
 }
-
 /* Active/focused workspace styling */
 #tags button.focused,
 #workspaces button.active,
@@ -79,18 +72,15 @@ window#waybar {
     border-color: @darkest @lightest @lightest @darkest;
     box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
-
 /* Occupied but not focused workspace */
 #tags button.occupied,
 #workspaces button.occupied {
     color: #b8b8b8;
     background-color: @base;
 }
-
 #battery {
   margin-right: 16px;
 }
-
 /* Windows 95 style clock */
 #clock {
     margin: 2px 2px 2px 16px;
@@ -98,25 +88,22 @@ window#waybar {
     border-radius: 0;
     background-color: @base;
     color: #b8b8b8;
+    border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
     font-weight: normal;
 }
-
 /* Battery level colors */
 #battery.warning {
     color: #cc8800;
 }
-
 #battery.critical {
     color: #cc4444;
 }
-
 /* Network disconnected */
 #network.disconnected {
     color: #b8b8b8;
 }
-
 /* Temperature warning */
 #temperature.critical {
     color: #cc4444;

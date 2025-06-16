@@ -17,10 +17,10 @@ static const unsigned int gappov = 6;       /* vert outer gap between windows an
                     ((hex >> 16) & 0xFF) / 255.0f, \
                     ((hex >> 8) & 0xFF) / 255.0f, \
                     (hex & 0xFF) / 255.0f }
-static const float rootcolor[] = COLOR(0xaaaaaaff);
-static const float bordercolor[] = COLOR(0xaaaaaaff);
-static const float focuscolor[] = COLOR(0xffffffff);
-static const float urgentcolor[] = COLOR(0xffffffff);
+static const float rootcolor[] = COLOR(0x0d0d0dff);
+static const float bordercolor[] = COLOR(0x0d0d0dff);
+static const float focuscolor[] = COLOR(0x999999ff);
+static const float urgentcolor[] = COLOR(0x999999ff);
 static const float fullscreen_bg[] = {0.1f, 0.1f, 0.1f, 1.0f};
 
 // Tags
