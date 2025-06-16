@@ -132,15 +132,15 @@ window#waybar {
     color: @text;
   }
   to {
-    /* Very similar to @text with a red tint. */
-    color: #ffb8b8;
+    /* Very similar to @te. */
+    color: @lighter;
   }
 }
 
 /* Battery level colors */
 #battery.warning {
   animation-name: warnBlink;
-  animation-duration: 0.2s;
+  animation-duration: 0.1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -151,7 +151,7 @@ window#waybar {
     color: @text;
   }
   to {
-    color: #aa0000;
+    color: #ff0000;
   }
 }
 
