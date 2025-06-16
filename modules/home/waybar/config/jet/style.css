@@ -42,6 +42,8 @@ window#waybar {
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
 }
+
+
 /* Hide unused dwl tags */
 #tags button:not(.occupied):not(.focused) {
     color: transparent;
@@ -49,6 +51,7 @@ window#waybar {
     border: none;
     box-shadow: none;
 }
+
 /* Workspace button styling */
 #tags button,
 #workspaces button {
@@ -63,25 +66,26 @@ window#waybar {
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
     margin: 2px 1px;
 }
-/* Active/focused workspace styling */
+
+/* Tags */
 #tags button.focused,
 #workspaces button.active,
-#workspaces button.focused {
+#workspaces button.focused,
+#tags button.occupied.focused {
     color: #e0e0e0;
     background-color: @darker;
     border-color: @darkest @lightest @lightest @darkest;
     box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
-/* Occupied but not focused workspace */
-#tags button.occupied,
-#workspaces button.occupied {
+
+#tags button.occupied:not(.focused),
+#workspaces button.occupied:not(.focused) {
     color: #b8b8b8;
     background-color: @base;
 }
 #battery {
   margin-right: 16px;
 }
-/* Windows 95 style clock */
 #clock {
     margin: 2px 1px 2px 16px;
     padding: 4px 8px;
