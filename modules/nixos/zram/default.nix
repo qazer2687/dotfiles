@@ -9,7 +9,7 @@
     
     boot.kernel.sysctl = {
       # Ensure all uncompressed ram is used first.
-      "vm.swappiness" = 25;
+      "vm.swappiness" = 10;
     };
     
     zramSwap = {

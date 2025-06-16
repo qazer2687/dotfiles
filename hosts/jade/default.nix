@@ -133,10 +133,10 @@
   swapDevices = [
     {
       device = "/swapfile";
-      # EXERIMENTAL - I assume a larger swapfile won't inherently
-      # cause issues if my swappiness is fairly low anyway. I find
-      # my system using 100% of 4GB so it's worth trying a larger value.
-      size = 12 * 1024;
+      # EXERIMENTAL - I don't know what a good value is.
+      # Setting it high just makes it fill up and thrash.
+      # My swappiness isn't even high.
+      size = 2 * 1024;
     }
   ];
 
