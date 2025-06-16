@@ -64,6 +64,7 @@
               inputs.sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.home-manager
               inputs.chaotic.nixosModules.default
+              inputs.flatpak.nixosModules.nix-flatpak
               {
                 home-manager = {
                   users.alex = ./homes/jade;
@@ -73,7 +74,6 @@
                   sharedModules = [
                     inputs.niri.homeModules.niri
                     inputs.sops-nix.homeManagerModules.sops
-                    inputs.flatpak.homeManagerModules.nix-flatpak
                   ];
                 };
               }

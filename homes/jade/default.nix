@@ -27,9 +27,6 @@
     # Misc
     ffmpeg-full
     libheif
-    
-    # Required for nix-flatpak to work.
-    flatpak
   ];
 
   modules = {
@@ -57,15 +54,6 @@
     direnv.enable = true;
     git.enable = true;
     zed.enable = true;
-  };
-  
-  # Roblox
-  services.flatpak = {
-    enable = true;
-    update.onActivation = true;
-    packages = [
-      "org.vinegarhq.Sober"
-    ];
   };
 
   home.stateVersion = "25.05";
