@@ -36,7 +36,7 @@ static const char *const autostart[] = {
     "sh", "-c", "waybar", NULL,
     "sh", "-c", "swaybg -i /home/alex/.config/wallpaper/wallpaper.png -m fill", NULL,
     // Configure monitor resolution and refresh rate.
-    "wlr-randr", "--output", "DP-1", "--mode", "2560x1440@180", "--output", "HDMI-A-1", "--mode", "2560x1080@74.990997", "--pos", "0,0", NULL,
+    "wlr-randr", "--output", "DP-1", "--mode", "2560x1440@180", NULL,
     NULL /* terminate */
 };
 
