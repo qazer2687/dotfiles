@@ -78,8 +78,8 @@
     "player-icons": {
       "default": " "
     },
-    "artist-len": 24,
-    "title-len": 34,
+    "artist-len": 20,
+    "title-len": 20,
     "status-icons": {
       "paused": " "
     }

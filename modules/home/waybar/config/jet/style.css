@@ -6,7 +6,7 @@
 
 * {
     font-family: "Departure Mono", "FiraCode Mono Nerd Font";
-    font-size: 11px;
+    font-size: 12px;
     background-color: transparent;
 }
 
@@ -63,7 +63,7 @@ window#waybar {
     padding: 4px 8px;
     border-radius: 0;
     color: #b8b8b8;
-    background-color: @base;
+    background-color: @darker;
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
@@ -88,12 +88,12 @@ window#waybar {
 }
 
 #battery {
-    margin-right: 4px;
+  margin-right: 16px;
 }
 
 /* Windows 95 style clock */
 #clock {
-    margin: 2px 4px 2px 8px;
+    margin: 2px 2px 2px 16px;
     padding: 4px 8px;
     border-radius: 0;
     background-color: @base;
@@ -102,23 +102,6 @@ window#waybar {
     border-color: @lightest @darkest @darkest @lightest;
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
     font-weight: normal;
-}
-
-/* System tray styling */
-#tray > .passive {
-    color: #b8b8b8;
-}
-
-#tray > .needs-attention {
-    color: #b8b8b8;
-    background-color: @darker;
-}
-
-/* Power button special styling */
-#custom-power {
-    background-color: @darker;
-    color: #cc5555;
-    font-weight: bold;
 }
 
 /* Battery level colors */
