@@ -70,10 +70,9 @@ window#waybar {
     margin-right: 4px;
     padding: 4px 8px;
     border-radius: 0;
-    background-color: #c0c0c0;
-    color: #000000;
+    background-color: @base;
+    color: @lightest;
     border: 2px solid;
-    border-color: #808080 #ffffff #ffffff #808080;
-    box-shadow: inset -1px -1px 0px #404040, inset 1px 1px 0px #dfdfdf;
+    border-color: @darkest @lighter @lighter @darkest;
+    box-shadow: inset -1px -1px 0px @darkest, inset 1px 1px 0px @lighter;
     font-weight: normal;
-}
