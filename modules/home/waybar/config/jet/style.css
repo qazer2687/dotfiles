@@ -46,28 +46,29 @@ window#waybar {
 }
 
 #tags button {
-    all: initial;
-    min-width: 0;
-    padding: 4px 8px;
-    border-radius: 0;
-    color: @text;
-    background-color: @darker;
-    border: 1px solid;
-    border-color: @lightest @darkest @darkest @lightest;
-    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
-    margin: 2px 1px;
+  all: initial;
+  min-width: 0;
+  padding: 4px 8px;
+  border-radius: 0;
+  color: @text;
+  background-color: @base;
+  border: 1px solid;
+  border-color: @lightest @darkest @darkest @lightest;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
+  margin: 2px 1px;
 }
 
 #tags button.focused {
-    color: @text;
-    border-color: @darkest @lightest @lightest @darkest;
-    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
+  color: @text;
+  border-color: @darkest @lightest @lightest @darkest;
+  box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
 #tags button.occupied {
   background-image: linear-gradient(@text, @text);
   background-repeat: no-repeat;
   background-size: 4px 4px;
+  background-position: 2px 2px;
   background-position: top left;
 }
 
