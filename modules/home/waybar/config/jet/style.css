@@ -3,6 +3,8 @@
 @define-color base #2d2d2d;
 @define-color lighter #404040;
 @define-color lightest #999999;
+@define-color text #b8b8b8;
+
 * {
     font-family: "Departure Mono", "FiraCode Mono Nerd Font";
     font-size: 11px;
@@ -28,7 +30,7 @@ window#waybar {
     margin: 2px 1px;
     padding: 3px 6px;
     border-radius: 0;
-    color: #b8b8b8;
+    color: @text;
     background-color: @base;
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
@@ -38,11 +40,10 @@ window#waybar {
 /* Special module styling */
 #mpris {
     background-color: @base;
-    color: #b8b8b8;
+    color: @text;
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
 }
-
 
 /* Hide unused dwl tags */
 #tags button:not(.occupied):not(.focused) {
@@ -52,14 +53,13 @@ window#waybar {
     box-shadow: none;
 }
 
-/* Workspace button styling */
-#tags button,
-#workspaces button {
+/* Base styling for workspace/tag buttons */
+#tags button {
     all: initial;
     min-width: 0;
     padding: 4px 8px;
     border-radius: 0;
-    color: #b8b8b8;
+    color: @text;
     background-color: @darker;
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
@@ -67,22 +67,20 @@ window#waybar {
     margin: 2px 1px;
 }
 
-/* Tags */
-#tags button.focused,
-#workspaces button.active,
-#workspaces button.focused,
-#tags button.occupied.focused {
+/* Focused tags and active/focused workspaces */
+#tags button.focused {
     color: #e0e0e0;
-    background-color: @darker;
     border-color: @darkest @lightest @lightest @darkest;
     box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-#tags button.occupied:not(.focused),
-#workspaces button.occupied:not(.focused) {
-    color: #b8b8b8;
+/* Occupied but NOT focused */
+#tags button.occupied:not(.focused) {
     background-color: @base;
 }
+
+
+
 #battery {
   margin-right: 16px;
 }
@@ -91,12 +89,14 @@ window#waybar {
     padding: 4px 8px;
     border-radius: 0;
     background-color: @base;
-    color: #b8b8b8;
+    color: @text;
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
     font-weight: normal;
 }
+
+
 /* Battery level colors */
 #battery.warning {
     color: #cc8800;
@@ -106,7 +106,7 @@ window#waybar {
 }
 /* Network disconnected */
 #network.disconnected {
-    color: #b8b8b8;
+    color: @text;
 }
 /* Temperature warning */
 #temperature.critical {
