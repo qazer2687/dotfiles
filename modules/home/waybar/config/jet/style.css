@@ -26,7 +26,8 @@ window#waybar {
 #temperature,
 #disk,
 #mpris,
-#tray {
+#tray,
+#tray menu {
     margin: 2px 1px;
     padding: 3px 6px;
     border-radius: 0;

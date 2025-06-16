@@ -19,7 +19,7 @@
     "margin-right": 15
   },
   "tray": {
-    "icon-size": 11,
+    "icon-size": 14,
     "spacing": 10,
     "reverse-direction": true
   },
