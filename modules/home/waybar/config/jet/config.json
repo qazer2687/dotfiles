@@ -2,12 +2,12 @@
   "layer": "top",
   "height": 28,
   "margin": "0 0 0 0",
-  "modules-left": ["clock", "dwl/tags", "mpris"],
+  "modules-left": ["clock", "dwl/tags",],
   "modules-center": [],
-  "modules-right": ["network", "pulseaudio", "battery"],
+  "modules-right": ["mpris", "network", "pulseaudio", "battery"],
 
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "VOL: {volume}%",
     "tooltip": false,
     "format-muted": "  MUTED",
     "format-icons": {
@@ -22,7 +22,7 @@
 
   "battery": {
     "tooltip": false,
-    "format": "{icon} {capacity}%",
+    "format": "BAT: {capacity}%",
     "format-icons": [" ", " ", " ", " ", " "],
     "format-charging": "󱐋 {capacity}%",
     "interval": 10
@@ -69,7 +69,7 @@
 
   "network": {
     "tooltip": false,
-    "format-wifi": "  {essid}",
+    "format-wifi": "NET: {essid}",
     "family": "ipv4",
     "format-disconnected": " ",
     "format-ethernet": " ",
@@ -78,8 +78,8 @@
 
   "mpris": {
     "tooltip": false,
-    "format": "{player_icon} {artist} - {title}",
-    "format-paused": "{status_icon} {artist} - {title}",
+    "format": "PLAYING: {artist} - {title}",
+    "format-paused": "PAUSED: {artist} - {title}",
     "player-icons": {
       "default": " "
     },
