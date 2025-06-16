@@ -131,20 +131,29 @@ window#waybar {
     font-weight: normal;
 }
 
+@keyframes quick-switch-blink {
+  0% {
+    color: @text; /* State 1: Original text color */
+  }
+  100% {
+    color: @warnText; /* State 2: Warning text color */
+  }
+}
 
 /* Battery level colors */
-#battery.warning,
-#battery.critical {
-    color: #cc8800;
-    color: @warnText;
-    background-color: @base;
-    border: 1px solid;
-    border-color: @warnLightest @warnDarkest @warnDarkest @warnLightest;
-    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
-    font-weight: normal;
+#battery.warning {
+  animation-name: quick-switch-blink;
+  animation-duration: 0.2s; /* Super fast blink */
+  animation-timing-function: steps(1); /* Instant switch between colors */
+  animation-iteration-count: infinite; /* Blink forever */
+  animation-direction: alternate; /* Flashes from @text to @warnText and back */
 }
 #battery.critical {
-    color: #cc4444;
+  animation-name: quick-switch-blink;
+  animation-duration: 0.2s; /* Super fast blink */
+  animation-timing-function: steps(1); /* Instant switch between colors */
+  animation-iteration-count: infinite; /* Blink forever */
+  animation-direction: alternate; /* Flashes from @text to @warnText and back */
 }
 /* Network disconnected */
 #network.disconnected {
