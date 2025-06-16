@@ -28,6 +28,9 @@
     ffmpeg-full
     libheif
   ];
+  
+  # Rich presence support for vesktop.
+  services.arrpc.enable = true;
 
   modules = {
     # Desktop Environment
