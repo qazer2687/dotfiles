@@ -143,7 +143,5 @@ static const Key keys[] = {
 
 // Mouse Binds
 static const Button buttons[] = {
-	{MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
-	//{MODKEY, BTN_MIDDLE, togglefloating, {0} },
-	{MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
+  {MODKEY, BTN_LEFT, NULL, {0} },
 };
