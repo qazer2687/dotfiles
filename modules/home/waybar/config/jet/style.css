@@ -107,12 +107,7 @@ window#waybar {
 }
 
 #tags button.occupied {
-  content: '■'; /* Or any small character like '●' or '◆' */
-  font-size: 8px; /* Adjust size */
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  color: lightcoral; /* Choose a color that stands out, like your accent color */
+  inset 0px 0px 0px 4px @lightest;
 }
 
 
