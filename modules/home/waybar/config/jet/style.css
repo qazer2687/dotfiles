@@ -142,10 +142,10 @@ window#waybar {
 #battery.warning,
 #battery.critical {
   animation-name: blink;
-  animation-duration: 0.2s; /* Total duration for one full "on-off" cycle */
-  animation-timing-function: steps(1, start); /* Make it instantaneous */
+  animation-duration: 0.05s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-direction: alternate; /* This is key with steps(1) to get the alternating "on-off" */
+  animation-direction: alternate;
 }
 
 /* Network disconnected */
