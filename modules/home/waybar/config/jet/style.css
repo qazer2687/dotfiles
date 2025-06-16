@@ -130,14 +130,11 @@ window#waybar {
 }
 
 @keyframes blink {
-  0% {
+  from {
     color: @text;
   }
-  50% {
+  to {
     color: @warnText;
-  }
-  100% {
-    color: @text;
   }
 }
 
@@ -145,10 +142,10 @@ window#waybar {
 #battery.warning,
 #battery.critical {
   animation-name: blink;
-  animation-duration: 0.2s;
-  animation-timing-function: steps(1, start);
+  animation-duration: 0.2s; /* Total duration for one full "on-off" cycle */
+  animation-timing-function: steps(1, start); /* Make it instantaneous */
   animation-iteration-count: infinite;
-  animation-direction: normal;
+  animation-direction: alternate; /* This is key with steps(1) to get the alternating "on-off" */
 }
 
 /* Network disconnected */
