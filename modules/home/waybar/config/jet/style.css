@@ -68,8 +68,12 @@ window#waybar {
 #clock {
     margin: 4px 0 4px 16px;
     margin-right: 4px;
-    padding: 2px 4px;
-    border-radius: 2px;
-    background-color: @darkest;
-    color: @lightest;
+    padding: 4px 8px;
+    border-radius: 0;
+    background-color: #c0c0c0;
+    color: #000000;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: inset -1px -1px 0px #404040, inset 1px 1px 0px #dfdfdf;
+    font-weight: normal;
 }
