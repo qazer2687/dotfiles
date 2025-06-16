@@ -76,3 +76,4 @@ window#waybar {
     border-color: @darkest @lighter @lighter @darkest;
     box-shadow: inset -1px -1px 0px @darkest, inset 1px 1px 0px @lighter;
     font-weight: normal;
+}
