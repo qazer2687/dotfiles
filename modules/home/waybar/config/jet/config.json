@@ -2,10 +2,9 @@
   "layer": "top",
   "height": 28,
   "margin": "0 0 0 0",
-  "modules-left": ["clock", "dwl/tags",],
+  "modules-left": ["clock", "dwl/tags"],
   "modules-center": [],
   "modules-right": ["mpris", "network", "pulseaudio", "battery"],
-
   "pulseaudio": {
     "format": "VOL: {volume}%",
     "tooltip": false,
@@ -14,20 +13,19 @@
       "default": [" ", " ", " "]
     }
   },
-
   "clock": {
     "format": "{:%A %d, %H:%M}",
-    "tooltip": false
+    "tooltip": false,
+    "margin-right": 15
   },
-
   "battery": {
     "tooltip": false,
     "format": "BAT: {capacity}%",
     "format-icons": [" ", " ", " ", " ", " "],
     "format-charging": "󱐋 {capacity}%",
-    "interval": 10
+    "interval": 10,
+    "margin-left": 15
   },
-
   "dwl/tags": {
     "num-tags": 9,
     "tag-labels": {
@@ -40,9 +38,9 @@
       "7": "7",
       "8": "8",
       "9": "9"
-    }
+    },
+    "margin-left": 15
   },
-
   "niri/workspaces": {
     "format": "󱓻",
     "format-icons": {
@@ -58,7 +56,6 @@
       "0": "10"
     }
   },
-
   "backlight": {
     "device": "apple-panel-bl",
     "format": "{icon}",
@@ -66,7 +63,6 @@
     "tooltip-format": "{percent}%",
     "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "]
   },
-
   "network": {
     "tooltip": false,
     "format-wifi": "NET: {essid}",
@@ -75,7 +71,6 @@
     "format-ethernet": " ",
     "interval": 10
   },
-
   "mpris": {
     "tooltip": false,
     "format": "PLAYING: {artist} - {title}",
