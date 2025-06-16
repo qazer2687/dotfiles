@@ -129,21 +129,15 @@ window#waybar {
     font-weight: normal;
 }
 
-@keyframes quick-switch-blink {
-  0% {
-    color: @text; /* State 1: Original text color */
-  }
-  100% {
-    color: @warnText; /* State 2: Warning text color */
-  }
-}
-
 @keyframes blink {
-  from {
+  0% {
     color: @text;
   }
-  to {
+  50% {
     color: @warnText;
+  }
+  100% {
+    color: @text;
   }
 }
 
@@ -151,10 +145,10 @@ window#waybar {
 #battery.warning,
 #battery.critical {
   animation-name: blink;
-  animation-duration: 0.1s;
-  animation-timing-function: ease-in-out;
+  animation-duration: 0.2s;
+  animation-timing-function: steps(1, start);
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: normal;
 }
 
 /* Network disconnected */
