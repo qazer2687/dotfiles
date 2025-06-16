@@ -55,6 +55,14 @@
     git.enable = true;
     zed.enable = true;
   };
+  
+  # Roblox
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "org.vinegarhq.Sober"
+    ];
+  };
 
   home.stateVersion = "25.05";
   home.homeDirectory = lib.mkForce "/home/alex";

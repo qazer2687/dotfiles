@@ -26,6 +26,8 @@
 
     zen.url = "github:0xc000022070/zen-browser-flake";
     
+    flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    
     # Anything listed below I don't currently use but I
     # will leave here in case I need to bring something back.
     #
@@ -62,6 +64,7 @@
               inputs.sops-nix.nixosModules.sops
               inputs.home-manager.nixosModules.home-manager
               inputs.chaotic.nixosModules.default
+              inputs.flatpak.nixosModules.nix-flatpak
               {
                 home-manager = {
                   users.alex = ./homes/jade;
@@ -71,6 +74,7 @@
                   sharedModules = [
                     inputs.niri.homeModules.niri
                     inputs.sops-nix.homeManagerModules.sops
+                    inputs.flatpak.homeManagerModules.nix-flatpak
                   ];
                 };
               }
