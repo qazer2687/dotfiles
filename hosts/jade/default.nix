@@ -149,6 +149,9 @@
       # This option scales menu bars, causing
       # them to appear way too large.
       # GDK_SCALE = "2";
+
+      # Required by the tearing.patch for dwl.
+      WLR_DRM_NO_ATOMIC = "1";
     };
     # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
     systemPackages = [ pkgs.flatpak ];
