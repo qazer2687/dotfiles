@@ -69,8 +69,6 @@ window#waybar {
   background-repeat: no-repeat;
   background-size: 4px 4px;
   background-position: top left;
-  padding-top: 4px;
-  padding-left: 4px;
 }
 
 #battery {
