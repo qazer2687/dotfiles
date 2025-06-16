@@ -35,7 +35,7 @@ tooltip label {
     margin: 4px 2px;
     padding: 2px 4px;
     border-radius: 2px;
-    color: #ffffff;
+    color: #a8aaab;
 }
 
 /* Hide unused dwl tags */
@@ -50,19 +50,19 @@ tooltip label {
     min-width: 0;
     padding: 4px 4px;
     border-radius: 6px;
-    color: rgb(138, 138, 138);
+    color: #5d5f60;
 }
 
 #tags button.focused,
 #workspaces button.active,
 #workspaces button.focused {
-    color: #ffffff;
+    color: #a8aaab;
 }
 
 /* Special module styling */
 #mpris {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #a8aaab;
+    color: #5d5f60;
 }
 
 #battery {
