@@ -14,11 +14,6 @@
 window#waybar {
     background-color: #000000;
     border-radius: 0;
-    border-top: 2px solid @lightest;
-    border-left: 2px solid @lightest;
-    border-right: 2px solid @darkest;
-    border-bottom: 2px solid @darkest;
-    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* Common module styling */
@@ -67,7 +62,7 @@ window#waybar {
     min-width: 0;
     padding: 4px 8px;
     border-radius: 0;
-    color: @lightest;
+    color: #b8b8b8;
     background-color: @base;
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
@@ -79,7 +74,7 @@ window#waybar {
 #tags button.focused,
 #workspaces button.active,
 #workspaces button.focused {
-    color: @lightest;
+    color: #e0e0e0;
     background-color: @darker;
     border-color: @darkest @lightest @lightest @darkest;
     box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
@@ -88,7 +83,7 @@ window#waybar {
 /* Occupied but not focused workspace */
 #tags button.occupied,
 #workspaces button.occupied {
-    color: @lighter;
+    color: #b8b8b8;
     background-color: @base;
 }
 
