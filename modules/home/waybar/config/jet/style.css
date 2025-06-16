@@ -5,9 +5,7 @@
 @define-color lightest #999999;
 @define-color text #b8b8b8;
 
-@define-color warnDarkest #1a0d0d;
-@define-color warnLightest #998a8a;
-@define-color warnText #b8a9a9;
+@define-color warnText #e37171;
 
 * {
     font-family: "Departure Mono", "FiraCode Mono Nerd Font";
@@ -143,14 +141,14 @@ window#waybar {
 /* Battery level colors */
 #battery.warning {
   animation-name: quick-switch-blink;
-  animation-duration: 0.2s; /* Super fast blink */
+  animation-duration: 1s; /* Super fast blink */
   animation-timing-function: steps(1); /* Instant switch between colors */
   animation-iteration-count: infinite; /* Blink forever */
   animation-direction: alternate; /* Flashes from @text to @warnText and back */
 }
 #battery.critical {
   animation-name: quick-switch-blink;
-  animation-duration: 0.2s; /* Super fast blink */
+  animation-duration: 1s; /* Super fast blink */
   animation-timing-function: steps(1); /* Instant switch between colors */
   animation-iteration-count: infinite; /* Blink forever */
   animation-direction: alternate; /* Flashes from @text to @warnText and back */
