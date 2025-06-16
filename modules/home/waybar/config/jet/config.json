@@ -4,7 +4,7 @@
   "margin": "0 0 0 0",
   "modules-left": ["clock", "dwl/tags"],
   "modules-center": [],
-  "modules-right": ["mpris", "network", "pulseaudio", "battery"],
+  "modules-right": ["network", "pulseaudio", "battery"],
   "pulseaudio": {
     "format": "VOL: {volume}%",
     "tooltip": false,
