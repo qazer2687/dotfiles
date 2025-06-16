@@ -4,7 +4,7 @@
   "margin": "0 0 0 0",
   "modules-left": ["clock", "dwl/tags"],
   "modules-center": [],
-  "modules-right": ["backlight", "network", "pulseaudio", "battery"],
+  "modules-right": ["tray", "backlight", "network", "pulseaudio", "battery"],
   "pulseaudio": {
     "format": "VOL: {volume}%",
     "tooltip": false,
@@ -17,6 +17,11 @@
     "format": "{:%A %d, %H:%M}",
     "tooltip": false,
     "margin-right": 15
+  },
+  "tray": {
+    "icon-size": 11,
+    "spacing": 10,
+    "reverse-direction": true
   },
   "battery": {
     "tooltip": false,
