@@ -2,7 +2,7 @@
   "layer": "top",
   "height": 28,
   "margin": "0 0 0 0",
-  "modules-left": ["clock", "dwl/tags"],
+  "modules-left": ["clock", "dwl/tags", "mpris"],
   "modules-center": [],
   "modules-right": ["network", "pulseaudio", "battery"],
 

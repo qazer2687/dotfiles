@@ -31,7 +31,7 @@ window#waybar {
     margin: 2px 1px;
     padding: 3px 6px;
     border-radius: 0;
-    color: @lightest;
+    color: #b8b8b8;
     background-color: @base;
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
@@ -42,7 +42,7 @@ window#waybar {
 /* Special module styling */
 #mpris {
     background-color: @base;
-    color: @lightest;
+    color: #b8b8b8;
     border: 1px solid;
     border-color: @lightest @darkest @darkest @lightest;
 }
@@ -97,7 +97,7 @@ window#waybar {
     padding: 4px 8px;
     border-radius: 0;
     background-color: @base;
-    color: @lightest;
+    color: #b8b8b8;
     border: 2px solid;
     border-color: @lightest @darkest @darkest @lightest;
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
@@ -106,11 +106,11 @@ window#waybar {
 
 /* System tray styling */
 #tray > .passive {
-    color: @lighter;
+    color: #b8b8b8;
 }
 
 #tray > .needs-attention {
-    color: @lightest;
+    color: #b8b8b8;
     background-color: @darker;
 }
 
@@ -132,7 +132,7 @@ window#waybar {
 
 /* Network disconnected */
 #network.disconnected {
-    color: @lighter;
+    color: #b8b8b8;
 }
 
 /* Temperature warning */
