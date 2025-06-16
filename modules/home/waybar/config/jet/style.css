@@ -103,11 +103,11 @@ window#waybar {
 
 /* Occupied but NOT focused */
 #tags button.occupied:not(.focused) {
-    background-color: @base;
+  background-color: @base;
 }
 
 #tags button.occupied {
-  inset 0px 0px 0px 4px @lightest;
+  box-shadow: inset 0px 0px 0px 4px crimson;
 }
 
 
