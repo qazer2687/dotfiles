@@ -1,3 +1,11 @@
+:root {
+  --darkest: #333333;
+  --darker: #4c4c4c;
+  --base: #656565;
+  --lighter: #7e7e7e;
+  --lightest: #979797;
+}
+
 * {
     font-family: "Departure Mono", "FiraCode Mono Nerd Font";
     font-size: 11px;
@@ -8,16 +16,6 @@
 window#waybar {
     background-color: #000000;
     border-radius: 0 0 4px 4px;
-}
-
-/* Tooltip styling */
-tooltip {
-    background: #000000;
-    border: 1px solid rgba(255, 255, 255, 1);
-}
-
-tooltip label {
-    color: white;
 }
 
 /* Common module styling */
@@ -35,7 +33,7 @@ tooltip label {
     margin: 4px 2px;
     padding: 2px 4px;
     border-radius: 2px;
-    color: #a8aaab;
+    color: var(--lightest)
 }
 
 /* Hide unused dwl tags */
@@ -50,13 +48,13 @@ tooltip label {
     min-width: 0;
     padding: 4px 4px;
     border-radius: 6px;
-    color: #5d5f60;
+    color: var(--base)
 }
 
 #tags button.focused,
 #workspaces button.active,
 #workspaces button.focused {
-    color: #a8aaab;
+    color: var(--lightest);
 }
 
 /* Special module styling */
@@ -74,6 +72,6 @@ tooltip label {
     margin-right: 4px;
     padding: 2px 4px;
     border-radius: 2px;
-    background-color: #5d5f60;
-    color: #a8aaab;
+    background-color: var(--darkest);
+    color: var(--lightest);
 }
