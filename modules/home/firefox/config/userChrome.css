@@ -13,11 +13,12 @@
 /* Hide forward/back buttons and accounts icon */
 #back-button, #forward-button, #fxa-toolbar-menu-button { display: none !important; }
 
-/* Tab inset border styling */
+/* Remove tab rounding and apply inset border styling */
 .tabbrowser-tab .tab-background {
   border: 2px solid !important;
   border-color: var(--raised-border) !important;
   box-shadow: var(--raised-shadow) !important;
+  border-radius: 0 !important;
 }
 
 /* Selected tab inset border */
@@ -29,4 +30,47 @@
 /* Tab text font */
 .tabbrowser-tab .tab-label {
   font: 13px var(--font-family) !important;
+}
+
+/* Search bar inset border styling */
+#urlbar {
+  border: 2px solid !important;
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
+  border-radius: 0 !important;
+  font: 13px var(--font-family) !important;
+}
+
+/* Search bar when focused */
+#urlbar[focused="true"] {
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
+}
+
+/* Toolbar buttons inset border styling */
+#nav-bar toolbarbutton {
+  border: 2px solid !important;
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
+  border-radius: 0 !important;
+  font: 13px var(--font-family) !important;
+}
+
+/* Toolbar buttons when pressed/active */
+#nav-bar toolbarbutton:hover:active {
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
+}
+
+/* Menu button and other toolbar items */
+#PanelUI-menu-button {
+  border: 2px solid !important;
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
+  border-radius: 0 !important;
+}
+
+#PanelUI-menu-button:hover:active {
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
 }
