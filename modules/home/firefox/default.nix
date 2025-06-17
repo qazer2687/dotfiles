@@ -16,12 +16,16 @@
         isDefault = true;
         id = 0;
 
+        # I don't have NUR as an input currently,
+        # I can just install these manually.
+        /*
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           keepa
           return-youtube-dislikes
           sponsorblock
         ];
+        */
 
         userChrome = ''
           * {
