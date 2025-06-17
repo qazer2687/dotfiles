@@ -30,6 +30,8 @@
         '';
 
         extraConfig = builtins.readFile ./config/user.js;
+      };
+    };
 
     # Asahi Widevine Support
     # Note that in order for Netflix to work, this needs to be paried with
