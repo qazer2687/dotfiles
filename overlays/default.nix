@@ -31,8 +31,8 @@ _: {
         patches = [
         #  ../patches/dwl/vanitygaps-0.7.patch
         #  ../patches/dwl/bar-0.7.patch
-          ../patches/dwl/ipc.patch
           ../patches/dwl/tearing.patch
+          ../patches/dwl/ipc.patch
         # ../patches/dwl/hot-reload-0.7.patch
           ../patches/dwl/autostart-0.7.patch
         # ../patches/dwl/movestack.patch
