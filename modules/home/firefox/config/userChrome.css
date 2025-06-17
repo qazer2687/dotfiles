@@ -61,7 +61,7 @@
 .tabbrowser-tab .tab-label {
   color: var(--text) !important;
   font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
   padding: 4px 8px !important;
   font-weight: normal !important;
 }
@@ -84,7 +84,7 @@
 #nav-bar toolbarbutton,
 #nav-bar .toolbarbutton-1 {
   margin: 2px 1px !important;
-  padding: 3px 6px !important;
+  padding: 4px 8px !important;
   border-radius: 0 !important;
   background-color: var(--base) !important;
   color: var(--text) !important;
@@ -93,13 +93,17 @@
   box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), 
               inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
   font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
   font-weight: normal !important;
+  min-height: 0 !important;
+  height: auto !important;
 }
 
-/* Button pressed state */
+/* Button pressed/clicked state - matches waybar focused */
 #nav-bar toolbarbutton:active,
-#nav-bar .toolbarbutton-1:active {
+#nav-bar .toolbarbutton-1:active,
+#nav-bar toolbarbutton[checked="true"],
+#nav-bar .toolbarbutton-1[checked="true"] {
   border-color: var(--darkest) var(--lightest) var(--lightest) var(--darkest) !important;
   box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), 
               inset 1px 1px 0px rgba(0, 0, 0, 0.3) !important;
@@ -117,7 +121,9 @@
   margin: 2px 1px !important;
   padding: 4px 8px !important;
   font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
+  min-height: 0 !important;
+  height: auto !important;
 }
 
 #urlbar:focus-within {
@@ -136,8 +142,17 @@
               inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
   border-radius: 0 !important;
   margin: 2px 1px !important;
+  padding: 4px 8px !important;
   font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+#searchbar:focus-within {
+  border-color: var(--darkest) var(--lightest) var(--lightest) var(--darkest) !important;
+  box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), 
+              inset 1px 1px 0px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Menu button and overflow button */
