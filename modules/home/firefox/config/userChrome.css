@@ -18,8 +18,8 @@
   --font-size: 13px;
   --raised-border: var(--lightest) var(--darkest) var(--darkest) var(--lightest);
   --pressed-border: var(--darkest) var(--lightest) var(--lightest) var(--darkest);
-  --raised-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
-  --pressed-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
+  --raised-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.1), inset -2px -2px 0px rgba(0, 0, 0, 0.3);
+  --pressed-shadow: inset -2px -2px 0px rgba(255, 255, 255, 0.1), inset 2px 2px 0px rgba(0, 0, 0, 0.3);
 }
 
 /* Base window and toolbar styling */
@@ -33,18 +33,51 @@
   box-shadow: none !important;
 }
 
+/* Move search bar to same line as tabs and reorder */
+#nav-bar {
+  order: 1 !important;
+}
+
+#TabsToolbar {
+  order: 2 !important;
+}
+
+#navigator-toolbox {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#nav-bar {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Move search bar to beginning of nav-bar */
+#searchbar {
+  order: -1 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Hide back/forward buttons and profile icon */
+#back-button,
+#forward-button,
+#fxa-toolbar-menu-button {
+  display: none !important;
+}
+
 /* Common button styling - applies to all interactive elements */
 .tabbrowser-tab .tab-background,
 #nav-bar toolbarbutton,
 #nav-bar .toolbarbutton-1,
 #urlbar,
 #searchbar,
+#searchbar > .searchbar-textbox,
 #PanelUI-menu-button,
 #nav-bar-overflow-button,
 #tabs-newtab-button {
   background-color: var(--base) !important;
   color: var(--text) !important;
-  border: 1px solid !important;
+  border: 2px solid !important;
   border-color: var(--raised-border) !important;
   box-shadow: var(--raised-shadow) !important;
   border-radius: 0 !important;
@@ -55,6 +88,7 @@
   font-weight: normal !important;
   min-height: 0 !important;
   height: auto !important;
+  -moz-appearance: none !important;
 }
 
 /* Pressed/active/focused state for all interactive elements */
@@ -64,7 +98,29 @@
 #nav-bar toolbarbutton[checked="true"],
 #nav-bar .toolbarbutton-1[checked="true"],
 #urlbar:focus-within,
-#searchbar:focus-within {
+#urlbar[focused="true"],
+#searchbar:focus-within,
+#searchbar[focused="true"],
+#searchbar > .searchbar-textbox:focus {
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
+}
+
+/* Force search bar styling consistency */
+#searchbar,
+#searchbar > .searchbar-textbox {
+  background-color: var(--base) !important;
+  color: var(--text) !important;
+  border: 2px solid !important;
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
+  -moz-appearance: none !important;
+}
+
+#searchbar:focus-within,
+#searchbar[focused="true"],
+#searchbar > .searchbar-textbox:focus {
+  background-color: var(--base) !important;
   border-color: var(--pressed-border) !important;
   box-shadow: var(--pressed-shadow) !important;
 }
@@ -105,31 +161,12 @@
   background-color: var(--lighter) !important;
 }
 
-/* Menu and dropdown styling */
-menupopup,
-panel {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 1px solid var(--lightest) !important;
-  border-radius: 0 !important;
-  font-family: var(--font-family) !important;
-  font-size: 11px !important;
-}
 
-menuitem {
-  color: var(--text) !important;
-  background-color: transparent !important;
-  padding: 4px 8px !important;
-}
-
-menuitem:hover {
-  background-color: var(--lighter) !important;
-}
 
 /* Sidebar styling */
 #sidebar-box {
   background-color: var(--background) !important;
-  border-right: 1px solid var(--lightest) !important;
+  border-right: 2px solid var(--lightest) !important;
 }
 
 #sidebar-header,
@@ -140,12 +177,11 @@ menuitem:hover {
   font-size: 11px !important;
 }
 
-/* Status panel and context menus */
-#statuspanel,
-#contentAreaContextMenu {
+/* Status panel */
+#statuspanel {
   background-color: var(--base) !important;
   color: var(--text) !important;
-  border: 1px solid var(--lightest) !important;
+  border: 2px solid var(--lightest) !important;
   border-radius: 0 !important;
   font-family: var(--font-family) !important;
   font-size: 11px !important;
