@@ -10,10 +10,8 @@
   --raised-shadow: inset 2px 2px 0 rgba(255,255,255,.1), inset -2px -2px 0 rgba(0,0,0,.3);
   --pressed-shadow: inset -2px -2px 0 rgba(255,255,255,.1), inset 2px 2px 0 rgba(0,0,0,.3);
 }
-
 /* Hide forward/back buttons and accounts icon */
 #back-button, #forward-button, #fxa-toolbar-menu-button { display: none !important; }
-
 /* Base styling for interactive elements */
 .tabbrowser-tab .tab-background,
 #nav-bar toolbarbutton:not(#back-button):not(#forward-button):not(#fxa-toolbar-menu-button),
@@ -28,8 +26,9 @@
   padding: 4px 8px !important;
   font: 13px var(--font-family) !important;
   -moz-appearance: none !important;
+  min-height: 32px !important;
+  box-sizing: border-box !important;
 }
-
 /* Active/focused states */
 .tabbrowser-tab[selected] .tab-background,
 #nav-bar toolbarbutton:active:not(#back-button):not(#forward-button):not(#fxa-toolbar-menu-button),
@@ -37,7 +36,6 @@
   border-color: var(--pressed-border) !important;
   box-shadow: var(--pressed-shadow) !important;
 }
-
 /* Tab text */
 .tabbrowser-tab .tab-label {
   color: var(--text) !important;
