@@ -60,102 +60,6 @@ user_pref("network.predictor.enable-prefetch", false);
 user_pref("layout.css.grid-template-masonry-value.enabled", true);
 
 /****************************************************************************
- * SECTION: SECUREFOX                                                       *
-****************************************************************************/
-/** TRACKING PROTECTION ***/
-user_pref("browser.contentblocking.category", "strict");
-user_pref("browser.download.start_downloads_in_tmp_dir", true);
-user_pref("browser.helperApps.deleteTempFileOnExit", true);
-user_pref("browser.uitour.enabled", false);
-user_pref("privacy.globalprivacycontrol.enabled", true);
-
-/** OCSP & CERTS / HPKP ***/
-user_pref("security.OCSP.enabled", 0);
-user_pref("security.pki.crlite_mode", 2);
-
-/** SSL / TLS ***/
-user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-user_pref("browser.xul.error_pages.expert_bad_cert", true);
-user_pref("security.tls.enable_0rtt_data", false);
-
-/** DISK AVOIDANCE ***/
-user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
-user_pref("browser.sessionstore.interval", 60000);
-
-/** SHUTDOWN & SANITIZING ***/
-user_pref("browser.privatebrowsing.resetPBM.enabled", true);
-user_pref("privacy.history.custom", true);
-
-/** SEARCH / URL BAR ***/
-user_pref("browser.urlbar.trimHttps", true);
-user_pref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
-user_pref("browser.search.separatePrivateDefault.ui.enabled", true);
-user_pref("browser.urlbar.update2.engineAliasRefresh", true);
-user_pref("browser.search.suggest.enabled", false);
-user_pref("browser.urlbar.quicksuggest.enabled", false);
-user_pref("browser.urlbar.groupLabels.enabled", false);
-user_pref("browser.formfill.enable", false);
-user_pref("network.IDN_show_punycode", true);
-
-/** PASSWORDS ***/
-user_pref("signon.formlessCapture.enabled", false);
-user_pref("signon.privateBrowsingCapture.enabled", false);
-user_pref("network.auth.subresource-http-auth-allow", 1);
-user_pref("editor.truncate_user_pastes", false);
-
-/** MIXED CONTENT + CROSS-SITE ***/
-user_pref("security.mixed_content.block_display_content", true);
-user_pref("pdfjs.enableScripting", false);
-
-/** EXTENSIONS ***/
-user_pref("extensions.enabledScopes", 5);
-
-/** HEADERS / REFERERS ***/
-user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
-
-/** CONTAINERS ***/
-user_pref("privacy.userContext.ui.enabled", false); // Disabled by me.
-
-/** SAFE BROWSING ***/
-user_pref("browser.safebrowsing.downloads.remote.enabled", false);
-
-/** MOZILLA ***/
-user_pref("permissions.default.desktop-notification", 2);
-user_pref("permissions.default.geo", 2);
-user_pref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
-user_pref("browser.search.update", false);
-user_pref("permissions.manager.defaultsUrl", "");
-user_pref("extensions.getAddons.cache.enabled", false);
-
-/** TELEMETRY ***/
-user_pref("datareporting.policy.dataSubmissionEnabled", false);
-user_pref("datareporting.healthreport.uploadEnabled", false);
-user_pref("toolkit.telemetry.unified", false);
-user_pref("toolkit.telemetry.enabled", false);
-user_pref("toolkit.telemetry.server", "data:,");
-user_pref("toolkit.telemetry.archive.enabled", false);
-user_pref("toolkit.telemetry.newProfilePing.enabled", false);
-user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
-user_pref("toolkit.telemetry.updatePing.enabled", false);
-user_pref("toolkit.telemetry.bhrPing.enabled", false);
-user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
-user_pref("toolkit.telemetry.coverage.opt-out", true);
-user_pref("toolkit.coverage.opt-out", true);
-user_pref("toolkit.coverage.endpoint.base", "");
-user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-user_pref("browser.newtabpage.activity-stream.telemetry", false);
-user_pref("datareporting.usage.uploadEnabled", false);
-
-/** EXPERIMENTS ***/
-user_pref("app.shield.optoutstudies.enabled", false);
-user_pref("app.normandy.enabled", false);
-user_pref("app.normandy.api_url", "");
-
-/** CRASH REPORTS ***/
-user_pref("breakpad.reportURL", "");
-user_pref("browser.tabs.crashReporting.sendReport", false);
-
-/****************************************************************************
  * SECTION: PESKYFOX                                                        *
 ****************************************************************************/
 /** MOZILLA UI ***/
@@ -219,6 +123,9 @@ user_pref("permissions.default.geo", 0);
 
 // PREF: allow websites to ask you to receive site notifications
 user_pref("permissions.default.desktop-notification", 0);
+
+// PREF: scale less, default is 2
+user_pref("layout.css.devPixelsPerPx", "1.6");
 
 
 /****************************************************************************
