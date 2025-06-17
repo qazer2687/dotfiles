@@ -1,202 +1,49 @@
-/* Firefox userChrome.css - Waybar Style Theme */
-/* Place this file in: ~/.mozilla/firefox/[profile]/chrome/userChrome.css */
-/* Enable toolkit.legacyUserProfileCustomizations.stylesheets in about:config */
+/* Minified Firefox userChrome.css - Essential Button/Tab Styling Only */
 
 :root {
-  --darkest: #0d0d0d;
-  --darker: #1a1a1a;
   --base: #2d2d2d;
-  --lighter: #404040;
-  --lightest: #999999;
   --text: #b8b8b8;
-  --background: #000000;
-  
-  /* Common button styling */
-  --button-margin: 2px 1px;
-  --button-padding: 4px 8px;
+  --lightest: #999999;
+  --darkest: #0d0d0d;
   --font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace;
-  --font-size: 13px;
   --raised-border: var(--lightest) var(--darkest) var(--darkest) var(--lightest);
   --pressed-border: var(--darkest) var(--lightest) var(--lightest) var(--darkest);
-  --raised-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.1), inset -2px -2px 0px rgba(0, 0, 0, 0.3);
-  --pressed-shadow: inset -2px -2px 0px rgba(255, 255, 255, 0.1), inset 2px 2px 0px rgba(0, 0, 0, 0.3);
+  --raised-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.1), inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+  --pressed-shadow: inset -2px -2px 0 rgba(255, 255, 255, 0.1), inset 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Base window and toolbar styling */
-#main-window,
-#navigator-toolbox,
-#TabsToolbar,
-#nav-bar,
-#PersonalToolbar {
-  background-color: var(--background) !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Move search bar to same line as tabs and reorder */
-#nav-bar {
-  order: 1 !important;
-}
-
-#TabsToolbar {
-  order: 2 !important;
-}
-
-#navigator-toolbox {
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-#nav-bar {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-}
-
-/* Move search bar to beginning of nav-bar */
-#searchbar {
-  order: -1 !important;
-  flex-shrink: 0 !important;
-}
-
-/* Hide back/forward buttons and profile icon */
-#back-button,
-#forward-button,
-#fxa-toolbar-menu-button {
-  display: none !important;
-}
-
-/* Common button styling - applies to all interactive elements */
+/* Button styling for tabs, toolbar buttons, URL bar, and search bar */
 .tabbrowser-tab .tab-background,
 #nav-bar toolbarbutton,
-#nav-bar .toolbarbutton-1,
 #urlbar,
 #searchbar,
-#searchbar > .searchbar-textbox,
-#PanelUI-menu-button,
-#nav-bar-overflow-button,
-#tabs-newtab-button {
-  background-color: var(--base) !important;
+#searchbar > .searchbar-textbox {
+  background: var(--base) !important;
   color: var(--text) !important;
   border: 2px solid !important;
   border-color: var(--raised-border) !important;
   box-shadow: var(--raised-shadow) !important;
   border-radius: 0 !important;
-  margin: var(--button-margin) !important;
-  padding: var(--button-padding) !important;
+  margin: 2px 1px !important;
+  padding: 4px 8px !important;
   font-family: var(--font-family) !important;
-  font-size: var(--font-size) !important;
-  font-weight: normal !important;
-  min-height: 0 !important;
-  height: auto !important;
+  font-size: 13px !important;
   -moz-appearance: none !important;
 }
 
-/* Pressed/active/focused state for all interactive elements */
+/* Pressed/active/focused states */
 .tabbrowser-tab[selected="true"] .tab-background,
 #nav-bar toolbarbutton:active,
-#nav-bar .toolbarbutton-1:active,
-#nav-bar toolbarbutton[checked="true"],
-#nav-bar .toolbarbutton-1[checked="true"],
 #urlbar:focus-within,
-#urlbar[focused="true"],
 #searchbar:focus-within,
-#searchbar[focused="true"],
 #searchbar > .searchbar-textbox:focus {
   border-color: var(--pressed-border) !important;
   box-shadow: var(--pressed-shadow) !important;
 }
 
-/* Force search bar styling consistency */
-#searchbar,
-#searchbar > .searchbar-textbox {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 2px solid !important;
-  border-color: var(--raised-border) !important;
-  box-shadow: var(--raised-shadow) !important;
-  -moz-appearance: none !important;
-}
-
-#searchbar:focus-within,
-#searchbar[focused="true"],
-#searchbar > .searchbar-textbox:focus {
-  background-color: var(--base) !important;
-  border-color: var(--pressed-border) !important;
-  box-shadow: var(--pressed-shadow) !important;
-}
-
-/* Tab specific adjustments */
-.tabbrowser-tab {
-  margin: var(--button-margin) !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-}
-
-.tabbrowser-tab .tab-background {
-  margin: 0 !important;
-}
-
+/* Tab text styling */
 .tabbrowser-tab .tab-label {
   color: var(--text) !important;
   font-family: var(--font-family) !important;
-  font-size: var(--font-size) !important;
-  padding: var(--button-padding) !important;
-  font-weight: normal !important;
-}
-
-/* Tab close button fix for horizontal squashing */
-.tabbrowser-tab .tab-close-button {
-  color: var(--text) !important;
-  background: none !important;
-  border: none !important;
-  padding: 4px !important;
-  margin: 0 4px !important;
-  min-width: 16px !important;
-  width: 16px !important;
-  height: 16px !important;
-  border-radius: 0 !important;
-}
-
-.tabbrowser-tab .tab-close-button:hover {
-  background-color: var(--lighter) !important;
-}
-
-
-
-/* Sidebar styling */
-#sidebar-box {
-  background-color: var(--background) !important;
-  border-right: 2px solid var(--lightest) !important;
-}
-
-#sidebar-header,
-.sidebar-panel {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  font-family: var(--font-family) !important;
-  font-size: 11px !important;
-}
-
-/* Status panel */
-#statuspanel {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 2px solid var(--lightest) !important;
-  border-radius: 0 !important;
-  font-family: var(--font-family) !important;
-  font-size: 11px !important;
-}
-
-/* Icon and text color consistency */
-.toolbarbutton-1 > .toolbarbutton-icon,
-.toolbarbutton-1 > .toolbarbutton-text,
-.tab-throbber,
-.tab-icon-sound {
-  color: var(--text) !important;
-}
-
-/* Hide unwanted elements */
-.tab-line,
-.titlebar-spacer {
-  display: none !important;
+  font-size: 13px !important;
 }
