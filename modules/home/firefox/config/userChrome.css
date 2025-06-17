@@ -1,7 +1,6 @@
-/* Optimized Firefox userChrome.css - Essential Button/Tab Styling + Hidden Elements */
+/* Minimal Firefox userChrome.css - Tab inset borders only */
 :root {
   --base: #2d2d2d;
-  --text: #b8b8b8;
   --lightest: #999999;
   --darkest: #0d0d0d;
   --font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace;
@@ -10,34 +9,24 @@
   --raised-shadow: inset 2px 2px 0 rgba(255,255,255,.1), inset -2px -2px 0 rgba(0,0,0,.3);
   --pressed-shadow: inset -2px -2px 0 rgba(255,255,255,.1), inset 2px 2px 0 rgba(0,0,0,.3);
 }
+
 /* Hide forward/back buttons and accounts icon */
 #back-button, #forward-button, #fxa-toolbar-menu-button { display: none !important; }
-/* Base styling for interactive elements */
-.tabbrowser-tab .tab-background,
-#nav-bar toolbarbutton:not(#back-button):not(#forward-button):not(#fxa-toolbar-menu-button),
-#urlbar, #searchbar, #searchbar > .searchbar-textbox {
-  background: var(--base) !important;
-  color: var(--text) !important;
+
+/* Tab inset border styling */
+.tabbrowser-tab .tab-background {
   border: 2px solid !important;
   border-color: var(--raised-border) !important;
   box-shadow: var(--raised-shadow) !important;
-  border-radius: 0 !important;
-  margin: 2px 1px !important;
-  padding: 4px 8px !important;
-  font: 13px var(--font-family) !important;
-  -moz-appearance: none !important;
-  min-height: 32px !important;
-  box-sizing: border-box !important;
 }
-/* Active/focused states */
-.tabbrowser-tab[selected] .tab-background,
-#nav-bar toolbarbutton:active:not(#back-button):not(#forward-button):not(#fxa-toolbar-menu-button),
-#urlbar:focus-within, #searchbar:focus-within, #searchbar > .searchbar-textbox:focus {
+
+/* Selected tab inset border */
+.tabbrowser-tab[selected] .tab-background {
   border-color: var(--pressed-border) !important;
   box-shadow: var(--pressed-shadow) !important;
 }
-/* Tab text */
+
+/* Tab text font */
 .tabbrowser-tab .tab-label {
-  color: var(--text) !important;
   font: 13px var(--font-family) !important;
 }
