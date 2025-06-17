@@ -1,4 +1,4 @@
-/* Minified Firefox userChrome.css - Essential Button/Tab Styling Only */
+/* Optimized Firefox userChrome.css - Essential Button/Tab Styling + Hidden Elements */
 :root {
   --base: #2d2d2d;
   --text: #b8b8b8;
@@ -7,19 +7,17 @@
   --font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace;
   --raised-border: var(--lightest) var(--darkest) var(--darkest) var(--lightest);
   --pressed-border: var(--darkest) var(--lightest) var(--lightest) var(--darkest);
-  --raised-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.1), inset -2px -2px 0 rgba(0, 0, 0, 0.3);
-  --pressed-shadow: inset -2px -2px 0 rgba(255, 255, 255, 0.1), inset 2px 2px 0 rgba(0, 0, 0, 0.3);
+  --raised-shadow: inset 2px 2px 0 rgba(255,255,255,.1), inset -2px -2px 0 rgba(0,0,0,.3);
+  --pressed-shadow: inset -2px -2px 0 rgba(255,255,255,.1), inset 2px 2px 0 rgba(0,0,0,.3);
 }
 
-/* Hide buttons */
+/* Hide forward/back buttons and accounts icon */
 #back-button, #forward-button, #fxa-toolbar-menu-button { display: none !important; }
 
-/* Button styling for tabs, toolbar buttons, URL bar, and search bar */
+/* Base styling for interactive elements */
 .tabbrowser-tab .tab-background,
-#nav-bar toolbarbutton,
-#urlbar,
-#searchbar,
-#searchbar > .searchbar-textbox {
+#nav-bar toolbarbutton:not(#back-button):not(#forward-button):not(#fxa-toolbar-menu-button),
+#urlbar, #searchbar, #searchbar > .searchbar-textbox {
   background: var(--base) !important;
   color: var(--text) !important;
   border: 2px solid !important;
@@ -28,25 +26,20 @@
   border-radius: 0 !important;
   margin: 2px 1px !important;
   padding: 4px 8px !important;
-  font-family: var(--font-family) !important;
-  font-size: 13px !important;
+  font: 13px var(--font-family) !important;
   -moz-appearance: none !important;
-  height: 28px !important;
 }
 
-/* Pressed/active/focused states */
-.tabbrowser-tab[selected="true"] .tab-background,
-#nav-bar toolbarbutton:active,
-#urlbar:focus-within,
-#searchbar:focus-within,
-#searchbar > .searchbar-textbox:focus {
+/* Active/focused states */
+.tabbrowser-tab[selected] .tab-background,
+#nav-bar toolbarbutton:active:not(#back-button):not(#forward-button):not(#fxa-toolbar-menu-button),
+#urlbar:focus-within, #searchbar:focus-within, #searchbar > .searchbar-textbox:focus {
   border-color: var(--pressed-border) !important;
   box-shadow: var(--pressed-shadow) !important;
 }
 
-/* Tab text styling */
+/* Tab text */
 .tabbrowser-tab .tab-label {
   color: var(--text) !important;
-  font-family: var(--font-family) !important;
-  font-size: 13px !important;
+  font: 13px var(--font-family) !important;
 }
