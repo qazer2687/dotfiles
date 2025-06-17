@@ -40,6 +40,12 @@ static const char *const autostart[] = {
     NULL /* terminate */
 };
 
+// Tearing
+static const ForceTearingRule force_tearing[] = {
+  // Disable vsync on Roblox.
+	{.title = "", .appid = "org.vinegarhq.Sober"},
+};
+
 /* NOTE: ALWAYS keep a rule declared even if you don't use rules (e.g leave at least one example) */
 static const Rule rules[] = {
 	/* app_id             title       tags mask     isfloating   monitor */
