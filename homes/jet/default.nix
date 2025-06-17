@@ -67,6 +67,7 @@
 
     # GUI
     zed.enable = true;
+    firefox.enable = true;
   };
 
   home.stateVersion = "24.11";
