@@ -1,5 +1,4 @@
 /* Minified Firefox userChrome.css - Essential Button/Tab Styling Only */
-
 :root {
   --base: #2d2d2d;
   --text: #b8b8b8;
@@ -10,6 +9,13 @@
   --pressed-border: var(--darkest) var(--lightest) var(--lightest) var(--darkest);
   --raised-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.1), inset -2px -2px 0 rgba(0, 0, 0, 0.3);
   --pressed-shadow: inset -2px -2px 0 rgba(255, 255, 255, 0.1), inset 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Hide forward/back buttons and profile icon */
+#back-button,
+#forward-button,
+#fxa-toolbar-menu-button {
+  display: none !important;
 }
 
 /* Button styling for tabs, toolbar buttons, URL bar, and search bar */
@@ -29,16 +35,30 @@
   font-family: var(--font-family) !important;
   font-size: 13px !important;
   -moz-appearance: none !important;
+  min-height: 24px !important;
+  height: 32px !important;
 }
 
 /* Pressed/active/focused states */
 .tabbrowser-tab[selected="true"] .tab-background,
 #nav-bar toolbarbutton:active,
 #urlbar:focus-within,
+#urlbar[focused="true"],
 #searchbar:focus-within,
 #searchbar > .searchbar-textbox:focus {
   border-color: var(--pressed-border) !important;
   box-shadow: var(--pressed-shadow) !important;
+  height: 32px !important;
+}
+
+/* Additional states for search bar consistency */
+#searchbar:hover,
+#searchbar > .searchbar-textbox:hover,
+#searchbar[loading="true"],
+#searchbar > .searchbar-textbox[loading="true"] {
+  height: 32px !important;
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
 }
 
 /* Tab text styling */
