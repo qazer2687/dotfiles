@@ -2,7 +2,6 @@
 /* Place this file in: ~/.mozilla/firefox/[profile]/chrome/userChrome.css */
 /* Enable toolkit.legacyUserProfileCustomizations.stylesheets in about:config */
 
-/* Color variables matching waybar configuration */
 :root {
   --darkest: #0d0d0d;
   --darker: #1a1a1a;
@@ -11,19 +10,21 @@
   --lightest: #999999;
   --text: #b8b8b8;
   --background: #000000;
+  
+  /* Common button styling */
+  --button-margin: 2px 1px;
+  --button-padding: 4px 8px;
+  --font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace;
+  --font-size: 13px;
+  --raised-border: var(--lightest) var(--darkest) var(--darkest) var(--lightest);
+  --pressed-border: var(--darkest) var(--lightest) var(--lightest) var(--darkest);
+  --raised-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
+  --pressed-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* Base window styling */
-#main-window {
-  background-color: var(--background) !important;
-}
-
-/* Toolbar areas */
-#navigator-toolbox {
-  background-color: var(--background) !important;
-  border: none !important;
-}
-
+/* Base window and toolbar styling */
+#main-window,
+#navigator-toolbox,
 #TabsToolbar,
 #nav-bar,
 #PersonalToolbar {
@@ -32,151 +33,86 @@
   box-shadow: none !important;
 }
 
-/* Tab styling - matches waybar buttons */
+/* Common button styling - applies to all interactive elements */
+.tabbrowser-tab .tab-background,
+#nav-bar toolbarbutton,
+#nav-bar .toolbarbutton-1,
+#urlbar,
+#searchbar,
+#PanelUI-menu-button,
+#nav-bar-overflow-button,
+#tabs-newtab-button {
+  background-color: var(--base) !important;
+  color: var(--text) !important;
+  border: 1px solid !important;
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
+  border-radius: 0 !important;
+  margin: var(--button-margin) !important;
+  padding: var(--button-padding) !important;
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size) !important;
+  font-weight: normal !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+/* Pressed/active/focused state for all interactive elements */
+.tabbrowser-tab[selected="true"] .tab-background,
+#nav-bar toolbarbutton:active,
+#nav-bar .toolbarbutton-1:active,
+#nav-bar toolbarbutton[checked="true"],
+#nav-bar .toolbarbutton-1[checked="true"],
+#urlbar:focus-within,
+#searchbar:focus-within {
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
+}
+
+/* Tab specific adjustments */
 .tabbrowser-tab {
-  margin: 2px 1px !important;
+  margin: var(--button-margin) !important;
   border-radius: 0 !important;
   overflow: visible !important;
 }
 
 .tabbrowser-tab .tab-background {
-  background-color: var(--base) !important;
-  border: 1px solid !important;
-  border-color: var(--lightest) var(--darkest) var(--darkest) var(--lightest) !important;
-  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), 
-              inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
-  border-radius: 0 !important;
   margin: 0 !important;
 }
 
-/* Active/selected tab - matches waybar focused button */
-.tabbrowser-tab[selected="true"] .tab-background {
-  background-color: var(--base) !important;
-  border-color: var(--darkest) var(--lightest) var(--lightest) var(--darkest) !important;
-  box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), 
-              inset 1px 1px 0px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* Tab text */
 .tabbrowser-tab .tab-label {
   color: var(--text) !important;
-  font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 13px !important;
-  padding: 4px 8px !important;
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size) !important;
+  padding: var(--button-padding) !important;
   font-weight: normal !important;
 }
 
-/* Tab close button */
+/* Tab close button fix for horizontal squashing */
 .tabbrowser-tab .tab-close-button {
   color: var(--text) !important;
   background: none !important;
   border: none !important;
-  padding: 2px !important;
-  margin: 0 2px !important;
+  padding: 4px !important;
+  margin: 0 4px !important;
+  min-width: 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 0 !important;
 }
 
 .tabbrowser-tab .tab-close-button:hover {
   background-color: var(--lighter) !important;
-  border-radius: 0 !important;
 }
 
-/* Navigation bar buttons - matches waybar modules */
-#nav-bar toolbarbutton,
-#nav-bar .toolbarbutton-1 {
-  margin: 2px 1px !important;
-  padding: 4px 8px !important;
-  border-radius: 0 !important;
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 1px solid !important;
-  border-color: var(--lightest) var(--darkest) var(--darkest) var(--lightest) !important;
-  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), 
-              inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
-  font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 13px !important;
-  font-weight: normal !important;
-  min-height: 0 !important;
-  height: auto !important;
-}
-
-/* Button pressed/clicked state - matches waybar focused */
-#nav-bar toolbarbutton:active,
-#nav-bar .toolbarbutton-1:active,
-#nav-bar toolbarbutton[checked="true"],
-#nav-bar .toolbarbutton-1[checked="true"] {
-  border-color: var(--darkest) var(--lightest) var(--lightest) var(--darkest) !important;
-  box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), 
-              inset 1px 1px 0px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* URL bar styling */
-#urlbar {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 1px solid !important;
-  border-color: var(--lightest) var(--darkest) var(--darkest) var(--lightest) !important;
-  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), 
-              inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
-  border-radius: 0 !important;
-  margin: 2px 1px !important;
-  padding: 4px 8px !important;
-  font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 13px !important;
-  min-height: 0 !important;
-  height: auto !important;
-}
-
-#urlbar:focus-within {
-  border-color: var(--darkest) var(--lightest) var(--lightest) var(--darkest) !important;
-  box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), 
-              inset 1px 1px 0px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* Search bar */
-#searchbar {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 1px solid !important;
-  border-color: var(--lightest) var(--darkest) var(--darkest) var(--lightest) !important;
-  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), 
-              inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
-  border-radius: 0 !important;
-  margin: 2px 1px !important;
-  padding: 4px 8px !important;
-  font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 13px !important;
-  min-height: 0 !important;
-  height: auto !important;
-}
-
-#searchbar:focus-within {
-  border-color: var(--darkest) var(--lightest) var(--lightest) var(--darkest) !important;
-  box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), 
-              inset 1px 1px 0px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* Menu button and overflow button */
-#PanelUI-menu-button,
-#nav-bar-overflow-button {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 1px solid !important;
-  border-color: var(--lightest) var(--darkest) var(--darkest) var(--lightest) !important;
-  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), 
-              inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
-  border-radius: 0 !important;
-  margin: 2px 1px !important;
-  padding: 4px 8px !important;
-}
-
-/* Dropdown menus */
+/* Menu and dropdown styling */
 menupopup,
 panel {
   background-color: var(--base) !important;
   color: var(--text) !important;
   border: 1px solid var(--lightest) !important;
   border-radius: 0 !important;
-  font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
+  font-family: var(--font-family) !important;
   font-size: 11px !important;
 }
 
@@ -188,48 +124,6 @@ menuitem {
 
 menuitem:hover {
   background-color: var(--lighter) !important;
-  color: var(--text) !important;
-}
-
-/* Bookmarks toolbar */
-#PersonalToolbar toolbarbutton {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 1px solid !important;
-  border-color: var(--lightest) var(--darkest) var(--darkest) var(--lightest) !important;
-  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), 
-              inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
-  border-radius: 0 !important;
-  margin: 2px 1px !important;
-  padding: 3px 6px !important;
-  font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 11px !important;
-  font-weight: normal !important;
-}
-
-/* Remove default styling */
-.toolbarbutton-1 > .toolbarbutton-icon,
-.toolbarbutton-1 > .toolbarbutton-text {
-  color: var(--text) !important;
-}
-
-/* Tab indicators (loading, sound, etc.) */
-.tab-throbber,
-.tab-icon-sound {
-  color: var(--text) !important;
-}
-
-/* New tab button */
-#tabs-newtab-button {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 1px solid !important;
-  border-color: var(--lightest) var(--darkest) var(--darkest) var(--lightest) !important;
-  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), 
-              inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
-  border-radius: 0 !important;
-  margin: 2px 1px !important;
-  padding: 4px 8px !important;
 }
 
 /* Sidebar styling */
@@ -242,33 +136,31 @@ menuitem:hover {
 .sidebar-panel {
   background-color: var(--base) !important;
   color: var(--text) !important;
-  font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
+  font-family: var(--font-family) !important;
   font-size: 11px !important;
 }
 
-/* Status panel (bottom left URL preview) */
-#statuspanel {
-  background-color: var(--base) !important;
-  color: var(--text) !important;
-  border: 1px solid var(--lightest) !important;
-  border-radius: 0 !important;
-  font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace !important;
-  font-size: 11px !important;
-}
-
-/* Context menus */
+/* Status panel and context menus */
+#statuspanel,
 #contentAreaContextMenu {
   background-color: var(--base) !important;
   color: var(--text) !important;
   border: 1px solid var(--lightest) !important;
   border-radius: 0 !important;
+  font-family: var(--font-family) !important;
+  font-size: 11px !important;
 }
 
-/* Hide unwanted visual elements */
-.tab-line {
-  display: none !important;
+/* Icon and text color consistency */
+.toolbarbutton-1 > .toolbarbutton-icon,
+.toolbarbutton-1 > .toolbarbutton-text,
+.tab-throbber,
+.tab-icon-sound {
+  color: var(--text) !important;
 }
 
+/* Hide unwanted elements */
+.tab-line,
 .titlebar-spacer {
   display: none !important;
 }
