@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.firefox.enable {
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox;
+      package = pkgs.firefox-devedition-bin;
       
       profiles."default" = {
         name = "default";
