@@ -41,10 +41,10 @@
   font: 13px var(--font-family) !important;
 }
 
-/* Search bar when focused - keep same styling */
+/* Search bar when focused */
 #urlbar[focused="true"] {
-  border-color: var(--pressed-border) !important;
-  box-shadow: var(--pressed-shadow) !important;
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
 }
 
 /* Toolbar buttons inset border styling */
@@ -70,32 +70,7 @@
   border-radius: 0 !important;
 }
 
-/* Remove hover effects and transparency highlights */
-.tabbrowser-tab:hover .tab-background {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-#nav-bar toolbarbutton:hover {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-#urlbar:hover, #urlbar-background:hover {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-#PanelUI-menu-button:hover {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* Remove all hover state backgrounds */
-.tabbrowser-tab:hover,
-#nav-bar toolbarbutton:hover,
-#urlbar:hover,
-#PanelUI-menu-button:hover {
-  background-image: none !important;
-  opacity: 1 !important;
+#PanelUI-menu-button:hover:active {
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
 }
