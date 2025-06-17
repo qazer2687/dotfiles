@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.firefox.enable {
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox-bin;
+      package = pkgs.firefox;
       
       profiles."default" = {
         name = "default";
@@ -31,6 +31,9 @@
           * {
             font-family: "DepartureMono", sans-serif !important;
           }
+          
+          /* search and tabs on the same line */
+          .titlebar-buttonbox,.titlebar-spacer,#back-button,#forward-button,#tracking-protection-icon-container,#page-action-buttons,#PanelUI-button{display:none!important}#navigator-toolbox{border:0!important}#TabsToolbar{margin-left:20vw!important}#nav-bar{background:transparent!important;margin-right:80vw!important;margin-top:-36px!important}#urlbar-container{width:auto!important}#urlbar{background:transparent!important;border:none!important;box-shadow:none!important}#urlbar[breakout-extend]{width:100vw!important}
         '';
 
         extraConfig = builtins.readFile ./config/user.js;

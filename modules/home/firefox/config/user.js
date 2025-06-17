@@ -114,7 +114,7 @@ user_pref("extensions.enabledScopes", 5);
 user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
 
 /** CONTAINERS ***/
-user_pref("privacy.userContext.ui.enabled", true);
+user_pref("privacy.userContext.ui.enabled", false); // Disabled by me.
 
 /** SAFE BROWSING ***/
 user_pref("browser.safebrowsing.downloads.remote.enabled", false);
