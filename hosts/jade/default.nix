@@ -93,17 +93,6 @@
     nvidiaSupport = true;
   };
 
-  # EXPERIMENTAL - Enable realtime priority
-  # to improve latency and reduce stuttering.
-  security.pam.loginLimits = [
-    {
-      domain = "@users";
-      item = "rtprio";
-      type = "-";
-      value = 1;
-    }
-  ];
-
   # Hide the 'File descriptor leaked on LVM invocation' warning on boot.
   environment.etc."lvm/lvm.conf".text = ''
     devices {
