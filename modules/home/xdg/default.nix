@@ -22,7 +22,7 @@
           pkgs.xdg-desktop-portal-gnome
           pkgs.xdg-desktop-portal-wlr
         ];
-        xdgOpenUsePortal = true;
+        #xdgOpenUsePortal = true;
         config = {
           common = {
             default = ["wlr" "gtk"];
