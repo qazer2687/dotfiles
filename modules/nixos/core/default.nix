@@ -130,9 +130,9 @@
     
     ########## XDG ##########
     
-    services.xdg = {
+    xdg = {
       enable = true;
-      portal = {
+      extraPortals = {
         enable = true;
         extraPortals = [
           pkgs.xdg-desktop-portal-wlr
