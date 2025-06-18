@@ -22,8 +22,6 @@
     
     lunar-client
 
-    inputs.zen.packages."${system}".default
-
     # Misc
     ffmpeg-full
     libheif
@@ -52,6 +50,8 @@
     # Gaming
     mangohud.enable = true;
     prismlauncher.enable = true;
+    
+    firefox.enable = true;
 
     # Development
     direnv.enable = true;

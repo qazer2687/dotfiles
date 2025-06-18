@@ -181,7 +181,7 @@
       "org.vinegarhq.Sober"
       "org.vinegarhq.Vinegar"
     ];
-  };
+  
   
   modules = {
     core.enable = true;
