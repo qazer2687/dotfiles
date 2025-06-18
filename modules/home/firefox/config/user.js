@@ -223,6 +223,18 @@ user_pref("permissions.default.desktop-notification", 0);
 // PREF: scale less, default is 2
 user_pref("layout.css.devPixelsPerPx", "1.6");
 
+// Controls when referer headers are sent across different origins
+// 0 = Send referer in all cases
+// 1 = Send referer only when the base domains match
+// 2 = Send referer only when hosts match (default)
+user_pref("network.http.referer.XOriginPolicy", 0);
+
+// Controls whether to send referer headers at all
+// 0 = Never send referer headers
+// 1 = Send referer headers only on clicks (not on image loads, etc.)
+// 2 = Send referer headers on all requests (default)
+user_pref("network.http.sendRefererHeader", 2);
+
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
