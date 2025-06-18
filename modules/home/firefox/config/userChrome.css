@@ -1,3 +1,4 @@
+
 /* Minimal Firefox userChrome.css - Tab inset borders only */
 :root {
   --base: #2d2d2d;
@@ -10,8 +11,17 @@
   --pressed-shadow: inset -2px -2px 0 rgba(255,255,255,.1), inset 2px 2px 0 rgba(0,0,0,.3);
 }
 
-/* Hide forward/back buttons and accounts icon */
-#back-button, #forward-button, #fxa-toolbar-menu-button { display: none !important; }
+/* Hide UI elements */
+#back-button,
+#forward-button,
+#fxa-toolbar-menu-button,
+#tracking-protection-icon-container,
+#identity-permission-box,
+#identity-icon,
+.tab-icon-image,
+#alltabs-button {
+  display: none !important;
+}
 
 /* Remove tab rounding and apply inset border styling */
 .tabbrowser-tab .tab-background {
