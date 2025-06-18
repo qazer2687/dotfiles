@@ -152,9 +152,7 @@
     # pipewire.enable = true;
 
     systemd-boot.enable = true;
-
-    xdg.enable = true;
-
+    
     # Marcan said something about it being ineffective on apple silicon.
     # zram.enable = true;
 

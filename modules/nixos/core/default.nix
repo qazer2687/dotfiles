@@ -148,6 +148,12 @@
     };
 
     ########## MISC ##########
+    
+    # EXPERIMENTAL - High performance implementation of DBUS.
+    services.dbus = {
+      enable = true;
+      implementation = "broker";
+    };
 
     # Fix 'command-not-found' error 'failed to open database'.
     programs.command-not-found.enable = false;
