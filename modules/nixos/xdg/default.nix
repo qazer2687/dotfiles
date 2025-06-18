@@ -22,6 +22,12 @@
    
     # Allow XDG to access .desktop files.
     environment.pathsToLink = [ "/share/applications" ];
+    
+    # Use .desktop files from home-manager.
+    system.userActivationScripts.linkDesktopFiles = ''
+      mkdir -p /home/alex/.local/share/applications
+      ln -sf /home/alex/.nix-profile/share/applications/* /home/alex/.local/share/applications/ 2>/dev/null || true
+    '';
 
     xdg = {
       portal = {
