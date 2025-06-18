@@ -130,7 +130,7 @@
     
     ########## XDG ##########
     
-    xdg = {
+    services.xdg = {
       enable = true;
       portal = {
         enable = true;
