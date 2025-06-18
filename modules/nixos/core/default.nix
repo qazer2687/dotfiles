@@ -122,6 +122,11 @@
       layout = "gb";
       variant = "colemak";
     };
+    
+    ########## KEYRING ##########
+    
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.login.enableGnomeKeyring = true;
 
     ########## LOCALE ##########
 
