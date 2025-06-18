@@ -1,4 +1,3 @@
-
 /* Minimal Firefox userChrome.css - Tab inset borders only */
 :root {
   --base: #2d2d2d;
@@ -11,6 +10,12 @@
   --pressed-shadow: inset -2px -2px 0 rgba(255,255,255,.1), inset 2px 2px 0 rgba(0,0,0,.3);
 }
 
+/* Remove all hover highlighting */
+* {
+  --toolbarbutton-hover-background: transparent !important;
+  --toolbarbutton-active-background: transparent !important;
+}
+
 /* Hide UI elements */
 #back-button,
 #forward-button,
@@ -18,6 +23,8 @@
 #tracking-protection-icon-container,
 #identity-permission-box,
 #identity-icon,
+#identity-box,
+#star-button-box,
 .tab-icon-image,
 #alltabs-button {
   display: none !important;
