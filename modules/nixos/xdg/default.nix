@@ -25,17 +25,18 @@
         enable = true;
         wlr.enable = true;
         extraPortals = [
-          # pkgs.xdg-desktop-portal-gtk
-          # Breaks xdg on dwl.
-          # pkgs.xdg-desktop-portal-gnome
+          pkgs.xdg-desktop-portal-gtk
         ];
         xdgOpenUsePortal = true;
-        # Fix 'xdg-desktop-portal 1.17 reworked how
-        # portal implementations are loaded' warning.
-        config.common.default = "*";
+        config.common.default = ["wlr" "gtk"];
       };
       mime = {
         enable = true;
+        defaultApplications = {
+          "text/html" = "firefox.desktop";
+          "x-scheme-handler/http" = "firefox.desktop";
+          "x-scheme-handler/https" = "firefox.desktop";
+        };
       };
       icons = {
         enable = true;
