@@ -113,6 +113,21 @@
         level = 0;
     }
   '';
+  
+  # Required for a display manager to show dwl.
+  services.displayManager.sessionPackages = with pkgs; [
+    (dwl.overrideAttrs (oldAttrs: {
+      passthru = (oldAttrs.passthru or {}) // {
+        providedSessions = [ "dwl" ];
+      };
+    }))
+  ];
+  
+  services.displayManager.gdm = {
+    enable = true;
+  };
+  
+  /*
 
   # Autologin and hide getty messages.
   services.getty = {
@@ -129,6 +144,7 @@
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && dwl
   '';
+  */
 
   swapDevices = [
     {

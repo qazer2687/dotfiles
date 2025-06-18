@@ -36,11 +36,9 @@
       mime = {
         enable = true;
       };
-      /*
       icons = {
         enable = true;
       };
-      */
     };
   };
 }
