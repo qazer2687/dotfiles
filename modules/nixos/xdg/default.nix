@@ -19,6 +19,9 @@
       xdg-desktop-portal-gtk
       xdg-desktop-portal-wlr
     ];
+   
+    # Allow XDG to access .desktop files.
+    environment.pathsToLink = [ "/share/applications" ];
 
     xdg = {
       portal = {
