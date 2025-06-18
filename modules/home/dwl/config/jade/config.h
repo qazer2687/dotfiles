@@ -36,7 +36,7 @@ static const char *const autostart[] = {
     "/bin/sh", "-c", "waybar", NULL,
     "/bin/sh", "-c", "wbg /home/alex/.config/wallpaper/wallpaper.png", NULL,
     // Configure monitor resolution and refresh rate.
-    "/bin/sh", "-c", "wlr-randr", "--output", "DP-1", "--mode", "2560x1440@180", NULL,
+    "wlr-randr", "--output", "DP-1", "--mode", "2560x1440@180", NULL,
     "/bin/sh", "-c", "gnome-keyring-daemon --start --components=secrets", NULL,
     NULL /* terminate */
 };
