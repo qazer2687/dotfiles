@@ -25,7 +25,7 @@
         enable = true;
         wlr.enable = true;
         extraPortals = [
-          pkgs.xdg-desktop-portal-gtk
+          # pkgs.xdg-desktop-portal-gtk
           # Breaks xdg on dwl.
           # pkgs.xdg-desktop-portal-gnome
         ];
