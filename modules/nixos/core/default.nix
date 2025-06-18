@@ -157,7 +157,10 @@
     
     # Even though this in configured via home-manager 
     # it needs to be here for flatpaks to work.
-    xdg.portal.enable = true;
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+    };
 
     # Fix 'command-not-found' error 'failed to open database'.
     programs.command-not-found.enable = false;
