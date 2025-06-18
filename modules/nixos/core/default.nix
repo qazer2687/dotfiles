@@ -130,19 +130,16 @@
     
     ########## XDG ##########
     
-    xdg = {
+    xdg.portal = {
       enable = true;
-      extraPortals = {
-        enable = true;
-        extraPortals = [
-          pkgs.xdg-desktop-portal-wlr
-          pkgs.xdg-desktop-portal-gtk
-        ];
-        xdgOpenUsePortal = true;
-        config = {
-          common = {
-            default = ["wlr" "gtk"];
-          };
+      extraPortals = [
+        pkgs.xdg-desktop-portal-wlr
+        pkgs.xdg-desktop-portal-gtk
+      ];
+      xdgOpenUsePortal = true;
+      config = {
+        common = {
+          default = ["wlr" "gtk"];
         };
       };
     };
