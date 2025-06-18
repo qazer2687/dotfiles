@@ -103,6 +103,7 @@
     }
   '';
   
+  /*
   # Required for a display manager to show dwl.
   services.displayManager.sessionPackages = with pkgs; [
     (dwl.overrideAttrs (oldAttrs: {
@@ -115,9 +116,8 @@
   services.displayManager.gdm = {
     enable = true;
   };
+  */
   
-  /*
-
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
@@ -131,9 +131,8 @@
   
   # Launch DWL after autologin.
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dwl
+    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session dwl
   '';
-  */
 
   swapDevices = [
     {
