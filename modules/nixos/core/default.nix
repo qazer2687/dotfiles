@@ -160,6 +160,7 @@
     xdg.portal = {
       enable = true;
       wlr.enable = true;
+      config.common.default = "*";
     };
 
     # Fix 'command-not-found' error 'failed to open database'.
