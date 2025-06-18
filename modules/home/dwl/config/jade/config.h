@@ -38,6 +38,8 @@ static const char *const autostart[] = {
     // Configure monitor resolution and refresh rate.
     "wlr-randr", "--output", "DP-1", "--mode", "2560x1440@180", NULL,
     "/bin/sh", "-c", "gnome-keyring-daemon --start --components=secrets", NULL,
+    "sh", "-c", "systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP &", NULL,
+    "sh", "-c", "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=dwl &", NULL,
     NULL /* terminate */
 };
 

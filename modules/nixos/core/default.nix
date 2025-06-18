@@ -127,6 +127,25 @@
     
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.login.enableGnomeKeyring = true;
+    
+    ########## XDG ##########
+    
+    xdg = {
+      enable = true;
+      portal = {
+        enable = true;
+        extraPortals = [
+          pkgs.xdg-desktop-portal-wlr
+          pkgs.xdg-desktop-portal-gtk
+        ];
+        #xdgOpenUsePortal = true;
+        config = {
+          common = {
+            default = ["wlr" "gtk"];
+          };
+        };
+      };
+    };
 
     ########## LOCALE ##########
 
