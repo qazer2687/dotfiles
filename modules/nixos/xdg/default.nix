@@ -26,7 +26,8 @@
         wlr.enable = true;
         extraPortals = [
           pkgs.xdg-desktop-portal-gtk
-          pkgs.xdg-desktop-portal-gnome
+          # Breaks xdg on dwl.
+          # pkgs.xdg-desktop-portal-gnome
         ];
         xdgOpenUsePortal = true;
         # Fix 'xdg-desktop-portal 1.17 reworked how
@@ -35,7 +36,6 @@
       };
       mime = {
         enable = true;
-      };
       icons = {
         enable = true;
       };
