@@ -32,10 +32,6 @@
 
   modules = {
     # Desktop Environment
-    dwl.enable = true;
-    waybar.enable = true;
-    mako.enable = true;
-    tofi.enable = true;
     theme.enable = true;
 
     # CLI
@@ -53,7 +49,6 @@
     
     firefox.enable = true;
     
-    xdg.enable = true;
 
     # Development
     direnv.enable = true;

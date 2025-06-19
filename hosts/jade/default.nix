@@ -21,9 +21,6 @@
     extraRules = ''
       # Enable support for the ESP32-CYD2USB.
       SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
-
-      # Allow backlight control for non-root users.
-      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
     '';
   };
 
@@ -103,36 +100,8 @@
     }
   '';
   
-  /*
-  # Required for a display manager to show dwl.
-  services.displayManager.sessionPackages = with pkgs; [
-    (dwl.overrideAttrs (oldAttrs: {
-      passthru = (oldAttrs.passthru or {}) // {
-        providedSessions = [ "dwl" ];
-      };
-    }))
-  ];
-  
-  services.displayManager.gdm = {
-    enable = true;
-  };
-  */
-  
-  # Autologin and hide getty messages.
-  services.getty = {
-    autologinUser = "alex";
-    extraArgs = [
-      "--skip-login"
-      "--nonewline"
-      "--noissue"
-      "--noclear"
-    ];
-  };
-  
-  # Launch DWL after autologin.
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dbus-run-session dwl
-  '';
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   swapDevices = [
     {
