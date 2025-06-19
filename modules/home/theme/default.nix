@@ -16,28 +16,27 @@
 
     gtk = {
       enable = true;
+      theme = {
+        name = "Adwaita-dark";
+        package = pkgs.gnome-themes-extra;
+      };
       iconTheme = {
         name = "Adwaita";
         package = pkgs.adwaita-icon-theme;
       };
-      theme = {
+      cursorTheme = {
         name = "Adwaita";
-        package = pkgs.gnome-themes-extra;
+        package = pkgs.adwaita-icon-theme;
       };
-      gtk3.extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
-      };
-      gtk4.extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
+      gtk3 = {
+        extraConfig.gtk-application-prefer-dark-theme = true;
       };
     };
-
-    dconf = {
-      enable = true;
-      settings = {
-        "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
-        };
+    
+    dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        gtk-theme = "Adwaita-dark";
+        color-scheme = "prefer-dark";
       };
     };
 
