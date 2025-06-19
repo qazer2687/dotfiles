@@ -25,6 +25,8 @@
     # Misc
     ffmpeg-full
     libheif
+    
+    vinegar
   ];
   
   # Rich presence support for vesktop.
