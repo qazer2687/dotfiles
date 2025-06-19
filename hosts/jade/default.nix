@@ -100,8 +100,21 @@
     }
   '';
   
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # Autologin and hide getty messages.
+  services.getty = {
+    autologinUser = "alex";
+    extraArgs = [
+      "--skip-login"
+      "--nonewline"
+      "--noissue"
+      "--noclear"
+    ];
+  };
+
+  # Automatically launch DWL after login.
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session dwl
+  '';
 
   swapDevices = [
     {

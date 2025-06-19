@@ -34,8 +34,12 @@
 
   modules = {
     # Desktop Environment
+    dwl.enable = true;
+    waybar.enable = true;
+    mako.enable = true;
+    tofi.enable = true;
     theme.enable = true;
-
+    
     # CLI
     fish.enable = true;
     foot.enable = true;
@@ -50,6 +54,8 @@
     prismlauncher.enable = true;
     
     firefox.enable = true;
+    
+    xdg.enable = true;
     
 
     # Development
