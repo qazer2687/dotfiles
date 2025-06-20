@@ -16,6 +16,15 @@
         extraGroups = ["docker"];
       };
     };
+     
+    # This option gives docker containers running
+    # as 1000:1000 permission to bind to any port
+    # starting from port 80. This is specifically
+    # required so that I can use caddy without
+    # running the container as root.
+    boot.kernel.sysctl = {
+      "net.ipv4.ip_unprivileged_port_start" = 80;
+    };
     
     virtualisation.docker = {
       enable = true;
