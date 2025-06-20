@@ -189,7 +189,6 @@
       wheelNeedsPassword = false;
     };
 
-    
     # OOM Killer
     services.earlyoom.enable = true;
 
