@@ -10,8 +10,7 @@
     users.users.dockremap = {
       isSystemUser = true;
       group = "dockremap";
-      subUidRanges = [{ startUid = 165536; count = 65536; }];
-      subGidRanges = [{ startGid = 165536; count = 65536; }];
+    };
     users.groups.dockremap = {};
     
     users.users.alex.extraGroups = ["docker" "dockremap"];
