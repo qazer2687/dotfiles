@@ -7,10 +7,15 @@
   options.modules.docker.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.docker.enable {
-    environment.systemPackages = with pkgs; [
-      crun
-    ];
+    users.users.dockremap = {
+      isSystemUser = true;
+      group = "dockremap";
+      subUidRanges = [{ startUid = 165536; count = 65536; }];
+      subGidRanges = [{ startGid = 165536; count = 65536; }];
+    users.groups.dockremap = {};
+    
     users.users.alex.extraGroups = ["docker" "dockremap"];
+    
     virtualisation.docker = {
       enable = true;
       daemon.settings = {
