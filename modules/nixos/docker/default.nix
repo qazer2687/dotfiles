@@ -22,7 +22,7 @@
         live-restore = false;
         
         # Make all containers be owned by my user instead of root.
-        userns-remap = "alex";
+        userns-remap = "1000:1000";
         
         # Use crun as the default runtime
         "default-runtime" = "crun";
