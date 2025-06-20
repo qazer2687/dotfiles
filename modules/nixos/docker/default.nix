@@ -10,7 +10,7 @@
     environment.systemPackages = with pkgs; [
       crun
     ];
-    users.users.alex.extraGroups = ["docker"];
+    users.users.alex.extraGroups = ["docker" "dockremap"];
     virtualisation.docker = {
       enable = true;
       daemon.settings = {
@@ -21,8 +21,9 @@
         # https://github.com/NixOS/nixpkgs/issues/182916#issuecomment-1364504677
         live-restore = false;
         
-        # Make all containers be owned by my user instead of root.
-        userns-remap = "1000:1000";
+        # Make all containers be owned by the dockremap user and
+        # editable by my user if they are in the dockremap group.
+        userns-remap = "default";
         
         # Use crun as the default runtime
         "default-runtime" = "crun";
