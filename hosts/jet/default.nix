@@ -81,6 +81,7 @@
     }
   '';
 
+  # Required for a display manager to show dwl.
   services.displayManager.sessionPackages = with pkgs; [
     (dwl.overrideAttrs (oldAttrs: {
       passthru = (oldAttrs.passthru or {}) // {
@@ -89,10 +90,11 @@
     }))
   ];
   
-  services.displayManager.ly = {
+  services.displayManager.gdm = {
     enable = true;
   };
-/*
+  
+  /*
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
@@ -108,7 +110,6 @@
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session dwl
   '';
-  
   */
   
   # EXPERIMENTAL - See if keyring works.
@@ -151,9 +152,7 @@
     # pipewire.enable = true;
 
     systemd-boot.enable = true;
-
-    xdg.enable = true;
-
+    
     # Marcan said something about it being ineffective on apple silicon.
     # zram.enable = true;
 

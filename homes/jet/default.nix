@@ -64,6 +64,8 @@
     bat.enable = true;
     zoxide.enable = true;
     screenshot.enable = true;
+    
+    xdg.enable = true;
 
     # GUI
     zed.enable = true;

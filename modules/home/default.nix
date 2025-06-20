@@ -34,5 +34,6 @@
     ./tofi
     ./dwl
     ./screenshot
+    ./xdg
   ];
 }

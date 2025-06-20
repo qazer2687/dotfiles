@@ -33,10 +33,13 @@ static int log_level = WLR_ERROR;
 
 // Autostart
 static const char *const autostart[] = {
-    "sh", "-c", "waybar", NULL,
-    "sh", "-c", "wbg /home/alex/.config/wallpaper/wallpaper.png", NULL,
+    "/bin/sh", "-c", "waybar", NULL,
+    "/bin/sh", "-c", "wbg /home/alex/.config/wallpaper/wallpaper.png", NULL,
     // Configure monitor resolution and refresh rate.
     "wlr-randr", "--output", "DP-1", "--mode", "2560x1440@180", NULL,
+    "/bin/sh", "-c", "gnome-keyring-daemon --start --components=secrets", NULL,
+    "sh", "-c", "systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP &", NULL,
+    "sh", "-c", "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=dwl &", NULL,
     NULL /* terminate */
 };
 

@@ -22,11 +22,11 @@
     
     lunar-client
 
-    inputs.zen.packages."${system}".default
-
     # Misc
     ffmpeg-full
     libheif
+    
+    vinegar
   ];
   
   # Rich presence support for vesktop.
@@ -39,7 +39,7 @@
     mako.enable = true;
     tofi.enable = true;
     theme.enable = true;
-
+    
     # CLI
     fish.enable = true;
     foot.enable = true;
@@ -52,6 +52,11 @@
     # Gaming
     mangohud.enable = true;
     prismlauncher.enable = true;
+    
+    firefox.enable = true;
+    
+    xdg.enable = true;
+    
 
     # Development
     direnv.enable = true;

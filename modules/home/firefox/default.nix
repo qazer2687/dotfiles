@@ -27,7 +27,7 @@
         ];
         */
 
-        userChrome = builtins.readFile ./config/userChrome.css;
+        #userChrome = builtins.readFile ./config/userChrome.css;
         extraConfig = builtins.readFile ./config/user.js;
       };
     };

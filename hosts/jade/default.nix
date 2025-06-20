@@ -21,9 +21,6 @@
     extraRules = ''
       # Enable support for the ESP32-CYD2USB.
       SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
-
-      # Allow backlight control for non-root users.
-      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
     '';
   };
 
@@ -93,17 +90,6 @@
     nvidiaSupport = true;
   };
 
-  # EXPERIMENTAL - Enable realtime priority
-  # to improve latency and reduce stuttering.
-  security.pam.loginLimits = [
-    {
-      domain = "@users";
-      item = "rtprio";
-      type = "-";
-      value = 1;
-    }
-  ];
-
   # Hide the 'File descriptor leaked on LVM invocation' warning on boot.
   environment.etc."lvm/lvm.conf".text = ''
     devices {
@@ -113,7 +99,7 @@
         level = 0;
     }
   '';
-
+  
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
@@ -124,10 +110,10 @@
       "--noclear"
     ];
   };
-  
-  # Launch DWL after autologin.
+
+  # Automatically launch DWL after login.
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && dwl
+    [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session dwl
   '';
 
   swapDevices = [
@@ -163,9 +149,9 @@
     update.onActivation = true;
     packages = [
       "org.vinegarhq.Sober"
-      "org.vinegarhq.Vinegar"
     ];
   };
+  
   
   modules = {
     core.enable = true;
@@ -173,7 +159,6 @@
     pipewire.enable = true;
     systemd-boot.enable = true;
     steam.enable = true;
-    xdg.enable = true;
     zram.enable = true;
     #zswap.enable = true;
     gamemode.enable = true;

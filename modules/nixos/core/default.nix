@@ -122,6 +122,27 @@
       layout = "gb";
       variant = "colemak";
     };
+    
+    ########## KEYRING ##########
+    
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.login.enableGnomeKeyring = true;
+    
+    ########## XDG ##########
+    
+    xdg.portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-wlr
+        pkgs.xdg-desktop-portal-gtk
+      ];
+      xdgOpenUsePortal = true;
+      config = {
+        common = {
+          default = ["wlr" "gtk"];
+        };
+      };
+    };
 
     ########## LOCALE ##########
 
@@ -148,7 +169,13 @@
     };
 
     ########## MISC ##########
-
+    
+    # EXPERIMENTAL - High performance implementation of DBUS.
+    services.dbus = {
+      enable = true;
+      implementation = "broker";
+    };
+    
     # Fix 'command-not-found' error 'failed to open database'.
     programs.command-not-found.enable = false;
 
