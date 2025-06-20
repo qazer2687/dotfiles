@@ -7,15 +7,12 @@
   options.modules.docker.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.docker.enable {
-    users.users.dockremap = {
-      isSystemUser = true;
-      group = "dockremap";
-      subUidRanges = [{ startUid = 165536; count = 65536; }];
-      subGidRanges = [{ startGid = 165536; count = 65536; }];
+
+    users.users.alex = {
+      subUidRanges = [{ startUid = 100000; count = 65536; }];
+      subGidRanges = [{ startGid = 100000; count = 65536; }];
+      extraGroups = ["docker"];
     };
-    users.groups.dockremap = {};
-    
-    users.users.alex.extraGroups = ["docker" "dockremap"];
     
     virtualisation.docker = {
       enable = true;
@@ -26,10 +23,8 @@
         # A fix for s6-svscan hanging on shutdown.
         # https://github.com/NixOS/nixpkgs/issues/182916#issuecomment-1364504677
         live-restore = false;
-        
-        # Make all containers be owned by the dockremap user and
-        # editable by my user if they are in the dockremap group.
-        userns-remap = "default";
+
+        userns-remap = "alex";
         
         # Use crun as the default runtime
         "default-runtime" = "crun";
