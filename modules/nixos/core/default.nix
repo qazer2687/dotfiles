@@ -182,14 +182,13 @@
     programs.dconf.enable = true;
     security.polkit.enable = true;
     
-    /* This appears to break docker.
     # Less bloated sudo implementation.
     security.sudo.enable = false;
     security.sudo-rs = {
       enable = true;
       wheelNeedsPassword = false;
     };
-    */
+
     
     # OOM Killer
     services.earlyoom.enable = true;
