@@ -73,9 +73,8 @@
   fileSystems."/mnt/external" = {
     device = "/dev/sda1";
     fsType = "exfat";
-    options = ["umask=0000" "nofail"]; # 777
-    # Skip the slow filesystem check.
-    fsck = false;
+    options = ["umask=0000" "nofail"];
+    noCheck = true;  # This disables fsck
   };
 
   # Bind my media directory to the external HDD.
