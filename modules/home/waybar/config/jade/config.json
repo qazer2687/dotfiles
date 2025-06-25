@@ -38,7 +38,17 @@
     },
 
     "hyprland/workspaces": {
-      "format": "{number}"
+      "format": "{id}",
+      "on-click": "activate",
+      "all-outputs": false,
+      "active-only": false,
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": []
+      }
     },
 
     "mpris": {
