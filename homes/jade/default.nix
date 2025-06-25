@@ -45,7 +45,6 @@
     foot.enable = true;
     fastfetch.enable = true;
     eza.enable = true;
-    bat.enable = true;
     zoxide.enable = true;
     screenshot.enable = true;
 

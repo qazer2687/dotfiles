@@ -25,7 +25,6 @@
     firefox.enable = true;
     fish.enable = true;
     webcam.enable = true;
-    bat.enable = true;
     eza.enable = true;
     vscode.enable = true;
     git.enable = true;

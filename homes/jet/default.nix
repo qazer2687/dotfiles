@@ -56,7 +56,6 @@
     eza.enable = true;
     direnv.enable = true;
     git.enable = true;
-    bat.enable = true;
     zoxide.enable = true;
     screenshot.enable = true;
     
