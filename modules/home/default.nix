@@ -1,39 +1,10 @@
 {...}: {
-  imports = [
-    ./alacritty
-    ./foot
-    ./git
-    ./i3
-    ./firefox
-    ./prismlauncher
-    ./sway
-    ./vscode
-    ./waybar
-    ./wofi
-    ./theme
-    ./mako
-    ./fish
-    ./polybar
-    ./dunst
-    ./emacs
-    ./direnv
-    ./starship
-    ./bat
-    ./eza
-    ./webcam
-    ./hyprland
-    ./gpg
-    ./mangohud
-    ./niri
-    ./mpd
-    ./fastfetch
-    #./hyprpanel
-    ./hyprlock
-    ./zed
-    ./zoxide
-    ./tofi
-    ./dwl
-    ./screenshot
-    ./xdg
-  ];
+  imports = 
+    let
+      modules = builtins.readDir ./.;
+    in
+      map (name: ./. + "/${name}") 
+        (builtins.filter 
+          (name: name != "default.nix") 
+          (builtins.attrNames modules));
 }
