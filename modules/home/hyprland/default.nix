@@ -110,9 +110,6 @@
           explicit_sync = 0;
           # Direct scanout attempts to reduce lag when there is only one fullscreen application on a screen.
           direct_scanout = 1;
-          # Disables back buffer and bottom layer rendering.
-          xp_mode = true;
-          
         };
 
         misc = {
@@ -128,11 +125,11 @@
           "f[1], gapsout:4, gapsin:0"
         ];
         windowrulev2 = [
-          #"rounding 0, class:(?i).*waybar.*"
+          "rounding 0, class:(?i).*waybar.*"
         ];
         layerrule = [
           # Disable tofi animation.
-          #"noanim,(?i).*tofi.*"
+          "noanim,(?i).*tofi.*"
         ];
 
         bind = [
