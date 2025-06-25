@@ -137,7 +137,6 @@
           "SUPER, Return, exec, foot"
           "SUPER, E, exec, tofi-run | sh"
           "SUPER, Q, killactive"
-          "SUPER, SPACE, togglefloating"
           "SUPER, F, fullscreen"
 
           # Workspace Navigation
