@@ -9,10 +9,10 @@
 window#waybar {
   background-color: #000000;
 }
-#tags {
+#workspaces {
   background-color: transparent;
 }
-#tags button {
+#workspaces button {
   padding: 3px 18px;
   margin-top: 6px;
   margin-bottom: 6px;
@@ -22,11 +22,11 @@ window#waybar {
   background-color: #262626;
   color: #ffffff;
 }
-#tags button.focused {
+#workspaces button.focused {
   color: #000000;
   background-color: #ffffff;
 }
-#tags button:not(.occupied):not(.focused) {
+#workspaces button:not(.occupied):not(.focused) {
   color: #000000;
   background-color: #000000;
 }

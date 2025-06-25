@@ -46,7 +46,7 @@ window#waybar {
     border-color: @lightest @darkest @darkest @lightest;
 }
 
-#tags button {
+#workspaces button {
   all: initial;
   min-width: 0;
   padding: 4px 8px;
@@ -59,13 +59,13 @@ window#waybar {
   margin: 2px 1px;
 }
 
-#tags button.focused {
+#workspaces button.focused {
   color: @text;
   border-color: @darkest @lightest @lightest @darkest;
   box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-#tags button.occupied {
+#workspaces button.occupied {
   background-image: linear-gradient(@text, @text);
   background-repeat: no-repeat;
   background-size: 4px 4px;
