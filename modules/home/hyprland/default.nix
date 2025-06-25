@@ -46,12 +46,12 @@
           # Master/Stack
           layout = "master";
 
-          gaps_in = 2;
-          gaps_out = "4,30,4,30";
-          border_size = 1;
+          gaps_in = 0;
+          gaps_out = 4;
+          border_size = 2;
 
           resize_on_border = false;
-          allow_tearing = false;
+          allow_tearing = true;
         };
         
         master = {
@@ -63,7 +63,7 @@
         };
 
         gestures = {
-          workspace_swipe = true;
+          workspace_swipe = false;
         };
 
         decoration = {
@@ -91,7 +91,7 @@
 
             "fadeIn, 1, 0.25, b"
 
-            "workspaces, 1, 2, b, slidevert"
+            "workspaces, 1, 2, b, slide"
           ];
         };
 
@@ -118,12 +118,17 @@
 
         cursor = {
           no_warps = true;
+        
+          
+        render = {
+          explicit_sync = 0;
         };
 
         misc = {
           disable_splash_rendering = true;
           disable_hyprland_logo = true;
           vfr = true;
+          vrr = 0;
         };
 
         # Smart Gaps
