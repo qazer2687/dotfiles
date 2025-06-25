@@ -118,6 +118,7 @@
 
         cursor = {
           no_warps = true;
+        };
         
           
         render = {
