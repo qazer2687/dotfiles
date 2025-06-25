@@ -42,11 +42,9 @@
         };
         
         master = {
-          new_is_master = true;
           mfact = 0.75;
           orientation = "left";
           inherit_fullscreen = true;
-          always_center_master = false;
         };
 
         gestures = {
