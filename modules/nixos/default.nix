@@ -1,10 +1,16 @@
 {...}: {
-  imports = 
-    let
-      modules = builtins.readDir ./.;
-    in
-      map (name: ./. + "/${name}") 
-        (builtins.filter 
-          (name: name != "default.nix" && name != "_archived") 
-          (builtins.attrNames modules));
+  imports = [
+    ./nvidia
+    ./pipewire
+    ./systemd-boot
+    ./steam
+    ./filesystem
+    ./zram
+    ./nh
+    ./core
+    ./gamemode
+    ./tailscale
+    ./docker
+    ./samba
+  ];
 }
