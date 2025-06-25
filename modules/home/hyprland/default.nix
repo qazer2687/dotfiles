@@ -8,22 +8,6 @@
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprland.enable {
-    /*
-    services.hyprpaper = {
-      enable = true;
-      settings = {
-        ipc = "off";
-        splash = false;
-        preload = [
-          "/home/alex/.config/wallpaper/wallpaper.png"
-        ];
-        wallpaper = [
-          "HDMI-A-1,/home/alex/.config/wallpaper/wallpaper.png"
-          "eDP-1,/home/alex/.config/wallpaper/wallpaper.png"
-        ];
-      };
-    };*/
-    
     home.packages = with pkgs; [
       wbg
       brightnessctl
@@ -40,7 +24,10 @@
       ];
 
       settings = {
-        monitor = [",highrr,auto,2"];
+        monitor = [
+          "eDP-1,highrr,auto,2"
+          "DP-1,highrr,auto,1.2"
+        ];
 
         general = {
           # Master/Stack
