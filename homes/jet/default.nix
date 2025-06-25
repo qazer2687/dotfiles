@@ -21,10 +21,6 @@
     
     # Simple image viewer application written with GTK4 and Rust
     loupe
-    
-    # Dorion is an alternative Discord client aimed towards lower-spec 
-    # or storage-sensitive PCs that supports themes, plugins, and more!
-    dorion
 
     # Disk usage analyzer with console interface.
     gdu
@@ -34,8 +30,6 @@
     
     # Open source clone of the Microprose game “Transport Tycoon Deluxe”.
     openttd-jgrpp
-
-    inputs.zen.packages."${system}".default
 
     # Misc Libs
     ffmpeg-full
@@ -47,7 +41,9 @@
 
   modules = {
     # Desktop Environment
-    dwl.enable = true;
+    hyprland.enable = true;
+    hyprlock.enable = true;
+    
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;

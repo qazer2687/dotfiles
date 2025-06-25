@@ -4,26 +4,11 @@
   pkgs,
   inputs,
   ...
-}: let
-  screenshot = pkgs.writeShellApplication {
-    name = "screenshot";
-    runtimeInputs = with pkgs; [
-      grim
-      slurp
-      wl-clipboard
-    ];
-    text = ''
-      grim -g "$(slurp -b 00000055 -c ffffffff)" - | wl-copy -t image/png
-    '';
-  };
-in {
+}: {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprland.enable {
-    home.packages = [
-      screenshot
-    ];
-
+    /*
     services.hyprpaper = {
       enable = true;
       settings = {
@@ -37,14 +22,20 @@ in {
           "eDP-1,/home/alex/.config/wallpaper/wallpaper.png"
         ];
       };
-    };
+    };*/
+    
+    home.packages = with pkgs; [
+      wbg
+      brightnessctl
+      pamixer
+      wlr-randr
+    ];
 
     wayland.windowManager.hyprland = {
       enable = true;
       #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       plugins = [
-        pkgs.hyprlandPlugins.hyprscroller
         #pkgs.hyprlandPlugins.borders-plus-plus
       ];
 
@@ -52,8 +43,8 @@ in {
         monitor = [",highrr,auto,2"];
 
         general = {
-          # Hyprscroller
-          layout = "scroller";
+          # Master/Stack
+          layout = "master";
 
           gaps_in = 2;
           gaps_out = "4,30,4,30";
@@ -62,25 +53,17 @@ in {
           resize_on_border = false;
           allow_tearing = false;
         };
-
-        plugin = {
-          scroller = {
-            column_default_width = "one";
-            center_row_if_space_available = true;
-          };
-
-          /*
-          borders-plus-plus = {
-          	add_borders = 1;
-          	col.border_1 = "#000000";
-          	border_size_1 = 2;
-          		};
-          */
+        
+        master = {
+          new_is_master = true;
+          mfact = 0.75;
+          orientation = "left";
+          inherit_fullscreen = true;
+          always_center_master = false;
         };
 
         gestures = {
-          # Breaks hyprscroller, needs to be disabled.
-          workspace_swipe = false;
+          workspace_swipe = true;
         };
 
         decoration = {
@@ -152,24 +135,18 @@ in {
         ];
         layerrule = [
           # Disable wofi animation.
-          "noanim,^(wofi)$"
+          "noanim,^(tofi)$"
         ];
 
         bind = [
           # Core
           "SUPER, Return, exec, foot"
-          "SUPER, E, exec, wofi --show drun -H 20%"
+          "SUPER, E, exec, tofi-run | sh"
           "SUPER, Q, killactive"
           "SUPER, SPACE, togglefloating"
           "SUPER, F, fullscreen"
 
-          # Window Management
-          "SUPER, left, movewindow, l"
-          "SUPER, right, movewindow, r"
-          "SUPER, up, movewindow, u"
-          "SUPER, down, movewindow, d"
-
-          # Workspaces
+          # Workspace Navigation
           "SUPER, 1, workspace, 1"
           "SUPER, 2, workspace, 2"
           "SUPER, 3, workspace, 3"
@@ -180,7 +157,8 @@ in {
           "SUPER, 8, workspace, 8"
           "SUPER, 9, workspace, 9"
           "SUPER, 0, workspace, 10"
-
+          
+          # Workspace Manipulation
           "SUPER SHIFT, 1, movetoworkspace, 1"
           "SUPER SHIFT, 2, movetoworkspace, 2"
           "SUPER SHIFT, 3, movetoworkspace, 3"
@@ -192,7 +170,19 @@ in {
           "SUPER SHIFT, 9, movetoworkspace, 9"
           "SUPER SHIFT, 0, movetoworkspace, 10"
 
-          # Window Resize
+          # Window Navigation
+          "SUPER, left, cyclenext, prev"
+          "SUPER, right, cyclenext"
+          "SUPER, up, cyclenext, prev"
+          "SUPER, down, cyclenext"
+          "SUPER, space, layoutmsg, swapwithmaster"
+          
+          # Window Manipulation
+          "SUPER SHIFT, left, layoutmsg, mfact -0.05"
+          "SUPER SHIFT, right, layoutmsg, mfact +0.05"
+          
+          # Quit
+          "SUPER SHIFT, Q, exit"
         ];
 
         # Will repeat when held.
@@ -208,8 +198,8 @@ in {
           ",XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%-"
 
           # Backlight
-          "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%+"
-          "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 10%-"
+          "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%+"
+          "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%-"
         ];
 
         bindl = [
@@ -230,6 +220,7 @@ in {
           # "kaneru"
           "waybar"
           # "hyprpanel"
+          "${pkgs.wbg}/bin/wbg /home/alex/.config/wallpaper/wallpaper.png"
           "${pkgs.hyprsunset}/bin/hyprsunset -t 3500"
         ];
       };

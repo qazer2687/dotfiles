@@ -145,8 +145,7 @@
 
   modules = {
     core.enable = true;
-    #bluetooth.enable = true;
-
+    
     # Sound is managed via the setupAsahiSound option
     # and I do not need easyeffects installed on Jet.
     # pipewire.enable = true;
