@@ -2,7 +2,7 @@
   "layer": "top",
   "height": 28,
   "margin": "0 0 0 0",
-  "modules-left": ["clock", "dwl/tags"],
+  "modules-left": ["clock", "hyprland/workspaces"],
   "modules-center": [],
   "modules-right": ["tray", "backlight", "network", "pulseaudio", "battery"],
   "pulseaudio": {
@@ -34,20 +34,8 @@
     },
     "margin-left": 15
   },
-  "dwl/tags": {
-    "num-tags": 9,
-    "tag-labels": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9"
-    },
-    "margin-left": 15
+  "hyprland/workspaces": {
+    "format": "{number}"
   },
   "backlight": {
     "device": "apple-panel-bl",
