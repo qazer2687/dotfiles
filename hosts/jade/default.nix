@@ -113,7 +113,7 @@
 
   # Automatically launch DWL after login.
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session dwl
+    [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session Hyprland
   '';
 
   swapDevices = [
@@ -137,7 +137,7 @@
       # GDK_SCALE = "2";
 
       # Required by the tearing.patch for dwl.
-      WLR_DRM_NO_ATOMIC = "1";
+      #WLR_DRM_NO_ATOMIC = "1";
     };
     # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
     systemPackages = [ pkgs.flatpak ];
