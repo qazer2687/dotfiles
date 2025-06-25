@@ -35,17 +35,14 @@
     "margin-left": 15
   },
   "hyprland/workspaces": {
-    "format": "{id}",
-    "on-click": "activate",
-    "all-outputs": false,
-    "active-only": false,
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": []
-    }
+  	"format": "{icon}",
+  	"format-icons": {
+  		"1": "1",
+  		"2": "2",
+  		"3": "3",
+  		"4": "4",
+  		"5": "5"
+	  }
   },
   "backlight": {
     "device": "apple-panel-bl",
