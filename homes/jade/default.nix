@@ -56,8 +56,6 @@
     
     firefox.enable = true;
     
-    xdg.enable = true;
-    
 
     # Development
     direnv.enable = true;

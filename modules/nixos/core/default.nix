@@ -167,6 +167,16 @@
         # the configuration for a specific host.
       };
     };
+    
+    ########## COMPATIBILITY ##########
+    
+    # Support for trash:/// on nautilus.
+    services.gvfs.enable = true;
+
+    # Support for heic image preview on nautilus.
+    environment.systemPackages = [ pkgs.libheif pkgs.libheif.out ];
+    environment.pathsToLink = [ "share/thumbnailers" ];
+    
 
     ########## MISC ##########
     
