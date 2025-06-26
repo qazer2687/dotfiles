@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ../../hardware/amber
-    ../../modules/nixos
+    ../../modules/base
   ];
 
   users.users.alex = {

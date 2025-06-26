@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../hardware/opal
-    ../../modules/nixos
+    ../../modules/base
   ];
 
   networking.hostName = "opal";

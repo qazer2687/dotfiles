@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../hardware/ruby
-    ../../modules/nixos
+    ../../modules/base
   ];
 
   boot.loader.efi.efiSysMountPoint = "/boot/efi";

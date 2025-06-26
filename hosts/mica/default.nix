@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../hardware/mica
-    ../../modules/nixos
+    ../../modules/base
   ];
 
   networking.hostName = "mica";

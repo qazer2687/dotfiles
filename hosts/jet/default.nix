@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../hardware/jet
-    ../../modules/nixos
+    ../../modules/base
   ];
 
   networking.hostName = "jet";

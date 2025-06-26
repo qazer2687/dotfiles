@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: {
   options.modules.hyprland.enable = lib.mkEnableOption "";
