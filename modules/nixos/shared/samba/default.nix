@@ -17,7 +17,7 @@
           "map to guest" = "bad user";
         };
         samba = {
-          "path" = "/mnt/external/media";
+          "path" = "/mnt/external/media/downloads";
           "read only" = "yes";
           "guest ok" = "yes";
           # Hide the downloads folder.
