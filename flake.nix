@@ -19,13 +19,13 @@
 
     nixosConfigurations = {
       # Desktop
-      jade = (import ./systems/jade.nix) {inherit inputs self;};
+      jade = (import ./flake/jade) {inherit inputs self;};
 
       # Laptop
-      jet = (import ./systems/jet.nix) {inherit inputs self;};
+      jet = (import ./flake/jet) {inherit inputs self;};
 
       # Server
-      mica = (import ./systems/mica.nix) {inherit inputs self;};
+      mica = (import ./flake/mica) {inherit inputs self;};
     };
   };
 }
