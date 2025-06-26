@@ -52,7 +52,7 @@
   ];
 
   environment = {
-    systemPackages = with pkgs; [
+    systemPackages = [
       # Put system packages here...
     ];
     sessionVariables = {
