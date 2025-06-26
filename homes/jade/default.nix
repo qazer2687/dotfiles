@@ -18,6 +18,7 @@
 
     ncdu
     btop
+    killall
 
     lunar-client
 
