@@ -108,8 +108,11 @@
           
         render = {
           explicit_sync = 0;
-          # Direct scanout attempts to reduce lag when there is only one fullscreen application on a screen.
-          direct_scanout = 1;
+          # Direct scanout attempts to reduce lag when
+          # there is only one fullscreen application on a screen.
+          # This is set to '0' which is disabled because it breaks
+          # keyboard input on Sober.
+          direct_scanout = 0;
         };
 
         misc = {
