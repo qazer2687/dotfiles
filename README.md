@@ -14,10 +14,8 @@
 | :----------- | :--: | :------------------------------------------------------------------------------------------------ | :-----: | :-----------: |
 | `jade`       | NixOS| My desktop PC.                                                                                    | Desktop | x86_64-linux  |
 | `jet`        | NixOS | The Asahi/NixOS install on my Macbook.                                                            | Laptop  | aarch64-linux  |
-| `opal`       | NixOS | ~~My homeserver.~~ DEPRECATED                                                                                    | Server  | x86_64-linux  |
-| `ruby`       | NixOS | My Thinkpad T480.                                                                 	           | Laptop  | x86_64-linux  |
-| `amber`      | NixOS | My experimental VM.                                                                        | Virtual  | x86_64-linux  |
 | `mica`      | NixOS | My TinyMiniMicro homelab.                                                                     | Server  | x86_64-linux  |
+| `amber`      | NixOS | ~~My experimental VM.~~ COMING SOON                                                                        | Virtual  | x86_64-linux  |
 
 
 <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
@@ -25,7 +23,6 @@
 ### Credits ❤️
 
 A huge thank you to the individuals below as I wouldn't have been able to make it this far into my NixOS journey without their help and inspiration.
-
 
 * Mihai Fufezan ([@fufexan](https://github.com/fufexan))
 * Norbert Melzer ([@NobbZ](https://github.com/NobbZ))
