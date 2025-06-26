@@ -7,7 +7,7 @@
 
   config = lib.mkIf config.modules.hyprlock.enable {
     home.file.".config/assets/lockscreen.png" = {
-      source = ../../../../assets/lockscreen.png;
+      source = ../../../assets/lockscreen.png;
     };
 
     programs.hyprlock = {

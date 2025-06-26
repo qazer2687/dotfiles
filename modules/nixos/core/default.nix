@@ -153,7 +153,7 @@
 
     sops = {
       defaultSopsFormat = "yaml";
-      defaultSopsFile = ../../../../secrets/default.yaml;
+      defaultSopsFile = ../../../secrets/default.yaml;
       age.keyFile = "/home/alex/.config/sops/age/keys.txt";
     };
 
