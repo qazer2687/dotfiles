@@ -24,12 +24,15 @@
       systemd.enable = false;
     };
 
-    xdg.configFile = if osConfig.networking.hostName == "jet" then {
-      "waybar/config".source = ./config/jet/config.json;
-      "waybar/style.css".source = ./config/jet/style.css;
-    } else {
-      "waybar/config".source = ./config/jade/config.json;
-      "waybar/style.css".source = ./config/jade/style.css;
-    };
+    xdg.configFile =
+      if osConfig.networking.hostName == "jet"
+      then {
+        "waybar/config".source = ./config/jet/config.json;
+        "waybar/style.css".source = ./config/jet/style.css;
+      }
+      else {
+        "waybar/config".source = ./config/jade/config.json;
+        "waybar/style.css".source = ./config/jade/style.css;
+      };
   };
 }

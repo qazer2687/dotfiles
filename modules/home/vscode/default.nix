@@ -2,11 +2,8 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
-}: let
-  ext = inputs.nix-vscode-extensions.extensions."${pkgs.system}";
-in {
+}: {
   options.modules.vscode.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.vscode.enable {

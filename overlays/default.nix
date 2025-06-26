@@ -24,19 +24,18 @@ _: {
       withFullDeps = true;
     };
 
-    dwl =
-      (prev.dwl.overrideAttrs (_oldAttrs: rec {
-        # The order these are listed is the same as
-        # the order that the patches are applied.
-        patches = [
-          ../patches/dwl/vanitygaps-0.7.patch
+    dwl = prev.dwl.overrideAttrs (_oldAttrs: rec {
+      # The order these are listed is the same as
+      # the order that the patches are applied.
+      patches = [
+        ../patches/dwl/vanitygaps-0.7.patch
         #  ../patches/dwl/bar-0.7.patch
-          ../patches/dwl/ipc.patch
+        ../patches/dwl/ipc.patch
         # ../patches/dwl/hot-reload-0.7.patch
-          ../patches/dwl/autostart-0.7.patch
+        ../patches/dwl/autostart-0.7.patch
         # ../patches/dwl/movestack.patch
         # ../patches/dwl/push.patch
-        ];
-      }));
+      ];
+    });
   };
 }

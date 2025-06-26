@@ -5,7 +5,7 @@
   ...
 }: {
   options.modules.gamemode.enable = lib.mkEnableOption "";
-  
+
   config = lib.mkIf config.modules.gamemode.enable {
     programs.gamemode = {
       enable = true;
@@ -33,10 +33,10 @@
         };
       };
     };
-    
+
     # Ensure user is in gamemode group for proper permissions.
-    users.users.alex.extraGroups = [ "gamemode" ];
-    
+    users.users.alex.extraGroups = ["gamemode"];
+
     powerManagement.cpuFreqGovernor = lib.mkDefault "schedutil";
   };
 }

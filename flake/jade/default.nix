@@ -1,7 +1,10 @@
-{ inputs, self, ... }:
-
+{
+  inputs,
+  self,
+  ...
+}:
 inputs.nixpkgs.lib.nixosSystem {
-  specialArgs = { inherit inputs self; };
+  specialArgs = {inherit inputs self;};
   modules = [
     ../../hosts/jade
     inputs.sops-nix.nixosModules.sops
@@ -11,7 +14,7 @@ inputs.nixpkgs.lib.nixosSystem {
     {
       home-manager = {
         users.alex = ../../homes/jade;
-        extraSpecialArgs = { inherit inputs self; };
+        extraSpecialArgs = {inherit inputs self;};
         useGlobalPkgs = true;
         useUserPackages = true;
         sharedModules = [

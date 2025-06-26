@@ -80,7 +80,7 @@
         level = 0;
     }
   '';
-  
+
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
@@ -95,7 +95,7 @@
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session Hyprland
   '';
-  
+
   # EXPERIMENTAL - See if keyring works.
   services.gnome.gnome-keyring.enable = true;
   environment.systemPackages = with pkgs; [
@@ -129,13 +129,13 @@
 
   modules = {
     core.enable = true;
-    
+
     # Sound is managed via the setupAsahiSound option
     # and I do not need easyeffects installed on Jet.
     # pipewire.enable = true;
 
     systemd-boot.enable = true;
-    
+
     # Marcan said something about it being ineffective on apple silicon.
     # zram.enable = true;
 

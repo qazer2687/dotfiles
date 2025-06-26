@@ -16,7 +16,7 @@
   };
 
   programs.fish.enable = true;
-  
+
   services.udev = {
     extraRules = ''
       # Enable support for the ESP32-CYD2USB.
@@ -77,13 +77,13 @@
     # EXPERIMENTAL - Use the cachyos kernel.
     kernelPackages = pkgs.linuxPackages_cachyos;
   };
-  
+
   # EXPERIMENTAL - Use the scx_lavd scheduler.
   services.scx = {
     enable = true;
     scheduler = "scx_lavd";
   };
-  
+
   # EXPERIMENTAL - Fan control for AIO and GPU.
   programs.coolercontrol = {
     enable = true;
@@ -99,7 +99,7 @@
         level = 0;
     }
   '';
-  
+
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
@@ -140,9 +140,9 @@
       #WLR_DRM_NO_ATOMIC = "1";
     };
     # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
-    systemPackages = [ pkgs.flatpak ];
+    systemPackages = [pkgs.flatpak];
   };
-  
+
   # Roblox - Not in home-manager because of gmodena/nix-flatpak#33.
   services.flatpak = {
     enable = true;
@@ -151,8 +151,7 @@
       "org.vinegarhq.Sober"
     ];
   };
-  
-  
+
   modules = {
     core.enable = true;
     nvidia.enable = true;

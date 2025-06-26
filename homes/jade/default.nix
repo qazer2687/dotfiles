@@ -18,16 +18,16 @@
 
     ncdu
     btop
-    
+
     lunar-client
 
     # Misc
     ffmpeg-full
     libheif
-    
+
     vinegar
   ];
-  
+
   # Rich presence support for vesktop.
   services.arrpc.enable = true;
 
@@ -35,12 +35,12 @@
     # Desktop Environment
     hyprland.enable = true;
     hyprlock.enable = true;
-    
+
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
     theme.enable = true;
-    
+
     # CLI
     fish.enable = true;
     foot.enable = true;
@@ -52,9 +52,8 @@
     # Gaming
     mangohud.enable = true;
     prismlauncher.enable = true;
-    
+
     firefox.enable = true;
-    
 
     # Development
     direnv.enable = true;

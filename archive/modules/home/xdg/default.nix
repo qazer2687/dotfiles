@@ -5,16 +5,15 @@
   ...
 }: {
   options.modules.xdg.enable = lib.mkEnableOption "";
-  
+
   config = lib.mkIf config.modules.xdg.enable {
-    
     /*
     home.file.".local/share/applications" = {
       source = "${config.home.path}/share/applications";
       recursive = true;
     };
     */
-    
+
     xdg = {
       enable = true;
       portal = {
@@ -31,7 +30,7 @@
         };
       };
     };
-    
+
     home.packages = with pkgs; [
       xdg-utils
     ];

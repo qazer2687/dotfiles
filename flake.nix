@@ -14,18 +14,18 @@
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = { self, ... } @ inputs: {
+  outputs = {self, ...} @ inputs: {
     overlays = import ./overlays {inherit inputs;};
 
     nixosConfigurations = {
       # Desktop
-      jade = (import ./systems/jade.nix) { inherit inputs self; };
-      
+      jade = (import ./systems/jade.nix) {inherit inputs self;};
+
       # Laptop
-      jet  = (import ./systems/jet.nix)  { inherit inputs self; };
-      
+      jet = (import ./systems/jet.nix) {inherit inputs self;};
+
       # Server
-      mica = (import ./systems/mica.nix) { inherit inputs self; };
+      mica = (import ./systems/mica.nix) {inherit inputs self;};
     };
   };
 }

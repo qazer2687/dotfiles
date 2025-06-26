@@ -11,22 +11,22 @@
     # Powerful knowledge base that works on top of a
     # local folder of plain text Markdown files
     obsidian
-    
+
     # File manager for GNOME.
     nautilus
-    
+
     # Cross-platform media player and streaming server.
     vlc
-    
+
     # Simple image viewer application written with GTK4 and Rust
     loupe
 
     # Disk usage analyzer with console interface.
     gdu
-    
+
     # Monitor of resources.
     btop
-    
+
     # Open source clone of the Microprose game “Transport Tycoon Deluxe”.
     openttd-jgrpp
 
@@ -42,7 +42,7 @@
     # Desktop Environment
     hyprland.enable = true;
     hyprlock.enable = true;
-    
+
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;

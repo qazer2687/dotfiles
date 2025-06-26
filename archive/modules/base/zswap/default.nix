@@ -9,7 +9,7 @@
     boot.kernel.sysctl = {
       "vm.swappiness" = 1;
     };
-    
+
     boot.kernelParams = [
       "zswap.enabled=1"
       "zswap.compressor=lz4"

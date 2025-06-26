@@ -11,7 +11,7 @@
       userName = "qazer2687";
       userEmail = "114782572+qazer2687@users.noreply.github.com";
       # Force git to use SSH instead of HTTPS globally.
-      # https://news.ycombinator.com/item?id=17793099 
+      # https://news.ycombinator.com/item?id=17793099
       extraConfig = {
         url."git@github.com:" = {
           insteadOf = "https://github.com/";

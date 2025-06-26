@@ -39,7 +39,7 @@
           resize_on_border = false;
           allow_tearing = true;
         };
-        
+
         master = {
           mfact = 0.75;
           orientation = "left";
@@ -103,8 +103,7 @@
         cursor = {
           no_warps = true;
         };
-        
-          
+
         render = {
           explicit_sync = 0;
           # Direct scanout attempts to reduce lag when
@@ -155,7 +154,7 @@
           "SUPER, 8, workspace, 8"
           "SUPER, 9, workspace, 9"
           "SUPER, 0, workspace, 10"
-          
+
           # Workspace Manipulation
           "SUPER SHIFT, 1, movetoworkspace, 1"
           "SUPER SHIFT, 2, movetoworkspace, 2"
@@ -174,11 +173,11 @@
           "SUPER, up, cyclenext, prev"
           "SUPER, down, cyclenext"
           "SUPER, space, layoutmsg, swapwithmaster"
-          
+
           # Window Manipulation
           "SUPER SHIFT, left, layoutmsg, mfact -0.05"
           "SUPER SHIFT, right, layoutmsg, mfact +0.05"
-          
+
           # Quit
           "SUPER SHIFT, Q, exit"
         ];

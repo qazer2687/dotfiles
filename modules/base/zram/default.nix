@@ -6,12 +6,11 @@
   options.modules.zram.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.zram.enable {
-    
     boot.kernel.sysctl = {
       # Ensure all uncompressed ram is used first.
       "vm.swappiness" = 10;
     };
-    
+
     zramSwap = {
       enable = true;
       algorithm = "lz4";

@@ -12,7 +12,7 @@
       pulseaudio
       pavucontrol
       pamixer
-      
+
       # EasyEffects & Plugins
       easyeffects
       calf
@@ -23,22 +23,42 @@
       speexdsp
       libbs2b
     ];
-    
+
     # EXPERIMENTAL - Enable realtime priority
     # to improve latency and reduce stuttering.
     security.pam.loginLimits = [
-      { domain = "@audio"; item = "memlock"; type = "-"; value = "unlimited"; }
-      { domain = "@audio"; item = "rtprio"; type = "-"; value = "99"; }
-      { domain = "@audio"; item = "nofile"; type = "soft"; value = "99999"; }
-      { domain = "@audio"; item = "nofile"; type = "hard"; value = "99999"; }
+      {
+        domain = "@audio";
+        item = "memlock";
+        type = "-";
+        value = "unlimited";
+      }
+      {
+        domain = "@audio";
+        item = "rtprio";
+        type = "-";
+        value = "99";
+      }
+      {
+        domain = "@audio";
+        item = "nofile";
+        type = "soft";
+        value = "99999";
+      }
+      {
+        domain = "@audio";
+        item = "nofile";
+        type = "hard";
+        value = "99999";
+      }
     ];
-    
+
     services.pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      
+
       # I found that 32 quant resulted in choppy audio;
       # 64 is the next option and results in a latency of 1.33ms.
       # Quant should be in powers of two for efficiency

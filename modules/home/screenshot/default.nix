@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: let
   screenshot = pkgs.writeShellApplication {
