@@ -39,8 +39,9 @@
           gaps_out = 4;
           border_size = 2;
 
-          "col.active_border" = "#cba6f7";
-          "col.inactive_border" = "#6f5b87";
+          
+          "col.active_border" = "rgba(cba6f7ff)";
+          "col.inactive_border" = "rgba(6f5b87ff)";
 
           resize_on_border = false;
           allow_tearing = true;
@@ -123,8 +124,6 @@
           vfr = true;
           vrr = 0;
         };
-
-        systemd.variables = ["--all"];
 
         # Smart Gaps
         workspace = [
