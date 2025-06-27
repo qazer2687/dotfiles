@@ -209,6 +209,12 @@
     # OOM Killer
     services.earlyoom.enable = true;
 
+    fonts.fontconfig = {
+      enable = true;
+      # Disable anti-aliasing fonts for sharpness.
+      antialias = false;
+    };
+
     # Use dash as /bin/sh. Although the performance boost
     # will be small to negligible, I might as well use it.
     environment.binsh = "${pkgs.dash}/bin/dash";
