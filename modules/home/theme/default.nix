@@ -48,6 +48,8 @@
 
     fonts.fontconfig = {
       enable = true;
+      antialias = false;
+      hinting.enable = true;
     };
 
     home.packages = with pkgs; [
