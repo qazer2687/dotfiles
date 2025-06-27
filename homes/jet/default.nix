@@ -62,6 +62,7 @@
     # GUI
     zed.enable = true;
     firefox.enable = true;
+    vscode.enable = true;
   };
 
   home.stateVersion = "24.11";
