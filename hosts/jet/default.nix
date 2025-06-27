@@ -92,8 +92,9 @@
     ];
   };
 
+  # Automatically launch UWSM after login.
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session Hyprland
+    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start select
   '';
 
   # EXPERIMENTAL - See if keyring works.

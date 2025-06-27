@@ -111,9 +111,9 @@
     ];
   };
 
-  # Automatically launch DWL after login.
+  # Automatically launch UWSM after login.
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec dbus-run-session Hyprland
+    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start select
   '';
 
   swapDevices = [

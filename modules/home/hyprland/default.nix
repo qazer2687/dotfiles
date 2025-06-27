@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  osConfig,
   ...
 }: {
   options.modules.hyprland.enable = lib.mkEnableOption "";
@@ -16,6 +17,9 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
+      withUWSM = true;
+      # Enable xwayland for gaming on Jade.
+      xwayland.enable = osConfig.networking.hostName == "jade";
       #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       plugins = [
@@ -32,7 +36,7 @@
           # Master/Stack
           layout = "master";
 
-          gaps_in = 0;
+          gaps_in = 2;
           gaps_out = 4;
           border_size = 2;
 

@@ -135,11 +135,12 @@
       extraPortals = [
         pkgs.xdg-desktop-portal-wlr
         pkgs.xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland
       ];
       xdgOpenUsePortal = true;
       config = {
         common = {
-          default = ["wlr" "gtk"];
+          default = ["hyprland" "wlr" "gtk"];
         };
       };
     };
@@ -198,6 +199,13 @@
       wheelNeedsPassword = false;
     };
 
+    # Improved nixos-rebuild implementation.
+    programs.nh = {
+      enable = true;
+      clean.enable = false;
+      flake = "/home/alex/Code/dotfiles";
+    };
+
     # OOM Killer
     services.earlyoom.enable = true;
 
@@ -210,9 +218,9 @@
     # Discard all core dumps.
     boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
 
-    # Add a global rebuild command to bash for any hosts that aren't using fish or home-manager.
+    # Add a global rebuild command to bash for any hosts that aren't using home-manager.
     programs.bash.shellAliases = {
-      "rebuild" = "sudo nixos-rebuild switch --flake github:qazer2687/dotfiles#$(hostname) --refresh --option eval-cache false";
+      "rebuild" = "nh os switch github:qazer2687/dotfiles -H $(hostname) -- --refresh --option eval-cache false";
     };
   };
 }
