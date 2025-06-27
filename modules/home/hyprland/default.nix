@@ -17,7 +17,6 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
-      withUWSM = true;
       # Enable xwayland for gaming on Jade.
       xwayland.enable = osConfig.networking.hostName == "jade";
       #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;

@@ -92,6 +92,11 @@
     ];
   };
 
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
+
   # Automatically launch UWSM after login.
   environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start select
