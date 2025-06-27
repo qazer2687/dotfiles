@@ -60,12 +60,12 @@
         decoration = {
           rounding = 4;
 
-          active_opacity = 0.98;
-          inactive_opacity = 0.9;
+          active_opacity = 1;
+          inactive_opacity = 1;
 
           # Disabled for performance.
           blur = {
-            enabled = true;
+            enabled = false;
           };
           shadow = {
             enabled = false;
@@ -74,15 +74,17 @@
 
         animations = {
           enabled = true;
-          bezier = "b, 0.87, 0, 0.13, 1";
+          bezier = [
+            "easeOutCirc, 0, 0.55, 0.45, 1"
+          ];
           animation = [
-            "windowsIn, 0, 0.25, b"
-            "windowsMove, 0, 0.25, b"
-            "windowsOut, 0, 0.25, b"
+            "windowsIn, 0, 0.25, easeOutCirc"
+            "windowsMove, 0, 0.25, easeOutCirc"
+            "windowsOut, 0, 0.25, easeOutCirc"
 
-            "fadeIn, 0, 0.25, b"
+            "fadeIn, 0, 0.25, easeOutCirc"
 
-            "workspaces, 1, 2, b, slide"
+            "workspaces, 1, 2, easeOutCirc, slide"
           ];
         };
 
