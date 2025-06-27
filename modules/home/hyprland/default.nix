@@ -65,7 +65,7 @@
 
           # Disabled for performance.
           blur = {
-            enabled = false;
+            enabled = true;
           };
           shadow = {
             enabled = false;
