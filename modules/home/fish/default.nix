@@ -11,14 +11,27 @@
         set fish_greeting # disable greeting
       '';
       
+      
       functions = {
         fish_prompt = ''
           set -l nix_shell_info (
             if test -n "$IN_NIX_SHELL"
-              echo -n "<nix-shell> "
+              echo -n -s (set_color yellow) "<nix-shell> " (set_color normal)
             end
           )
-          echo -n -s "$nix_shell_info~> "
+          
+          # Get user and hostname with default colors
+          set -l user (whoami)
+          set -l hostname (hostname -s)
+          
+          # Default fish prompt styling
+          echo -n -s "$nix_shell_info" \
+            (set_color green) "$user" \
+            (set_color normal) "@" \
+            (set_color blue) "$hostname" \
+            (set_color normal) " " \
+            (set_color cyan) (prompt_pwd) \
+            (set_color normal) "> "
         '';
         
         nix-shell = ''
