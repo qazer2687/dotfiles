@@ -73,7 +73,7 @@
         };
 
         animations = {
-          enabled = true;
+          enabled = false;
           bezier = [
             "easeOutCirc, 0, 0.55, 0.45, 1"
           ];
@@ -84,7 +84,7 @@
 
             "fadeIn, 0, 0.25, easeOutCirc"
 
-            "workspaces, 1, 2, easeOutCirc, slide"
+            "workspaces, 0, 2, easeOutCirc, slide"
           ];
         };
 
