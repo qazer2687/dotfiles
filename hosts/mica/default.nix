@@ -94,11 +94,8 @@
     };
   };
 
-  # For vscode server until I configure the vscode server flake:
-  # https://github.com/nix-community/nixos-vscode-server.
+  # Required for root zed server.
   programs.nix-ld.enable = true;
-  # Zed has a server option in the home manager module
-  # so if that works I can remove this.
 
   modules = {
     core.enable = true;
