@@ -39,6 +39,9 @@
           gaps_out = 4;
           border_size = 2;
 
+          "col.active_border" = "rgb(#cba6f7)";
+          "col.inactive_border" = "rgb(#6f5b87)";
+
           resize_on_border = false;
           allow_tearing = true;
         };
@@ -111,9 +114,7 @@
           explicit_sync = 0;
           # Direct scanout attempts to reduce lag when
           # there is only one fullscreen application on a screen.
-          # This is set to '0' which is disabled because it breaks
-          # keyboard input on Sober.
-          direct_scanout = 0;
+          direct_scanout = 1;
         };
 
         misc = {
@@ -122,6 +123,8 @@
           vfr = true;
           vrr = 0;
         };
+
+        systemd.variables = ["--all"];
 
         # Smart Gaps
         workspace = [
