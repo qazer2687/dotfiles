@@ -18,6 +18,7 @@
     eza.enable = true;
     direnv.enable = true;
     git.enable = true;
+    zed.enable = true;
   };
 
   home.stateVersion = "24.11";
