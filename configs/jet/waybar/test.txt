@@ -1,1 +1,0 @@
-i dont want to have modules for each host because that would be incredibly tedious to manage so i might use this to specific per-host configs and then just pick them by hostname from the module

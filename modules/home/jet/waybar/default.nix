@@ -105,142 +105,98 @@
       };
       
       style = ''
-        @define-color darkest #0d0d0d;
-        @define-color darker #1a1a1a;
-        @define-color base #2d2d2d;
-        @define-color lighter #404040;
-        @define-color lightest #999999;
-        @define-color text #b8b8b8;
-  
         * {
-            font-family: "Departure Mono", "FiraCode Mono Nerd Font";
-            font-size: 11px;
-            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            min-height: 0;
+            font-family: "iosevka nerd font";
+            font-weight: 500;
+            font-size: 14px;
+            padding: 0;
         }
-  
-        /* Base styles */
+        
         window#waybar {
-            background-color: #000000;
-            border-radius: 0;
+            background: #1d2021;
+            border: 2px solid #3c3836;
         }
-  
-        /* Common module styling */
-        #memory,
-        #custom-power,
-        #battery,
-        #backlight,
-        #pulseaudio,
-        #network,
-        #cpu,
-        #temperature,
-        #disk,
-        #mpris,
+        
+        tooltip {
+            background-color: #1d2021;
+            border: 2px solid #7c6f64;
+        }
+        
+        #clock,
         #tray,
-        #tray menu {
-            margin: 2px 1px;
-            padding: 3px 6px;
-            border-radius: 0;
-            color: @text;
-            background-color: @base;
-            border: 1px solid;
-            border-color: @lightest @darkest @darkest @lightest;
-            box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
-            font-weight: normal;
+        #cpu,
+        #memory,
+        #battery,
+        #network,
+        #pulseaudio {
+            margin: 6px 6px 6px 0px;
+            padding: 2px 8px;
         }
-  
-        /* Special module styling */
-        #mpris {
-            background-color: @base;
-            color: @text;
-            border: 1px solid;
-            border-color: @lightest @darkest @darkest @lightest;
+        
+        #workspaces {
+            background-color: #303536;
+            margin: 6px 0px 6px 6px;
+            border: 2px solid #434a4c;
         }
-  
+        
         #workspaces button {
-          all: initial;
-          min-width: 0;
-          padding: 4px 8px;
-          border-radius: 0;
-          color: @text;
-          background-color: @base;
-          border: 1px solid;
-          border-color: @lightest @darkest @darkest @lightest;
-          box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
-          margin: 2px 1px;
+            all: initial;
+            min-width: 0;
+            box-shadow: inset 0 -3px transparent;
+            padding: 2px 4px;
+            color: #c7ab7a;
         }
-  
+        
         #workspaces button.focused {
-          color: @text;
-          border-color: @darkest @lightest @lightest @darkest;
-          box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(0, 0, 0, 0.3);
+            color: #ddc7a1;
         }
-  
-        #workspaces button.occupied {
-          background-image: linear-gradient(@text, @text);
-          background-repeat: no-repeat;
-          background-size: 4px 4px;
-          background-position: top left;
+        
+        #workspaces button.urgent {
+            background-color: #e78a4e;
         }
-  
-        #battery {
-          margin-right: 16px;
-        }
-  
+        
         #clock {
-            margin: 2px 1px 2px 16px;
-            padding: 4px 8px;
-            border-radius: 0;
-            background-color: @base;
-            color: @text;
-            border: 1px solid;
-            border-color: @lightest @darkest @darkest @lightest;
-            box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px rgba(0, 0, 0, 0.3);
-            font-weight: normal;
+            background-color: #303536;
+            border: 2px solid #434a4c;
+            color: #d4be98;
         }
-  
-        @keyframes warnBlink {
-          from {
-            color: @text;
-          }
-          to {
-            color: #e8e8e8;
-          }
+        
+        #tray {
+            background-color: #d4be98;
+            border: 2px solid #c7ab7a;
         }
-  
-        /* Battery level colors */
-        #battery.warning {
-          animation-name: warnBlink;
-          animation-duration: 0.1s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
+        
+        #battery {
+            background-color: #a9b665;
+            border: 2px solid #c7ab7a;
+            color: #6c782e;
         }
-  
-        @keyframes critBlink {
-          from {
-            color: @text;
-          }
-          to {
-            color: #ff0000;
-          }
+        
+        #cpu,
+        #memory,
+        #network,
+        #pulseaudio {
+            background-color: #ddc7a1;
+            border: 2px solid #c7ab7a;
+            color: #1d2021;
         }
-  
-        #battery.critical {
-          animation-name: critBlink;
-          animation-duration: 0.1s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
+        
+        #cpu.critical,
+        #memory.critical {
+            background-color: #ddc7a1;
+            border: 2px solid #c7ab7a;
+            color: #c14a4a;
         }
-  
-        /* Network disconnected */
-        #network.disconnected {
-            color: @text;
-        }
-  
-        /* Temperature warning */
-        #temperature.critical {
-            color: #cc4444;
+        
+        #battery.warning,
+        #battery.critical,
+        #battery.urgent {
+            background-color: #ddc7a1;
+            border: 2px solid #c7ab7a;
+            color: #c14a4a;
         }
       '';
     };
