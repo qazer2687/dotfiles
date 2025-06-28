@@ -109,7 +109,7 @@
 
     # SSH Keys
     sops.secrets.ssh-keys = {
-      sopsFile = ../../../secrets/ssh-keys.yaml;
+      sopsFile = ../../../../secrets/ssh-keys.yaml;
       mode = "0400";
       path = "${config.home.homeDirectory}/.config/nix/ssh-keys";
       key = "github-qazer2687";
@@ -117,7 +117,7 @@
 
     # Access Tokens
     sops.secrets.access-tokens = {
-      sopsFile = ../../../secrets/access-tokens.yaml;
+      sopsFile = ../../../../secrets/access-tokens.yaml;
       mode = "0400";
       path = "${config.home.homeDirectory}/.config/nix/access-tokens.conf";
       key = "qazer2687";
