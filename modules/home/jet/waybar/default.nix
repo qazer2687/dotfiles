@@ -177,7 +177,7 @@
         }
 
         #workspaces button.focused {
-          background-color: mantle;
+          background-color: @mantle;
           color: @mauve;
         }
 
