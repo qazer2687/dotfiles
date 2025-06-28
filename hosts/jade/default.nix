@@ -6,7 +6,7 @@
 
   networking.hostName = "jade";
 
-  users.usfers = {
+  users.users = {
     alex = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "video" "audio"];
