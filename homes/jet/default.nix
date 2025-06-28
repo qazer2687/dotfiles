@@ -39,6 +39,8 @@
   # services.arrpc.enable = true;
 
   modules = {
+    core.enable = true;
+    
     # Desktop Environment
     hyprland.enable = true;
     hyprlock.enable = true;
@@ -46,18 +48,11 @@
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
-    theme.enable = true;
 
     # CLI
     fish.enable = true;
     foot.enable = true;
     fastfetch.enable = true;
-    webcam.enable = true;
-    eza.enable = true;
-    direnv.enable = true;
-    git.enable = true;
-    zoxide.enable = true;
-    screenshot.enable = true;
 
     # GUI
     zed.enable = true;

@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  osConfig,
   ...
 }: {
   options.modules.hyprland.enable = lib.mkEnableOption "";
@@ -16,6 +17,8 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
+      # Enable xwayland for gaming on Jade.
+      xwayland.enable = osConfig.networking.hostName == "jade";
       #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       plugins = [
@@ -32,9 +35,13 @@
           # Master/Stack
           layout = "master";
 
-          gaps_in = 0;
+          gaps_in = 2;
           gaps_out = 4;
           border_size = 2;
+
+          
+          "col.active_border" = "rgba(cba6f7ff)";
+          "col.inactive_border" = "rgba(6f5b87ff)";
 
           resize_on_border = false;
           allow_tearing = true;
@@ -66,16 +73,18 @@
         };
 
         animations = {
-          enabled = true;
-          bezier = "b, 0.87, 0, 0.13, 1";
+          enabled = false;
+          bezier = [
+            "easeOutCirc, 0, 0.55, 0.45, 1"
+          ];
           animation = [
-            "windowsIn, 0, 0.25, b"
-            "windowsMove, 0, 0.25, b"
-            "windowsOut, 0, 0.25, b"
+            "windowsIn, 0, 0.25, easeOutCirc"
+            "windowsMove, 0, 0.25, easeOutCirc"
+            "windowsOut, 0, 0.25, easeOutCirc"
 
-            "fadeIn, 0, 0.25, b"
+            "fadeIn, 0, 0.25, easeOutCirc"
 
-            "workspaces, 1, 2, b, slide"
+            "workspaces, 0, 2, easeOutCirc, slide"
           ];
         };
 
@@ -108,9 +117,7 @@
           explicit_sync = 0;
           # Direct scanout attempts to reduce lag when
           # there is only one fullscreen application on a screen.
-          # This is set to '0' which is disabled because it breaks
-          # keyboard input on Sober.
-          direct_scanout = 0;
+          direct_scanout = 1;
         };
 
         misc = {

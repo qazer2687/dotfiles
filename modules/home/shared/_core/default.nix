@@ -126,13 +126,29 @@
     # Load the from the sops plaintext file into conf.nix.
     nix.extraOptions = "!include ${config.sops.secrets."access-tokens".path}";
     
+    ########## DIRENV ##########
+    
+    programs.direnv = {
+      enable = true;
+      nix-direnv = {
+        enable = true;
+      };
+      config = {
+        global = {
+          disable_stdin = true;
+          warn_timeout = 0;
+          hide_env_diff = true;
+        };
+      };
+    };
+    
     ########## PACKAGES ##########
     
     home.packages = let   
       fonts = with pkgs; [
         noto-fonts-color-emoji
         noto-fonts-cjk-sans
-        
+  
         atkinson-hyperlegible
         agave
         terminus_font
@@ -141,7 +157,7 @@
         fixedsys-excelsior
         monaspace
         pragmatapro
-        
+  
         nerd-fonts.fira-code
         nerd-fonts.fira-mono
         nerd-fonts.iosevka
@@ -184,7 +200,6 @@
       enable = true;
       enableFishIntegration = true;
     };
-    
     
   };
 }

@@ -37,6 +37,8 @@
   };
 
   modules = {
+    core.enable = true;
+    
     # Desktop Environment
     hyprland.enable = true;
     hyprlock.enable = true;
@@ -44,15 +46,11 @@
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
-    theme.enable = true;
 
     # CLI
     fish.enable = true;
     foot.enable = true;
     fastfetch.enable = true;
-    eza.enable = true;
-    zoxide.enable = true;
-    screenshot.enable = true;
 
     # Gaming
     mangohud.enable = true;
@@ -61,8 +59,6 @@
     firefox.enable = true;
 
     # Development
-    direnv.enable = true;
-    git.enable = true;
     zed.enable = true;
   };
 
