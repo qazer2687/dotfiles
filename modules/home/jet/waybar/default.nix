@@ -141,15 +141,10 @@
         }
 
         window#waybar {
-            background-color: #000000;
-            color: @text;
+          background-color: #000000;
+          color: @text;
         }
 
-        tooltip {
-            background-color: @base;
-            border: 1px solid @surface1;
-            color: @text;
-        }
 
         #workspaces button {
           padding: 0 0;
@@ -183,10 +178,10 @@
 
         /* Pad Edges */
         #clock {
-          padding-left: 16px;
+          margin-left: 16px;
         }
         #battery {
-          padding-right: 16px;
+          margin-right: 16px;
         }
 
         #window, #workspaces {
