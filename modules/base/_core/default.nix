@@ -211,8 +211,15 @@
 
     fonts.fontconfig = {
       enable = true;
-      # Disable anti-aliasing fonts for sharpness.
-      antialias = false;
+      antialias = true;
+      subpixel = {
+        rgba = "rgb";
+        lcdfilter = "default";
+      };  
+      hinting = {
+        enable = true;
+        style = "full";
+      };
     };
 
     # Use dash as /bin/sh. Although the performance boost
