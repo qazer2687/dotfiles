@@ -7,6 +7,7 @@
     ../../modules/home
   ];
 
+  # Packages
   home.packages = with pkgs; [
     obsidian
     nautilus
@@ -29,8 +30,11 @@
     vinegar
   ];
 
-  # Rich presence support for vesktop.
-  services.arrpc.enable = true;
+  # Services
+  services = {
+    arrpc.enable = true;
+    
+  };
 
   modules = {
     # Desktop Environment
