@@ -152,32 +152,45 @@
         }
 
         #workspaces button {
-            padding: 0 0;
-            background-color: @mauve;
-            color: @mantle;
+          padding: 0 0;
+          background-color: @mauve;
+          color: @mantle;
         }
 
         #workspaces button.focused {
-            background-color: @text;
-            color: @base;
+          background-color: @text;
+          color: @base;
         }
 
         #workspaces button.urgent {
-            background-color: @red;
-            color: @mantle;
+          background-color: @red;
+          color: @mantle;
         }
 
         #mpris, #custom-weather, #clock, #language, #pulseaudio, #bluetooth, #network, 
         #memory, #cpu, #temperature, #disk, #custom-kernel, #idle_inhibitor, #mode, 
-        #backlight, #battery {
-            padding: 0 10px;
-            margin: 5px 1px;
-            background-color: @mauve;
-            color: @mantle;
+        #backlight, #battery, #workspaces button, #workspaces button.focused {
+          padding: 0 10px;
+          margin: 5px 1px;
+          background-color: @mauve;
+          color: @mantle;
+        }
+
+        #workspaces button.focused {
+          background-color: mantle;
+          color: @mauve;
+        }
+
+        /* Pad Edges */
+        #clock {
+          padding-left: 16px;
+        }
+        #battery {
+          padding-right: 16px;
         }
 
         #window, #workspaces {
-            margin: 0 4px;
+          margin: 0 4px;
         }
       '';
     };
