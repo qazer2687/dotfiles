@@ -131,226 +131,53 @@
         @define-color base #1e1e2e;
         @define-color mantle #181825;
         @define-color crust #11111b;
-        
+
         * {
             border: none;
             border-radius: 1px;
-            font-family: JetBrainsMono Nerd Font, Font Awesome;
-            font-size: 13px;
+            font-family: Departure Mono, JetBrainsMono Nerd Font;
+            font-size: 11px;
             min-height: 0;
         }
 
         window#waybar {
-            background-color: @mantle;
+            background-color: #000000;
             color: @text;
-        }
-
-        window#waybar.hidden {
-            opacity: 0.2;
         }
 
         tooltip {
             background-color: @base;
             border: 1px solid @surface1;
-        }
-
-        tooltip label {
             color: @text;
-        }
-
-        button {
-            box-shadow: inset 0 -3px transparent;
-            border: none;
-            border-radius: 1;
-        }
-
-        button:hover {
-            background: inherit;
-            box-shadow: inset 0 -3px @text;
         }
 
         #workspaces button {
             padding: 0 0;
-            background-color: @mantle;
-            color: @text;
-        }
-
-        #workspaces button:hover {
-            box-shadow: inherit;
-            text-shadow: inherit;
-            background-image: linear-gradient(0deg, @surface1, @mantle);
+            background-color: @mauve;
+            color: @mantle;
         }
 
         #workspaces button.focused {
-            background-image: linear-gradient(0deg, @mauve, @surface1);
-            box-shadow: inset 0 -3px @text;
-        }
-
-        #workspaces button.urgent {
-            background-image: linear-gradient(0deg, @red, @mantle);
-        }
-
-        #taskbar button.active {
-            background-image: linear-gradient(0deg, @surface1, @mantle);
-        }
-
-        #mode {
-            background-color: @base;
-            box-shadow: inset 0 -2px @text;
-        }
-
-        #mpris,
-        #custom-weather,
-        #clock,
-        #language,
-        #pulseaudio,
-        #bluetooth,
-        #network,
-        #memory,
-        #cpu,
-        #temperature,
-        #disk,
-        #custom-kernel,
-        #idle_inhibitor,
-        #scratchpad,
-        #mode,
-        #tray {
-            padding: 0 10px;
-            margin: 5px 1px;
-            color: @text;
-        }
-
-        #window,
-        #workspaces {
-            margin: 0 4px;
-        }
-
-        .modules-left > widget:first-child > #workspaces {
-            margin-left: 0;
-        }
-
-        .modules-right > widget:last-child > #workspaces {
-            margin-right: 0;
-        }
-
-        #custom-weather {
-            background-color: @teal;
-            color: @mantle;
-            margin-right: 5px;
-        }
-
-        #custom-kernel {
-            background-color: @rosewater;
-            color: @mantle;
-        }
-
-        #clock {
-            background-color: @green;
-            color: @mantle;
-        }
-
-        @keyframes blink {
-            to {
-                background-color: @mantle;
-                color: @text;
-            }
-        }
-
-        label:focus {
-            background-color: @mantle;
-        }
-
-        #cpu {
-            background-color: @mauve;
-            color: @mantle;
-            min-width: 45px;
-        }
-
-        #memory {
-            background-color: @red;
-            color: @mantle;
-        }
-
-        #disk {
-            background-color: @flamingo;
-            color: @mantle;
-        }
-
-        #network {
-            background-color: @peach;
-            color: @mantle;
-        }
-
-        #network.disconnected {
-            background-color: red;
-            color: @mantle;
-        }
-
-        #bluetooth {
-            background-color: @maroon;
-            color: @mantle;
-            min-width: 40px;
-        }
-
-        #pulseaudio {
-            background-color: @yellow;
-            color: @mantle;
-        }
-
-        #pulseaudio.muted {
-            background-color: red;
-            color: @mantle;
-        }
-
-        #temperature {
-            background-color: @pink;
-            color: @mantle;
-            min-width: 37px;
-        }
-
-        #temperature.critical {
-            background-color: red;
-            color: @mantle;
-            min-width: 37px;
-        }
-
-        #mpris {
-            background-color: @base;
-            color: @text;
-        }
-
-        #tray {
-            background-color: @overlay0;
-            color: @text;
-        }
-
-        #tray > .passive {
-            -gtk-icon-effect: dim;
-        }
-
-        #tray > .needs-attention {
-            -gtk-icon-effect: highlight;
-            background-color: @mantle;
-        }
-
-        #idle_inhibitor {
-            background-color: @base;
-            color: @text;
-            font-family: Inter;
-        }
-
-        #idle_inhibitor.activated {
             background-color: @text;
             color: @base;
         }
 
-        #scratchpad {
-            background-color: @base;
-            color: @text;
+        #workspaces button.urgent {
+            background-color: @red;
+            color: @mantle;
         }
 
-        #scratchpad.empty {
-            background-color: transparent;
+        #mpris, #custom-weather, #clock, #language, #pulseaudio, #bluetooth, #network, 
+        #memory, #cpu, #temperature, #disk, #custom-kernel, #idle_inhibitor, #mode, 
+        #backlight, #battery {
+            padding: 0 10px;
+            margin: 5px 1px;
+            background-color: @mauve;
+            color: @mantle;
+        }
+
+        #window, #workspaces {
+            margin: 0 4px;
         }
       '';
     };
