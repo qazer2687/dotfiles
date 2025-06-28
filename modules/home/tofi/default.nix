@@ -14,7 +14,7 @@
         width = "100%";
         height = 30;
         horizontal = true;
-        font-size = 16.5;
+        font-size = "16.5";
         prompt-text = '' > '';
         font = "${pkgs.departure-mono}/share/fonts/otf/DepartureMono-Regular.otf";
         outline-width = 0;
