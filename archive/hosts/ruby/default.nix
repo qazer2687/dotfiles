@@ -70,11 +70,8 @@
   modules = {
     core.enable = true;
     pipewire.enable = true;
-    systemd-boot.enable = true;
     bluetooth.enable = true;
-    filesystem.enable = true;
     zram.enable = true;
-    tailscale.enable = true;
   };
 
   # Did you read the comment?

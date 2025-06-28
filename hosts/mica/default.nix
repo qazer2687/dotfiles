@@ -99,9 +99,7 @@
 
   modules = {
     core.enable = true;
-    systemd-boot.enable = true;
     zram.enable = true;
-    tailscale.enable = true;
     docker.enable = true;
     samba.enable = true;
   };

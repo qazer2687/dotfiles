@@ -161,11 +161,9 @@
     core.enable = true;
     nvidia.enable = true;
     pipewire.enable = true;
-    systemd-boot.enable = true;
     steam.enable = true;
     zram.enable = true;
     gamemode.enable = true;
-    tailscale.enable = true;
   };
 
   # Did you read the comment?

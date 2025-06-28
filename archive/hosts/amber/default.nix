@@ -15,7 +15,6 @@
 
   modules = {
     kernel.enable = true;
-    systemd-boot.enable = true;
     pipewire.enable = true;
     fonts.enable = true;
     keymap.enable = true;

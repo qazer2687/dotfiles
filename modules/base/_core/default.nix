@@ -75,9 +75,22 @@
         # inputs.<name>.overlay...
       ];
     };
+    
+    ########## BOOTLOADER ##########
+    
+    boot.loader.systemd-boot.enable = true;
+    # Pressing ESC on boot will bring up the bootloader menu.
+    boot.loader.timeout = 0;
+    environment.etc = {
+      "issue" = {
+        text = "[?12l[?25h";
+        mode = "0444";
+      };
+    };
 
     ########## NETWORKING ##########
 
+    # Tailscale
     networking = {
       networkmanager.enable = true;
       # Allow all the IP's in the tailscale subnet to bypass firewall.
@@ -174,8 +187,17 @@
     # Support for trash:/// on nautilus.
     services.gvfs.enable = true;
 
+    # iOS Filesystem Support
+    services.usbmuxd.enable = true;
+    environment.systemPackages = with pkgs; [
+      ifuse
+      libimobiledevice
+    ] ++
     # Support for heic image preview on nautilus.
-    environment.systemPackages = [pkgs.libheif pkgs.libheif.out];
+    [
+      pkgs.libheif
+      pkgs.libheif.out
+    ];
     environment.pathsToLink = ["share/thumbnailers"];
 
     ########## MISC ##########
