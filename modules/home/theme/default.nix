@@ -46,12 +46,6 @@
       style.name = "adwaita-dark";
     };
 
-    fonts.fontconfig = {
-      enable = true;
-      antialias = false;
-      hinting.enable = true;
-    };
-
     home.packages = with pkgs; [
       noto-fonts-color-emoji
       noto-fonts-cjk-sans
