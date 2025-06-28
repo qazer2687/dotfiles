@@ -10,11 +10,10 @@
       server.enable = true;
       settings = {
         main = {
-          # font = "PragmataPro:size=14, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
-          # font-bold = "PragmataPro:size=14:style=Bold, FiraCode Nerd Font:size=14, Noto Color Emoji:size=8";
+          # 16.5 is pixel-perfect for Departure Mono.
           font = "DepartureMono:size=16.5, FiraCode Nerd Font:size=16.5, Noto Color Emoji:size=10";
           font-bold = "DepartureMono:size=16.5:style=Bold, FiraCode Nerd Font:size=16.5, Noto Color Emoji:size=8";
-          line-height = "22px";
+          line-height = "26px";
           pad = "16x16";
         };
         scrollback = {
