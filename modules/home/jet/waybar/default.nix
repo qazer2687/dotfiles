@@ -162,9 +162,7 @@
         }
 
         #battery.critical { 
-          background-color: @base; 
-          color: @red; 
-          border: 1px solid @crust;
+          background-color: @red; 
         }
 
         /* Pad Edges */
