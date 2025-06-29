@@ -12,7 +12,7 @@
       settings = {
         anchor = "bottom";
         width = "100%";
-        height = 30;
+        height = 20;
         horizontal = true;
         font-size = "11";
         prompt-text = "‌‌ run:‌‌ ";
