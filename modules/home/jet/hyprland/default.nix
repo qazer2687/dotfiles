@@ -28,7 +28,6 @@
       settings = {
         monitor = [
           "eDP-1,highrr,auto,2"
-          "DP-1,highrr,auto,1.25"
         ];
 
         general = {
