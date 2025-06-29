@@ -168,6 +168,12 @@
           border: 1px solid @mantle;
         }
 
+        #battery.Charging { 
+          background-color: @green; 
+          color: @mantle;
+          border: 1px solid @mantle;
+        }
+
         /* Pad Edges */
         #clock {
           margin-left: 16px;
