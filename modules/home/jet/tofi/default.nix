@@ -1,0 +1,37 @@
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
+  options.modules.tofi.enable = lib.mkEnableOption "";
+
+  config = lib.mkIf config.modules.tofi.enable {
+    programs.tofi = {
+      enable = true;
+      settings = {
+        anchor = "bottom";
+        width = "100%";
+        height = 30;
+        horizontal = true;
+        font-size = "11";
+        prompt-text = ''►'';
+        prompt-padding = 2;
+        font = "${pkgs.departure-mono}/share/fonts/otf/DepartureMono-Regular.otf";
+        outline-width = 0;
+        hint-font = false;
+        border-width = 0;
+        input-color = "#cdd6f4";
+        selection-color = "#cba6f7";
+        text-color = "#cdd6f4";
+        background-color = "#11111b";
+        min-input-width = 160;
+        result-spacing = 15;
+        padding-top = 0;
+        padding-bottom = 0;
+        padding-left = 0;
+        padding-right = 0;
+      };
+    };
+  };
+}
