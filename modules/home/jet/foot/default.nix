@@ -11,7 +11,7 @@
       settings = {
         main = {
           # 16.5px, 11px and 22px are pixel-perfect for Departure Mono.
-          font = "DepartureMono:size=11, FiraCode Nerd Font:size=16.5, Noto Color Emoji:size=10";
+          font = "DepartureMono:size=16.5, FiraCode Nerd Font:size=16.5, Noto Color Emoji:size=10";
           font-bold = "DepartureMono:size=16.5:style=Bold, FiraCode Nerd Font:size=16.5, Noto Color Emoji:size=8";
           line-height = "26px";
           pad = "16x16";
