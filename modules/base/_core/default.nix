@@ -236,8 +236,8 @@
       enable = true;
       antialias = true;
       subpixel = {
-        rgba = "rgb";
-        lcdfilter = "default";
+        rgba = "none";
+        lcdfilter = "none";
       };  
       hinting = {
         enable = true;
