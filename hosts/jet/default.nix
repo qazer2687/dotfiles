@@ -99,7 +99,7 @@
 
   # Automatically launch UWSM after login.
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start select
+    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default
   '';
 
   # EXPERIMENTAL - See if keyring works.

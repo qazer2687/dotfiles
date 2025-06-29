@@ -74,7 +74,7 @@
     device = "/dev/sda1";
     fsType = "exfat";
     options = ["umask=0000" "nofail"];
-    noCheck = true; # This disables fsck
+    noCheck = true; # This disables fsck.
   };
 
   # Bind my media directory to the external HDD.
@@ -101,7 +101,7 @@
     core.enable = true;
     zram.enable = true;
     docker.enable = true;
-    samba.enable = true;
+    #samba.enable = true;
   };
 
   # Did you read the comment?

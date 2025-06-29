@@ -20,7 +20,7 @@
         prompt-padding = 0;
         font = "${pkgs.departure-mono}/share/fonts/otf/DepartureMono-Regular.otf";
         outline-width = 0;
-        hint-font = true;
+        hint-font = false;
         border-width = 0;
         input-color = "#cdd6f4";
         selection-color = "#cba6f7";

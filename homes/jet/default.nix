@@ -55,7 +55,6 @@
     fastfetch.enable = true;
 
     # GUI
-    zed.enable = true;
     firefox.enable = true;
     vscode.enable = true;
   };
