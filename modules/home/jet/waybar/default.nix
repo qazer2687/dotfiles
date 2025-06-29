@@ -159,15 +159,14 @@
           color: @mauve;
         }
 
-        /* Color-coded modules for better visual hierarchy */
-        #backlight { background-color: @peach; color: @crust; }
-        #network { background-color: @teal; color: @crust; }
-        #pulseaudio { background-color: @blue; color: @crust; }
-        #battery { background-color: @green; color: @crust; }
-        #battery.warning { background-color: @yellow; color: @crust; }
+        #clock { background-color: @lavender; color: @crust; }
+        #backlight { background-color: @red; color: @crust; }
+        #network { background-color: @peach; color: @crust; }
+        #pulseaudio { background-color: @teal; color: @crust; }
+        #battery { background-color: @sapphire; color: @crust; }
+
         #battery.critical { background-color: @red; color: @crust; }
 
-        #clock { background-color: @lavender; color: @crust; }
 
         /* Pad Edges */
         #clock {
