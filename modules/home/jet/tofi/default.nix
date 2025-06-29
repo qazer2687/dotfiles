@@ -15,7 +15,7 @@
         height = 60;
         scale = false;
         horizontal = true;
-        font-size = "33";
+        font-size = "27.5";
         prompt-text = "‌‌ run:‌‌ ";
         prompt-padding = 0;
         font = "${pkgs.departure-mono}/share/fonts/otf/DepartureMono-Regular.otf";
