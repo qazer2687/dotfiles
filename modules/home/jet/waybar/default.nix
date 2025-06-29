@@ -133,47 +133,46 @@
         @define-color crust #11111b;
 
         * {
-            border: none;
-            border-radius: 0px;
-            font-family: Departure Mono;
-            font-size: 11px;
-            min-height: 0;
+          border: none;
+          border-radius: 0px;
+          font-family: Departure Mono;
+          font-size: 11px;
+          min-height: 0;
         }
 
         window#waybar {
-            background-color: #000000;
-            color: @text;
+          background-color: #000000;
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #idle_inhibitor, #mode,
         #backlight, #battery, #workspaces button, #workspaces button.focused,
         #workspaces button.active {
-            padding: 0 10px;
-            margin: 5px 1px;
-            border-radius: 2px;
-            background-color: @base;
-            color: @text;
-            border: 1px solid @crust;
+          padding: 0 10px;
+          margin: 5px 1px;
+          border-radius: 2px;
+          background-color: @base;
+          color: @text;
+          border: 1px solid @mauve;
         }
 
         #workspaces button.active {
-            color: @mauve;
+          color: @mauve;
         }
 
         #battery.critical { 
-            background-color: @base; 
-            color: @red; 
-            border: 1px solid @crust;
+          background-color: @base; 
+          color: @red; 
+          border: 1px solid @crust;
         }
 
         /* Pad Edges */
         #clock {
-            margin-left: 16px;
+          margin-left: 16px;
         }
 
         #battery {
-            margin-right: 16px;
+          margin-right: 16px;
         }
       '';
     };
