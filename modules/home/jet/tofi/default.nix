@@ -12,7 +12,7 @@
       settings = {
         anchor = "bottom";
         width = "100%";
-        height = "25";
+        height = "22";
         scale = true;
         horizontal = true;
         font-size = "11";
