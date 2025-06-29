@@ -163,6 +163,8 @@
 
         #battery.critical { 
           background-color: @red; 
+          color: @mantle;
+          border: 1px solid @mantle;
         }
 
         /* Pad Edges */
