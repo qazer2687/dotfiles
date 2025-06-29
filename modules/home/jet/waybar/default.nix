@@ -159,6 +159,7 @@
         #workspaces button.active {
           background-color: @mauve;
           color: @mantle;
+          border: 1px solid @mantle;
         }
 
         #battery.critical { 
