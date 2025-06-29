@@ -141,7 +141,7 @@
         }
 
         window#waybar {
-          background-color: @mantle;
+          background-color: @crust;
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -153,11 +153,12 @@
           border-radius: 2px;
           background-color: @base;
           color: @text;
-          border: 1px solid @crust;
+          border: 1px solid @mantle;
         }
 
         #workspaces button.active {
-          color: @mauve;
+          background-color: @mauve;
+          color: @mantle;
         }
 
         #battery.critical { 
