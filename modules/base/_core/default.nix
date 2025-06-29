@@ -91,6 +91,7 @@
     ########## NETWORKING ##########
 
     # Tailscale
+    services.tailscale.enable = true;
     networking = {
       networkmanager.enable = true;
       # Allow all the IP's in the tailscale subnet to bypass firewall.
