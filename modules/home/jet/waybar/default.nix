@@ -53,7 +53,7 @@
           battery = {
             tooltip = false;
             format = "BAT: {capacity}%";
-            format-charging = "BAT: {capacity}% [CHARGING]";
+            format-charging = "BAT: {capacity}%";
             interval = 10;
             states = {
               warning = 25;
@@ -153,25 +153,21 @@
           border-radius: 2px;
           background-color: @base;
           color: @text;
-          border: 1px solid @mantle;
         }
 
         #workspaces button.active {
           background-color: @mauve;
           color: @mantle;
-          border: 1px solid @mantle;
         }
 
         #battery.critical { 
           background-color: @red; 
           color: @mantle;
-          border: 1px solid @mantle;
         }
 
-        #battery.Charging { 
+        #battery.charging { 
           background-color: @green; 
           color: @mantle;
-          border: 1px solid @mantle;
         }
 
         /* Pad Edges */
