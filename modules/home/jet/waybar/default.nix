@@ -162,8 +162,8 @@
         #clock { background-color: @lavender; color: @crust; }
         #backlight { background-color: @pink; color: @crust; }
         #network { background-color: @flamingo; color: @crust; }
-        #pulseaudio { background-color: @peach; color: @crust; }
-        #battery { background-color: @yellow; color: @crust; }
+        #pulseaudio { background-color: @rosewater; color: @crust; }
+        #battery { background-color: @maroon; color: @crust; }
 
         #battery.critical { background-color: @red; color: @crust; }
 
