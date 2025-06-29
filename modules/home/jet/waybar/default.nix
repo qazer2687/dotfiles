@@ -141,40 +141,39 @@
         }
 
         window#waybar {
-          background-color: #000000;
-          color: @text;
+            background-color: #000000;
+            color: @text;
         }
 
-        #mpris, #clock, #language, #pulseaudio, #bluetooth, #network, 
-        #memory, #cpu, #temperature, #disk, #custom-kernel, #idle_inhibitor, #mode, 
-        #backlight, #battery, #workspaces button, #workspaces button.focused {
-          padding: 0 10px;
-          margin: 5px 1px;
-          border-radius: 2px;
-          background-color: @mauve;
-          color: @mantle;
+        #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
+        #memory, #cpu, #temperature, #disk, #custom-kernel, #idle_inhibitor, #mode,
+        #backlight, #battery, #workspaces button, #workspaces button.focused,
+        #workspaces button.active {
+            padding: 0 10px;
+            margin: 5px 1px;
+            border-radius: 2px;
+            background-color: @base;
+            color: @text;
+            border: 1px solid @crust;
         }
 
         #workspaces button.active {
-          background-color: @mantle;
-          color: @mauve;
+            color: @mauve;
         }
 
-        #clock { background-color: @lavender; color: @crust; }
-        #backlight { background-color: @pink; color: @crust; }
-        #network { background-color: @flamingo; color: @crust; }
-        #pulseaudio { background-color: @rosewater; color: @crust; }
-        #battery { background-color: @maroon; color: @crust; }
-
-        #battery.critical { background-color: @red; color: @crust; }
-
+        #battery.critical { 
+            background-color: @base; 
+            color: @red; 
+            border: 1px solid @crust;
+        }
 
         /* Pad Edges */
         #clock {
-          margin-left: 16px;
+            margin-left: 16px;
         }
+
         #battery {
-          margin-right: 16px;
+            margin-right: 16px;
         }
       '';
     };
