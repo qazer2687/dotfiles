@@ -12,10 +12,10 @@
       settings = {
         anchor = "bottom";
         width = "100%";
-        height = "33";
+        height = "44";
         scale = false;
         horizontal = true;
-        font-size = "22";
+        font-size = "33";
         prompt-text = "‌‌ run:‌‌ ";
         prompt-padding = 0;
         font = "${pkgs.departure-mono}/share/fonts/otf/DepartureMono-Regular.otf";
