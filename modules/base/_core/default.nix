@@ -129,7 +129,7 @@
         StreamLocalBindUnlink = "yes";
       };
     };
-    /*
+    */
 
     ########## KEYMAP ##########
 
