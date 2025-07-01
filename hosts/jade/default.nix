@@ -43,6 +43,15 @@
       "vt.global_cursor_default=0"
       # Wipe the vendor logo earlier in the boot sequence.
       "fbcon=nodefer"
+      # VIBECODED - Disable Transparent Huge Pages (THP) for potential gaming performance improvements.
+      # THP can sometimes introduce latency due to memory management overhead, which can negatively
+      # impact game performance. Disabling it can lead to more consistent frame times.
+      "transparent_hugepages=never"
+      # VIBECODED - Optimize I/O scheduler for SSDs/NVMe.
+      # Setting the I/O scheduler to 'noop' (or 'none') for solid-state drives
+      # allows the drive's internal controller to manage I/O requests more efficiently,
+      # bypassing the kernel's scheduler and potentially reducing latency.
+      "elevator=noop"
     ];
     initrd.kernelModules = [
       "nvidia"
@@ -54,23 +63,38 @@
       "nouveau"
     ];
     # EXPERIMENTAL - These sysctl options are for
-    # improving performance and stuff idk.
+    # improving performance and reducing latency.
     kernel.sysctl = {
-      "vm.dirty_background_ratio" = 5;
-      "vm.dirty_ratio" = 10;
-      # The received frames will be stored in this queue after taking
-      # them from the ring buffer on the network card. Increasing this
-      # value for high speed cards may help prevent losing packets.
-      "net.core.netdev_max_backlog" = 16384;
-      # TCP Fast Open is an extension to the transmission control protocol
-      # that helps reduce network latency by enabling data to be exchanged
-      # during the sender’s initial TCP SYN. Using the value 3 allows TCP
-      # Fast Open for both incoming and outgoing connections.
+      "vm.dirty_background_ratio" = 3;
+      "vm.dirty_ratio" = 5;
+      "vm.swappiness" = 1;
+
+      "net.core.rmem_default" = 262144;
+      "net.core.rmem_max" = 16777216;
+      "net.core.wmem_default" = 262144;
+      "net.core.wmem_max" = 16777216;
+      "net.ipv4.tcp_rmem" = "4096 87380 16777216";
+      "net.ipv4.tcp_wmem" = "4096 65536 16777216";
+
+      "net.core.netdev_max_backlog" = 30000;
+
       "net.ipv4.tcp_fastopen" = 3;
-      # The BBR congestion control algorithm can help achieve higher
-      # bandwidths and lower latencies for internet traffic.
+
+      "net.ipv4.tcp_window_scaling" = 1;
+      "net.ipv4.tcp_timestamps" = 1;
+      "net.ipv4.tcp_sack" = 1;
+
+      "net.ipv4.tcp_retries2" = 8;
+
       "net.core.default_qdisc" = "cake";
       "net.ipv4.tcp_congestion_control" = "bbr";
+
+      "net.ipv4.tcp_tw_reuse" = 1;
+      "net.ipv4.tcp_fin_timeout" = 10;
+
+      "net.ipv4.tcp_keepalive_time" = 300;
+      "net.ipv4.tcp_keepalive_intvl" = 30;
+      "net.ipv4.tcp_keepalive_probes" = 3;
     };
     initrd.verbose = false;
     consoleLogLevel = 0;
