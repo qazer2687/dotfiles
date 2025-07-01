@@ -77,7 +77,7 @@
 
     # Security
     firewall.enable = true;
-    ntp.enable = true;
+    chrony.enable = true;
     rngd.enable = true;
   };
 
