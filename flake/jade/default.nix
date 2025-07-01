@@ -7,6 +7,7 @@ inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {inherit inputs self;};
   modules = [
     ../../hosts/jade
+    ../../modules/base/shared
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
     inputs.nyx.nixosModules.default

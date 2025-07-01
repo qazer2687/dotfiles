@@ -6,8 +6,9 @@
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {inherit inputs self;};
   modules = [
-    {networking.hostName = "mica";}
     ../../hosts/mica
+    ../../modules/base/shared
+    ../../modules/base/mica
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
     {

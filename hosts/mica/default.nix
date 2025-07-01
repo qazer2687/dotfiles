@@ -4,6 +4,8 @@
     ../../modules/base
   ];
 
+  networking.hostName = "mica";
+
   users.users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
