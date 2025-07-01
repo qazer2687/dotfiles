@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ../../hardware/mica
-    ../../modules/base
   ];
 
   networking.hostName = "mica";

@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ../../hardware/jade
-    ../../modules/base
   ];
 
   networking.hostName = "jade";
