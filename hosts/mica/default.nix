@@ -18,18 +18,14 @@
   boot = {
     kernelParams = [
       "quiet"
-      "mitigations=off"
 
       # Enable Intel GuC/HuC
       "i915.enable_guc=3"
 
-      # https://wiki.cachyos.org/configuration/general_system_tweaks/?utm_source=chatgpt.com#enable-rcu-lazy
+      # https://wiki.cachyos.org/configuration/general_system_tweaks/#enable-rcu-lazy
       "rcutree.enable_rcu_lazy=1"
     ];
     blacklistedKernelModules = [
-      # Disable the watchdog timer to stop
-      # watchdog from hanging on poweroff.
-      "iTCO_wdt"
       # Wi-Fi
       "iwlwifi"
       # Bluetooth
@@ -39,35 +35,14 @@
     consoleLogLevel = 0;
     # Support for my external HDD.
     supportedFilesystems = ["exfat"];
-    #kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_cachyos-server;
   };
-
-  # CPU usage too high with this enabled.
-  # services.scx.enable = true;
 
   # Prevent log files from becoming too large.
   services.journald.extraConfig = ''
     SystemMaxUse=100M
   '';
 
-  networking.firewall = {
-    enable = true;
-    # I use a reverse proxy for everything but these things require ports to be open.
-    allowedTCPPorts = [
-      # Caddy
-      80
-      81
-      443
-      # qBittorrent
-      6881
-      # Conduwuit (Matrix)
-      8448
-    ];
-    allowedUDPPorts = [
-      # qBittorrent
-      6881
-    ];
-  };
 
   # Mount the external HDD.
   fileSystems."/mnt/external" = {
@@ -94,14 +69,17 @@
     };
   };
 
-  # Required for root zed server.
   programs.nix-ld.enable = true;
 
   modules = {
     core.enable = true;
     zram.enable = true;
     docker.enable = true;
-    #samba.enable = true;
+
+    # Security
+    firewall.enable = true;
+    ntp.enable = true;
+    rngd.enable = true;
   };
 
   # Did you read the comment?

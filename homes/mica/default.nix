@@ -10,6 +10,10 @@
   home.packages = with pkgs; [
     ncdu
     btop
+
+    # Security
+    lynis
+    vulnix
   ];
 
   modules = {
@@ -18,7 +22,7 @@
     fastfetch.enable = true;
   };
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
   home.homeDirectory = lib.mkForce "/home/alex";
 
   sops = {

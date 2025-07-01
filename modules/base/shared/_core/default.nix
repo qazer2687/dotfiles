@@ -118,19 +118,6 @@
     '';
     */
 
-    /*
-    services.openssh = {
-      enable = true;
-      settings = {
-        PermitRootLogin = "yes";
-        PasswordAuthentication = true;
-        AllowTcpForwarding = "yes";
-        # This enables Unix socket forwarding which waypipe needs
-        StreamLocalBindUnlink = "yes";
-      };
-    };
-    */
-
     ########## KEYMAP ##########
 
     console.keyMap = "colemak";

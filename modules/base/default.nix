@@ -1,6 +1,6 @@
-{...}: {
-  imports =
-    map (n: ./${n})
-    (builtins.filter (n: n != "default.nix")
-      (builtins.attrNames (builtins.readDir ./.)));
+{config, ...}: {
+  imports = [
+    ./shared
+    ./${config.networking.hostName}
+  ];
 }
