@@ -11,6 +11,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../modules/base/mica
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
+    inputs.nyx.nixosModules.default
     {
       home-manager = {
         users.alex = ../../homes/mica;
