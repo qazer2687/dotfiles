@@ -78,7 +78,6 @@
     # Security
     firewall.enable = true;
     chrony.enable = true;
-    rngd.enable = true;
   };
 
   # Did you read the comment?
