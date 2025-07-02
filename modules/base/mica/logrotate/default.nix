@@ -24,27 +24,6 @@
         
         dateext = true;
       };
-
-      paths = {
-        # System Logs
-        "/var/log/messages" = {
-          rotate = 8;
-        };
-        
-        # Security Logs
-        "/var/log/auth.log" = {
-          frequency = "daily";
-          rotate = 30;
-          size = "10M";
-        };
-        
-        # Kernel Logs
-        "/var/log/kern.log" = {
-          rotate = 4;
-        };
-
-        # TODO - Add docker logs.
-      };
     };
   };
 }
