@@ -10,9 +10,6 @@
   home.packages = with pkgs; [
     ncdu
     btop
-
-    # Security
-    lynis
   ];
 
   modules = {

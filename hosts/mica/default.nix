@@ -92,6 +92,7 @@
     sysctl.enable = true;
     logrotate.enable = true;
     pam.enable = true;
+    lynis.enable = true;
   };
 
   # Did you read the comment?
@@ -110,6 +111,6 @@
   services.sysstat.enable = true;
 
   # [ACCT-9628] Enable auditd to collect audit information
-  #security.audit.enable = true;
-  #security.auditd.enable = true;
+  security.audit.enable = true;
+  security.auditd.enable = true;
 }
