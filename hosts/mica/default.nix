@@ -37,12 +37,6 @@
     kernelPackages = pkgs.linuxPackages_cachyos-server;
   };
 
-  # Prevent log files from becoming too large.
-  services.journald.extraConfig = ''
-    SystemMaxUse=100M
-  '';
-
-
   # Mount the external HDD.
   fileSystems."/mnt/external" = {
     device = "/dev/sda1";
@@ -70,6 +64,9 @@
 
   programs.nix-ld.enable = true;
 
+  users.motd = "Unauthorized access prohibited. All activity monitored.";
+  environment.etc."issue".text = "Unauthorized access prohibited. All activity monitored.\n";
+
   modules = {
     core.enable = true;
     zram.enable = true;
@@ -78,6 +75,8 @@
     # Security
     firewall.enable = true;
     chrony.enable = true;
+    sysctl.enable = true;
+    logrotate.enable = true;
   };
 
   # Did you read the comment?
