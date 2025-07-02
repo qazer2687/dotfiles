@@ -45,7 +45,7 @@
       "rds"
       "tipc"
 
-      # Obscure Network Protocols
+      # Obscure network protocols.
       "ax25"
       "netrom"
       "rose"
@@ -133,28 +133,8 @@
     # Security
     firewall.enable = true;
     chrony.enable = true;
-    sysctl.enable = true;
-    logrotate.enable = true;
-    pam.enable = true;
-    lynis.enable = true;
   };
 
   # Did you read the comment?
   system.stateVersion = "25.05";
-
-  # Lynis Misc
-
-  environment.systemPackages = with pkgs; [
-    # [PKGS-7398] Install a package audit tool
-    vulnix
-    # [HRDN-7230] Install a malware scanner
-    chkrootkit
-  ];
-
-  # [ACCT-9626] Enable sysstat to collect accounting
-  services.sysstat.enable = true;
-
-  # [ACCT-9628] Enable auditd to collect audit information
-  security.audit.enable = true;
-  security.auditd.enable = true;
 }
