@@ -110,6 +110,6 @@
   services.sysstat.enable = true;
 
   # [ACCT-9628] Enable auditd to collect audit information
-  security.audit.enable = true;
-  security.auditd.enable = true;
+  #security.audit.enable = true;
+  #security.auditd.enable = true;
 }
