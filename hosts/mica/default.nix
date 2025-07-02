@@ -35,14 +35,43 @@
     blacklistedKernelModules = [
       # Wi-Fi
       "iwlwifi"
+
       # Bluetooth
       "btusb"
 
-      # Misc
+      # Suggested by Lynis.
       "dccp"
       "sctp"
       "rds"
       "tipc"
+
+      # Obscure Network Protocols
+      "ax25"
+      "netrom"
+      "rose"
+
+      # Old, rare or insufficiently audited filesystems.
+      "adfs"
+      "affs"
+      "bfs"
+      "befs"
+      "cramfs"
+      "efs"
+      "erofs"
+      "exofs"
+      "freevxfs"
+      "f2fs"
+      "hfs"
+      "hpfs"
+      "jfs"
+      "minix"
+      "nilfs2"
+      "ntfs"
+      "omfs"
+      "qnx4"
+      "qnx6"
+      "sysv"
+      "ufs"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
@@ -78,8 +107,23 @@
 
   programs.nix-ld.enable = true;
 
-  users.motd = "Unauthorized access prohibited. All activity monitored.";
-  environment.etc."issue".text = "Unauthorized access prohibited. All activity monitored.\n";
+  users.motd = ''
++----------------------------------------------------------+
+- This is a controlled access system.
+- Unauthorized access is strictly prohibited by law.
+- All activity is actively recorded and monitored.
+- Unauthorised activity will be reported to law enforcement.
++----------------------------------------------------------+
+'';
+
+  environment.etc."issue".text = ''
++----------------------------------------------------------+
+- This is a controlled access system.
+- Unauthorized access is strictly prohibited by law.
+- All activity is actively recorded and monitored.
+- Unauthorised activity will be reported to law enforcement.
++----------------------------------------------------------+
+'';
 
   modules = {
     core.enable = true;
