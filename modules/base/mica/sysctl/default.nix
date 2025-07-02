@@ -21,7 +21,7 @@
       "net.ipv4.conf.default.accept_source_route" = 0;
 
       # Kernel Hardening
-      "kernel.modules_disabled" = 1;
+      # "kernel.modules_disabled" = 1;
       "kernel.kptr_restrict" = 2;
       "kernel.unprivileged_bpf_disabled" = 1;
       "net.core.bpf_jit_harden" = 2;
