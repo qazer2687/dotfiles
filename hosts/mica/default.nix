@@ -73,7 +73,6 @@
 
   programs.nix-ld.enable = true;
 
-  services.getty.issue = "Unauthorized access prohibited. All activity monitored.";
   users.motd = "Unauthorized access prohibited. All activity monitored.";
   environment.etc."issue".text = "Unauthorized access prohibited. All activity monitored.\n";
 
