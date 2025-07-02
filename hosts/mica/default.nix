@@ -8,10 +8,11 @@
   users = {
     mutableUsers = false;
     users.alex = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "video"];
-    hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
-    shell = pkgs.fish;
+      isNormalUser = true;
+      extraGroups = ["networkmanager" "wheel" "video"];
+      hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
+      shell = pkgs.fish;
+    };
   };
 
   programs.fish.enable = true;
@@ -94,11 +95,11 @@
 
   # Lynis Misc
   
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # [PKGS-7398] Install a package audit tool
-    "pkgs.vulnix"
+    pkgs.vulnix
     # [HRDN-7230] Install a malware scanner
-    "pkgs.rkhunter"
+    pkgs.rkhunter
   ];
 
   # [ACCT-9626] Enable sysstat to collect accounting
