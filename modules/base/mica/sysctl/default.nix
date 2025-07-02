@@ -9,6 +9,7 @@
     # These options were recommended by the lynis security auditing tool.
     boot.kernel.sysctl = {
       # Network Hardening
+
       "net.ipv4.conf.all.accept_redirects" = 0;
       "net.ipv4.conf.default.accept_redirects" = 0;
       "net.ipv6.conf.all.accept_redirects" = 0;
@@ -21,7 +22,10 @@
       "net.ipv4.conf.default.accept_source_route" = 0;
 
       # Kernel Hardening
+
+      # The system WILL NOT WORK with this enabled. 
       # "kernel.modules_disabled" = 1;
+
       "kernel.kptr_restrict" = 2;
       "kernel.unprivileged_bpf_disabled" = 1;
       "net.core.bpf_jit_harden" = 2;
@@ -29,6 +33,7 @@
       "dev.tty.ldisc_autoload" = 0;
 
       # FS Hardening
+
       "fs.protected_hardlinks" = 1;
       "fs.protected_symlinks" = 1;
       "fs.protected_fifos" = 2;

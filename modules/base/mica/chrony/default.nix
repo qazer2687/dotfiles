@@ -13,7 +13,6 @@
       enableNTS = true;
       servers = [
         "time.cloudflare.com iburst nts"
-        "time.google.com iburst nts"
       ];
     };
 
