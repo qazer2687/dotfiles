@@ -97,9 +97,9 @@
   
   environment.systemPackages = with pkgs; [
     # [PKGS-7398] Install a package audit tool
-    pkgs.vulnix
+    vulnix
     # [HRDN-7230] Install a malware scanner
-    pkgs.rkhunter
+    rkhunter
   ];
 
   # [ACCT-9626] Enable sysstat to collect accounting
