@@ -108,7 +108,6 @@
   programs.nix-ld.enable = true;
 
   users.motd = ''
-clear
 +----------------------------------------------------------+
 - This is a controlled access system.
 - Unauthorized access is strictly prohibited by law.
