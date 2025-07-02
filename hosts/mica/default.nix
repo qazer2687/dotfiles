@@ -90,4 +90,21 @@
 
   # Did you read the comment?
   system.stateVersion = "25.05";
+
+
+  # Lynis Misc
+  
+  environment.systemPackages = [
+    # [PKGS-7398] Install a package audit tool
+    pkgs.vulnix
+    # [HRDN-7230] Install a malware scanner
+    pkgs.rkhunter
+  ];
+
+  # [ACCT-9626] Enable sysstat to collect accounting
+  services.sysstat.enable = true;
+
+  # [ACCT-9628] Enable auditd to collect audit information
+  security.audit.enable = true;
+  security.auditd.enable = true;
 }
