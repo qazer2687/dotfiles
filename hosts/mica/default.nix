@@ -112,7 +112,7 @@
 - This is a controlled access system.
 - Unauthorized access is strictly prohibited by law.
 - All activity is actively recorded and monitored.
-- Unauthorised activity will be reported to law enforcement.
+- Suspicious activity may be reported to law enforcement.
 +----------------------------------------------------------+
 '';
 
@@ -121,7 +121,7 @@
 - This is a controlled access system.
 - Unauthorized access is strictly prohibited by law.
 - All activity is actively recorded and monitored.
-- Unauthorised activity will be reported to law enforcement.
+- Suspicious activity may be reported to law enforcement.
 +----------------------------------------------------------+
 '';
 
