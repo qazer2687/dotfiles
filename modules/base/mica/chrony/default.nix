@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: {
   options.modules.chrony.enable = lib.mkEnableOption "";
@@ -20,7 +18,7 @@
     };
 
     # Allow outgoing UDP port 123 (NTP) and outgoing TCP port 4460 (NTS Key Establishment).
-    networking.firewall.allowedUDPPorts = [ 123 ];
-    networking.firewall.allowedTCPPorts = [ 4460 ];
+    networking.firewall.allowedUDPPorts = [123];
+    networking.firewall.allowedTCPPorts = [4460];
   };
 }

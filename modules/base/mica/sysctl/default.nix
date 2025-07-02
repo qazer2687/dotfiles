@@ -1,14 +1,11 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: {
   options.modules.sysctl.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.sysctl.enable {
-
     # These options were recommended by the lynis security auditing tool.
     boot.kernel.sysctl = {
       # Network Hardening

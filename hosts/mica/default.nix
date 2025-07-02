@@ -92,9 +92,8 @@
   # Did you read the comment?
   system.stateVersion = "25.05";
 
-
   # Lynis Misc
-  
+
   environment.systemPackages = with pkgs; [
     # [PKGS-7398] Install a package audit tool
     vulnix

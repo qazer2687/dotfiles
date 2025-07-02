@@ -33,12 +33,11 @@
   # Services
   services = {
     arrpc.enable = true;
-    
   };
 
   modules = {
     core.enable = true;
-    
+
     # Desktop Environment
     hyprland.enable = true;
     hyprlock.enable = true;

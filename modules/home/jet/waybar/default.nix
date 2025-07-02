@@ -25,31 +25,31 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = [ "clock" "hyprland/workspaces" ];
-          modules-center = [ ];
-          modules-right = [ "tray" "backlight" "network" "pulseaudio" "battery" ];
-          
+          modules-left = ["clock" "hyprland/workspaces"];
+          modules-center = [];
+          modules-right = ["tray" "backlight" "network" "pulseaudio" "battery"];
+
           pulseaudio = {
             format = "VOL: {volume}%";
             tooltip = false;
             format-muted = "VOL: MUTED";
             format-icons = {
-              default = [ " " " " " " ];
+              default = [" " " " " "];
             };
           };
-          
+
           clock = {
             format = "{:%A %d, %H:%M}";
             tooltip = false;
             margin-right = 15;
           };
-          
+
           tray = {
             icon-size = 14;
             spacing = 10;
             reverse-direction = true;
           };
-          
+
           battery = {
             tooltip = false;
             format = "BAT: {capacity}%";
@@ -61,7 +61,7 @@
             };
             margin-left = 15;
           };
-          
+
           "hyprland/workspaces" = {
             format = "{icon}";
             format-icons = {
@@ -72,13 +72,13 @@
               "5" = "5";
             };
           };
-          
+
           backlight = {
             device = "apple-panel-bl";
             format = "BKL: {percent}%";
             tooltip = false;
           };
-          
+
           network = {
             tooltip = false;
             format-wifi = "NET: {essid}";
@@ -87,7 +87,7 @@
             format-ethernet = "NET: WIRED";
             interval = 10;
           };
-          
+
           mpris = {
             tooltip = false;
             format = "PLAYING: {artist} - {title}";
@@ -103,7 +103,7 @@
           };
         };
       };
-      
+
       style = ''
         @define-color rosewater #f5e0dc;
         @define-color flamingo #f2cdcd;
@@ -160,13 +160,13 @@
           color: @mantle;
         }
 
-        #battery.critical { 
-          background-color: @red; 
+        #battery.critical {
+          background-color: @red;
           color: @mantle;
         }
 
-        #battery.charging { 
-          background-color: @green; 
+        #battery.charging {
+          background-color: @green;
           color: @mantle;
         }
 

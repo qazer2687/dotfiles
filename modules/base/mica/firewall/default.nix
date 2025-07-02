@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: {
   options.modules.firewall.enable = lib.mkEnableOption "";
@@ -12,7 +10,7 @@
       enable = true; # Ensure the firewall is enabled
 
       # Trusted Interfaces (e.g., for Tailscale, allowing its traffic)
-      trustedInterfaces = [ "tailscale0" ];
+      trustedInterfaces = ["tailscale0"];
 
       # Allowed Incoming TCP Ports
       # Combining all previously requested TCP ports
@@ -35,7 +33,6 @@
         # qBittorrent
         6881
       ];
-
     };
   };
 }

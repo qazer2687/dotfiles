@@ -64,7 +64,6 @@
     # EXPERIMENTAL - These sysctl options are for
     # improving performance and reducing latency.
     kernel.sysctl = {
-
       # VIBECODED - Pretty much all of this is AI slop,
       # I'll see how it affects my latency and memory usage.
 

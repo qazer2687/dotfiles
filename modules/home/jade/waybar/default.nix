@@ -25,10 +25,10 @@
           layer = "top";
           output = "DP-1";
           margin = "0 0 0 0";
-          modules-left = [ "clock" "hyprland/workspaces" ];
-          modules-center = [ ];
-          modules-right = [ "mpris" "memory" "pulseaudio" "disk" "network" ];
-          
+          modules-left = ["clock" "hyprland/workspaces"];
+          modules-center = [];
+          modules-right = ["mpris" "memory" "pulseaudio" "disk" "network"];
+
           pulseaudio = {
             tooltip = false;
             scroll-step = 1;
@@ -36,18 +36,18 @@
             format = "{icon}";
             format-muted = "󰝟";
             format-icons = {
-              default = [ "󰕿" "󰖀" "󰕾" ];
+              default = ["󰕿" "󰖀" "󰕾"];
             };
           };
-          
+
           clock = {
             format = "{:%A %d, %H:%M}";
             tooltip = false;
           };
-          
+
           battery = {
             format = "{icon}";
-            format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+            format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             full-at = 95;
             format-full = "󱟢";
             format-charging = "󰂄";
@@ -58,7 +58,7 @@
             };
             interval = 2;
           };
-          
+
           "hyprland/workspaces" = {
             format = "{icon}";
             format-icons = {
@@ -69,7 +69,7 @@
               "5" = "5";
             };
           };
-          
+
           mpris = {
             tooltip = false;
             format = "{player_icon} {artist} - {title}";
@@ -81,7 +81,7 @@
               paused = "󰏤";
             };
           };
-          
+
           network = {
             tooltip = false;
             format-wifi = "";
@@ -90,22 +90,22 @@
             format-ethernet = "󰈁";
             interval = 2;
           };
-          
+
           memory = {
             tooltip = true;
             format = "󰘚";
             tooltip-format = "{percentage}%";
             interval = 2;
           };
-          
+
           backlight = {
             device = "intel_backlight";
             tooltip = true;
             format = "{icon}";
             tooltip-format = "{percent}%";
-            format-icons = [ "󰃞" "󰃟" "󰃠" ];
+            format-icons = ["󰃞" "󰃟" "󰃠"];
           };
-          
+
           temperature = {
             tooltip = false;
             thermal-zone = 5;
@@ -114,7 +114,7 @@
             format-critical = " {temperatureC}°C";
             interval = 10;
           };
-          
+
           disk = {
             tooltip = true;
             format = "󰋊";
@@ -123,7 +123,7 @@
           };
         }
       ];
-      
+
       style = ''
         * {
           font-family: "Departure Mono", "FiraCode Mono Nerd Font";
@@ -133,15 +133,15 @@
           margin-left: 2px;
           margin-right: 2px;
         }
-        
+
         window#waybar {
           background-color: #000000;
         }
-        
+
         #workspaces {
           background-color: transparent;
         }
-        
+
         #workspaces button {
           padding: 3px 18px;
           margin-top: 6px;
@@ -152,12 +152,12 @@
           background-color: #262626;
           color: #ffffff;
         }
-        
+
         #workspaces button.active {
           color: #000000;
           background-color: #ffffff;
         }
-        
+
         #memory,
         #custom-power,
         #battery,
@@ -179,7 +179,7 @@
           color: #ffffff;
           background-color: #000000;
         }
-        
+
         #mpris {
           padding: 3px 18px;
           margin-top: 6px;
@@ -190,12 +190,12 @@
           color: #000000;
           background-color: #ffffff;
         }
-        
+
         #battery {
           background-color: #ffffff;
           color: #000000;
         }
-        
+
         #battery.warning,
         #battery.critical,
         #battery.urgent {
@@ -207,22 +207,22 @@
           animation-iteration-count: infinite;
           animation-direction: alternate;
         }
-        
+
         #battery.charging {
           background-color: #00cc00;
           color: #000000;
         }
-        
+
         #network {
           padding-right: 17px;
         }
-        
+
         tooltip {
           border-radius: 8px;
           padding: 15px;
           background-color: #131822;
         }
-        
+
         tooltip label {
           padding: 5px;
           background-color: #131822;

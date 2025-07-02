@@ -75,9 +75,9 @@
         # inputs.<name>.overlay...
       ];
     };
-    
+
     ########## BOOTLOADER ##########
-    
+
     boot.loader.systemd-boot.enable = true;
     # Pressing ESC on boot will bring up the bootloader menu.
     boot.loader.timeout = 0;
@@ -179,15 +179,17 @@
 
     # iOS Filesystem Support
     services.usbmuxd.enable = true;
-    environment.systemPackages = with pkgs; [
-      ifuse
-      libimobiledevice
-    ] ++
-    # Support for heic image preview on nautilus.
-    [
-      pkgs.libheif
-      pkgs.libheif.out
-    ];
+    environment.systemPackages = with pkgs;
+      [
+        ifuse
+        libimobiledevice
+      ]
+      ++
+      # Support for heic image preview on nautilus.
+      [
+        pkgs.libheif
+        pkgs.libheif.out
+      ];
     environment.pathsToLink = ["share/thumbnailers"];
 
     ########## MISC ##########
@@ -227,7 +229,7 @@
       subpixel = {
         rgba = "none";
         lcdfilter = "none";
-      };  
+      };
       hinting = {
         enable = true;
         style = "slight";

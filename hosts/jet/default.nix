@@ -139,11 +139,9 @@
     # and I do not need easyeffects installed on Jet.
     # pipewire.enable = true;
 
-
     # Marcan said something about it being ineffective on apple silicon.
     # zram.enable = true;
-    # 
-
+    #
   };
 
   # Did you read the comment?

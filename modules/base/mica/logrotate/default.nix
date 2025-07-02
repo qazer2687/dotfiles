@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: {
   options.modules.logrotate.enable = lib.mkEnableOption "";

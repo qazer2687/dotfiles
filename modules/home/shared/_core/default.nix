@@ -16,16 +16,15 @@
   # lib.mkForce in the configuration files for specific
   # hosts, although if you really need to do that, it
   # probably doesn't belong in this file.
-  # 
+  #
   # Not everything here does belong on a server such as
   # theming but I'm not too concerned about it. If it
   # becomes an issue in the future I can split the file
   # into a core and a graphical option for other settings.
 
   config = lib.mkIf config.modules.core.enable {
-   
     ########## THEME ##########
-    
+
     home.pointerCursor = {
       gtk.enable = true;
       package = pkgs.bibata-cursors;
@@ -64,9 +63,9 @@
       platformTheme.name = "adwaita";
       style.name = "adwaita-dark";
     };
-    
+
     ########## GIT ##########
-    
+
     programs.git = {
       enable = true;
       userName = "qazer2687";
@@ -125,9 +124,9 @@
 
     # Load the from the sops plaintext file into conf.nix.
     nix.extraOptions = "!include ${config.sops.secrets."access-tokens".path}";
-    
+
     ########## DIRENV ##########
-    
+
     programs.direnv = {
       enable = true;
       nix-direnv = {
@@ -141,14 +140,14 @@
         };
       };
     };
-    
+
     ########## PACKAGES ##########
-    
-    home.packages = let   
+
+    home.packages = let
       fonts = with pkgs; [
         noto-fonts-color-emoji
         noto-fonts-cjk-sans
-  
+
         atkinson-hyperlegible
         agave
         terminus_font
@@ -157,14 +156,14 @@
         fixedsys-excelsior
         monaspace
         pragmatapro
-  
+
         nerd-fonts.fira-code
         nerd-fonts.fira-mono
         nerd-fonts.iosevka
         nerd-fonts.liberation
         nerd-fonts.jetbrains-mono
       ];
-     
+
       utilities = [
         (pkgs.writeShellApplication {
           name = "webcam";
@@ -185,21 +184,21 @@
           '';
         })
       ];
-    in fonts ++ utilities;   
-    
+    in
+      fonts ++ utilities;
+
     ########## MISC ##########
-    
+
     # Better 'ls' implementation.
     programs.eza.enable = true;
     home.shellAliases = {
       "ls" = "eza --colour=always --icons=always --all";
     };
-    
+
     # Better 'cd' implementation.
     programs.zoxide = {
       enable = true;
       enableFishIntegration = true;
     };
-    
   };
 }
