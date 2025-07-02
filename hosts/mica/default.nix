@@ -6,7 +6,6 @@
   networking.hostName = "mica";
 
   users = {
-    mutableUsers = false;
     users.alex = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "video"];
@@ -86,6 +85,7 @@
     chrony.enable = true;
     sysctl.enable = true;
     logrotate.enable = true;
+    pam.enable = true;
   };
 
   # Did you read the comment?
