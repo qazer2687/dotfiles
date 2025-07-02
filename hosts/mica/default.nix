@@ -5,7 +5,9 @@
 
   networking.hostName = "mica";
 
-  users.users.alex = {
+  users = {
+    mutableUsers = false;
+    users.alex = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
     hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
@@ -29,6 +31,12 @@
       "iwlwifi"
       # Bluetooth
       "btusb"
+
+      # Misc
+      "dccp"
+      "sctp"
+      "rds"
+      "tipc"
     ];
     initrd.verbose = false;
     consoleLogLevel = 0;
@@ -64,6 +72,7 @@
 
   programs.nix-ld.enable = true;
 
+  services.getty.issue = "Unauthorized access prohibited. All activity monitored.";
   users.motd = "Unauthorized access prohibited. All activity monitored.";
   environment.etc."issue".text = "Unauthorized access prohibited. All activity monitored.\n";
 
