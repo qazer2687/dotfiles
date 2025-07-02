@@ -13,7 +13,6 @@
 
     # Security
     lynis
-    vulnix
   ];
 
   modules = {
