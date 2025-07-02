@@ -97,7 +97,7 @@
     # [PKGS-7398] Install a package audit tool
     vulnix
     # [HRDN-7230] Install a malware scanner
-    rkhunter
+    chkrootkit
   ];
 
   # [ACCT-9626] Enable sysstat to collect accounting
