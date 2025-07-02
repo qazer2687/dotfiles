@@ -5,9 +5,8 @@ pkgs.mkShell {
     alejandra
     deadnix
     sops
-    llvmPackages_12.clang-tools
     nixd
     nil
-    libclang
+    nixfmt
   ];
 }
