@@ -21,14 +21,16 @@
         # Enable Proton Wayland support.
         PROTON_USE_WAYLAND = "1";
         # Set SDL to use Wayland video driver.
-        SDL_VIDEODRIVER = "wayland";
+        #SDL_VIDEODRIVER = "wayland";
+        SDL_VIDEODRIVER = "x11";
         # Disable NVIDIA Optimus layer for better performance.
         DISABLE_LAYER_NV_OPTIMUS_1 = "1";
       };
       args = [
         # Use SDL backend for better compatibility.
         "--backend"
-        "drm"
+        "sdl"
+        #"drm"
         # Set fade out duration in milliseconds.
         "--fade-out-duration"
         "200"
