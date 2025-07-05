@@ -9,6 +9,8 @@
   config = lib.mkIf config.modules.gamescope.enable {
     programs.gamescope = {
       enable = true;
+      # Chaotic Nyx Package
+      package = pkgs.gamescope_git;
       # This option does not work, enabling will cause games to fail on launch.
       capSysNice = false;
       env = {
@@ -21,8 +23,8 @@
         # Enable Proton Wayland support.
         PROTON_USE_WAYLAND = "1";
         # Set SDL to use Wayland video driver.
-        #SDL_VIDEODRIVER = "wayland";
-        SDL_VIDEODRIVER = "x11";
+        SDL_VIDEODRIVER = "wayland";
+        #SDL_VIDEODRIVER = "x11";
         # Disable NVIDIA Optimus layer for better performance.
         DISABLE_LAYER_NV_OPTIMUS_1 = "1";
       };
