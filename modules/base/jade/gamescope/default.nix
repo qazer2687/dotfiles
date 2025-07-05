@@ -28,7 +28,7 @@
       args = [
         # Use SDL backend for better compatibility.
         "--backend"
-        "sdl"
+        "drm"
         # Set fade out duration in milliseconds.
         "--fade-out-duration"
         "200"
