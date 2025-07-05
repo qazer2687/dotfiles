@@ -12,6 +12,8 @@
       enableRenice = true;
       settings = {
         general = {
+          # As my CPU cooling solution isn't the best, this theoretically
+          # should perform a bit better than the 'performance' governor.
           desiredgov = "schedutil";
           defaultgov = "schedutil";
           renice = -10;
@@ -23,9 +25,9 @@
           gpu_device = 1;
           # Prefer maximum performance.
           nv_powermizer_mode = 1;
-          # Set maximum GPU memory and core clocks.
-          nv_core_clock_mhz_offset = 100;
-          nv_mem_clock_mhz_offset = 500;
+          # Apply an overclock to the GPU.
+          nv_core_clock_mhz_offset = 150;
+          nv_mem_clock_mhz_offset = 1000;
         };
         custom = {
           start = "${pkgs.libnotify}/bin/notify-send 'GameMode' 'Activated'";
@@ -36,7 +38,5 @@
 
     # Ensure user is in gamemode group for proper permissions.
     users.users.alex.extraGroups = ["gamemode"];
-
-    powerManagement.cpuFreqGovernor = lib.mkDefault "schedutil";
   };
 }

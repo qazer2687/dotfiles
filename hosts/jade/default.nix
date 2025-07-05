@@ -46,11 +46,6 @@
       # THP can sometimes introduce latency due to memory management overhead, which can negatively
       # impact game performance. Disabling it can lead to more consistent frame times.
       "transparent_hugepages=never"
-      # VIBECODED - Optimize I/O scheduler for SSDs/NVMe.
-      # Setting the I/O scheduler to 'noop' (or 'none') for solid-state drives
-      # allows the drive's internal controller to manage I/O requests more efficiently,
-      # bypassing the kernel's scheduler and potentially reducing latency.
-      "elevator=noop"
     ];
     initrd.kernelModules = [
       "nvidia"
@@ -64,7 +59,7 @@
     # EXPERIMENTAL - These sysctl options are for
     # improving performance and reducing latency.
     kernel.sysctl = {
-      # VIBECODED - Pretty much all of this is AI slop,
+      # VIBECODED - Most of this is AI slop,
       # I'll see how it affects my latency and memory usage.
 
       "vm.dirty_background_ratio" = 3;
@@ -190,6 +185,7 @@
     steam.enable = true;
     zram.enable = true;
     gamemode.enable = true;
+    gamescope.enable = true;
   };
 
   # Did you read the comment?
