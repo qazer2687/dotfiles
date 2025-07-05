@@ -59,16 +59,16 @@
       alsa.support32Bit = true;
       pulse.enable = true;
 
-      # I found that 32 quant resulted in choppy audio;
-      # 64 is the next option and results in a latency of 1.33ms.
+      # I found that 32 and 64 quant resulted in choppy audio;
+      # 128 is the next option and results in a latency of 2.67ms.
       # Quant should be in powers of two for efficiency
       # with certain audio processing algorithms.
       extraConfig.pipewire."92-low-latency" = {
         "context.properties" = {
           "default.clock.rate" = 48000;
-          "default.clock.quantum" = 64;
-          "default.clock.min-quantum" = 64;
-          "default.clock.max-quantum" = 64;
+          "default.clock.quantum" = 128;
+          "default.clock.min-quantum" = 128;
+          "default.clock.max-quantum" = 128;
         };
       };
     };

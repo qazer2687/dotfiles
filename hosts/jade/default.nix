@@ -180,12 +180,15 @@
 
   modules = {
     core.enable = true;
+    zram.enable = true;
+
+    # Gaming
+    ananicy.enable = true;
+    gamemode.enable = true;
+    gamescope.enable = true;
     nvidia.enable = true;
     pipewire.enable = true;
     steam.enable = true;
-    zram.enable = true;
-    gamemode.enable = true;
-    gamescope.enable = true;
   };
 
   # Did you read the comment?

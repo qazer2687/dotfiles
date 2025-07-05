@@ -16,9 +16,11 @@
           # should perform a bit better than the 'performance' governor.
           desiredgov = "schedutil";
           defaultgov = "schedutil";
-          renice = -10;
+          renice = 15;
           ioprio = 0;
           inhibit_screensaver = 1;
+          # From play.nix flake.
+          softrealtime = "auto";
         };
         gpu = {
           apply_gpu_optimisations = "accept-responsibility";

@@ -9,24 +9,29 @@
   config = lib.mkIf config.modules.steam.enable {
     programs.steam = {
       enable = true;
+      extest.enable = true;
       package = pkgs.steam.override {
         extraPkgs = pkgs': with pkgs'; [
-          # Required for gamescope support.
+          # X11 Libraries
           xorg.libXcursor
           xorg.libXi
           xorg.libXinerama
           xorg.libXScrnSaver
+
+          # System Libraries
+          stdenv.cc.cc.lib
+          gperftools
+          keyutils
+          libkrb5
           libpng
           libpulseaudio
           libvorbis
-          stdenv.cc.cc.lib # Provides libstdc++.so.6
-          libkrb5
-          keyutils
-          
-          # Misc
-          gamescope
-          gamemode
           mangohud
+          gamemode
+          gamescope
+          
+          # Proton
+          proton-ge-bin
         ];
       };
     };
