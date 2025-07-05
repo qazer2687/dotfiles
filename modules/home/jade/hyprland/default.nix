@@ -125,6 +125,12 @@
           vfr = true;
           vrr = 0;
         };
+        
+        debug = {
+          # Fix for gamescope requiring scRGB support.
+          # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2831929362
+          full_cm_proto = true;
+        };
 
         # Smart Gaps
         workspace = [
