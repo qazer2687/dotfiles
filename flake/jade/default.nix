@@ -8,6 +8,7 @@ inputs.nixpkgs.lib.nixosSystem {
   modules = [
     ../../hosts/jade
     ../../modules/base/shared
+    ../../modules/base/jade
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
     inputs.nyx.nixosModules.default
