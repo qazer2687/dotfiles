@@ -22,223 +22,210 @@
       enable = true;
       settings = [
         {
-          margin-top = 10;
-          margin-left = 10;
-          margin-right = 10;
           layer = "top";
-          position = "top";
           output = "DP-1";
-    
-          modules-left = [
-            "custom/start"
-            "hyprland/submap"
-            "hyprland/workspaces"
-            "hyprland/window"
-          ];
-          modules-right = [
-            "tray"
-            "temperature"
-            "cpu"
-            "memory"
-            "disk"
-            "network"
-            "pulseaudio"
-            "battery"
-            "power-profiles-daemon"
-            "clock"
-          ];
-          "cpu" = {
-            states = {
-              critical = 85;
-            };
-            interval = 1;
-            format = " {usage:2}%";
-            on-click = "kitty btop";
-          };
-          "memory" = {
-            states = {
-              critical = 85;
-            };
-            interval = 1;
-            format = " {percentage}%";
-            on-click = "kitty btop";
-          };
-          "disk" = {
-            states = {
-              critical = 85;
-            };
-            interval = 5;
-            format = " {percentage_used}%";
-            on-click = "kitty btop";
-          };
-          "network" = {
-            format-ethernet = " {bandwidthDownOctets}";
-            format-wifi = " {signalStrength}%";
-            format-disconnected = "";
-            format-disabled = "";
+          margin = "0 0 0 0";
+          modules-left = ["clock" "hyprland/workspaces"];
+          modules-center = [];
+          modules-right = ["mpris" "memory" "pulseaudio" "disk" "network"];
+
+          pulseaudio = {
             tooltip = false;
-            on-click = "rofi-network-manager";
-          };
-          "temperature" = {
-            critical-threshold = 80;
-            format = " {temperatureC}°C";
-            interval = 1;
-            on-click = "kitty btop";
-          };
-          "power-profiles-daemon" = {
-            format = "{icon} {profile}";
+            scroll-step = 1;
+            on-click = "pamixer -t";
+            format = "{icon}";
+            format-muted = "󰝟";
             format-icons = {
-              performance = "";
-              power-saver = "";
-              balanced = "";
+              default = ["󰕿" "󰖀" "󰕾"];
             };
           };
-          "hyprland/workspaces" = {
-            format = "{name}";
-            format-icons = {
-              default = " ";
-              active = " ";
-              urgent = " ";
-            };
-            on-scroll-down = "hyprctl dispatch workspace e+1";
-            on-scroll-up = "hyprctl dispatch workspace e-1";
+
+          clock = {
+            format = "{:%A %d, %H:%M}";
+            tooltip = false;
           };
-          "hyprland/window" = {
-            icon = true;
-            max-length = 45;
-            separate-outputs = false;
-            on-click-right = "hyprctl dispatch fullscreen 0";
-            on-click-middle = "hyprctl dispatch killactive";
-            on-click = "hyprctl dispatch fullscreen 1";
-          };
-          "hyprland/submap" = {
-            format = " {}";
-            on-click = "hyprctl dispatch submap reset";
-          };
-          "clock" = {
-            format = "{:%b %d, %I:%M %p}";
-          };
-          "tray" = {
-            spacing = 12;
-          };
-          "taskbar" = {
-            icon-size = 10;
-            icon-theme = "Papirus-Dark";
-            on-click = "activate";
-            on-click-right = "fullscreen";
-            on-click-middle = "close";
-            on-scroll-up = "maximize";
-            on-scroll-down = "minimize";
-          };
-          "pulseaudio" = {
-            format = "{icon} {volume}% {format_source}";
-            format-bluetooth = "{volume}% {icon} {format_source}";
-            format-bluetooth-muted = " {icon} {volume}% {format_source_muted}";
-            format-muted = " {volume}% {format_source_muted}";
-            format-source = "";
-            format-source-muted = "";
-            format-icons = {
-              headphone = "";
-              hands-free = "";
-              headset = "";
-              phone = "";
-              portable = "";
-              car = "";
-              default = [
-                ""
-                ""
-                ""
-              ];
-            };
-            on-click = "pavucontrol";
-            on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          };
-          "battery" = {
+
+          battery = {
+            format = "{icon}";
+            format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            full-at = 95;
+            format-full = "󱟢";
+            format-charging = "󰂄";
+            tooltip = true;
+            tooltip-format = "{capacity}%";
             states = {
-              warning = 30;
-              critical = 15;
+              critical = 25;
             };
-            format = "{icon} {capacity}%";
-            format-charging = " {capacity}%";
-            format-plugged = " {capacity}%";
-            format-icons = [
-              ""
-              ""
-              ""
-              ""
-              ""
-            ];
-            interval = 1;
-            on-click = "";
+            interval = 2;
           };
-          "custom/start" = {
-            format = "";
-            on-click-right = "rofi -show power-menu -modi power-menu:rofi-power-menu";
-            on-click = "rofi -show drun";
+
+          "hyprland/workspaces" = {
+            format = "{icon}";
+            format-icons = {
+              "1" = "1";
+              "2" = "2";
+              "3" = "3";
+              "4" = "4";
+              "5" = "5";
+            };
+          };
+
+          mpris = {
+            tooltip = false;
+            format = "{player_icon} {artist} - {title}";
+            format-paused = "{status_icon} {artist} - {title}";
+            player-icons = {
+              default = "󰐊";
+            };
+            status-icons = {
+              paused = "󰏤";
+            };
+          };
+
+          network = {
+            tooltip = false;
+            format-wifi = "";
+            format-disconnected = "";
+            format-alt = "{ipaddr}";
+            format-ethernet = "󰈁";
+            interval = 2;
+          };
+
+          memory = {
+            tooltip = true;
+            format = "󰘚";
+            tooltip-format = "{percentage}%";
+            interval = 2;
+          };
+
+          backlight = {
+            device = "intel_backlight";
+            tooltip = true;
+            format = "{icon}";
+            tooltip-format = "{percent}%";
+            format-icons = ["󰃞" "󰃟" "󰃠"];
+          };
+
+          temperature = {
+            tooltip = false;
+            thermal-zone = 5;
+            critical-threshold = 70;
+            format = " {temperatureC}°C";
+            format-critical = " {temperatureC}°C";
+            interval = 10;
+          };
+
+          disk = {
+            tooltip = true;
+            format = "󰋊";
+            tooltip-format = "{percentage_used}%";
+            interval = 5;
           };
         }
       ];
+
       style = ''
         * {
-          font-size: 12px;
-          font-family: Font Awesome, monospace;
-          font-weight: bold;
-          color: @text;
-          transition: none;
-        }
-    
-        window#waybar {
-          background: rgba(0,0,0,0);
-          border: none;
-        }
-        
-        #workspaces button {
+          font-family: "Departure Mono", "FiraCode Mono Nerd Font";
+          font-size: 14px;
+          background-color: transparent;
           border-radius: 0px;
-          margin: 0px;
-          background: none;
-          border: none;
+          margin-left: 2px;
+          margin-right: 2px;
         }
-    
-        #workspaces button:hover, #custom-start:hover, #window:hover {
-          border: none;
-          outline: none;
-          background: none;
-          color: @text;
-          background-size: 300% 300%;
-          background: @surface0;
+
+        window#waybar {
+          background-color: #282828;
         }
-    
-        #workspaces button.active, #submap {
-          background: @surface1;
+
+        #workspaces {
+          background-color: transparent;
         }
-    
-        #custom-start {
-          padding: 0px 5px;
-          color: @sky;
-          font-size: 16px;
+
+        #workspaces button {
+          padding: 3px 18px;
+          margin-top: 6px;
+          margin-bottom: 6px;
+          margin-left: 3px;
+          margin-right: 3px;
+          border-radius: 5px;
+          background-color: #3c3836;
+          color: #ebdbb2;
         }
-    
-        #window, #submap {
-          padding: 0px 5px;
+
+        #workspaces button.active {
+          color: #282828;
+          background-color: #fabd2f;
         }
-    
-        .modules-left, .modules-right {
-          background-color: @crust;
-          border: 2px solid @surface1;
-          border-radius: 10px;
-          padding: 0 5px;
+
+        #memory,
+        #custom-power,
+        #battery,
+        #backlight,
+        #pulseaudio,
+        #network,
+        #clock,
+        #cpu,
+        #memory,
+        #temperature,
+        #disk,
+        #tray {
+          border-radius: 5px;
+          margin-top: 6px;
+          margin-bottom: 6px;
+          margin-left: 3px;
+          margin-right: 3px;
+          padding: 6px 12px;
+          color: #ebdbb2;
+          background-color: #3c3836;
         }
-        #submap, #workspaces, #cpu, #memory, #disk, #clock, #window, #tray, #pulseaudio, #battery, #network, #temperature, #power-profiles-daemon, #custom-exit, #custom-start {
-          margin: 0 5px;
+
+        #mpris {
+          padding: 3px 18px;
+          margin-top: 6px;
+          margin-bottom: 6px;
+          margin-left: 3px;
+          margin-right: 3px;
+          border-radius: 5px;
+          color: #282828;
+          background-color: #83a598;
         }
-        .critical, .muted, .performance {
-          color: @red;
+
+        #battery {
+          background-color: #b8bb26;
+          color: #282828;
         }
-        .warning, .urgent {
-          color: @yellow;
+
+        #battery.warning,
+        #battery.critical,
+        #battery.urgent {
+          background-color: #fb4934;
+          color: #282828;
+          animation-name: blink;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
         }
-        .charging, .plugged, .power-saver {
-          color: @green;
+
+        #battery.charging {
+          background-color: #b8bb26;
+          color: #282828;
+        }
+
+        #network {
+          padding-right: 17px;
+        }
+
+        tooltip {
+          border-radius: 8px;
+          padding: 15px;
+          background-color: #1d2021;
+        }
+
+        tooltip label {
+          padding: 5px;
+          background-color: #1d2021;
         }
       '';
     };
