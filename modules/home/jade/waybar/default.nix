@@ -107,10 +107,6 @@
             icon = true;
             max-length = 45;
             separate-outputs = false;
-            rewrite = {
-              "" = "${username}@${hostname}";
-              "~" = "${username}@${hostname}";
-            };
             on-click-right = "hyprctl dispatch fullscreen 0";
             on-click-middle = "hyprctl dispatch killactive";
             on-click = "hyprctl dispatch fullscreen 1";
