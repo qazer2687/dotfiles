@@ -155,7 +155,7 @@
 
         #workspaces button.active {
           color: #282828;
-          background-color: #fabd2f;
+          background-color: #d79921;
         }
 
         #memory,
@@ -188,19 +188,19 @@
           margin-right: 3px;
           border-radius: 5px;
           color: #282828;
-          background-color: #83a598;
+          background-color: #458588;
         }
 
         #battery {
-          background-color: #b8bb26;
+          background-color: #98971a;
           color: #282828;
         }
 
         #battery.warning,
         #battery.critical,
         #battery.urgent {
-          background-color: #fb4934;
-          color: #282828;
+          background-color: #cc241d;
+          color: #ebdbb2;
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -209,7 +209,7 @@
         }
 
         #battery.charging {
-          background-color: #b8bb26;
+          background-color: #98971a;
           color: #282828;
         }
 
