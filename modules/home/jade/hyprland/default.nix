@@ -27,7 +27,6 @@
 
       settings = {
         monitor = [
-          "eDP-1,highrr,auto,2"
           "DP-1,highrr,auto,1.25"
         ];
 
@@ -39,8 +38,8 @@
           gaps_out = 4;
           border_size = 2;
 
-          "col.active_border" = "rgba(cba6f7ff)";
-          "col.inactive_border" = "rgba(6f5b87ff)";
+          "col.active_border" = "rgba(d79921ff)";
+          "col.inactive_border" = "rgba(b57614ff)";
 
           resize_on_border = false;
           allow_tearing = true;

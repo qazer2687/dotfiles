@@ -212,6 +212,10 @@
           background-color: #98971a;
           color: #282828;
         }
+        
+        #clock {
+          margin-right: 0;
+        }
 
         #network {
           padding-right: 17px;
