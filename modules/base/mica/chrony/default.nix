@@ -17,6 +17,7 @@
     };
 
     # Allow outgoing UDP port 123 (NTP) and outgoing TCP port 4460 (NTS Key Establishment).
+    # Remember to open these on the router.
     networking.firewall.allowedUDPPorts = [123];
     networking.firewall.allowedTCPPorts = [4460];
   };
