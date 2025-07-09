@@ -19,7 +19,7 @@
         # https://github.com/NixOS/nixpkgs/issues/182916#issuecomment-1364504677
         live-restore = false;
 
-        # Use crun as the default runtime
+        # Use crun as the default runtime.
         "default-runtime" = "crun";
         "runtimes" = {
           "crun" = {

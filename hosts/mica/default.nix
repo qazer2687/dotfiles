@@ -107,24 +107,6 @@
 
   programs.nix-ld.enable = true;
 
-  users.motd = ''
-+----------------------------------------------------------+
-- This is a controlled access system.
-- Unauthorized access is strictly prohibited by law.
-- All activity is actively recorded and monitored.
-- Suspicious activity may be reported to law enforcement.
-+----------------------------------------------------------+
-'';
-
-  environment.etc."issue".text = ''
-+----------------------------------------------------------+
-- This is a controlled access system.
-- Unauthorized access is strictly prohibited by law.
-- All activity is actively recorded and monitored.
-- Suspicious activity may be reported to law enforcement.
-+----------------------------------------------------------+
-'';
-
   modules = {
     core.enable = true;
     zram.enable = true;

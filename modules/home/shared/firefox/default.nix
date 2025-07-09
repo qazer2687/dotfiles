@@ -32,9 +32,7 @@
       };
     };
 
-    # Asahi Widevine Support
-    # Note that in order for Netflix to work, this needs to be paried with
-    # a web user-agent spoofer configured to emulate Chrome on ChromeOS.
+    # Widevine/DRM Support
     home.file."firefox-widevinecdm" = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       enable = true;
       target = ".mozilla/firefox/default/gmp-widevinecdm";
