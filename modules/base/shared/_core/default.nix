@@ -164,6 +164,7 @@
     ########## ENVIRONMENT ##########
 
     environment = {
+      # Clear all default packages.
       defaultPackages = lib.mkForce [];
       sessionVariables = {
         # Additional session variables can be used via
@@ -210,7 +211,7 @@
     security.sudo.enable = false;
     security.sudo-rs = {
       enable = true;
-      wheelNeedsPassword = false;
+      wheelNeedsPassword = true;
     };
 
     # Improved nixos-rebuild implementation.
@@ -235,15 +236,6 @@
         style = "slight";
       };
     };
-
-    # Use dash as /bin/sh. Although the performance boost
-    # will be small to negligible, I might as well use it.
-    environment.binsh = "${pkgs.dash}/bin/dash";
-
-    # Disable the core dump service.
-    systemd.coredump.enable = false;
-    # Discard all core dumps.
-    boot.kernel.sysctl."kernel.core_pattern" = "/dev/null";
 
     # Add a global rebuild command to bash for any hosts that aren't using home-manager.
     programs.bash.shellAliases = {

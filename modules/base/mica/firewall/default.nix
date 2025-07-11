@@ -9,11 +9,8 @@
     networking.firewall = {
       enable = true; # Ensure the firewall is enabled
 
-      # Trusted Interfaces (e.g., for Tailscale, allowing its traffic)
-      trustedInterfaces = ["tailscale0"];
+      trustedInterfaces = ["tailscale0" "docker0"];
 
-      # Allowed Incoming TCP Ports
-      # Combining all previously requested TCP ports
       allowedTCPPorts = [
         # HTTP
         80
@@ -25,8 +22,6 @@
         6881
       ];
 
-      # Allowed Incoming UDP Ports
-      # Combining all previously requested UDP ports
       allowedUDPPorts = [
         # DNS
         53

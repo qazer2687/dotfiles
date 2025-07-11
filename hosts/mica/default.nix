@@ -107,6 +107,10 @@
 
   programs.nix-ld.enable = true;
 
+  environment.systemPackages = [
+    pkgs.git
+  ];
+
   modules = {
     core.enable = true;
     zram.enable = true;
