@@ -14,6 +14,8 @@
       daemon.settings = {
         data-root = "/var/lib/docker";
         "hosts" = ["unix:///var/run/docker.sock"];
+        # Fix for some services just not being able to communicate
+        # with the web, for completely unknown reasons to me.
         dns = [ "1.1.1.1" ];
 
         # A fix for s6-svscan hanging on shutdown.
