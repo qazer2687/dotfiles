@@ -14,8 +14,6 @@
       enable = true;
       settings = {
         global = {
-          "guest account" = "nobody";
-          "map to guest" = "bad user";
           "hosts allow" = "192.168.0. localhost 100.64.0.0/10";
           "hosts deny" = "0.0.0.0/0";
           "security" = "user";
