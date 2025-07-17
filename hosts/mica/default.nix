@@ -115,6 +115,7 @@
     core.enable = true;
     zram.enable = true;
     docker.enable = true;
+    samba.enable = true;
 
     # Security
     firewall.enable = true;
