@@ -141,7 +141,7 @@
 
     # Marcan said something about it being ineffective on apple silicon.
     # zram.enable = true;
-    #
+    
   };
 
   # Did you read the comment?
