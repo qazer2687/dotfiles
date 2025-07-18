@@ -43,11 +43,13 @@
     kernelPackages = pkgs.linuxPackages_cachyos;
   };
 
+  /*
   # EXPERIMENTAL - Use the scx_lavd scheduler.
   services.scx = {
     enable = true;
     scheduler = "scx_lavd";
   };
+  */
 
   # Hide the 'File descriptor leaked on LVM invocation' warning on boot.
   environment.etc."lvm/lvm.conf".text = ''
