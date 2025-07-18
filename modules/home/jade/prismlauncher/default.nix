@@ -13,11 +13,11 @@
     ];
 
     home.file = {
-      ".jdks/8".source = lib.getBin pkgs.jdk8;
+      #".jdks/8".source = lib.getBin pkgs.jdk8;
       
-      ".jdks/11".source = lib.getBin pkgs.jdk11;
+      #".jdks/11".source = lib.getBin pkgs.jdk11;
 
-      ".jdks/17".source = lib.getBin pkgs.jdk17;
+      #".jdks/17".source = lib.getBin pkgs.jdk17;
       
       ".jdks/21".source = lib.getBin pkgs.jdk;
     };
