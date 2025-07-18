@@ -7,7 +7,7 @@
 
   config = lib.mkIf config.modules.firewall.enable {
     networking.firewall = {
-      enable = true; # Ensure the firewall is enabled
+      enable = true;
 
       #trustedInterfaces = ["tailscale0" "docker0"];
 
