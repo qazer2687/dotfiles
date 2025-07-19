@@ -36,8 +36,8 @@
           };
 
           "custom/hyprsunset" = {
-            exec = ''hyprctl hyprsunset temperature | sed "s/^/BKL: /; s/$/K/"'';
-            interval = 2;
+            exec = ''printf "TEMP: %sK" "$(hyprctl hyprsunset temperature)"'';
+            signal = 1;
             format = "{}";
             tooltip = false;
           };
