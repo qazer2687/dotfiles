@@ -37,7 +37,7 @@
 
           "custom/hyprsunset" = {
             exec = ''hyprctl hyprsunset temperature | sed "s/^/BKL: /; s/$/K/"'';
-            interval = 5;
+            interval = 2;
             format = "{}";
             tooltip = false;
           };

@@ -203,8 +203,8 @@
           "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%+"
           "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%-"
 
-          # Hyprsunset
-          "CTRL, XF86MonBrightnessUp, exec, hyprctl hyprsunset temperature $(($(hyprctl hyprsunset temperature) + 100))"
+          # Hyprsunset (Capped at 6500K)
+          "CTRL, XF86MonBrightnessUp, exec, hyprctl hyprsunset temperature $(( $(hyprctl hyprsunset temperature) < 6500 ? $(hyprctl hyprsunset temperature) + 100 : 6500 ))"
           "CTRL, XF86MonBrightnessDown, exec, hyprctl hyprsunset temperature $(($(hyprctl hyprsunset temperature) - 100))"
         ];
 
