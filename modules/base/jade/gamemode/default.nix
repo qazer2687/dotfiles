@@ -28,8 +28,8 @@
           # Prefer maximum performance.
           nv_powermizer_mode = 1;
           # Apply an overclock to the GPU.
-          nv_core_clock_mhz_offset = 150;
-          nv_mem_clock_mhz_offset = 1000;
+          #nv_core_clock_mhz_offset = 150;
+          #nv_mem_clock_mhz_offset = 1000;
         };
         custom = {
           start = "${pkgs.libnotify}/bin/notify-send 'GameMode' 'Activated'";
