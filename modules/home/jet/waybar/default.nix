@@ -36,7 +36,7 @@
           };
 
           "custom/hyprsunset" = {
-            exec = ''temp=$(hyprctl hyprsunset 2>/dev/null | grep -o '[0-9]\+K' | head -1); [ -z "$temp" ] && temp="6500K"; echo "BKL: $temp"'';
+            exec = ''hyprctl hyprsunset temperature | sed "s/^/BKL: /; s/$/K/"'';
             interval = 5;
             format = "{}";
             tooltip = false;
