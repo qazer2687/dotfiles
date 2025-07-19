@@ -44,6 +44,10 @@
           resize_on_border = false;
           allow_tearing = true;
         };
+        
+        xwayland = {
+          "force_zero_scaling" = true;
+        };
 
         master = {
           mfact = 0.75;
@@ -235,6 +239,8 @@
 
       extraConfig = ''
         # Add extra config here...
+        env = GDK_SCALE,2
+        env = XCURSOR_SIZE,32
       '';
     };
   };
