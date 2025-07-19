@@ -27,15 +27,19 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "hyprland/workspaces"];
           modules-center = [];
-          modules-right = ["tray" "backlight" "network" "pulseaudio" "battery"];
+          modules-right = ["tray" "custom/hyprsunset" "backlight" "network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "VOL: {volume}%";
             tooltip = false;
             format-muted = "VOL: MUTED";
-            format-icons = {
-              default = [" " " " " "];
-            };
+          };
+
+          "custom/hyprsunset" = {
+            exec = ''temp=$(hyprsunset -p 2>/dev/null | grep -o '[0-9]\+K' | head -1); [ -z "$temp" ] && temp="6500K"; echo "BKL: $temp"'';
+            interval = 5;
+            format = "{}";
+            tooltip = false;
           };
 
           clock = {
@@ -145,7 +149,7 @@
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
-        #memory, #cpu, #temperature, #disk, #custom-kernel, #idle_inhibitor, #mode,
+        #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
         #backlight, #battery, #workspaces button, #workspaces button.focused,
         #workspaces button.active {
           padding: 0 10px;

@@ -202,6 +202,10 @@
           # Backlight
           "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%+"
           "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%-"
+
+          # Hyprsunset
+          "CTRL, XF86MonBrightnessUp, exec, ${pkgs.hyprsunset}/bin/hyprsunset -t $(($(${pkgs.hyprsunset}/bin/hyprsunset -p | grep -o '[0-9]\\+') + 100))"
+          "CTRL, XF86MonBrightnessDown, exec, ${pkgs.hyprsunset}/bin/hyprsunset -t $(($(${pkgs.hyprsunset}/bin/hyprsunset -p | grep -o '[0-9]\\+') - 100))"
         ];
 
         bindl = [
