@@ -205,7 +205,7 @@
 
           # Hyprsunset
           "CTRL, XF86MonBrightnessUp, exec, hyprctl hyprsunset temperature $(($(hyprctl hyprsunset temperature) + 100))"
-          "CTRL, XF86MonBrightnessDown, exec, hyprctl hyprsunset temperature $(($(hyprctl hyprsunset temperature) + 100))"
+          "CTRL, XF86MonBrightnessDown, exec, hyprctl hyprsunset temperature $(($(hyprctl hyprsunset temperature) - 100))"
         ];
 
         bindl = [
