@@ -204,8 +204,8 @@
           "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%-"
 
           # Hyprsunset (Capped at 6500K)
-          "CTRL, XF86MonBrightnessUp, exec, temp=$(hyprctl hyprsunset temperature); [ $temp -lt 6500 ] && hyprctl hyprsunset temperature $((temp + 100)); pkill -RTMIN+1 waybar"
-          "CTRL, XF86MonBrightnessDown, exec, temp=$(hyprctl hyprsunset temperature); hyprctl hyprsunset temperature $((temp - 100)); pkill -RTMIN+1 waybar"
+          "CTRL, XF86MonBrightnessUp, exec, temp=$(hyprctl hyprsunset temperature) && [ $temp -lt 6500 ] && hyprctl hyprsunset temperature $((temp + 100)) && pkill -RTMIN+1 waybar"
+          "CTRL, XF86MonBrightnessDown, exec, temp=$(hyprctl hyprsunset temperature) && hyprctl hyprsunset temperature $((temp - 100)) && pkill -RTMIN+1 waybar"
         ];
 
         bindl = [
