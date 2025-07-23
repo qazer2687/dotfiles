@@ -233,7 +233,7 @@
           # "kaneru"
           "waybar"
           # "hyprpanel"
-          "${pkgs.wbg}/bin/wbg /home/alex/.config/wallpaper/wallpaper.png"
+          "${pkgs.wbg}/bin/wbg -o DP-1 /home/alex/.config/wallpaper/wallpaper.png -o HDMI-A-1 /home/alex/.config/wallpaper/wallpaper-uw.png"
           "${pkgs.hyprsunset}/bin/hyprsunset -t 3500"
         ];
       };

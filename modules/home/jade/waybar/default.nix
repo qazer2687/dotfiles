@@ -23,7 +23,7 @@
       settings = [
         {
           layer = "top";
-          output = "DP-1";
+          #output = "DP-1";
           margin = "0 0 0 0";
           modules-left = ["clock" "hyprland/workspaces"];
           modules-center = [];
