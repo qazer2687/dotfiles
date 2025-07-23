@@ -28,7 +28,7 @@
       settings = {
         monitor = [
           "DP-1,highrr,auto,1.25"
-          "HDMI-A-1,highrr,0x36,1.0"
+          "HDMI-A-1,2560x1080@75,0x36,1.0"
         ];
 
         general = {
