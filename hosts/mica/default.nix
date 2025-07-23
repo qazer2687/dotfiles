@@ -120,6 +120,7 @@
     # Security
     firewall.enable = true;
     chrony.enable = true;
+    clamav.enable = true;
   };
 
   # Did you read the comment?
