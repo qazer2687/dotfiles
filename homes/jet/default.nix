@@ -30,6 +30,8 @@
     # Open source clone of the Microprose game “Transport Tycoon Deluxe”.
     openttd-jgrpp
 
+    protonvpn-gui
+
     # Misc Libs
     ffmpeg-full
     libheif
