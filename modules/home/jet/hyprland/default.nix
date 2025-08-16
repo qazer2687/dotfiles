@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  osConfig,
+  inputs,
   ...
 }: {
   options.modules.hyprland.enable = lib.mkEnableOption "";
@@ -17,10 +17,9 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
-      # Enable xwayland for gaming on Jade.
-      xwayland.enable = osConfig.networking.hostName == "jade";
-      #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      xwayland.enable = false;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       plugins = [
         #pkgs.hyprlandPlugins.borders-plus-plus
       ];
@@ -209,7 +208,7 @@
 
         bindl = [
           # Lock the screen with hyprlock when the lid is closed.
-          ",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
+          #",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
         ];
 
         bindm = [
@@ -221,7 +220,7 @@
           # Launch hyprlock after hyprland starts and terminate the session if hyprlock
           # fails to launch. This does not consider the possibility of exec-once not
           # working - but then again I'm using autologin so there's no security here anyway.
-          "hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
+          #"hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
           # "kaneru"
           "waybar"
           # "hyprpanel"

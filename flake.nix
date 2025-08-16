@@ -11,6 +11,7 @@
     asahi.url = "github:tpwrules/nixos-apple-silicon";
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {self, ...} @ inputs: {
