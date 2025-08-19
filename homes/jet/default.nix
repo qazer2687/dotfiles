@@ -32,6 +32,8 @@
 
     protonvpn-gui
 
+    telegram-desktop
+
     # Misc Libs
     ffmpeg-full
     libheif
