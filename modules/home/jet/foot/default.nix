@@ -13,8 +13,8 @@
           # 16.5px, 11px and 22px are pixel-perfect for Departure Mono.
           font = "DepartureMono:size=11, FiraCode Nerd Font:size=11, Noto Color Emoji:size=10";
           font-bold = "DepartureMono:size=11:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
-          line-height = "24px";
-          pad = "8x8";
+          line-height = "18px";
+          pad = "12x12";
         };
         scrollback = {
           # I don't really need that much scrollback,
