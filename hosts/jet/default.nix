@@ -30,7 +30,6 @@
       enable = true;
     };
     asahi = {
-      useExperimentalGPUDriver = true;
       setupAsahiSound = true;
       peripheralFirmwareDirectory = ../../firmware/jet;
     };
@@ -118,11 +117,11 @@
 
       # Temporary fix for nautilus not launching on hyprland.
       # https://bbs.archlinux.org/viewtopic.php?pid=2196562#p2196562
-      # GSK_RENDERER = "ngl";
+      GSK_RENDERER = "ngl";
 
       # Temporary fix for the cursor being offset slightly on hyprland.
       # https://github.com/hyprwm/Hyprland/issues/7244
-      # AQ_NO_ATOMIC = "0";
+      AQ_NO_ATOMIC = "0";
     };
   };
 
