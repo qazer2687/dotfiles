@@ -24,7 +24,6 @@
         cursor = {
           style = "beam";
           blink = "yes";
-          color = "11111b f5e0dc";
         };
         mouse = {
           hide-when-typing = "no";
@@ -58,6 +57,7 @@
           search-box-match = "cdd6f4 313244";
           jump-labels = "11111b fab387";
           urls = "89b4fa";
+          cursor = "11111b f5e0dc";
         };
         key-bindings = {
           clipboard-copy = "Control+c XF86Copy";
