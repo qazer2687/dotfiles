@@ -28,7 +28,7 @@
         */
 
         #userChrome = builtins.readFile ./config/userChrome.css;
-        extraConfig = builtins.readFile ./config/betterfox_.js + builtins.readFile ./config/custom.js;
+        extraConfig = builtins.readFile ./config/betterfox.js + builtins.readFile ./config/custom.js;
       };
     };
 
