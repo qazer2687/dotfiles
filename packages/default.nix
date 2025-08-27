@@ -2,7 +2,7 @@
 # You can build them using 'nix build .#example'
 pkgs: {
   # example = pkgs.callPackage ./example { };
-  widevinecdm-aarch64 = pkgs.callPackage ./widevinecdm-aarch64 {};
+  widevine = pkgs.callPackage ./widevine {};
   arnis = pkgs.callPackage ./arnis {};
   pragmatapro = pkgs.callPackage ./pragmatapro {};
 }
