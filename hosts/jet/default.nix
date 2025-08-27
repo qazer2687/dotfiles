@@ -13,18 +13,7 @@
       hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
     };
   };
-
-  # Stop the power button from
-  # shutting down the machine.
-  # (long button press still works)
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-    HandleSuspendKey=ignore
-    HandleHibernateKey=ignore
-  '';
-
-  programs.fish.enable = true;
-
+  
   hardware = {
     graphics = {
       enable = true;
