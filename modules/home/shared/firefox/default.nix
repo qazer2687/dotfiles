@@ -33,7 +33,7 @@
     };
 
     # Widevine/DRM Support
-    environment.sessionVariables = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
+    home.sessionVariables = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       MOZ_GMP_PATH = "${pkgs.widevine}/gmp-widevinecdm/system-installed";
     };
     programs.firefox.profiles."default".settings = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
