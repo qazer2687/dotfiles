@@ -18,9 +18,9 @@
       "fetch" = "fastfetch";
     };
 
-    home.file.".config/assets/konata.png" = {
+    /*home.file.".config/assets/konata.png" = {
       source = ../../../../assets/konata.png;
-    };
+    };*/
 
     home.file.".config/fastfetch/config.jsonc".text = ''
         {

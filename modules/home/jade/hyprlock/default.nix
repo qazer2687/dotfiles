@@ -6,10 +6,6 @@
   options.modules.hyprlock.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprlock.enable {
-    home.file.".config/assets/lockscreen.png" = {
-      source = ../../../../assets/lockscreen.png;
-    };
-
     programs.hyprlock = {
       enable = true;
 
@@ -25,7 +21,7 @@
 
         # BACKGROUND
         background = {
-          path = "$HOME/.config/assets/lockscreen.png";
+          #path = "$HOME/.config/assets/lockscreen.png";
           blur_passes = 2;
           brightness = 0;
         };
