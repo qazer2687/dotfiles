@@ -8,59 +8,45 @@
   ];
 
   home.packages = with pkgs; [
-    # Powerful knowledge base that works on top of a
-    # local folder of plain text Markdown files
     obsidian
-
-    # File manager for GNOME.
     nautilus
-
-    # Cross-platform media player and streaming server.
     vlc
-
-    # Simple image viewer application written with GTK4 and Rust
     loupe
-
-    # Disk usage analyzer with console interface.
     gdu
-
-    # Monitor of resources.
     btop
-
-    # Open source clone of the Microprose game “Transport Tycoon Deluxe”.
-    openttd-jgrpp
-
     protonvpn-gui
-
-    telegram-desktop
-
-    # Misc Libs
-    ffmpeg-full
-    libheif
   ];
 
-  # Enable rich presence support for Discord on the web.
-  # services.arrpc.enable = true;
+  services.arrpc.enable = true;
 
   modules = {
-    core.enable = true;
-
-    # Desktop Environment
-    hyprland.enable = true;
-    hyprlock.enable = true;
-
-    waybar.enable = true;
-    mako.enable = true;
-    tofi.enable = true;
+    # Development
+    direnv.enable = true;
+    git.enable = true;
 
     # CLI
+    eza.enable = true;
+    zoxide.enable = true;
+    utilities.enable = true;
     fish.enable = true;
     foot.enable = true;
     fastfetch.enable = true;
 
-    # GUI
+    # Theming
+    fonts.enable = true;
+    theme.enable = true;
+
+    # Desktop Environment
+    hyprland.enable = true;
+    hyprlock.enable = true;
+    waybar.enable = true;
+    mako.enable = true;
+    tofi.enable = true;
+
+    # Applications
     firefox.enable = true;
     vscode.enable = true;
+    zed.enable = true;
   };
 
   home.stateVersion = "24.11";

@@ -1,23 +1,11 @@
 {
   lib,
   config,
-  inputs,
-  self,
   pkgs,
+  inputs,
   ...
 }: {
   options.modules.core.enable = lib.mkEnableOption "";
-
-  # This module is a replacement to having a shared
-  # folder in the hosts directory.
-  #
-  # All options defined in this module are meant to be
-  # enabled on all hosts INCLUDING SERVER HOSTS.
-  #
-  # All settings defined here can be overridden using
-  # lib.mkForce in the configuration files for specific
-  # hosts, although if you really need to do that, it
-  # probably doesn't belong in this file.
 
   config = lib.mkIf config.modules.core.enable {
     ########## NIX ##########
@@ -64,7 +52,7 @@
         # packages with unfree licences.
         allowUnfree = true;
       };
-      overlays = [
+      /*overlays = [
         self.overlays.additions
         # Enabling the modifications overlay for all machines
         # means that any package which has an overlay will be
@@ -73,19 +61,7 @@
         self.overlays.modifications
 
         # inputs.<name>.overlay...
-      ];
-    };
-
-    ########## BOOTLOADER ##########
-
-    boot.loader.systemd-boot.enable = true;
-    # Pressing ESC on boot will bring up the bootloader menu.
-    boot.loader.timeout = 0;
-    environment.etc = {
-      "issue" = {
-        text = "[?12l[?25h";
-        mode = "0444";
-      };
+      ];*/
     };
 
     ########## NETWORKING ##########
@@ -97,7 +73,6 @@
       # Allow all the IP's in the tailscale subnet to bypass firewall.
       firewall.extraInputRules = ''
         -A INPUT -i tailscale0 -j ACCEPT
-        -A INPUT -s 100.64.0.0/10 -j ACCEPT
       '';
     };
     systemd = {
@@ -106,46 +81,12 @@
       services.NetworkManager-dispatcher.enable = false;
     };
 
-    /*
-    # Block connections to a few LLM's.
-    networking.extraHosts = ''
-      127.0.0.1       chat.openai.com
-      127.0.0.1       chatgpt.com
-
-      127.0.0.1       claude.ai
-
-      127.0.0.1       gemini.google.com
-    '';
-    */
-
     ########## KEYMAP ##########
 
     console.keyMap = "colemak";
     services.xserver.xkb = {
       layout = "gb";
       variant = "colemak";
-    };
-
-    ########## KEYRING ##########
-
-    services.gnome.gnome-keyring.enable = true;
-    security.pam.services.login.enableGnomeKeyring = true;
-
-    ########## XDG ##########
-
-    xdg.portal = {
-      enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-wlr
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.xdg-desktop-portal-hyprland
-      ];
-      xdgOpenUsePortal = true;
-      config = {
-        common = {
-          default = ["hyprland" "wlr" "gtk"];
-        };
-      };
     };
 
     ########## LOCALE ##########
@@ -159,87 +100,6 @@
       defaultSopsFormat = "yaml";
       defaultSopsFile = ../../../secrets/default.yaml;
       age.keyFile = "/home/alex/.config/sops/age/keys.txt";
-    };
-
-    ########## ENVIRONMENT ##########
-
-    environment = {
-      # Clear all default packages.
-      defaultPackages = lib.mkForce [];
-      sessionVariables = {
-        # Additional session variables can be used via
-        # declaring environment.sessionVariables in
-        # the configuration for a specific host.
-      };
-    };
-
-    ########## COMPATIBILITY ##########
-
-    # Support for trash:/// on nautilus.
-    services.gvfs.enable = true;
-
-    # iOS Filesystem Support
-    services.usbmuxd.enable = true;
-    environment.systemPackages = with pkgs;
-      [
-        ifuse
-        libimobiledevice
-      ]
-      ++
-      # Support for heic image preview on nautilus.
-      [
-        pkgs.libheif
-        pkgs.libheif.out
-      ];
-    environment.pathsToLink = ["share/thumbnailers"];
-
-    ########## MISC ##########
-
-    # EXPERIMENTAL - High performance implementation of DBUS.
-    services.dbus = {
-      enable = true;
-      implementation = "broker";
-    };
-
-    # Fix 'command-not-found' error 'failed to open database'.
-    programs.command-not-found.enable = false;
-
-    programs.dconf.enable = true;
-    security.polkit.enable = true;
-
-    # Less bloated sudo implementation.
-    security.sudo.enable = false;
-    security.sudo-rs = {
-      enable = true;
-      wheelNeedsPassword = true;
-    };
-
-    # Improved nixos-rebuild implementation.
-    programs.nh = {
-      enable = true;
-      clean.enable = false;
-      flake = "/home/alex/Code/dotfiles";
-    };
-
-    # OOM Killer
-    services.earlyoom.enable = true;
-
-    fonts.fontconfig = {
-      enable = true;
-      antialias = true;
-      subpixel = {
-        rgba = "rgb";
-        lcdfilter = "default";
-      };
-      hinting = {
-        enable = true;
-        style = "slight";
-      };
-    };
-
-    # Add a global rebuild command to bash for any hosts that aren't using home-manager.
-    programs.bash.shellAliases = {
-      "rebuild" = "nh os switch github:qazer2687/dotfiles -H $(hostname) -- --refresh --option eval-cache false";
     };
   };
 }
