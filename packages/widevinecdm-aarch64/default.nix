@@ -22,7 +22,7 @@
   };
 in
   stdenv.mkDerivation {
-    name = "widevinecdm-aarch64";
+    name = "widevine";
     version = "4.10.2662.3";
 
     dontUnpack = true;
