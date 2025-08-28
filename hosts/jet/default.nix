@@ -14,14 +14,6 @@
     };
   };
 
-  # Stop the power button from
-  # shutting down the machine.
-  # (long button press still works)
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-    HandleSuspendKey=ignore
-    HandleHibernateKey=ignore
-  '';
 
   programs.fish.enable = true;
 
