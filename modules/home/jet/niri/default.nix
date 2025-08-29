@@ -67,7 +67,7 @@
           "Mod+Return".action = spawn "foot";
 
           # Application launcher
-          "Mod+e".action = spawn "wofi" "--show" "drun";
+          "Mod+e".action = spawn "tofi-run" "|" "sh";
 
           # Window management
           "Mod+q".action = close-window;

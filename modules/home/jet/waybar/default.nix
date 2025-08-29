@@ -25,9 +25,9 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "hyprland/workspaces"];
+          modules-left = ["clock" "niri/workspaces"];
           modules-center = [];
-          modules-right = ["tray" "custom/hyprsunset" "backlight" "network" "pulseaudio" "battery"];
+          modules-right = ["tray" "backlight" "network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "VOL: {volume}%";
@@ -67,6 +67,17 @@
           };
 
           "hyprland/workspaces" = {
+            format = "{icon}";
+            format-icons = {
+              "1" = "1";
+              "2" = "2";
+              "3" = "3";
+              "4" = "4";
+              "5" = "5";
+            };
+          };
+
+          "niri/workspaces" = {
             format = "{icon}";
             format-icons = {
               "1" = "1";

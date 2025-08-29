@@ -41,13 +41,18 @@
     ];
   };
 
-  /*programs.hyprland = {
+  programs.uwsm = {
     enable = true;
-    withUWSM = true;
-  };*/
+    waylandCompositors = {
+      niri = {
+        prettyName = "Niri";
+        binPath = "/run/current-system/sw/bin/Niri";
+      };
+    };
+  };
 
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec niri-session
+    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start Niri
   '';
   
   swapDevices = [
