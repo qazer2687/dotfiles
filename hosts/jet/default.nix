@@ -49,9 +49,10 @@
     }
   ];
 
-  environment.systemPackages = [
-    pkgs.weston
-  ];
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   environment = {
     sessionVariables = {
