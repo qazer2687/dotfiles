@@ -36,8 +36,8 @@
           {
             clip-to-geometry = true;
 
-            # A ratio of screen space used against the total, out of
-            # 1280 which is half of my display width and I use 2x scaling.
+            # The max width is 1280 as I use 2x scaling (2560 / 2).
+            # This configuration leaves 20px on each side.
             min-width = 1240;
             max-width = 1240;
 
@@ -132,7 +132,7 @@
           # Fixes a black screen bug on Asahi.
           # https://github.com/YaLTeR/niri/wiki/Getting-Started#asahi-arm-and-other-kmsro-devices
           #render-drm-device = "/dev/dri/renderD128";
-          render-drm-device = "/dev/dri/card1";
+          #render-drm-device = "/dev/dri/card1";
         };
 
         spawn-at-startup = [

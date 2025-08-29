@@ -14,7 +14,6 @@
     };
   };
 
-
   programs.fish.enable = true;
 
   hardware = {
@@ -41,18 +40,8 @@
     ];
   };
 
-  programs.uwsm = {
-    enable = true;
-    waylandCompositors = {
-      niri = {
-        prettyName = "Niri";
-        binPath = "/run/current-system/sw/bin/Niri";
-      };
-    };
-  };
-
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start niri
+    [[ "$(tty)" == /dev/tty1 ]] && exec niri-session
   '';
   
   swapDevices = [
