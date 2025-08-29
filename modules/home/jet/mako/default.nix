@@ -16,7 +16,7 @@
         border-radius = 6;
         border-size = 2;
         progress-color = "source #cba6f7";
-        font = "Iosevka Nerd Font 14";
+        font = "Iosevka Nerd Font 12";
         width = 600;
         height = 400;
         margin = "4";

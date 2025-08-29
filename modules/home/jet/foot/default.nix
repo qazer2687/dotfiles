@@ -14,15 +14,13 @@
           #font = "DepartureMono:size=11, FiraCode Nerd Font:size=11, Noto Color Emoji:size=10";
           #font-bold = "DepartureMono:size=11:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
 
-          font = "Iosevka Nerd Font:size=14, FiraCode Nerd Font:size=11, Noto Color Emoji:size=10";
-          font-bold = "Iosevka Nerd Font:size=14:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
-          line-height = "18px";
+          font = "Iosevka Nerd Font:size=12, FiraCode Nerd Font:size=11, Noto Color Emoji:size=10";
+          font-bold = "Iosevka Nerd Font:size=12:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
+          line-height = "20px";
           pad = "12x12";
         };
         scrollback = {
-          # I don't really need that much scrollback,
-          # I think it just wastes a bit more memory.
-          lines = "1000";
+          lines = "5000";
         };
         cursor = {
           style = "beam";
