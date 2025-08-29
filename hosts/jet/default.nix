@@ -41,10 +41,6 @@
       "apple_dcp.show_notch=1"
     ];
   };
-
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec niri-session
-  '';
   
   swapDevices = [
     {

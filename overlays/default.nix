@@ -11,23 +11,6 @@ _: {
     # ...
     # });
 
-    # Use an older version of mesa with support for scanout on /dev/dri/renderD128 for niri.
-    mesa = prev.mesa.overrideAttrs (old: {
-      version = "24.2.0";
-      src = builtins.fetchurl {
-        url = "https://archive.mesa3d.org/mesa-24.2.0.tar.xz";
-        sha256 = "1pxdb059biiffr56vxkz1lc4yfcjgifck84m32qph3r9x8nbfay0";
-      };
-    });
-
-    mesa_libgbm = prev.mesa_libgbm.overrideAttrs (old: {
-      version = "24.2.0";
-      src = builtins.fetchurl {
-        url = "https://archive.mesa3d.org/mesa-24.2.0.tar.xz";
-        sha256 = "1pxdb059biiffr56vxkz1lc4yfcjgifck84m32qph3r9x8nbfay0";
-      };
-    });
-
     ffmpeg-full = prev.ffmpeg-full.override {
       withFullDeps = true;
     };

@@ -10,7 +10,7 @@
   config = lib.mkIf config.modules.niri.enable {
     programs.niri = {
       enable = true;
-      package = inputs.niri.packages.${pkgs.system}.niri-unstable;
+      package = inputs.niri.packages.${pkgs.system}.niri-stable;
       settings = {
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;
@@ -131,7 +131,7 @@
         debug = {
           # Fixes a black screen bug on Asahi.
           # https://github.com/YaLTeR/niri/wiki/Getting-Started#asahi-arm-and-other-kmsro-devices
-          render-drm-device = "/dev/dri/renderD128";
+          render-drm-device = "/dev/dri/card1";
         };
 
         spawn-at-startup = [
