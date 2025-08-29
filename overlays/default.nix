@@ -16,7 +16,7 @@ _: {
       version = "24.2.0";
       src = builtins.fetchurl {
         url = "https://archive.mesa3d.org/mesa-24.2.0.tar.xz";
-        sha256 = "18ad6siqpzswilhp8kf8r7hw0mwcpfkdj1m6lxzfrzr1sqnbrk";
+        sha256 = "1pxdb059biiffr56vxkz1lc4yfcjgifck84m32qph3r9x8nbfay0";
       };
     });
 
@@ -24,7 +24,7 @@ _: {
       version = "24.2.0";
       src = builtins.fetchurl {
         url = "https://archive.mesa3d.org/mesa-24.2.0.tar.xz";
-        sha256 = "18ad6siqpzswilhp8kf8r7hw0mwcpfkdj1m6lxzfrzr1sqnbrk";
+        sha256 = "1pxdb059biiffr56vxkz1lc4yfcjgifck84m32qph3r9x8nbfay0";
       };
     });
 
