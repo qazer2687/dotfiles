@@ -10,7 +10,7 @@
   config = lib.mkIf config.modules.niri.enable {
     programs.niri = {
       enable = true;
-      package = inputs.niri.packages.${pkgs.system}.niri-stable;
+      package = inputs.niri.packages.${pkgs.system}.niri-unstable;
       settings = {
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;
