@@ -11,6 +11,11 @@ _: {
     # ...
     # });
 
+    # Use an older version of mesa with support for scanout on /dev/dri/renderD128 for niri.
+    mesa = prev.mesa.override {
+      version = "24.2.0";
+    };
+
     ffmpeg-full = prev.ffmpeg-full.override {
       withFullDeps = true;
     };
