@@ -41,13 +41,13 @@
     ];
   };
 
-  programs.hyprland = {
+  /*programs.hyprland = {
     enable = true;
     withUWSM = true;
-  };
+  };*/
 
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default
+    [[ "$(tty)" == /dev/tty1 ]] && exec niri-session
   '';
   
   swapDevices = [

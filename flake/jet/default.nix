@@ -20,6 +20,7 @@ inputs.nixpkgs.lib.nixosSystem {
         useUserPackages = true;
         sharedModules = [
           inputs.sops-nix.homeManagerModules.sops
+           inputs.niri.homeModules.niri
         ];
       };
     }

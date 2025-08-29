@@ -37,8 +37,9 @@
     theme.enable = true;
 
     # Desktop Environment
-    hyprland.enable = true;
-    hyprlock.enable = true;
+    niri.enable = true;
+    #hyprland.enable = true;
+    #hyprlock.enable = true;
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;

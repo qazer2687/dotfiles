@@ -12,6 +12,7 @@
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     hyprland.url = "github:hyprwm/Hyprland";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs = {self, ...} @ inputs: {
