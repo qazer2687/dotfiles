@@ -49,6 +49,12 @@
     }
   ];
 
+  environment.systemPackages = [
+    pkgs.weston
+  ];
+
+  environment.loginShellInit = "weston --nested --fullscreen --idle-time=0 --socket=niri-wayland & sleep 1 && NIRI_WAYLAND_DISPLAY=niri-wayland niri-session";
+
   environment = {
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
