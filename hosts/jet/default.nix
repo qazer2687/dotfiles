@@ -52,7 +52,7 @@
   };
 
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start Niri
+    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start niri
   '';
   
   swapDevices = [
