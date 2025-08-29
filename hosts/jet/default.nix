@@ -35,6 +35,13 @@
     '';
   };
 
+  # Required by intellij idea.
+  boot.kernel.sysctl = {
+    "kernel.perf_event_paranoid" = 1;
+    "kernel.kptr_restrict" = 0;
+  };
+
+
   boot = {
     kernelParams = [
       # Enables the pixels horizontal of the notch.
