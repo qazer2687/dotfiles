@@ -15,7 +15,7 @@
     gdu
     btop
     protonvpn-gui
-    jetbrains.idea-community-bin
+    jetbrains.idea-community
   ];
 
   services.arrpc.enable = true;
