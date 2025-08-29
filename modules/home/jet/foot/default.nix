@@ -11,8 +11,11 @@
       settings = {
         main = {
           # 16.5px, 11px and 22px are pixel-perfect for Departure Mono.
-          font = "DepartureMono:size=11, FiraCode Nerd Font:size=11, Noto Color Emoji:size=10";
-          font-bold = "DepartureMono:size=11:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
+          #font = "DepartureMono:size=11, FiraCode Nerd Font:size=11, Noto Color Emoji:size=10";
+          #font-bold = "DepartureMono:size=11:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
+
+          font = "Iosevka Nerd Font:size=14, FiraCode Nerd Font:size=11, Noto Color Emoji:size=10";
+          font-bold = "Iosevka Nerd Font:size=14:style=Bold, FiraCode Nerd Font:size=11, Noto Color Emoji:size=8";
           line-height = "18px";
           pad = "12x12";
         };

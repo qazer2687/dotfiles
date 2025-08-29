@@ -10,20 +10,20 @@
     services.mako = {
       enable = true;
       settings = {
-        background-color = "#11111b";
+        background-color = "#1e1e2e";
         text-color = "#cdd6f4";
         border-color = "#cba6f7";
         border-radius = 6;
         border-size = 2;
         progress-color = "source #cba6f7";
-        font = "Iosevka Nerd Font 11";
+        font = "Iosevka Nerd Font 14";
         width = 600;
-        height = 240;
+        height = 400;
         margin = "4";
         padding = "4";
         default-timeout = 10000;
-        layer = "top";
-        anchor = "top-right";
+        layer = "bottom";
+        anchor = "bottom-right";
       };
     };
   };
