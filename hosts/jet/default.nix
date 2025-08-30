@@ -62,25 +62,13 @@
     consoleLogLevel = 3;
     initrd.verbose = false;
     initrd.systemd.enable = true;
+    kernel.sysctl = {
+      "kernel.printk" = "0 0 0 0";
+    };
 
     plymouth = {
       enable = true;
       theme = "spinner";
-    };
-  };
-
-  environment.etc = {
-    "issue.etc" = {
-      text = ''
-        '';
-      mode = "0444";
-    };
-  };
-
-  services.sysctl = {
-    enable = true;
-    settings = {
-      "kernel.printk" = "0 0 0 0";
     };
   };
   
