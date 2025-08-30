@@ -45,13 +45,9 @@
         };
 
         master = {
-          mfact = 0.75;
+          mfact = 0.60;
           orientation = "left";
           inherit_fullscreen = true;
-        };
-
-        gestures = {
-          workspace_swipe = false;
         };
 
         decoration = {
