@@ -74,6 +74,7 @@
       text = ''
         '';
       mode = "0444";
+    };
   };
 
   services.sysctl = {
