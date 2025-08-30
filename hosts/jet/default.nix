@@ -65,11 +65,6 @@
     kernel.sysctl = {
       "kernel.printk" = "0 0 0 0";
     };
-
-    plymouth = {
-      enable = true;
-      theme = "spinner";
-    };
   };
   
   swapDevices = [
