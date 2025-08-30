@@ -30,15 +30,7 @@
     extraRules = ''
       # Allow backlight control for non-root users.
       ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
-      # Give niri permission to use the render node.
-      KERNEL=="renderD*", SUBSYSTEM=="drm", GROUP="video", MODE="0660"
     '';
-  };
-
-  # Required by intellij idea.
-  boot.kernel.sysctl = {
-    "kernel.perf_event_paranoid" = 1;
-    "kernel.kptr_restrict" = 0;
   };
 
 
@@ -46,13 +38,56 @@
     kernelParams = [
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
+
+      # Default on asahi fedora.
+      "zswap.enabled=1"
+      "zswap.compressor=lz4"
+      "zswap.zpool=z3fold"
+
+      # Quiet boot.
+      "quiet"
+      "splash"
+      "vt.global_cursor_default=0"
+      "systemd.show_status=false"
+      "udev.log_level=3"
     ];
+    kernel.sysctl = {
+      # Required by intellij idea.
+      "kernel.perf_event_paranoid" = 1;
+      "kernel.kptr_restrict" = 0;
+      
+      # Default on asahi fedora.
+      "vm.swappiness" = 60;
+    };
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    initrd.systemd.enable = true;
+
+    plymouth = {
+      enable = true;
+      theme = "spinner";
+    };
+  };
+
+  environment.etc = {
+    "issue.etc" = {
+      text = ''
+        '';
+      mode = "0444";
+  };
+
+  services.sysctl = {
+    enable = true;
+    settings = {
+      "kernel.printk" = "0 0 0 0";
+    };
   };
   
   swapDevices = [
     {
       device = "/swapfile";
-      size = 8 * 1024;
+      # Default on asahi fedora.
+      size = 12 * 1024;
     }
   ];
 
