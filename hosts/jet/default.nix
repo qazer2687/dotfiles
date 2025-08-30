@@ -75,10 +75,28 @@
     }
   ];
 
+  # Autologin and hide getty messages.
+  services.getty = {
+    autologinUser = "alex";
+    extraArgs = [
+      "--skip-login"
+      "--nonewline"
+      "--noissue"
+      "--noclear"
+      "--nohostname"
+
+    ];
+  };
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
   };
+
+  # Automatically launch UWSM after login.
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
+  '';
 
   environment = {
     sessionVariables = {
