@@ -9,7 +9,6 @@
 
   home.packages = with pkgs; [
     obsidian
-    nautilus
     vlc
     loupe
     gdu
@@ -32,6 +31,7 @@
     fish.enable = true;
     foot.enable = true;
     fastfetch.enable = true;
+    yazi.enable = true;
 
     # Theming
     fonts.enable = true;
