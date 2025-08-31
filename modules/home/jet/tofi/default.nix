@@ -25,7 +25,7 @@
         input-color = "#cdd6f4";
         selection-color = "#cba6f7";
         text-color = "#cdd6f4";
-        background-color = "#1e1e2e";
+        background-color = "#11111b";
         min-input-width = 100;
         result-spacing = 15;
         padding-top = 0;
