@@ -1,14 +1,11 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: {
   options.modules.yazi.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.yazi.enable {
-
     # TODO: Use xdg-desktop-portal-termfilechooser to make yazi work as a file picker.
 
     programs.yazi = {

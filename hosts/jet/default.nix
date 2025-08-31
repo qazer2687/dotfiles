@@ -33,7 +33,6 @@
     '';
   };
 
-
   boot = {
     kernelParams = [
       # Enables the pixels horizontal of the notch.
@@ -55,7 +54,7 @@
       # Required by intellij idea.
       "kernel.perf_event_paranoid" = 1;
       "kernel.kptr_restrict" = 0;
-      
+
       # Default on asahi fedora.
       "vm.swappiness" = 60;
     };
@@ -66,7 +65,7 @@
       "kernel.printk" = "0 0 0 0";
     };
   };
-  
+
   swapDevices = [
     {
       device = "/swapfile";
@@ -84,7 +83,6 @@
       "--noissue"
       "--noclear"
       "--nohostname"
-
     ];
   };
 

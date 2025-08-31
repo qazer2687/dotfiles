@@ -87,7 +87,7 @@
     options = ["umask=0000" "nofail" "noexec"];
     noCheck = true; # This disables fsck.
   };
-  
+
   # Bind mount with noexec explicitly set
   fileSystems."/home/alex/media" = {
     device = "/mnt/external/media";
@@ -121,7 +121,7 @@
     firewall.enable = true;
     chrony.enable = true;
   };
-  
+
   services.clamav = {
     daemon.enable = true;
     updater.enable = true;

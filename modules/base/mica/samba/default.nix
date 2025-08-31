@@ -1,15 +1,18 @@
-{ config, lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options.modules.samba.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.samba.enable {
-    
     users.users.samba = {
       isSystemUser = true;
       group = "users";
       # Disable shell access.
       shell = pkgs.shadow;
     };
-    
+
     services.samba = {
       enable = true;
       settings = {
@@ -34,7 +37,7 @@
         };
       };
     };
-    
+
     # Automatically set up Samba password on system activation.
     system.activationScripts.samba-password = {
       text = ''
@@ -44,7 +47,7 @@
           (echo "samba"; echo "samba") | ${pkgs.samba}/bin/smbpasswd -a -s samba
         fi
       '';
-      deps = [ "users" ];
+      deps = ["users"];
     };
   };
 }

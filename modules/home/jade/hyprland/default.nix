@@ -45,7 +45,7 @@
           resize_on_border = false;
           allow_tearing = true;
         };
-        
+
         xwayland = {
           "force_zero_scaling" = true;
         };
@@ -129,7 +129,7 @@
           vfr = true;
           vrr = 0;
         };
-        
+
         debug = {
           # Fix for gamescope requiring scRGB support.
           # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2831929362

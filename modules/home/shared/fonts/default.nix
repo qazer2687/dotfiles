@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: {
   options.modules.fonts.enable = lib.mkEnableOption "";

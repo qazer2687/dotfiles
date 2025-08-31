@@ -32,7 +32,7 @@
       };
     };
 
-   # Widevine/DRM Support
+    # Widevine/DRM Support
     home.file."firefox-widevinecdm" = lib.mkIf pkgs.stdenv.hostPlatform.isAarch64 {
       enable = true;
       target = ".mozilla/firefox/default/gmp-widevinecdm";

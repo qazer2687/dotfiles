@@ -30,10 +30,10 @@
     kernel.sysctl = {
       # How aggressively the kernel will swap memory pages (0-100, lower values prefer RAM over swap).
       "vm.swappiness" = 15;
-      
+
       # Queue discipline algorithm for traffic control (CAKE reduces bufferbloat and latency).
       "net.core.default_qdisc" = "cake";
-      
+
       # TCP congestion control algorithm (BBR provides better throughput and lower latency).
       "net.ipv4.tcp_congestion_control" = "bbr";
     };

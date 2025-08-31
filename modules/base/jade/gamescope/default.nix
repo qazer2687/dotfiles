@@ -44,7 +44,7 @@
         "--rt"
       ];
     };
-    
+
     environment.systemPackages = [
       pkgs.gamescope-wsi_git
     ];

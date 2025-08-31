@@ -11,10 +11,12 @@
       enable = true;
       package = lib.mkDefault pkgs.ananicy-cpp;
       rulesProvider = lib.mkDefault pkgs.ananicy-cpp;
-      extraRules = [{
-        "name" = "gamescope";
-        "nice" = -20;
-      }];
+      extraRules = [
+        {
+          "name" = "gamescope";
+          "nice" = -20;
+        }
+      ];
     };
   };
 }

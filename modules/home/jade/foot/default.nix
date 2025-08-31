@@ -35,7 +35,7 @@
           # alpha = "0.8"; # Transparency
           background = "282828";
           foreground = "ebdbb2";
-      
+
           regular0 = "282828";
           regular1 = "cc241d";
           regular2 = "98971a";
@@ -44,7 +44,7 @@
           regular5 = "b16286";
           regular6 = "689d6a";
           regular7 = "a89984";
-      
+
           bright0 = "928374";
           bright1 = "fb4934";
           bright2 = "b8bb26";
