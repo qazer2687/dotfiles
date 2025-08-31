@@ -25,7 +25,7 @@
           sort_reverse = true;
         };
       };
-      theme = builtins.fromTOML ./config/theme.toml;
+      theme = lib.importTOML ./config/theme.toml;
     };
   };
 }
