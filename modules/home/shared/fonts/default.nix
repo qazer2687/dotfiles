@@ -7,7 +7,6 @@
   options.modules.fonts.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.fonts.enable {
-    programs.fontconfig.enable = true;
     home.packages = with pkgs; [
       noto-fonts-color-emoji
       noto-fonts-cjk-sans
