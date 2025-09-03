@@ -33,7 +33,7 @@
           # Master/Stack
           layout = "master";
 
-          gaps_in = 1;
+          gaps_in = 4;
           gaps_out = 2;
           border_size = 1;
 
