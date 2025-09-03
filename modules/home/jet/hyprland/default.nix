@@ -33,8 +33,8 @@
           # Master/Stack
           layout = "master";
 
-          gaps_in = 2;
-          gaps_out = 4;
+          gaps_in = 4;
+          gaps_out = 8;
           border_size = 1;
 
           "col.active_border" = "rgba(c6a0f6ff)";
@@ -51,10 +51,10 @@
         };
 
         decoration = {
-          rounding = 4;
+          rounding = 2;
 
-          active_opacity = 0.96;
-          inactive_opacity = 0.96;
+          active_opacity = 0.98;
+          inactive_opacity = 0.97;
 
           blur.enabled = false;
         };
