@@ -53,8 +53,8 @@
         decoration = {
           rounding = 4;
 
-          active_opacity = 1;
-          inactive_opacity = 1;
+          active_opacity = 0.96;
+          inactive_opacity = 0.96;
 
           blur.enabled = false;
         };
