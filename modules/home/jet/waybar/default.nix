@@ -25,7 +25,7 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "niri/workspaces" "mpris"];
+          modules-left = ["clock" "hyprland/workspaces" "mpris"];
           modules-center = [];
           modules-right = ["tray" "network" "pulseaudio" "battery"];
 
