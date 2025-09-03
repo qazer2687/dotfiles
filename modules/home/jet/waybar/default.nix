@@ -25,9 +25,9 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "niri/workspaces"];
+          modules-left = ["clock" "niri/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["tray" "backlight" "network" "pulseaudio" "battery"];
+          modules-right = ["tray" "network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "VOL: {volume}%";
@@ -49,8 +49,8 @@
           };
 
           tray = {
-            icon-size = 14;
-            spacing = 10;
+            icon-size = 12;
+            spacing = 12;
             reverse-direction = true;
           };
 
@@ -105,8 +105,8 @@
 
           mpris = {
             tooltip = false;
-            format = "PLAYING: {artist} - {title}";
-            format-paused = "PAUSED: {artist} - {title}";
+            format = "PLAYING: {title}";
+            format-paused = "PAUSED: {title}";
             player-icons = {
               default = " ";
             };
@@ -188,6 +188,10 @@
         /* Pad Edges */
         #clock {
           margin-left: 16px;
+        }
+
+        #tray {
+          margin-right: 2px;
         }
 
         #battery {
