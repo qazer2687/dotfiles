@@ -37,8 +37,18 @@
           gaps_out = 4;
           border_size = 2;
 
-          "col.active_border" = "rgba(cba6f7ff)";
-          "col.inactive_border" = "rgba(6f5b87ff)";
+          col = rec {
+            active_border = "#a6e3a1";
+            inactive_border =
+              let
+                hexToInt = hex: builtins.fromJSON ("0x${hex}");
+                intToHex = i: let s = builtins.toString i; in if i < 16 then "0${s}" else s;
+                r = hexToInt (builtins.substring 1 2 col.active_border);
+                g = hexToInt (builtins.substring 3 2 col.active_border);
+                b = hexToInt (builtins.substring 5 2 col.active_border);
+              in
+                "#" + intToHex (r * 80 / 100) + intToHex (g * 80 / 100) + intToHex (b * 80 / 100);
+            };
 
           resize_on_border = false;
           allow_tearing = true;

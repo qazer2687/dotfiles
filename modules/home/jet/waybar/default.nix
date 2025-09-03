@@ -120,6 +120,8 @@
       };
 
       style = ''
+        @define-color highlight @green;
+
         @define-color rosewater #f5e0dc;
         @define-color flamingo #f2cdcd;
         @define-color pink #f5c2e7;
@@ -163,7 +165,7 @@
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
         #backlight, #battery, #workspaces button, #workspaces button.focused,
         #workspaces button.active {
-          padding: 0 10px;
+          padding: 0 5px;
           margin: 5px 1px;
           border-radius: 2px;
           background-color: @base;
@@ -171,7 +173,7 @@
         }
 
         #workspaces button.active {
-          background-color: @mauve;
+          background-color: @highlight;
           color: @mantle;
         }
 
