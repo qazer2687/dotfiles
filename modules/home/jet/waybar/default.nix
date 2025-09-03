@@ -175,6 +175,11 @@
           color: @mantle;
         }
 
+        #battery.warning {
+          background-color: @peach;
+          color: @mantle;
+        }
+
         #battery.critical {
           background-color: @red;
           color: @mantle;
