@@ -105,12 +105,14 @@
 
           mpris = {
             tooltip = false;
-            format = "{status} {artist} - {title}";
-            format-paused = "{status} {artist} - {title}";
+            format = "{player_icon} {artist} - {title}";
+            format-paused = "{status_icon} {artist} - {title}";
             artist-len = 20;
             title-len = 20;
+            player-icons = {
+              default = "▶";
+            };
             status-icons = {
-              playing = "▶";
               paused = "⏸";
             };
           };
