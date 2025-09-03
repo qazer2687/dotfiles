@@ -18,9 +18,12 @@
       eb-garamond
       fixedsys-excelsior
       monaspace
-      pragmatapro
       proggyfonts
       ibm-plex
+
+      # Custom
+      berkeleymono2
+      pragmatapro
 
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
