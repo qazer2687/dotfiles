@@ -64,7 +64,7 @@
           first_launch_animation = false;
 
           bezier = [
-            "snap, 0.1, 0, 0, 1"
+            "snap, 0.2, 0, 0, 1"
           ];
 
           animation = [
@@ -74,7 +74,7 @@
             "fade, 0, 10, snap"
             "fadeDim, 0, 10, snap"
 
-            "workspaces, 1, 2.5, snap, slide"
+            "workspaces, 1, 4, snap, slide"
           ];
         };
 
