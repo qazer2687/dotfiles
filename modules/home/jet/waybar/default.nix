@@ -112,7 +112,7 @@
             status-icons = {
               playing = "▶";
               paused = "⏸";
-              stopped = "■";  -- optional: shows a stop symbol when nothing is playing
+             # stopped = "■";
             };
           };
         };
