@@ -33,9 +33,9 @@
           # Master/Stack
           layout = "master";
 
-          gaps_in = 2;
-          gaps_out = 4;
-          border_size = 2;
+          gaps_in = 1;
+          gaps_out = 2;
+          border_size = 1;
 
           "col.active_border" = "rgba(cba6f7ff)";
           "col.inactive_border" = "rgba(cba6f744)";
@@ -45,7 +45,7 @@
         };
 
         master = {
-          mfact = 0.60;
+          mfact = 0.55;
           orientation = "left";
           inherit_fullscreen = true;
         };
@@ -75,18 +75,19 @@
           first_launch_animation = true;
 
           bezier = [
+            "snap, 0.1, 0, 0, 1"
             "smoothOut, 0.36, 0, 0.66, -0.56"
             "smoothIn, 0.25, 1, 0.5, 1"
           ];
 
           animation = [
-            "windows, 1, 4, smoothIn, slide"
-            "windowsOut, 1, 4, smoothOut, slide"
-            "border, 1, 10, default"
+            "windows, 1, 4, snap, slide"
+            "windowsOut, 1, 4, snap, slide"
+            "border, 1, 10, snap"
 
-            "fade, 1, 10, smoothIn"
-            "fadeDim, 1, 10, smoothIn"
-            "workspaces, 1, 4, smoothIn, slidevert"
+            "fade, 1, 10, snap"
+            "fadeDim, 1, 10, snap"
+            "workspaces, 1, 4, snap, slide"
           ];
         };
 
