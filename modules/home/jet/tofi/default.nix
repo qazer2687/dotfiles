@@ -22,10 +22,13 @@
         outline-width = 0;
         hint-font = false;
         border-width = 0;
-        input-color = "#cdd6f4";
+        
+        # Catppuccin Macchiato
+        input-color = "#cad3f5";
         selection-color = "#c6a0f6";
-        text-color = "#cdd6f4";
-        background-color = "#11111b";
+        text-color = "#cad3f5";
+        background-color = "#181926";
+
         min-input-width = 100;
         result-spacing = 15;
         padding-top = 0;
