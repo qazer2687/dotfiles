@@ -105,15 +105,15 @@
 
           mpris = {
             tooltip = false;
-            format = "<img src='{artUrl}' width='40' height='40' style='border-radius: 4px;'> {title} ";
-            format-paused = "PAUSED: {title}";
+            format = "{status-icon} {artist} - {title}";
+            format-paused = "{status-icon} {artist} - {title}";
             player-icons = {
-              default = " ";
+              default = "▶";
             };
             artist-len = 20;
             title-len = 20;
             status-icons = {
-              paused = " ";
+              paused = "⏸";
             };
           };
         };
