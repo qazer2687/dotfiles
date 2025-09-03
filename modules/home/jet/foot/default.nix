@@ -53,8 +53,8 @@
           bright6 = "8bd5ca";
           bright7 = "a5adcb";
 
-          16 = "f5a97f";
-          17 = "f4dbd6";
+          "16" = "f5a97f";
+          "17" = "f4dbd6";
 
           selection-foreground = "cad3f5";
           selection-background = "454a5f";
