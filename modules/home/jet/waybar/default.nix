@@ -152,7 +152,7 @@
         * {
           border: none;
           border-radius: 0px;
-          font-family: TX-02;
+          font-family: TX02;
           font-size: 11px;
           min-height: 0;
         }

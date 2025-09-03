@@ -16,7 +16,7 @@
         border-radius = 4;
         border-size = 1;
         progress-color = "source #c6a0f6";
-        font = "TX-02 11";
+        font = "TX02 11";
         width = 600;
         height = 400;
         margin = "8";

@@ -5,5 +5,5 @@ pkgs: {
   widevinecdm-aarch64 = pkgs.callPackage ./widevinecdm-aarch64 {};
   arnis = pkgs.callPackage ./arnis {};
   pragmatapro = pkgs.callPackage ./pragmatapro {};
-  tx-02 = pkgs.callPackage ./tx-02 {};
+  TX02 = pkgs.callPackage ./TX02 {};
 }

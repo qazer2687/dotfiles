@@ -18,7 +18,7 @@
         font-size = "11";
         prompt-text = "‌‌ run:‌‌ ";
         prompt-padding = 0;
-        font = "${pkgs.tx-02}/share/fonts/opentype/tx-02/TX-02.otf";
+        font = "${pkgs.TX02}/share/fonts/opentype/TX02/TX02.otf";
         outline-width = 0;
         hint-font = false;
         border-width = 0;
