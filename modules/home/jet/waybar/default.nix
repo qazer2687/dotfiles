@@ -110,10 +110,10 @@
             artist-len = 20;
             title-len = 20;
             player-icons = {
-              default = "▶";
+              default = "";
             };
             status-icons = {
-              paused = "⏸";
+              paused = "";
             };
           };
         };
@@ -165,11 +165,15 @@
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
         #backlight, #battery, #workspaces button, #workspaces button.focused,
         #workspaces button.active {
-          padding: 0 5px;
+          padding: 0 8px;
           margin: 3px 2px;
           border-radius: 2px;
           background-color: @base;
           color: @text;
+        }
+
+        #mpris {
+          border: 1px solid @mauve;
         }
 
         #workspaces button.active {
