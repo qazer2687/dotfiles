@@ -49,25 +49,12 @@
           orientation = "left";
           inherit_fullscreen = true;
         };
-  /*
+
         decoration = {
           rounding = 4;
 
-          active_opacity = 1;
-          inactive_opacity = 1;
-
-          # Disabled for performance.
-          blur = {
-            enabled = false;
-          };
-          shadow = {
-            enabled = false;
-          };
-        };
-*/
-        decoration = {
-          # fancy corners
-          rounding = 4;
+          active_opacity = 0.99;
+          inactive_opacity = 0.99;
 
           # blur
           blur = {
@@ -80,17 +67,9 @@
             contrast = 0.7;
             brightness = 0.8;
             vibrancy = 0.2;
-            special = true; # expensive, but helps distinguish special workspaces
           };
-
-          # shadow config
-          drop_shadow = "yes";
-          shadow_range = 10;
-          shadow_render_power = 3;
-          "col.shadow" = "rgba(292c3cee)";
         };
 
-        # blatantly stolen from raf my beloved
         animations = {
           enabled = true;
           first_launch_animation = true;
@@ -98,36 +77,18 @@
           bezier = [
             "smoothOut, 0.36, 0, 0.66, -0.56"
             "smoothIn, 0.25, 1, 0.5, 1"
-            "overshot, 0.4,0.8,0.2,1.2"
           ];
 
           animation = [
             "windows, 1, 4, overshot, slide"
             "windowsOut, 1, 4, smoothOut, slide"
-            "border,1,10,default"
+            "border, 1, 10, default"
 
             "fade, 1, 10, smoothIn"
             "fadeDim, 1, 10, smoothIn"
-            "workspaces,1,4,overshot,slidevert"
+            "workspaces, 1, 4, smoothIn, slidevert"
           ];
         };
-
-/*
-        animations = {
-          enabled = false;
-          bezier = [
-            "easeOutCirc, 0, 0.55, 0.45, 1"
-          ];
-          animation = [
-            "windowsIn, 0, 0.25, easeOutCirc"
-            "windowsMove, 0, 0.25, easeOutCirc"
-            "windowsOut, 0, 0.25, easeOutCirc"
-
-            "fadeIn, 0, 0.25, easeOutCirc"
-
-            "workspaces, 0, 2, easeOutCirc, slide"
-          ];
-        };*/
 
         input = {
           # Mouse/Pointer
