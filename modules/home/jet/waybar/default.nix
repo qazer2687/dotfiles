@@ -152,7 +152,7 @@
         * {
           border: none;
           border-radius: 0px;
-          font-family: Departure Mono;
+          font-family: TX-02;
           font-size: 11px;
           min-height: 0;
         }
@@ -166,7 +166,7 @@
         #backlight, #battery, #workspaces button, #workspaces button.focused,
         #workspaces button.active {
           padding: 0 8px;
-          margin: 3px 2px;
+          margin: 4px 2px;
           border-radius: 2px;
           background-color: @base;
           color: @text;
