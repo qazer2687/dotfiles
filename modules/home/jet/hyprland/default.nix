@@ -42,11 +42,15 @@
 
         inactive_border =
           let
-            hexToInt = hex: builtins.parseInt hex 16;  # <--- use parseInt base 16
+            # helper to convert hex pair to int
+            hexToInt = hex: builtins.fromJSON ("\"" + toString (builtins.parseIntFromHex hex) + "\"");
+            # Nix does not have parseIntFromHex natively, so we have to convert via fromJSON decimal
             intToHex = i: let s = builtins.toString i; in if i < 16 then "0${s}" else s;
-            r = hexToInt (builtins.substring 1 2 active_border);
-            g = hexToInt (builtins.substring 3 2 active_border);
-            b = hexToInt (builtins.substring 5 2 active_border);
+
+            # extract RGB
+            r = builtins.fromJSON ("\"" + toString (builtins.fromJSON ("\"" + "0x" + builtins.substring 1 2 active_border + "\"")) + "\"");
+            g = builtins.fromJSON ("\"" + toString (builtins.fromJSON ("\"" + "0x" + builtins.substring 3 2 active_border + "\"")) + "\"");
+            b = builtins.fromJSON ("\"" + toString (builtins.fromJSON ("\"" + "0x" + builtins.substring 5 2 active_border + "\"")) + "\"");
           in
             "#" + intToHex (r * 80 / 100) + intToHex (g * 80 / 100) + intToHex (b * 80 / 100);
       };
