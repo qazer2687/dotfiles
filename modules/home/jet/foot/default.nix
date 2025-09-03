@@ -10,8 +10,8 @@
       server.enable = true;
       settings = {
         main = {
-          font = "TX-02:size=14, FiraCode Nerd Font:size=14";
-          font-bold = "TX-02:size=14:style=Bold, FiraCode Nerd Font:size=14";
+          font = "TX-02 Retina:size=14, FiraCode Nerd Font:size=14";
+          font-bold = "TX-02 Retina:size=14:style=Bold, FiraCode Nerd Font:size=14";
           line-height = "20px";
           pad = "16x16";
         };
