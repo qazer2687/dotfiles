@@ -80,7 +80,7 @@
           ];
 
           animation = [
-            "windows, 1, 4, overshot, slide"
+            "windows, 1, 4, smoothIn, slide"
             "windowsOut, 1, 4, smoothOut, slide"
             "border, 1, 10, default"
 
