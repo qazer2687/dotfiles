@@ -105,7 +105,7 @@
 
           mpris = {
             tooltip = false;
-            format = "PLAYING: {title}";
+            format = "<img src='{artUrl}' width='40' height='40' style='border-radius: 4px;'> {title} ";
             format-paused = "PAUSED: {title}";
             player-icons = {
               default = " ";
@@ -196,7 +196,7 @@
         }
 
         #tray {
-          margin-right: 2px;
+          margin-right: 4px;
         }
 
         #battery {
