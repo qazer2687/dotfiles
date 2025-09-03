@@ -33,9 +33,9 @@
           # Master/Stack
           layout = "master";
 
-          gaps_in = 4;
-          gaps_out = 8;
-          border_size = 1;
+          gaps_in = 3;
+          gaps_out = 3;
+          border_size = 2;
 
           "col.active_border" = "rgba(c6a0f6ff)";
           "col.inactive_border" = "rgba(c6a0f644)";
