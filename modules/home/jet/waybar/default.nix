@@ -120,7 +120,7 @@
       };
 
       style = ''
-        @define-color highlight @green;
+        @define-color highlight @mauve;
 
         @define-color rosewater #f5e0dc;
         @define-color flamingo #f2cdcd;
