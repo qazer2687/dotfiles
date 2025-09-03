@@ -37,8 +37,8 @@
           gaps_out = 2;
           border_size = 1;
 
-          "col.active_border" = "rgba(cba6f7ff)";
-          "col.inactive_border" = "rgba(cba6f744)";
+          "col.active_border" = "rgba(c6a0f6ff)";
+          "col.inactive_border" = "rgba(c6a0f644)";
 
           resize_on_border = false;
           allow_tearing = true;

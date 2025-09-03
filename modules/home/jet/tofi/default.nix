@@ -23,7 +23,7 @@
         hint-font = false;
         border-width = 0;
         input-color = "#cdd6f4";
-        selection-color = "#cba6f7";
+        selection-color = "#c6a0f6";
         text-color = "#cdd6f4";
         background-color = "#11111b";
         min-input-width = 100;

@@ -30,35 +30,40 @@
           hide-when-typing = "no";
         };
         colors = {
-          # Catppuccin Mocha
-          # alpha = "0.8"; # Transparency
-          foreground = "cdd6f4";
-          background = "1e1e2e";
-          regular0 = "45475a";
-          regular1 = "f38ba8";
-          regular2 = "a6e3a1";
-          regular3 = "f9e2af";
-          regular4 = "89b4fa";
-          regular5 = "f5c2e7";
-          regular6 = "94e2d5";
-          regular7 = "bac2de";
-          bright0 = "585b70";
-          bright1 = "f38ba8";
-          bright2 = "a6e3a1";
-          bright3 = "f9e2af";
-          bright4 = "89b4fa";
-          bright5 = "f5c2e7";
-          bright6 = "94e2d5";
-          bright7 = "a6adc8";
-          "16" = "fab387";
-          "17" = "f5e0dc";
-          selection-foreground = "cdd6f4";
-          selection-background = "414356";
-          search-box-no-match = "11111b f38ba8";
-          search-box-match = "cdd6f4 313244";
-          jump-labels = "11111b fab387";
-          urls = "89b4fa";
-          cursor = "11111b f5e0dc";
+          # Catppuccin Macchiato
+          cursor = "181926 f4dbd6";
+          foreground = "cad3f5";
+          background = "24273a";
+
+          regular0 = "494d64";
+          regular1 = "ed8796";
+          regular2 = "a6da95";
+          regular3 = "eed49f";
+          regular4 = "8aadf4";
+          regular5 = "f5bde6";
+          regular6 = "8bd5ca";
+          regular7 = "b8c0e0";
+
+          bright0 = "5b6078";
+          bright1 = "ed8796";
+          bright2 = "a6da95";
+          bright3 = "eed49f";
+          bright4 = "8aadf4";
+          bright5 = "f5bde6";
+          bright6 = "8bd5ca";
+          bright7 = "a5adcb";
+
+          16 = "f5a97f";
+          17 = "f4dbd6";
+
+          selection-foreground = "cad3f5";
+          selection-background = "454a5f";
+
+          search-box-no-match = "181926 ed8796";
+          search-box-match = "cad3f5 363a4f";
+
+          jump-labels = "181926 f5a97f";
+          urls = "8aadf4";
         };
         key-bindings = {
           clipboard-copy = "Control+c XF86Copy";
