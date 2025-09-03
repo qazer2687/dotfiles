@@ -165,8 +165,8 @@
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
         #backlight, #battery, #workspaces button, #workspaces button.focused,
         #workspaces button.active {
-          padding: 0 8px;
-          margin: 2px 1px;
+          padding: 0 5px;
+          margin: 3px 2px;
           border-radius: 2px;
           background-color: @base;
           color: @text;
