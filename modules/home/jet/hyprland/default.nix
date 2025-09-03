@@ -53,21 +53,10 @@
         decoration = {
           rounding = 4;
 
-          active_opacity = 0.99;
-          inactive_opacity = 0.99;
+          active_opacity = 1;
+          inactive_opacity = 1;
 
-          # blur
-          blur = {
-            enabled = true;
-            size = 5;
-            passes = 3;
-            ignore_opacity = true;
-            new_optimizations = 1;
-            xray = true;
-            contrast = 0.7;
-            brightness = 0.8;
-            vibrancy = 0.2;
-          };
+          blur.enabled = false;
         };
 
         animations = {
