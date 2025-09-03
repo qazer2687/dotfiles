@@ -168,7 +168,7 @@
           padding: 0 8px;
           margin: 3px 2px;
           border-radius: 2px;
-          background-color: @base;
+          background-color: @mantle;
           color: @text;
         }
 
