@@ -72,16 +72,20 @@
 
         animations = {
           enabled = true;
-          first_launch_animation = true;
+          first_launch_animation = false;
 
           bezier = [
             "snap, 0.1, 0, 0, 1"
-            "smoothOut, 0.36, 0, 0.66, -0.56"
-            "smoothIn, 0.25, 1, 0.5, 1"
           ];
 
           animation = [
-            "workspaces, 1, 2, snap, slide"
+            "windows, 0, 4, snap, slide"
+            "windowsOut, 0, 4, snap, slide"
+            "border, 0, 10, snap"
+            "fade, 0, 10, snap"
+            "fadeDim, 0, 10, snap"
+
+            "workspaces, 1, 2.5, snap, slide"
           ];
         };
 
