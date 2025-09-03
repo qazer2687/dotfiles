@@ -105,8 +105,8 @@
 
           mpris = {
             tooltip = false;
-            format = "{artist} - {title}";
-            format-paused = "{artist} - {title}";
+            format = "{title}";
+            format-paused = "{title}";
             artist-len = 20;
             title-len = 20;
             player-icons = {
@@ -168,7 +168,7 @@
           padding: 0 8px;
           margin: 3px 2px;
           border-radius: 2px;
-          background-color: @mantle;
+          background-color: @base;
           color: @text;
         }
 
