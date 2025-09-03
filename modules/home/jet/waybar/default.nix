@@ -49,7 +49,7 @@
           };
 
           tray = {
-            icon-size = 12;
+            icon-size = 14;
             spacing = 12;
             reverse-direction = true;
           };
@@ -105,8 +105,8 @@
 
           mpris = {
             tooltip = false;
-            format = "{player_icon} {artist} - {title}";
-            format-paused = "{status_icon} {artist} - {title}";
+            format = "{artist} - {title}";
+            format-paused = "{artist} - {title}";
             artist-len = 20;
             title-len = 20;
             player-icons = {
