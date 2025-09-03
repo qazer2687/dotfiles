@@ -22,7 +22,7 @@
       ibm-plex
 
       # Custom
-      berkeleymono2
+      tx-02
       pragmatapro
 
       nerd-fonts.fira-code

@@ -1,13 +1,14 @@
 {stdenv}:
 stdenv.mkDerivation rec {
-  pname = "berkeleymono2";
+  pname = "tx-02";
   version = "1";
-  src = ./TX-02-Retina.otf;
+  # TX-02 Retina
+  src = ./TX-02.otf;
 
   dontUnpack = true;
 
   installPhase = ''
-    mkdir -p $out/share/fonts/opentype/berkeleymono2
-    cp $src $out/share/fonts/opentype/berkeleymono2
+    mkdir -p $out/share/fonts/opentype/tx-02
+    cp $src $out/share/fonts/opentype/tx-02
   '';
 }
