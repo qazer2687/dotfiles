@@ -3,7 +3,7 @@ stdenv.mkDerivation rec {
   pname = "TX02";
   version = "1";
   # TX-02 Retina
-  src = ./TX02.otf;
+  src = ./TX-02-Regular.otf;
 
   dontUnpack = true;
 
