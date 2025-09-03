@@ -39,12 +39,12 @@
 
           
           col = rec {
-            active_border = "#a6e3a1";
+            active_border = "#a6e3a1ff";
             inactive_border =
               let
                 hexToInt = hex: builtins.fromJSON ("0x${hex}");
                 intToHex = i: let s = builtins.toString i; in if i < 16 then "0${s}" else s;
-                r = hexToInt (builtins.substring 1 2 active_border);  # <--- just active_border
+                r = hexToInt (builtins.substring 1 2 active_border);
                 g = hexToInt (builtins.substring 3 2 active_border);
                 b = hexToInt (builtins.substring 5 2 active_border);
               in
