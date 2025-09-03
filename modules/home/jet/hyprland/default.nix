@@ -81,13 +81,7 @@
           ];
 
           animation = [
-            "windows, 1, 4, snap, slide"
-            "windowsOut, 1, 4, snap, slide"
-            "border, 1, 10, snap"
-
-            "fade, 1, 10, snap"
-            "fadeDim, 1, 10, snap"
-            "workspaces, 1, 4, snap, slide"
+            "workspaces, 1, 2, snap, slide"
           ];
         };
 
