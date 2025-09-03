@@ -37,23 +37,11 @@
           gaps_out = 4;
           border_size = 2;
 
-          col = rec {
-        active_border = "#a6e3a1";
+          "col.active_border" = "rgba(a6e3a1ff)";
+          "col.inactive_border" = "rgba(a6e3a1aa)";
 
-        inactive_border =
-          let
-            # helper to convert hex pair to int
-            hexToInt = hex: builtins.fromJSON ("\"" + toString (builtins.parseIntFromHex hex) + "\"");
-            # Nix does not have parseIntFromHex natively, so we have to convert via fromJSON decimal
-            intToHex = i: let s = builtins.toString i; in if i < 16 then "0${s}" else s;
-
-            # extract RGB
-            r = builtins.fromJSON ("\"" + toString (builtins.fromJSON ("\"" + "0x" + builtins.substring 1 2 active_border + "\"")) + "\"");
-            g = builtins.fromJSON ("\"" + toString (builtins.fromJSON ("\"" + "0x" + builtins.substring 3 2 active_border + "\"")) + "\"");
-            b = builtins.fromJSON ("\"" + toString (builtins.fromJSON ("\"" + "0x" + builtins.substring 5 2 active_border + "\"")) + "\"");
-          in
-            "#" + intToHex (r * 80 / 100) + intToHex (g * 80 / 100) + intToHex (b * 80 / 100);
-      };
+          resize_on_border = false;
+          allow_tearing = true;
         };
 
         master = {
