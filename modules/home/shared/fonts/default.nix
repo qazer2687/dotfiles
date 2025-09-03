@@ -19,6 +19,7 @@
       fixedsys-excelsior
       monaspace
       pragmatapro
+      proggyfonts
 
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
