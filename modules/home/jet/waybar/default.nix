@@ -107,13 +107,12 @@
             tooltip = false;
             format = "{status-icon} {artist} - {title}";
             format-paused = "{status-icon} {artist} - {title}";
-            player-icons = {
-              default = "▶";
-            };
             artist-len = 20;
             title-len = 20;
             status-icons = {
+              playing = "▶";
               paused = "⏸";
+              stopped = "■";  -- optional: shows a stop symbol when nothing is playing
             };
           };
         };
