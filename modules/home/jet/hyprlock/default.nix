@@ -19,7 +19,7 @@
         animations.enable = true;
         animation = [
           "fade, 0, 0, default"
-          "inputField, 1, 1, default"
+          "inputField, 1, 2.5, default"
         ];
 
         background = {
@@ -42,7 +42,7 @@
         "input-field" = {
           size = "920, 72";
           outline_thickness = 0;
-          dots_size = 0.25;
+          dots_size = 0.35;
           font_family = "TX02";
           dots_text_format = "●";
           dots_spacing = 1;
@@ -53,7 +53,7 @@
           fade_on_empty = false;
           placeholder_text = "";
           hide_input = false;
-          rounding = 4;
+          rounding = 8;
 
           # success / fail colors
           check_color = "rgba(166, 209, 137, 1)"; # Frappe Green
