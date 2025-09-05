@@ -42,9 +42,9 @@
         "input-field" = {
           size = "720, 72";
           outline_thickness = 0;
-          dots_size = 0.4;
-          font_family = "TX02";
-          dots_text_format = "X";
+          dots_size = 0.75;
+          font_family = "Departure Mono";
+          dots_text_format = "♦";
           dots_spacing = 0.5;
           dots_center = true;
           outer_color = "rgba(202, 158, 230, 1)";  # Frappe Mauve
@@ -59,7 +59,7 @@
           fail_color = "rgba(48, 52, 70, 1)";
           fail_text = "TRY AGAIN";
 
-          position = "0, -100";
+          position = "0, -120";
           halign = "center";
           valign = "center";
         };
