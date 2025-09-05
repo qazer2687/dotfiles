@@ -10,6 +10,8 @@
       enable = true;
       settings = {
         general = {
+          # Doesn't work with GPU accel.
+          screencopy_mode = 1;
           hide_cursor = true;
         };
       };
