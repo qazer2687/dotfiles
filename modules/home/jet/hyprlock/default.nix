@@ -42,10 +42,10 @@
         "input-field" = {
           size = "920, 72";
           outline_thickness = 0;
-          dots_size = 0.8;
+          dots_size = 0.5;
           font_family = "Departure Mono";
-          dots_text_format = "X";
-          dots_spacing = 2;
+          dots_text_format = "x";
+          dots_spacing = 1.5;
           dots_center = true;
           outer_color = "rgba(202, 158, 230, 1)";  # Frappe Mauve
           inner_color = "rgba(48, 52, 70, 1)"; # Frappe Base
@@ -56,7 +56,6 @@
           rounding = 12;
 
           # success / fail colors
-          check_color = "rgba(166, 209, 137, 1)"; # Frappe Green
           fail_color = "rgba(231, 130, 132, 1)";  # Frappe Red
           fail_text = "TRY AGAIN";
 
