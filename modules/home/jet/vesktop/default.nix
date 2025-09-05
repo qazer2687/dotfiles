@@ -1,6 +1,3 @@
-@import url("https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css");
-
-
 {
   lib,
   config,
