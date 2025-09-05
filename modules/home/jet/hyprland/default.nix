@@ -49,7 +49,7 @@
             col.border_1 = "rgb(232634)";
 
             # -1 means "default" as in the one defined in general:border_size
-            border_size_1 = -1;
+            border_size_1 = 4;
           };
         };
 
@@ -60,7 +60,7 @@
         };
 
         decoration = {
-          rounding = 4;
+          rounding = 0;
 
           active_opacity = 1;
           inactive_opacity = 1;
@@ -70,7 +70,6 @@
 
         animations = {
           enabled = true;
-          first_launch_animation = "false";
 
           bezier = [
             "snap, 0.2, 0, 0, 1"
@@ -84,6 +83,7 @@
             "border, 0"
             "borderangle, 0"
             "zoomFactor, 0"
+            "monitorAdded, 0"
             
             "workspaces, 1, 5, snap, slide"
           ];
