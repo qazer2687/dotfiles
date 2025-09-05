@@ -74,8 +74,26 @@
     }
   ];
 
+  # Autologin and hide getty messages.
+  services.getty = {
+    autologinUser = "alex";
+    extraArgs = [
+      "--skip-login"
+      "--nonewline"
+      "--noissue"
+      "--noclear"
+      "--nohostname"
+    ];
+  };
+
+  # Automatically launch UWSM after login.
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
+  '';
+
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
   };
 
   environment = {
@@ -97,7 +115,6 @@
     sudo-rs.enable = true;
     systemd-boot.enable = true;
     xdg.enable = true;
-    gdm.enable = true;
   };
 
   # Did you read the comment?
