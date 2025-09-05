@@ -10,6 +10,7 @@
       enable = true;
       settings = {
         general = {
+          immediate_render = true;
           # Doesn't work with GPU accel.
           screencopy_mode = 1;
           hide_cursor = true;
@@ -18,15 +19,15 @@
         background = {
           path = "";
           color = "rgba(48, 52, 70, 0.95)"; # Frappe Base
-          blur_passes = 6;
+          blur_passes = 0;
           brightness = 0;
         };
 
         label = {
           text = "LOCKED";
           color = "rgba(202, 158, 230, 1.0)"; # Frappe Mauve
-          font_size = 90;
-          font_family = "Departure Mono";
+          font_size = 80;
+          font_family = "TX02";
           position = "0, 0";
           halign = "center";
           valign = "center";
@@ -35,12 +36,12 @@
         "input-field" = {
           size = "920, 72";
           outline_thickness = 2;
-          dots_size = 0.45;
+          dots_size = 0.25;
           font_family = "Departure Mono";
           dots_text_format = "●";
-          dots_spacing = 0.28;
+          dots_spacing = 0.50;
           dots_center = true;
-          outer_color = "rgba(41, 44, 60, 0.75)";  # Frappe Mantle
+          outer_color = "rgba(202, 158, 230, 1)";  # Frappe Mauve
           inner_color = "rgba(48, 52, 70, 0.45)";  # Frappe Base
           font_color = "rgba(198, 208, 245, 1.0)"; # Frappe Text
           fade_on_empty = false;
