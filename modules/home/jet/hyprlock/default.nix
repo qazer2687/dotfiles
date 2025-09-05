@@ -16,27 +16,22 @@
           hide_cursor = true;
         };
 
-        animations = {
-          enabled = true;
-          # Disable fade in and fade out animations.
-          fade_in = {
-            duration = 0;
-          };
-          fade_out = {
-            duration = 0;
-          };
-        };
+        animations.enable = true;
+        animation = [
+          "fade, 0, 0, default"
+          "inputField, 1, 1, default"
+        ];
 
         background = {
           path = "";
-          color = "rgba(48, 52, 70, 0.95)"; # Frappe Base
+          color = "rgba(35, 38, 52, 1)"; # Frappe Crust
           blur_passes = 0;
           brightness = 0;
         };
 
         label = {
           text = "LOCKED";
-          color = "rgba(202, 158, 230, 1.0)"; # Frappe Mauve
+          color = "rgba(202, 158, 230, 1)"; # Frappe Mauve
           font_size = 80;
           font_family = "TX02";
           position = "0, 0";
@@ -53,15 +48,16 @@
           dots_spacing = 1;
           dots_center = true;
           outer_color = "rgba(202, 158, 230, 1)";  # Frappe Mauve
-          inner_color = "rgba(48, 52, 70, 0.45)";  # Frappe Base
-          font_color = "rgba(198, 208, 245, 1.0)"; # Frappe Text
+          inner_color = "rgba(48, 52, 70, 1)"; # Frappe Base
+          font_color = "rgba(198, 208, 245, 1)"; # Frappe Text
           fade_on_empty = false;
           placeholder_text = "";
           hide_input = false;
+          rounding = 4;
 
           # success / fail colors
-          check_color = "rgba(166, 209, 137, 0.95)"; # Frappe Green
-          fail_color = "rgba(231, 130, 132, 0.95)";  # Frappe Red
+          check_color = "rgba(166, 209, 137, 1)"; # Frappe Green
+          fail_color = "rgba(231, 130, 132, 1)";  # Frappe Red
           fail_text = "TRY AGAIN";
 
           position = "0, -150";
