@@ -211,7 +211,7 @@
         ];
 
         exec-once = [
-          "hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
+          "hyprlock -q --no-fade-in -grace 0 || loginctl terminate-session $XDG_SESSION_ID"
           # "kaneru"
           "pamixer --set-volume 0 --mute"
           "waybar"
