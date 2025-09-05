@@ -18,16 +18,16 @@
         font-size = "11";
         prompt-text = "‌‌ run:‌‌ ";
         prompt-padding = 0;
-        font = "${pkgs.TX02}/share/fonts/opentype/TX02/TX02.otf";
+        font = "TX02";
         outline-width = 0;
         hint-font = false;
         border-width = 0;
         
         # Catppuccin Macchiato
-        input-color = "#cad3f5";
-        selection-color = "#c6a0f6";
-        text-color = "#cad3f5";
-        background-color = "#181926";
+        input-color = "#c6d0f5";
+        selection-color = "#ca9ee6";
+        text-color = "#c6d0f5";
+        background-color = "#232634";
 
         min-input-width = 100;
         result-spacing = 15;

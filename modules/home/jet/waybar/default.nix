@@ -122,32 +122,32 @@
       style = ''
         @define-color highlight @mauve;
 
-        @define-color rosewater #f4dbd6;
-        @define-color flamingo  #f0c6c6;
-        @define-color pink      #f5bde6;
-        @define-color mauve     #c6a0f6;
-        @define-color red       #ed8796;
-        @define-color maroon    #ee99a0;
-        @define-color peach     #f5a97f;
-        @define-color yellow    #eed49f;
-        @define-color green     #a6da95;
-        @define-color teal      #8bd5ca;
-        @define-color sky       #91d7e3;
-        @define-color sapphire  #7dc4e4;
-        @define-color blue      #8aadf4;
-        @define-color lavender  #b7bdf8;
-        @define-color text      #cad3f5;
-        @define-color subtext1  #b8c0e0;
-        @define-color subtext0  #a5adcb;
-        @define-color overlay2  #939ab7;
-        @define-color overlay1  #8087a2;
-        @define-color overlay0  #6e738d;
-        @define-color surface2  #5b6078;
-        @define-color surface1  #494d64;
-        @define-color surface0  #363a4f;
-        @define-color base      #24273a;
-        @define-color mantle    #1e2030;
-        @define-color crust     #181926;
+        @define-color rosewater  #f2d5cf;
+        @define-color flamingo   #eebebe;
+        @define-color pink       #f4b8e4;
+        @define-color mauve      #ca9ee6;
+        @define-color red        #e78284;
+        @define-color maroon     #ea999c;
+        @define-color peach      #ef9f76;
+        @define-color yellow     #e5c890;
+        @define-color green      #a6d189;
+        @define-color teal       #81c8be;
+        @define-color sky        #99d1db;
+        @define-color sapphire   #85c1dc;
+        @define-color blue       #8caaee;
+        @define-color lavender   #babbf1;
+        @define-color text       #c6d0f5;
+        @define-color subtext1   #b5bfe2;
+        @define-color subtext0   #a5adce;
+        @define-color overlay2   #949cbb;
+        @define-color overlay1   #838ba7;
+        @define-color overlay0   #737994;
+        @define-color surface2   #626880;
+        @define-color surface1   #51576d;
+        @define-color surface0   #414559;
+        @define-color base       #303446;
+        @define-color mantle     #292c3c;
+        @define-color crust      #232634;
 
         * {
           border: none;

@@ -35,12 +35,11 @@
 
           gaps_in = 2;
           gaps_out = 4;
-          border_size = 1;
+          border_size = 2;
 
-          "col.active_border" = "rgba(c6a0f6ff)";
-          #"col.inactive_border" = "rgba(c6a0f644)";
+          "col.active_border" = "rgba(ca9ee6ff)";
 
-          resize_on_border = false;
+          resize_on_border = true;
           allow_tearing = false;
         };
 
@@ -74,7 +73,7 @@
             "fade, 0, 10, snap"
             "fadeDim, 0, 10, snap"
 
-            "workspaces, 1, 4, snap, slide"
+            "workspaces, 1, 5, snap, slide"
           ];
         };
 

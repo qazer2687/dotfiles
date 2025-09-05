@@ -12,7 +12,7 @@
         main = {
           font = "TX02:size=14, FiraCode Nerd Font:size=14";
           font-bold = "TX02:size=14:style=Bold, FiraCode Nerd Font:size=14";
-          line-height = "20px";
+          line-height = "22px";
           pad = "10x10"; 
         };
         scrollback = {
@@ -26,40 +26,40 @@
           hide-when-typing = "no";
         };
         colors = {
-          # Catppuccin Macchiato
-          cursor = "181926 f4dbd6";
-          foreground = "cad3f5";
-          background = "24273a";
+            # Catppuccin Frappe
+            cursor = [ "232634" "f2d5cf" ];
+            foreground = "c6d0f5";
+            background = "303446";
 
-          regular0 = "494d64";
-          regular1 = "ed8796";
-          regular2 = "a6da95";
-          regular3 = "eed49f";
-          regular4 = "8aadf4";
-          regular5 = "f5bde6";
-          regular6 = "8bd5ca";
-          regular7 = "b8c0e0";
+            regular0 = "51576d";
+            regular1 = "e78284";
+            regular2 = "a6d189";
+            regular3 = "e5c890";
+            regular4 = "8caaee";
+            regular5 = "f4b8e4";
+            regular6 = "81c8be";
+            regular7 = "b5bfe2";
 
-          bright0 = "5b6078";
-          bright1 = "ed8796";
-          bright2 = "a6da95";
-          bright3 = "eed49f";
-          bright4 = "8aadf4";
-          bright5 = "f5bde6";
-          bright6 = "8bd5ca";
-          bright7 = "a5adcb";
+            bright0 = "626880";
+            bright1 = "e78284";
+            bright2 = "a6d189";
+            bright3 = "e5c890";
+            bright4 = "8caaee";
+            bright5 = "f4b8e4";
+            bright6 = "81c8be";
+            bright7 = "a5adce";
 
-          "16" = "f5a97f";
-          "17" = "f4dbd6";
+            "16" = "ef9f76";
+            "17" = "f2d5cf";
 
-          selection-foreground = "cad3f5";
-          selection-background = "454a5f";
+            selection-foreground = "c6d0f5";
+            selection-background = "4f5369";
 
-          search-box-no-match = "181926 ed8796";
-          search-box-match = "cad3f5 363a4f";
+            search-box-no-match = [ "232634" "e78284" ];
+            search-box-match = [ "c6d0f5" "414559" ];
 
-          jump-labels = "181926 f5a97f";
-          urls = "8aadf4";
+            jump-labels = [ "232634" "ef9f76" ];
+            urls = "8caaee";
         };
         key-bindings = {
           clipboard-copy = "Control+c XF86Copy";
