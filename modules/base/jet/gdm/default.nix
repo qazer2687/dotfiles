@@ -12,5 +12,10 @@
       enable = true;
       wayland = true;
     };
+    # Hide "System Administrator" Account
+    users.users.root.extraConfig = ''
+    [User]
+      SystemAccount=true
+    '';
   };
 }
