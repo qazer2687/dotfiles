@@ -74,30 +74,13 @@
     }
   ];
 
-  # Autologin and hide getty messages.
-  services.getty = {
-    autologinUser = "alex";
-    extraArgs = [
-      "--skip-login"
-      "--nonewline"
-      "--noissue"
-      "--noclear"
-      "--nohostname"
-    ];
-  };
-
   programs.hyprland = {
     enable = true;
-    withUWSM = true;
   };
-
-  # Automatically launch UWSM after login.
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
-  '';
 
   environment = {
     sessionVariables = {
+      WLR_DRM_DEVICES = "/dev/dri/card0";
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
@@ -114,6 +97,7 @@
     sudo-rs.enable = true;
     systemd-boot.enable = true;
     xdg.enable = true;
+    gdm.enable = true;
   };
 
   # Did you read the comment?

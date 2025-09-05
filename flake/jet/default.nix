@@ -8,6 +8,7 @@ inputs.nixpkgs.lib.nixosSystem {
   modules = [
     ../../hosts/jet
     ../../modules/base/shared
+    ../../modules/base/jet
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
     inputs.asahi.nixosModules.apple-silicon-support
