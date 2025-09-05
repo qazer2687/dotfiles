@@ -19,13 +19,14 @@
       };
       vencord = {
         themes = {
-          catppuccin-frappe = "https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css";
+          frappe = builtins.readFile ./config/frappe.css;
         };
         settings = {
           autoUpdate = true;
           autoUpdateNotification = false;
           notifyAboutUpdates = false;
           useQuickCss = true;
+          enabledThemes = [ "frappe.css" ];
           plugins = {
             MessageLogger = {
               enabled = true;
