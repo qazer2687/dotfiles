@@ -29,16 +29,6 @@
           brightness = 0;
         };
 
-        label = {
-          text = "LOCKED";
-          color = "rgba(202, 158, 230, 1)"; # Frappe Mauve
-          font_size = 80;
-          font_family = "TX02";
-          position = "0, 0";
-          halign = "center";
-          valign = "center";
-        };
-
         "input-field" = {
           size = "720, 72";
           outline_thickness = 0;
@@ -49,7 +39,7 @@
           dots_center = true;
           outer_color = "rgba(202, 158, 230, 1)";  # Frappe Mauve
           inner_color = "rgba(48, 52, 70, 1)"; # Frappe Base
-          font_color = "rgba(198, 208, 245, 1)"; # Frappe Text
+          font_color = "rgba(202, 158, 230, 1)"; # Frappe Mauve
           fade_on_empty = false;
           placeholder_text = "";
           hide_input = false;
@@ -59,7 +49,7 @@
           fail_color = "rgba(48, 52, 70, 1)";
           fail_text = "TRY AGAIN";
 
-          position = "0, -120";
+          position = "0, 0";
           halign = "center";
           valign = "center";
         };
