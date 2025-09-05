@@ -32,10 +32,10 @@
         "input-field" = {
           size = "720, 72";
           outline_thickness = 0;
-          dots_size = 0.35;
+          dots_size = 0.4;
           font_family = "Departure Mono";
           dots_text_format = "♦";
-          dots_spacing = 0.5;
+          dots_spacing = 1;
           dots_center = true;
           outer_color = "rgba(202, 158, 230, 1)";  # Frappe Mauve
           inner_color = "rgba(48, 52, 70, 1)"; # Frappe Base
