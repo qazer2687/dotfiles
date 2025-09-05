@@ -16,9 +16,6 @@
           hide_cursor = true;
           no_fade_in = true;
         };
-        animations = {
-          enabled = false;
-        };
       };
     };
   };
