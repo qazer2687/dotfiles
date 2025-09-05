@@ -66,6 +66,7 @@
           ];
 
           animation = [
+            # Disable top level animations which children inherit.
             "windows, 0"
             "layers, 0"
             "fade, 0"
