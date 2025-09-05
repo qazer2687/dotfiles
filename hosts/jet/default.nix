@@ -91,6 +91,8 @@
     [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
   '';
 
+  security.pam.services.hyprlock = {};
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;

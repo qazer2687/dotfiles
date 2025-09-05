@@ -6,7 +6,6 @@
   options.modules.hyprlock.enable = lib.mkEnableOption "";
   
   config = lib.mkIf config.modules.hyprlock.enable {
-    pam.services.hyprlock = {};
     programs.hyprlock = {
       enable = true;
 
