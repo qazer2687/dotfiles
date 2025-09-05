@@ -40,7 +40,7 @@
         };
 
         "input-field" = {
-          size = "920, 72";
+          size = "720, 72";
           outline_thickness = 0;
           dots_size = 0.4;
           font_family = "TX02";
@@ -56,7 +56,8 @@
           rounding = 12;
 
           # success / fail colors
-          fail_color = "rgba(231, 130, 132, 1)";  # Frappe Red
+          check_color = "rgba(0, 0, 0, 0)";
+          fail_color = "rgba(0, 0, 0, 0)";
           fail_text = "TRY AGAIN";
 
           position = "0, -150";
