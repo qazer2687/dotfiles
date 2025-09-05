@@ -42,7 +42,7 @@
           size = "920, 72";
           outline_thickness = 2;
           dots_size = 0.20;
-          font_family = "Departure Mono";
+          font_family = "TX02";
           dots_text_format = "▢";
           dots_spacing = 1;
           dots_center = true;
