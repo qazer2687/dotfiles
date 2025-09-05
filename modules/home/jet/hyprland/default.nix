@@ -60,6 +60,7 @@
 
         animations = {
           enabled = true;
+          first_launch_animation = false;
 
           bezier = [
             "snap, 0.2, 0, 0, 1"
@@ -73,8 +74,7 @@
             "border, 0"
             "borderangle, 0"
             "zoomFactor, 0"
-            "monitorAdded, 0"
-
+            
             "workspaces, 1, 5, snap, slide"
           ];
         };
