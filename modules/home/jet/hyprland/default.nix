@@ -73,6 +73,7 @@
             "border, 0"
             "borderangle, 0"
             "zoomFactor, 0"
+            "monitorAdded, 0"
 
             "workspaces, 1, 5, snap, slide"
           ];
