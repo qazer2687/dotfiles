@@ -27,7 +27,7 @@
         };
         colors = {
             # Catppuccin Frappe
-            cursor = [ "232634" "f2d5cf" ];
+            cursor = "232634 f2d5cf";
             foreground = "c6d0f5";
             background = "303446";
 
@@ -55,10 +55,10 @@
             selection-foreground = "c6d0f5";
             selection-background = "4f5369";
 
-            search-box-no-match = [ "232634" "e78284" ];
-            search-box-match = [ "c6d0f5" "414559" ];
+            search-box-no-match = "232634 e78284";
+            search-box-match = "c6d0f5 414559";
 
-            jump-labels = [ "232634" "ef9f76" ];
+            jump-labels = "232634 ef9f76";
             urls = "8caaee";
         };
         key-bindings = {
