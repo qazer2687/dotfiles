@@ -55,9 +55,8 @@
           hide_input = false;
           rounding = 12;
 
-          # success / fail colors
-          check_color = "rgba(0, 0, 0, 0)";
-          fail_color = "rgba(0, 0, 0, 0)";
+          check_color = "rgba(48, 52, 70, 1)";
+          fail_color = "rgba(48, 52, 70, 1)";
           fail_text = "TRY AGAIN";
 
           position = "0, -150";
