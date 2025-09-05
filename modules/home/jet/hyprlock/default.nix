@@ -4,8 +4,9 @@
   ...
 }: {
   options.modules.hyprlock.enable = lib.mkEnableOption "";
-
-  config = lib.mkIf config.programs.hyprlock.enable {
+  
+  config = lib.mkIf config.modules.hyprlock.enable {
+    security.pam.services.hyprlock = {};
     programs.hyprlock = {
       enable = true;
 
