@@ -42,7 +42,7 @@
         "input-field" = {
           size = "720, 72";
           outline_thickness = 0;
-          dots_size = 0.75;
+          dots_size = 0.35;
           font_family = "Departure Mono";
           dots_text_format = "♦";
           dots_spacing = 0.5;
