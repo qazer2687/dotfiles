@@ -21,7 +21,7 @@
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       plugins = [
-        pkgs.hyprlandPlugins.borders-plus-plus
+        inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
       ];
 
       settings = {
@@ -224,7 +224,7 @@
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
           "pamixer --set-volume 0 --mute"
           "waybar"
-          "${pkgs.wbg}/bin/wbg /home/alex/.config/wallpaper/wallpaper.png"
+          "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
           "${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
         ];
       };
