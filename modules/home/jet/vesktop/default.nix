@@ -18,9 +18,9 @@
         discordBranch = "stable";
       };
       vencord = {
-        themes = [
-          "https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css"
-        ];
+        themes = {
+          catppuccin-frappe = "https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css";
+        };
         settings = {
           autoUpdate = true;
           autoUpdateNotification = false;
