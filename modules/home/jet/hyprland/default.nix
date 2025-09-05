@@ -70,7 +70,7 @@
 
         animations = {
           enabled = true;
-          first_launch_animation = false;
+          first_launch_animation = "false";
 
           bezier = [
             "snap, 0.2, 0, 0, 1"
