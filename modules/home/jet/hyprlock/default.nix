@@ -17,8 +17,12 @@
           no_fade_in = true;
         };
 
-        animations = {
-          enabled = false;
+         animations = {
+          enabled = true;
+          # Disable fade in and fade out animations.
+          fade = {
+            duration = 0;
+          };
         };
 
         background = {
