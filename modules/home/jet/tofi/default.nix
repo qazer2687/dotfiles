@@ -16,7 +16,7 @@
         scale = true;
         horizontal = true;
         font-size = "11";
-        prompt-text = "‌‌ run:‌‌ ";
+        prompt-text = "‌‌ run:‌‌‌ ‌‌ ‌ ";
         prompt-padding = 0;
         font = "TX02";
         outline-width = 0;
