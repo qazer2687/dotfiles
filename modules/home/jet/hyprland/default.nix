@@ -66,26 +66,6 @@
           ];
 
           animation = [
-            "windows, 0, 4, snap, slide"
-            "windowsOut, 0, 4, snap, slide"
-            "border, 0, 10, snap"
-            "fade, 0, 10, snap"
-            "fadeDim, 0, 10, snap"
-            "output, 0, 5, snap"
-            "outputOut, 0, 5, snap"
-            "windowOpen, 0, 4, snap"
-            "windowClose, 0, 4, snap"
-            "windowMaximize, 0, 4, snap"
-            "windowMinimize, 0, 4, snap"
-            "windowMove, 0, 4, snap"
-            "windowResize, 0, 4, snap"
-            "float, 0, 4, snap"
-            "floatOpen, 0, 4, snap"
-            "floatClose, 0, 4, snap"
-            "special, 0, 4, snap"
-            "specialOpen, 0, 4, snap"
-            "specialClose, 0, 4, snap"
-
             "workspaces, 1, 5, snap, slide"
           ];
         };
