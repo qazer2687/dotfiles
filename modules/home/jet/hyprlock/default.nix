@@ -42,7 +42,7 @@
         "input-field" = {
           size = "720, 72";
           outline_thickness = 0;
-          dots_size = 0.3;
+          dots_size = 0.4;
           font_family = "TX02";
           dots_text_format = "X";
           dots_spacing = 0.5;
@@ -59,7 +59,7 @@
           fail_color = "rgba(48, 52, 70, 1)";
           fail_text = "TRY AGAIN";
 
-          position = "0, -150";
+          position = "0, -100";
           halign = "center";
           valign = "center";
         };
