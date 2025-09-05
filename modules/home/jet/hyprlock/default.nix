@@ -14,13 +14,15 @@
           # Doesn't work with GPU accel.
           screencopy_mode = 1;
           hide_cursor = true;
-          no_fade_in = true;
         };
 
-         animations = {
+        animations = {
           enabled = true;
           # Disable fade in and fade out animations.
-          fade = {
+          fade_in = {
+            duration = 0;
+          };
+          fade_out = {
             duration = 0;
           };
         };
