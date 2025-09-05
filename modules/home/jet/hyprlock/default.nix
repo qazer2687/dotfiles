@@ -46,10 +46,10 @@
 
         "input-field" = {
           size = "920, 72";
-          outline_thickness = 2;
-          dots_size = 0.20;
+          outline_thickness = 0;
+          dots_size = 0.25;
           font_family = "TX02";
-          dots_text_format = "*";
+          dots_text_format = "●";
           dots_spacing = 1;
           dots_center = true;
           outer_color = "rgba(202, 158, 230, 1)";  # Frappe Mauve
