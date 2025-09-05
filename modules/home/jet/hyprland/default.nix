@@ -211,7 +211,6 @@
 
         exec-once = [
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
-          # "kaneru"
           "pamixer --set-volume 0 --mute"
           "waybar"
           "${pkgs.wbg}/bin/wbg /home/alex/.config/wallpaper/wallpaper.png"
