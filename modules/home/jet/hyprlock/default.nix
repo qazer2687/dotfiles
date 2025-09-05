@@ -47,7 +47,7 @@
 
           check_color = "rgba(48, 52, 70, 1)";
           fail_color = "rgba(48, 52, 70, 1)";
-          fail_text = "TRY AGAIN";
+          fail_text = "";
 
           position = "0, 0";
           halign = "center";
