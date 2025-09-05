@@ -196,13 +196,13 @@
           "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%-"
 
           # Hyprsunset (Capped at 6500K)
-          "CTRL, XF86MonBrightnessUp, exec, temp=$(hyprctl hyprsunset temperature); [ $temp -le 6000 ] && hyprctl hyprsunset temperature $((temp + 500)); sleep 0.5; pkill -RTMIN+1 waybar"
-          "CTRL, XF86MonBrightnessDown, exec, temp=$(hyprctl hyprsunset temperature); hyprctl hyprsunset temperature $((temp - 500)); sleep 0.5; pkill -RTMIN+1 waybar"
+          "CTRL, XF86MonBrightnessUp, exec, temp=$(hyprctl hyprsunset temperature); [ $temp -le 6000 ] && hyprctl hyprsunset temperature $((temp + 500)); sleep 1; pkill -RTMIN+1 waybar"
+          "CTRL, XF86MonBrightnessDown, exec, temp=$(hyprctl hyprsunset temperature); hyprctl hyprsunset temperature $((temp - 500)); sleep 1; pkill -RTMIN+1 waybar"
         ];
 
         bindl = [
           # Lock the screen with hyprlock when the lid is closed.
-          #",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
+          ",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
         ];
 
         bindm = [
@@ -211,15 +211,12 @@
         ];
 
         exec-once = [
-          # Launch hyprlock after hyprland starts and terminate the session if hyprlock
-          # fails to launch. This does not consider the possibility of exec-once not
-          # working - but then again I'm using autologin so there's no security here anyway.
-          #"hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
+          "hyprlock -q --no-fade-in || loginctl terminate-session $XDG_SESSION_ID"
           # "kaneru"
+          "pamixer --set-volume 0 --mute"
           "waybar"
-          # "hyprpanel"
           "${pkgs.wbg}/bin/wbg /home/alex/.config/wallpaper/wallpaper.png"
-          "${pkgs.hyprsunset}/bin/hyprsunset -t 3500"
+          "${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
         ];
       };
 

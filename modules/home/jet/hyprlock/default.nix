@@ -5,7 +5,8 @@
 }: {
   options.modules.hyprlock.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.modules.hyprlock.enable {
+  config = lib.mkIf config.programs.hyprlock.enable {
+    security.pam.services.hyprlock = {};
     programs.hyprlock = {
       enable = true;
 
@@ -20,42 +21,43 @@
           "pam:enabled" = true;
         };
 
-        # BACKGROUND
         background = {
           path = "";
-          color = "rgba(17, 17, 27, 1.0)";
-          blur_passes = 2;
+          color = "rgba(48, 52, 70, 0.95)"; # Frappe Base
+          blur_passes = 6;
           brightness = 0;
         };
 
         label = {
           text = "LOCKED";
-          color = "rgba(203, 166, 247, 1.0)";
-          font_size = 100;
+          color = "rgba(202, 158, 230, 1.0)"; # Frappe Mauve
+          font_size = 90;
           font_family = "Departure Mono";
           position = "0, 0";
           halign = "center";
           valign = "center";
         };
 
-        # INPUT FIELD
-        input-field = {
-          size = "1000, 80";
-          outline_thickness = 0;
-          dots_size = 0.33;
+        "input-field" = {
+          size = "920, 72";
+          outline_thickness = 2;
+          dots_size = 0.45;
           font_family = "Departure Mono";
-          dots_text_format = "X";
-          dots_spacing = 0.2;
+          dots_text_format = "●";
+          dots_spacing = 0.28;
           dots_center = true;
-          outer_color = "rgba(0, 0, 0, 0)";
-          inner_color = "rgba(0, 0, 0, 0)";
-          font_color = "rgba(205, 214, 244, 1.0)";
+          outer_color = "rgba(41, 44, 60, 0.75)";  # Frappe Mantle
+          inner_color = "rgba(48, 52, 70, 0.45)";  # Frappe Base
+          font_color = "rgba(198, 208, 245, 1.0)"; # Frappe Text
           fade_on_empty = false;
           placeholder_text = "";
           hide_input = false;
-          check_color = "rgba(0, 0, 0, 0)";
-          fail_color = "rgba(0, 0, 0, 0)";
+
+          # success / fail colors
+          check_color = "rgba(166, 209, 137, 0.95)"; # Frappe Green
+          fail_color = "rgba(231, 130, 132, 0.95)";  # Frappe Red
           fail_text = "TRY AGAIN";
+
           position = "0, -100";
           halign = "center";
           valign = "center";
