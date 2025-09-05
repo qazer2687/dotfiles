@@ -201,7 +201,7 @@
 
         bindl = [
           # Lock the screen with hyprlock when the lid is closed.
-          #",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
+          ",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
         ];
 
         bindm = [
@@ -210,7 +210,7 @@
         ];
 
         exec-once = [
-          #"hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
+          "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
           # "kaneru"
           "pamixer --set-volume 0 --mute"
           "waybar"
