@@ -11,6 +11,10 @@
     services.displayManager.gdm = {
       enable = true;
       wayland = true;
+      autoLogin = {
+        enable = true;
+        user   = "alex";
+      };
     };
   };
 }
