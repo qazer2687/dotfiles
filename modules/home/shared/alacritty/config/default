@@ -1,0 +1,51 @@
+working_directory = "None"
+live_config_reload = true
+ipc_socket = true
+[env]
+TERM = "xterm-256color"
+[window]
+dimensions = { columns = 0, lines = 0 }
+position = "None"
+padding = { x = 12, y = 12 }
+dynamic_padding = false
+decorations = "Buttonless"
+opacity = 0.9
+blur = true
+startup_mode = "Windowed"
+decorations_theme_variant = "None"
+resize_increments = false
+option_as_alt = "None"
+[scrolling]
+history = 100000
+multiplier = 1
+[font]
+normal = { family = "Terminus", style = "Regular" }
+bold = { style = "Bold" }
+italic = { style = "Italic" }
+bold_italic = { style = "Bold Italic" }
+size = 14
+offset = { x = 0, y = 0 }
+glyph_offset = { x = 0, y = 0 }
+builtin_box_drawing = true
+[colors]
+transparent_background_colors = false
+draw_bold_text_with_bright_colors = false
+[colors.primary]
+background = "#000000"
+[bell]
+animation = "Linear"
+duration = 0
+color = "#ffffff"
+command = "None"
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\\t"
+save_to_clipboard = false
+[cursor]
+style = { shape = "Block", blinking = "On" }
+vi_mode_style = "None"
+blink_interval = 750
+blink_timeout = 0
+unfocused_hollow = true
+thickness = 0.15
+[terminal]
+osc52 = "CopyPaste"

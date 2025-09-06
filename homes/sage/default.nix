@@ -7,14 +7,17 @@
     ../../modules/home
   ];
 
+  # Packages
   home.packages = with pkgs; [
-    obsidian
     vlc
     loupe
     gdu
     btop
     protonvpn-gui
-    jetbrains.idea-community
+    nautilus
+    killall
+    
+    lunar-client
   ];
 
   modules = {
@@ -47,9 +50,13 @@
     vscode.enable = true;
     zed.enable = true;
     vesktop.enable = true;
+
+    # Gaming
+    mangohud.enable = true;
+    prismlauncher.enable = true;
   };
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
   home.homeDirectory = lib.mkForce "/home/alex";
 
   sops = {

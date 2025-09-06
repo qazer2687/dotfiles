@@ -31,6 +31,7 @@
 
     nixosConfigurations = {
       # Desktop
+      sage = (import ./flake/sage) {inherit inputs self;};
       jade = (import ./flake/jade) {inherit inputs self;};
 
       # Laptop
