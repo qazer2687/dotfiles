@@ -32,7 +32,6 @@
     fish.enable = true;
     foot.enable = true;
     fastfetch.enable = true;
-    yazi.enable = true;
 
     # Theming
     fonts.enable = true;
@@ -47,8 +46,6 @@
 
     # Applications
     firefox.enable = true;
-    vscode.enable = true;
-    zed.enable = true;
     vesktop.enable = true;
 
     # Gaming
