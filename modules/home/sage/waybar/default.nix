@@ -27,7 +27,7 @@
           margin = "0 0 0 0";
           modules-left = ["clock" "hyprland/workspaces" "mpris"];
           modules-center = [];
-          modules-right = ["tray" "network" "pulseaudio" "battery"];
+          modules-right = ["tray" "network" "pulseaudio"];
 
           pulseaudio = {
             format = "VOL: {volume}%";
@@ -205,7 +205,7 @@
           margin-right: 4px;
         }
 
-        #battery {
+        #pulseaudio {
           margin-right: 16px;
         }
       '';
