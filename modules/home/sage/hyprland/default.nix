@@ -185,6 +185,8 @@
           "SUPER SHIFT, left, layoutmsg, mfact -0.05"
           "SUPER SHIFT, right, layoutmsg, mfact +0.05"
 
+          "SUPER SHIFT, F, togglefloating"
+
           # Quit
           "SUPER SHIFT, Q, exit"
         ];
@@ -225,7 +227,7 @@
           "pamixer --set-volume 0 --mute"
           "waybar"
           "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
-          "${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
+          #"${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
         ];
       };
 
