@@ -113,9 +113,13 @@
 
   modules = {
     core.enable = true;
+    dbus.enable = true;
+    nh.enable = true;
+    sudo-rs.enable = true;
+    systemd-boot.enable = true;
     zram.enable = true;
     docker.enable = true;
-    samba.enable = true;
+    samba.enable = false;
 
     # Security
     firewall.enable = true;
