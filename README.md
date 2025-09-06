@@ -3,19 +3,29 @@
   <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
 </p>
 
-
 <p align="center">
 		<img alt="Stargazers" src="https://img.shields.io/github/stars/qazer2687/dotfiles?style=for-the-badge&color=ffffff&labelColor=222222"></a>
 		<img alt="Repo Size" src="https://img.shields.io/github/repo-size/qazer2687/dotfiles.svg?style=for-the-badge&color=ffffff&labelColor=222222"/></a>
     <img alt="License" src="https://img.shields.io/badge/License-GPLv3-907385605422448742?style=for-the-badge&color=ffffff&labelColor=222222"></a>
 </p>
 
-| Name         | OS   | Description                                                                                       |  Type   |     Arch      |
-| :----------- | :--: | :------------------------------------------------------------------------------------------------ | :-----: | :-----------: |
-| `jade`       | NixOS| My desktop PC.                                                                                    | Desktop | x86_64-linux  |
-| `jet`        | NixOS | The Asahi/NixOS install on my Macbook.                                                            | Laptop  | aarch64-linux  |
-| `mica`      | NixOS | My TinyMiniMicro homelab.                                                                     | Server  | x86_64-linux  |
-| `amber`      | NixOS | ~~My experimental VM.~~ COMING SOON                                                                        | Virtual  | x86_64-linux  |
+### Hosts
+
+| Name         | OS    | Description                               |  Type   |     Arch      |
+| :----------- | :---: | :---------------------------------------- | :-----: | :-----------: |
+| `sage`       | NixOS | My desktop PC.                            | Desktop | x86_64-linux  |
+| `jet`        | NixOS | The Asahi/NixOS install on my Macbook.    | Laptop  | aarch64-linux |
+| `mica`       | NixOS | My TinyMiniMicro homelab.                 | Server  | x86_64-linux  |
+| `amber`      | NixOS | ~~My experimental VM.~~ COMING SOON       | Virtual | x86_64-linux  |
+
+### Retired Hosts
+
+| Name         | OS    | Description                              |  Type   |     Arch       |
+| :----------- | :---: | :--------------------------------------- | :-----: | :------------: |
+| `opal`       | NixOS | My desktop server.                       | Server  | x86_64-linux   |
+| `quartz`     | NixOS | My Raspberry Pi.                         | Server  | aarch64-linux  |
+| `ruby`       | NixOS | My Thinkpad T480.                        | Laptop  | x86_64-linux   |
+| `jade`       | NixOS | My desktop PC.                           | Desktop | x86_64-linux   |
 
 
 <img src="https://github.com/user-attachments/assets/305f1bc4-153f-458e-9bba-1f80ed9a18fe">
