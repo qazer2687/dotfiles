@@ -9,6 +9,7 @@
 
   # Packages
   home.packages = with pkgs; [
+    obsidian
     vlc
     loupe
     gdu
@@ -47,6 +48,7 @@
     # Applications
     firefox.enable = true;
     vesktop.enable = true;
+    vscode.enable = true;
 
     # Gaming
     mangohud.enable = true;
