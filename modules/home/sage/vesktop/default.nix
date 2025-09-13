@@ -13,7 +13,8 @@
       settings = {
         arRPC = true;
         disableMinSize = true;
-        minimizeToTray = false;
+        tray = true;
+        minimizeToTray = true;
         hardwareAcceleration = true;
         discordBranch = "stable";
       };

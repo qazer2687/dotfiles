@@ -20,9 +20,7 @@
       xwayland.enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-      plugins = [
-        pkgs.hyprlandPlugins.borders-plus-plus
-      ];
+
 
       settings = {
         monitor = [
@@ -35,22 +33,12 @@
 
           gaps_in = 2;
           gaps_out = 4;
-          border_size = 2;
+          border_size = 1;
 
           "col.active_border" = "rgba(ca9ee6ff)";
 
           resize_on_border = true;
           allow_tearing = true;
-        };
-
-        plugin = {
-          borders-plus-plus = {
-            add_borders = 1;
-            col.border_1 = "rgb(232634)";
-
-            # -1 means "default" as in the one defined in general:border_size
-            border_size_1 = 4;
-          };
         };
 
         master = {
@@ -60,12 +48,25 @@
         };
 
         decoration = {
-          rounding = 0;
+          # Rounding
+          rounding = 4;
 
+          # Opacity
           active_opacity = 1;
-          inactive_opacity = 1;
+          inactive_opacity = 0.97;
 
-          blur.enabled = false;
+          # Blur
+          blur.enabled = true;
+
+          # Shadows
+          shadow = {
+            enabled = true;
+            range = 25;
+            render_power = 4;
+            color = "rgba(1a1a1aff)";
+            offset = "0 5";
+            scale = 0.9;
+          };
         };
 
         animations = {
@@ -125,6 +126,8 @@
           disable_hyprland_logo = true;
           vfr = true;
           vrr = 0;
+          # Stop "application not responding" popup on minecraft.
+          enable_anr_dialog = false;
         };
 
         # Smart Gaps
@@ -224,10 +227,11 @@
 
         exec-once = [
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
-          "pamixer --set-volume 0 --mute"
+          "pamixer --set-volume 50"
           "waybar"
           "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
           #"${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
+          "vesktop --start-minimized"
         ];
       };
 

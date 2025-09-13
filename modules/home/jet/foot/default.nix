@@ -29,7 +29,7 @@
           # Catppuccin Frappe
           cursor = "232634 f2d5cf";
           foreground = "c6d0f5";
-          background = "303446";
+          background = "232634"; # Crust
 
           regular0 = "51576d";
           regular1 = "e78284";

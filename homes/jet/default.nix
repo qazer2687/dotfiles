@@ -8,6 +8,7 @@
   ];
 
   home.packages = with pkgs; [
+    nautilus
     obsidian
     vlc
     loupe
@@ -47,6 +48,7 @@
     vscode.enable = true;
     zed.enable = true;
     vesktop.enable = true;
+    thunderbird.enable = true;
   };
 
   home.stateVersion = "24.11";

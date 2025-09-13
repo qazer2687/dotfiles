@@ -7,12 +7,6 @@
   options.modules.waybar.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.waybar.enable {
-    wayland.windowManager.sway.config.bars = [
-      {
-        command = "${pkgs.waybar}/bin/waybar";
-      }
-    ];
-
     home.packages = with pkgs; [
       # MPRIS Dependency
       playerctl
@@ -24,9 +18,9 @@
         mainBar = {
           layer = "top";
           height = 28;
-          margin = "0 0 0 0";
-          modules-left = ["clock" "hyprland/workspaces" "mpris"];
-          modules-center = [];
+          margin = "6 6 0 6";
+          modules-left = ["clock"];
+          modules-center = ["hyprland/workspaces"];
           modules-right = ["tray" "network" "pulseaudio"];
 
           pulseaudio = {
@@ -105,16 +99,10 @@
 
           mpris = {
             tooltip = false;
-            format = "{title}";
-            format-paused = "{title}";
-            artist-len = 20;
-            title-len = 20;
-            player-icons = {
-              default = "";
-            };
-            status-icons = {
-              paused = "";
-            };
+            format = "PLAYING: {artist} - {title}";
+            format-paused = "PAUSED: {artist} - {title}";
+            artist-len = 25;
+            title-len = 25;
           };
         };
       };
@@ -159,6 +147,7 @@
 
         window#waybar {
           background-color: @crust;
+          border-radius: 4px;
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -172,6 +161,12 @@
           color: @text;
         }
 
+        #workspaces button,
+        #workspaces button.focused,
+        #workspaces button.active {
+          padding: 0 24px;
+        }
+
         #mpris {
           border: 1px solid @mauve;
         }
@@ -181,33 +176,18 @@
           color: @mantle;
         }
 
-        #battery.warning {
-          background-color: @peach;
-          color: @mantle;
-        }
-
-        #battery.critical {
-          background-color: @red;
-          color: @mantle;
-        }
-
-        #battery.charging {
-          background-color: @green;
-          color: @mantle;
-        }
-
-        /* Pad Edges */
         #clock {
-          margin-left: 16px;
+          margin-left: 4px;
         }
 
         #tray {
-          margin-right: 4px;
+          margin-right: 8px;
         }
 
         #pulseaudio {
-          margin-right: 16px;
+          margin-right: 4px;
         }
+
       '';
     };
   };
