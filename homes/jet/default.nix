@@ -16,6 +16,7 @@
     btop
     protonvpn-gui
     jetbrains.idea-community
+    geary
   ];
 
   modules = {
@@ -48,7 +49,6 @@
     vscode.enable = true;
     zed.enable = true;
     vesktop.enable = true;
-    thunderbird.enable = true;
   };
 
   home.stateVersion = "24.11";
