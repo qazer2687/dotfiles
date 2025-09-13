@@ -16,6 +16,9 @@
     btop
     protonvpn-gui
     jetbrains.idea-community
+
+    aerc
+    oauth2ms
   ];
 
   modules = {
@@ -31,7 +34,6 @@
     foot.enable = true;
     fastfetch.enable = true;
     yazi.enable = true;
-    neomutt.enable = true;
 
     # Theming
     fonts.enable = true;
