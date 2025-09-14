@@ -51,6 +51,7 @@
             # -1 means "default" as in the one defined in general:border_size
             border_size_1 = 1;
           };
+        };
 
 
         master = {
