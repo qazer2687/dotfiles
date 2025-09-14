@@ -53,7 +53,6 @@
           };
         };
 
-
         master = {
           mfact = 0.75;
           orientation = "left";
