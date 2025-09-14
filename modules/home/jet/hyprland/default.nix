@@ -41,8 +41,9 @@
 
           resize_on_border = true;
           allow_tearing = false;
+        };
 
-          plugin = {
+        plugin = {
             borders-plus-plus = {
             add_borders = 1;
             col.border_1 = "rgb(232634)";
@@ -50,9 +51,6 @@
             # -1 means "default" as in the one defined in general:border_size
             border_size_1 = 1;
           };
-        };
-
-        };
 
 
         master = {
