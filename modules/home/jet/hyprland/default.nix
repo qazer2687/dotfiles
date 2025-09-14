@@ -42,7 +42,7 @@
 
 
         master = {
-          mfact = 0.55;
+          mfact = 0.75;
           orientation = "left";
           inherit_fullscreen = true;
         };
@@ -116,13 +116,11 @@
         };
 
         # Smart Gaps
-        workspace = [
-          "w[tv1], gapsout:4, gapsin:0"
-          "f[1], gapsout:4, gapsin:0"
-        ];
+        #workspace = [
+        #  "w[tv1], gapsout:4, gapsin:0"
+        #  "f[1], gapsout:4, gapsin:0"
+        #];
         windowrulev2 = [
-          # Force tearing for any window that is fullscreen.
-          "immediate, fullscreen:1"
           # Disable rounded corners on waybar.
           "rounding 0, class:^(.waybar-wrapped)$"
         ];
