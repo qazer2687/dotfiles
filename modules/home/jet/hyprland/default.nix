@@ -33,8 +33,8 @@
           # Master/Stack
           layout = "master";
 
-          gaps_in = 2;
-          gaps_out = 4;
+          gaps_in = 0;
+          gaps_out = 0;
           border_size = 2;
 
           "col.active_border" = "rgba(ca9ee6ff)";
@@ -43,15 +43,6 @@
           allow_tearing = false;
         };
 
-        plugin = {
-          borders-plus-plus = {
-            add_borders = 1;
-            col.border_1 = "rgb(232634)";
-
-            # -1 means "default" as in the one defined in general:border_size
-            border_size_1 = 4;
-          };
-        };
 
         master = {
           mfact = 0.55;
@@ -63,9 +54,9 @@
           rounding = 0;
 
           active_opacity = 1;
-          inactive_opacity = 1;
+          inactive_opacity = 0.95;
 
-          blur.enabled = false;
+          blur.enabled = true;
         };
 
         animations = {

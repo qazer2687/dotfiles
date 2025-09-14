@@ -16,9 +16,6 @@
     btop
     protonvpn-gui
     jetbrains.idea-community
-
-    aerc
-    oauth2ms
   ];
 
   modules = {
