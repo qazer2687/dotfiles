@@ -26,7 +26,6 @@
           hide-when-typing = "no";
         };
         colors = {
-          alpha = 0.9;
           # Catppuccin Frappe
           cursor = "232634 f2d5cf";
           foreground = "c6d0f5";
