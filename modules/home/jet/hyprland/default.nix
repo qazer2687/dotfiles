@@ -32,10 +32,10 @@
 
           gaps_in = 0;
           gaps_out = 0;
-          border_size = 4;
+          border_size = 2;
 
           "col.active_border" = "rgba(ca9ee6ff)";
-          "col.inactive_border" = "rgba(232634ff)";
+          "col.inactive_border" = "rgba(000000ff)";
 
           resize_on_border = true;
           allow_tearing = false;
