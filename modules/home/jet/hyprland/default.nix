@@ -171,6 +171,8 @@
           "SUPER SHIFT, left, layoutmsg, mfact -0.05"
           "SUPER SHIFT, right, layoutmsg, mfact +0.05"
 
+          "SUPER SHIFT, F, togglefloating"
+
           # Quit
           "SUPER SHIFT, Q, exit"
         ];
