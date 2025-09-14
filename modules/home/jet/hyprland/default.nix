@@ -20,6 +20,9 @@
       xwayland.enable = false;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      plugins = [
+        pkgs.hyprlandPlugins.borders-plus-plus
+      ];
 
       settings = {
         monitor = [
@@ -38,6 +41,17 @@
 
           resize_on_border = true;
           allow_tearing = false;
+
+          plugin = {
+            borders-plus-plus = {
+            add_borders = 1;
+            col.border_1 = "rgb(232634)";
+
+            # -1 means "default" as in the one defined in general:border_size
+            border_size_1 = 1;
+          };
+        };
+
         };
 
 
