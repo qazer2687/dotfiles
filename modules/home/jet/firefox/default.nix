@@ -14,7 +14,7 @@
 
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox-esr;
+      package = pkgs.firefox;
 
       profiles."default" = {
         name = "default";
