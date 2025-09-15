@@ -4,7 +4,9 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let 
+  scheme = base16 "gruvbox";
+in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprland.enable {
@@ -34,8 +36,8 @@
           gaps_out = 0;
           border_size = 2;
 
-          "col.active_border" = "rgba(ca9ee6ff)";
-          "col.inactive_border" = "rgba(000000ff)";
+          "col.active_border" = "rgba(${scheme.base05}ff)";
+          "col.inactive_border" = "rgba(${scheme.base00}ff)";
 
           resize_on_border = true;
           allow_tearing = false;
