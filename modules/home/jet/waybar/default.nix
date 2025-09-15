@@ -42,6 +42,7 @@ in {
             exec = "$HOME/.config/waybar/scripts/pingServer.sh";
             interval = 30;
             format = "{}";
+            return-type = "json";
           };
 
           clock = {
