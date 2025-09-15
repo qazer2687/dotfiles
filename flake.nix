@@ -24,6 +24,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    textfox.url = "github:adriankarlen/textfox";
+
     nix-base16.url = "github:qazer2687/nix-base16";
   };
 

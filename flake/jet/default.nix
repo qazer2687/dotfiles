@@ -28,6 +28,7 @@ inputs.nixpkgs.lib.nixosSystem {
         sharedModules = [
           inputs.sops-nix.homeManagerModules.sops
           inputs.niri.homeModules.niri
+          inputs.textfox.homeManagerModules.default
         ];
       };
     }
