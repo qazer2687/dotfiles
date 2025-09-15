@@ -45,18 +45,22 @@ in {
         };
 
         master = {
-          mfact = 0.75;
+          mfact = 0.70;
           orientation = "left";
           inherit_fullscreen = true;
         };
 
         decoration = {
+          # Rounding
           rounding = 0;
 
+          # Opacity
           active_opacity = 1;
-          inactive_opacity = 0.95;
+          inactive_opacity = 1;
 
-          blur.enabled = true;
+          # Blur
+          blur.enabled = false;
+          shadow.enabled = false;
         };
 
         animations = {
@@ -76,7 +80,7 @@ in {
             "zoomFactor, 0"
             #"monitorAdded, 0"
             
-            "workspaces, 1, 5, snap, slide"
+            "workspaces, 1, 4, snap, slide"
           ];
         };
 

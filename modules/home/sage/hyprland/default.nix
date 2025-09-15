@@ -53,20 +53,11 @@
 
           # Opacity
           active_opacity = 1;
-          inactive_opacity = 0.97;
+          inactive_opacity = 1;
 
           # Blur
-          blur.enabled = true;
-
-          # Shadows
-          shadow = {
-            enabled = true;
-            range = 25;
-            render_power = 4;
-            color = "rgba(1a1a1aff)";
-            offset = "0 5";
-            scale = 0.9;
-          };
+          blur.enabled = false;
+          shadow.enabled = false;
         };
 
         animations = {
@@ -77,7 +68,7 @@
           ];
 
           animation = [
-            # Disable top level animations which children inherit.
+            # Disable top level animations which children will inherit.
             "windows, 0"
             "layers, 0"
             "fade, 0"
@@ -86,7 +77,7 @@
             "zoomFactor, 0"
             #"monitorAdded, 0"
             
-            "workspaces, 1, 5, snap, slide"
+            "workspaces, 1, 4, snap, slide"
           ];
         };
 
