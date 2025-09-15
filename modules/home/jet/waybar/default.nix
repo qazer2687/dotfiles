@@ -158,28 +158,9 @@ in {
 
         /* BATTERY */
 
-        @keyframes blinkWarning {
-          to {
-            background-color: #${scheme.base09};
-            color: #${scheme.base00};
-          }
-        }
-
-        @keyframes blinkCritical {
-          to {
-            background-color: #${scheme.base08};
-            color: #${scheme.base00};
-          }
-        }
-
         #battery.warning:not(.charging) {
-          background-color: #${scheme.base0A};
+          background-color: #${scheme.base09};
           color: #${scheme.base00};
-          animation-name: blinkWarning;
-          animation-duration: 0.5s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
         }
 
         #battery.critical:not(.charging) {
