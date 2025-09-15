@@ -25,13 +25,11 @@ in {
         outline-width = 0;
         hint-font = false;
         border-width = 0;
-        
-        # Catppuccin Macchiato
-        input-color = "#${scheme.base00}";
+
+        input-color = "#${scheme.base05}";
         selection-color = "#${scheme.base05}";
         text-color = "#${scheme.base05}";
         background-color = "#${scheme.base00}";
-
 
         min-input-width = 100;
         result-spacing = 15;
