@@ -21,7 +21,7 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["hyprland/workspaces" "pingServer"];
+          modules-left = ["hyprland/workspaces" "custom/pingServer"];
           modules-center = [];
           modules-right = ["tray" "network" "pulseaudio" "clock" "battery"];
 
