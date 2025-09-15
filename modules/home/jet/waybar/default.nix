@@ -137,7 +137,7 @@ in {
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
-        #backlight, #battery, #workspaces button, #workspaces button.focused,
+        #backlight, #battery, #workspaces, #workspaces button, #workspaces button.focused,
         #workspaces button.active, custom-pingServer {
           padding: 0 8px;
           margin: 4px 2px;
@@ -146,7 +146,7 @@ in {
           color: #${scheme.base05};
         }
 
-        #custom-pingServer.up { color: #${scheme.base0D} }
+        #custom-pingServer.up { color: #${scheme.base0B} }
         #custom-pingServer.down { color: #${scheme.base04} }
 
         #mpris {
