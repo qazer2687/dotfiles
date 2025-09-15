@@ -121,22 +121,22 @@ in {
 
         "editor.tokenColorCustomizations" = {
           "textMateRules" = [
-            { scope = "comment"; settings = { foreground = "#${scheme.base03}"; fontStyle = "italic"; } }
-            { scope = "keyword"; settings = { foreground = "#${scheme.base0E}"; fontStyle = "bold"; } }
-            { scope = "variable"; settings = { foreground = "#${scheme.base08}"; } }
-            { scope = "string"; settings = { foreground = "#${scheme.base0B}"; } }
-            { scope = "constant.numeric"; settings = { foreground = "#${scheme.base09}"; } }
-            { scope = "storage.type"; settings = { foreground = "#${scheme.base0A}"; } }
-            { scope = "entity.name.function"; settings = { foreground = "#${scheme.base0D}"; } }
-            { scope = "entity.name.class"; settings = { foreground = "#${scheme.base0A}"; } }
-            { scope = "support.type"; settings = { foreground = "#${scheme.base0A}"; } }
-            { scope = "support.constant"; settings = { foreground = "#${scheme.base0C}"; } }
-            { scope = "punctuation"; settings = { foreground = "#${scheme.base05}"; } }
-            { scope = "keyword.operator"; settings = { foreground = "#${scheme.base0C}"; } }
-            { scope = "meta.decorator"; settings = { foreground = "#${scheme.base0F}"; } }
-            { scope = "invalid"; settings = { foreground = "#${scheme.base08}"; background = "#${scheme.base00}"; } }
-            { scope = "markup.diff.deleted"; settings = { foreground = "#${scheme.base08}"; } }
-            { scope = "markup.diff.inserted"; settings = { foreground = "#${scheme.base0B}"; } }
+            { scope = "comment";              settings.foreground = "#${scheme.base03}"; settings.fontStyle = "italic"; }
+            { scope = "keyword";              settings.foreground = "#${scheme.base0E}"; settings.fontStyle = "bold"; }
+            { scope = "variable";             settings.foreground = "#${scheme.base08}"; }
+            { scope = "string";               settings.foreground = "#${scheme.base0B}"; }
+            { scope = "constant.numeric";     settings.foreground = "#${scheme.base09}"; }
+            { scope = "storage.type";         settings.foreground = "#${scheme.base0A}"; }
+            { scope = "entity.name.function"; settings.foreground = "#${scheme.base0D}"; }
+            { scope = "entity.name.class";    settings.foreground = "#${scheme.base0A}"; }
+            { scope = "support.type";         settings.foreground = "#${scheme.base0A}"; }
+            { scope = "support.constant";     settings.foreground = "#${scheme.base0C}"; }
+            { scope = "punctuation";          settings.foreground = "#${scheme.base05}"; }
+            { scope = "keyword.operator";     settings.foreground = "#${scheme.base0C}"; }
+            { scope = "meta.decorator";       settings.foreground = "#${scheme.base0F}"; }
+            { scope = "invalid";              settings.foreground = "#${scheme.base08}"; settings.background = "#${scheme.base00}"; }
+            { scope = "markup.diff.deleted";  settings.foreground = "#${scheme.base08}"; }
+            { scope = "markup.diff.inserted"; settings.foreground = "#${scheme.base0B}"; }
           ];
         };
       };
