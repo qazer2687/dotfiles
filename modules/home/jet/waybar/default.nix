@@ -153,12 +153,13 @@ in {
         }
         #workspaces button {
           padding: 3px;
-          color: #${scheme.base02};
-          transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+          background-color: #${scheme.base02};
+          color: #${scheme.base05};
         }
         #workspaces button.active {
-          color: #${scheme.base03};
-          border-bottom: 3px solid #${scheme.base05};
+          background-color: #${scheme.base03};
+          color: #${scheme.base05};
+          border-bottom: 2px solid #${scheme.base05};
         }
 
         #custom-pingServer.up { color: #${scheme.base0B} }
