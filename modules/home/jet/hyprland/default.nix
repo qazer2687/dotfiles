@@ -3,6 +3,7 @@
   config,
   pkgs,
   inputs,
+  base16,
   ...
 }: let 
   scheme = base16 "gruvbox";
