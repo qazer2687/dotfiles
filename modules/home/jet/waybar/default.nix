@@ -139,7 +139,7 @@ in {
           color: transparent;
           background-color: #${scheme.base01};
           border-radius: 2px;
-          margin: 8px 0px;
+          margin: 4px 0px;
         }
         #workspaces button {
           background-color: transparent;
@@ -150,7 +150,7 @@ in {
           background-color: transparent;
           border-radius: 0;
           margin: 0px 0px;
-          border-top: 2px solid #${scheme.base05};
+          box-shadow: inset 0 2px 0 #${scheme.base05};
         }
 
         #custom-pingServer.up { color: #${scheme.base0B} }
