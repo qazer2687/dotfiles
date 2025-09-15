@@ -139,17 +139,17 @@ in {
           color: transparent;
           background-color: #${scheme.base01};
           border-radius: 2px;
-          margin: 4px 0px;
+          margin: 8px 0px;
         }
         #workspaces button {
           background-color: transparent;
           border-radius: 0;
-          margin: 4px 0px;
+          margin: 0px 0px;
         }
         #workspaces button.active {
           background-color: transparent;
           border-radius: 0;
-          margin: 4px 0px;
+          margin: 0px 0px;
           border-top: 2px solid #${scheme.base05};
           box-sizing: border-box;
         }
