@@ -33,8 +33,8 @@ in {
           # Master/Stack
           layout = "master";
 
-          gaps_in = 0;
-          gaps_out = 0;
+          gaps_in = 2;
+          gaps_out = 4;
           border_size = 2;
 
           "col.active_border" = "rgba(${scheme.base05}ff)";
