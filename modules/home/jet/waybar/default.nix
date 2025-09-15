@@ -143,6 +143,8 @@ in {
           margin: 4px 0px;
         }
         #workspaces button.active {
+          border-radius: 0;
+          margin: 4px 0px;
           border-top: 2px solid #${scheme.base05};
         }
 
