@@ -10,16 +10,9 @@ in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.waybar.enable {
-    wayland.windowManager.sway.config.bars = [
-      {
-        command = "${pkgs.waybar}/bin/waybar";
-      }
-    ];
-
-    home.packages = with pkgs; [
-      # MPRIS Dependency
-      playerctl
-    ];
+    
+    home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile "./scripts/pingServer.sh";
+    home.file.".config/waybar/scripts/pingServer.sh".executable = true;
 
     programs.waybar = {
       enable = true;
@@ -28,7 +21,7 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["hyprland/workspaces"];
+          modules-left = ["hyprland/workspaces" "pingServer"];
           modules-center = [];
           modules-right = ["tray" "network" "pulseaudio" "clock" "battery"];
 
@@ -43,6 +36,12 @@ in {
             signal = 1;
             format = "{}";
             tooltip = false;
+          };
+
+          "custom/pingServer" = {
+            exec = "$HOME/.config/waybar/scripts/pingServer.sh";
+            interval = 30;
+            format = "{}";
           };
 
           clock = {
@@ -138,13 +137,16 @@ in {
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
         #backlight, #battery, #workspaces button, #workspaces button.focused,
-        #workspaces button.active {
+        #workspaces button.active, custom-pingServer {
           padding: 0 8px;
           margin: 4px 2px;
           border-radius: 2px;
           background-color: #${scheme.base01};
           color: #${scheme.base05};
         }
+
+        #custom-pingServer.up { color: #${scheme.base0D} }
+        #custom-pingServer.down { color: #${scheme.base04} }
 
         #mpris {
           border: 1px solid #${scheme.base0D};
