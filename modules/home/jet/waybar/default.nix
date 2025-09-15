@@ -151,7 +151,7 @@ in {
           border-radius: 0;
           margin: 0px 0px;
           box-shadow: inset 0 2px 0 #${scheme.base05};
-          transition: box-shadow 0.4s cubic-bezier(0.2,0,0,1); }
+          transition: box-shadow 0.4s cubic-bezier(0.2,0,0,1);
         }
 
         #custom-pingServer.up { color: #${scheme.base0B} }
