@@ -5,7 +5,7 @@
   base16,
   ...
 }: let 
-  scheme = base16 "gruvbox";
+  scheme = base16 "mountain";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
