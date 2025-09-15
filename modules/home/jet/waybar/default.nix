@@ -132,7 +132,7 @@ in {
         }
 
         window#waybar {
-          background-color: ${scheme.base00};
+          background-color: #${scheme.base00};
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -142,36 +142,36 @@ in {
           padding: 0 8px;
           margin: 4px 2px;
           border-radius: 2px;
-          background-color: ${scheme.base01};
-          color: ${scheme.base05};
+          background-color: #${scheme.base01};
+          color: #${scheme.base05};
         }
 
         #mpris {
-          border: 1px solid ${scheme.base0D};
+          border: 1px solid #${scheme.base0D};
         }
 
         #workspaces button.active {
-          background-color: ${scheme.base0E};
-          color: ${scheme.base00};
+          background-color: #${scheme.base0E};
+          color: #${scheme.base00};
         }
 
         @keyframes blinkWarning {
           to {
-            background-color: ${scheme.base09};
-            color: ${scheme.base00};
+            background-color: #${scheme.base09};
+            color: #${scheme.base00};
           }
         }
 
         @keyframes blinkCritical {
           to {
-            background-color: ${scheme.base08};
-            color: ${scheme.base00};
+            background-color: #${scheme.base08};
+            color: #${scheme.base00};
           }
         }
 
         #battery.warning:not(.charging) {
-          background-color: ${scheme.base0A};
-          color: ${scheme.base00};
+          background-color: #${scheme.base0A};
+          color: #${scheme.base00};
           animation-name: blinkWarning;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -180,8 +180,8 @@ in {
         }
 
         #battery.critical:not(.charging) {
-          background-color: ${scheme.base08};
-          color: ${scheme.base00};
+          background-color: #${scheme.base08};
+          color: #${scheme.base00};
           animation-name: blinkCritical;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -190,8 +190,8 @@ in {
         }
 
         #battery.charging {
-          background-color: ${scheme.base0B};
-          color: ${scheme.base00};
+          background-color: #${scheme.base0B};
+          color: #${scheme.base00};
         }
 
         /* Pad Edges */
