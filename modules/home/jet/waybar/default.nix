@@ -46,7 +46,7 @@ in {
           };
 
           clock = {
-            format = "{%H:%M}";
+            format = "{:%H:%M}";
             format_alt = "{:%A %d, %H:%M}";
             tooltip = false;
             margin-right = 15;
@@ -138,7 +138,7 @@ in {
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
-        #backlight, #battery, custom-pingServer {
+        #backlight, #battery, custom-pingServer, #workspaces button, #workspaces button.active {
           padding: 0 8px;
           margin: 4px 2px;
           border-radius: 2px;
@@ -151,11 +151,7 @@ in {
           margin-right: 1.5px;
           margin-left: 1.5px;
         }
-        #workspaces button {
-          color: #${scheme.base05};
-        }
         #workspaces button.active {
-          color: #${scheme.base05};
           border-top: 2px solid #${scheme.base05};
         }
 
