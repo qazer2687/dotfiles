@@ -46,7 +46,8 @@ in {
           };
 
           clock = {
-            format = "{:%A %d, %H:%M}";
+            format = "{%H:%M}";
+            format_alt = "{:%A %d, %H:%M}";
             tooltip = false;
             margin-right = 15;
           };
@@ -137,8 +138,7 @@ in {
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
-        #backlight, #battery, #workspaces, #workspaces button, #workspaces button.focused,
-        #workspaces button.active, custom-pingServer {
+        #backlight, #battery, custom-pingServer {
           padding: 0 8px;
           margin: 4px 2px;
           border-radius: 2px;
@@ -146,17 +146,26 @@ in {
           color: #${scheme.base05};
         }
 
+        #workspaces {
+          color: transparent;
+          margin-right: 1.5px;
+          margin-left: 1.5px;
+        }
+        #workspaces button {
+          padding: 3px;
+          color: #${scheme.base02};
+          transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        #workspaces button.active {
+          color: #${scheme.base03};
+          border-bottom: 3px solid #${scheme.base05};
+        }
+
         #custom-pingServer.up { color: #${scheme.base0B} }
         #custom-pingServer.down { color: #${scheme.base04} }
 
-        #mpris {
-          border: 1px solid #${scheme.base0D};
-        }
 
-        #workspaces button.active {
-          background-color: #${scheme.base05};
-          color: #${scheme.base00};
-        }
+        /* BATTERY */
 
         @keyframes blinkWarning {
           to {
@@ -197,7 +206,7 @@ in {
           color: #${scheme.base00};
         }
 
-        /* Pad Edges */
+        /* EDGE PADDING */
 
         #workspaces {
           margin-left: 16px;

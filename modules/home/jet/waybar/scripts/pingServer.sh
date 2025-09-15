@@ -3,7 +3,7 @@
 SERVER="mica"
 
 if ping -c 1 -W 1 "$SERVER" &> /dev/null; then
-    echo '{"text":"MICA: UP","class":"up"}'
+    echo '{"text":"MICA: ONLINE","class":"up"}'
 else
-    echo '{"text":"MICA: DOWN","class":"down"}'
+    echo '{"text":"MICA: OFFLINE","class":"down"}'
 fi
