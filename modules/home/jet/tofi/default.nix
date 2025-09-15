@@ -2,8 +2,11 @@
   lib,
   config,
   pkgs,
+  base16,
   ...
-}: {
+}: let
+  scheme = base16 "gruvbox";
+in {
   options.modules.tofi.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.tofi.enable {
@@ -24,10 +27,11 @@
         border-width = 0;
         
         # Catppuccin Macchiato
-        input-color = "#c6d0f5";
-        selection-color = "#ca9ee6";
-        text-color = "#c6d0f5";
-        background-color = "#232634";
+        input-color = "#${scheme.base05}";
+        selection-color = "#${scheme.base05}";
+        text-color = "#${scheme.base05}";
+        background-color = "#${scheme.base00}";
+
 
         min-input-width = 100;
         result-spacing = 15;
