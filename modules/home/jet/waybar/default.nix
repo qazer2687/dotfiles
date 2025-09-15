@@ -2,8 +2,11 @@
   lib,
   config,
   pkgs,
+  base16,
   ...
-}: {
+}: let 
+  scheme = base16 "gruvbox";
+in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.waybar.enable {
@@ -120,35 +123,6 @@
       };
 
       style = ''
-        @define-color highlight @mauve;
-
-        @define-color rosewater  #f2d5cf;
-        @define-color flamingo   #eebebe;
-        @define-color pink       #f4b8e4;
-        @define-color mauve      #ca9ee6;
-        @define-color red        #e78284;
-        @define-color maroon     #ea999c;
-        @define-color peach      #ef9f76;
-        @define-color yellow     #e5c890;
-        @define-color green      #a6d189;
-        @define-color teal       #81c8be;
-        @define-color sky        #99d1db;
-        @define-color sapphire   #85c1dc;
-        @define-color blue       #8caaee;
-        @define-color lavender   #babbf1;
-        @define-color text       #c6d0f5;
-        @define-color subtext1   #b5bfe2;
-        @define-color subtext0   #a5adce;
-        @define-color overlay2   #949cbb;
-        @define-color overlay1   #838ba7;
-        @define-color overlay0   #737994;
-        @define-color surface2   #626880;
-        @define-color surface1   #51576d;
-        @define-color surface0   #414559;
-        @define-color base       #303446;
-        @define-color mantle     #292c3c;
-        @define-color crust      #232634;
-
         * {
           border: none;
           border-radius: 0px;
@@ -158,7 +132,7 @@
         }
 
         window#waybar {
-          background-color: @crust;
+          background-color: ${scheme.base00};
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -168,37 +142,36 @@
           padding: 0 8px;
           margin: 4px 2px;
           border-radius: 2px;
-          background-color: @base;
-          color: @text;
+          background-color: ${scheme.base01};
+          color: ${scheme.base05};
         }
 
         #mpris {
-          border: 1px solid @mauve;
+          border: 1px solid ${scheme.base0D};
         }
 
         #workspaces button.active {
-          background-color: @highlight;
-          color: @mantle;
+          background-color: ${scheme.base0E};
+          color: ${scheme.base00};
         }
 
         @keyframes blinkWarning {
           to {
-            background-color: #ffaa00;
-            color: #000000;
+            background-color: ${scheme.base09};
+            color: ${scheme.base00};
           }
         }
 
         @keyframes blinkCritical {
           to {
-            background-color: #ff0000;
-            color: #000000;
+            background-color: ${scheme.base08};
+            color: ${scheme.base00};
           }
         }
 
         #battery.warning:not(.charging) {
-          background-color: @peach;
-          color: @mantle;
-          color: @mantle;
+          background-color: ${scheme.base0A};
+          color: ${scheme.base00};
           animation-name: blinkWarning;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -207,8 +180,8 @@
         }
 
         #battery.critical:not(.charging) {
-          background-color: @red;
-          color: @mantle;
+          background-color: ${scheme.base08};
+          color: ${scheme.base00};
           animation-name: blinkCritical;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -217,12 +190,13 @@
         }
 
         #battery.charging {
-          background-color: @green;
-          color: @mantle;
+          background-color: ${scheme.base0B};
+          color: ${scheme.base00};
         }
 
         /* Pad Edges */
-        #clock {
+
+        #workspaces {
           margin-left: 16px;
         }
 
