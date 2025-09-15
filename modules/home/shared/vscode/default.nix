@@ -2,86 +2,34 @@
   lib,
   config,
   pkgs,
+  base16,
   ...
-}: {
+}: let
+  scheme = base16 "gruvbox";
+in {
   options.modules.vscode.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.vscode.enable {
     programs.vscode = {
       enable = true;
-      #enableUpdateCheck = false;
-      #enableExtensionUpdateCheck = false;
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
       package = pkgs.vscodium-fhs;
-      # The extensions folder is mutable by default as far as
-      # I'm aware. I don't know whether this is for installations
-      # or just updates, but as long as updates work I'm happy
-      # keeping this here.
-
-      # There seems to be an issue with applications that haven't been previously
-      # configured having no directory in .vscode-oss when "installed" through nix's
-      # build system. stupid shit, maybe FHS being stupid, stupid
-      /*
-         Disabled as this is broken in latest. Refuses to build because of
-         unfree packages even though they are allowed.
-      extensions = [
-        # UI Theme
-        ext.open-vsx.ankitpati.vscodium-amoled
-
-        # Icon Theme
-        ext.open-vsx.wilfriedago.vscode-symbols-icon-theme
-
-        # Nix
-        ext.vscode-marketplace.jnoortheen.nix-ide
-
-        # HTML
-        ext.vscode-marketplace.yandeu.five-server
-
-        # C#
-        ext.vscode-marketplace.ms-dotnettools.csharp
-
-        # C
-        ext.vscode-marketplace.llvm-vs-code-extensions.vscode-clangd
-
-        # ESP32
-        #ext.vscode-marketplace.platformio.platformio-ide
-        #pkgs.vscode-extensions.ms-vscode.cpptools
-
-        # Other
-        ext.vscode-marketplace.naumovs.color-highlight
-        ext.vscode-marketplace.aaron-bond.better-comments
-        ext.vscode-marketplace.mkhl.direnv
-
-        ext.vscode-marketplace.ms-vscode-remote.remote-containers
-      ];
-      */
-
-      # Not in use because this is a very impractical option.
-      # My configuration has to be perfect otherwise I have to
-      # go through the process of coming back to here, modifying
-      # a setting and then rebuilding - every time I want to
-      # change something.
-      /*
+      
       userSettings = {
         # Editor
-        "editor.stickyScroll.enabled" = false;
-        "editor.cursorSmoothCaretAnimation" = "on";
-        "editor.smoothScrolling" = true;
-        "editor.cursorBlinking" = "smooth";
+        "editor.fontFamily" = "TX02";
         "editor.scrollbar.horizontal" = "hidden";
         "editor.scrollbar.vertical" = "hidden";
         "editor.renderWhitespace" = "none";
+        "editor.minimap.enabled" = false;
         "editor.minimap.renderCharacters" = false;
         "editor.minimap.showSlider" = "always";
-        "editor.minimap.enabled" = false;
-        "editor.fontFamily" = "Agave, FiraCode Nerd Font";
-        "editor.fontSize" = 16;
         "editor.codeLens" = false;
-
-        # Files & Explorer
-        "files.autoSave" = "afterDelay";
-        "explorer.confirmDelete" = false;
-        "symbols.hidesExplorerArrows" = false;
-        "breadcrumbs.enabled" = false;
+        "editor.glyphMargin" = false;
+        "editor.stickyScroll.enabled" = false;
+        "editor.stickyScroll.defaultModel" = "indentationModel";
+        "[nix].editor.defaultFormatter" = "jnoortheen.nix-ide";
 
         # Git
         "git.enableSmartCommit" = true;
@@ -89,24 +37,87 @@
         "git.ignoreRebaseWarning" = true;
         "git.openRepositoryInParentFolders" = "always";
 
-        # Terminal
-        "terminal.integrated.smoothScrolling" = true;
-        "terminal.integrated.scrollback" = 100000;
+        # File & Explorer
+        "files.autoSave" = "afterDelay";
+        "files.exclude" = {
+          "**/__pycache__" = true;
+          "**/.direnv" = true;
+        };
+        "explorer.confirmDelete" = false;
+        "explorer.confirmDragAndDrop" = false;
+        "explorer.compactFolders" = false;
+        "symbols.hidesExplorerArrows" = false;
 
-       # Workbench & UI
-        "workbench.colorTheme" = "AMOLED";
+        # Workbench / UI
         "workbench.iconTheme" = "symbols";
-        "workbench.list.smoothScrolling" = true;
-        "workbench.statusBar.visible" = false;
+        "workbench.panel.showLabels" = false;
+        "workbench.editor.enablePreview" = false;
+        "workbench.editor.tabSizingFixedMinWidth" = 40;
+        "workbench.layoutControl.enabled" = false;
+        "workbench.navigationControl.enabled" = false;
+        "breadcrumbs.enabled" = false;
+        "window.titleBarStyle" = "native";
         "window.menuBarVisibility" = "toggle";
-        "debug.showInlineBreakpointCandidates" = false;
+        "window.commandCenter" = false;
 
-        # Hide the outline tab in the explorer pane.
-        "outline.showOutline" = false;
-        # Hide the timeline tab in the explorer pane.
-        "timeline.visible" = false;
+        # Terminal
+        "terminal.external.linuxExec" = "foot";
+        "terminal.integrated.tabs.enabled" = false;
+
+        # Diff Editor
+        "diffEditor.ignoreTrimWhitespace" = false;
+
+        # Remote / Nix
+        "remote.autoForwardPortsSource" = "hybrid";
+        "nix.enableLanguageServer" = true;
+
+        # TypeScript
+        "typescript.tsserver.web.projectWideIntellisense.enabled" = false;
+
+        # Direnv
+        "direnv.restart.automatic" = true;
+
+        # Base16 UI
+        "workbench.colorCustomizations" = {
+          "editor.background" = "#${scheme.base00}";
+          "editor.foreground" = "#${scheme.base05}";
+          "editorLineNumber.foreground" = "#${scheme.base03}";
+          "editorLineNumber.activeForeground" = "#${scheme.base05}";
+          "editor.selectionBackground" = "#${scheme.base02}";
+          "editorCursor.foreground" = "#${scheme.base05}";
+          "editorWhitespace.foreground" = "#${scheme.base03}";
+          "editorIndentGuide.background" = "#${scheme.base01}";
+          "editorIndentGuide.activeBackground" = "#${scheme.base03}";
+          "activityBar.background" = "#${scheme.base00}";
+          "sideBar.background" = "#${scheme.base01}";
+          "statusBar.background" = "#${scheme.base00}";
+          "statusBar.foreground" = "#${scheme.base05}";
+          "titleBar.activeBackground" = "#${scheme.base00}";
+          "titleBar.activeForeground" = "#${scheme.base05}";
+          "editorBracketMatch.background" = "#${scheme.base02}";
+          "editorBracketMatch.border" = "#${scheme.base04}";
+          "editor.selectionHighlightBackground" = "#${scheme.base01}";
+        };
+
+        # Base16 Syntax
+        "editor.tokenColorCustomizations" = {
+          "comments" = "#${scheme.base03}";
+          "keywords" = "#${scheme.base0E}";
+          "functions" = "#${scheme.base0D}";
+          "strings" = "#${scheme.base0B}";
+          "numbers" = "#${scheme.base09}";
+          "types" = "#${scheme.base0A}";
+          "variables" = "#${scheme.base08}";
+          "constants" = "#${scheme.base0C}";
+          "classes" = "#${scheme.base0E}";
+          "interfaces" = "#${scheme.base0A}";
+          "properties" = "#${scheme.base08}";
+          "punctuation" = "#${scheme.base05}";
+          "operators" = "#${scheme.base0C}";
+          "decorators" = "#${scheme.base0F}";
+        };
       };
-      */
+      
     };
   };
 }

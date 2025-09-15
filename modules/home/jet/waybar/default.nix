@@ -151,7 +151,7 @@ in {
         }
 
         #workspaces button.active {
-          background-color: #${scheme.base0E};
+          background-color: #${scheme.base05};
           color: #${scheme.base00};
         }
 
