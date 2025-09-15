@@ -520,11 +520,11 @@
     },
     "nix-base16": {
       "locked": {
-        "lastModified": 1757950736,
-        "narHash": "sha256-re2OMghxcWhvsjeNiqpqHihFhd414miHH/3rKxQHm3E=",
+        "lastModified": 1757957702,
+        "narHash": "sha256-w8gJ2FV5CDzwXxbcgGLjR4jbxoDvr+SkJAjj6+IVZP0=",
         "owner": "qazer2687",
         "repo": "nix-base16",
-        "rev": "4e3a14e5477d9db337f6b054ce05a5af2347f2e3",
+        "rev": "a31b5c9be6285c203957005544884811648dcedb",
         "type": "github"
       },
       "original": {
