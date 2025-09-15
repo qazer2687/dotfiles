@@ -10,6 +10,10 @@
     textfox = {
       enable = true;
       profile = "default";
+      config = {
+        font.family = "TX02";
+        displayTitles = false;
+      };
     };
 
     programs.firefox = {
