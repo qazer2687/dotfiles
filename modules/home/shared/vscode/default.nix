@@ -89,15 +89,15 @@ in {
           "editor.selectionBackground" = "#${scheme.base02}";
           "editor.selectionHighlightBackground" = "#${scheme.base01}";
           "editorCursor.foreground" = "#${scheme.base05}";
-          "editorLineNumber.foreground" = "#${scheme.base03}";
+          "editorLineNumber.foreground" = "#${scheme.base04}";
           "editorLineNumber.activeForeground" = "#${scheme.base05}";
-          "editorWhitespace.foreground" = "#${scheme.base03}";
+          "editorWhitespace.foreground" = "#${scheme.base04}";
           "editorIndentGuide.background" = "#${scheme.base01}";
           "editorIndentGuide.activeBackground" = "#${scheme.base03}";
           "editorBracketMatch.border" = "#${scheme.base04}";
           "editorBracketMatch.background" = "#${scheme.base01}";
           "sideBar.background" = "#${scheme.base01}";
-          "sideBar.foreground" = "#${scheme.base04}";
+          "sideBar.foreground" = "#${scheme.base05}";
           "activityBar.background" = "#${scheme.base00}";
           "activityBar.foreground" = "#${scheme.base05}";
           "statusBar.background" = "#${scheme.base00}";
@@ -107,7 +107,7 @@ in {
           "tab.activeBackground" = "#${scheme.base00}";
           "tab.inactiveBackground" = "#${scheme.base01}";
           "tab.activeForeground" = "#${scheme.base05}";
-          "tab.inactiveForeground" = "#${scheme.base04}";
+          "tab.inactiveForeground" = "#${scheme.base05}";
           "panel.background" = "#${scheme.base00}";
           "panel.border" = "#${scheme.base01}";
           "terminal.background" = "#${scheme.base00}";
