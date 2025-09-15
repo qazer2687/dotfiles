@@ -4,7 +4,10 @@
   ...
 }:
 inputs.nixpkgs.lib.nixosSystem {
-  specialArgs = {inherit inputs self;};
+  specialArgs = {
+    inherit inputs self;
+    base16 = inputs.nix-base16.outputs.base16;
+  };
   modules = [
     ../../hosts/jet
     ../../modules/base/shared
@@ -16,7 +19,10 @@ inputs.nixpkgs.lib.nixosSystem {
     {
       home-manager = {
         users.alex = ../../homes/jet;
-        extraSpecialArgs = {inherit inputs self;};
+        extraSpecialArgs = {
+          inherit inputs self;
+          base16 = inputs.nix-base16.outputs.base16;
+        };
         useGlobalPkgs = true;
         useUserPackages = true;
         sharedModules = [

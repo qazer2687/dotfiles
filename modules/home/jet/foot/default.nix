@@ -1,8 +1,11 @@
 {
   lib,
   config,
+  base16,
   ...
-}: {
+}: let 
+  frappe = base16 "catppuccin-frappe";
+in {
   options.modules.foot.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.foot.enable {
     programs.foot = {
@@ -29,7 +32,7 @@
           # Catppuccin Frappe
           cursor = "232634 f2d5cf";
           foreground = "c6d0f5";
-          background = "232634"; # Crust
+          background = frappe.base0E; # Crust
 
           regular0 = "51576d";
           regular1 = "e78284";

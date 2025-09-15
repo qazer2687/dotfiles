@@ -24,6 +24,8 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-base16.url = "github:qazer2687/nix-base16";
   };
 
   outputs = {self, ...} @ inputs: {

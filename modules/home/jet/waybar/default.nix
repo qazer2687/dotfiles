@@ -25,9 +25,9 @@
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "hyprland/workspaces" "mpris"];
+          modules-left = ["hyprland/workspaces"];
           modules-center = [];
-          modules-right = ["tray" "network" "pulseaudio" "battery"];
+          modules-right = ["tray" "network" "pulseaudio" "clock" "battery"];
 
           pulseaudio = {
             format = "VOL: {volume}%";
@@ -181,14 +181,39 @@
           color: @mantle;
         }
 
-        #battery.warning {
-          background-color: @peach;
-          color: @mantle;
+        @keyframes blinkWarning {
+          to {
+            background-color: #ffaa00;
+            color: #000000;
+          }
         }
 
-        #battery.critical {
+        @keyframes blinkCritical {
+          to {
+            background-color: #ff0000;
+            color: #000000;
+          }
+        }
+
+        #battery.warning:not(.charging) {
+          background-color: @peach;
+          color: @mantle;
+          color: @mantle;
+          animation-name: blinkWarning;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+        }
+
+        #battery.critical:not(.charging) {
           background-color: @red;
           color: @mantle;
+          animation-name: blinkCritical;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
         }
 
         #battery.charging {
