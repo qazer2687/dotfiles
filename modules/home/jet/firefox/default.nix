@@ -13,7 +13,7 @@
       config = {
         font.family = "TX02";
         displayTitles = false;
-        displaySidebarTools = true;
+        displaySidebarTools = false;
       };
     };
 
