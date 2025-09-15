@@ -134,6 +134,7 @@ in {
 
         window#waybar {
           background-color: #${scheme.base00};
+          height: 28px;
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
