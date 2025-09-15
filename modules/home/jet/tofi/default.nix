@@ -27,9 +27,9 @@ in {
         border-width = 0;
         
         # Catppuccin Macchiato
-        input-color = "#${scheme.base05}";
+        input-color = "#${scheme.base00}";
         selection-color = "#${scheme.base05}";
-        text-color = "#${scheme.base00}";
+        text-color = "#${scheme.base05}";
         background-color = "#${scheme.base00}";
 
 
