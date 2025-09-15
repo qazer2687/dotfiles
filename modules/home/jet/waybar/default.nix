@@ -73,17 +73,6 @@ in {
           "hyprland/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "1" = "1";
-              "2" = "2";
-              "3" = "3";
-              "4" = "4";
-              "5" = "5";
-            };
-          };
-
-          "niri/workspaces" = {
-            format = "{icon}";
-            format-icons = {
               "1" = "a";
               "2" = "b";
               "3" = "c";
@@ -148,8 +137,10 @@ in {
 
         #workspaces {
           color: transparent;
-          margin-right: 1.5px;
-          margin-left: 1.5px;
+        }
+        #workspaces button {
+          border-radius: 0;
+          margin: 4px 0px;
         }
         #workspaces button.active {
           border-top: 2px solid #${scheme.base05};
@@ -204,7 +195,7 @@ in {
 
         #workspaces {
           margin-left: 16px;
-          margin-right: 4px;
+          margin-right: 16px;
         }
 
         #tray {
