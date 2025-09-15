@@ -152,13 +152,11 @@ in {
           margin-left: 1.5px;
         }
         #workspaces button {
-          background-color: #${scheme.base01};
           color: #${scheme.base05};
         }
         #workspaces button.active {
-          background-color: #${scheme.base02};
           color: #${scheme.base05};
-          border-bottom: 2px solid #${scheme.base05};
+          border-top: 2px solid #${scheme.base05};
         }
 
         #custom-pingServer.up { color: #${scheme.base0B} }
@@ -210,6 +208,7 @@ in {
 
         #workspaces {
           margin-left: 16px;
+          margin-right: 4px;
         }
 
         #tray {
