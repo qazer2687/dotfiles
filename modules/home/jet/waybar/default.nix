@@ -47,9 +47,8 @@ in {
 
           clock = {
             format = "{:%H:%M}";
-            format-alt = "{:%A %d, %H:%M:%S}";
+            format-alt = "{:%A %d}th | {:%H:%M}";
             tooltip = false;
-            margin-right = 15;
           };
 
           tray = {
