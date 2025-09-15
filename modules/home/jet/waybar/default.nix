@@ -11,7 +11,7 @@ in {
 
   config = lib.mkIf config.modules.waybar.enable {
     
-    home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile "./scripts/pingServer.sh";
+    home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
     home.file.".config/waybar/scripts/pingServer.sh".executable = true;
 
     programs.waybar = {
