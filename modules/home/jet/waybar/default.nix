@@ -152,11 +152,11 @@ in {
           margin-left: 1.5px;
         }
         #workspaces button {
-          background-color: #${scheme.base02};
+          background-color: #${scheme.base01};
           color: #${scheme.base05};
         }
         #workspaces button.active {
-          background-color: #${scheme.base03};
+          background-color: #${scheme.base02};
           color: #${scheme.base05};
           border-bottom: 2px solid #${scheme.base05};
         }
