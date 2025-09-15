@@ -116,7 +116,7 @@ in {
 
         "editor.tokenColorCustomizations" = {
           textMateRules = [
-            { scope = "comment";              settings.foreground = "#${scheme.base03}"; settings.fontStyle = "italic"; }
+            { scope = "comment";              settings.foreground = "#${scheme.base05}"; settings.fontStyle = "italic"; }
             { scope = "keyword";              settings.foreground = "#${scheme.base0E}"; }
             { scope = "storage.type";         settings.foreground = "#${scheme.base0A}"; }
             { scope = "variable";             settings.foreground = "#${scheme.base08}"; }
