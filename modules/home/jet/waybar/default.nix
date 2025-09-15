@@ -151,6 +151,7 @@ in {
           border-radius: 0;
           margin: 4px 0px;
           border-top: 2px solid #${scheme.base05};
+          box-sizing: border-box;
         }
 
         #custom-pingServer.up { color: #${scheme.base0B} }
