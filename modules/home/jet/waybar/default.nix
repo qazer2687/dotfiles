@@ -134,7 +134,6 @@ in {
 
         window#waybar {
           background-color: #${scheme.base00};
-          height: 28px;
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -153,7 +152,6 @@ in {
           margin-left: 1.5px;
         }
         #workspaces button {
-          padding: 3px;
           background-color: #${scheme.base02};
           color: #${scheme.base05};
         }
