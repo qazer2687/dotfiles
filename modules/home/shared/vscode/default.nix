@@ -77,47 +77,69 @@ in {
         # Direnv
         "direnv.restart.automatic" = true;
 
-        # Base16 UI
-        "workbench.colorCustomizations" = {
-          "editor.background" = "#${scheme.base00}";
-          "editor.foreground" = "#${scheme.base05}";
-          "editorLineNumber.foreground" = "#${scheme.base03}";
-          "editorLineNumber.activeForeground" = "#${scheme.base05}";
-          "editor.selectionBackground" = "#${scheme.base02}";
-          "editorCursor.foreground" = "#${scheme.base05}";
-          "editorWhitespace.foreground" = "#${scheme.base03}";
-          "editorIndentGuide.background" = "#${scheme.base01}";
-          "editorIndentGuide.activeBackground" = "#${scheme.base03}";
-          "activityBar.background" = "#${scheme.base00}";
-          "sideBar.background" = "#${scheme.base01}";
-          "statusBar.background" = "#${scheme.base00}";
-          "statusBar.foreground" = "#${scheme.base05}";
-          "titleBar.activeBackground" = "#${scheme.base00}";
-          "titleBar.activeForeground" = "#${scheme.base05}";
-          "editorBracketMatch.background" = "#${scheme.base02}";
-          "editorBracketMatch.border" = "#${scheme.base04}";
-          "editor.selectionHighlightBackground" = "#${scheme.base01}";
-        };
+        # Base16 Core
+        "editor.background" = "#${scheme.base00}";
+        "editor.foreground" = "#${scheme.base05}";
+        "editor.lineHighlightBackground" = "#${scheme.base01}";
+        "editor.selectionBackground" = "#${scheme.base02}";
+        "editor.selectionHighlightBackground" = "#${scheme.base03}";
+        "editorCursor.foreground" = "#${scheme.base05}";
+        "editorWhitespace.foreground" = "#${scheme.base03}";
+        "editorIndentGuide.background" = "#${scheme.base01}";
+        "editorIndentGuide.activeBackground" = "#${scheme.base03}";
+        "editorLineNumber.foreground" = "#${scheme.base04}";
+        "editorLineNumber.activeForeground" = "#${scheme.base05}";
 
-        # Base16 Syntax
+        # Base16 UI Panels & Tabs
+        "sideBar.background" = "#${scheme.base01}";
+        "sideBar.foreground" = "#${scheme.base04}";
+        "activityBar.background" = "#${scheme.base00}";
+        "activityBar.foreground" = "#${scheme.base05}";
+        "statusBar.background" = "#${scheme.base00}";
+        "statusBar.foreground" = "#${scheme.base05}";
+        "titleBar.activeBackground" = "#${scheme.base00}";
+        "titleBar.activeForeground" = "#${scheme.base05}";
+        "panel.background" = "#${scheme.base01}";
+        "panel.border" = "#${scheme.base02}";
+        "tab.activeBackground" = "#${scheme.base00}";
+        "tab.inactiveBackground" = "#${scheme.base01}";
+        "tab.activeForeground" = "#${scheme.base05}";
+        "tab.inactiveForeground" = "#${scheme.base04}";
+
+        # Base16 Bracket Matching & Highlights
+        "editorBracketMatch.border" = "#${scheme.base04}";
+        "editorBracketMatch.background" = "#${scheme.base01}";
+        "editorBracketHighlight.foreground1" = "#${scheme.base08}";
+        "editorBracketHighlight.foreground2" = "#${scheme.base09}";
+        "editorBracketHighlight.foreground3" = "#${scheme.base0A}";
+        "editorBracketHighlight.foreground4" = "#${scheme.base0B}";
+        "editorBracketHighlight.foreground5" = "#${scheme.base0C}";
+        "editorBracketHighlight.foreground6" = "#${scheme.base0D}";
+
+        # Base16 Misc
+        "minimap.background" = "#${scheme.base00}";
+
         "editor.tokenColorCustomizations" = {
-          "comments" = "#${scheme.base03}";
-          "keywords" = "#${scheme.base0E}";
-          "functions" = "#${scheme.base0D}";
-          "strings" = "#${scheme.base0B}";
-          "numbers" = "#${scheme.base09}";
-          "types" = "#${scheme.base0A}";
-          "variables" = "#${scheme.base08}";
-          "constants" = "#${scheme.base0C}";
-          "classes" = "#${scheme.base0E}";
-          "interfaces" = "#${scheme.base0A}";
-          "properties" = "#${scheme.base08}";
-          "punctuation" = "#${scheme.base05}";
-          "operators" = "#${scheme.base0C}";
-          "decorators" = "#${scheme.base0F}";
+          "textMateRules" = [
+            { scope = "comment"; settings = { foreground = "#${scheme.base03}"; fontStyle = "italic"; } }
+            { scope = "keyword"; settings = { foreground = "#${scheme.base0E}"; fontStyle = "bold"; } }
+            { scope = "variable"; settings = { foreground = "#${scheme.base08}"; } }
+            { scope = "string"; settings = { foreground = "#${scheme.base0B}"; } }
+            { scope = "constant.numeric"; settings = { foreground = "#${scheme.base09}"; } }
+            { scope = "storage.type"; settings = { foreground = "#${scheme.base0A}"; } }
+            { scope = "entity.name.function"; settings = { foreground = "#${scheme.base0D}"; } }
+            { scope = "entity.name.class"; settings = { foreground = "#${scheme.base0A}"; } }
+            { scope = "support.type"; settings = { foreground = "#${scheme.base0A}"; } }
+            { scope = "support.constant"; settings = { foreground = "#${scheme.base0C}"; } }
+            { scope = "punctuation"; settings = { foreground = "#${scheme.base05}"; } }
+            { scope = "keyword.operator"; settings = { foreground = "#${scheme.base0C}"; } }
+            { scope = "meta.decorator"; settings = { foreground = "#${scheme.base0F}"; } }
+            { scope = "invalid"; settings = { foreground = "#${scheme.base08}"; background = "#${scheme.base00}"; } }
+            { scope = "markup.diff.deleted"; settings = { foreground = "#${scheme.base08}"; } }
+            { scope = "markup.diff.inserted"; settings = { foreground = "#${scheme.base0B}"; } }
+          ];
         };
       };
-      
     };
   };
 }
