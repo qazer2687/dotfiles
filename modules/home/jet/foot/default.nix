@@ -4,7 +4,7 @@
   base16,
   ...
 }: let 
-  frappe = base16 "catppuccin-frappe";
+  scheme = base16 "gruvbox";
 in {
   options.modules.foot.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.foot.enable {
@@ -29,40 +29,39 @@ in {
           hide-when-typing = "no";
         };
         colors = {
-          # Catppuccin Frappe
-          cursor = "232634 f2d5cf";
-          foreground = "c6d0f5";
-          background = frappe.base0E; # Crust
+          cursor = "${scheme.base00} ${scheme.base06}";
+          foreground = scheme.base05;
+          background = scheme.base00;
 
-          regular0 = "51576d";
-          regular1 = "e78284";
-          regular2 = "a6d189";
-          regular3 = "e5c890";
-          regular4 = "8caaee";
-          regular5 = "f4b8e4";
-          regular6 = "81c8be";
-          regular7 = "b5bfe2";
+          regular0 = scheme.base03;
+          regular1 = scheme.base08;
+          regular2 = scheme.base0B;
+          regular3 = scheme.base0A;
+          regular4 = scheme.base0D;
+          regular5 = scheme.base0E;
+          regular6 = scheme.base0C;
+          regular7 = scheme.base04;
 
-          bright0 = "626880";
-          bright1 = "e78284";
-          bright2 = "a6d189";
-          bright3 = "e5c890";
-          bright4 = "8caaee";
-          bright5 = "f4b8e4";
-          bright6 = "81c8be";
-          bright7 = "a5adce";
+          bright0 = scheme.base02;
+          bright1 = scheme.base08;
+          bright2 = scheme.base0B;
+          bright3 = scheme.base0A;
+          bright4 = scheme.base0D;
+          bright5 = scheme.base0E;
+          bright6 = scheme.base0C;
+          bright7 = scheme.base07;
 
-          "16" = "ef9f76";
-          "17" = "f2d5cf";
+          "16" = scheme.base09;
+          "17" = scheme.base06;
 
-          selection-foreground = "c6d0f5";
-          selection-background = "4f5369";
+          selection-foreground = scheme.base05;
+          selection-background = scheme.base01;
 
-          search-box-no-match = "232634 e78284";
-          search-box-match = "c6d0f5 414559";
+          search-box-no-match = "${scheme.base00} ${scheme.base08}";
+          search-box-match = "${scheme.base05} ${scheme.base01}";
 
-          jump-labels = "232634 ef9f76";
-          urls = "8caaee";
+          jump-labels = "${scheme.base00} ${scheme.base09}";
+          urls = scheme.base0D;  
         };
         key-bindings = {
           clipboard-copy = "Control+c XF86Copy";
