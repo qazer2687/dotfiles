@@ -33,6 +33,13 @@
     '';
   };
 
+  # Disable power button (short press) and sleep/suspend button.
+  services.logind.settings.Login = {
+    HandlePowerKey = "ignore";
+    HandleSuspendKey = "ignore";
+    HandleHibernateKey = "ignore";
+  };
+
   boot = {
     kernelParams = [
       # Enables the pixels horizontal of the notch.
@@ -91,7 +98,7 @@
     [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
   '';
 
-  security.pam.services.hyprlock = {};
+  #security.pam.services.hyprlock = {};
 
   programs.hyprland = {
     enable = true;
