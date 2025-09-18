@@ -21,7 +21,7 @@
 
           # Get user and hostname with default colors
           set -l current_user (whoami)
-          set -l host_name (hostname -s)98n
+          set -l host_name (hostname -s)
 
           # Default fish prompt styling
           echo -n -s "$nix_shell_info" \
