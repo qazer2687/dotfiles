@@ -3,7 +3,7 @@
   config,
   base16,
   ...
-}: let 
+}: let
   scheme = base16 "mountain";
 in {
   options.modules.foot.enable = lib.mkEnableOption "";
@@ -16,7 +16,7 @@ in {
           font = "TX02:size=12, FiraCode Nerd Font:size=14";
           font-bold = "TX02:size=12:style=Bold, FiraCode Nerd Font:size=14";
           line-height = "20px";
-          pad = "12x12"; 
+          pad = "12x12";
         };
         scrollback = {
           lines = "10000";
@@ -61,7 +61,7 @@ in {
           search-box-match = "${scheme.base05} ${scheme.base01}";
 
           jump-labels = "${scheme.base00} ${scheme.base09}";
-          urls = scheme.base0D;  
+          urls = scheme.base0D;
         };
         key-bindings = {
           clipboard-copy = "Control+c XF86Copy";

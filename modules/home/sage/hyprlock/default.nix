@@ -1,13 +1,10 @@
 {
   lib,
   config,
-  base16,
   ...
-}: let
-  scheme = base16 "mountain";
-in {
+}: {
   options.modules.hyprlock.enable = lib.mkEnableOption "";
-  
+
   config = lib.mkIf config.modules.hyprlock.enable {
     programs.hyprlock = {
       enable = true;
@@ -39,7 +36,7 @@ in {
           dots_text_format = "♦";
           dots_spacing = 1;
           dots_center = true;
-          outer_color = "rgba(202, 158, 230, 1)";  # Frappe Mauve
+          outer_color = "rgba(202, 158, 230, 1)"; # Frappe Mauve
           inner_color = "rgba(48, 52, 70, 1)"; # Frappe Base
           font_color = "rgba(202, 158, 230, 1)"; # Frappe Mauve
           fade_on_empty = false;

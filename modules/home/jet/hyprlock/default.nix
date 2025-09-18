@@ -7,7 +7,7 @@
   scheme = base16 "mountain";
 in {
   options.modules.hyprlock.enable = lib.mkEnableOption "";
-  
+
   config = lib.mkIf config.modules.hyprlock.enable {
     programs.hyprlock = {
       enable = true;

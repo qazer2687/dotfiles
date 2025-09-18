@@ -7,7 +7,6 @@
   options.modules.fonts.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.fonts.enable {
-
     home.file.".config/fontconfig/conf.d/10-tx02-alias.conf".text = ''
       <?xml version="1.0"?>
       <!DOCTYPE fontconfig SYSTEM "fonts.dtd">

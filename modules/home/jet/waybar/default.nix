@@ -1,16 +1,14 @@
 {
   lib,
   config,
-  pkgs,
   base16,
   ...
-}: let 
+}: let
   scheme = base16 "mountain";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.waybar.enable {
-    
     home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
     home.file.".config/waybar/scripts/pingServer.sh".executable = true;
 
@@ -77,6 +75,11 @@ in {
               "3" = "c";
               "4" = "d";
               "5" = "e";
+              "6" = "f";
+              "7" = "g";
+              "8" = "h";
+              "9" = "i";
+              "0" = "j";
             };
           };
 

@@ -21,7 +21,6 @@
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
-
       settings = {
         monitor = [
           "DP-1,highrr,auto,2"
@@ -76,7 +75,7 @@
             "borderangle, 0"
             "zoomFactor, 0"
             #"monitorAdded, 0"
-            
+
             "workspaces, 1, 4, snap, slide"
           ];
         };

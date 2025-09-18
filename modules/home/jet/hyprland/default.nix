@@ -5,7 +5,7 @@
   inputs,
   base16,
   ...
-}: let 
+}: let
   scheme = base16 "mountain";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
@@ -79,7 +79,7 @@ in {
             "borderangle, 0"
             "zoomFactor, 0"
             #"monitorAdded, 0"
-            
+
             "workspaces, 1, 4, snap, slide"
           ];
         };

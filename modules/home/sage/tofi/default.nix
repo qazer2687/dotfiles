@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.modules.tofi.enable = lib.mkEnableOption "";
@@ -22,7 +21,7 @@
         outline-width = 0;
         hint-font = false;
         border-width = 0;
-        
+
         # Catppuccin Macchiato
         input-color = "#c6d0f5";
         selection-color = "#ca9ee6";

@@ -12,6 +12,6 @@
     };
     services.lact.enable = true;
     # Potential fix for black screen issues.
-    boot.kernelParams = [ "amdgpu.gfxoff=0" ];
+    boot.kernelParams = ["amdgpu.gfxoff=0"];
   };
 }

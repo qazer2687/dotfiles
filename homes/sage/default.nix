@@ -17,7 +17,7 @@
     protonvpn-gui
     nautilus
     killall
-    
+
     lunar-client
   ];
 

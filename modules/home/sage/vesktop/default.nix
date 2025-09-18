@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: {
   options.modules.vesktop.enable = lib.mkEnableOption "";
@@ -27,7 +25,7 @@
           autoUpdateNotification = false;
           notifyAboutUpdates = false;
           useQuickCss = true;
-          enabledThemes = [ "frappe.css" ];
+          enabledThemes = ["frappe.css"];
           plugins = {
             MessageLogger = {
               enabled = true;

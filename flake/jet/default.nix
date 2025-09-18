@@ -6,7 +6,7 @@
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     inherit inputs self;
-    base16 = inputs.nix-base16.outputs.base16;
+    inherit (inputs.nix-base16.outputs) base16;
   };
   modules = [
     ../../hosts/jet
@@ -21,7 +21,7 @@ inputs.nixpkgs.lib.nixosSystem {
         users.alex = ../../homes/jet;
         extraSpecialArgs = {
           inherit inputs self;
-          base16 = inputs.nix-base16.outputs.base16;
+          inherit (inputs.nix-base16.outputs) base16;
         };
         useGlobalPkgs = true;
         useUserPackages = true;

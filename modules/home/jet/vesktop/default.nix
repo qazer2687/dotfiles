@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: {
   options.modules.vesktop.enable = lib.mkEnableOption "";
@@ -13,20 +11,21 @@
       settings = {
         arRPC = true;
         disableMinSize = true;
-        minimizeToTray = false;
+        tray = true;
+        minimizeToTray = true;
         hardwareAcceleration = true;
         discordBranch = "stable";
       };
       vencord = {
         themes = {
-          frappe = builtins.readFile ./config/frappe.css;
+          #frappe = builtins.readFile ./config/frappe.css;
         };
         settings = {
           autoUpdate = true;
           autoUpdateNotification = false;
           notifyAboutUpdates = false;
           useQuickCss = true;
-          enabledThemes = [ "frappe.css" ];
+          #enabledThemes = [ "frappe.css" ];
           plugins = {
             MessageLogger = {
               enabled = true;
