@@ -17,11 +17,7 @@
   programs.fish.enable = true;
 
   hardware = {
-    graphics = {
-      enable = true;
-    };
     asahi = {
-      setupAsahiSound = true;
       peripheralFirmwareDirectory = ../../hardware/jet/firmware;
     };
   };

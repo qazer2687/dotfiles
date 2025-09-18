@@ -11,7 +11,10 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
 
-    asahi.url = "github:nix-community/nixos-apple-silicon";
+    asahi = {
+      url = "github:nix-community/nixos-apple-silicon";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #asahi.url = "github:nix-community/nixos-apple-silicon/b99bf9bf7445416fe55da09034fc4a6cd733805c";
 
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
