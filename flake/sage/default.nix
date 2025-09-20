@@ -4,7 +4,10 @@
   ...
 }:
 inputs.nixpkgs.lib.nixosSystem {
-  specialArgs = {inherit inputs self;};
+  specialArgs = {
+    inherit inputs self;
+    inherit (inputs.nix-base16.outputs) base16;
+    };
   modules = [
     ../../hosts/sage
     ../../modules/base/shared
@@ -16,7 +19,10 @@ inputs.nixpkgs.lib.nixosSystem {
     {
       home-manager = {
         users.alex = ../../homes/sage;
-        extraSpecialArgs = {inherit inputs self;};
+        extraSpecialArgs = {
+          inherit inputs self;
+          inherit (inputs.nix-base16.outputs) base16;
+          };
         useGlobalPkgs = true;
         useUserPackages = true;
         sharedModules = [
