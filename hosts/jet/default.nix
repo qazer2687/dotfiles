@@ -118,6 +118,7 @@
     sudo-rs.enable = true;
     systemd-boot.enable = true;
     xdg.enable = true;
+    networkmanager.enable = true;
   };
 
   # Did you read the comment?
