@@ -69,17 +69,19 @@
     # Tailscale
     services.tailscale.enable = true;
     networking = {
-      networkmanager.enable = true;
       # Allow all the IP's in the tailscale subnet to bypass firewall.
       firewall.extraInputRules = ''
         -A INPUT -i tailscale0 -j ACCEPT
       '';
     };
+    
+    /*
     systemd = {
       services.NetworkManager-wait-online.enable = false;
       # Disable the service because it hangs on boot.
       services.NetworkManager-dispatcher.enable = false;
     };
+    */
 
     ########## KEYMAP ##########
 
