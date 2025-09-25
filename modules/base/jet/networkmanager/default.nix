@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  options.modules.networkmanager.enable = lib.mkEnableOption "NetworkManager with SOPS secrets";
+  options.modules.networkmanager.enable = lib.mkEnableOption "";
   
   config = lib.mkIf config.modules.networkmanager.enable {
 
@@ -13,8 +13,8 @@
           (map (key: "${network}/${key}") keys)
           (name: { inherit sopsFile; });
     in
-      (mkNetworkSecrets "wifinity" [ "id" "ssid" "psk" ] ../secrets/networks/wifinity.yaml) //
-      (mkNetworkSecrets "eduroam" [ "id" "ssid" "identity" "anonymous-identity" "phase2-identity" "phase2-password" ] ../secrets/networks/eduroam.yaml);
+      (mkNetworkSecrets "wifinity" [ "id" "ssid" "psk" ] ../../../../secrets/networks/wifinity.yaml) //
+      (mkNetworkSecrets "eduroam" [ "id" "ssid" "identity" "anonymous-identity" "phase2-identity" "phase2-password" ] ../../../../secrets/networks/eduroam.yaml);
 
     networking.wireless.iwd = {
       enable = true;
