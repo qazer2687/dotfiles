@@ -91,8 +91,9 @@ in {
 
           network = {
             tooltip = false;
+            format = "NET: {essid}";
             format-wifi = "NET: {essid}";
-            family = "ipv4";
+            family = "ipv4_6";
             format-disconnected = "NET: OFFLINE";
             format-ethernet = "NET: WIRED";
             interval = 10;

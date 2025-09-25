@@ -5,7 +5,7 @@ keys:
   - &opal age1lxmhrxyqjev4vznfsmve6fumlpqnudlyyur3wu6tymgj9gns7qlsnyv7wj
   - &mica age1knudcwfp6gjpwsgwks8ljcg836zvpgjukv5tzzqcnzwv8hsnlslq6990lj
 creation_rules:
-  - path_regex: secrets/[^/]+\.ya?ml$
+  - path_regex: secrets/.*\.ya?ml$
     key_groups:
     - age:
       - *jade
