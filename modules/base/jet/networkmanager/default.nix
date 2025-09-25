@@ -23,12 +23,13 @@
 
     networking.networkmanager = {
       enable = true;
-      users.users.alex.extraGroups = [ "networkmanager" ];
       wifi = {
         powersave = true;
         backend = "iwd";
       };
     };
+
+    users.users.alex.extraGroups = [ "networkmanager" ];
 
     environment.etc = {
       "NetworkManager/system-connections/wifinity.nmconnection" = {
