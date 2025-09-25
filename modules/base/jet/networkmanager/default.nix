@@ -35,52 +35,52 @@
       "NetworkManager/system-connections/wifinity.nmconnection" = {
         text = ''
           [connection]
-          id=${builtins.readFile config.sops.secrets."wifinity/id".path}
+          id=$(cat ${config.sops.secrets."wifinity/id".path})
           type=wifi
-          
+
           [wifi]
           mode=infrastructure
-          ssid=${builtins.readFile config.sops.secrets."wifinity/ssid".path}
-          
+          ssid=$(cat ${config.sops.secrets."wifinity/ssid".path})
+
           [wifi-security]
           auth-alg=open
           key-mgmt=wpa-psk
-          psk=${builtins.readFile config.sops.secrets."wifinity/psk".path}
-          
+          psk=$(cat ${config.sops.secrets."wifinity/psk".path})
+
           [ipv4]
           method=auto
-          
+
           [ipv6]
           addr-gen-mode=default
           method=auto
         '';
         mode = "0600";
       };
-      
+
       "NetworkManager/system-connections/eduroam.nmconnection" = {
         text = ''
           [connection]
-          id=${builtins.readFile config.sops.secrets."eduroam/id".path}
+          id=$(cat ${config.sops.secrets."eduroam/id".path})
           type=wifi
-          
+
           [wifi]
           mode=infrastructure
-          ssid=${builtins.readFile config.sops.secrets."eduroam/ssid".path}
-          
+          ssid=$(cat ${config.sops.secrets."eduroam/ssid".path})
+
           [wifi-security]
           key-mgmt=wpa-eap
-          
+
           [802-1x]
-          eap=peap;
-          identity=${builtins.readFile config.sops.secrets."eduroam/identity".path}
-          anonymous-identity=${builtins.readFile config.sops.secrets."eduroam/anonymous-identity".path}
+          eap=peap
+          identity=$(cat ${config.sops.secrets."eduroam/identity".path})
+          anonymous-identity=$(cat ${config.sops.secrets."eduroam/anonymous-identity".path})
           phase2-auth=mschapv2
-          phase2-identity=${builtins.readFile config.sops.secrets."eduroam/phase2-identity".path}
-          password=${builtins.readFile config.sops.secrets."eduroam/phase2-password".path}
-          
+          phase2-identity=$(cat ${config.sops.secrets."eduroam/phase2-identity".path})
+          password=$(cat ${config.sops.secrets."eduroam/phase2-password".path})
+
           [ipv4]
           method=auto
-          
+
           [ipv6]
           addr-gen-mode=default
           method=auto
