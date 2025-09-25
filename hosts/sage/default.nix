@@ -88,6 +88,7 @@
     sudo-rs.enable = true;
     systemd-boot.enable = true;
     xdg.enable = true;
+    networkmanager.enable = true;
 
     # Gaming
     gamemode.enable = true;
