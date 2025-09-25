@@ -46,6 +46,9 @@
     scheduler = "scx_lavd";
   };
 
+  # Required by PlatformIO.  
+  services.udev.packages = with pkgs; [ platformio-core.udev ];
+
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
