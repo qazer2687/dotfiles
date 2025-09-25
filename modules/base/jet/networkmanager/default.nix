@@ -39,7 +39,7 @@
           [connection]
           id=${config.sops.placeholder."wifinity/id"}
           type=wifi
-          autoconnect=true
+          autoconnect=false
 
           [wifi]
           mode=infrastructure
@@ -68,7 +68,7 @@
           [connection]
           id=${config.sops.placeholder."eduroam/id"}
           type=wifi
-          autoconnect=true
+          autoconnect=false
 
           [wifi]
           mode=infrastructure
@@ -84,7 +84,7 @@
           phase2-auth=mschapv2
           phase2-identity=${config.sops.placeholder."eduroam/phase2-identity"}
           password=${config.sops.placeholder."eduroam/phase2-password"}
-          
+
           [ipv4]
           method=auto
 
