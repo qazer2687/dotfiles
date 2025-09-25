@@ -82,9 +82,9 @@
           identity=${config.sops.placeholder."eduroam/identity"}
           anonymous-identity=${config.sops.placeholder."eduroam/anonymous-identity"}
           phase2-auth=mschapv2
-          password=${config.sops.placeholder."eduroam/phase2-password"}
           phase2-identity=${config.sops.placeholder."eduroam/phase2-identity"}
-
+          password=${config.sops.placeholder."eduroam/phase2-password"}
+          
           [ipv4]
           method=auto
 
