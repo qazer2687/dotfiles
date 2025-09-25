@@ -1,34 +1,24 @@
 {
   lib,
   config,
+  pkgs,
+  inputs,
   ...
 }: {
   options.modules.networkmanager.enable = lib.mkEnableOption "NetworkManager with SOPS secrets";
   
   config = lib.mkIf config.modules.networkmanager.enable {
-
+    # Define the sops secrets pointing to your YAML files
     sops.secrets = let
+      # Helper function to generate secrets for a network
       mkNetworkSecrets = network: keys: sopsFile:
         lib.genAttrs 
           (map (key: "${network}/${key}") keys)
           (name: { inherit sopsFile; });
     in
+      # Merge secrets from both networks
       (mkNetworkSecrets "wifinity" [ "id" "ssid" "psk" ] ../secrets/networks/wifinity.yaml) //
       (mkNetworkSecrets "eduroam" [ "id" "ssid" "identity" "anonymous-identity" "phase2-identity" "phase2-password" ] ../secrets/networks/eduroam.yaml);
-
-    services.iwd = {
-      enable = true;
-      settings.General.EnableNetworkConfiguration = true;
-    };
-
-    networking.networkmanager = {
-      enable = true;
-      users.users.alex.extraGroups = [ "networkmanager" ];
-      wifi = {
-        powersave = true;
-        backend = "iwd";
-      };
-    };
 
     environment.etc = {
       "NetworkManager/system-connections/wifinity.nmconnection" = {
