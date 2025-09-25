@@ -48,9 +48,7 @@
     # Applications
     firefox.enable = true;
     vesktop.enable = true;
-
-    # Broken until I update jet when the firefox no playback issues are resolved.
-    #vscode.enable = true;
+    vscode.enable = true;
 
     # Gaming
     mangohud.enable = true;
