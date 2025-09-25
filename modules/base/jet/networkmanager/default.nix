@@ -16,17 +16,17 @@
       (mkNetworkSecrets "wifinity" [ "id" "ssid" "psk" ] ../../../../secrets/networks/wifinity.yaml) //
       (mkNetworkSecrets "eduroam" [ "id" "ssid" "identity" "anonymous-identity" "phase2-identity" "phase2-password" ] ../../../../secrets/networks/eduroam.yaml);
     
-    networking.wireless.iwd = {
+    /*networking.wireless.iwd = {
       enable = true;
       settings.General.EnableNetworkConfiguration = true;
-    };
+    };*/
     
 
     networking.networkmanager = {
       enable = true;
       wifi = {
         powersave = true;
-        backend = "iwd";
+        backend = "wpa_supplicant";
       };
     };
 
