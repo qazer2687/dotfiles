@@ -16,16 +16,11 @@
       (mkNetworkSecrets "wifinity" [ "id" "ssid" "psk" ] ../../../../secrets/networks/wifinity.yaml) //
       (mkNetworkSecrets "eduroam" [ "id" "ssid" "identity" "anonymous-identity" "phase2-identity" "phase2-password" ] ../../../../secrets/networks/eduroam.yaml);
     
-    /*networking.wireless.iwd = {
-      enable = true;
-      settings.General.EnableNetworkConfiguration = true;
-    };*/
-    
-
     networking.networkmanager = {
       enable = true;
       wifi = {
         powersave = true;
+        # IWD backend doesn't work directly with WPA3-Enterprise.
         backend = "wpa_supplicant";
       };
     };
@@ -34,12 +29,13 @@
 
     
     sops.templates = {
+      # Wifinity
       "NetworkManager/system-connections/wifinity.nmconnection" = {
         content = ''
           [connection]
           id=${config.sops.placeholder."wifinity/id"}
           type=wifi
-          autoconnect=false
+          autoconnect=true
 
           [wifi]
           mode=infrastructure
@@ -63,12 +59,13 @@
         group = "root";
       };
 
+      # Eduroam
       "NetworkManager/system-connections/eduroam.nmconnection" = {
         content = ''
           [connection]
           id=${config.sops.placeholder."eduroam/id"}
           type=wifi
-          autoconnect=false
+          autoconnect=true
 
           [wifi]
           mode=infrastructure
@@ -82,7 +79,6 @@
           identity=${config.sops.placeholder."eduroam/identity"}
           anonymous-identity=${config.sops.placeholder."eduroam/anonymous-identity"}
           phase2-auth=mschapv2
-          phase2-identity=${config.sops.placeholder."eduroam/phase2-identity"}
           password=${config.sops.placeholder."eduroam/phase2-password"}
 
           [ipv4]
