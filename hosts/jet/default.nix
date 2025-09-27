@@ -109,6 +109,8 @@
     };
   };
 
+  services.netbird.enable = true;
+
   modules = {
     core.enable = true;
     dbus.enable = true;
