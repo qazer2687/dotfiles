@@ -109,6 +109,11 @@
     };
   };
 
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = true;
+  };
+
   services.netbird.enable = true;
 
   modules = {
