@@ -14,7 +14,7 @@
           (name: { inherit sopsFile; });
     in
       (mkNetworkSecrets "wifinity" [ "id" "ssid" "psk" ] ../../../../secrets/networks/wifinity.yaml) //
-      (mkNetworkSecrets "eduroam" [ "id" "ssid" "identity" "anonymous-identity" "phase2-identity" "phase2-password" ] ../../../../secrets/networks/eduroam.yaml);
+      (mkNetworkSecrets "eduroam" [ "id" "ssid" "identity" "anonymous-identity" "phase2-password" ] ../../../../secrets/networks/eduroam.yaml);
     
     networking.networkmanager = {
       enable = true;
