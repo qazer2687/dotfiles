@@ -126,6 +126,7 @@
     zram.enable = true;
     docker.enable = true;
     samba.enable = false;
+    netbird.enable = true;
 
     # Security
     firewall.enable = true;

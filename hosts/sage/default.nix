@@ -100,6 +100,7 @@
     systemd-boot.enable = true;
     xdg.enable = true;
     networkmanager.enable = true;
+    netbird.enable = true;
 
     # Gaming
     gamemode.enable = true;

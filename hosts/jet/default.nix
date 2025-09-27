@@ -114,8 +114,6 @@
     settings.PasswordAuthentication = true;
   };
 
-  services.netbird.enable = true;
-
   modules = {
     core.enable = true;
     dbus.enable = true;
@@ -126,6 +124,7 @@
     systemd-boot.enable = true;
     xdg.enable = true;
     networkmanager.enable = true;
+    netbird.enable = true;
   };
 
   # Did you read the comment?
