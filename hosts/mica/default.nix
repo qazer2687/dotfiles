@@ -111,6 +111,11 @@
     pkgs.git
   ];
 
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = true;
+  };
+
   modules = {
     core.enable = true;
     dbus.enable = true;
