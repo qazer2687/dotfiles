@@ -21,6 +21,9 @@
         53
         # qBittorrent
         6881
+        # Netbird
+        33073
+        10000
       ];
 
       allowedUDPPorts = [
@@ -28,6 +31,16 @@
         53
         # qBittorrent
         6881
+        # Netbird
+        3478
+      ];
+
+      allowedUDPPortRanges = [
+        {
+          # Netbird
+          from = 49152;
+          to = 65535;
+        }
       ];
     };
   };
