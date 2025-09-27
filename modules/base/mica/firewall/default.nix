@@ -32,7 +32,9 @@
         # qBittorrent
         6881
         # Netbird
+        443
         3478
+        51820
       ];
 
       allowedUDPPortRanges = [
