@@ -12,6 +12,8 @@
       #trustedInterfaces = ["tailscale0" "docker0"];
 
       allowedTCPPorts = [
+        # SSH
+        22
         # HTTP
         80
         81
