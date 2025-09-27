@@ -124,7 +124,7 @@
     systemd-boot.enable = true;
     xdg.enable = true;
     networkmanager.enable = true;
-    netbird.enable = true;
+    tailscale.enable = true;
   };
 
   # Did you read the comment?

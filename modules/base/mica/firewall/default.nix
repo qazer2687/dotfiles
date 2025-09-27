@@ -11,11 +11,6 @@
 
       #trustedInterfaces = ["tailscale0" "docker0"];
 
-      # Route netbird.qazer.org through default gateway instead of NetBird tunnel.
-      extraCommands = ''
-        ip route add netbird.qazer.org via $(ip route | grep default | awk '{print $3}') dev $(ip route | grep default | awk '{print $5}') 2>/dev/null || true
-      '';
-
       allowedTCPPorts = [
         # SSH
         22
