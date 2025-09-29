@@ -8,7 +8,7 @@
 
   config = lib.mkIf config.modules.firefox.enable {
     textfox = {
-      enable = true;
+      enable = false;
       profile = "default";
       config = {
         font.family = "TX02";

@@ -16,7 +16,7 @@ in {
           font = "TX02:size=10, FiraCode Nerd Font:size=14";
           font-bold = "TX02:size=12:style=Bold, FiraCode Nerd Font:size=14";
           line-height = "18px";
-          pad = "4x4";
+          pad = "8x8";
         };
         scrollback = {
           lines = "10000";
