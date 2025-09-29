@@ -18,14 +18,14 @@
       };
       vencord = {
         themes = {
-          frappe = builtins.readFile ./config/frappe.css;
+          #frappe = builtins.readFile ./config/frappe.css;
         };
         settings = {
           autoUpdate = true;
           autoUpdateNotification = false;
           notifyAboutUpdates = false;
           useQuickCss = true;
-          enabledThemes = [ "frappe.css" ];
+          #enabledThemes = [ "frappe.css" ];
           plugins = {
             MessageLogger = {
               enabled = true;
