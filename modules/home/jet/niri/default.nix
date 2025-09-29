@@ -8,7 +8,6 @@
   options.modules.niri.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.niri.enable {
-
     # Doesn't work on latest because of some issue with the drivers not being able to do some sort of mode idk.
     programs.niri = {
       enable = true;

@@ -4,18 +4,17 @@
   ...
 }: {
   options.modules.networkmanager.enable = lib.mkEnableOption "";
-  
-  config = lib.mkIf config.modules.networkmanager.enable {
 
+  config = lib.mkIf config.modules.networkmanager.enable {
     sops.secrets = let
       mkNetworkSecrets = network: keys: sopsFile:
-        lib.genAttrs 
-          (map (key: "${network}/${key}") keys)
-          (name: { inherit sopsFile; });
+        lib.genAttrs
+        (map (key: "${network}/${key}") keys)
+        (_name: {inherit sopsFile;});
     in
-      (mkNetworkSecrets "wifinity" [ "id" "ssid" "psk" ] ../../../../secrets/networks/wifinity.yaml) //
-      (mkNetworkSecrets "eduroam" [ "id" "ssid" "identity" "anonymous-identity" "phase2-password" ] ../../../../secrets/networks/eduroam.yaml);
-    
+      (mkNetworkSecrets "wifinity" ["id" "ssid" "psk"] ../../../../secrets/networks/wifinity.yaml)
+      // (mkNetworkSecrets "eduroam" ["id" "ssid" "identity" "anonymous-identity" "phase2-password"] ../../../../secrets/networks/eduroam.yaml);
+
     networking.networkmanager = {
       enable = true;
       wifi = {
@@ -25,9 +24,8 @@
       };
     };
 
-    users.users.alex.extraGroups = [ "networkmanager" ];
+    users.users.alex.extraGroups = ["networkmanager"];
 
-    
     sops.templates = {
       # Wifinity
       "NetworkManager/system-connections/wifinity.nmconnection" = {

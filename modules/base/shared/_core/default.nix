@@ -76,7 +76,7 @@
         -A INPUT -i tailscale0 -j ACCEPT
       '';
     };
-    
+
     /*
     systemd = {
       services.NetworkManager-wait-online.enable = false;

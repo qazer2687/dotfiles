@@ -15,7 +15,7 @@
       url = "github:nix-community/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
