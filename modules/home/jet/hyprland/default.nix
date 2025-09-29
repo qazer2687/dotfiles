@@ -26,16 +26,16 @@ in {
 
       settings = {
         monitor = [
-          "eDP-1,highrr,auto,2"
+          "eDP-1,highrr,auto,1.5"
         ];
 
         general = {
           # Master/Stack
           layout = "master";
 
-          gaps_in = 2;
-          gaps_out = 4;
-          border_size = 2;
+          gaps_in = 1;
+          gaps_out = 2;
+          border_size = 1;
 
           "col.active_border" = "rgba(${scheme.base05}ff)";
           "col.inactive_border" = "rgba(${scheme.base00}ff)";
