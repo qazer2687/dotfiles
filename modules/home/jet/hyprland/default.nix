@@ -26,7 +26,7 @@ in {
 
       settings = {
         monitor = [
-          "eDP-1,highrr,auto,1.5"
+          "eDP-1,1920x1080,0x0,1.25"
         ];
 
         general = {
