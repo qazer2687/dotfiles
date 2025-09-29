@@ -20,10 +20,7 @@
 
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    hyprland.url = "github:hyprwm/Hyprland";
 
     niri = {
       url = "github:sodiboo/niri-flake";
