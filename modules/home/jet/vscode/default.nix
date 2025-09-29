@@ -5,7 +5,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "mountain";
+  scheme = base16 "catppuccin-frappe";
 in {
   options.modules.vscode.enable = lib.mkEnableOption "";
 

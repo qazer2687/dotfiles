@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "mountain";
+  scheme = base16 "catppuccin-frappe";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -26,7 +26,7 @@ in {
 
       settings = {
         monitor = [
-          "eDP-1,highrr,auto,1.6"
+          "eDP-1,highrr,auto,2"
         ];
 
         general = {
