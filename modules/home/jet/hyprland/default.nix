@@ -33,9 +33,9 @@ in {
           # Master/Stack
           layout = "master";
 
-          gaps_in = 1;
-          gaps_out = 2;
-          border_size = 1;
+          gaps_in = 0;
+          gaps_out = 0;
+          border_size = 2;
 
           "col.active_border" = "rgba(${scheme.base05}ff)";
           "col.inactive_border" = "rgba(${scheme.base00}ff)";
