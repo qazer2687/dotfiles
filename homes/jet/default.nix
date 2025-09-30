@@ -47,7 +47,7 @@
     # Applications
     firefox.enable = true;
     vscode.enable = true;
-    #zed.enable = true;
+    zed.enable = true;
     vesktop.enable = true;
   };
 
