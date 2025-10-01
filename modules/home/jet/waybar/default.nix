@@ -154,7 +154,7 @@ in {
         #workspaces button {
           background-color: transparent;
           border-radius: 0;
-          margin: 0px 0px;
+          margin: 0px 2px;
         }
         #workspaces button.active {
           background-color: transparent;
