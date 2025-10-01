@@ -139,10 +139,10 @@ in {
         
           /* top | right | bottom | left */
           border-color: 
+          #${scheme.base03}
           #${scheme.base02}
-          #${scheme.base00}
-          #${scheme.base00}
-          #${scheme.base02};
+          #${scheme.base02}
+          #${scheme.base03};
         }
 
         #workspaces {
