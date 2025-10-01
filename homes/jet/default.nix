@@ -17,6 +17,8 @@
     protonvpn-gui
     jetbrains.idea-community
     tsukimi
+
+    firefox
   ];
 
   modules = {
