@@ -33,9 +33,9 @@ in {
           # Master/Stack
           layout = "master";
 
-          gaps_in = 0;
-          gaps_out = 0;
-          border_size = 2;
+          gaps_in = 2;
+          gaps_out = 4;
+          border_size = 1;
 
           "col.active_border" = "rgba(${scheme.base05}ff)";
           "col.inactive_border" = "rgba(${scheme.base00}ff)";
@@ -45,7 +45,7 @@ in {
         };
 
         master = {
-          mfact = 0.70;
+          mfact = 0.60;
           orientation = "left";
           inherit_fullscreen = true;
         };

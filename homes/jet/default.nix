@@ -16,6 +16,7 @@
     protonvpn-gui
     tsukimi
     firefox
+    nautilus
 
     jetbrains.idea-community
     jetbrains.clion

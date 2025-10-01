@@ -68,6 +68,9 @@
       "kernel.printk" = "0 0 0 0";
     };
   };
+  
+  # Nautilus trash support.
+  services.gvfs.enable = true;
 
   swapDevices = [
     {
