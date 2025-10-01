@@ -128,12 +128,21 @@ in {
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
-        #backlight, #battery, custom-pingServer, #workspaces button, #workspaces button.active {
+        #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active {
           padding: 0 8px;
           margin: 4px 2px;
-          border-radius: 2px;
+          border-radius: 0px;
+        
           background-color: #${scheme.base01};
           color: #${scheme.base05};
+          border: 2px solid;
+        
+          /* top | right | bottom | left */
+          border-color: 
+          #${scheme.base02}
+          #${scheme.base00}
+          #${scheme.base00}
+          #${scheme.base02};
         }
 
         #workspaces {
