@@ -27,7 +27,7 @@
         id = 0;
 
         #userChrome = builtins.readFile ./config/userChrome.css;
-        extraConfig = /* builtins.readFile ./config/betterfox.js + */ builtins.readFile ./config/custom.js;
+        extraConfig = builtins.readFile ./config/betterfox.js + builtins.readFile ./config/custom.js;
       };
     };
 
