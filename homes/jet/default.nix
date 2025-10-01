@@ -52,7 +52,6 @@
     #vscode.enable = true;
     zed.enable = true;
     vesktop.enable = true;
-    nautilus.enable = true;
   };
 
   home.stateVersion = "24.11";
