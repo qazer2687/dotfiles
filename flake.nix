@@ -12,15 +12,18 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     asahi = {
-      url = "github:nix-community/nixos-apple-silicon";
-      #inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixos-apple-silicon/ci-test";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     niri = {
       url = "github:sodiboo/niri-flake";
