@@ -8,7 +8,6 @@
   ];
 
   home.packages = with pkgs; [
-    nautilus
     obsidian
     vlc
     loupe
@@ -49,9 +48,10 @@
 
     # Applications
     firefox.enable = true;
-    vscode.enable = true;
+    #vscode.enable = true;
     zed.enable = true;
     vesktop.enable = true;
+    nautilus.enable = true;
   };
 
   home.stateVersion = "24.11";
