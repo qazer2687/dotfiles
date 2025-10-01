@@ -15,10 +15,11 @@
     gdu
     btop
     protonvpn-gui
-    jetbrains.idea-community
     tsukimi
-
     firefox
+
+    jetbrains.idea-community
+    jetbrains.clion
   ];
 
   modules = {
