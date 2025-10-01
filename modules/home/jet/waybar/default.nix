@@ -135,14 +135,14 @@ in {
         
           background-color: #${scheme.base01};
           color: #${scheme.base05};
-          border: 2px solid;
+          border: 1px solid;
         
           /* top | right | bottom | left */
           border-color: 
-          #${scheme.base03}
+          #${scheme.base04}
           #${scheme.base02}
           #${scheme.base02}
-          #${scheme.base03};
+          #${scheme.base04};
         }
 
         #workspaces {
