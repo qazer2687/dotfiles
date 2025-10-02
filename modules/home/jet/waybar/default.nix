@@ -132,14 +132,11 @@ in {
         #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active {
           padding: 0 8px;
           margin: 4px 2px;
-          border-radius: 0px;
+          border-radius: 4px;
         
           background-color: #${scheme.base01};
           color: #${scheme.base05};
           border: 1px solid;
-        
-          box-shadow: inset 1px 1px 0 #${scheme.base02},
-                      inset -1px -1px 0 #${scheme.base04};
         }
 
         #workspaces {
@@ -160,9 +157,14 @@ in {
           box-shadow: inset 0 1px 0 #${scheme.base05};
         }
 
-        #custom-pingServer.up { color: #${scheme.base0B} }
-        #custom-pingServer.down { color: #${scheme.base04} }
-
+        custom-pingServer.up {
+         background-color: #${scheme.base0B};
+         color: #${scheme.base05};
+        }
+        custom-pingServer.down {
+          background-color: #${scheme.base04};
+          color: #${scheme.base05};
+        }
 
         /* BATTERY */
 
