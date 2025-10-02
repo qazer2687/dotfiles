@@ -124,6 +124,7 @@ in {
 
         window#waybar {
           background-color: #${scheme.base00};
+          border-bottom: 1px solid #${scheme.base05};
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -137,12 +138,8 @@ in {
           color: #${scheme.base05};
           border: 1px solid;
         
-          /* top | right | bottom | left */
-          border-color: 
-          #${scheme.base04}
-          #${scheme.base02}
-          #${scheme.base02}
-          #${scheme.base04};
+          box-shadow: inset 1px 1px 0 #${scheme.base02},
+                      inset -1px -1px 0 #${scheme.base04};
         }
 
         #workspaces {
