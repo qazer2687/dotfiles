@@ -124,7 +124,6 @@ in {
 
         window#waybar {
           background-color: #${scheme.base00};
-          border-bottom: 1px solid #${scheme.base05};
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -158,11 +157,11 @@ in {
 
         #custom-pingServer.up {
           background-color: #${scheme.base0B};
-          color: #${scheme.base05};
+          color: #${scheme.base00};
         }
         #custom-pingServer.down {
           background-color: #${scheme.base04};
-          color: #${scheme.base05};
+          color: #${scheme.base00};
         }
 
         /* BATTERY */
