@@ -130,7 +130,7 @@ in {
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
         #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active {
           padding: 0 8px;
-          margin: 4px 2px;
+          margin: 2px 2px;
           border-radius: 2px;
         
           background-color: #${scheme.base01};
