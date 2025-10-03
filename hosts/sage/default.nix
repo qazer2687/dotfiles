@@ -88,6 +88,17 @@
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     };
+    # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
+    systemPackages = [pkgs.flatpak];
+  };
+
+  # Roblox - Not in home-manager because of gmodena/nix-flatpak#33.
+  services.flatpak = {
+    enable = true;
+    update.onActivation = true;
+    packages = [
+      "org.vinegarhq.Sober"
+    ];
   };
 
   modules = {
