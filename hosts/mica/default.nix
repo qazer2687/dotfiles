@@ -111,6 +111,12 @@
     pkgs.git
   ];
 
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = true;
+    settings.PermitRootLogin = "yes";
+  };
+
   modules = {
     core.enable = true;
     dbus.enable = true;
@@ -120,6 +126,7 @@
     zram.enable = true;
     docker.enable = true;
     samba.enable = false;
+    tailscale.enable = true;
 
     # Security
     firewall.enable = true;

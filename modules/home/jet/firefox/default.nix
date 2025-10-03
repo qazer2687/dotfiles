@@ -8,7 +8,7 @@
 
   config = lib.mkIf config.modules.firefox.enable {
     textfox = {
-      enable = true;
+      enable = false;
       profile = "default";
       config = {
         font.family = "TX02";
@@ -25,7 +25,6 @@
         name = "default";
         isDefault = true;
         id = 0;
-
 
         #userChrome = builtins.readFile ./config/userChrome.css;
         extraConfig = builtins.readFile ./config/betterfox.js + builtins.readFile ./config/custom.js;

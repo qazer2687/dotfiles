@@ -12,6 +12,8 @@
       #trustedInterfaces = ["tailscale0" "docker0"];
 
       allowedTCPPorts = [
+        # SSH
+        22
         # HTTP
         80
         81
@@ -21,6 +23,9 @@
         53
         # qBittorrent
         6881
+        # Netbird
+        33073
+        10000
       ];
 
       allowedUDPPorts = [
@@ -28,6 +33,18 @@
         53
         # qBittorrent
         6881
+        # Netbird
+        443
+        3478
+        51820
+      ];
+
+      allowedUDPPortRanges = [
+        {
+          # Netbird
+          from = 49152;
+          to = 65535;
+        }
       ];
     };
   };

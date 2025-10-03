@@ -51,7 +51,7 @@
     extraRules = ''
       SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
     '';
-    packages = [ 
+    packages = [
       pkgs.platformio-core
       pkgs.openocd
     ];
@@ -100,6 +100,7 @@
     systemd-boot.enable = true;
     xdg.enable = true;
     networkmanager.enable = true;
+    tailscale.enable = true;
 
     # Gaming
     gamemode.enable = true;

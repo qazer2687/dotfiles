@@ -8,15 +8,19 @@
   ];
 
   home.packages = with pkgs; [
-    nautilus
     obsidian
     vlc
     loupe
     gdu
     btop
     protonvpn-gui
-    jetbrains.idea-community
     tsukimi
+    firefox
+    nautilus
+    libreoffice
+
+    jetbrains.idea-community
+    jetbrains.clion
   ];
 
   modules = {
@@ -46,8 +50,8 @@
 
     # Applications
     firefox.enable = true;
-    vscode.enable = true;
-    #zed.enable = true;
+    #vscode.enable = true;
+    zed.enable = true;
     vesktop.enable = true;
   };
 

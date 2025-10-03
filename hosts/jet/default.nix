@@ -68,6 +68,9 @@
       "kernel.printk" = "0 0 0 0";
     };
   };
+  
+  # Nautilus trash support.
+  services.gvfs.enable = true;
 
   swapDevices = [
     {
@@ -101,12 +104,17 @@
 
   environment = {
     sessionVariables = {
-      WLR_DRM_DEVICES = "/dev/dri/card0";
+      #WLR_DRM_DEVICES = "/dev/dri/card0";
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     };
+  };
+
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = true;
   };
 
   modules = {
@@ -119,6 +127,7 @@
     systemd-boot.enable = true;
     xdg.enable = true;
     networkmanager.enable = true;
+    tailscale.enable = true;
   };
 
   # Did you read the comment?

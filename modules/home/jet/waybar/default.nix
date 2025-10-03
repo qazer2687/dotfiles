@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "mountain";
+  scheme = base16 "catppuccin-frappe";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
@@ -70,16 +70,16 @@ in {
           "hyprland/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "1" = "a";
-              "2" = "b";
-              "3" = "c";
-              "4" = "d";
-              "5" = "e";
-              "6" = "f";
-              "7" = "g";
-              "8" = "h";
-              "9" = "i";
-              "0" = "j";
+              "1" = "1";
+              "2" = "2";
+              "3" = "3";
+              "4" = "4";
+              "5" = "5";
+              "6" = "6";
+              "7" = "7";
+              "8" = "8";
+              "9" = "9";
+              "0" = "0";
             };
           };
 
@@ -128,10 +128,11 @@ in {
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
-        #backlight, #battery, custom-pingServer, #workspaces button, #workspaces button.active {
+        #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active {
           padding: 0 8px;
-          margin: 4px 2px;
+          margin: 2px 2px;
           border-radius: 2px;
+        
           background-color: #${scheme.base01};
           color: #${scheme.base05};
         }
@@ -140,7 +141,7 @@ in {
           color: transparent;
           background-color: #${scheme.base01};
           border-radius: 2px;
-          margin: 4px 0px;
+          margin: 4px 2px;
         }
         #workspaces button {
           background-color: transparent;
@@ -151,12 +152,17 @@ in {
           background-color: transparent;
           border-radius: 0;
           margin: 0px 0px;
-          box-shadow: inset 0 2px 0 #${scheme.base05};
+          box-shadow: inset 0 1px 0 #${scheme.base05};
         }
 
-        #custom-pingServer.up { color: #${scheme.base0B} }
-        #custom-pingServer.down { color: #${scheme.base04} }
-
+        #custom-pingServer.up {
+          background-color: #${scheme.base0B};
+          color: #${scheme.base00};
+        }
+        #custom-pingServer.down {
+          background-color: #${scheme.base04};
+          color: #${scheme.base00};
+        }
 
         /* BATTERY */
 

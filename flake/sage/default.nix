@@ -7,7 +7,7 @@ inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     inherit inputs self;
     inherit (inputs.nix-base16.outputs) base16;
-    };
+  };
   modules = [
     ../../hosts/sage
     ../../modules/base/shared
@@ -22,7 +22,7 @@ inputs.nixpkgs.lib.nixosSystem {
         extraSpecialArgs = {
           inherit inputs self;
           inherit (inputs.nix-base16.outputs) base16;
-          };
+        };
         useGlobalPkgs = true;
         useUserPackages = true;
         sharedModules = [
