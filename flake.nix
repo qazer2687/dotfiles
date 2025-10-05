@@ -12,7 +12,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     asahi = {
-      url = "github:nix-community/nixos-apple-silicon/ci-test";
+      url = "github:nix-community/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
