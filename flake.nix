@@ -9,16 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix.url = "github:Mic92/sops-nix";
-
-    asahi = {
-      url = "github:nix-community/nixos-apple-silicon/ci-test";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    asahi.url = "github:nix-community/nixos-apple-silicon/cb7b138ac86a2188b8a09566b7e9e58fc11a2166";
 
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
+    sops-nix.url = "github:Mic92/sops-nix";
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    textfox.url = "github:adriankarlen/textfox";
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -29,9 +25,8 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    textfox.url = "github:adriankarlen/textfox";
-
+    
+    # Personal
     nix-base16.url = "github:qazer2687/nix-base16";
   };
 
