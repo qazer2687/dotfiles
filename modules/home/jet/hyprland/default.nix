@@ -37,7 +37,8 @@ in {
           gaps_out = 4;
           border_size = 1;
 
-          "col.active_border" = "rgba(${scheme.base05}ff)";
+          # base05 = text, base0E = mauve
+          "col.active_border" = "rgba(${scheme.base0E}ff)";
           "col.inactive_border" = "rgba(${scheme.base00}ff)";
 
           resize_on_border = true;
