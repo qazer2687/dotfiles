@@ -40,6 +40,7 @@
           [wifi]
           mode=infrastructure
           ssid=${config.sops.placeholder."wifinity/ssid"}
+          powersave=0
 
           [wifi-security]
           auth-alg=open
@@ -71,9 +72,15 @@
           [wifi]
           mode=infrastructure
           ssid=${config.sops.placeholder."eduroam/ssid"}
+          powersave=2
 
           [wifi-security]
           key-mgmt=wpa-eap
+          
+          # Fast BSS Transition
+          [802-11r]
+          ft-over-ds=true
+          ft-over-air=true
 
           [802-1x]
           eap=peap
