@@ -15,9 +15,5 @@
     ffmpeg-full = prev.ffmpeg-full.override {
       withFullDeps = true;
     };
-
-    jetbrains.clion = prev.clion.override {
-      buildInputs = prev.buildInputs ++ [ pkgs.gcc pkgs.cmake pkgs.gdb pkgs.ninja ];
-    };
   };
 }
