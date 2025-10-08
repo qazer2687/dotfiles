@@ -34,6 +34,8 @@
           id=${config.sops.placeholder."wifinity/id"}
           type=wifi
           autoconnect=true
+          # Connect to this network when found even if already on another network.
+          autoconnect-priority=99
 
           [wifi]
           mode=infrastructure
@@ -64,6 +66,7 @@
           id=${config.sops.placeholder."eduroam/id"}
           type=wifi
           autoconnect=true
+          autoconnect-priority=1
 
           [wifi]
           mode=infrastructure
