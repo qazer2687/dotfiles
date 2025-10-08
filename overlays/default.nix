@@ -1,6 +1,5 @@
 # This file defines overlays
-#_: {
-{pkgs, _}: {
+_: {
   # This one brings our custom packages from the 'packages' directory
   additions = final: _prev: import ../packages final.pkgs;
 
