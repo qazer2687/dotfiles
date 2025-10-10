@@ -10,7 +10,7 @@
       enable = true;
       enable32Bit = true;
     };
-    services.lact.enable = true;
+    #services.lact.enable = true;
     # Potential fix for black screen issues.
     boot.kernelParams = [
       "amdgpu.gfxoff=0"
