@@ -14,6 +14,6 @@
       # https://ollama.com/library
       loadModels = [ "deepseek-r1:1.5b"];
     };
-    services.open-webui.enable = true;
+    #services.open-webui.enable = true;
   };
 }
