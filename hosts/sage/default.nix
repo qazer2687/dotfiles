@@ -121,6 +121,9 @@
     pipewire.enable = true;
     steam.enable = true;
     amdgpu.enable = true;
+
+    # AI
+    ollama.enable = true;
   };
 
   # Did you read the comment?
