@@ -155,17 +155,11 @@ in {
           box-shadow: inset 0 1px 0 #${scheme.base05};
         }
 
-        #custom-pingServer {
-          margin: 2px 4px;
-        }
-
         #custom-pingServer.up {
-          background-color: #${scheme.base0B};
-          color: #${scheme.base00};
+          color: #${scheme.base0B};
         }
         #custom-pingServer.down {
-          background-color: #${scheme.base04};
-          color: #${scheme.base00};
+          color: #${scheme.base04};
         }
 
         /* BATTERY */
