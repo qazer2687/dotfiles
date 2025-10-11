@@ -17,7 +17,7 @@ in {
       settings = {
         mainBar = {
           layer = "top";
-          height = 28;
+          height = 24;
           margin = "0 0 0 0";
           modules-left = ["custom/pingServer"];
           modules-center = ["hyprland/workspaces" ];
@@ -129,7 +129,7 @@ in {
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
         #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active {
-          padding: 0 8px;
+          padding: 0 4px;
           margin: 2px 2px;
           border-radius: 2px;
         
