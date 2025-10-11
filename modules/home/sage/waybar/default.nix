@@ -141,7 +141,7 @@ in {
           color: transparent;
           background-color: #${scheme.base01};
           border-radius: 2px;
-          margin: 4px 2px;
+          margin: 2px 2px;
         }
         #workspaces button {
           background-color: transparent;
