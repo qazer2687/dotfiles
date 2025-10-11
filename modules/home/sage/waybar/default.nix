@@ -152,7 +152,7 @@ in {
           background-color: transparent;
           border-radius: 0;
           margin: 0px 0px;
-          box-shadow: inset 0 1px 0 #${scheme.base05};
+          box-shadow: inset 0 -1px 0 #${scheme.base05};
         }
 
         #custom-pingServer.up {
