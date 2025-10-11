@@ -1,16 +1,16 @@
 {
   lib,
   config,
-  pkgs,
+  base16,
   ...
-}: {
+}: let
+  scheme = base16 "catppuccin-mocha";
+in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.waybar.enable {
-    home.packages = with pkgs; [
-      # MPRIS Dependency
-      playerctl
-    ];
+    home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
+    home.file.".config/waybar/scripts/pingServer.sh".executable = true;
 
     programs.waybar = {
       enable = true;
@@ -18,10 +18,10 @@
         mainBar = {
           layer = "top";
           height = 28;
-          margin = "6 6 0 6";
-          modules-left = ["clock"];
-          modules-center = ["hyprland/workspaces"];
-          modules-right = ["tray" "network" "pulseaudio"];
+          margin = "0 0 0 0";
+          modules-left = ["custom/pingServer"];
+          modules-center = ["hyprland/workspaces" ];
+          modules-right = ["tray" "network" "pulseaudio" "clock"];
 
           pulseaudio = {
             format = "VOL: {volume}%";
@@ -36,10 +36,17 @@
             tooltip = false;
           };
 
+          "custom/pingServer" = {
+            exec = "$HOME/.config/waybar/scripts/pingServer.sh";
+            interval = 30;
+            format = "{}";
+            return-type = "json";
+          };
+
           clock = {
-            format = "{:%A %d, %H:%M}";
+            format = "{:%H:%M}";
+            format-alt = "{:%A %d, %H:%M}";
             tooltip = false;
-            margin-right = 15;
           };
 
           tray = {
@@ -68,17 +75,11 @@
               "3" = "3";
               "4" = "4";
               "5" = "5";
-            };
-          };
-
-          "niri/workspaces" = {
-            format = "{icon}";
-            format-icons = {
-              "1" = "1";
-              "2" = "2";
-              "3" = "3";
-              "4" = "4";
-              "5" = "5";
+              "6" = "6";
+              "7" = "7";
+              "8" = "8";
+              "9" = "9";
+              "0" = "0";
             };
           };
 
@@ -90,53 +91,29 @@
 
           network = {
             tooltip = false;
-            format-wifi = "NET: {essid}";
-            family = "ipv4";
+            format = "NET: {essid}";
+            format-alt = "{essid} - {ifname} - {ipaddr}";
             format-disconnected = "NET: OFFLINE";
-            format-ethernet = "NET: WIRED";
             interval = 10;
           };
 
           mpris = {
             tooltip = false;
-            format = "PLAYING: {artist} - {title}";
-            format-paused = "PAUSED: {artist} - {title}";
-            artist-len = 25;
-            title-len = 25;
+            format = "{title}";
+            format-paused = "{title}";
+            artist-len = 20;
+            title-len = 20;
+            player-icons = {
+              default = "";
+            };
+            status-icons = {
+              paused = "";
+            };
           };
         };
       };
 
       style = ''
-        @define-color highlight @mauve;
-
-        @define-color rosewater  #f2d5cf;
-        @define-color flamingo   #eebebe;
-        @define-color pink       #f4b8e4;
-        @define-color mauve      #ca9ee6;
-        @define-color red        #e78284;
-        @define-color maroon     #ea999c;
-        @define-color peach      #ef9f76;
-        @define-color yellow     #e5c890;
-        @define-color green      #a6d189;
-        @define-color teal       #81c8be;
-        @define-color sky        #99d1db;
-        @define-color sapphire   #85c1dc;
-        @define-color blue       #8caaee;
-        @define-color lavender   #babbf1;
-        @define-color text       #c6d0f5;
-        @define-color subtext1   #b5bfe2;
-        @define-color subtext0   #a5adce;
-        @define-color overlay2   #949cbb;
-        @define-color overlay1   #838ba7;
-        @define-color overlay0   #737994;
-        @define-color surface2   #626880;
-        @define-color surface1   #51576d;
-        @define-color surface0   #414559;
-        @define-color base       #303446;
-        @define-color mantle     #292c3c;
-        @define-color crust      #232634;
-
         * {
           border: none;
           border-radius: 0px;
@@ -146,48 +123,82 @@
         }
 
         window#waybar {
-          background-color: @crust;
-          border-radius: 4px;
+          background-color: #${scheme.base00};
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
-        #backlight, #battery, #workspaces button, #workspaces button.focused,
-        #workspaces button.active {
+        #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active {
           padding: 0 8px;
-          margin: 4px 2px;
+          margin: 2px 2px;
           border-radius: 2px;
-          background-color: @base;
-          color: @text;
+        
+          background-color: #${scheme.base01};
+          color: #${scheme.base05};
         }
 
-        #workspaces button,
-        #workspaces button.focused,
+        #workspaces {
+          color: transparent;
+          background-color: #${scheme.base01};
+          border-radius: 2px;
+          margin: 4px 2px;
+        }
+        #workspaces button {
+          background-color: transparent;
+          border-radius: 0;
+          margin: 0px 0px;
+        }
         #workspaces button.active {
-          padding: 0 24px;
+          background-color: transparent;
+          border-radius: 0;
+          margin: 0px 0px;
+          box-shadow: inset 0 1px 0 #${scheme.base05};
         }
 
-        #mpris {
-          border: 1px solid @mauve;
+        #custom-pingServer {
+          margin: 2px 4px;
         }
 
-        #workspaces button.active {
-          background-color: @highlight;
-          color: @mantle;
+        #custom-pingServer.up {
+          background-color: #${scheme.base0B};
+          color: #${scheme.base00};
+        }
+        #custom-pingServer.down {
+          background-color: #${scheme.base04};
+          color: #${scheme.base00};
         }
 
-        #clock {
-          margin-left: 4px;
+        /* BATTERY */
+
+        #battery.warning:not(.charging) {
+          background-color: #${scheme.base09};
+          color: #${scheme.base00};
+        }
+
+        #battery.critical:not(.charging) {
+          background-color: #${scheme.base08};
+          color: #${scheme.base00};
+        }
+
+        #battery.charging {
+          background-color: #${scheme.base0B};
+          color: #${scheme.base00};
+        }
+
+        /* EDGE PADDING */
+
+        #workspaces {
+          margin-left: 16px;
+          margin-right: 16px;
         }
 
         #tray {
-          margin-right: 8px;
-        }
-
-        #pulseaudio {
           margin-right: 4px;
         }
 
+        #battery {
+          margin-right: 16px;
+        }
       '';
     };
   };
