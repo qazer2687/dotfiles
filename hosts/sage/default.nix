@@ -39,6 +39,7 @@
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
     kernelPackages = pkgs.linuxPackages_cachyos;
+    supportedFilesystems = [ "ntfs" ];
   };
 
   services.scx = {
@@ -98,6 +99,7 @@
     update.onActivation = true;
     packages = [
       "org.vinegarhq.Sober"
+      # Broken
       "org.vinegarhq.Vinegar"
     ];
   };
@@ -119,6 +121,9 @@
     pipewire.enable = true;
     steam.enable = true;
     amdgpu.enable = true;
+
+    # AI
+    ollama.enable = true;
   };
 
   # Did you read the comment?
