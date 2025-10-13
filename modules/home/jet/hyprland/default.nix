@@ -223,6 +223,10 @@ in {
           #"${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
           "${pkgs.wbg}/bin/wbg /home/alex/.config/wallpaper/wallpaper.png"
           "${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
+
+          # Unlock keyring on boot.
+          
+
         ];
       };
 

@@ -19,6 +19,10 @@ in {
           hide_cursor = true;
         };
 
+        authentication = {
+          pam.enable = true;
+        };
+
         animations.enable = true;
         animation = [
           "fade, 0, 0, default"
