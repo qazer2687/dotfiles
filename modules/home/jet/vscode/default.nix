@@ -15,8 +15,8 @@ in {
       package = pkgs.vscode-fhs;
 
       profiles.default = {
-        enableUpdateCheck = false;
-        enableExtensionUpdateCheck = false;
+        #enableUpdateCheck = false;
+        #enableExtensionUpdateCheck = false;
         /*
         userSettings = {
           # Editor
