@@ -17,6 +17,7 @@ in {
       profiles.default = {
         enableUpdateCheck = false;
         enableExtensionUpdateCheck = false;
+        /*
         userSettings = {
           # Editor
           "editor.fontFamily" = "TX02";
@@ -40,10 +41,7 @@ in {
 
           # File & Explorer
           "files.autoSave" = "afterDelay";
-          "files.exclude" = {
-            "**/__pycache__" = true;
-            "**/.direnv" = true;
-          };
+  
           "explorer.confirmDelete" = false;
           "explorer.confirmDragAndDrop" = false;
           "explorer.compactFolders" = false;
@@ -190,6 +188,7 @@ in {
             ];
           };
         };
+        */
       };
     };
   };
