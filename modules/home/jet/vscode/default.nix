@@ -12,7 +12,7 @@ in {
   config = lib.mkIf config.modules.vscode.enable {
     programs.vscode = {
       enable = true;
-      package = pkgs.vscodium-fhs;
+      package = pkgs.vscode-fhs;
 
       profiles.default = {
         enableUpdateCheck = false;
