@@ -105,6 +105,7 @@
     };
   };
 
+  # Support for vscode remote server.
   programs.nix-ld.enable = true;
 
   environment.systemPackages = [

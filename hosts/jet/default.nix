@@ -58,8 +58,8 @@
       "kernel.perf_event_paranoid" = 1;
       "kernel.kptr_restrict" = 0;
 
-      # Default on asahi fedora.
-      "vm.swappiness" = 60;
+      # Default is 60 but too swappy for my liking.
+      "vm.swappiness" = 100;
     };
     consoleLogLevel = 3;
     initrd.verbose = false;
