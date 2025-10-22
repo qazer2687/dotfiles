@@ -19,6 +19,7 @@
     killall
 
     lunar-client
+    lutris
   ];
 
   modules = {

@@ -59,6 +59,15 @@
     ];
   };
 
+  # Enable esync compatibility.
+  systemd.extraConfig = "DefaultLimitNOFILE=524288";
+  security.pam.loginLimits = [{
+    domain = "alex";
+    type = "hard";
+    item = "nofile";
+    value = "524288";
+  }];
+
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
