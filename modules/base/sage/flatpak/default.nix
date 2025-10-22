@@ -11,7 +11,9 @@
     services.flatpak = {
       enable = true;
       packages = [
+        "com.github.tchx84.Flatseal"
         "org.vinegarhq.Sober"
+        "com.usebottles.bottles"
       ];
       overrides = {
         global = {

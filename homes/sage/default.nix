@@ -19,7 +19,6 @@
     killall
 
     lunar-client
-    bottles
   ];
 
   modules = {
