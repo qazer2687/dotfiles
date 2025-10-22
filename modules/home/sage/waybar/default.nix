@@ -91,10 +91,10 @@ in {
 
           network = {
             tooltip = false;
-            format = "NET: {essid}";
+            format-wifi = "NET: {essid}";
             format-alt = "{essid} - {ifname} - {ipaddr}";
             format-disconnected = "NET: OFFLINE";
-            format-wired = "NET: WIRED";
+            format-ethernet = "NET: WIRED";
             interval = 10;
           };
 
