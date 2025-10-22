@@ -33,6 +33,7 @@
 
             # Proton
             proton-ge-bin
+            protonup-qt
           ];
       };
     };

@@ -24,6 +24,7 @@
       "vt.global_cursor_default=0"
       "systemd.show_status=false"
       "udev.log_level=3"
+      "console=/dev/null"
     ];
     consoleLogLevel = 3;
     initrd.verbose = false;
