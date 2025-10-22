@@ -93,17 +93,6 @@
     systemPackages = [pkgs.flatpak];
   };
 
-  # Roblox - Not in home-manager because of gmodena/nix-flatpak#33.
-  services.flatpak = {
-    enable = true;
-    update.onActivation = true;
-    packages = [
-      "org.vinegarhq.Sober"
-      # Broken
-      "org.vinegarhq.Vinegar"
-    ];
-  };
-
   modules = {
     core.enable = true;
     dbus.enable = true;
@@ -121,6 +110,7 @@
     pipewire.enable = true;
     steam.enable = true;
     amdgpu.enable = true;
+    flatpak.enable = true;
 
     # AI
     ollama.enable = true;
