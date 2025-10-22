@@ -52,14 +52,18 @@
     extraRules = ''
     # ESP32-CYD2USB Support
     SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
-    # Disable middle-button emulation.
-    ATTRS{name}=="*Mouse*", ATTR{middle_emulation}="0"
     '';
     packages = [
       pkgs.platformio-core
       pkgs.openocd
     ];
   };
+
+  environment.etc."libinput/local-overrides.quirks".text = ''
+    [Never Enable Middle Button Emulation]
+    MatchUdevType=mouse
+    AttrMiddleEmulationEnabled=0
+  '';
 
   # Autologin and hide getty messages.
   services.getty = {
