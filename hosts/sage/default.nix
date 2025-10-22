@@ -59,12 +59,6 @@
     ];
   };
 
-  environment.etc."libinput/local-overrides.quirks".text = ''
-    [Never Enable Middle Button Emulation]
-    MatchUdevType=mouse
-    AttrMiddleEmulationEnabled=0
-  '';
-
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";

@@ -93,21 +93,12 @@ in {
           # Mouse/Pointer
           follow_mouse = 0;
           mouse_refocus = false;
+          middle_button_emulation = false;
 
           # Keyboard
           kb_layout = "gb";
           kb_variant = "colemak";
           kb_options = "ctrl:nocaps";
-
-          # Touchpad
-          touchpad = {
-            tap-to-click = false;
-            scroll_factor = 0.5;
-            natural_scroll = true;
-            clickfinger_behavior = true;
-            middle_button_emulation = true;
-            disable_while_typing = true;
-          };
         };
 
         cursor = {
