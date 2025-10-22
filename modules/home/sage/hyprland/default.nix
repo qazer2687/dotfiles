@@ -93,7 +93,6 @@ in {
           # Mouse/Pointer
           follow_mouse = 0;
           mouse_refocus = false;
-          middle_button_emulation = false;
 
           # Keyboard
           kb_layout = "gb";
