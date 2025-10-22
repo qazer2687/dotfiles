@@ -94,6 +94,7 @@ in {
             format = "NET: {essid}";
             format-alt = "{essid} - {ifname} - {ipaddr}";
             format-disconnected = "NET: OFFLINE";
+            format-wired = "NET: WIRED";
             interval = 10;
           };
 
