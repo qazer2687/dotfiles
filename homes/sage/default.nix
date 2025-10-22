@@ -19,7 +19,7 @@
     killall
 
     lunar-client
-    lutris
+    bottles
   ];
 
   modules = {
