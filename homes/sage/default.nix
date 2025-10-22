@@ -20,6 +20,7 @@
 
     lunar-client
     bottles
+    lutris
   ];
 
   modules = {
