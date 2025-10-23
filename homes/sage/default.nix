@@ -21,6 +21,11 @@
     lunar-client
     bottles
     lutris
+
+    # Wine
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
+    winetricks
   ];
 
   modules = {
