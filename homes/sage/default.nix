@@ -24,7 +24,7 @@
 
     # Wine
     wineWowPackages.stable
-    wineWowPackages.waylandFull
+    #wineWowPackages.waylandFull
     winetricks
   ];
 
