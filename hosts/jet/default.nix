@@ -18,7 +18,8 @@
 
   hardware = {
     asahi = {
-      peripheralFirmwareDirectory = ../../hardware/jet/firmware;
+      #peripheralFirmwareDirectory = ../../hardware/jet/firmware;
+      extractPeripheralFirmware = false;
     };
   };
 
