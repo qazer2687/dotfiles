@@ -17,7 +17,6 @@
     tsukimi
     firefox
     nautilus
-    libreoffice
 
     jetbrains.idea-community
     jetbrains.clion
