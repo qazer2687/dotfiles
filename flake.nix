@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    asahi.url = "github:nix-community/nixos-apple-silicon/cb7b138ac86a2188b8a09566b7e9e58fc11a2166";
+    asahi.url = "github:nix-community/nixos-apple-silicon";
 
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
