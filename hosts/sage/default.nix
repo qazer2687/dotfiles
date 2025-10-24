@@ -121,6 +121,7 @@
     steam.enable = true;
     amdgpu.enable = true;
     flatpak.enable = true;
+    gamescope.enable = true;
 
     # AI
     ollama.enable = true;
