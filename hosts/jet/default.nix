@@ -26,6 +26,12 @@
     };
   };
 
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+ };
+
   services.udev = {
     extraRules = ''
       # Allow backlight control for non-root users.
