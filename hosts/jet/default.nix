@@ -104,7 +104,7 @@
 
   environment = {
     sessionVariables = {
-      #WLR_DRM_DEVICES = "/dev/dri/card0";
+      WLR_DRM_DEVICES = "/dev/dri/card1 /dev/dri/card2";
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
