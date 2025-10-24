@@ -18,6 +18,9 @@
 
   hardware = {
     asahi = {
+      enable = true;
+      setupAsahiSound = true;
+      # use --impure
       #peripheralFirmwareDirectory = ../../hardware/jet/firmware;
       extractPeripheralFirmware = true;
     };
