@@ -11,6 +11,7 @@
     boot.loader.systemd-boot.enable = true;
     # Pressing ESC on boot will bring up the bootloader menu.
     boot.loader.timeout = 0;
+    boot.initrd.systemd.enable = true;
     # Hide cursor.
     environment.etc = {
       "issue" = {

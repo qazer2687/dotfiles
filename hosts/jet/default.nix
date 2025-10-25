@@ -20,17 +20,10 @@
     asahi = {
       enable = true;
       setupAsahiSound = true;
-      # use --impure
-      #peripheralFirmwareDirectory = ../../hardware/jet/firmware;
+      peripheralFirmwareDirectory = ../../hardware/jet/firmware;
       extractPeripheralFirmware = true;
     };
   };
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
- };
 
   services.udev = {
     extraRules = ''
@@ -52,9 +45,9 @@
       "apple_dcp.show_notch=1"
 
       # Default on asahi fedora.
-      "zswap.enabled=1"
-      "zswap.compressor=lz4"
-      "zswap.zpool=z3fold"
+      #"zswap.enabled=1"
+      #"zswap.compressor=lz4"
+      #"zswap.zpool=z3fold"
 
       # Quiet boot.
       "quiet"
@@ -73,7 +66,6 @@
     };
     consoleLogLevel = 3;
     initrd.verbose = false;
-    initrd.systemd.enable = true;
     kernel.sysctl = {
       "kernel.printk" = "0 0 0 0";
     };
@@ -120,11 +112,6 @@
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     };
-  };
-
-  services.openssh = {
-    enable = true;
-    settings.PasswordAuthentication = true;
   };
 
   modules = {
