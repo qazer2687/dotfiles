@@ -61,7 +61,7 @@
         group = "root";
       };
 
-      # Wifinity
+      # Trooli
       "NetworkManager/system-connections/trooli.nmconnection" = {
         content = ''
           [connection]
@@ -88,7 +88,7 @@
           addr-gen-mode=default
           method=auto
         '';
-        path = "/etc/NetworkManager/system-connections/wifinity.nmconnection";
+        path = "/etc/NetworkManager/system-connections/trooli.nmconnection";
         mode = "0600";
         owner = "root";
         group = "root";
