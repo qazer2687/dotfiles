@@ -12,8 +12,9 @@
         (map (key: "${network}/${key}") keys)
         (_name: {inherit sopsFile;});
     in
-      (mkNetworkSecrets "wifinity" ["id" "ssid" "psk"] ../../../../secrets/networks/wifinity.yaml)
-      // (mkNetworkSecrets "eduroam" ["id" "ssid" "identity" "anonymous-identity" "phase2-password"] ../../../../secrets/networks/eduroam.yaml);
+      (mkNetworkSecrets "eduroam" ["id" "ssid" "identity" "anonymous-identity" "phase2-password"] ../../../../secrets/networks/eduroam.yaml)
+      // (mkNetworkSecrets "wifinity" ["id" "ssid" "psk"] ../../../../secrets/networks/wifinity.yaml)
+      // (mkNetworkSecrets "trooli" ["id" "ssid" "psk"] ../../../../secrets/networks/trooli.yaml);
 
     networking.networkmanager = {
       enable = true;
@@ -46,6 +47,39 @@
           auth-alg=open
           key-mgmt=wpa-psk
           psk=${config.sops.placeholder."wifinity/psk"}
+
+          [ipv4]
+          method=auto
+
+          [ipv6]
+          addr-gen-mode=default
+          method=auto
+        '';
+        path = "/etc/NetworkManager/system-connections/wifinity.nmconnection";
+        mode = "0600";
+        owner = "root";
+        group = "root";
+      };
+
+      # Wifinity
+      "NetworkManager/system-connections/trooli.nmconnection" = {
+        content = ''
+          [connection]
+          id=${config.sops.placeholder."trooli/id"}
+          type=wifi
+          autoconnect=true
+          # Connect to this network when found even if already on another network.
+          autoconnect-priority=99
+
+          [wifi]
+          mode=infrastructure
+          ssid=${config.sops.placeholder."trooli/ssid"}
+          powersave=0
+
+          [wifi-security]
+          auth-alg=open
+          key-mgmt=wpa-psk
+          psk=${config.sops.placeholder."trooli/psk"}
 
           [ipv4]
           method=auto
