@@ -6,5 +6,5 @@ pkgs: {
   arnis = pkgs.callPackage ./arnis {};
   pragmatapro = pkgs.callPackage ./pragmatapro {};
   TX02 = pkgs.callPackage ./TX02 {};
-  vicinae = pkgs.callPackage ./vicinae {};
+  #vicinae = pkgs.callPackage ./vicinae {};
 }

@@ -18,8 +18,6 @@
     firefox
     nautilus
 
-    vicinae
-
     jetbrains.idea-community
     jetbrains.clion
   ];
@@ -48,6 +46,7 @@
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
+    vicinae.enable = true;
 
     # Applications
     firefox.enable = true;
