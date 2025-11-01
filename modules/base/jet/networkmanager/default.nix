@@ -55,7 +55,6 @@
       };
 
       # Trooli
-      /*
       "NetworkManager/system-connections/trooli.nmconnection" = {
         content = ''
           [connection]
@@ -80,7 +79,6 @@
         owner = "root";
         group = "root";
       };
-      */
 
       # Eduroam
       "NetworkManager/system-connections/eduroam.nmconnection" = {
