@@ -1,143 +1,142 @@
 {
-  lib,
   stdenv,
   fetchFromGitHub,
   cmake,
-  ninja,
-  nodejs,
-  qt6,
-  qt6Packages,
+  pkg-config,
   kdePackages,
+  rapidfuzz-cpp,
   protobuf,
+  grpc-tools,
+  nodejs,
+  minizip-ng,
   cmark-gfm,
   libqalculate,
+  ninja,
+  lib,
+  fetchNpmDeps,
+  protoc-gen-js,
+  rsync,
+  which,
+  autoPatchelfHook,
+  writeShellScriptBin,
   minizip,
-  rapidfuzz-cpp,
+  qt6,
+  breakpointHook,
+  typescript,
+  wayland,
 }:
-stdenv.mkDerivation rec {
-  pname = "vicinae";
-  version = "0.16.0";
-
+let
   src = fetchFromGitHub {
     owner = "vicinaehq";
     repo = "vicinae";
-    rev = "v${version}";
-    hash = "sha256-kZAef+/eQWHKiFvYw8fNxAFRgpX8Ms/+G0JFg5qP1sQ=";
+    rev = "v0.8.1";
+    hash = "sha256-HlNorGRnYr+dmEQkn0AAOyhoma+0X3m6S9Jev7MwvSU=";
   };
 
-  nativeBuildInputs = [
-    cmake
-    ninja
-    nodejs
-    qt6.wrapQtAppsHook
-  ];
-
-  buildInputs = [
-    qt6.qtbase
-    qt6.qtsvg
-    qt6.qtwayland
-    kdePackages.layer-shell-qt
-    protobuf
-    cmark-gfm
-    libqalculate
-    minizip
-    qt6Packages.qtkeychain
-    rapidfuzz-cpp
-  ];
-
-  preConfigure = ''
-    export HOME=$TMPDIR
-  '';
-
-  postPatch = ''
-    # Create all required dummy files first
-    mkdir -p typescript/api/dist/dist/{components,hooks,context,jsx}
-    mkdir -p typescript/api/dist/{components,hooks,context,bin,lib}
-    mkdir -p vicinae/assets typescript/extension-manager/dist
-
-    # Create main API files
-    for file in ai alert bus cache clipboard color controls environment hooks icon image index keyboard local-storage oauth preference toast utils; do
-      echo "export {};" > typescript/api/dist/$file.js
-      echo "export {};" > typescript/api/dist/dist/$file.d.js
-    done
-
-    # Create component files
-    for file in action-pannel actions detail empty-view form index list metadata tag; do
-      echo "export {};" > typescript/api/dist/dist/components/$file.d.js
-    done
-    echo "export {};" > typescript/api/dist/components/index.js
-
-    # Create hook files
-    for file in index use-applications use-imperative-form-handle use-navigation; do
-      echo "export {};" > typescript/api/dist/dist/hooks/$file.d.js
-      echo "export {};" > typescript/api/dist/hooks/$file.js
-    done
-
-    # Create context files
-    for file in index navigation-context navigation-provider; do
-      echo "export {};" > typescript/api/dist/dist/context/$file.d.js
-      echo "export {};" > typescript/api/dist/context/$file.js
-    done
-
-    # Create bin files
-    for file in build develop main utils; do
-      echo "#!/usr/bin/env node" > typescript/api/dist/bin/$file.js
-      chmod +x typescript/api/dist/bin/$file.js
-    done
-
-    # Create other required files
-    echo "export {};" > typescript/api/dist/dist/jsx/jsx-runtime.d.js
-    echo "export {};" > typescript/api/dist/lib/result.js
-    echo "export {};" > typescript/api/dist/bus.d.js
-    echo "export {};" > typescript/api/dist/index.d.js
-    echo "export {};" > typescript/api/dist/hooks/index.d.js
-    echo "export {};" > typescript/api/dist/hooks/use-applications.d.js
-    echo "export {};" > typescript/api/dist/hooks/use-navigation.d.js
-    echo "export {};" > typescript/api/dist/context/index.d.js
-
-    # Create node_modules directories
-    mkdir -p typescript/api/node_modules
-    mkdir -p typescript/extension-manager/node_modules
-
-    # Create extension runtime
-    echo "// Extension runtime placeholder" > vicinae/assets/extension-runtime.js
-    echo "// Extension manager dist" > typescript/extension-manager/dist/runtime.js
-
-    # Now completely replace the CMakeLists.txt files to skip npm
-    cat > typescript/api/CMakeLists.txt << 'EOF'
-# Dummy CMakeLists.txt - skip npm builds
-add_custom_target(api-node-modules ALL
-  COMMAND ${CMAKE_COMMAND} -E echo "Skipping API npm install (Nix)"
-)
-add_custom_target(build-api ALL
-  DEPENDS api-node-modules
-  COMMAND ${CMAKE_COMMAND} -E echo "Skipping API build (Nix)"
-)
-EOF
-
-    cat > typescript/extension-manager/CMakeLists.txt << 'EOF'
-# Dummy CMakeLists.txt - skip npm builds
-add_custom_target(extension-manager-node-modules ALL
-  COMMAND ${CMAKE_COMMAND} -E echo "Skipping extension-manager npm install (Nix)"
-)
-add_custom_target(build-extension-manager ALL
-  DEPENDS extension-manager-node-modules
-  COMMAND ${CMAKE_COMMAND} -E echo "Skipping extension-manager build (Nix)"
-)
-EOF
-  '';
-
-  cmakeFlags = [
-    "-G Ninja"
-    "-DBUILD_TESTING=OFF"
-  ];
-
-  meta = with lib; {
-    description = "A high-performance, native launcher for Linux — built with C++ and Qt";
-    homepage = "https://vicinae.com";
-    license = licenses.gpl3Only;
-    maintainers = with maintainers; [];
-    platforms = platforms.linux;
-    mainProgram = "vicinae";
+  # Prepare node_modules for api folder
+  apiDeps = fetchNpmDeps {
+    src = src + /api;
+    hash = "sha256-7rsaGjs1wMe0zx+/BD1Mx7DQj3IAEZQvdS768jVLl3E=";
   };
+  ts-protoc-gen-wrapper = writeShellScriptBin "protoc-gen-ts_proto" ''
+    exec node /build/source/vicinae-upstream/api/node_modules/.bin/protoc-gen-ts_proto
+  '';
+
+  # Prepare node_modules for extension-manager folder
+  extensionManagerDeps = fetchNpmDeps {
+    src = src + /extension-manager;
+    hash = "sha256-7kScWi1ySUBTDsGQqgpt2wYmujP9Mlwq3x2FKOlGwgo=";
+  };
+
+in
+  stdenv.mkDerivation rec {
+    pname = "vicinae";
+    version = src.rev;
+
+    inherit src;
+
+    cmakeFlags = [
+        "-DVICINAE_GIT_TAG=${src.rev}"
+        "-DCMAKE_INSTALL_PREFIX=${placeholder "out"}"
+        "-DCMAKE_INSTALL_DATAROOTDIR=share"
+        "-DCMAKE_INSTALL_BINDIR=bin"
+        "-DCMAKE_INSTALL_LIBDIR=lib"
+    ];
+
+    nativeBuildInputs = [
+      ts-protoc-gen-wrapper
+      extensionManagerDeps
+      autoPatchelfHook
+      cmake
+      ninja
+      nodejs
+      pkg-config
+      qt6.wrapQtAppsHook
+      rapidfuzz-cpp
+      protoc-gen-js
+      protobuf
+      grpc-tools
+      which
+      rsync
+      breakpointHook
+      typescript
+    ];
+
+    buildInputs = [
+      qt6.qtbase
+      qt6.qtsvg
+      qt6.qttools
+      qt6.qtwayland
+      qt6.qtdeclarative
+      qt6.qt5compat
+      wayland
+      kdePackages.qtkeychain
+      kdePackages.layer-shell-qt
+      minizip
+      grpc-tools
+      protobuf
+      nodejs
+      minizip-ng
+      cmark-gfm
+      libqalculate
+    ];
+
+    configurePhase = ''
+      cmake -G Ninja -B build $cmakeFlags
+    '';
+
+    buildPhase = ''
+      export npm_config_cache=${apiDeps}
+      cd /build/source/api
+      npm i --ignore-scripts
+      patchShebangs /build/source/api
+      npm rebuild --foreground-scripts
+      export npm_config_cache=${extensionManagerDeps}
+      cd /build/source/extension-manager
+      npm i --ignore-scripts
+      patchShebangs /build/source/extension-manager
+      npm rebuild --foreground-scripts
+      cd /build/source
+      substituteInPlace cmake/ExtensionApi.cmake cmake/ExtensionManager.cmake --replace "COMMAND npm install" ""
+      cmake --build build
+      cd /build/source
+    '';
+
+    dontWrapQtApps = true;
+    preFixup = ''
+        wrapQtApp "$out/bin/vicinae" --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath buildInputs}
+    '';
+    postFixup = ''
+        wrapProgram $out/bin/vicinae \
+        --prefix PATH : ${lib.makeBinPath [
+          nodejs
+          qt6.qtwayland
+          wayland
+          (placeholder "out")
+        ]}
+    '';
+
+    installPhase = ''
+      cmake --install build
+    '';
 }
