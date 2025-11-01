@@ -19,7 +19,8 @@
     networking.networkmanager = {
       enable = true;
       wifi = {
-        powersave = true;
+        # Potential fix for wifi broken after suspend.
+        powersave = false;
         # IWD backend doesn't work directly with WPA3-Enterprise.
         backend = "wpa_supplicant";
       };
