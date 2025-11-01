@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.modules.networkmanager.enable = lib.mkEnableOption "";
@@ -15,30 +16,59 @@
       // (mkNetworkSecrets "wifinity" ["id" "ssid" "psk"] ../../../../secrets/networks/wifinity.yaml)
       // (mkNetworkSecrets "trooli" ["id" "ssid" "psk"] ../../../../secrets/networks/trooli.yaml);
 
-    # Disable P2P for Broadcom WiFi
+    # Disable problematic features in Broadcom driver
     boot.extraModprobeConfig = ''
-      options brcmfmac p2pon=0 roamoff=1
+      options brcmfmac roamoff=1 feature_disable=0x82000
+    '';
+
+    # Kill P2P interfaces immediately if created
+    services.udev.extraRules = ''
+      ACTION=="add", SUBSYSTEM=="net", KERNEL=="p2p-dev-*", RUN+="${pkgs.iproute2}/bin/ip link delete $name"
     '';
 
     networking.networkmanager = {
       enable = true;
       wifi = {
-        # IWD backend doesn't work directly with WPA3-Enterprise.
         backend = "wpa_supplicant";
-        # Disable MAC randomization which can cause issues
         scanRandMacAddress = false;
         powersave = false;
       };
-      # Disable P2P device creation using structured settings
       settings = {
         device = {
-          "match-device" = "interface-name:p2p-dev-*";
-          managed = false;
+          "wifi.scan-rand-mac-address" = false;
         };
         connection = {
           "wifi.powersave" = 2;
         };
+        main = {
+          # Disable P2P globally in NetworkManager
+          "no-auto-default" = "*";
+        };
       };
+      # Append to wpa_supplicant configuration
+      dispatcherScripts = [{
+        source = pkgs.writeText "disable-p2p" ''
+          #!/bin/sh
+          # Disable P2P in wpa_supplicant
+          ${pkgs.networkmanager}/bin/nmcli device set wlp1s0f0 managed yes
+        '';
+        type = "basic";
+      }];
+    };
+
+    # Override wpa_supplicant to disable P2P
+    systemd.services.wpa_supplicant.environment = {
+      WPA_SUP_OPTIONS = "-Dnl80211 -c/etc/wpa_supplicant/wpa_supplicant.conf -p/run/wpa_supplicant";
+    };
+
+    environment.etc."wpa_supplicant/wpa_supplicant.conf" = {
+      text = ''
+        ctrl_interface=/run/wpa_supplicant
+        ctrl_interface_group=wheel
+        update_config=1
+        p2p_disabled=1
+      '';
+      mode = "0600";
     };
 
     users.users.alex.extraGroups = ["networkmanager"];
@@ -106,10 +136,6 @@
           ssid=${config.sops.placeholder."eduroam/ssid"}
           [wifi-security]
           key-mgmt=wpa-eap
-          # Fast BSS Transition
-          #[802-11r]
-          #ft-over-ds=true
-          #ft-over-air=true
           [802-1x]
           eap=peap
           identity=${config.sops.placeholder."eduroam/identity"}
