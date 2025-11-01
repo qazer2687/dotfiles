@@ -50,16 +50,7 @@ stdenv.mkDerivation rec {
   '';
 
   postPatch = ''
-    # Patch CMakeLists.txt to skip npm-related targets
-    substituteInPlace typescript/api/CMakeLists.txt \
-      --replace-fail "add_custom_command" "# add_custom_command" \
-      --replace-fail "add_custom_target" "# add_custom_target" || true
-
-    substituteInPlace typescript/extension-manager/CMakeLists.txt \
-      --replace-fail "add_custom_command" "# add_custom_command" \
-      --replace-fail "add_custom_target" "# add_custom_target" || true
-
-    # Create all required dummy files that the build expects
+    # Create all required dummy files first
     mkdir -p typescript/api/dist/dist/{components,hooks,context,jsx}
     mkdir -p typescript/api/dist/{components,hooks,context,bin,lib}
     mkdir -p vicinae/assets typescript/extension-manager/dist
@@ -104,15 +95,36 @@ stdenv.mkDerivation rec {
     echo "export {};" > typescript/api/dist/hooks/use-navigation.d.js
     echo "export {};" > typescript/api/dist/context/index.d.js
 
-    # Create node_modules marker to skip npm install
+    # Create node_modules directories
     mkdir -p typescript/api/node_modules
     mkdir -p typescript/extension-manager/node_modules
-    touch typescript/api/node_modules/.keep
-    touch typescript/extension-manager/node_modules/.keep
 
     # Create extension runtime
     echo "// Extension runtime placeholder" > vicinae/assets/extension-runtime.js
     echo "// Extension manager dist" > typescript/extension-manager/dist/runtime.js
+
+    # Now completely replace the CMakeLists.txt files to skip npm
+    cat > typescript/api/CMakeLists.txt << 'EOF'
+# Dummy CMakeLists.txt - skip npm builds
+add_custom_target(api-node-modules ALL
+  COMMAND ${CMAKE_COMMAND} -E echo "Skipping API npm install (Nix)"
+)
+add_custom_target(build-api ALL
+  DEPENDS api-node-modules
+  COMMAND ${CMAKE_COMMAND} -E echo "Skipping API build (Nix)"
+)
+EOF
+
+    cat > typescript/extension-manager/CMakeLists.txt << 'EOF'
+# Dummy CMakeLists.txt - skip npm builds
+add_custom_target(extension-manager-node-modules ALL
+  COMMAND ${CMAKE_COMMAND} -E echo "Skipping extension-manager npm install (Nix)"
+)
+add_custom_target(build-extension-manager ALL
+  DEPENDS extension-manager-node-modules
+  COMMAND ${CMAKE_COMMAND} -E echo "Skipping extension-manager build (Nix)"
+)
+EOF
   '';
 
   cmakeFlags = [
