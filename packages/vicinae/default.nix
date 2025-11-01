@@ -49,73 +49,70 @@ stdenv.mkDerivation rec {
     export HOME=$TMPDIR
   '';
 
-  patchPhase = ''
-    runHook prePatch
+  postPatch = ''
+    # Patch CMakeLists.txt to skip npm-related targets
+    substituteInPlace typescript/api/CMakeLists.txt \
+      --replace-fail "add_custom_command" "# add_custom_command" \
+      --replace-fail "add_custom_target" "# add_custom_target" || true
 
-    # Replace the entire ExtensionApi.cmake to skip npm builds
-    cat > cmake/ExtensionApi.cmake << 'EOF'
-    set(EXT_API_SRC_DIR "''${CMAKE_SOURCE_DIR}/api")
-    set(EXT_API_OUT_DIR "''${CMAKE_SOURCE_DIR}/api/dist")
-    set(API_DIST_DIR "''${CMAKE_SOURCE_DIR}/api/dist")
-    add_custom_target(build-api ALL COMMENT "Skipping API build (Nix)")
-    EOF
-
-    if [ -f cmake/ExtensionManager.cmake ]; then
-      cat > cmake/ExtensionManager.cmake << 'EOF'
-    set(EXT_MANAGER_DIST "''${CMAKE_SOURCE_DIR}/vicinae/assets/extension-runtime.js")
-    add_custom_target(build-extension-manager ALL COMMENT "Skipping Extension Manager build (Nix)")
-    EOF
-    fi
+    substituteInPlace typescript/extension-manager/CMakeLists.txt \
+      --replace-fail "add_custom_command" "# add_custom_command" \
+      --replace-fail "add_custom_target" "# add_custom_target" || true
 
     # Create all required dummy files that the build expects
-    mkdir -p api/dist/dist/components api/dist/dist/hooks api/dist/dist/context api/dist/dist/jsx
-    mkdir -p api/dist/components api/dist/hooks api/dist/context api/dist/bin api/dist/lib
-    mkdir -p vicinae/assets extension-manager/dist
+    mkdir -p typescript/api/dist/dist/{components,hooks,context,jsx}
+    mkdir -p typescript/api/dist/{components,hooks,context,bin,lib}
+    mkdir -p vicinae/assets typescript/extension-manager/dist
 
     # Create main API files
     for file in ai alert bus cache clipboard color controls environment hooks icon image index keyboard local-storage oauth preference toast utils; do
-      echo "export {};" > api/dist/$file.js
-      echo "export {};" > api/dist/dist/$file.d.js
+      echo "export {};" > typescript/api/dist/$file.js
+      echo "export {};" > typescript/api/dist/dist/$file.d.js
     done
 
     # Create component files
     for file in action-pannel actions detail empty-view form index list metadata tag; do
-      echo "export {};" > api/dist/dist/components/$file.d.js
+      echo "export {};" > typescript/api/dist/dist/components/$file.d.js
     done
-    echo "export {};" > api/dist/components/index.js
+    echo "export {};" > typescript/api/dist/components/index.js
 
     # Create hook files
     for file in index use-applications use-imperative-form-handle use-navigation; do
-      echo "export {};" > api/dist/dist/hooks/$file.d.js
-      echo "export {};" > api/dist/hooks/$file.js
+      echo "export {};" > typescript/api/dist/dist/hooks/$file.d.js
+      echo "export {};" > typescript/api/dist/hooks/$file.js
     done
 
     # Create context files
     for file in index navigation-context navigation-provider; do
-      echo "export {};" > api/dist/dist/context/$file.d.js
-      echo "export {};" > api/dist/context/$file.js
+      echo "export {};" > typescript/api/dist/dist/context/$file.d.js
+      echo "export {};" > typescript/api/dist/context/$file.js
     done
 
     # Create bin files
     for file in build develop main utils; do
-      echo "#!/usr/bin/env node" > api/dist/bin/$file.js
+      echo "#!/usr/bin/env node" > typescript/api/dist/bin/$file.js
+      chmod +x typescript/api/dist/bin/$file.js
     done
 
     # Create other required files
-    echo "export {};" > api/dist/dist/jsx/jsx-runtime.d.js
-    echo "export {};" > api/dist/lib/result.js
-    echo "export {};" > api/dist/bus.d.js
-    echo "export {};" > api/dist/index.d.js
-    echo "export {};" > api/dist/hooks/index.d.js
-    echo "export {};" > api/dist/hooks/use-applications.d.js
-    echo "export {};" > api/dist/hooks/use-navigation.d.js
-    echo "export {};" > api/dist/context/index.d.js
+    echo "export {};" > typescript/api/dist/dist/jsx/jsx-runtime.d.js
+    echo "export {};" > typescript/api/dist/lib/result.js
+    echo "export {};" > typescript/api/dist/bus.d.js
+    echo "export {};" > typescript/api/dist/index.d.js
+    echo "export {};" > typescript/api/dist/hooks/index.d.js
+    echo "export {};" > typescript/api/dist/hooks/use-applications.d.js
+    echo "export {};" > typescript/api/dist/hooks/use-navigation.d.js
+    echo "export {};" > typescript/api/dist/context/index.d.js
+
+    # Create node_modules marker to skip npm install
+    mkdir -p typescript/api/node_modules
+    mkdir -p typescript/extension-manager/node_modules
+    touch typescript/api/node_modules/.keep
+    touch typescript/extension-manager/node_modules/.keep
 
     # Create extension runtime
     echo "// Extension runtime placeholder" > vicinae/assets/extension-runtime.js
-    echo "// Extension manager dist" > extension-manager/dist/runtime.js
-
-    runHook postPatch
+    echo "// Extension manager dist" > typescript/extension-manager/dist/runtime.js
   '';
 
   cmakeFlags = [
