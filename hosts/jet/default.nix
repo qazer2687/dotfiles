@@ -44,32 +44,26 @@
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
 
-     # "brcmfmac.feature_disable=0x82000"
-
       # Default on asahi fedora.
       #"zswap.enabled=1"
       #"zswap.compressor=lz4"
       #"zswap.zpool=z3fold"
 
       # Quiet boot.
-      "quiet"
-      "splash"
-      "vt.global_cursor_default=0"
-      "systemd.show_status=false"
-      "udev.log_level=3"
+      #"quiet"
+      #"splash"
+      #"vt.global_cursor_default=0"
+      #"systemd.show_status=false"
+      #"udev.log_level=3"
     ];
     kernel.sysctl = {
-      # Required by intellij idea.
-      "kernel.perf_event_paranoid" = 1;
-      "kernel.kptr_restrict" = 0;
-
       # Default is 60 but too swappy for my liking.
       "vm.swappiness" = 100;
     };
     consoleLogLevel = 3;
     initrd.verbose = false;
     kernel.sysctl = {
-      "kernel.printk" = "0 0 0 0";
+      #"kernel.printk" = "0 0 0 0";
     };
   };
   
@@ -108,7 +102,7 @@
 
   environment = {
     sessionVariables = {
-      WLR_DRM_DEVICES = "/dev/dri/card1 /dev/dri/card2";
+      #WLR_DRM_DEVICES = "/dev/dri/card1 /dev/dri/card2";
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
