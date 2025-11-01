@@ -112,9 +112,9 @@
           key-mgmt=wpa-eap
           
           # Fast BSS Transition
-          [802-11r]
-          ft-over-ds=true
-          ft-over-air=true
+          #[802-11r]
+          #ft-over-ds=true
+          #ft-over-air=true
 
           [802-1x]
           eap=peap

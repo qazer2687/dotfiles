@@ -1,11 +1,6 @@
 {
   inputs = {
     
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    
-    
-    
-    
     # Unable to play videos on firefox with latest.
     nixpkgs.url = "github:NixOS/nixpkgs/8a6d5427d99ec71c64f0b93d45778c889005d9c2";
 
@@ -17,23 +12,23 @@
 
     asahi = {
       url = "github:nix-community/nixos-apple-silicon";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-    textfox.url = "github:adriankarlen/textfox";
+    #textfox.url = "github:adriankarlen/textfox";
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
       #inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #niri = {
+    #  url = "github:sodiboo/niri-flake";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     
     # Personal
     nix-base16.url = "github:qazer2687/nix-base16";
