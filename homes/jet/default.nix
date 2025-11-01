@@ -18,6 +18,8 @@
     firefox
     nautilus
 
+    vicinae
+
     jetbrains.idea-community
     jetbrains.clion
   ];
