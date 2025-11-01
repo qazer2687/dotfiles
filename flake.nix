@@ -25,10 +25,10 @@
       #inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #niri = {
-    #  url = "github:sodiboo/niri-flake";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     # Personal
     nix-base16.url = "github:qazer2687/nix-base16";
