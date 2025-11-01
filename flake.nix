@@ -1,14 +1,11 @@
 {
   inputs = {
     # Unable to play videos on firefox with latest.
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/8a6d5427d99ec71c64f0b93d45778c889005d9c2";
-      follows = "asahi";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/8a6d5427d99ec71c64f0b93d45778c889005d9c2";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     asahi.url = "github:nix-community/nixos-apple-silicon/b99bf9bf7445416fe55da09034fc4a6cd733805c";
@@ -27,7 +24,7 @@
 
     niri = {
       url = "github:sodiboo/niri-flake";
-      follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     
     # Personal
