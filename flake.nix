@@ -1,8 +1,10 @@
 {
   inputs = {
     # Unable to play videos on firefox with latest.
-    nixpkgs.url = "github:NixOS/nixpkgs/8a6d5427d99ec71c64f0b93d45778c889005d9c2";
-
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/8a6d5427d99ec71c64f0b93d45778c889005d9c2";
+      inputs.nixpkgs.follows = "asahi";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
