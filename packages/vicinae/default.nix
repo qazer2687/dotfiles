@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
     owner = "vicinaehq";
     repo = "vicinae";
     rev = "v${version}";
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    hash = "sha256-kZAef+/eQWHKiFvYw8fNxAFRgpX8Ms/+G0JFg5qP1sQ=";
   };
 
   nativeBuildInputs = [
@@ -54,27 +54,16 @@ stdenv.mkDerivation rec {
 
     # Replace the entire ExtensionApi.cmake to skip npm builds
     cat > cmake/ExtensionApi.cmake << 'EOF'
-    # Dummy ExtensionApi.cmake to skip npm builds
-    set(EXT_API_SRC_DIR "$\{CMAKE_SOURCE_DIR}/api")
-    set(EXT_API_OUT_DIR "$\{CMAKE_SOURCE_DIR}/api/dist")
-    set(API_DIST_DIR "$\{CMAKE_SOURCE_DIR}/api/dist")
-
-    # Create empty target
-    add_custom_target(build-api ALL
-      COMMENT "Skipping API build (Nix)"
-    )
+    set(EXT_API_SRC_DIR "''${CMAKE_SOURCE_DIR}/api")
+    set(EXT_API_OUT_DIR "''${CMAKE_SOURCE_DIR}/api/dist")
+    set(API_DIST_DIR "''${CMAKE_SOURCE_DIR}/api/dist")
+    add_custom_target(build-api ALL COMMENT "Skipping API build (Nix)")
     EOF
 
-    # Replace ExtensionManager.cmake if it exists
     if [ -f cmake/ExtensionManager.cmake ]; then
       cat > cmake/ExtensionManager.cmake << 'EOF'
-    # Dummy ExtensionManager.cmake to skip npm builds
-    set(EXT_MANAGER_DIST "$\{CMAKE_SOURCE_DIR}/vicinae/assets/extension-runtime.js")
-
-    # Create empty target
-    add_custom_target(build-extension-manager ALL
-      COMMENT "Skipping Extension Manager build (Nix)"
-    )
+    set(EXT_MANAGER_DIST "''${CMAKE_SOURCE_DIR}/vicinae/assets/extension-runtime.js")
+    add_custom_target(build-extension-manager ALL COMMENT "Skipping Extension Manager build (Nix)")
     EOF
     fi
 
@@ -135,7 +124,7 @@ stdenv.mkDerivation rec {
   ];
 
   meta = with lib; {
-    description = "A high-performance, native launcher for Linux — built with C++ and Qt (without npm components)";
+    description = "A high-performance, native launcher for Linux — built with C++ and Qt";
     homepage = "https://vicinae.com";
     license = licenses.gpl3Only;
     maintainers = with maintainers; [];
