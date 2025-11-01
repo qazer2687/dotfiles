@@ -44,7 +44,7 @@
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
 
-      "brcmfmac.feature_disable=0x82000"
+     # "brcmfmac.feature_disable=0x82000"
 
       # Default on asahi fedora.
       #"zswap.enabled=1"
