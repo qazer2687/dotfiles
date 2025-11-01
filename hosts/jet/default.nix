@@ -30,11 +30,6 @@
       # Allow backlight control for non-root users.
       ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
     '';
-    packages = [ 
-      # Required by PlatformIO.
-      pkgs.platformio-core
-      pkgs.openocd
-    ];
   };
 
   # Disable power button (short press) and sleep/suspend button.
@@ -130,6 +125,7 @@
     xdg.enable = true;
     networkmanager.enable = true;
     tailscale.enable = true;
+    platformio.enable = true;
   };
 
   # Did you read the comment?
