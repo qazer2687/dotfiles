@@ -10,16 +10,11 @@
   home.packages = with pkgs; [
     obsidian
     vlc
-    loupe
     gdu
     btop
     protonvpn-gui
-    tsukimi
     firefox
     nautilus
-
-    jetbrains.idea-community
-    jetbrains.clion
   ];
 
   modules = {
@@ -45,13 +40,13 @@
     hyprlock.enable = true;
     waybar.enable = true;
     mako.enable = true;
-    tofi.enable = true;
+    #tofi.enable = true;
     vicinae.enable = true;
 
     # Applications
     firefox.enable = true;
     vscode.enable = true;
-    zed.enable = true;
+    #zed.enable = true;
     vesktop.enable = true;
   };
 
