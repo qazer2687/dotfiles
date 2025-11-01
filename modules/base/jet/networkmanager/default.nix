@@ -29,15 +29,16 @@
         scanRandMacAddress = false;
         powersave = false;
       };
-      # Disable P2P device creation
-      extraConfig = ''
-        [device]
-        match-device=interface-name:p2p-dev-*
-        managed=false
-
-        [connection]
-        wifi.powersave=2
-      '';
+      # Disable P2P device creation using structured settings
+      settings = {
+        device = {
+          "match-device" = "interface-name:p2p-dev-*";
+          managed = false;
+        };
+        connection = {
+          "wifi.powersave" = 2;
+        };
+      };
     };
 
     users.users.alex.extraGroups = ["networkmanager"];
