@@ -60,7 +60,7 @@ in {
           inactive_opacity = 1;
 
           shadow = {
-            enabled = true;
+            enabled = false;
             range = 8;
             render_power = 3;
             ignore_window = true;
@@ -68,7 +68,7 @@ in {
           };
 
           blur = {
-            enabled = true;
+            enabled = false;
             size = 2;
             passes = 3;
             ignore_opacity = true;
