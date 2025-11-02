@@ -201,17 +201,19 @@ in {
           background: repeating-linear-gradient(
             to right,
             #C850D1 0px, #C850D1 1px,
-            #E165DB 1px, #E165DB 2px,
-            #E988E5 2px, #E988E5 3px
+            #E165DB 1px, #E165DB 3px,
+            #E988E5 3px, #E988E5 5px,
+            #E165DB 5px, #E165DB 6px
           );
           color: #000000;
         }
         #pulseaudio {
           background: repeating-linear-gradient(
             to right,
-            #0BB5B0 0px, #0BB5B0 1px,
-            #0FCFCA 1px, #0FCFCA 2px,
-            #52DDD9 2px, #52DDD9 3px
+            #0BB5B0 0px, #0BB5B0 2px,
+            #0FCFCA 2px, #0FCFCA 3px,
+            #52DDD9 3px, #52DDD9 5px,
+            #0FCFCA 5px, #0FCFCA 7px
           );
           color: #000000;
         }
@@ -219,17 +221,19 @@ in {
           background: repeating-linear-gradient(
             to right,
             #D9B13A 0px, #D9B13A 1px,
-            #F2C849 1px, #F2C849 2px,
-            #F5D570 2px, #F5D570 3px
+            #F2C849 1px, #F2C849 4px,
+            #F5D570 4px, #F5D570 6px,
+            #F2C849 6px, #F2C849 7px
           );
           color: #000000;
         }
         #battery {
           background: repeating-linear-gradient(
             to right,
-            #3FC438 0px, #3FC438 1px,
-            #51E04A 1px, #51E04A 2px,
-            #7AE671 2px, #7AE671 3px
+            #3FC438 0px, #3FC438 2px,
+            #51E04A 2px, #51E04A 4px,
+            #7AE671 4px, #7AE671 5px,
+            #51E04A 5px, #51E04A 7px
           );
           color: #000000;
         }
