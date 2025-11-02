@@ -193,7 +193,7 @@ in {
         }
 
         #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.01);
           color: #000000;
           padding: 0 10px;
           margin: 2px 0 0 0;

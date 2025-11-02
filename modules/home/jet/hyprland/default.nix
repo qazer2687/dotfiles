@@ -150,7 +150,7 @@ in {
           "noanim, (?i).*tofi.*"
 
           "blur, (?i).*waybar.*"
-          "ignorealpha 0.05, (?i).*waybar.*" 
+          "ignorealpha 0.001, (?i).*waybar.*" 
 
           "blur, (?i).*vicinae.*"
         ];
