@@ -198,30 +198,26 @@ in {
 
         /* Extra Silly Colours */
         #network {
-          background: #E165DB;
+          background: #3b2b96;
           color: #000000;
-          border: 1px solid #0FCFCA;
           text-shadow: 1px 1px 0 #0FCFCA, -1px -1px 0 #F2C849;
         }
 
         #pulseaudio {
-          background: #51E04A;
+          background: #972293;
           color: #000000;
-          border: 1px solid #E165DB;
           text-shadow: 1px 0 0 #E165DB, -1px 0 0 #0FCFCA;
         }
 
         #custom-hyprsunset {
-          background: #F2C849;
+          background: #c5475e;
           color: #000000;
-          border: 1px solid #51E04A;
           text-shadow: 2px 0 0 #51E04A, -1px 1px 0 #E165DB;
         }
 
         #battery {
-          background: #0FCFCA;
+          background: #c41f57;
           color: #000000;
-          border: 1px solid #F2C849;
           text-shadow: 1px -1px 0 #F2C849, -1px 1px 0 #E165DB;
         }
 
