@@ -19,9 +19,9 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "hyprland/workspaces" "custom/pingServer"];
+          modules-left = ["clock" "hyprland/workspaces" "custom/pingServer" "tray"];
           modules-center = [];
-          modules-right = ["tray" "network" "pulseaudio" "custom/hyprsunset" "battery"];
+          modules-right = ["network" "pulseaudio" "custom/hyprsunset" "battery"];
 
           pulseaudio = {
             format = "VOL: {volume}%";
