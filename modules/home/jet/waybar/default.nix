@@ -198,19 +198,19 @@ in {
 
         /* Extra Silly Colours */
         #network {
-          background: linear-gradient(to right, #E165DB 0%, #C878E0 100%);
+          background: linear-gradient(to right, #E165DB, #0FCFCA);
           color: #000000;
         }
         #pulseaudio {
-          background: linear-gradient(to right, #C878E0 0%, #0FCFCA 100%);
+          background: linear-gradient(to right, #0FCFCA, #F2C849);
           color: #000000;
         }
         #custom-hyprsunset {
-          background: linear-gradient(to right, #0FCFCA 0%, #F2C849 100%);
+          background: linear-gradient(to right, #F2C849, #51E04A);
           color: #000000;
         }
         #battery {
-          background: linear-gradient(to right, #F2C849 0%, #51E04A 100%);
+          background: linear-gradient(to right, #51E04A, #E165DB);
           color: #000000;
         }
 
