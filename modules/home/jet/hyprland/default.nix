@@ -46,22 +46,37 @@ in {
         };
 
         master = {
-          mfact = 0.60;
+          mfact = 0.50;
           orientation = "left";
           inherit_fullscreen = true;
         };
 
         decoration = {
           # Rounding
-          rounding = 0;
+          rounding = 6;
 
           # Opacity
           active_opacity = 1;
           inactive_opacity = 1;
 
-          # Blur
-          blur.enabled = false;
-          shadow.enabled = false;
+          blur = {
+            enabled = true;
+            size = 8;
+            passes = 2;
+            ignore_opacity = true;
+            new_optimizations = true;
+          };
+
+          shadow = {
+            enabled = true;
+            range = 15;
+            render_power = 3;
+            sharp = false;
+            ignore_window = true;
+            color = "0,0,0,200";
+            offset = "0,5";
+            scale = 1.0;
+          };
         };
 
         animations = {

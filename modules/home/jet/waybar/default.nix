@@ -123,7 +123,7 @@ in {
         }
 
         window#waybar {
-          background-color: rgba(30, 30, 46, 0.8);
+          background-color: rgba(30, 30, 46, 0.9);
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -182,8 +182,14 @@ in {
         /* EDGE PADDING */
 
         #workspaces {
-          margin-left: 16px;
           margin-right: 16px;
+        }
+        
+        #clock {
+          margin-left: 16px;
+        }
+
+          margin-left: 16px;
         }
 
         #tray {
