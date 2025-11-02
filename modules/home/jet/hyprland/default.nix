@@ -146,7 +146,8 @@ in {
         ];
         layerrule = [
           # Disable tofi animation.
-          "noanim,(?i).*tofi.*"
+          "noanim, (?i).*tofi.*"
+          "blur, ^(.waybar-wrapped)$"
         ];
 
         bind = [
