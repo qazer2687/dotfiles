@@ -26,7 +26,7 @@ in {
 
           
           pulseaudio = {
-            format = "{icon}";
+            format = "{icon} | ";
             tooltip = false;
             format-muted = "";
             format-icons = {
@@ -97,7 +97,7 @@ in {
 
           network = {
             tooltip = false;
-            format = "{icon}";
+            format = "{icon} | ";
             format-alt = "{icon}";
             format-disconnected = "󰖪";
             format-icons = {
