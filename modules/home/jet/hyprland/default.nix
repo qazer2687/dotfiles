@@ -35,7 +35,7 @@ in {
 
           gaps_in = 2;
           gaps_out = 4;
-          border_size = 0.5;
+          border_size = 1;
 
           # base05 = text, base0E = mauve
           "col.active_border" = "rgba(${scheme.base0E}ff)";

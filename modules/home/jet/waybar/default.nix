@@ -189,9 +189,6 @@ in {
           margin-left: 16px;
         }
 
-          margin-left: 16px;
-        }
-
         #tray {
           margin-right: 4px;
         }
