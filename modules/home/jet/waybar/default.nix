@@ -203,10 +203,13 @@ in {
         #workspaces button {
           background-color: #000000;
           color: #ffffff;
+          border-radius: 4px;
+          
         }
         #workspaces button.active {
           background-color: #00ffe5;
           color: #000000;
+          border-radius: 4px;
         }
         #custom-pingServer {
           background-color: #dd00ff;
