@@ -69,7 +69,7 @@ in {
 
           # 2/3
           blur = {
-            enabled = false;
+            enabled = true;
             size = 6;
             passes = 4;
             ignore_opacity = false;
