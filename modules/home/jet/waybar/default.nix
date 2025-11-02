@@ -197,41 +197,40 @@ in {
 
         /* Extra Silly Colours */
         #clock {
-          background-color: #ff0080;
+          background-color: #AF59C0;
           color: #000000;
         }
         #workspaces button {
           background-color: #000000;
           color: #ffffff;
           border-radius: 4px;
-          
         }
         #workspaces button.active {
-          background-color: #00ffe5;
+          background-color: #2F9CB8;
           color: #000000;
           border-radius: 4px;
         }
         #custom-pingServer {
-          background-color: #dd00ff;
+          background-color: #AC8FB4;
           color: #000000;
         }
         #custom-pingServer up, #custom-pingServer down {
           color: #000000;
         }
         #network {
-          background-color: #88ff00;
+          background-color: #4562A9;
           color: #000000;
         }
         #pulseaudio {
-          background-color: #ff006f;
+          background-color: #2F9CB8;
           color: #000000;
         }
         #custom-hyprsunset {
-          background-color: #ff5500;
+          background-color: #4F6856;
           color: #000000;
         }
         #battery {
-          background-color: #0099ff;
+          background-color: #414A77;
           color: #000000;
         }
 
