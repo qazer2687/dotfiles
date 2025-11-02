@@ -198,24 +198,35 @@ in {
         /* Extra Silly Colours */
         #clock {
           background-color: #ff0054;
+          color: #000000;
         }
         #workspaces button {
+          background-color: #000000;
+          color: #ffffff;
+        }
+        #workspaces button.active {
           background-color: #ff6b35;
+          color: #000000;
         }
         #custom-pingServer {
           background-color: #ff1493;
+          color: #000000;
         }
         #network {
           background-color: #7b2cbf;
+          color: #000000;
         }
         #pulseaudio {
           background-color: #00d9ff;
+          color: #000000;
         }
-        #temperature {
+        #custom-hyprsunset {
           background-color: #00ff9f;
+          color: #000000;
         }
         #battery {
           background-color: #39ff14;
+          color: #000000;
         }
 
       '';
