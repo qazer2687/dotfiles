@@ -197,26 +197,18 @@ in {
 
 
         /* Extra Silly Colours */
-        #network {
-          background: rgba(183, 95, 242, 0.9);
-          color: #000000;
-        }
-
-        #pulseaudio {
-          background: rgba(94, 215, 242, 0.9);
-          color: #000000;
-        }
-
-        #custom-hyprsunset {
-          background: rgba(242, 200, 73, 0.9);
-          color: #000000;
-        }
-
+        #network,
+        #pulseaudio,
+        #custom-hyprsunset,
         #battery {
-          background: rgba(242, 137, 114, 0.9);
+          background: linear-gradient(90deg, 
+            rgba(183, 95, 242, 0.9),
+            rgba(94, 215, 242, 0.9),
+            rgba(242, 200, 73, 0.9),
+            rgba(242, 137, 114, 0.9)
+          );
           color: #000000;
         }
-
       '';
     };
   };
