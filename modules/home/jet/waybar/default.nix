@@ -224,7 +224,7 @@ in {
         #battery {
           background: linear-gradient(90deg, 
             #f28972,
-            #f28972
+            #ff6b9d
           );
           color: #000000;
         }
