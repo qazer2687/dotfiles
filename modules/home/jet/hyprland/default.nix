@@ -57,7 +57,7 @@ in {
 
           # Opacity
           active_opacity = 1;
-          inactive_opacity = 1;
+          inactive_opacity = 0.95;
 
           shadow = {
             enabled = true;
