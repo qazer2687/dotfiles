@@ -69,7 +69,7 @@ in {
 
           blur = {
             enabled = true;
-            size = 12;
+            size = 2;
             passes = 2;
             ignore_opacity = true;
             new_optimizations = true;
