@@ -29,6 +29,7 @@ in {
           hide-when-typing = "no";
         };
         colors = {
+          alpha = "0.8";
           cursor = "${scheme.base00} ${scheme.base06}";
           foreground = scheme.base05;
           background = scheme.base00;
