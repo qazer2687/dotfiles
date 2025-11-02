@@ -197,40 +197,12 @@ in {
 
 
         /* Extra Silly Colours */
-        #network {
-          background: linear-gradient(90deg, 
-            #b75ff2,
-            #5ed7f2
-          );
-          color: #000000;
+        #network, #pulseaudio, #custom-hyprsunset, #battery {
+          background: rgba(255, 255, 255, 0.1);
+          color: #ffffff;
           border-radius: 2px;
-        }
-
-        #pulseaudio {
-          background: linear-gradient(90deg, 
-            #5ed7f2,
-            #f2c849
-          );
-          color: #000000;
-          border-radius: 2px;
-        }
-
-        #custom-hyprsunset {
-          background: linear-gradient(90deg, 
-            #f2c849,
-            #f28972
-          );
-          color: #000000;
-          border-radius: 2px;
-        }
-
-        #battery {
-          background: linear-gradient(90deg, 
-            #f28972,
-            #b75ff2
-          );
-          color: #000000;
-          border-radius: 2px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          margin: 4px;
         }
       '';
     };

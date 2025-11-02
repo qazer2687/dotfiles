@@ -71,7 +71,7 @@ in {
             enabled = false;
             size = 2;
             passes = 3;
-            ignore_opacity = true;
+            ignore_opacity = false;
             new_optimizations = true;
           };
         };
