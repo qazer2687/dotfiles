@@ -29,7 +29,7 @@ in {
           hide-when-typing = "no";
         };
         colors = {
-          alpha = "1";
+          alpha = "0.95";
           cursor = "${scheme.base00} ${scheme.base06}";
           foreground = scheme.base05;
           background = scheme.base00;
