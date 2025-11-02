@@ -38,8 +38,8 @@ in {
           border_size = 1;
 
           # base05 = text, base0E = mauve
-          "col.active_border" = "rgba(${scheme.base00}cc)";
-          "col.inactive_border" = "rgba(${scheme.base00}aa)";
+          "col.active_border" = "rgba(${scheme.base00}88)";
+          "col.inactive_border" = "rgba(${scheme.base00}55)";
 
           resize_on_border = true;
           allow_tearing = false;
