@@ -197,6 +197,7 @@ in {
           color: #000000;
           padding: 0 10px;
           margin: 0;
+          border-radius: 0px;
         }
 
         #network {
