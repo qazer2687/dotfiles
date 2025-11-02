@@ -33,9 +33,9 @@ in {
           # Master/Stack
           layout = "master";
 
-          gaps_in = 4;
-          gaps_out = 8;
-          border_size = 1;
+          gaps_in = 2;
+          gaps_out = 4;
+          border_size = 0.5;
 
           # base05 = text, base0E = mauve
           "col.active_border" = "rgba(${scheme.base0E}ff)";
@@ -53,7 +53,7 @@ in {
 
         decoration = {
           # Rounding
-          rounding = 6;
+          rounding = 4;
 
           # Opacity
           active_opacity = 1;
