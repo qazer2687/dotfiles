@@ -24,13 +24,13 @@ in {
           modules-right = ["network" "pulseaudio" "custom/hyprsunset" "battery"];
 
           pulseaudio = {
-            format = "VOL: {volume}%";
+            format = "🔊 {volume}%";
             tooltip = false;
-            format-muted = "VOL: MUTED";
+            format-muted = "🔊 MUTED";
           };
 
           "custom/hyprsunset" = {
-            exec = ''printf "TEMP: %sK" "$(hyprctl hyprsunset temperature)"'';
+            exec = ''printf "🔥 %sK" "$(hyprctl hyprsunset temperature)"'';
             signal = 1;
             format = "{}";
             tooltip = false;
@@ -57,8 +57,8 @@ in {
 
           battery = {
             tooltip = false;
-            format = "BAT: {capacity}%";
-            format-charging = "BAT: {capacity}%";
+            format = "🔋 {capacity}%";
+            format-charging = "🔋 {capacity}%";
             interval = 10;
             states = {
               warning = 25;
@@ -91,9 +91,9 @@ in {
 
           network = {
             tooltip = false;
-            format = "NET: {essid}";
+            format = "🌐 {essid}";
             format-alt = "{essid} - {ifname} - {ipaddr}";
-            format-disconnected = "NET: OFFLINE";
+            format-disconnected = "🌐 OFFLINE";
             interval = 10;
           };
 
