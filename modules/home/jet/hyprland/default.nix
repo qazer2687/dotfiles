@@ -64,7 +64,7 @@ in {
             range = 8;
             render_power = 3;
             ignore_window = true;
-            color = "rgba(255,255,255,0.3)";
+            color = "rgba(20,20,20,0.5)";
           };
 
           # 2/3 - 6/2

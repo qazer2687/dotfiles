@@ -196,7 +196,7 @@ in {
           background: rgba(255, 255, 255, 0.1);
           color: #000000;
           padding: 0 10px;
-          margin: 0;
+          margin: 2px 0 0 0;
           border-radius: 0px;
         }
 
