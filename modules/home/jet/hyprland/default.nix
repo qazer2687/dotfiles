@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "catppuccin-mocha";
+  scheme = base16 "mountain";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -57,14 +57,14 @@ in {
 
           # Opacity
           active_opacity = 1;
-          inactive_opacity = 0.95;
+          inactive_opacity = 1;
 
           shadow = {
             enabled = true;
-            range = 14;
+            range = 16;
             render_power = 3;
             ignore_window = true;
-            color = "rgba(50,50,50,0.5)";
+            color = "rgba(0,0,0,0.8)";
           };
 
           blur = {

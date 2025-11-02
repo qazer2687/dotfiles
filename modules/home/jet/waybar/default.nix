@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "catppuccin-mocha";
+  scheme = base16 "mountain";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
@@ -123,7 +123,7 @@ in {
         }
 
         window#waybar {
-          background-color: rgba(30, 30, 46, 0.8)
+          background-color: rgba(0, 0, 0, 0.8)
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
