@@ -117,7 +117,7 @@ in {
         * {
           border: none;
           border-radius: 0px;
-          font-family: TX02;
+          font-family: "Departure Mono";
           font-size: 11px;
           min-height: 0;
         }
