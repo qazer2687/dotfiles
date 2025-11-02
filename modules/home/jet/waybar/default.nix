@@ -197,31 +197,25 @@ in {
 
         /* Extra Silly Colours */
         #clock {
-          background-color: #ef74c4
+          background-color: #ff0054;
         }
-
         #workspaces button {
-          background-color: #18cf88
+          background-color: #ff6b35;
         }
-
-        #custom-pingServer up, #custom-pingServer down {
-          background-color: #d28b46
+        #custom-pingServer {
+          background-color: #ff1493;
         }
-
         #network {
-          background-color: #322182
+          background-color: #7b2cbf;
         }
-
         #pulseaudio {
-          background-color: #30c0e0
+          background-color: #00d9ff;
         }
-
         #temperature {
-          background-color: #53e859
+          background-color: #00ff9f;
         }
-
         #battery {
-          background-color: #a0254b
+          background-color: #39ff14;
         }
 
       '';
