@@ -128,7 +128,7 @@ in {
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
-        #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active {
+        #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active, #tray {
           padding: 0 8px;
           margin: 2px 2px;
           border-radius: 2px;
@@ -181,12 +181,8 @@ in {
 
         /* EDGE PADDING */
 
-        #workspaces {
-          margin-right: 16px;
-        }
-        
         #clock {
-          margin-left: 16px;
+          margin-left: 20px;
         }
 
         #tray {
@@ -194,7 +190,7 @@ in {
         }
 
         #battery {
-          margin-right: 16px;
+          margin-right: 20px;
         }
       '';
     };
