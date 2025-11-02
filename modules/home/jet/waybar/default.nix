@@ -123,9 +123,8 @@ in {
         }
 
         window#waybar {
-          background-color: #${scheme.base00}CC;
+          background-color: rgba(30, 30, 46, 0.8);
         }
-
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
