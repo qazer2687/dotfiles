@@ -61,10 +61,10 @@ in {
 
           shadow = {
             enabled = true;
-            range = 16;
+            range = 20;
             render_power = 3;
             ignore_window = true;
-            color = "rgba(0,0,0,0.8)";
+            color = "rgba(0,0,0,0.5)";
           };
 
           blur = {
@@ -73,7 +73,6 @@ in {
             passes = 3;
             ignore_opacity = true;
             new_optimizations = true;
-            vibrancy = 0.5;
           };
         };
 
