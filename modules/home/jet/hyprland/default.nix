@@ -70,8 +70,8 @@ in {
           # 2/3
           blur = {
             enabled = true;
-            size = 2;
-            passes = 3;
+            size = 4;
+            passes = 4;
             ignore_opacity = true;
             new_optimizations = true;
           };
