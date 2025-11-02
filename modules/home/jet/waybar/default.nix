@@ -198,19 +198,23 @@ in {
 
         /* Extra Silly Colours */
         #network {
-          background: #E165DB;
+          background: #51E04A;
+          border: 1px solid #F2C849;
           color: #000000;
         }
         #pulseaudio {
-          background: #0FCFCA;
+          background: #51E04A;
+          border: 1px solid #E165DB;
           color: #000000;
         }
         #custom-hyprsunset {
           background: #F2C849;
+          border: 1px solid #0FCFCA;
           color: #000000;
         }
         #battery {
-          background: #51E04A;
+          background: #0FCFCA;
+          border: 1px solid #E165DB;
           color: #000000;
         }
 
