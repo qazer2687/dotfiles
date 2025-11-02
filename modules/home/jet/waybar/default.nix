@@ -26,7 +26,7 @@ in {
 
           
           pulseaudio = {
-            format = "{icon} | ";
+            format = "{icon}";
             tooltip = false;
             format-muted = "";
             format-icons = {
@@ -97,7 +97,7 @@ in {
 
           network = {
             tooltip = false;
-            format = "{icon} | ";
+            format = "{icon}";
             format-alt = "{icon}";
             format-disconnected = "󰖪";
             format-icons = {
@@ -124,93 +124,96 @@ in {
       };
 
       style = ''
-      * {
-        border: none;
-        border-radius: 0;
-        font-family: "Departure Mono", "FiraCode Nerd Font";
-        font-size: 11px;
-        min-height: 0;
-      }
+        * {
+          border: none;
+          border-radius: 0px;
+          font-family: "Departure Mono", "FiraCode Nerd Font";
+          font-size: 11px;
+          min-height: 0;
+        }
 
-      window#waybar {
-        background: linear-gradient(to right, #000000 50%, transparent 50%);
-      }
+        window#waybar {
+          background: linear-gradient(to right, #000000 0%, #000000 50%, transparent 50%, transparent 100%);
+        }
 
-      /* Base module styling */
-      #mpris, #clock, #language, #bluetooth, #memory, #cpu, #temperature, 
-      #disk, #custom-kernel, #idle_inhibitor, #mode, #backlight, 
-      #custom-pingServer, #workspaces button, #workspaces button.active, #tray {
-        padding: 0 8px;
-        margin: 2px;
-        border-radius: 4px;
-        background-color: #${scheme.base01};
-        color: #${scheme.base05};
-      }
+        #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
+        #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
+        #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active, #tray {
+          padding: 0 8px;
+          margin: 2px 2px;
+          border-radius: 4px;
+        
+          background-color: #${scheme.base01};
+          color: #${scheme.base05};
+        }
 
-      /* Workspaces */
-      #workspaces {
-        color: transparent;
-        background-color: #${scheme.base01};
-        border-radius: 4px;
-        margin: 2px;
-      }
+        #workspaces {
+          color: transparent;
+          background-color: #${scheme.base01};
+          border-radius: 4px;
+          margin: 2px 2px;
+        }
+        #workspaces button {
+          background-color: transparent;
+          border-radius: 4px;
+          margin: 0px 0px;
+        }
+        #workspaces button.active {
+          background-color: #${scheme.base02};
+          border-radius: 4px;
+          margin: 0px 0px;
+          
+        }
 
-      #workspaces button {
-        background-color: transparent;
-        margin: 0;
-      }
+        #custom-pingServer.up {
+          color: #${scheme.base0B};
+        }
+        #custom-pingServer.down {
+          color: #${scheme.base04};
+        }
 
-      #workspaces button.active {
-        background-color: #${scheme.base02};
-      }
+        /* BATTERY */
 
-      /* Server ping states */
-      #custom-pingServer.up {
-        color: #${scheme.base0B};
-      }
+        #battery.warning:not(.charging) {
+          color: #${scheme.base09};
+        }
 
-      #custom-pingServer.down {
-        color: #${scheme.base04};
-      }
+        #battery.critical:not(.charging) {
+          color: #${scheme.base08};
+        }
 
-      /* Battery states */
-      #battery.warning:not(.charging) {
-        color: #${scheme.base09};
-      }
+        #battery.charging {
+          color: #${scheme.base0B};
+        }
 
-      #battery.critical:not(.charging) {
-        color: #${scheme.base08};
-      }
+        /* EDGE PADDING */
 
-      #battery.charging {
-        color: #${scheme.base0B};
-      }
+        #clock {
+          margin-left: 20px;
+        }
 
-      /* Edge modules with special styling */
-      #clock {
-        padding: 0 8px;
-        margin: 2px 2px 2px 20px;
-        border-radius: 4px;
-        background-color: #${scheme.base01};
-        color: #${scheme.base05};
-      }
+        #network, #pulseaudio, #custom-hyprsunset, #battery {
+          background: rgba(255, 255, 255, 0.01);
+          color: #000000;
+          padding: 0 10px;
+          margin: 2px 0 0 0;
+          border-radius: 0px;
+        }
 
-      #network, #pulseaudio, #custom-hyprsunset, #battery {
-        background: rgba(255, 255, 255, 0.01);
-        color: #000000;
-        padding: 0 10px;
-        margin: 2px 0 0 0;
-        border-radius: 0;
-      }
+        #network {
+          border-radius: 8px 0 0 8px;
+        }
 
-      #network {
-        border-radius: 8px 0 0 8px;
-      }
+        #battery {
+          border-radius: 0 8px 8px 0;
+          margin-right: 20px;
+        }
 
-      #battery {
-        border-radius: 0 8px 8px 0;
-        margin-right: 20px;
-      }
+        #network::after, #pulseaudio::after, #custom-hyprsunset::after {
+          content: "|";
+          color: #000000;
+          padding; 0px;
+        }
       '';
     };
   };
