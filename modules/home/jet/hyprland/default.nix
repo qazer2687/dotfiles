@@ -69,8 +69,8 @@ in {
 
           blur = {
             enabled = true;
-            size = 1;
-            passes = 4;
+            size = 2;
+            passes = 2;
             ignore_opacity = true;
             new_optimizations = true;
           };

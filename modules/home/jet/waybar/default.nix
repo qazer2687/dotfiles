@@ -123,7 +123,7 @@ in {
         }
 
         window#waybar {
-          background-color: rgba(30, 30, 46, 0.5)
+          background-color: rgba(30, 30, 46, 0.6)
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
