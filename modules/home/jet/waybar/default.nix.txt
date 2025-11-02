@@ -193,37 +193,6 @@ in {
         #battery {
           margin-right: 20px;
         }
-
-
-        /* Extra Silly Colours */
-        #clock {
-          background-color: #ef74c4
-        }
-
-        #workspaces button {
-          background-color: #18cf88
-        }
-
-        #custom-pingServer up, #custom-pingServer down {
-          background-color: #d28b46
-        }
-
-        #network {
-          background-color: #322182
-        }
-
-        #pulseaudio {
-          background-color: #30c0e0
-        }
-
-        #temperature {
-          background-color: #53e859
-        }
-
-        #battery {
-          background-color: #a0254b
-        }
-
       '';
     };
   };
