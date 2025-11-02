@@ -21,19 +21,10 @@ in {
           margin = "0 0 0 0";
           modules-left = ["clock" "hyprland/workspaces" "custom/pingServer" "tray"];
           modules-center = [];
-          modules-right = ["group/system"];
+          modules-right = ["network" "pulseaudio" "custom/hyprsunset" "battery"];
 
 
-          "group/system" = {
-            orientation = "horizontal";
-            modules = [
-              "network"
-              "pulseaudio"
-              "custom/hyprsunset"
-              "battery"
-            ];
-          };
-
+          
           pulseaudio = {
             format = "{icon}";
             tooltip = false;
@@ -212,9 +203,21 @@ in {
           margin-right: 20px;
         }
 
-        #group-system {
+
+        /* Extra Silly Colours */
+        #network, #pulseaudio, #custom-hyprsunset, #battery {
           background: rgba(255, 255, 255, 0.12);
           color: #000000;
+          padding: 0 10px;
+          margin: 0;
+        }
+
+        #network {
+          border-radius: 8px 0 0 8px;
+        }
+
+        #battery {
+          border-radius: 0 8px 8px 0;
         }
       '';
     };
