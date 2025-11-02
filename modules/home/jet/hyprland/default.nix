@@ -61,13 +61,10 @@ in {
 
           shadow = {
             enabled = true;
-            range = 10;                  # smaller range = sharper edges
-            render_power = 5;            # increases intensity
-            sharp = true;                # makes edges more defined
-            ignore_window = true;        # don't skip windows
-            color = "rgba(0,0,0,0.6)";  # slightly darker but semi-transparent
-            offset = "0 8";              # vertical offset to simulate elevation
-            scale = 1.0;
+            range = 14;
+            render_power = 3;
+            ignore_window = true;
+            color = "rgba(50,50,50,0.5)";
           };
 
           blur = {
