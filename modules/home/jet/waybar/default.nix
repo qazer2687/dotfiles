@@ -203,6 +203,7 @@ in {
             #5ed7f2
           );
           color: #000000;
+          border-radius: 2px;
         }
 
         #pulseaudio {
@@ -211,6 +212,7 @@ in {
             #f2c849
           );
           color: #000000;
+          border-radius: 2px;
         }
 
         #custom-hyprsunset {
@@ -219,14 +221,16 @@ in {
             #f28972
           );
           color: #000000;
+          border-radius: 2px;
         }
 
         #battery {
           background: linear-gradient(90deg, 
             #f28972,
-            #ff6b9d
+            #b75ff2
           );
           color: #000000;
+          border-radius: 2px;
         }
       '';
     };
