@@ -123,8 +123,6 @@ in {
         }
 
         window#waybar {
-         /* background-color: rgba(15, 15, 15, 0.85)*/
-           /*background: transparent;*/
           background: linear-gradient(to right, #000000 0%, #000000 50%, transparent 50%, transparent 100%);
         }
 
@@ -198,12 +196,9 @@ in {
 
         /* Extra Silly Colours */
         #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: linear-gradient(90deg, 
-            rgba(255, 255, 255, 0.5),
-            rgba(240, 240, 240, 0.5)
-          );
+          background: transparent;
           color: #ffffff;
-          border-radius: 2px;
+          border-width:
         }
       '';
     };
