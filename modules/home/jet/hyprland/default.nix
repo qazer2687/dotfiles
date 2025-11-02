@@ -59,23 +59,23 @@ in {
           active_opacity = 1;
           inactive_opacity = 1;
 
+          shadow = {
+            enabled = true;
+            range = 20;
+            render_power = 3;
+            sharp = false;
+            ignore_window = true;
+            color = "rgba(0,0,0,0.80)";
+            offset = "0 5";
+            scale = 1.0;
+          };
+
           blur = {
             enabled = true;
             size = 8;
             passes = 2;
             ignore_opacity = true;
             new_optimizations = true;
-          };
-
-          shadow = {
-            enabled = true;
-            range = 15;
-            render_power = 3;
-            sharp = false;
-            ignore_window = true;
-            color = "0,0,0,200";
-            offset = "0,5";
-            scale = 1.0;
           };
         };
 
