@@ -124,7 +124,8 @@ in {
 
         window#waybar {
          /* background-color: rgba(15, 15, 15, 0.85)*/
-           background: transparent;
+           /*background: transparent;*/
+          background: linear-gradient(to right, #000000 0%, #000000 50%, transparent 50%, transparent 100%);
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
