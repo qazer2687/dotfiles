@@ -132,7 +132,7 @@ in {
         #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active, #tray {
           padding: 0 8px;
           margin: 2px 2px;
-          border-radius: 2px;
+          border-radius: 4px;
         
           background-color: #${scheme.base01};
           color: #${scheme.base05};
@@ -141,7 +141,7 @@ in {
         #workspaces {
           color: transparent;
           background-color: #${scheme.base01};
-          border-radius: 2px;
+          border-radius: 4px;
           margin: 2px 2px;
         }
         #workspaces button {
@@ -197,7 +197,7 @@ in {
 
         /* Extra Silly Colours */
         #clock {
-          background-color: #ff0099;
+          background-color: #ff0080;
           color: #000000;
         }
         #workspaces button {
@@ -205,27 +205,30 @@ in {
           color: #ffffff;
         }
         #workspaces button.active {
-          background-color: #00ffff;
+          background-color: #00ffe5;
           color: #000000;
         }
         #custom-pingServer {
-          background-color: #ff00ff;
+          background-color: #dd00ff;
+          color: #000000;
+        }
+        #custom-pingServer up, #custom-pingServer down {
           color: #000000;
         }
         #network {
-          background-color: #00ff00;
+          background-color: #88ff00;
           color: #000000;
         }
         #pulseaudio {
-          background-color: #ffff00;
+          background-color: #ff006f;
           color: #000000;
         }
         #custom-hyprsunset {
-          background-color: #ff3300;
+          background-color: #ff5500;
           color: #000000;
         }
         #battery {
-          background-color: #0066ff;
+          background-color: #0099ff;
           color: #000000;
         }
 
