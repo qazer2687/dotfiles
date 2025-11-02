@@ -64,7 +64,7 @@ in {
             range = 8;
             render_power = 3;
             ignore_window = true;
-            color = "rgba(0,0,0,0.5)";
+            color = "rgba(255,255,255,0.3)";
           };
 
           # 2/3
@@ -151,7 +151,7 @@ in {
 
           "blur, (?i).*waybar.*"
           "ignorealpha 0.1, (?i).*waybar.*" 
-          
+
           "blur, (?i).*vicinae.*"
         ];
 

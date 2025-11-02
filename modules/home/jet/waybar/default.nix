@@ -21,16 +21,30 @@ in {
           margin = "0 0 0 0";
           modules-left = ["clock" "hyprland/workspaces" "custom/pingServer" "tray"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "custom/hyprsunset" "battery"];
+          modules-right = ["group/system"];
+
+
+          "group/system" = {
+            orientation = "horizontal";
+            modules = [
+              "network"
+              "pulseaudio"
+              "custom/hyprsunset"
+              "battery"
+            ];
+          };
 
           pulseaudio = {
-            format = "🔊 {volume}%";
+            format = "{icon}";
             tooltip = false;
-            format-muted = "🔊 MUTED";
+            format-muted = "󰖁";
+            format-icons = {
+              default = ["󰕿" "󰖀" "󰕾"];
+            };
           };
 
           "custom/hyprsunset" = {
-            exec = ''printf "🔥 %sK" "$(hyprctl hyprsunset temperature)"'';
+            exec = ''printf "󰖨 %sK" "$(hyprctl hyprsunset temperature)"'';
             signal = 1;
             format = "{}";
             tooltip = false;
@@ -57,8 +71,9 @@ in {
 
           battery = {
             tooltip = false;
-            format = "🔋 {capacity}%";
-            format-charging = "🔋 {capacity}%";
+            format = "{icon}";
+            format-charging = "{icon}";
+            format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             interval = 10;
             states = {
               warning = 25;
@@ -91,9 +106,13 @@ in {
 
           network = {
             tooltip = false;
-            format = "🌐 {essid}";
-            format-alt = "{essid} - {ifname} - {ipaddr}";
-            format-disconnected = "🌐 OFFLINE";
+            format = "{icon}";
+            format-alt = "{icon}";
+            format-disconnected = "󰖪";
+            format-icons = {
+              wifi = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+              ethernet = "󰈀";
+            };
             interval = 10;
           };
 
@@ -117,7 +136,7 @@ in {
         * {
           border: none;
           border-radius: 0px;
-          font-family: "Departure Mono";
+          font-family: "Departure Mono", "FiraCode Nerd Font";
           font-size: 11px;
           min-height: 0;
         }
@@ -193,11 +212,9 @@ in {
           margin-right: 20px;
         }
 
-
-        /* Extra Silly Colours */
-        #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: rgba(255, 255, 255, 0.2);
-          color: #ffffff;
+        #group-system {
+          background: rgba(255, 255, 255, 0.12);
+          color: #000000;
         }
       '';
     };
