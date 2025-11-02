@@ -208,12 +208,6 @@ in {
           border-radius: 0 8px 8px 0;
           margin-right: 20px;
         }
-
-        #network::after, #pulseaudio::after, #custom-hyprsunset::after {
-          content: "|";
-          color: #000000;
-          padding; 0px;
-        }
       '';
     };
   };
