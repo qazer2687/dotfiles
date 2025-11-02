@@ -198,31 +198,22 @@ in {
 
         /* Extra Silly Colours */
         #network {
-          background-image: url("./assets/1.png");
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
+          background: rgba(183, 95, 242, 0.9);
           color: #000000;
         }
+
         #pulseaudio {
-          background-image: url("./assets/2.png");
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
+          background: rgba(94, 215, 242, 0.9);
           color: #000000;
         }
+
         #custom-hyprsunset {
-          background-image: url("./assets/3.png");
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
+          background: rgba(242, 200, 73, 0.9);
           color: #000000;
         }
+
         #battery {
-          background-image: url("./assets/4.png");
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
+          background: rgba(242, 137, 114, 0.9);
           color: #000000;
         }
 
