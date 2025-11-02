@@ -201,7 +201,6 @@ in {
           background: rgba(255, 255, 255, 0.2);
           color: #ffffff;
           border-radius: 2px;
-          margin: 4px;
         }
       '';
     };
