@@ -198,10 +198,9 @@ in {
 
         /* Extra Silly Colours */
         #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.2);
           color: #ffffff;
           border-radius: 2px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
           margin: 4px;
         }
       '';
