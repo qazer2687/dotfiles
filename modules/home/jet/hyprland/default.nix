@@ -61,7 +61,7 @@ in {
 
           shadow = {
             enabled = true;
-            range = 20;
+            range = 8;
             render_power = 3;
             ignore_window = true;
             color = "rgba(0,0,0,0.5)";
