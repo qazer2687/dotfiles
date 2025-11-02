@@ -175,18 +175,15 @@ in {
         /* BATTERY */
 
         #battery.warning:not(.charging) {
-          background-color: #${scheme.base09};
-          color: #${scheme.base00};
+          color: #${scheme.base09};
         }
 
         #battery.critical:not(.charging) {
-          background-color: #${scheme.base08};
-          color: #${scheme.base00};
+          color: #${scheme.base08};
         }
 
         #battery.charging {
-          background-color: #${scheme.base0B};
-          color: #${scheme.base00};
+          color: #${scheme.base0B};
         }
 
         /* EDGE PADDING */
@@ -195,16 +192,6 @@ in {
           margin-left: 20px;
         }
 
-        #tray {
-          margin-right: 4px;
-        }
-
-        #battery {
-          margin-right: 20px;
-        }
-
-
-        /* Extra Silly Colours */
         #network, #pulseaudio, #custom-hyprsunset, #battery {
           background: rgba(255, 255, 255, 0.12);
           color: #000000;
@@ -218,6 +205,7 @@ in {
 
         #battery {
           border-radius: 0 8px 8px 0;
+          margin-right: 20px;
         }
       '';
     };
