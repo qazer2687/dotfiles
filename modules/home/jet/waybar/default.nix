@@ -198,27 +198,23 @@ in {
 
         /* Extra Silly Colours */
         #network {
-          background: #3b2b96;
+          background: #CA8DF2;
           color: #000000;
-          text-shadow: 1px 1px 0 #0FCFCA, -1px -1px 0 #F2C849;
         }
 
         #pulseaudio {
-          background: #972293;
+          background: #5ED7F2;
           color: #000000;
-          text-shadow: 1px 0 0 #E165DB, -1px 0 0 #0FCFCA;
         }
 
         #custom-hyprsunset {
-          background: #c5475e;
+          background: #F2C849;
           color: #000000;
-          text-shadow: 2px 0 0 #51E04A, -1px 1px 0 #E165DB;
         }
 
         #battery {
-          background: #c41f57;
+          background: #F28972;
           color: #000000;
-          text-shadow: 1px -1px 0 #F2C849, -1px 1px 0 #E165DB;
         }
 
       '';
