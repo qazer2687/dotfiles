@@ -61,20 +61,20 @@ in {
 
           shadow = {
             enabled = true;
-            range = 20;
-            render_power = 3;
-            sharp = false;
-            ignore_window = true;
-            color = "rgba(0,0,0,0.80)";
-            offset = "0 5";
+            range = 10;                  # smaller range = sharper edges
+            render_power = 5;            # increases intensity
+            sharp = true;                # makes edges more defined
+            ignore_window = true;        # don't skip windows
+            color = "rgba(0,0,0,0.6)";  # slightly darker but semi-transparent
+            offset = "0 8";              # vertical offset to simulate elevation
             scale = 1.0;
           };
 
           blur = {
             enabled = true;
-            size = 8;
-            passes = 2;
-            ignore_opacity = true;
+            size = 20;
+            passes = 6;
+            ignore_opacity = false;
             new_optimizations = true;
           };
         };
