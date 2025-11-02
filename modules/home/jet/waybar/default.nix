@@ -19,9 +19,9 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["hyprland/workspaces" "custom/pingServer"];
+          modules-left = ["clock" "hyprland/workspaces" "custom/pingServer"];
           modules-center = [];
-          modules-right = ["tray" "network" "pulseaudio" "clock" "battery"];
+          modules-right = ["tray" "network" "pulseaudio" "custom/hyprsunset" "battery"];
 
           pulseaudio = {
             format = "VOL: {volume}%";
@@ -123,8 +123,9 @@ in {
         }
 
         window#waybar {
-          background-color: #${scheme.base00};
+          background-color: #${scheme.base00}CC;
         }
+
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
@@ -155,17 +156,11 @@ in {
           box-shadow: inset 0 1px 0 #${scheme.base05};
         }
 
-        #custom-pingServer {
-          margin: 2px 4px;
-        }
-
         #custom-pingServer.up {
-          background-color: #${scheme.base0B};
-          color: #${scheme.base00};
+          color: #${scheme.base0B};
         }
         #custom-pingServer.down {
-          background-color: #${scheme.base04};
-          color: #${scheme.base00};
+          color: #${scheme.base04};
         }
 
         /* BATTERY */
