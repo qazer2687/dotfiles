@@ -197,27 +197,6 @@ in {
 
 
         /* Extra Silly Colours */
-        #clock {
-          background-color: #000000;
-          color: #ffffff;
-        }
-        #workspaces button {
-          background-color: #000000;
-          color: #ffffff;
-          border-radius: 4px;
-        }
-        #workspaces button.active {
-          background-color: #ffffff;
-          color: #000000;
-          border-radius: 4px;
-        }
-        #custom-pingServer {
-          background-color: #000000;
-          color: #ffffff;
-        }
-        #custom-pingServer up, #custom-pingServer down {
-          color: #ffffff;
-        }
         #network {
           background-color: #E165DB;
           color: #000000;
