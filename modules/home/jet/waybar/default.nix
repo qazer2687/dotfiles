@@ -147,12 +147,12 @@ in {
         }
         #workspaces button {
           background-color: transparent;
-          border-radius: 0;
+          border-radius: 4px;
           margin: 0px 0px;
         }
         #workspaces button.active {
           background-color: #${scheme.base02};
-          border-radius: 0;
+          border-radius: 4px;
           margin: 0px 0px;
           
         }
