@@ -124,90 +124,93 @@ in {
       };
 
       style = ''
-        * {
-          border: none;
-          border-radius: 0px;
-          font-family: "Departure Mono", "FiraCode Nerd Font";
-          font-size: 11px;
-          min-height: 0;
-        }
+      * {
+        border: none;
+        border-radius: 0;
+        font-family: "Departure Mono", "FiraCode Nerd Font";
+        font-size: 11px;
+        min-height: 0;
+      }
 
-        window#waybar {
-          background: linear-gradient(to right, #000000 0%, #000000 50%, transparent 50%, transparent 100%);
-        }
+      window#waybar {
+        background: linear-gradient(to right, #000000 50%, transparent 50%);
+      }
 
-        #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
-        #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
-        #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active, #tray {
-          padding: 0 8px;
-          margin: 2px 2px;
-          border-radius: 4px;
-        
-          background-color: #${scheme.base01};
-          color: #${scheme.base05};
-        }
+      /* Base module styling */
+      #mpris, #clock, #language, #bluetooth, #memory, #cpu, #temperature, 
+      #disk, #custom-kernel, #idle_inhibitor, #mode, #backlight, 
+      #custom-pingServer, #workspaces button, #workspaces button.active, #tray {
+        padding: 0 8px;
+        margin: 2px;
+        border-radius: 4px;
+        background-color: #${scheme.base01};
+        color: #${scheme.base05};
+      }
 
-        #workspaces {
-          color: transparent;
-          background-color: #${scheme.base01};
-          border-radius: 4px;
-          margin: 2px 2px;
-        }
-        #workspaces button {
-          background-color: transparent;
-          border-radius: 4px;
-          margin: 0px 0px;
-        }
-        #workspaces button.active {
-          background-color: #${scheme.base02};
-          border-radius: 4px;
-          margin: 0px 0px;
-          
-        }
+      /* Workspaces */
+      #workspaces {
+        color: transparent;
+        background-color: #${scheme.base01};
+        border-radius: 4px;
+        margin: 2px;
+      }
 
-        #custom-pingServer.up {
-          color: #${scheme.base0B};
-        }
-        #custom-pingServer.down {
-          color: #${scheme.base04};
-        }
+      #workspaces button {
+        background-color: transparent;
+        margin: 0;
+      }
 
-        /* BATTERY */
+      #workspaces button.active {
+        background-color: #${scheme.base02};
+      }
 
-        #battery.warning:not(.charging) {
-          color: #${scheme.base09};
-        }
+      /* Server ping states */
+      #custom-pingServer.up {
+        color: #${scheme.base0B};
+      }
 
-        #battery.critical:not(.charging) {
-          color: #${scheme.base08};
-        }
+      #custom-pingServer.down {
+        color: #${scheme.base04};
+      }
 
-        #battery.charging {
-          color: #${scheme.base0B};
-        }
+      /* Battery states */
+      #battery.warning:not(.charging) {
+        color: #${scheme.base09};
+      }
 
-        /* EDGE PADDING */
+      #battery.critical:not(.charging) {
+        color: #${scheme.base08};
+      }
 
-        #clock {
-          margin-left: 20px;
-        }
+      #battery.charging {
+        color: #${scheme.base0B};
+      }
 
-        #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: rgba(255, 255, 255, 0.01);
-          color: #000000;
-          padding: 0 10px;
-          margin: 2px 0 0 0;
-          border-radius: 0px;
-        }
+      /* Edge modules with special styling */
+      #clock {
+        padding: 0 8px;
+        margin: 2px 2px 2px 20px;
+        border-radius: 4px;
+        background-color: #${scheme.base01};
+        color: #${scheme.base05};
+      }
 
-        #network {
-          border-radius: 8px 0 0 8px;
-        }
+      #network, #pulseaudio, #custom-hyprsunset, #battery {
+        background: rgba(255, 255, 255, 0.01);
+        color: #000000;
+        padding: 0 10px;
+        margin: 2px 0 0 0;
+        border-radius: 0;
+      }
 
-        #battery {
-          border-radius: 0 8px 8px 0;
-          margin-right: 20px;
-        }
+      #network {
+        border-radius: 8px 0 0 8px;
+      }
+
+      #battery {
+        border-radius: 0 8px 8px 0;
+        margin-right: 20px;
+      }
       '';
     };
   };
