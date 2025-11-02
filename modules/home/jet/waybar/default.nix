@@ -198,7 +198,7 @@ in {
 
         /* Extra Silly Colours */
         #network {
-          background: #51E04A;
+          background: #E165DB;
           border: 1px solid #F2C849;
           color: #000000;
         }
