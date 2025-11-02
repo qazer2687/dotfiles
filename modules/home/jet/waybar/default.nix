@@ -28,9 +28,9 @@ in {
           pulseaudio = {
             format = "{icon}";
             tooltip = false;
-            format-muted = "󰖁";
+            format-muted = "";
             format-icons = {
-              default = ["󰕿" "󰖀" "󰕾"];
+              default = ["" "" ""];
             };
           };
 
@@ -64,7 +64,7 @@ in {
             tooltip = false;
             format = "{icon}";
             format-charging = "{icon}";
-            format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            format-icons = ["" "" "" "" ""];
             interval = 10;
             states = {
               warning = 25;
@@ -101,7 +101,7 @@ in {
             format-alt = "{icon}";
             format-disconnected = "󰖪";
             format-icons = {
-              wifi = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+              wifi = ["󰣾" "󰣴" "󰣶" "󰣸" "󰣺"];
               ethernet = "󰈀";
             };
             interval = 10;
