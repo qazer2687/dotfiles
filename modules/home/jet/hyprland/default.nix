@@ -143,6 +143,7 @@ in {
         windowrulev2 = [
           # Disable rounded corners on waybar.
           "rounding 0, class:^(.waybar-wrapped)$"
+          "blur, class:^(.waybar-wrapped)$"
         ];
         layerrule = [
           # Disable tofi animation.
