@@ -198,7 +198,10 @@ in {
 
         /* Extra Silly Colours */
         #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: rgba(255, 255, 255, 0.2);
+          background: linear-gradient(90deg, 
+            rgba(255, 255, 255, 0.2),
+            rgba(240, 240, 240, 0.2)
+          );
           color: #ffffff;
           border-radius: 2px;
         }

@@ -69,9 +69,9 @@ in {
 
           # 2/3
           blur = {
-            enabled = true;
-            size = 6;
-            passes = 4;
+            enabled = false;
+            size = 2;
+            passes = 3;
             ignore_opacity = true;
             new_optimizations = true;
           };
