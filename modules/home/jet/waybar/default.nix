@@ -198,19 +198,19 @@ in {
 
         /* Extra Silly Colours */
         #network {
-          background-color: #E165DB;
+          background: linear-gradient(to right, #E165DB, #C878E0, #0FCFCA);
           color: #000000;
         }
         #pulseaudio {
-          background-color: #0FCFCA;
+          background: linear-gradient(to right, #0FCFCA, #7FD89E, #F2C849);
           color: #000000;
         }
         #custom-hyprsunset {
-          background-color: #F2C849;
+          background: linear-gradient(to right, #F2C849, #A1DC49, #51E04A);
           color: #000000;
         }
         #battery {
-          background-color: #51E04A;
+          background: linear-gradient(to right, #51E04A, #99D8C2, #E165DB);
           color: #000000;
         }
 
