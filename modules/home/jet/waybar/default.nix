@@ -200,7 +200,7 @@ in {
         #network {
           background: #E165DB;
           color: #000000;
-          border: 2px solid #0FCFCA;
+          border: 1px solid #0FCFCA;
           box-shadow: 2px 0 0 #F2C849, -2px 0 0 #51E04A;
           text-shadow: 1px 1px 0 #0FCFCA, -1px -1px 0 #F2C849;
         }
@@ -208,7 +208,7 @@ in {
         #pulseaudio {
           background: #51E04A;
           color: #000000;
-          border: 2px solid #E165DB;
+          border: 1px solid #E165DB;
           box-shadow: 0 2px 0 #0FCFCA, 0 -2px 0 #F2C849;
           text-shadow: 1px 0 0 #E165DB, -1px 0 0 #0FCFCA;
         }
@@ -216,7 +216,7 @@ in {
         #custom-hyprsunset {
           background: #F2C849;
           color: #000000;
-          border: 2px solid #51E04A;
+          border: 1px solid #51E04A;
           box-shadow: 3px 3px 0 #E165DB, -1px -1px 0 #0FCFCA;
           text-shadow: 2px 0 0 #51E04A, -1px 1px 0 #E165DB;
         }
@@ -224,7 +224,7 @@ in {
         #battery {
           background: #0FCFCA;
           color: #000000;
-          border: 2px solid #F2C849;
+          border: 1px solid #F2C849;
           box-shadow: -2px 2px 0 #E165DB, 2px -2px 0 #51E04A;
           text-shadow: 1px -1px 0 #F2C849, -1px 1px 0 #E165DB;
         }
