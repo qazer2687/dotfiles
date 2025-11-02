@@ -123,7 +123,7 @@ in {
         }
 
         window#waybar {
-          background-color: rgba(0,0,0,0.01);
+          background-color: rgba(30, 30, 46, 0.1)
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -141,7 +141,7 @@ in {
           color: transparent;
           background-color: #${scheme.base01};
           border-radius: 2px;
-          margin: 4px 2px;
+          margin: 2px 2px;
         }
         #workspaces button {
           background-color: transparent;
@@ -149,10 +149,10 @@ in {
           margin: 0px 0px;
         }
         #workspaces button.active {
-          background-color: transparent;
+          background-color: #${scheme.base02};
           border-radius: 0;
           margin: 0px 0px;
-          box-shadow: inset 0 1px 0 #${scheme.base05};
+          
         }
 
         #custom-pingServer.up {
