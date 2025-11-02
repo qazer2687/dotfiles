@@ -198,19 +198,39 @@ in {
 
         /* Extra Silly Colours */
         #network {
-          background: linear-gradient(to right, #C850D1, #E165DB, #E988E5);
+          background: repeating-linear-gradient(
+            to right,
+            #C850D1 0px, #C850D1 1px,
+            #E165DB 1px, #E165DB 2px,
+            #E988E5 2px, #E988E5 3px
+          );
           color: #000000;
         }
         #pulseaudio {
-          background: linear-gradient(to right, #0BB5B0, #0FCFCA, #52DDD9);
+          background: repeating-linear-gradient(
+            to right,
+            #0BB5B0 0px, #0BB5B0 1px,
+            #0FCFCA 1px, #0FCFCA 2px,
+            #52DDD9 2px, #52DDD9 3px
+          );
           color: #000000;
         }
         #custom-hyprsunset {
-          background: linear-gradient(to right, #D9B13A, #F2C849, #F5D570);
+          background: repeating-linear-gradient(
+            to right,
+            #D9B13A 0px, #D9B13A 1px,
+            #F2C849 1px, #F2C849 2px,
+            #F5D570 2px, #F5D570 3px
+          );
           color: #000000;
         }
         #battery {
-          background: linear-gradient(to right, #3FC438, #51E04A, #7AE671);
+          background: repeating-linear-gradient(
+            to right,
+            #3FC438 0px, #3FC438 1px,
+            #51E04A 1px, #51E04A 2px,
+            #7AE671 2px, #7AE671 3px
+          );
           color: #000000;
         }
 
