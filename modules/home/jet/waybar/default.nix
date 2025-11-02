@@ -198,7 +198,6 @@ in {
         #network, #pulseaudio, #custom-hyprsunset, #battery {
           background: transparent;
           color: #ffffff;
-          border-width:
         }
       '';
     };
