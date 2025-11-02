@@ -67,10 +67,11 @@ in {
             color = "rgba(0,0,0,0.5)";
           };
 
+          # 2/3
           blur = {
             enabled = false;
-            size = 2;
-            passes = 3;
+            size = 6;
+            passes = 4;
             ignore_opacity = false;
             new_optimizations = true;
           };
