@@ -21,7 +21,7 @@ in {
           margin = "0 0 0 0";
           modules-left = ["clock" "hyprland/workspaces" "custom/pingServer" "tray"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "custom/hyprsunset" "battery"];
+          modules-right = ["network" "pulseaudio" "battery"];
 
 
           
@@ -193,7 +193,7 @@ in {
         }
 
         #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: rgba(255, 255, 255, 0.12);
+          background: rgba(255, 255, 255, 0.1);
           color: #000000;
           padding: 0 10px;
           margin: 0;

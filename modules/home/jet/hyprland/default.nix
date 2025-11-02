@@ -67,11 +67,11 @@ in {
             color = "rgba(255,255,255,0.3)";
           };
 
-          # 2/3
+          # 2/3 - 6/2
           blur = {
             enabled = true;
-            size = 6;
-            passes = 2;
+            size = 2;
+            passes = 3;
             ignore_opacity = true;
             new_optimizations = true;
           };
@@ -150,7 +150,7 @@ in {
           "noanim, (?i).*tofi.*"
 
           "blur, (?i).*waybar.*"
-          "ignorealpha 0.1, (?i).*waybar.*" 
+          "ignorealpha 0.05, (?i).*waybar.*" 
 
           "blur, (?i).*vicinae.*"
         ];
