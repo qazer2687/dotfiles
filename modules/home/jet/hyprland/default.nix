@@ -60,7 +60,7 @@ in {
           inactive_opacity = 1;
 
           shadow = {
-            enabled = false;
+            enabled = true;
             range = 8;
             render_power = 3;
             ignore_window = true;
