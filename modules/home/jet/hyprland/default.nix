@@ -134,6 +134,9 @@ in {
           disable_hyprland_logo = true;
           vfr = true;
           vrr = 0;
+          # Focus programs that request to be focused, for example
+          # pressing a link should switch to the workspace with a browser.
+          focus_on_activate = true;
         };
 
         # Smart Gaps
