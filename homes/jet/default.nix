@@ -42,6 +42,7 @@
     mako.enable = true;
     #tofi.enable = true;
     vicinae.enable = true;
+    hyprsunset.enable = true;
 
     # Applications
     firefox.enable = true;
