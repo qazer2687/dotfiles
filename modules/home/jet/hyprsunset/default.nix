@@ -46,13 +46,13 @@
         t2200 = { calendar = "*-*-* 22:00:00"; requests = [[ "temperature" "4000" ]]; }; # 4000K @ 10PM
 
         # 250 Steps
-        t2230 = { calendar = "*-*-* 22:30:00"; requests = [[ "temperature" "3750" ]]; };
-        t2300 = { calendar = "*-*-* 23:00:00"; requests = [[ "temperature" "3500" ]]; }; # 3500K @ 11PM
-        t2330 = { calendar = "*-*-* 23:30:00"; requests = [[ "temperature" "3250" ]]; };
-        t0000 = { calendar = "*-*-* 00:00:00"; requests = [[ "temperature" "3000" ]]; }; # 3000K @ 12AM
-        t0030 = { calendar = "*-*-* 00:30:00"; requests = [[ "temperature" "2750" ]]; };
-        t0100 = { calendar = "*-*-* 01:00:00"; requests = [[ "temperature" "2500" ]]; }; # 2500K @ 1AM
+        t2230 = { calendar = "*-*-* 22:30:00"; requests = [[ "temperature" "3250" ]]; };
+        t2300 = { calendar = "*-*-* 23:00:00"; requests = [[ "temperature" "3000" ]]; }; # 3000K @ 11PM
+        t2330 = { calendar = "*-*-* 23:30:00"; requests = [[ "temperature" "2750" ]]; };
+        t0000 = { calendar = "*-*-* 00:00:00"; requests = [[ "temperature" "2500" ]]; }; # 2500K @ 12AM
 
+        t0030 = { calendar = "*-*-* 00:30:00"; requests = [[ "temperature" "2500" ]]; };
+        t0100 = { calendar = "*-*-* 01:00:00"; requests = [[ "temperature" "2500" ]]; };
         t0130 = { calendar = "*-*-* 01:30:00"; requests = [[ "temperature" "2500" ]]; };
         t0200 = { calendar = "*-*-* 02:00:00"; requests = [[ "temperature" "2500" ]]; };
         t0230 = { calendar = "*-*-* 02:30:00"; requests = [[ "temperature" "2500" ]]; };

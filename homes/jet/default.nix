@@ -15,6 +15,7 @@
     protonvpn-gui
     firefox
     nautilus
+    libreoffice
   ];
 
   modules = {
