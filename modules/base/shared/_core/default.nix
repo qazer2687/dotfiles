@@ -85,6 +85,19 @@
     };
     */
 
+    # Block AI-related domains.
+    networking.extraHosts = ''
+      127.0.0.1 chat.openai.com
+      127.0.0.1 openai.com
+      127.0.0.1 claude.ai
+      127.0.0.1 poe.com
+      127.0.0.1 bard.google.com
+      127.0.0.1 gemini.google.com
+      127.0.0.1 chatgpt.com
+      127.0.0.1 perplexity.ai
+      127.0.0.1 copilot.microsoft.com
+    '';
+
     ########## KEYMAP ##########
 
     console.keyMap = "colemak";
