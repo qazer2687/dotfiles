@@ -63,9 +63,22 @@ in {
           active_opacity = 1;
           inactive_opacity = 1;
 
-          # Blur
-          blur.enabled = false;
-          shadow.enabled = false;
+          shadow = {
+            enabled = true;
+            range = 4;
+            render_power = 3;
+            ignore_window = true;
+            color = "rgba(20,20,20,0.5)";
+          };
+
+          # 2/3 - 6/2
+          blur = {
+            enabled = true;
+            size = 4;
+            passes = 2;
+            ignore_opacity = true;
+            new_optimizations = true;
+          };
         };
 
         animations = {
