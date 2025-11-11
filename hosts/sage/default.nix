@@ -123,7 +123,7 @@
     gamescope.enable = true;
 
     # AI
-    ollama.enable = true;
+    #ollama.enable = true;
   };
 
   # Did you read the comment?
