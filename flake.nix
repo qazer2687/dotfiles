@@ -16,7 +16,7 @@
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     textfox.url = "github:adriankarlen/textfox";
 
-    vicinae.url = "github:vicinaehq/vicinae/v0.15.7";
+    vicinae.url = "github:vicinaehq/vicinae";
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
