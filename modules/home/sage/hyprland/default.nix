@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "mountain";
+  scheme = base16 "catppuccin-mocha";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -138,14 +138,17 @@ in {
           "f[1], gapsout:4, gapsin:0"
         ];
         windowrulev2 = [
-          # Force tearing for any window that is fullscreen.
-          "immediate, fullscreen:1"
           # Disable rounded corners on waybar.
           "rounding 0, class:^(.waybar-wrapped)$"
         ];
         layerrule = [
           # Disable tofi animation.
-          "noanim,(?i).*tofi.*"
+          "noanim, (?i).*tofi.*"
+
+          "blur, (?i).*waybar.*"
+          "ignorealpha 0.001, (?i).*waybar.*" 
+
+          "blur, (?i).*vicinae.*"
         ];
 
         bind = [

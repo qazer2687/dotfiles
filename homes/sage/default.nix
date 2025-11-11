@@ -50,7 +50,8 @@
     hyprlock.enable = true;
     waybar.enable = true;
     mako.enable = true;
-    tofi.enable = true;
+    #tofi.enable = true;
+    vicinae.enable = true;
 
     # Applications
     firefox.enable = true;
