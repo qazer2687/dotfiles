@@ -28,7 +28,6 @@
     ];
     consoleLogLevel = 3;
     initrd.verbose = false;
-    initrd.systemd.enable = true;
     kernel.sysctl = {
       # Quiet boot.
       "kernel.printk" = "0 0 0 0";
