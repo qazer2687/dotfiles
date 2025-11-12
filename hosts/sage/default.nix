@@ -28,6 +28,8 @@
     ];
     consoleLogLevel = 3;
     initrd.verbose = false;
+    # Kernel panic without this option enabled.
+    initrd.systemd.enable = true;
     kernel.sysctl = {
       # Quiet boot.
       "kernel.printk" = "0 0 0 0";
