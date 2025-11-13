@@ -23,12 +23,10 @@ in {
           modules-center = [];
           modules-right = ["network" "pulseaudio" "battery"];
 
-
-          
           pulseaudio = {
-            format = "{icon}";
+            format = "VOL: {percentage}%";
             tooltip = false;
-            format-muted = "";
+            format-muted = "VOL: MUTED";
             format-icons = {
               default = ["" "" ""];
             };
@@ -62,8 +60,8 @@ in {
 
           battery = {
             tooltip = false;
-            format = "{icon}";
-            format-charging = "{icon}";
+            format = "BAT: {percent}%";
+            format-charging = "BAT: {percent}% (CHARGING)";
             format-icons = ["" "" "" "" ""];
             interval = 10;
             states = {
@@ -99,7 +97,9 @@ in {
             tooltip = false;
             format = "{icon}";
             format-alt = "{icon}";
-            format-disconnected = "󰖪";
+            format-ethernet = "NET: {ipaddr} TX {bandwidthUpBytes} RX {bandwidthDownBytes}";
+            format-wifi = "NET: {ipaddr} TX {bandwidthUpBytes} RX {bandwidthDownBytes}";
+            format-disconnected = "NET: DISCONNECTED";
             format-icons = {
               wifi = ["󰣾" "󰣴" "󰣶" "󰣸" "󰣺"];
               ethernet = "󰈀";
@@ -193,8 +193,8 @@ in {
         }
 
         #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: rgba(255, 255, 255, 0.01);
-          color: #000000;
+          background: rgba(0, 0, 0, 0.7);
+          color: #00ff00;
           padding: 0 10px;
           margin: 2px 0 0 0;
           border-radius: 0px;
