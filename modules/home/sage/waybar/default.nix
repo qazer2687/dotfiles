@@ -124,8 +124,7 @@ in {
         }
 
         window#waybar {
-          /*background-color: #${scheme.base00};*/
-          background: rgba(255, 255, 255, 0.01);
+          background: rgba(17, 17, 27, 0.1);
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -134,8 +133,7 @@ in {
           padding: 0 8px;
           margin: 2px 2px;
           border-radius: 2px;
-        
-          background-color: #${scheme.base01};
+          background: rgba(24, 24, 37, 0.2);
           color: #${scheme.base05};
         }
 

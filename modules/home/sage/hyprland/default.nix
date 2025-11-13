@@ -235,7 +235,7 @@ in {
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
           "pamixer --set-volume 50"
           "waybar"
-          "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
+          "${pkgs.wbg}/bin/wbg /home/alex/.config/wallpaper/wallpaper.png"
           #"${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
           "vesktop --start-minimized"
         ];
