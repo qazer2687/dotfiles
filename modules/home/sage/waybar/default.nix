@@ -133,13 +133,13 @@ in {
           padding: 0 8px;
           margin: 2px 2px;
           border-radius: 2px;
-          background: rgba(24, 24, 37, 0.2);
+          background: rgba(24, 24, 37, 0.5);
           color: #${scheme.base05};
         }
 
         #workspaces {
           color: transparent;
-          background-color: #${scheme.base01};
+          background: rgba(24, 24, 37, 0.5);
           border-radius: 2px;
           margin: 2px 4px;
         }
@@ -152,7 +152,7 @@ in {
           background-color: transparent;
           border-radius: 0;
           margin: 0px 0px;
-          box-shadow: inset 0 -1px 0 #${scheme.base05};
+          box-shadow: inset 0 -1px 0 #${scheme.base01};
         }
 
         #custom-pingServer.up {
