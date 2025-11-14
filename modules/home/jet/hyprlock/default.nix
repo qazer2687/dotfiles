@@ -33,7 +33,7 @@ in {
           path = "/home/alex/.config/wallpaper/wallpaper.png";
           #color = "rgba(${scheme.base00}ff)";
           blur_passes = 4;
-          brightness = 0;
+          brightness = 0.2;
         };
 
         "input-field" = {
