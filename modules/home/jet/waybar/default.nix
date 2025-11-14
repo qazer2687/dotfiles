@@ -60,8 +60,8 @@ in {
 
           battery = {
             tooltip = false;
-            format = "BAT: {capacity}% [{time}]";
-            format-charging = "BAT: {capacity}% [{time}] (CHARGING)";
+            format = "BAT: {capacity}% [{power}W]";
+            format-charging = "BAT: {capacity}% [{power}W] (CHARGING)";
             interval = 1;
             states = {
               warning = 25;
