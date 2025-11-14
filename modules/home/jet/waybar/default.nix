@@ -62,7 +62,7 @@ in {
             tooltip = false;
             format = "BAT: {capacity}% [{time}]";
             format-charging = "BAT: {capacity}% [{time}] (CHARGING)";
-            interval = 4;
+            interval = 1;
             states = {
               warning = 25;
               critical = 10;
