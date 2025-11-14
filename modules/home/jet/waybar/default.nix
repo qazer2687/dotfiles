@@ -42,7 +42,6 @@ in {
           "custom/pingServer" = {
             exec = "$HOME/.config/waybar/scripts/pingServer.sh";
             interval = 4;
-            format = "{text} | {latency_ms}";
             return-type = "json";
           };
 
