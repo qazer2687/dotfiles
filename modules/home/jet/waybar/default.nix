@@ -132,7 +132,8 @@ in {
         }
 
         window#waybar {
-          background: linear-gradient(to right, #000000 0%, #000000 50%, transparent 50%, transparent 100%);
+          /* background: linear-gradient(to right, #000000 0%, #000000 50%, transparent 50%, transparent 100%); */
+          background-color: #000000;
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -191,6 +192,8 @@ in {
           margin-left: 20px;
         }
 
+
+        /*
         #network, #pulseaudio, #custom-hyprsunset, #battery {
           background: rgba(0, 0, 0, 0.8);
           color: #00ff00;
@@ -198,6 +201,7 @@ in {
           margin: 2px 0 0 0;
           border-radius: 0px;
         }
+        */
 
         #network {
           border-radius: 8px 0 0 8px;
