@@ -41,7 +41,7 @@ in {
 
           "custom/pingServer" = {
             exec = "$HOME/.config/waybar/scripts/pingServer.sh";
-            interval = 4;
+            interval = 20;
             return-type = "json";
           };
 
