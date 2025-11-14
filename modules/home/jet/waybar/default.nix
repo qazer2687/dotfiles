@@ -41,14 +41,14 @@ in {
 
           "custom/pingServer" = {
             exec = "$HOME/.config/waybar/scripts/pingServer.sh";
-            interval = 30;
+            interval = 4;
             format = "{}";
             return-type = "json";
           };
 
           clock = {
-            format = "{:%H:%M}";
-            format-alt = "{:%A %d, %H:%M}";
+            format-alt = "{:%H:%M}";
+            format = "{:%A %d, %H:%M}";
             tooltip = false;
           };
 
