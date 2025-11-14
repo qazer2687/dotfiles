@@ -41,12 +41,12 @@ in {
           outline_thickness = 0;
           dots_size = 0.8;
           font_family = "Departure Mono";
-          dots_text_format = "▫";
-          dots_spacing = 1;
+          dots_text_format = "×";
+          dots_spacing = 0.8;
           dots_center = true;
           outer_color = "rgba(${scheme.base05}00)";
           inner_color = "rgba(${scheme.base01}00)";
-          font_color = "rgba(255, 255, 255, 1)";
+          font_color = "rgba(255, 255, 255, 0.8)";
           #font_color = "rgba(${scheme.base05}ff)";
           fade_on_empty = false;
           placeholder_text = "";
