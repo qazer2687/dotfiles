@@ -95,8 +95,8 @@ in {
           network = {
             tooltip = false;
             format = "{icon}";
-            format-ethernet = "NET: {ipaddr} [↗ {bandwidthUpBytes} ↘ {bandwidthDownBytes}]";
-            format-wifi = "NET: {ipaddr} [↗ {bandwidthUpBytes} ↘ {bandwidthDownBytes}]";
+            format-ethernet = "NET: {ipaddr} ↗ {bandwidthUpBytes} ↘ {bandwidthDownBytes}";
+            format-wifi = "NET: {ipaddr} ↗ {bandwidthUpBytes} ↘ {bandwidthDownBytes}";
             format-disconnected = "NET: DISCONNECTED";
             format-icons = {
               wifi = ["󰣾" "󰣴" "󰣶" "󰣸" "󰣺"];
