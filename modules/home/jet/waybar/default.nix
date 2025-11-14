@@ -63,7 +63,7 @@ in {
             format = "BAT: {capacity}%";
             format-charging = "BAT: {capacity}% (CHARGING)";
             format-icons = ["" "" "" "" ""];
-            interval = 10;
+            interval = 1;
             states = {
               warning = 25;
               critical = 10;
@@ -104,7 +104,7 @@ in {
               wifi = ["󰣾" "󰣴" "󰣶" "󰣸" "󰣺"];
               ethernet = "󰈀";
             };
-            interval = 10;
+            interval = 1;
           };
 
           mpris = {
@@ -141,7 +141,7 @@ in {
         #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active, #tray {
           padding: 0 8px;
           margin: 2px 2px;
-          border-radius: 4px;
+          border-radius: 2px;
         
           background-color: #${scheme.base01};
           color: #${scheme.base05};
@@ -193,7 +193,7 @@ in {
         }
 
         #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: rgba(0, 0, 0, 0.7);
+          background: rgba(0, 0, 0, 0.8);
           color: #00ff00;
           padding: 0 10px;
           margin: 2px 0 0 0;
