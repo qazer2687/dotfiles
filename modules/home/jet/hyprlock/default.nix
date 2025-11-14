@@ -30,9 +30,9 @@ in {
         ];
 
         background = {
-          path = "";
-          color = "rgba(${scheme.base00}ff)"; # Frappe Crust
-          blur_passes = 0;
+          path = "/home/alex/.config/wallpaper/wallpaper.png";
+          #color = "rgba(${scheme.base00}ff)";
+          blur_passes = 4;
           brightness = 0;
         };
 
@@ -46,11 +46,12 @@ in {
           dots_center = true;
           outer_color = "rgba(${scheme.base05}ff)";
           inner_color = "rgba(${scheme.base01}ff)";
-          font_color = "rgba(${scheme.base05}ff)";
+          font_color = "rgba(0, 255, 00, 1)";
+          #font_color = "rgba(${scheme.base05}ff)";
           fade_on_empty = false;
           placeholder_text = "";
           hide_input = false;
-          rounding = 12;
+          rounding = 6;
 
           check_color = "rgba(${scheme.base01}ff)";
           fail_color = "rgba(${scheme.base01}ff)";
