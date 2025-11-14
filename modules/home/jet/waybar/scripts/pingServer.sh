@@ -4,7 +4,7 @@ SERVER="mica"
 LATENCY=$(ping -c 1 -W 0.5 "$SERVER" 2>/dev/null | grep 'time=' | awk -F'time=' '{print $2}' | awk '{print $1}')
 
 if [ -n "$LATENCY" ]; then
-    printf '{"text":"MICA: CONNECTED","class":"up","latency_ms":"| %sms"}\n' "$LATENCY"
+    echo "{\"text\":\"MICA: CONNECTED\",\"class\":\"up\",\"latency_ms\":\"| ${LATENCY}ms\"}"
 else
-    printf '{"text":"MICA: DISCONNECTED","class":"down","latency_ms":""}\n'
+    echo "{\"text\":\"MICA: DISCONNECTED\",\"class\":\"down\",\"latency_ms\":\"\"}"
 fi
