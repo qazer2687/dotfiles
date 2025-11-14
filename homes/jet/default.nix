@@ -16,6 +16,7 @@
     firefox
     nautilus
     libreoffice
+    neovim
   ];
 
   modules = {

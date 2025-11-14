@@ -95,9 +95,8 @@ in {
           network = {
             tooltip = false;
             format = "{icon}";
-            format-alt = "{icon}";
-            format-ethernet = "NET: {ipaddr} [↑ {bandwidthUpBytes} ↓ {bandwidthDownBytes}]";
-            format-wifi = "NET: {ipaddr} [↑ {bandwidthUpBytes} : ↓ {bandwidthDownBytes}]";
+            format-ethernet = "NET: {ipaddr} [↗ {bandwidthUpBytes} ↘ {bandwidthDownBytes}]";
+            format-wifi = "NET: {ipaddr} [↗ {bandwidthUpBytes} ↘ {bandwidthDownBytes}]";
             format-disconnected = "NET: DISCONNECTED";
             format-icons = {
               wifi = ["󰣾" "󰣴" "󰣶" "󰣸" "󰣺"];
@@ -203,12 +202,7 @@ in {
         }
         */
 
-        #network {
-          border-radius: 8px 0 0 8px;
-        }
-
         #battery {
-          border-radius: 0 8px 8px 0;
           margin-right: 20px;
         }
       '';
