@@ -24,7 +24,7 @@ in {
           modules-right = ["network" "pulseaudio" "battery"];
 
           pulseaudio = {
-            format = "VOL: {percentage}%";
+            format = "VOL: {volume}%";
             tooltip = false;
             format-muted = "VOL: MUTED";
             format-icons = {
@@ -60,8 +60,8 @@ in {
 
           battery = {
             tooltip = false;
-            format = "BAT: {percent}%";
-            format-charging = "BAT: {percent}% (CHARGING)";
+            format = "BAT: {capacity}%";
+            format-charging = "BAT: {capacity}% (CHARGING)";
             format-icons = ["" "" "" "" ""];
             interval = 10;
             states = {
@@ -97,8 +97,8 @@ in {
             tooltip = false;
             format = "{icon}";
             format-alt = "{icon}";
-            format-ethernet = "NET: {ipaddr} TX {bandwidthUpBytes} RX {bandwidthDownBytes}";
-            format-wifi = "NET: {ipaddr} TX {bandwidthUpBytes} RX {bandwidthDownBytes}";
+            format-ethernet = "NET: {ipaddr} [↑ {bandwidthUpBytes} ↓ {bandwidthDownBytes}]";
+            format-wifi = "NET: {ipaddr} [↑ {bandwidthUpBytes} : ↓ {bandwidthDownBytes}]";
             format-disconnected = "NET: DISCONNECTED";
             format-icons = {
               wifi = ["󰣾" "󰣴" "󰣶" "󰣸" "󰣺"];
