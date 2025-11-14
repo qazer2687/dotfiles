@@ -32,21 +32,21 @@ in {
         background = {
           path = "/home/alex/.config/wallpaper/wallpaper.png";
           #color = "rgba(${scheme.base00}ff)";
-          blur_passes = 4;
-          brightness = 0.2;
+          blur_passes = 3;
+          brightness = 0.4;
         };
 
         "input-field" = {
           size = "720, 72";
           outline_thickness = 0;
-          dots_size = 0.4;
+          dots_size = 0.8;
           font_family = "Departure Mono";
-          dots_text_format = "♦";
+          dots_text_format = "▫";
           dots_spacing = 1;
           dots_center = true;
-          outer_color = "rgba(${scheme.base05}ff)";
-          inner_color = "rgba(${scheme.base01}ff)";
-          font_color = "rgba(0, 255, 00, 1)";
+          outer_color = "rgba(${scheme.base05}00)";
+          inner_color = "rgba(${scheme.base01}00)";
+          font_color = "rgba(255, 255, 255, 1)";
           #font_color = "rgba(${scheme.base05}ff)";
           fade_on_empty = false;
           placeholder_text = "";
