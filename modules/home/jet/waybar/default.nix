@@ -60,10 +60,9 @@ in {
 
           battery = {
             tooltip = false;
-            format = "BAT: {capacity}%";
-            format-charging = "BAT: {capacity}% (CHARGING)";
-            format-icons = ["" "" "" "" ""];
-            interval = 1;
+            format = "BAT: {capacity}% [{time}]";
+            format-charging = "BAT: {capacity}% [{time}] (CHARGING)";
+            interval = 4;
             states = {
               warning = 25;
               critical = 10;
