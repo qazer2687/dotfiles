@@ -106,7 +106,8 @@
   };
 
   
-  environment.etc."motd-logo".text = '' \x1b[38;2;230;0;0m                                                                                                
+  environment.etc."motd-logo".text = ''
+\033[38;2;230;0;0m                                                                                                
  █████                    ████   █████████     ████████████████████              █████              
  ███████                ██████   █████████   ██████████                        █████████            
  █████████           █████████   █████████  ██████████                        ████████████          
@@ -115,12 +116,12 @@
  ███  ██████████████  ████████   █████████  ██████████                  ███         ███████████     
  ███    ██████████    ████████   █████████   ██████████               ███             ███████████   
  ███       █████      ████████   █████████     ████████████████████ ████████████████   ████████████
- Surveil. Serve. Satisfy.\x1b[0m [All activity will be monitored and reviewed.]                                                                                                   
-  '';
+ Surveil. Serve. Satisfy.\033[0m [All activity will be monitored and reviewed.]                                                                                                   
+'';
 
-  programs.fish.loginShellInit = ''
-    cat /etc/motd-logo
-  '';
+programs.fish.loginShellInit = ''
+  printf '%b' "$(cat /etc/motd-logo)"
+'';
 
 
   # Support for vscode remote server.
