@@ -106,8 +106,8 @@
   };
 
   
-    environment.etc."motd-logo".text = ''
-\033[38;2;230;0;0m                                                                                                                                                                                                                                             
+  environment.etc."motd-logo".text = ''
+\033[38;2;230;0;0m
           ███          
         ███████        
       ███████████      
@@ -115,7 +115,7 @@
   ███        ████████  
 ████████████   ████████
 Surveil. Serve. Satisfy.
-\033[0m                                                                                                  
+\033[0m
   '';
 
   programs.fish.loginShellInit = ''
