@@ -106,15 +106,13 @@
   };
 
   
-    environment.etc."motd-logo".text = ''
-  \033[38;2;230;0;0m                                                                                                                                                         
-███            ████ ██████  █████████████         ████         
-█████        ██████ ██████ ██████                ███████       
-███████    ████████ ██████ ██████              ██  ███████     
-██ █████████ ██████ ██████ ██████            ██      ███████   
-██   █████   ██████ ██████  ██████████████ █████████  ████████
-Surveil. Serve. Satisfy.
-  \033[0m                                                                                                  
+    environment.etc."motd-logo".text = ''\033[38;2;230;0;0m                                                                                                                                                                         
+WWW            WWWW AWWWWW   WWWWWWWWWWWWW         WWWW         
+WWWWW        WWWWWW AWWWWW  WWWWWW                WWWWWWW       
+WWWWWWW    WWWWWWWW AWWWWW  WWWWWW              WW  WWWWWWW     
+WW WWWWWWWWW WWWWWW AWWWWW  WWWWWW            WW      WWWWWWW   
+WW   WWWWW   WWWWWW AWWWWW   WWWWWWWWWWWWWN WWWWWWWWW  WWWWWWWW 
+Surveil. Serve. Satisfy.\033[0m                                                                                                  
   '';
 
   programs.fish.loginShellInit = ''
