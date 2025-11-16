@@ -137,6 +137,17 @@ in {
         workspace = [
           "w[tv1], gapsout:4, gapsin:0"
           "f[1], gapsout:4, gapsin:0"
+          
+          "1, monitor:DP-1, default:true"
+          "2, monitor:DP-1"
+          "3, monitor:DP-1"
+          "4, monitor:DP-1"
+          "5, monitor:DP-1"
+          "6, monitor:DP-3, default:true"
+          "7, monitor:DP-3"
+          "8, monitor:DP-3"
+          "9, monitor:DP-3"
+          "10, monitor:DP-3"
         ];
         windowrulev2 = [
           # Disable rounded corners on waybar.
