@@ -13,9 +13,9 @@ in {
       server.enable = true;
       settings = {
         main = {
-          font = "Departure Mono:size=12, FiraCode Nerd Font:size=14";
-          font-bold = "Departure Mono:size=12:style=Bold, FiraCode Nerd Font:size=14";
-          line-height = "16px";
+          font = "ProggySquare:size=18, FiraCode Nerd Font:size=14";
+          font-bold = "ProggySquare:size=18:style=Bold, FiraCode Nerd Font:size=14";
+          line-height = "22px";
           pad = "8x8";
         };
         scrollback = {
