@@ -33,13 +33,13 @@ in {
           # Master/Stack
           layout = "master";
 
-          gaps_in = 2;
-          gaps_out = 4;
-          border_size = 1;
+          gaps_in = 0;
+          gaps_out = 0;
+          border_size = 2;
 
           # base05 = text, base0E = mauve
-          "col.active_border" = "rgba(${scheme.base00}bb)";
-          "col.inactive_border" = "rgba(${scheme.base00}99)";
+          "col.active_border" = "rgba(${scheme.base05})";
+          "col.inactive_border" = "rgba(${scheme.base00})";
 
           resize_on_border = true;
           allow_tearing = false;
@@ -53,14 +53,14 @@ in {
 
         decoration = {
           # Rounding
-          rounding = 4;
+          rounding = 0;
 
           # Opacity
           active_opacity = 1;
           inactive_opacity = 1;
 
           shadow = {
-            enabled = true;
+            enabled = false;
             range = 4;
             render_power = 3;
             ignore_window = true;
@@ -69,7 +69,7 @@ in {
 
           # 2/3 - 6/2
           blur = {
-            enabled = true;
+            enabled = false;
             size = 4;
             passes = 2;
             ignore_opacity = true;
@@ -94,7 +94,7 @@ in {
             "zoomFactor, 0"
             #"monitorAdded, 0"
 
-            "workspaces, 1, 4, snap, slide"
+            "workspaces, 0, 4, snap, slide"
           ];
         };
 

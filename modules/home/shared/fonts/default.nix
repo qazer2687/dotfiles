@@ -33,11 +33,13 @@
       monaspace
       proggyfonts
       ibm-plex
+      tamzen
 
       # Custom
       TX02
       pragmatapro
 
+      # Nerd Fonts
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
       nerd-fonts.iosevka
