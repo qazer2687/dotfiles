@@ -13,9 +13,9 @@ in {
       server.enable = true;
       settings = {
         main = {
-          font = "PragmataPro:size=14";
-          font-bold = "PragmataPro:size=14:style=Bold";
-          line-height = "18px";
+          font = "PragmataPro:size=11";
+          font-bold = "PragmataPro:size=11:style=Bold";
+          line-height = "16px";
           pad = "8x8";
         };
         scrollback = {
