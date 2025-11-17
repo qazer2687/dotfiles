@@ -45,6 +45,7 @@
       nerd-fonts.iosevka
       nerd-fonts.liberation
       nerd-fonts.jetbrains-mono
+      maple-mono.NF
     ];
   };
 }
