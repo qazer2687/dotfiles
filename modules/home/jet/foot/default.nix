@@ -13,9 +13,9 @@ in {
       server.enable = true;
       settings = {
         main = {
-          font = "Terminus:size=20, FiraCode Nerd Font:size=14";
-          font-bold = "Terminus:size=20:style=Bold, FiraCode Nerd Font:size=14";
-          line-height = "22px";
+          font = "Departure Mono:size=22, FiraCode Nerd Font:size=14";
+          font-bold = "Departure Mono:size=22:style=Bold, FiraCode Nerd Font:size=14";
+          line-height = "24px";
           pad = "8x8";
         };
         scrollback = {
