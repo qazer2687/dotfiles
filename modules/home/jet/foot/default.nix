@@ -13,8 +13,8 @@ in {
       server.enable = true;
       settings = {
         main = {
-          font = "FiraCode Nerd Font:size=14, FiraCode Nerd Font:size=14";
-          font-bold = "FiraCode Nerd Font:size=14:style=Bold, FiraCode Nerd Font:size=14";
+          font = "FiraCode Nerd Font:size=14";
+          font-bold = "FiraCode Nerd Font:size=14:style=Bold";
           line-height = "18px";
           pad = "8x8";
         };
