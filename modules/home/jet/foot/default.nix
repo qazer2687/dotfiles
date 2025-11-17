@@ -13,8 +13,8 @@ in {
       server.enable = true;
       settings = {
         main = {
-          font = "ProggySquare:size=18, FiraCode Nerd Font:size=14";
-          font-bold = "ProggySquare:size=18:style=Bold, FiraCode Nerd Font:size=14";
+          font = "ProggyCleanSZ:size=18, FiraCode Nerd Font:size=14";
+          font-bold = "ProggyCleanSZ:size=18:style=Bold, FiraCode Nerd Font:size=14";
           line-height = "22px";
           pad = "8x8";
         };
