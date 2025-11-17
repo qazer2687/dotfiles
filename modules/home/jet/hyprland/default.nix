@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "mountain";
+  scheme = base16 "gruvbox-dark-hard";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -35,7 +35,7 @@ in {
 
           gaps_in = 0;
           gaps_out = 0;
-          border_size = 2;
+          border_size = 1;
 
           # base05 = text, base0E = mauve
           "col.active_border" = "rgba(${scheme.base05}ff)";

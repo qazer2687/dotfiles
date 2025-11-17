@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "mountain";
+  scheme = base16 "gruvbox-dark-hard";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
@@ -64,8 +64,9 @@ in {
             format-charging = "BAT: {capacity}% [{power}W] (CHARGING)";
             interval = 1;
             states = {
-              warning = 25;
-              critical = 10;
+              sub50 = 50;
+              sub25 = 25; 
+              sub10 = 10;
             };
             margin-left = 15;
           };
@@ -125,19 +126,20 @@ in {
         * {
           border: none;
           border-radius: 0px;
-          font-family: "Departure Mono", "FiraCode Nerd Font";
+          font-family: "PragmataPro", "FiraCode Nerd Font";
           font-size: 11px;
           min-height: 0;
         }
 
         window#waybar {
-          /* background: linear-gradient(to right, #000000 0%, #000000 50%, transparent 50%, transparent 100%); */
-          background-color: #000000;
+          background-color: #${scheme.base00};
         }
 
-        #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
-        #memory, #cpu, #temperature, #disk, #custom-kernel, #custom-hyprsunset, #idle_inhibitor, #mode,
-        #backlight, #battery, #custom-pingServer, #workspaces button, #workspaces button.active, #tray {
+        #mpris, #clock, #language,
+        #pulseaudio, #bluetooth, #network,
+        #battery, #custom-pingServer,
+        #workspaces button, #workspaces button.active,
+        #tray {
           padding: 0 8px;
           margin: 2px 2px;
           border-radius: 2px;
@@ -146,38 +148,47 @@ in {
           color: #${scheme.base05};
         }
 
+        /* WORKSPACES */
+
         #workspaces {
           color: transparent;
           background-color: #${scheme.base01};
           border-radius: 4px;
           margin: 2px 2px;
         }
+
         #workspaces button {
           background-color: transparent;
           border-radius: 4px;
           margin: 0px 0px;
         }
+
         #workspaces button.active {
           background-color: #${scheme.base02};
           border-radius: 4px;
           margin: 0px 0px;
-          
         }
+
+        /* MICA */
 
         #custom-pingServer.up {
           color: #${scheme.base0B};
         }
         #custom-pingServer.down {
-          color: #${scheme.base04};
+          color: #${scheme.base08};
         }
 
         /* BATTERY */
 
-        #battery.warning:not(.charging) {
+        #battery.sub50:not(.charging) {
+          color: #${scheme.base0A};
+        }
+
+        #battery.sub25:not(.charging) {
           color: #${scheme.base09};
         }
 
-        #battery.critical:not(.charging) {
+        #battery.sub10:not(.charging) {
           color: #${scheme.base08};
         }
 
@@ -185,22 +196,11 @@ in {
           color: #${scheme.base0B};
         }
 
-        /* EDGE PADDING */
+        /* EDGE MARGIN */
 
         #clock {
           margin-left: 20px;
         }
-
-
-        /*
-        #network, #pulseaudio, #custom-hyprsunset, #battery {
-          background: rgba(0, 0, 0, 0.8);
-          color: #00ff00;
-          padding: 0 10px;
-          margin: 2px 0 0 0;
-          border-radius: 0px;
-        }
-        */
 
         #battery {
           margin-right: 20px;
