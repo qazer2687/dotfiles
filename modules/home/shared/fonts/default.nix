@@ -31,7 +31,6 @@
       eb-garamond
       fixedsys-excelsior
       monaspace
-      proggyfonts
       ibm-plex
       tamzen
 
