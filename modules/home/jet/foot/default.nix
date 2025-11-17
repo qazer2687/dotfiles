@@ -13,8 +13,8 @@ in {
       server.enable = true;
       settings = {
         main = {
-          font = "Terminus:size=11, FiraCode Nerd Font:size=14";
-          font-bold = "Terminus:size=12:style=Bold, FiraCode Nerd Font:size=14";
+          font = "Terminus:size=20, FiraCode Nerd Font:size=14";
+          font-bold = "Terminus:size=20:style=Bold, FiraCode Nerd Font:size=14";
           line-height = "22px";
           pad = "8x8";
         };
