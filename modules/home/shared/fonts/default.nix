@@ -33,7 +33,6 @@
       monaspace
       proggyfonts
       ibm-plex
-      tamzen
 
       # Custom
       TX02
