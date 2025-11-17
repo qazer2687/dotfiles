@@ -13,9 +13,9 @@ in {
       server.enable = true;
       settings = {
         main = {
-          font = "FiraCode Nerd Font:size=18, FiraCode Nerd Font:size=14";
-          font-bold = "FiraCode Nerd Font:size=18:style=Bold, FiraCode Nerd Font:size=14";
-          line-height = "22px";
+          font = "FiraCode Nerd Font:size=9, FiraCode Nerd Font:size=14";
+          font-bold = "FiraCode Nerd Font:size=9:style=Bold, FiraCode Nerd Font:size=14";
+          line-height = "12px";
           pad = "8x8";
         };
         scrollback = {
