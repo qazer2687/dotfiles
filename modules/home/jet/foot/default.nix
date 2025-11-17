@@ -13,10 +13,10 @@ in {
       server.enable = true;
       settings = {
         main = {
-          font = "TX02:size=11, FiraCode Nerd Font:size=14";
-          font-bold = "TX02:size=12:style=Bold, FiraCode Nerd Font:size=14";
+          font = "Terminus:size=11, FiraCode Nerd Font:size=14";
+          font-bold = "Terminus:size=12:style=Bold, FiraCode Nerd Font:size=14";
           line-height = "22px";
-          pad = "10x10";
+          pad = "8x8";
         };
         scrollback = {
           lines = "10000";
@@ -29,7 +29,7 @@ in {
           hide-when-typing = "no";
         };
         colors = {
-          alpha = "0.95";
+          alpha = "1";
           cursor = "${scheme.base00} ${scheme.base06}";
           foreground = scheme.base05;
           background = scheme.base00;
