@@ -17,6 +17,7 @@
     nautilus
     libreoffice
     neovim
+    cryptsetup
   ];
 
   modules = {
