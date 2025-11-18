@@ -26,28 +26,25 @@ in {
         animations.enable = true;
         animation = [
           "fade, 0, 0, default"
-          "inputField, 1, 5, default"
+          "inputField, 0, 5, default"
         ];
 
         background = {
-          path = "/home/alex/.config/wallpaper/wallpaper.png";
-          #color = "rgba(${scheme.base00}ff)";
-          blur_passes = 2;
-          brightness = 0.2;
+          #path = "/home/alex/.config/wallpaper/wallpaper.png";
+          color = "rgba(${scheme.base00}ff)";
         };
 
         "input-field" = {
           size = "720, 72";
           outline_thickness = 0;
-          dots_size = 0.8;
-          font_family = "Departure Mono";
+          dots_size = 0.6;
+          font_family = "PragmataPro";
           dots_text_format = "×";
-          dots_spacing = 0.8;
+          dots_spacing = 0.6;
           dots_center = true;
           outer_color = "rgba(${scheme.base05}00)";
           inner_color = "rgba(${scheme.base01}00)";
-          font_color = "rgba(255, 255, 255, 0.8)";
-          #font_color = "rgba(${scheme.base05}ff)";
+          font_color = "rgba(${scheme.base05}ff)";
           fade_on_empty = false;
           placeholder_text = "";
           hide_input = false;

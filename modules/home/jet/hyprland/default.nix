@@ -39,7 +39,7 @@ in {
 
           # base05 = text, base0E = mauve
           "col.active_border" = "rgba(${scheme.base05}ff)";
-          "col.inactive_border" = "rgba(${scheme.base00}ff)";
+          "col.inactive_border" = "rgba(${scheme.base02}ff)";
 
           resize_on_border = true;
           allow_tearing = false;

@@ -44,10 +44,7 @@
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
 
-      # Default on asahi fedora.
-      #"zswap.enabled=1"
-      #"zswap.compressor=lz4"
-      #"zswap.zpool=z3fold"
+      "zswap.enabled=1"
 
       # Quiet boot.
       #"quiet"
@@ -60,11 +57,6 @@
       # Default is 60 but too swappy for my liking.
       "vm.swappiness" = 100;
     };
-    consoleLogLevel = 3;
-    initrd.verbose = false;
-    kernel.sysctl = {
-      #"kernel.printk" = "0 0 0 0";
-    };
   };
   
   # Nautilus trash support.
@@ -74,7 +66,7 @@
     {
       device = "/swapfile";
       # Default on asahi fedora.
-      size = 12 * 1024;
+      size = 16 * 1024;
     }
   ];
 
