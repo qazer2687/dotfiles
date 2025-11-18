@@ -161,8 +161,8 @@ in {
         bind = [
           # Core
           "SUPER, Return, exec, foot"
-          #"SUPER, E, exec, tofi-run | sh"
-          "SUPER, E, exec, vicinae open"
+          "SUPER, E, exec, tofi-run | sh"
+          #"SUPER, E, exec, vicinae open"
           "SUPER, Q, killactive"
           "SUPER, F, fullscreen"
 
