@@ -20,7 +20,7 @@ in {
         font-size = "11";
         prompt-text = "‌‌ run:‌‌‌ ‌‌ ‌ ";
         prompt-padding = 0;
-        font = "TX02";
+        font = "PragmataPro";
         outline-width = 0;
         hint-font = false;
         border-width = 0;

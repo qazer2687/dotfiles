@@ -8,10 +8,10 @@
 
   config = lib.mkIf config.modules.firefox.enable {
     textfox = {
-      enable = false;
+      enable = true;
       profile = "default";
       config = {
-        font.family = "TX02";
+        font.family = "PragmataPro";
         displayTitles = false;
         displaySidebarTools = false;
       };
