@@ -19,13 +19,14 @@
       vencord = {
         themes = {
           frappe = builtins.readFile ./config/frappe.css;
+          gruvbox-dark-hard = builtins.readFile ./config/gruvbox-dark-hard.css;
         };
         settings = {
           autoUpdate = true;
           autoUpdateNotification = false;
           notifyAboutUpdates = false;
           useQuickCss = true;
-          enabledThemes = [ "frappe.css" ];
+          enabledThemes = [ "gruvbox-dark-hard.css" ];
           plugins = {
             MessageLogger = {
               enabled = true;
