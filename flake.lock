@@ -33,7 +33,7 @@
         "type": "github"
       }
     },
-    "ashai": {
+    "asahi": {
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": "nixpkgs"
@@ -800,7 +800,7 @@
     },
     "root": {
       "inputs": {
-        "ashai": "ashai",
+        "asahi": "asahi",
         "flatpak": "flatpak",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
