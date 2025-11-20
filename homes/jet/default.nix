@@ -12,7 +12,7 @@
     vlc
     gdu
     btop
-    protonvpn-gui
+    #protonvpn-gui
     firefox
     nautilus
     libreoffice
