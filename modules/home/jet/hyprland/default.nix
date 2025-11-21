@@ -243,9 +243,7 @@ in {
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
           "pamixer --set-volume 0 --mute"
           "waybar"
-          #"${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
-          "${pkgs.wbg}/bin/wbg /home/alex/.config/wallpaper/wallpaper.png"
-
+          "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
           # Unlock keyring on boot.
           
 

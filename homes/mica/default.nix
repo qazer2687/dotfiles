@@ -19,6 +19,7 @@
     fish.enable = true;
     eza.enable = true;
     fastfetch.enable = true;
+    zed.enable = true;
   };
 
   home.stateVersion = "25.05";
