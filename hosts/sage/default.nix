@@ -40,7 +40,7 @@
       # TCP congestion control algorithm (BBR provides better throughput and lower latency).
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    #kernelPackages = pkgs.linuxPackages_cachyos;
     supportedFilesystems = [ "ntfs" ];
   };
 
