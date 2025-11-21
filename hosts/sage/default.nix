@@ -41,6 +41,7 @@
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
     #kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ntfs" ];
   };
 
