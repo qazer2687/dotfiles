@@ -13,7 +13,15 @@
       hashedPassword = "$6$qRDf73LqqlnrtGKd$fwNbmyhVjAHfgjPpM.Wn8YoYVbLRq1oFWN15fjP3b.cVW8Dv3s/7q8NY4WBYY7x1Xe71S.AHpuqL1PY6IJe0x1";
     };
   };
-  
+
+  hardware.graphics.package =
+  # Workaround for Mesa 25.3.0 regression with RX 9070 XT
+  assert pkgs.mesa.version == "25.3.0";
+  (import (fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/694509d88b264f71dc261f477ce968f5a6c347eb.tar.gz";
+    sha256 = "sha256:0000000000000000000000000000000000000000000000000000";
+  }) { localSystem = pkgs.stdenv.hostPlatform; }).mesa;
+
   programs.fish.enable = true;
 
   boot = {
@@ -99,6 +107,7 @@
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      AMD_VULKAN_ICD = "RADV";
     };
     # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
     systemPackages = [pkgs.flatpak];

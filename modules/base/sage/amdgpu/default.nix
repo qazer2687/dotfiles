@@ -19,5 +19,5 @@
       "split_lock_detect=off"
       "amdgpu.ppfeaturemask=0xfffd3fff"
     ];
-  };
+  };w
 }
