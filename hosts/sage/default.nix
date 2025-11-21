@@ -18,7 +18,7 @@
   # Workaround for Mesa 25.3.0 regression with RX 9070 XT
   assert pkgs.mesa.version == "25.3.0";
   (import (fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/694509d88b264f71dc261f477ce968f5a6c347eb.tar.gz";
+    url = "https://github.com/NixOS/nixpkgs/archive/c80aab436cb1a614b485cac6e21741a33a24c2f3.tar.gz";
     sha256 = "sha256:0000000000000000000000000000000000000000000000000000";
   }) { localSystem = pkgs.stdenv.hostPlatform; }).mesa;
 
