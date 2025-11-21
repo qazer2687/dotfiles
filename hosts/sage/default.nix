@@ -44,10 +44,10 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
-  services.scx = {
-    enable = true;
-    scheduler = "scx_lavd";
-  };
+  #services.scx = {
+  #  enable = true;
+  #  scheduler = "scx_lavd";
+  #};
 
   services.udev = {
     extraRules = ''
