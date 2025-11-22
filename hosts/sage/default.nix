@@ -14,14 +14,6 @@
     };
   };
 
-  hardware.graphics.package =
-  # Workaround for Mesa 25.3.0 regression with RX 9070 XT
-  assert pkgs.mesa.version == "25.3.0";
-  (import (fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/c80aab436cb1a614b485cac6e21741a33a24c2f3.tar.gz";
-    sha256 = "sha256:1h5qc79vfsl0r0p7hknwgsqf56acjic1y1yawn801kbslj7bb0s1";
-  }) { localSystem = pkgs.stdenv.hostPlatform; }).mesa;
-
   programs.fish.enable = true;
 
   boot = {

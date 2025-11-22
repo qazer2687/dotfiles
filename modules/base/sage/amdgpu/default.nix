@@ -10,6 +10,8 @@
       enable = true;
       enable32Bit = true;
     };
+    services.xserver.videoDrivers = [ "modesetting" ];
+    hardware.amdgpu.initrd.enable = true;
     services.lact.enable = true;
     # Potential fix for black screen issues.
     boot.kernelParams = [
