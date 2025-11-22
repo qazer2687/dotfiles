@@ -43,7 +43,7 @@ in {
           border_size = 1;
 
           # base05 = text, base0E = mauve
-          "col.active_border" = "rgba(${scheme.base0E}ff)";
+          "col.active_border" = "rgba(${scheme.base05}ff)";
           "col.inactive_border" = "rgba(${scheme.base00}ff)";
 
           resize_on_border = true;
@@ -65,7 +65,7 @@ in {
           inactive_opacity = 1;
 
           shadow = {
-            enabled = true;
+            enabled = false;
             range = 4;
             render_power = 3;
             ignore_window = true;
