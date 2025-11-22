@@ -100,6 +100,10 @@
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       AMD_VULKAN_ICD = "RADV";
+
+      # Picked up by gamescope session.
+      XKB_DEFAULT_LAYOUT = "us";
+      XKB_DEFAULT_VARIANT = "colemak";
     };
     # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
     systemPackages = [pkgs.flatpak];
