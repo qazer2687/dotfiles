@@ -1,7 +1,5 @@
 {
   inputs = {
-    # Unable to play videos on firefox with latest. (not a drm issue, not audio either i believe)
-    #nixpkgs.url = "github:NixOS/nixpkgs/8a6d5427d99ec71c64f0b93d45778c889005d9c2";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
@@ -10,8 +8,7 @@
     };
 
     asahi.url = "github:nix-community/nixos-apple-silicon";
-    #asahi.url = "github:nix-community/nixos-apple-silicon/b99bf9bf7445416fe55da09034fc4a6cd733805c";
-
+    
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
@@ -21,7 +18,6 @@
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri = {

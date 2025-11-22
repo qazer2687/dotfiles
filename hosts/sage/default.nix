@@ -44,10 +44,10 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
-  services.scx = {
-    enable = true;
-    scheduler = "scx_lavd";
-  };
+  #services.scx = {
+  #  enable = true;
+  #  scheduler = "scx_lavd";
+  #};
 
   services.udev = {
     extraRules = ''
@@ -99,6 +99,7 @@
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      AMD_VULKAN_ICD = "RADV";
     };
     # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
     systemPackages = [pkgs.flatpak];
