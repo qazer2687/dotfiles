@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "catppuccin-mocha";
+  scheme = base16 "mountain";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -38,8 +38,8 @@ in {
           # Master/Stack
           layout = "master";
 
-          gaps_in = 2;
-          gaps_out = 4;
+          gaps_in = 1;
+          gaps_out = 2;
           border_size = 1;
 
           # base05 = text, base0E = mauve
@@ -51,14 +51,14 @@ in {
         };
 
         master = {
-          mfact = 0.55;
+          mfact = 0.65;
           orientation = "left";
           inherit_fullscreen = true;
         };
 
         decoration = {
           # Rounding
-          rounding = 4;
+          rounding = 0;
 
           # Opacity
           active_opacity = 1;
@@ -76,7 +76,7 @@ in {
           blur = {
             enabled = true;
             size = 4;
-            passes = 2;
+            passes = 4;
             ignore_opacity = true;
             new_optimizations = true;
           };
