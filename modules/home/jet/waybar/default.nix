@@ -2,6 +2,7 @@
   lib,
   config,
   base16,
+  pkgs,
   ...
 }: let
   scheme = base16 "gruvbox-dark-hard";
@@ -11,6 +12,8 @@ in {
   config = lib.mkIf config.modules.waybar.enable {
     home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
     home.file.".config/waybar/scripts/pingServer.sh".executable = true;
+    
+    home.packages = [ pkgs.jq ];
 
     programs.waybar = {
       enable = true;

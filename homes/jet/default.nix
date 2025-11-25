@@ -13,9 +13,7 @@
     gdu
     btop
     #protonvpn-gui
-    firefox
     nautilus
-    libreoffice
     neovim
     cryptsetup
   ];
@@ -40,12 +38,10 @@
 
     # Desktop Environment
     hyprland.enable = true;
-    niri.enable = true;
     hyprlock.enable = true;
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
-    #vicinae.enable = true;
     hyprsunset.enable = true;
 
     # Applications

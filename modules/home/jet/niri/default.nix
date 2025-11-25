@@ -3,8 +3,11 @@
   config,
   pkgs,
   inputs,
+  base16,
   ...
-}: {
+}: let
+  scheme = base16 "gruvbox-dark-hard";
+in {
   options.modules.niri.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.niri.enable {
@@ -42,18 +45,21 @@
             min-width = 1240;
             max-width = 1240;
 
+            # Rounded Corners
+            /*
             geometry-corner-radius = {
               bottom-left = 4.0;
               bottom-right = 4.0;
               top-left = 4.0;
               top-right = 4.0;
             };
+            */
 
             focus-ring = {
               enable = true;
               width = 2;
-              active.color = "#cba6f7";
-              inactive.color = "#6f5b87";
+              active.color = "#${scheme.base05}";
+              inactive.color = "#${scheme.base02}";
             };
           }
         ];
@@ -112,7 +118,6 @@
           "Mod+0".action = focus-workspace 10;
 
           # Move windows to workspaces
-          /*
           "Mod+Shift+1".action = move-window-to-workspace 1;
           "Mod+Shift+2".action = move-window-to-workspace 2;
           "Mod+Shift+3".action = move-window-to-workspace 3;
@@ -123,7 +128,6 @@
           "Mod+Shift+8".action = move-window-to-workspace 8;
           "Mod+Shift+9".action = move-window-to-workspace 9;
           "Mod+Shift+0".action = move-window-to-workspace 10;
-          */
 
           # Screenshot
           #"Mod+Option".action = spawn "screenshot";
