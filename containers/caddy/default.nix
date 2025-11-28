@@ -70,7 +70,7 @@
         services.caddy = {
           enable = true;
           package = pkgs.caddy.withPlugins {
-            plugins = [ "github.com/caddy-dns/cloudflare" ];
+            plugins = [ "github.com/caddy-dns/cloudflare@0.2.2" ];
             hash = "";
           };
           dataDir = "/data";
