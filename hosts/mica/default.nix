@@ -159,6 +159,10 @@ Surveil. Serve. Satisfy.
     updater.interval = "hourly";
   };
 
+  containers = {
+    caddy.enable = true;
+  };
+
   # Did you read the comment?
   system.stateVersion = "25.05";
 }
