@@ -80,6 +80,10 @@
 
         systemd.services.caddy.serviceConfig = {
           EnvironmentFile = "/run/secrets/caddy";
+          # Override DynamicUser to use our static caddy user
+          DynamicUser = false;
+          User = "caddy";
+          Group = "caddy";
         };
 
         services.caddy = {
