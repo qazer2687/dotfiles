@@ -20,10 +20,10 @@
     };
 
     systemd.tmpfiles.rules = [
-      "d /srv/caddy/etc/caddy 0755 root root -"
-      "d /srv/caddy/data 0755 root root -"
-      "d /srv/caddy/config 0755 root root -"
-      "d /srv/caddy/srv/assets 0755 root root -"
+      "d /srv/caddy/etc/caddy 0755 caddy caddy -"
+      "d /srv/caddy/data 0755 caddy caddy -"
+      "d /srv/caddy/config 0755 caddy caddy -"
+      "d /srv/caddy/srv/assets 0755 caddy caddy -"
     ];
 
     containers.caddy = {
