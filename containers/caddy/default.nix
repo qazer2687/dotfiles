@@ -19,6 +19,10 @@
       '';
     };
 
+    users.users.caddy = {
+      isSystemUser = true;
+    };
+
     systemd.services."container@caddy" = {
       after = [ "local-fs.target" "systemd-tmpfiles-setup.service" ];
       requires = [ "systemd-tmpfiles-setup.service" ]; 
