@@ -10,7 +10,7 @@
   config = lib.mkIf config.modules.containers.caddy.enable {
 
     sops.secrets.CLOUDFLARE_API_TOKEN = {
-      sopsFile = ../secrets/containers/caddy.yaml;
+      sopsFile = ../../secrets/containers/caddy.yaml;
     };
     
     sops.templates."caddy" = {
