@@ -21,7 +21,9 @@
 
     users.users.caddy = {
       isSystemUser = true;
+      group = "caddy";
     };
+    users.groups.caddy = {};
 
     systemd.services."container@caddy" = {
       after = [ "local-fs.target" "systemd-tmpfiles-setup.service" ];
@@ -77,7 +79,9 @@
         
         users.users.caddy = {
           isSystemUser = true;
+          group = "caddy";
         };
+        users.groups.caddy = {};
 
         systemd.services.caddy.serviceConfig = {
           EnvironmentFile = "/run/secrets/caddy";
