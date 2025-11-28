@@ -151,16 +151,6 @@ Surveil. Serve. Satisfy.
     firewall.enable = true;
     chrony.enable = true;
 
-    containers = {
-      caddy.enable = true;
-    };
-  };
-
-  services.clamav = {
-    daemon.enable = true;
-    updater.enable = true;
-    updater.frequency = 24;
-    updater.interval = "hourly";
   };
 
   # Did you read the comment?

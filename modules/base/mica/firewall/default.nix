@@ -7,25 +7,6 @@
 
   config = lib.mkIf config.modules.firewall.enable {
     networking = {
-      bridges = {
-        public = {
-          interfaces = [];
-        };
-        private = {
-          interfaces = [];
-        };
-      };
-
-      interfaces = {
-        public = {
-          ipv4.addresses = [ { address = "10.0.10.1"; prefixLength = 24; } ];
-        };
-        private = {
-          ipv4.addresses = [ { address = "10.0.20.1"; prefixLength = 24; } ];
-        };
-      };
-    
-    
       firewall = {
         enable = true;
 
