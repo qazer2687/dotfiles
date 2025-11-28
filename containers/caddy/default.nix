@@ -25,11 +25,6 @@
     };
     users.groups.caddy = {};
 
-    systemd.services."container@caddy" = {
-      after = [ "local-fs.target" "systemd-tmpfiles-setup.service" ];
-      requires = [ "systemd-tmpfiles-setup.service" ]; 
-    };
-
     systemd.tmpfiles.rules = [
       "d /srv/caddy/etc/caddy 0755 caddy caddy -"
       "d /srv/caddy/data 0755 caddy caddy -"
