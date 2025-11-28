@@ -17,6 +17,22 @@
 
     systemd.services.caddy.serviceConfig = {
       EnvironmentFile = config.sops.templates."caddy".path;
+      PrivateTmp = true;
+      ProtectSystem = "strict";
+      ProtectHome = true;
+      NoNewPrivileges = true;
+      PrivateDevices = true;
+      ProtectKernelTunables = true;
+      ProtectKernelModules = true;
+      ProtectControlGroups = true;
+      RestrictNamespaces = true;
+      LockPersonality = true;
+      RestrictRealtime = true;
+      RestrictSUIDSGID = true;
+      RemoveIPC = true;
+      SystemCallArchitectures = "native";
+      ReadWritePaths = [ "/srv/caddy/data" "/srv/assets" ];
+      BindReadOnlyPaths = [ "/etc" ];
     };
 
     services.caddy = {
@@ -165,10 +181,5 @@
         '';
       };
     };
-
-    # Create assets directory
-    systemd.tmpfiles.rules = [
-      "d /srv/assets 0755 caddy caddy -"
-    ];
   };
 }
