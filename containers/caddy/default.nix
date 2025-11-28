@@ -30,7 +30,7 @@
       autoStart = true;
       # Enable host networking.
       privateNetwork = false;
-      privateUsers = "pick";
+      privateUsers = "no";
       ephemeral = true;
 
       # NET_ADMIN
