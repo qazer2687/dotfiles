@@ -8,8 +8,12 @@
   config = lib.mkIf config.modules.firewall.enable {
     networking = {
       bridges = {
-        public = {};
-        private = {};
+        public = {
+          interfaces = [];
+        };
+        private = {
+          interfaces = [];
+        };
       };
 
       interfaces = {
