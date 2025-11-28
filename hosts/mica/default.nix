@@ -163,8 +163,6 @@ Surveil. Serve. Satisfy.
     updater.interval = "hourly";
   };
 
-
-
   # Did you read the comment?
   system.stateVersion = "25.05";
 }
