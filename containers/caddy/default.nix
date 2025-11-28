@@ -5,9 +5,9 @@
   inputs,
   ...
 }: {
-  options.containers.caddy.enable = lib.mkEnableOption "";
+  options.modules.containers.caddy.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.containers.caddy.enable {
+  config = lib.mkIf config.modules.containers.caddy.enable {
 
     sops.secrets.CLOUDFLARE_API_TOKEN = {
       sopsFile = ../secrets/containers/caddy.yaml;

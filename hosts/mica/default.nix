@@ -150,6 +150,10 @@ Surveil. Serve. Satisfy.
     # Security
     firewall.enable = true;
     chrony.enable = true;
+
+    containers = {
+      caddy.enable = true;
+    };
   };
 
   services.clamav = {
@@ -159,9 +163,7 @@ Surveil. Serve. Satisfy.
     updater.interval = "hourly";
   };
 
-  containers = {
-    caddy.enable = true;
-  };
+
 
   # Did you read the comment?
   system.stateVersion = "25.05";

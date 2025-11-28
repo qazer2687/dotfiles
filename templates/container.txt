@@ -5,9 +5,9 @@
   inputs,
   ...
 }: {
-  options.containers.NAME.enable = lib.mkEnableOption "";
+  options.modules.containers.NAME.enable = lib.mkEnableOption "";
 
-  config = lib.mkIf config.containers.NAME.enable {
+  config = lib.mkIf config.modules.containers.NAME.enable {
     containers. = {
       autoStart = true;
       privateNetwork = true;
