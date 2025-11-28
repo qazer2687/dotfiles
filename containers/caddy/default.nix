@@ -19,6 +19,13 @@
       '';
     };
 
+    systemd.tmpfiles.rules = [
+      "d /srv/caddy/etc/caddy 0755 root root -"
+      "d /srv/caddy/data 0755 root root -"
+      "d /srv/caddy/config 0755 root root -"
+      "d /srv/caddy/srv/assets 0755 root root -"
+    ];
+
     containers.caddy = {
       autoStart = true;
       # Enable host networking.
@@ -36,7 +43,7 @@
 
       bindMounts = {
         "/etc/caddy" = {
-          hostPath = "/srv/caddy/etc";
+          hostPath = "/srv/caddy/etc/caddy";
           isReadOnly = false;
         };
         "/data" = {
@@ -48,7 +55,7 @@
           isReadOnly = false;
         };
         "/srv/assets" = {
-          hostPath = "/srv/assets";
+          hostPath = "/srv/caddy/srv/assets";
           isReadOnly = false;
         };
         "/run/secrets/caddy" = {
