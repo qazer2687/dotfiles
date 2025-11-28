@@ -9,6 +9,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../hosts/mica
     ../../modules/base/shared
     ../../modules/base/mica
+    ../../containers
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
     inputs.nyx.nixosModules.default
