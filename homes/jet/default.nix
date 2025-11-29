@@ -16,6 +16,7 @@
     nautilus
     neovim
     cryptsetup
+    gajim
   ];
 
   modules = {
@@ -49,6 +50,9 @@
     vscode.enable = true;
     zed.enable = true;
     vesktop.enable = true;
+
+    # Games
+    prismlauncher.enable = true;
   };
 
   home.stateVersion = "24.11";
