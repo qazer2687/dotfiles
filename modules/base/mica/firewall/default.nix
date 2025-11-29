@@ -22,6 +22,9 @@
           443
           # DNS
           53
+          # XMPP
+          5222
+          5269
           # qBittorrent
           6881
           # Netbird
