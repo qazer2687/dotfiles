@@ -10,6 +10,7 @@
   home.packages = with pkgs; [
     ncdu
     btop
+    cryptsetup
   ];
 
   modules = {
