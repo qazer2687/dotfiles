@@ -27,7 +27,6 @@ in {
             tap = false;
             # Enable palm rejection.
             dwt = true;
-            scroll-method = "no-scroll";
           };
           focus-follows-mouse = {
             enable = false;
