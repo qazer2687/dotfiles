@@ -11,7 +11,6 @@ in {
   options.modules.niri.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.niri.enable {
-    # Doesn't work on latest because of some issue with the drivers not being able to do some sort of mode idk.
     programs.niri = {
       enable = true;
       package = inputs.niri.packages.${pkgs.system}.niri-stable;
@@ -57,7 +56,7 @@ in {
 
             focus-ring = {
               enable = true;
-              width = 2;
+              width = 1;
               active.color = "#${scheme.base05}";
               inactive.color = "#${scheme.base02}";
             };
@@ -76,9 +75,12 @@ in {
           # Application launcher
           "Mod+e".action = spawn "tofi-run" "|" "sh";
 
+          # Overview
+          "Mod+Space".action = toggle-overview;
+
           # Window management
           "Mod+q".action = close-window;
-          #"Mod+Space".action = toggle-window-floating;
+          "Mod+Shift+f".action = toggle-window-floating;
           "Mod+t".action = fullscreen-window;
 
           # Volume controls
@@ -147,10 +149,11 @@ in {
           # { command = [ "swww-daemon" ]; }
           # { command = [ "swww" "img" "/home/alex/.config/wallpaper/wallpaper.gif" ]; }
 
-          # A fix for waybar reporting it is unable to find a display on launch.
+          {command = ["hyprlock" "-q" "||" "loginctl" "terminate-session" "$XDG_SESSION_ID"];}
+
           {command = ["fish" "-c" "'waybar'"];}
 
-          {command = ["${pkgs.wbg}/bin/wbg" "/home/alex/.config/wallpaper/wallpaper.png"];}
+          {command = ["${pkgs.wbg}/bin/wbg" "-s" "/home/alex/.config/wallpaper/wallpaper.png"];}
         ];
       };
     };
