@@ -83,10 +83,10 @@ in {
 
         binds = with config.lib.niri.actions; {
           # Terminal
-          "Mod+Return".action.spawn = "foot";
+          "Mod+Return".action = spawn "foot";
 
           # Launcher
-          "Mod+r".action.spawn = "tofi-run" "|" "sh";
+          "Mod+r".action = spawn "tofi-run" "|" "sh";
 
           # Overview
           "Mod+Space".action = toggle-overview;
