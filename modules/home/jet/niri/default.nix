@@ -86,10 +86,10 @@ in {
           "Mod+Return".action = spawn "foot";
 
           # Launcher
-          "Mod+r".action = spawn "bash" "-c" "tofi-run | xargs niri msg action spawn --";
+          "Mod+Space".action = spawn "bash" "-c" "tofi-run | xargs niri msg action spawn --";
 
           # Overview
-          "Mod+Space".action = toggle-overview;
+          "Mod+o".action = toggle-overview;
 
           # Window management
           "Mod+q".action = close-window;
