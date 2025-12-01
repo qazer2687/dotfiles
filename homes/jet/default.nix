@@ -17,6 +17,7 @@
     neovim
     cryptsetup
     gajim
+    helium
   ];
 
   modules = {

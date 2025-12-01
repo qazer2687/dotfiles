@@ -7,4 +7,5 @@ pkgs: {
   pragmatapro = pkgs.callPackage ./pragmatapro {};
   TX02 = pkgs.callPackage ./TX02 {};
   #vicinae = pkgs.callPackage ./vicinae {};
+  helium = pkgs.callPackage ./helium {};
 }
