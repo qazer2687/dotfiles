@@ -111,20 +111,6 @@
     };
   };
 
-  # This can get moved at some point I'm just lazy.
-  environment.systemPackages = with pkgs; [
-    easyeffects
-    calf
-    libebur128
-    zam-plugins
-    zita-convolver
-    rnnoise
-    speexdsp
-    libbs2b
-  ];
-
-  
-
   modules = {
     core.enable = true;
     dbus.enable = true;
@@ -137,6 +123,7 @@
     networkmanager.enable = true;
     tailscale.enable = true;
     platformio.enable = true;
+    easyeffects.enable = true;
   };
 
   # Did you read the comment?

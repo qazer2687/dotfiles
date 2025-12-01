@@ -26,6 +26,7 @@ inputs.nixpkgs.lib.nixosSystem {
         useGlobalPkgs = true;
         useUserPackages = true;
         sharedModules = [
+          inputs.zen.packages."aarch64-linux".default
           inputs.sops-nix.homeManagerModules.sops
           inputs.niri.homeModules.niri
           inputs.textfox.homeManagerModules.default

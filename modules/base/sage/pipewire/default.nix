@@ -12,16 +12,6 @@
       pulseaudio
       pavucontrol
       pamixer
-
-      # EasyEffects & Plugins
-      easyeffects
-      calf
-      libebur128
-      zam-plugins
-      zita-convolver
-      rnnoise
-      speexdsp
-      libbs2b
     ];
 
     # EXPERIMENTAL - Enable realtime priority

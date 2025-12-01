@@ -120,6 +120,7 @@
     xdg.enable = true;
     networkmanager.enable = true;
     tailscale.enable = true;
+    easyeffects.enable = true;
 
     # Gaming
     gamemode.enable = true;

@@ -24,7 +24,9 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
+    zen.url = "github:0xc000022070/zen-browser-flake";
+
     # Personal
     nix-base16.url = "github:qazer2687/nix-base16";
   };
