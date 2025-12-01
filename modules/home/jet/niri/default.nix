@@ -68,6 +68,18 @@ in {
           center-focused-column = "always";
         };
 
+        workspaces."one" = {};
+        workspaces."two" = {};
+        workspaces."three" = {};
+        workspaces."four" = {};
+        workspaces."five" = {};
+        workspaces."six" = {};
+        workspaces."seven" = {};
+        workspaces."eight" = {};
+        workspaces."nine" = {};
+        workspaces."ten" = {};
+
+
         binds = with config.lib.niri.actions; {
           # Terminal
           "Mod+Return".action = spawn "foot";
@@ -108,28 +120,29 @@ in {
           #"Mod+Shift+left".action = set-window-width "-10%";
 
           # Workspace switching
-          "Mod+1".action = focus-workspace 1;
-          "Mod+2".action = focus-workspace 2;
-          "Mod+3".action = focus-workspace 3;
-          "Mod+4".action = focus-workspace 4;
-          "Mod+5".action = focus-workspace 5;
-          "Mod+6".action = focus-workspace 6;
-          "Mod+7".action = focus-workspace 7;
-          "Mod+8".action = focus-workspace 8;
-          "Mod+9".action = focus-workspace 9;
-          "Mod+0".action = focus-workspace 10;
+          "Mod+1".action = focus-workspace "one";
+          "Mod+2".action = focus-workspace "two";
+          "Mod+3".action = focus-workspace "three";
+          "Mod+4".action = focus-workspace "four";
+          "Mod+5".action = focus-workspace "five";
+          "Mod+6".action = focus-workspace "six";
+          "Mod+7".action = focus-workspace "seven";
+          "Mod+8".action = focus-workspace "eight";
+          "Mod+9".action = focus-workspace "nine";
+          "Mod+0".action = focus-workspace "ten";
 
           # Move windows to workspaces
-          "Mod+Shift+1".action = move-window-to-workspace 1;
-          "Mod+Shift+2".action = move-window-to-workspace 2;
-          "Mod+Shift+3".action = move-window-to-workspace 3;
-          "Mod+Shift+4".action = move-window-to-workspace 4;
-          "Mod+Shift+5".action = move-window-to-workspace 5;
-          "Mod+Shift+6".action = move-window-to-workspace 6;
-          "Mod+Shift+7".action = move-window-to-workspace 7;
-          "Mod+Shift+8".action = move-window-to-workspace 8;
-          "Mod+Shift+9".action = move-window-to-workspace 9;
-          "Mod+Shift+0".action = move-window-to-workspace 10;
+          "Mod+Shift+1".action = move-column-to-workspace "one";
+          "Mod+Shift+2".action = move-column-to-workspace "two";
+          "Mod+Shift+3".action = move-column-to-workspace "three";
+          "Mod+Shift+4".action = move-column-to-workspace "four";
+          "Mod+Shift+5".action = move-column-to-workspace "five";
+          "Mod+Shift+6".action = move-column-to-workspace "six";
+          "Mod+Shift+7".action = move-column-to-workspace "seven";
+          "Mod+Shift+8".action = move-column-to-workspace "eight";
+          "Mod+Shift+9".action = move-column-to-workspace "nine";
+          "Mod+Shift+0".action = move-column-to-workspace "ten";
+
 
           # Screenshot
           #"Mod+Option".action = spawn "screenshot";
