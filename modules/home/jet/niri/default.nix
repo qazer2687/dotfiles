@@ -18,10 +18,6 @@ in {
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;
 
-        gestures = {
-          hot-corners.off = true;
-        };
-
         input = {
           keyboard.xkb = {
             layout = "gb";
@@ -93,25 +89,23 @@ in {
           # Launcher
           "Mod+Space".action = spawn "bash" "-c" "tofi-run | xargs niri msg action spawn --";
 
-          # Overview
-          "Mod+o".action = toggle-overview;
-
-          # Window management
+          # Window Management
           "Mod+q".action = close-window;
           "Mod+Shift+f".action = toggle-window-floating;
           "Mod+f".action = fullscreen-window;
+          "Mod+o".action = toggle-overview;
 
-          # Volume controls
-          "XF86AudioRaiseVolume".action = spawn "${pkgs.pamixer}/bin/pamixer" "-i" "5";
-          "XF86AudioLowerVolume".action = spawn "${pkgs.pamixer}/bin/pamixer" "-d" "5";
+          # Volume Controls
+          "XF86AudioRaiseVolume".action = spawn "${pkgs.pamixer}/bin/pamixer" "-i" "2";
+          "XF86AudioLowerVolume".action = spawn "${pkgs.pamixer}/bin/pamixer" "-d" "2";
           "XF86AudioMute".action = spawn "${pkgs.pamixer}/bin/pamixer" "-t";
           "XF86AudioMicMute".action = spawn "${pkgs.pamixer}/bin/pamixer" "--default-source" "-t";
 
-          # Brightness controls
+          # Brightness Controls
           "XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "s" "1%+";
           "XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "s" "1%-";
 
-          # Keyboard backlight
+          # Keyboard Backlight
           "Mod+XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%+";
           "Mod+XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%-";
 
@@ -132,10 +126,6 @@ in {
           "Mod+Shift+e".action = move-window-up;
           # L - RIGHT
           "Mod+Shift+i".action = move-column-right;
-
-
-          # Screenshot
-          #"Mod+Option".action = spawn "screenshot";
         };
 
         debug = {
