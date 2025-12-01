@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }: {
   options.modules.firefox.enable = lib.mkEnableOption "";
@@ -19,7 +20,7 @@
 
     programs.firefox = {
       enable = true;
-      package = pkgs.zen-browser;
+      package = inputs.zen.packages."aarch64-linux".default;
 
       profiles."default" = {
         name = "default";
