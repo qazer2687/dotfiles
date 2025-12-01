@@ -86,7 +86,7 @@ in {
           "Mod+Return".action = spawn "foot";
 
           # Launcher
-          "Mod+r".action = spawn "tofi-run" "|" "sh";
+          "Mod+r".action = spawn "tofi-run | sh";
 
           # Overview
           "Mod+Space".action = toggle-overview;
