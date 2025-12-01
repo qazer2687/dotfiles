@@ -18,6 +18,10 @@ in {
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;
 
+        gestures = {
+          hot-corners.off = true;
+        };
+
         input = {
           keyboard.xkb = {
             layout = "gb";
@@ -27,9 +31,10 @@ in {
             tap = false;
             # Enable palm rejection.
             dwt = true;
+            scroll-method = "no-scroll";
           };
           focus-follows-mouse = {
-            enable = true;
+            enable = false;
           };
         };
 
