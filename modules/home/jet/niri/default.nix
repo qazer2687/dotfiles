@@ -111,13 +111,13 @@ in {
           "Mod+XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%-";
 
           # H - LEFT
-          "Mod+h".action = focus-window-left;
+          "Mod+h".action = focus-column-left;
           # J - DOWN
           "Mod+n".action = focus-workspace-down;
           # K - UP
           "Mod+e".action = focus-workspace-up;
           # L - RIGHT
-          "Mod+i".action = focus-window-right;
+          "Mod+i".action = focus-column-right;
           
           # H - LEFT
           "Mod+Shift+h".action = move-column-left;
