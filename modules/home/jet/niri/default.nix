@@ -120,13 +120,13 @@ in {
           "Mod+i".action = focus-window-right;
           
           # H - LEFT
-          "Mod+h".action = move-column-left;
+          "Mod+Shift+h".action = move-column-left;
           # J - DOWN
-          "Mod+n".action = move-window-down;
+          "Mod+Shift+n".action = move-window-down;
           # K - UP
-          "Mod+e".action = move-window-up;
+          "Mod+Shift+e".action = move-window-up;
           # L - RIGHT
-          "Mod+i".action = move-column-right;
+          "Mod+Shift+i".action = move-column-right;
 
 
           # Screenshot
