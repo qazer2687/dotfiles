@@ -22,7 +22,7 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "hyprland/workspaces" "custom/pingServer" "tray"];
+          modules-left = ["clock" "niri/workspaces" "custom/pingServer" "tray"];
           modules-center = [];
           modules-right = ["network" "pulseaudio" "battery"];
 
@@ -75,6 +75,22 @@ in {
           };
 
           "hyprland/workspaces" = {
+            format = "{icon}";
+            format-icons = {
+              "1" = "1";
+              "2" = "2";
+              "3" = "3";
+              "4" = "4";
+              "5" = "5";
+              "6" = "6";
+              "7" = "7";
+              "8" = "8";
+              "9" = "9";
+              "0" = "0";
+            };
+          };
+
+          "niri/workspaces" = {
             format = "{icon}";
             format-icons = {
               "1" = "1";
