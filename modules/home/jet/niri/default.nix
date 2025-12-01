@@ -86,7 +86,7 @@ in {
           "Mod+Return".action = spawn "foot";
 
           # Launcher
-          "Mod+r".action = spawn "tofi-run | sh";
+          "Mod+r".action = spawn "bash" "-c" "tofi-run | xargs niri msg action spawn --";
 
           # Overview
           "Mod+Space".action = toggle-overview;
