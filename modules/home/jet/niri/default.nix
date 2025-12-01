@@ -68,6 +68,7 @@ in {
           center-focused-column = "always";
         };
 
+        /*
         workspaces."one" = {};
         workspaces."two" = {};
         workspaces."three" = {};
@@ -78,14 +79,14 @@ in {
         workspaces."eight" = {};
         workspaces."nine" = {};
         workspaces."ten" = {};
-
+        */
 
         binds = with config.lib.niri.actions; {
           # Terminal
-          "Mod+Return".action = spawn "foot";
+          "Mod+Return".action.spawn = "foot";
 
-          # Application launcher
-          "Mod+e".action = spawn "tofi-run" "|" "sh";
+          # Launcher
+          "Mod+r".action.spawn = "tofi-run" "|" "sh";
 
           # Overview
           "Mod+Space".action = toggle-overview;
@@ -93,7 +94,7 @@ in {
           # Window management
           "Mod+q".action = close-window;
           "Mod+Shift+f".action = toggle-window-floating;
-          "Mod+t".action = fullscreen-window;
+          "Mod+f".action = fullscreen-window;
 
           # Volume controls
           "XF86AudioRaiseVolume".action = spawn "${pkgs.pamixer}/bin/pamixer" "-i" "5";
@@ -109,39 +110,23 @@ in {
           "Mod+XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%+";
           "Mod+XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%-";
 
-          # Window movement
-          "Mod+left".action = move-column-left;
-          "Mod+right".action = move-column-right;
-          "Mod+up".action = move-window-up;
-          "Mod+down".action = move-window-down;
-
-          # Window Resizing
-          #"Mod+Shift+right".action = set-window-width "+10%";
-          #"Mod+Shift+left".action = set-window-width "-10%";
-
-          # Workspace switching
-          "Mod+1".action = focus-workspace "one";
-          "Mod+2".action = focus-workspace "two";
-          "Mod+3".action = focus-workspace "three";
-          "Mod+4".action = focus-workspace "four";
-          "Mod+5".action = focus-workspace "five";
-          "Mod+6".action = focus-workspace "six";
-          "Mod+7".action = focus-workspace "seven";
-          "Mod+8".action = focus-workspace "eight";
-          "Mod+9".action = focus-workspace "nine";
-          "Mod+0".action = focus-workspace "ten";
-
-          # Move windows to workspaces
-          "Mod+Shift+1".action.move-window-to-workspace = "one";
-          "Mod+Shift+2".action.move-window-to-workspace = "two";
-          "Mod+Shift+3".action.move-window-to-workspace = "three";
-          "Mod+Shift+4".action.move-window-to-workspace = "four";
-          "Mod+Shift+5".action.move-window-to-workspace = "five";
-          "Mod+Shift+6".action.move-window-to-workspace = "six";
-          "Mod+Shift+7".action.move-window-to-workspace = "seven";
-          "Mod+Shift+8".action.move-window-to-workspace = "eight";
-          "Mod+Shift+9".action.move-window-to-workspace = "nine";
-          "Mod+Shift+0".action.move-window-to-workspace = "ten";
+          # H - LEFT
+          "Mod+h".action = focus-window-left;
+          # J - DOWN
+          "Mod+n".action = focus-workspace-down;
+          # K - UP
+          "Mod+e".action = focus-workspace-up;
+          # L - RIGHT
+          "Mod+i".action = focus-window-right;
+          
+          # H - LEFT
+          "Mod+h".action = move-column-left;
+          # J - DOWN
+          "Mod+n".action = move-window-down;
+          # K - UP
+          "Mod+e".action = move-window-up;
+          # L - RIGHT
+          "Mod+i".action = move-column-right;
 
 
           # Screenshot
