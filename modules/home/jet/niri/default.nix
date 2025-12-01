@@ -132,16 +132,16 @@ in {
           "Mod+0".action = focus-workspace "ten";
 
           # Move windows to workspaces
-          "Mod+Shift+1".action = move-column-to-workspace "one";
-          "Mod+Shift+2".action = move-column-to-workspace "two";
-          "Mod+Shift+3".action = move-column-to-workspace "three";
-          "Mod+Shift+4".action = move-column-to-workspace "four";
-          "Mod+Shift+5".action = move-column-to-workspace "five";
-          "Mod+Shift+6".action = move-column-to-workspace "six";
-          "Mod+Shift+7".action = move-column-to-workspace "seven";
-          "Mod+Shift+8".action = move-column-to-workspace "eight";
-          "Mod+Shift+9".action = move-column-to-workspace "nine";
-          "Mod+Shift+0".action = move-column-to-workspace "ten";
+          "Mod+Shift+1".action.move-window-to-workspace = "one";
+          "Mod+Shift+2".action.move-window-to-workspace = "two";
+          "Mod+Shift+3".action.move-window-to-workspace = "three";
+          "Mod+Shift+4".action.move-window-to-workspace = "four";
+          "Mod+Shift+5".action.move-window-to-workspace = "five";
+          "Mod+Shift+6".action.move-window-to-workspace = "six";
+          "Mod+Shift+7".action.move-window-to-workspace = "seven";
+          "Mod+Shift+8".action.move-window-to-workspace = "eight";
+          "Mod+Shift+9".action.move-window-to-workspace = "nine";
+          "Mod+Shift+0".action.move-window-to-workspace = "ten";
 
 
           # Screenshot
