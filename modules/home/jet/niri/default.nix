@@ -74,12 +74,13 @@ in {
           center-focused-column = "always";
         };
 
-        /*
+        
         workspaces."one" = {};
         workspaces."two" = {};
         workspaces."three" = {};
         workspaces."four" = {};
         workspaces."five" = {};
+        /*
         workspaces."six" = {};
         workspaces."seven" = {};
         workspaces."eight" = {};
