@@ -33,7 +33,7 @@ in {
             format-muted = "";
             format-icons = {
               # Shift the point where the icons change lower, because I never listen above like 20%.
-              default = ["" "" "" "" "" "" "" "" "" ""];
+              default = ["" "" "" "" "" "" "" "" "" "" "" "" "" ""];
             };
           };
 
@@ -66,14 +66,14 @@ in {
             tooltip = false;
             format = "{icon}";
             format-alt = "{icon} {capacity}%";
-            format-charging = "";
+            format-charging = "";
             interval = 30;
             states = {
               sub50 = 50;
               sub25 = 25; 
               sub10 = 10;
             };
-            format-icons = ["" "" "" "" "" "" ""];
+            format-icons = ["" "" "" "" "" "" ""];
             margin-left = 15;
           };
 
