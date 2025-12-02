@@ -145,9 +145,8 @@ in {
           border: none;
           border-radius: 0;
           font-family: "PragmataPro", "lucide";
-          font-size: 11px;
+          font-size: 13px;
           min-height: 0;
-          align-items: center;
         }
 
         window#waybar {
