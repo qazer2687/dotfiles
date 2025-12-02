@@ -13,7 +13,7 @@ in {
     home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
     home.file.".config/waybar/scripts/pingServer.sh".executable = true;
     
-    home.packages = [ pkgs.jq pkgs.playerctl ];
+    home.packages = [ pkgs.jq ];
 
     programs.waybar = {
       enable = true;
@@ -22,7 +22,7 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "mpris"];
+          modules-left = ["clock" "niri/workspaces"];
           modules-center = [];
           modules-right = ["custom/pingServer" "network" "pulseaudio" "battery"];
 
@@ -104,11 +104,11 @@ in {
           "niri/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "1" = "ONE";
-              "2" = "TWO";
-              "3" = "THREE";
-              "4" = "FOUR";
-              "5" = "FIVE";
+              "1" = "\\\\\\\\\\";
+              "2" = "\\\\\\\\\\";
+              "3" = "\\\\\\\\\\";
+              "4" = "\\\\\\\\\\";
+              "5" = "\\\\\\\\\\";
             };
           };
 
@@ -118,19 +118,6 @@ in {
             tooltip = false;
           };
 
-          mpris = {
-            tooltip = false;
-            format = "{player_icon} {artist} - {title}";
-            format-paused = "{status_icon} {artist} - {title}";
-            artist-len = 25;
-            title-len = 25;
-            player-icons = {
-              default = "♪";
-            };
-            status-icons = {
-              paused = "";
-            };
-          };
         };
       };
 
@@ -164,7 +151,7 @@ in {
 
         #workspaces button {
           padding: 0 8px;
-          margin: 0 1px;
+          margin: 0 0px;
           border-radius: 2px;
           background: transparent;
           color: #${scheme.base05};
@@ -173,8 +160,6 @@ in {
         #workspaces button.active {
           background: #${scheme.base05};
           color: #${scheme.base01};
-          padding: 0 8px;
-          margin: 0 0px;
         }
 
        /* #custom-pingServer.up { color: #${scheme.base0B}; }
