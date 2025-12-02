@@ -97,7 +97,7 @@
   #'';
 
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec niri-session >/dev/null 2>&1
+    [[ "$(tty)" == /dev/tty1 ]] && sleep 2 & exec niri-session >/dev/null 2>&1
   '';
 
   programs.niri.enable = true;
