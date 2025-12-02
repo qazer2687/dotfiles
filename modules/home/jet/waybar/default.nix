@@ -32,7 +32,7 @@ in {
             tooltip = false;
             format-muted = "VOL: MUTED";
             format-icons = {
-              default = ["❭    " "❭❭   " "❭❭❭  " "❭❭❭❭ " "❭❭❭❭❭" "❭❭❭❭❭" "❭❭❭❭❭" "❭❭❭❭❭" "❭❭❭❭❭" "❭❭❭❭❭"];
+              default = ["›    " "››   " "›››  " "›››› " "›››››" "›››››" "›››››" "›››››" "›››››" "›››››"];
             };
           };
 
@@ -72,7 +72,7 @@ in {
               sub25 = 25; 
               sub10 = 10;
             };
-            format-icons = ["❭    " "❭❭   " "❭❭❭  " "❭❭❭❭ " "❭❭❭❭❭"];
+            format-icons = ["›    " "››   " "›››  " "›››› " "›››››"];
             margin-left = 15;
           };
 
@@ -82,7 +82,7 @@ in {
             format-wifi = "NET: {icon}";
             format-disconnected = "NET: OFFLINE";
             interval = 30;
-            format-icons = ["❭    " "❭❭   " "❭❭❭  " "❭❭❭❭ " "❭❭❭❭❭"];
+            format-icons = ["›    " "››   " "›››  " "›››› " "›››››"];
           };
 
           "hyprland/workspaces" = {
@@ -125,10 +125,10 @@ in {
             artist-len = 25;
             title-len = 25;
             player-icons = {
-              default = "▪";
+              default = "♪";
             };
             status-icons = {
-              paused = "▫";
+              paused = "<s>♪</s>";
             };
           };
         };
