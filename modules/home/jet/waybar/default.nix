@@ -142,6 +142,8 @@ in {
       };
 
       style = ''
+        /* --- WAYBAR CSS WITH WORKSPACE ANIMATIONS --- */
+
         * {
           border: none;
           border-radius: 0;
@@ -154,7 +156,7 @@ in {
           background: #${scheme.base00};
         }
 
-        /* Base module styling */
+        /* Base modules */
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #battery, #custom-pingServer, #tray {
           padding: 0 8px;
@@ -177,34 +179,51 @@ in {
           border-radius: 2px;
           background: transparent;
           color: #${scheme.base05};
-          transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+          transition: all 0.1s ease-out; /* Smooth hover/off transitions */
         }
 
         #workspaces button:hover {
-          background: #${scheme.base02};
-          opacity: 0.7;
+          background: alpha(${scheme.base02}, 0.4);
         }
 
+        /* --- LIQUID GLASS ANIMATION ---
+          Uses padding/opacity (GTK-safe) instead of transform
+          Creates expand → overshoot → settle effect */
         #workspaces button.active {
           background: #${scheme.base02};
-          animation: workspaceActivate 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          transform-origin: center;
+          animation-name: workspaceActivate;
+          animation-duration: 0.45s;
+          animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); /* Elastic but GTK-safe */
+          animation-fill-mode: both;
         }
 
         @keyframes workspaceActivate {
           0% {
-            transform: scale(0.85);
-            opacity: 0.6;
+            /* Compressed & faded */
+            padding: 0 5px;
+            margin: 0 3px;  /* Compensates for padding change */
+            opacity: 0.7;
           }
-          50% {
-            transform: scale(1.2);
+          45% {
+            /* Peak expansion - "fling" */
+            padding: 0 15px;
+            margin: 0 -7px;
             opacity: 1;
           }
-          80% {
-            transform: scale(0.96);
+          75% {
+            /* First settle */
+            padding: 0 8px;
+            margin: 0 0px;
+          }
+          90% {
+            /* Minor overshoot bounce */
+            padding: 0 9px;
+            margin: 0 -1px;
           }
           100% {
-            transform: scale(1);
+            /* Final locked state */
+            padding: 0 8px;
+            margin: 0;
             opacity: 1;
           }
         }
