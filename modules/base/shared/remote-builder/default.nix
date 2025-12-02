@@ -38,6 +38,7 @@ in {
   nix = lib.mkMerge [
     {
       settings = {
+        builders = "@daemon";
         trusted-users = [ "root" fleetUser ];
         system-features = [ "big-parallel" "kvm" "nixos-test" ];
         cores = 0;
