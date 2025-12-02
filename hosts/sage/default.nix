@@ -121,6 +121,7 @@
     networkmanager.enable = true;
     tailscale.enable = true;
     easyeffects.enable = true;
+    remote-builder = true;
 
     # Gaming
     gamemode.enable = true;
