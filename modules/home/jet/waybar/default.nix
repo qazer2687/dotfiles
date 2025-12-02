@@ -142,8 +142,6 @@ in {
       };
 
       style = ''
-        /* --- WAYBAR CSS WITH WORKSPACE ANIMATIONS --- */
-
         * {
           border: none;
           border-radius: 0;
@@ -156,7 +154,6 @@ in {
           background: #${scheme.base00};
         }
 
-        /* Base modules */
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
         #battery, #custom-pingServer, #tray {
           padding: 0 8px;
@@ -170,26 +167,24 @@ in {
           background: #${scheme.base01};
           border-radius: 2px;
           margin: 2px;
-          color: transparent;
+          padding: 0 2px;
         }
 
         #workspaces button {
-            padding: 0 8px;
-            transition: padding 120ms ease-out;
+          padding: 0 8px;
+          margin: 0 1px;
+          border-radius: 2px;
+          background: transparent;
+          color: #${scheme.base05};
+          transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         #workspaces button.active {
-            background: #${scheme.base02};
-            animation: slide 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+          background: #${scheme.base02};
+          padding: 0 11px;
+          margin: 0 -1px;
         }
 
-        @keyframes slide {
-            0%   { padding: 0 4px; opacity: 0.6; }
-            50%  { padding: 0 14px; opacity: 1; }   /* “fling” */
-            100% { padding: 0 8px; opacity: 1; }    /* settle */
-        }
-
-        /* Status colors */
         #custom-pingServer.up { color: #${scheme.base0B}; }
         #custom-pingServer.down { color: #${scheme.base08}; }
 
@@ -198,7 +193,6 @@ in {
         #battery.sub25:not(.charging) { color: #${scheme.base09}; }
         #battery.sub10:not(.charging) { color: #${scheme.base08}; }
 
-        /* Edge margins */
         #clock { margin-left: 20px; }
         #battery { margin-right: 20px; }
       '';
