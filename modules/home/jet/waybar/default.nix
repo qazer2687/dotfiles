@@ -27,12 +27,13 @@ in {
           modules-right = ["network" "pulseaudio" "battery" "clock" ];
 
           pulseaudio = {
-            format = "{icon} {volume}%";
+            format = "{icon}";
+            format-alt = "{icon} {volume}%";
             tooltip = false;
-            format-muted = " ";
+            format-muted = "";
             format-icons = {
               # Shift the point where the icons change lower, because I never listen above like 20%.
-              default = ["" "" "" "" "" "" "" "" "" ""];
+              default = ["" "" "" "" "" "" "" "" "" ""];
             };
           };
 
@@ -65,25 +66,25 @@ in {
             tooltip = false;
             format = "{icon}";
             format-alt = "{icon} {capacity}%";
-            format-charging = "{icon}";
+            format-charging = "";
             interval = 30;
             states = {
               sub50 = 50;
               sub25 = 25; 
               sub10 = 10;
             };
-            format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            format-icons = ["" "" "" "" "" "" ""];
             margin-left = 15;
           };
 
           network = {
             tooltip = false;
             format = "{icon}";
-            format-ethernet = "󰈀";
+            format-ethernet = "";
             format-wifi = "{icon}";
-            format-disconnected = "󰈂";
+            format-disconnected = "";
             interval = 30;
-            format-icons = ["󰤟" "󰤢" "󰤥" ""];
+            format-icons = ["" "" "" "" ""];
           };
 
           "hyprland/workspaces" = {
