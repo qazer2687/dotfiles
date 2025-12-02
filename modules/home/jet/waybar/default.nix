@@ -144,7 +144,7 @@ in {
         * {
           border: none;
           border-radius: 0;
-          font-family: "Material Symbols Rounded", "PragmataPro";
+          font-family: "PragmataPro", "Material Symbols Rounded";
           font-size: 11px;
           min-height: 0;
         }
