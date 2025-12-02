@@ -181,7 +181,7 @@ in {
         #workspaces button.active {
           background: #${scheme.base02};
           padding: 0 11px;
-          margin: 0 -1px;
+          margin: 0 0px;
           transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
