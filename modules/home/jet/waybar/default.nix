@@ -176,13 +176,13 @@ in {
           border-radius: 2px;
           background: transparent;
           color: #${scheme.base05};
-          transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         #workspaces button.active {
           background: #${scheme.base02};
           padding: 0 11px;
           margin: 0 -1px;
+          transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         #custom-pingServer.up { color: #${scheme.base0B}; }
