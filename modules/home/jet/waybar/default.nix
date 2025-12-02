@@ -13,7 +13,7 @@ in {
     home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
     home.file.".config/waybar/scripts/pingServer.sh".executable = true;
     
-    home.packages = [ pkgs.jq ];
+    home.packages = [ pkgs.jq pkgs.playerctl ];
 
     programs.waybar = {
       enable = true;
