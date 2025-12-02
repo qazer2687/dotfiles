@@ -104,8 +104,8 @@ in {
           "niri/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "default" = "\\\\\\\\\\";
-              "active" = "/////";
+              "active" = "\\\\\\\\\\";
+              "default" = "/////";
             };
           };
 
@@ -152,11 +152,6 @@ in {
           border-radius: 2px;
           background: transparent;
           color: #${scheme.base05};
-        }
-
-        #workspaces button.active {
-          background: #${scheme.base05};
-          color: #${scheme.base01};
         }
 
        /* #custom-pingServer.up { color: #${scheme.base0B}; }
