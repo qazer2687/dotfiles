@@ -147,6 +147,7 @@ in {
           font-family: "PragmataPro", "lucide";
           font-size: 11px;
           min-height: 0;
+          align-items: center;
         }
 
         window#waybar {
