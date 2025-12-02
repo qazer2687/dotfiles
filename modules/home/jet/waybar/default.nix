@@ -24,7 +24,7 @@ in {
           margin = "0 0 0 0";
           modules-left = ["clock" "mpris"];
           modules-center = [];
-          modules-right = ["tray" "custom/pingServer" "network" "pulseaudio" "battery"];
+          modules-right = ["custom/pingServer" "network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "{icon}";
@@ -177,8 +177,8 @@ in {
           margin: 0 0px;
         }
 
-        #custom-pingServer.up { color: #${scheme.base0B}; }
-        #custom-pingServer.down { color: #${scheme.base08}; }
+       /* #custom-pingServer.up { color: #${scheme.base0B}; }
+        #custom-pingServer.down { color: #${scheme.base08}; }*/
 
         #battery.charging { color: #${scheme.base0B}; }
         #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
