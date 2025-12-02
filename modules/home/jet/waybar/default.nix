@@ -182,10 +182,6 @@ in {
           transition: all 0.1s ease-out; /* Smooth hover/off transitions */
         }
 
-        #workspaces button:hover {
-          background: alpha(${scheme.base02}, 0.4);
-        }
-
         /* --- LIQUID GLASS ANIMATION ---
           Uses padding/opacity (GTK-safe) instead of transform
           Creates expand → overshoot → settle effect */
