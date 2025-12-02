@@ -128,6 +128,7 @@
     tailscale.enable = true;
     platformio.enable = true;
     easyeffects.enable = true;
+    remote-builder-client.enable = true;
   };
 
   # Did you read the comment?
