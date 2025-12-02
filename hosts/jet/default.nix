@@ -108,6 +108,7 @@
         prettyName = "Niri";
         comment = "Niri";
         binPath = "/run/current-system/sw/bin/niri";
+      };
     };
   };
 
