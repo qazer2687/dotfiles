@@ -22,9 +22,9 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "custom/pingServer" "tray"];
+          modules-left = ["clock" "mpris"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "battery"];
+          modules-right = ["tray" "custom/pingServer" "network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "VOL: {icon}";
@@ -120,15 +120,15 @@ in {
 
           mpris = {
             tooltip = false;
-            format = "{title}";
-            format-paused = "{title}";
-            artist-len = 20;
-            title-len = 20;
+            format = "{player_icon} {artist} - {title}";
+            format-paused = "{status_icon} <s>{artist} - {title}</s>";
+            artist-len = 25;
+            title-len = 25;
             player-icons = {
-              default = "";
+              default = "■";
             };
             status-icons = {
-              paused = "";
+              paused = "□";
             };
           };
         };
