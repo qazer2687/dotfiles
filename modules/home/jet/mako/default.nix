@@ -5,7 +5,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "gruvbox-dark-hard";
+  scheme = base16 "framer";
 in {
   options.modules.mako.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.mako.enable {

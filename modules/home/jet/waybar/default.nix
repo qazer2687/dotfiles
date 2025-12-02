@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  scheme = base16 "gruvbox-dark-hard";
+  scheme = base16 "framer";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
@@ -152,30 +152,6 @@ in {
 
         window#waybar {
           background-color: #${scheme.base00};
-        }
-
-        #waybar::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: -20px;
-          width: 20px;
-          height: 20px;
-          background-color: transparent;
-          border-bottom-right-radius: 20px;
-          box-shadow: 10px 10px 0 0 #${scheme.base00};
-        }
-
-        #waybar::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          right: -20px;
-          width: 20px;
-          height: 20px;
-          background-color: transparent;
-          border-bottom-left-radius: 20px;
-          box-shadow: -10px 10px 0 0 #${scheme.base00};
         }
 
         #mpris, #clock, #language,

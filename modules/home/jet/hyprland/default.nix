@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "gruvbox-dark-hard";
+  scheme = base16 "framer";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
