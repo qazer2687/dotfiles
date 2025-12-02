@@ -101,7 +101,15 @@
   '';
 
   programs.niri.enable = true;
-  programs.uwsm.enable = true;
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      niri = {
+        prettyName = "Niri";
+        comment = "Niri";
+        binPath = "/run/current-system/sw/bin/niri";
+    };
+  };
 
   programs.hyprland = {
     enable = false;
