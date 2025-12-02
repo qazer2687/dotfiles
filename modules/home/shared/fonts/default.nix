@@ -36,7 +36,7 @@
       ibm-plex
 
       # Icons
-      material-icons
+      material-symbols
 
       # Custom
       TX02
