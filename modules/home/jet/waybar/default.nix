@@ -27,13 +27,12 @@ in {
           modules-right = ["network" "pulseaudio" "battery" "clock" ];
 
           pulseaudio = {
-            format = "{icon}";
+            format = "VOL: {icon}";
             format-alt = "{icon} {volume}%";
             tooltip = false;
             format-muted = "";
             format-icons = {
-              # Shift the point where the icons change lower, because I never listen above like 20%.
-              default = ["" "" "" "" "" "" "" "" "" "" "" "" "" "" ""];
+              default = ["❬    " "❬❬   " "❬❬❬  " "❬❬❬❬ " "❬❬❬❬❬"];
             };
           };
 
@@ -64,26 +63,26 @@ in {
 
           battery = {
             tooltip = false;
-            format = "{icon}";
+            format = "BAT: {icon}";
             format-alt = "{icon} {capacity}%";
-            format-charging = "";
+            format-charging = "BAT: CHARGING";
             interval = 30;
             states = {
               sub50 = 50;
               sub25 = 25; 
               sub10 = 10;
             };
-            format-icons = ["" "" "" ""];
+            format-icons = ["❭    " "❭❭   " "❭❭❭  " "❭❭❭❭ " "❭❭❭❭❭"];
             margin-left = 15;
           };
 
           network = {
             tooltip = false;
-            format = "{icon}";
+            format = "NET: UP";
             format-wifi = "{icon}";
-            format-disconnected = "";
+            format-disconnected = "NET: DOWN";
             interval = 30;
-            format-icons = [""];
+            format-icons = [""];
           };
 
           "hyprland/workspaces" = {
@@ -105,16 +104,16 @@ in {
           "niri/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "1" = "1";
-              "2" = "2";
-              "3" = "3";
-              "4" = "4";
-              "5" = "5";
-              "6" = "6";
-              "7" = "7";
-              "8" = "8";
-              "9" = "9";
-              "0" = "0";
+              "1" = "✦";
+              "2" = "✦";
+              "3" = "✦";
+              "4" = "✦";
+              "5" = "✦";
+              "6" = "✦";
+              "7" = "✦";
+              "8" = "✦";
+              "9" = "✦";
+              "0" = "✦";
             };
           };
 
@@ -144,8 +143,8 @@ in {
         * {
           border: none;
           border-radius: 0;
-          font-family: "PragmataPro", "lucide";
-          font-size: 13px;
+          font-family: "DepartureMono";
+          font-size: 11px;
           min-height: 0;
         }
 
