@@ -29,9 +29,10 @@ in {
           pulseaudio = {
             format = "{icon} {volume}%";
             tooltip = false;
-            format-muted = " 0%";
+            format-muted = " ";
             format-icons = {
-              default = ["" "" ""];
+              # Shift the point where the icons change lower, because I never listen above like 20%.
+              default = ["" "" "" "" "" "" "" "" "" ""];
             };
           };
 
@@ -48,10 +49,9 @@ in {
             return-type = "json";
           };
 
-
           clock = {
-            format-alt = "{:%H:%M}";
-            format = "{:%A %d, %H:%M}";
+            format = "{:%H:%M}";
+            format-alt = "{:%A %d, %H:%M}";
             tooltip = false;
           };
 
@@ -64,6 +64,7 @@ in {
           battery = {
             tooltip = false;
             format = "{icon}";
+            format-alt = "{icon} {capacity}%";
             format-charging = "{icon}";
             interval = 30;
             states = {
@@ -82,7 +83,7 @@ in {
             format-wifi = "{icon}";
             format-disconnected = "󰈂";
             interval = 30;
-            format-icons = ["󰤟" "󰤢" "󰤥" "󰤨"];
+            format-icons = ["󰤟" "󰤢" "󰤥" "/ue1c8"];
           };
 
           "hyprland/workspaces" = {
@@ -143,7 +144,7 @@ in {
         * {
           border: none;
           border-radius: 0;
-          font-family: "PragmataPro", "FiraCode Nerd Font";
+          font-family: "PragmataPro", "Material Icons";
           font-size: 11px;
           min-height: 0;
         }

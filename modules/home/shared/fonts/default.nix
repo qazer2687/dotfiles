@@ -35,6 +35,9 @@
       proggyfonts
       ibm-plex
 
+      # Icons
+      material-icons
+
       # Custom
       TX02
       pragmatapro
