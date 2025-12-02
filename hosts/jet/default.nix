@@ -97,8 +97,11 @@
   #'';
 
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec niri >/dev/null 2>&1
+    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
   '';
+
+  programs.niri.enable = true;
+  programs.uwsm.enable = true;
 
   programs.hyprland = {
     enable = false;

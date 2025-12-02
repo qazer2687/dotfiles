@@ -82,13 +82,13 @@
   };
 
   # Automatically launch UWSM after login.
-  #environment.loginShellInit = ''
-  #  [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
-  #'';
-  #programs.hyprland = {
-  #  enable = true;
-  #  withUWSM = true;
-  #};
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
+  '';
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   environment = {
     sessionVariables = {
