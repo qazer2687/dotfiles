@@ -39,6 +39,8 @@ in {
           {
             clip-to-geometry = true;
 
+            open-maximized = false;
+
             # The max width is 1280 as I use 2x scaling (2560 / 2).
             # This configuration leaves 20px on each side.
             min-width = 1240;

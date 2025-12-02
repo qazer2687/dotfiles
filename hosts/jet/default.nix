@@ -110,7 +110,7 @@
 
   #programs.hyprland = {
   #  enable = false;
-  #  withUWSM = true;
+  #  withUWSM = true;tT
   #};
 
   environment = {

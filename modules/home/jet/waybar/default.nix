@@ -144,86 +144,83 @@ in {
       style = ''
         * {
           border: none;
-          border-radius: 0px;
+          border-radius: 0;
           font-family: "PragmataPro", "FiraCode Nerd Font";
           font-size: 11px;
           min-height: 0;
         }
 
         window#waybar {
-          background-color: #${scheme.base00};
+          background: #${scheme.base00};
         }
 
-        #mpris, #clock, #language,
-        #pulseaudio, #bluetooth, #network,
-        #battery, #custom-pingServer,
-        #workspaces button, #workspaces button.active,
-        #tray {
+        /* Base module styling */
+        #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
+        #battery, #custom-pingServer, #tray {
           padding: 0 8px;
-          margin: 2px 2px;
+          margin: 2px;
           border-radius: 2px;
-        
-          background-color: #${scheme.base01};
+          background: #${scheme.base01};
           color: #${scheme.base05};
         }
 
-        /* WORKSPACES */
-
         #workspaces {
+          background: #${scheme.base01};
+          border-radius: 2px;
+          margin: 2px;
           color: transparent;
-          background-color: #${scheme.base01};
-          border-radius: 4px;
-          margin: 2px 2px;
         }
 
         #workspaces button {
-          background-color: transparent;
-          border-radius: 4px;
-          margin: 0px 0px;
+          padding: 0 8px;
+          margin: 0;
+          border-radius: 2px;
+          background: transparent;
+          color: #${scheme.base05};
+          transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        #workspaces button:hover {
+          background: #${scheme.base02};
+          opacity: 0.7;
         }
 
         #workspaces button.active {
-          background-color: #${scheme.base02};
-          border-radius: 4px;
-          margin: 0px 0px;
+          background: #${scheme.base02};
+          animation: workspaceActivate 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transform-origin: center;
         }
 
-        /* MICA */
-
-        #custom-pingServer.up {
-          color: #${scheme.base0B};
-        }
-        #custom-pingServer.down {
-          color: #${scheme.base08};
-        }
-
-        /* BATTERY */
-
-        #battery.sub50:not(.charging) {
-          color: #${scheme.base0A};
-        }
-
-        #battery.sub25:not(.charging) {
-          color: #${scheme.base09};
-        }
-
-        #battery.sub10:not(.charging) {
-          color: #${scheme.base08};
+        @keyframes workspaceActivate {
+          0% {
+            transform: scale(0.85);
+            opacity: 0.6;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 1;
+          }
+          80% {
+            transform: scale(0.96);
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
         }
 
-        #battery.charging {
-          color: #${scheme.base0B};
-        }
+        /* Status colors */
+        #custom-pingServer.up { color: #${scheme.base0B}; }
+        #custom-pingServer.down { color: #${scheme.base08}; }
 
-        /* EDGE MARGIN */
+        #battery.charging { color: #${scheme.base0B}; }
+        #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
+        #battery.sub25:not(.charging) { color: #${scheme.base09}; }
+        #battery.sub10:not(.charging) { color: #${scheme.base08}; }
 
-        #clock {
-          margin-left: 20px;
-        }
-
-        #battery {
-          margin-right: 20px;
-        }
+        /* Edge margins */
+        #clock { margin-left: 20px; }
+        #battery { margin-right: 20px; }
       '';
     };
   };
