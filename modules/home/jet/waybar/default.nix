@@ -83,7 +83,7 @@ in {
             format-wifi = "{icon}";
             format-disconnected = "󰈂";
             interval = 30;
-            format-icons = ["󰤟" "󰤢" "󰤥" "\\ue1c8"];
+            format-icons = ["󰤟" "󰤢" "󰤥" ""];
           };
 
           "hyprland/workspaces" = {
