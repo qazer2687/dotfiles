@@ -1,6 +1,10 @@
-{ config, lib, ... }:
-
-let
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}: let
   fleet = {
     "sage" = { hostName = "sage"; maxJobs = 16;  speedFactor = 4; };
     "mica" = { hostName = "mica"; maxJobs = 2; speedFactor = 1; };
@@ -21,6 +25,9 @@ let
   }) otherMachines);
 
 in {
+  options.modules.remote-builder.enable = lib.mkEnableOption "";
+
+  config = lib.mkIf config.modules.remote-builder.enable {
   services.openssh = {
     enable = true;
     #settings.PasswordAuthentication = false;
@@ -52,4 +59,5 @@ in {
       ControlPersist 600
       ServerAliveInterval 60
   '') (lib.attrValues fleet);
+  };
 }
