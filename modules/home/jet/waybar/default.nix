@@ -154,6 +154,8 @@ in {
           color: #${scheme.base05};
         }
 
+        #workspaces button.active { color: #${scheme.base0B}; }
+
        /* #custom-pingServer.up { color: #${scheme.base0B}; }
         #custom-pingServer.down { color: #${scheme.base08}; }*/
 
