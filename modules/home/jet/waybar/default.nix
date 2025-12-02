@@ -27,9 +27,9 @@ in {
           modules-right = ["network" "pulseaudio" "battery" "clock" ];
 
           pulseaudio = {
-            format = "VOL: {volume}%";
+            format = "{icon} {volume}%";
             tooltip = false;
-            format-muted = "VOL: MUTED";
+            format-muted = " 0%";
             format-icons = {
               default = ["" "" ""];
             };
@@ -63,15 +63,26 @@ in {
 
           battery = {
             tooltip = false;
-            format = "BAT: {capacity}% [{power}W]";
-            format-charging = "BAT: {capacity}% [{power}W] (CHARGING)";
-            interval = 1;
+            format = "{icon}";
+            format-charging = "{icon}";
+            interval = 30;
             states = {
               sub50 = 50;
               sub25 = 25; 
               sub10 = 10;
             };
+            format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             margin-left = 15;
+          };
+
+          network = {
+            tooltip = false;
+            format = "{icon}";
+            format-ethernet = "󰈀";
+            format-wifi = "{icon}";
+            format-disconnected = "󰈂";
+            interval = 30;
+            format-icons = ["󰤟" "󰤢" "󰤥" "󰤨"];
           };
 
           "hyprland/workspaces" = {
@@ -110,15 +121,6 @@ in {
             device = "apple-panel-bl";
             format = "BKL: {percent}%";
             tooltip = false;
-          };
-
-          network = {
-            tooltip = false;
-            format = "{icon}";
-            format-ethernet = "NET: {ipaddr} TX {bandwidthUpBytes} RX {bandwidthDownBytes}";
-            format-wifi = "NET: {ipaddr} TX {bandwidthUpBytes} RX {bandwidthDownBytes}";
-            format-disconnected = "NET: DISCONNECTED";
-            interval = 1;
           };
 
           mpris = {
@@ -161,7 +163,7 @@ in {
 
         #workspaces {
           background: #${scheme.base01};
-          border-radius: 0px;
+          border-radius: 2px;
           margin: 2px;
           padding: 0px;
         }
@@ -169,7 +171,7 @@ in {
         #workspaces button {
           padding: 0 8px;
           margin: 0 1px;
-          border-radius: 0px;
+          border-radius: 2px;
           background: transparent;
           color: #${scheme.base05};
         }
