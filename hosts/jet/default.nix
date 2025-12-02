@@ -106,7 +106,7 @@
     };
   };
 
-  programs.niri.enable = true;
+  #programs.niri.enable = true;
 
   #programs.hyprland = {
   #  enable = false;
@@ -136,7 +136,6 @@
     tailscale.enable = true;
     platformio.enable = true;
     easyeffects.enable = true;
-    remote-builder.enable = true;
   };
 
   # Did you read the comment?

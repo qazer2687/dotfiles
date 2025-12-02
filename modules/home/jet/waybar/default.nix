@@ -22,9 +22,9 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "niri/workspaces" "custom/pingServer" "tray"];
+          modules-left = ["niri/workspaces" "custom/pingServer" "tray"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "battery"];
+          modules-right = ["network" "pulseaudio" "battery" "clock" ];
 
           pulseaudio = {
             format = "VOL: {volume}%";
@@ -115,13 +115,9 @@ in {
           network = {
             tooltip = false;
             format = "{icon}";
-            format-ethernet = "NET: {ipaddr} ↗ {bandwidthUpBytes} ↘ {bandwidthDownBytes}";
-            format-wifi = "NET: {ipaddr} ↗ {bandwidthUpBytes} ↘ {bandwidthDownBytes}";
+            format-ethernet = "NET: {ipaddr} TX {bandwidthUpBytes} RX {bandwidthDownBytes}";
+            format-wifi = "NET: {ipaddr} TX {bandwidthUpBytes} RX {bandwidthDownBytes}";
             format-disconnected = "NET: DISCONNECTED";
-            format-icons = {
-              wifi = ["󰣾" "󰣴" "󰣶" "󰣸" "󰣺"];
-              ethernet = "󰈀";
-            };
             interval = 1;
           };
 
@@ -165,24 +161,24 @@ in {
 
         #workspaces {
           background: #${scheme.base01};
-          border-radius: 2px;
+          border-radius: 0px;
           margin: 2px;
-          padding: 0 2px;
+          padding: 0px;
         }
 
         #workspaces button {
           padding: 0 8px;
           margin: 0 1px;
-          border-radius: 2px;
+          border-radius: 0px;
           background: transparent;
           color: #${scheme.base05};
         }
 
         #workspaces button.active {
-          background: #${scheme.base02};
-          padding: 0 11px;
+          background: #${scheme.base05};
+          color: #${scheme.base01}
+          padding: 0 8px;
           margin: 0 0px;
-          transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         #custom-pingServer.up { color: #${scheme.base0B}; }
@@ -193,8 +189,8 @@ in {
         #battery.sub25:not(.charging) { color: #${scheme.base09}; }
         #battery.sub10:not(.charging) { color: #${scheme.base08}; }
 
-        #clock { margin-left: 20px; }
-        #battery { margin-right: 20px; }
+        #workspaces { margin-left: 20px; }
+        #clock { margin-right: 20px; }
       '';
     };
   };

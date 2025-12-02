@@ -33,6 +33,10 @@ in {
           };
         };
 
+        gestures = {
+          hot-corners.enable = false;
+        };
+
         outputs."eDP-1".scale = 2.0;
 
         window-rules = [
