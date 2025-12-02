@@ -31,6 +31,7 @@ in {
   services.openssh = {
     enable = true;
     #settings.PasswordAuthentication = false;
+    SetEnv = "NIX_CONFIG=system-features = big-parallel kvm nixos-test";
   };
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
