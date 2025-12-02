@@ -80,11 +80,10 @@ in {
           network = {
             tooltip = false;
             format = "{icon}";
-            format-ethernet = "";
             format-wifi = "{icon}";
-            format-disconnected = "";
+            format-disconnected = "";
             interval = 30;
-            format-icons = ["" "" "" "" ""];
+            format-icons = ["" "" "" "" ""];
           };
 
           "hyprland/workspaces" = {
