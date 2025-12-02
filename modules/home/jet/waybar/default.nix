@@ -27,12 +27,12 @@ in {
           modules-right = ["tray" "custom/pingServer" "network" "pulseaudio" "battery"];
 
           pulseaudio = {
-            format = "VOL: {icon}";
+            format = "{icon}";
             format-alt = "{icon} {volume}%";
             tooltip = false;
-            format-muted = "VOL: MUTED";
+            format-muted = "\\\\\\\\\\";
             format-icons = {
-              default = ["›    " "››   " "›››  " "›››› " "›››››" "›››››" "›››››" "›››››" "›››››" "›››››"];
+              default = ["/    " "//   " "///  " "//// " "/////" "/////" "/////" "/////" "/////" "/////"];
             };
           };
 
@@ -63,26 +63,26 @@ in {
 
           battery = {
             tooltip = false;
-            format = "BAT: {icon}";
+            format = "{icon}";
             format-alt = "{icon} {capacity}%";
-            format-charging = "BAT: CHARGING";
+            format-muted = "\\\\\\\\\\";
             interval = 30;
             states = {
               sub50 = 50;
               sub25 = 25; 
               sub10 = 10;
             };
-            format-icons = ["›    " "››   " "›››  " "›››› " "›››››"];
+            format-icons = ["/    " "//   " "///  " "//// " "/////"];
             margin-left = 15;
           };
 
           network = {
             tooltip = false;
-            format = "NET: {icon}";
-            format-wifi = "NET: {icon}";
-            format-disconnected = "NET: OFFLINE";
+            format = "{icon}";
+            format-wifi = "{icon}";
+            format-muted = "\\\\\\\\\\";
             interval = 30;
-            format-icons = ["›    " "››   " "›››  " "›››› " "›››››"];
+            format-icons = ["/    " "//   " "///  " "//// " "/////"];
           };
 
           "hyprland/workspaces" = {
@@ -128,7 +128,7 @@ in {
               default = "♪";
             };
             status-icons = {
-              paused = "<s>♪</s>";
+              paused = "";
             };
           };
         };
