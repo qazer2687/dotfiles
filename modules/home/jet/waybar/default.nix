@@ -22,9 +22,9 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["niri/workspaces" "custom/pingServer" "tray"];
+          modules-left = ["clock" "custom/pingServer" "tray"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "battery" "clock" ];
+          modules-right = ["network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "VOL: {icon}";
@@ -185,8 +185,8 @@ in {
         #battery.sub25:not(.charging) { color: #${scheme.base09}; }
         #battery.sub10:not(.charging) { color: #${scheme.base08}; }
 
-        #workspaces { margin-left: 20px; }
-        #clock { margin-right: 20px; }
+        #clock { margin-left: 20px; }
+        #battery { margin-right: 20px; }
       '';
     };
   };
