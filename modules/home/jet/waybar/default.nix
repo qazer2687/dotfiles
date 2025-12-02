@@ -30,9 +30,9 @@ in {
             format = "VOL: {icon}";
             format-alt = "{icon} {volume}%";
             tooltip = false;
-            format-muted = "";
+            format-muted = "VOL: MUTED";
             format-icons = {
-              default = ["❬    " "❬❬   " "❬❬❬  " "❬❬❬❬ " "❬❬❬❬❬"];
+              default = ["❭    " "❭❭   " "❭❭❭  " "❭❭❭❭ " "❭❭❭❭❭" "❭❭❭❭❭" "❭❭❭❭❭" "❭❭❭❭❭" "❭❭❭❭❭" "❭❭❭❭❭"];
             };
           };
 
@@ -78,11 +78,11 @@ in {
 
           network = {
             tooltip = false;
-            format = "NET: UP";
-            format-wifi = "{icon}";
-            format-disconnected = "NET: DOWN";
+            format = "NET: {icon}";
+            format-wifi = "NET: {icon}";
+            format-disconnected = "NET: OFFLINE";
             interval = 30;
-            format-icons = [""];
+            format-icons = ["❭    " "❭❭   " "❭❭❭  " "❭❭❭❭ " "❭❭❭❭❭"];
           };
 
           "hyprland/workspaces" = {
@@ -104,16 +104,11 @@ in {
           "niri/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "1" = "✦";
-              "2" = "✦";
-              "3" = "✦";
-              "4" = "✦";
-              "5" = "✦";
-              "6" = "✦";
-              "7" = "✦";
-              "8" = "✦";
-              "9" = "✦";
-              "0" = "✦";
+              "1" = "ONE";
+              "2" = "TWO";
+              "3" = "THREE";
+              "4" = "FOUR";
+              "5" = "FIVE";
             };
           };
 
@@ -152,29 +147,7 @@ in {
           background: #${scheme.base00};
         }
 
-        #network, #battery, #pulseaudio {
-          padding: 0 6px;
-          margin: 2px 0;
-          border-radius: 0;
-          background: #${scheme.base01};
-          color: #${scheme.base05};
-        }
-
-        #network {
-          border-top-left-radius: 2px;
-          border-bottom-left-radius: 2px;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-
-        #battery {
-          border-top-right-radius: 2px;
-          border-bottom-right-radius: 2px;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        }
-
-        #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray {
+        #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
           padding: 0 8px;
           margin: 2px;
           border-radius: 2px;
