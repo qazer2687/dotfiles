@@ -155,7 +155,7 @@ in {
 
         #network, #battery, #pulseaudio {
           padding: 0 6px;
-          margin: 0 2px;
+          margin: 2px 0;
           border-radius: 0;
           background: #${scheme.base01};
           color: #${scheme.base05};
