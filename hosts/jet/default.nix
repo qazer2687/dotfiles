@@ -96,9 +96,15 @@
   #  [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
   #'';
 
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sleep 2 & exec niri-session >/dev/null 2>&1
-  '';
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.niri}/bin/niri-session";
+        user = "alex";
+      };
+    };
+  };
 
   programs.niri.enable = true;
 

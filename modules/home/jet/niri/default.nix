@@ -130,7 +130,7 @@ in {
         debug = {
           # Fixes a black screen bug on Asahi.
           # https://github.com/YaLTeR/niri/wiki/Getting-Started#asahi-arm-and-other-kmsro-devices
-          render-drm-device = "/dev/dri/card1";
+          render-drm-device = "/dev/dri/renderD128";
         };
 
         spawn-at-startup = [
