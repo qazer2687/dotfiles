@@ -51,7 +51,7 @@ in {
           };
 
           clock = {
-            format = " {:%H:%M}";
+            format = "{:%H:%M}";
             format-alt = "{:%A %d, %H:%M}";
             tooltip = false;
           };
@@ -83,7 +83,7 @@ in {
             format-wifi = "{icon}";
             format-disconnected = "";
             interval = 30;
-            format-icons = ["" "" "" ""];
+            format-icons = [""];
           };
 
           "hyprland/workspaces" = {
@@ -153,8 +153,29 @@ in {
           background: #${scheme.base00};
         }
 
-        #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
-        #battery, #custom-pingServer, #tray {
+        #network, #battery, #pulseaudio {
+          padding: 0 4px;
+          margin: 0px;
+          border-radius: 0;
+          background: #${scheme.base01};
+          color: #${scheme.base05};
+        }
+
+        #network {
+          border-top-left-radius: 2px;
+          border-bottom-left-radius: 2px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        #battery {
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray {
           padding: 0 8px;
           margin: 2px;
           border-radius: 2px;
