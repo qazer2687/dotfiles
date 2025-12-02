@@ -33,6 +33,8 @@ in {
     #settings.PasswordAuthentication = false;
   };
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   nix = lib.mkMerge [
     {
       settings = {
