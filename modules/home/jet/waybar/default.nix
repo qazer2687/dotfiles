@@ -174,54 +174,19 @@ in {
         }
 
         #workspaces button {
-          padding: 0 8px;
-          margin: 0;
-          border-radius: 2px;
-          background: transparent;
-          color: #${scheme.base05};
-          transition: all 0.1s ease-out; /* Smooth hover/off transitions */
+            padding: 0 8px;
+            transition: padding 120ms ease-out;
         }
 
-        /* --- LIQUID GLASS ANIMATION ---
-          Uses padding/opacity (GTK-safe) instead of transform
-          Creates expand → overshoot → settle effect */
         #workspaces button.active {
-          background: #${scheme.base02};
-          animation-name: workspaceActivate;
-          animation-duration: 0.45s;
-          animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); /* Elastic but GTK-safe */
-          animation-fill-mode: both;
+            background: #${scheme.base02};
+            animation: slide 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        @keyframes workspaceActivate {
-          0% {
-            /* Compressed & faded */
-            padding: 0 5px;
-            margin: 0 3px;  /* Compensates for padding change */
-            opacity: 0.7;
-          }
-          45% {
-            /* Peak expansion - "fling" */
-            padding: 0 15px;
-            margin: 0 -7px;
-            opacity: 1;
-          }
-          75% {
-            /* First settle */
-            padding: 0 8px;
-            margin: 0 0px;
-          }
-          90% {
-            /* Minor overshoot bounce */
-            padding: 0 9px;
-            margin: 0 -1px;
-          }
-          100% {
-            /* Final locked state */
-            padding: 0 8px;
-            margin: 0;
-            opacity: 1;
-          }
+        @keyframes slide {
+            0%   { padding: 0 4px; opacity: 0.6; }
+            50%  { padding: 0 14px; opacity: 1; }   /* “fling” */
+            100% { padding: 0 8px; opacity: 1; }    /* settle */
         }
 
         /* Status colors */
