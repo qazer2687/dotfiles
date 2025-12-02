@@ -30,10 +30,10 @@ in {
             format = "{icon}";
             format-alt = "{icon} {volume}%";
             tooltip = false;
-            format-muted = "";
+            format-muted = "";
             format-icons = {
               # Shift the point where the icons change lower, because I never listen above like 20%.
-              default = ["" "" "" "" "" "" "" "" "" "" "" "" "" ""];
+              default = ["" "" "" "" "" "" "" "" "" "" "" "" "" "" ""];
             };
           };
 
@@ -51,7 +51,7 @@ in {
           };
 
           clock = {
-            format = "{:%H:%M}";
+            format = " {:%H:%M}";
             format-alt = "{:%A %d, %H:%M}";
             tooltip = false;
           };
@@ -66,14 +66,14 @@ in {
             tooltip = false;
             format = "{icon}";
             format-alt = "{icon} {capacity}%";
-            format-charging = "";
+            format-charging = "";
             interval = 30;
             states = {
               sub50 = 50;
               sub25 = 25; 
               sub10 = 10;
             };
-            format-icons = ["" "" "" "" "" "" ""];
+            format-icons = ["" "" "" ""];
             margin-left = 15;
           };
 
@@ -81,9 +81,9 @@ in {
             tooltip = false;
             format = "{icon}";
             format-wifi = "{icon}";
-            format-disconnected = "";
+            format-disconnected = "";
             interval = 30;
-            format-icons = ["" "" "" "" ""];
+            format-icons = ["" "" "" ""];
           };
 
           "hyprland/workspaces" = {
@@ -144,8 +144,7 @@ in {
         * {
           border: none;
           border-radius: 0;
-          font-family: "PragmataPro", "Material Symbols Rounded";
-          font-variation-settings: 'opsz' 48;
+          font-family: "PragmataPro", "Lucide";
           font-size: 11px;
           min-height: 0;
         }
