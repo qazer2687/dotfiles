@@ -176,7 +176,7 @@ in {
 
         #workspaces button.active {
           background: #${scheme.base05};
-          color: #${scheme.base01}
+          color: #${scheme.base01};
           padding: 0 8px;
           margin: 0 0px;
         }
