@@ -30,16 +30,14 @@ in {
   config = lib.mkIf config.modules.remote-builder.enable {
   services.openssh = {
     enable = true;
-    #settings.PasswordAuthentication = false;
-    settings.SetEnv = ''NIX_CONFIG="system-features = benchmark big-parallel kvm nixos-test"'';
   };
 
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  #boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   nix = lib.mkMerge [
     {
       settings = {
-        builders = "@daemon";
+        #builders = "@daemon";
         trusted-users = [ "root" fleetUser ];
         system-features = [ "big-parallel" "kvm" "nixos-test" ];
         cores = 0;
