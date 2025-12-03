@@ -5,7 +5,6 @@
   ...
 }: {
   options.modules.theme.enable = lib.mkEnableOption "";
-
   config = lib.mkIf config.modules.theme.enable {
     home.pointerCursor = {
       gtk.enable = true;
@@ -13,7 +12,7 @@
       name = "Bibata-Modern-Ice";
       size = 16;
     };
-
+    
     gtk = {
       enable = true;
       theme = {
@@ -25,25 +24,35 @@
         package = pkgs.adwaita-icon-theme;
       };
       cursorTheme = {
-        name = "Adwaita";
-        package = pkgs.adwaita-icon-theme;
+        name = "Bibata-Modern-Ice";  # Fixed: match pointerCursor
+        package = pkgs.bibata-cursors;
       };
-      gtk3 = {
-        extraConfig.gtk-application-prefer-dark-theme = true;
+      gtk3.extraConfig = {
+        gtk-application-prefer-dark-theme = true;
+      };
+      gtk4.extraConfig = {
+        gtk-application-prefer-dark-theme = true;
       };
     };
-
+    
     dconf.settings = {
       "org/gnome/desktop/interface" = {
         gtk-theme = "Adwaita-dark";
         color-scheme = "prefer-dark";
       };
     };
-
+    
     qt = {
       enable = true;
-      platformTheme.name = "adwaita";
+      platformTheme.name = "gtk3";  # Changed from "adwaita"
       style.name = "adwaita-dark";
     };
+    
+    # Add required packages
+    home.packages = with pkgs; [
+      qt5.qtwayland
+      qt6.qtwayland
+      libsForQt5.qtstyleplugins
+    ];
   };
 }
