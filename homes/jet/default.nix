@@ -35,7 +35,7 @@
 
     # Theming
     fonts.enable = true;
-    theme.enable = true;
+    #theme.enable = true;
 
     # Desktop Environment
     niri.enable = true;
