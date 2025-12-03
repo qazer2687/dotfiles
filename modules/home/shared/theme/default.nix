@@ -24,7 +24,7 @@
         package = pkgs.adwaita-icon-theme;
       };
       cursorTheme = {
-        name = "Bibata-Modern-Ice";  # Fixed: match pointerCursor
+        name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
       };
       gtk3.extraConfig = {
@@ -42,17 +42,10 @@
       };
     };
     
-    qt = {
-      enable = true;
-      platformTheme.name = "gtk3";  # Changed from "adwaita"
-      style.name = "adwaita-dark";
+    # Just set environment variables instead of using qt module
+    home.sessionVariables = {
+      QT_QPA_PLATFORMTHEME = "gtk3";
+      QT_STYLE_OVERRIDE = "Adwaita-Dark";
     };
-    
-    # Add required packages
-    home.packages = with pkgs; [
-      qt5.qtwayland
-      qt6.qtwayland
-      libsForQt5.qtstyleplugins
-    ];
   };
 }
