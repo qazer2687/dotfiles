@@ -35,17 +35,9 @@
       };
     };
     
-    dconf.settings = {
-      "org/gnome/desktop/interface" = {
-        gtk-theme = "Adwaita-dark";
-        color-scheme = "prefer-dark";
-      };
-    };
-    
-    # Just set environment variables instead of using qt module
+    # Environment variables only - no dconf, no qt module
     home.sessionVariables = {
-      QT_QPA_PLATFORMTHEME = "gtk3";
-      QT_STYLE_OVERRIDE = "Adwaita-Dark";
+      GTK_THEME = "Adwaita-dark";
     };
   };
 }
