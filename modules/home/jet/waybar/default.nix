@@ -65,7 +65,7 @@ in {
             tooltip = false;
             format = "{icon}";
             format-alt = "{icon} {capacity}%";
-            format-muted = "\\\\\\\\\\";
+            format-muted = "<b>\\\\\\\\\\</b>";
             interval = 30;
             states = {
               sub50 = 50;
@@ -153,9 +153,7 @@ in {
           background: transparent;
           color: #${scheme.base05};
         }
-
-        #workspaces button.active { color: #${scheme.base0B}; }
-
+        
        /* #custom-pingServer.up { color: #${scheme.base0B}; }
         #custom-pingServer.down { color: #${scheme.base08}; }*/
 
