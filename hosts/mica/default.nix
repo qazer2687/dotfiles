@@ -94,14 +94,14 @@
     options = ["bind" "noexec"];
   };
 
-  # Spin down the external HDD after 10 minutes of inactivity.
+  # Spin down the external HDD after 60 minutes of inactivity.
   systemd.services.hdparm = {
     description = "/dev/sda Spin Down ";
     wantedBy = ["multi-user.target"];
     after = ["local-fs.target"];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.hdparm}/bin/hdparm -S 60 /dev/sda";
+      ExecStart = "${pkgs.hdparm}/bin/hdparm -S 242 /dev/sda";
     };
   };
 
