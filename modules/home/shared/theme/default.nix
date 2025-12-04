@@ -13,11 +13,9 @@
       size = 16;
     };
 
-    home-manager.users.alex = {
-      dconf = {
-        enable = true;
-        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-      };
+    dconf = {
+      enable = true;
+      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
     
     # Don't use gtk.enable, configure files directly
