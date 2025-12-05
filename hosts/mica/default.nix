@@ -146,6 +146,7 @@ Surveil. Serve. Satisfy.
     docker.enable = true;
     samba.enable = false;
     tailscale.enable = true;
+    k3s.enable = true;
 
     # Security
     firewall.enable = true;

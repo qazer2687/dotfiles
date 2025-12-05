@@ -17,6 +17,7 @@
 | `jet`        | NixOS | The Asahi/NixOS install on my Macbook.    | Laptop  | aarch64-linux |
 | `mica`       | NixOS | My TinyMiniMicro homelab.                 | Server  | x86_64-linux  |
 | `amber`      | NixOS | ~~My experimental VM.~~ COMING SOON       | Virtual | x86_64-linux  |
+| ~~`jade`~~ `juniper`    | NixOS | k3s Worker Node                | Server | x86_64-linux  |
 
 ### Retired Hosts
 
