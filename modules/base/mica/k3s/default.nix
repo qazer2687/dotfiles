@@ -17,19 +17,18 @@
       8472 # k3s, flannel: required if using multi-node for inter-node networking
     ];
     
-    sops.secrets = {
-      k3s = {
-        mode = "0400";
-        sopsFile = ./secrets/k3s-token.yaml;
-        path = "/etc/k3s/token";
-        key = "token";
-      };
+    sops.secrets.k3s = {
+      sopsFile = ./secrets/k3s-token.yaml;
+      key      = "token";
+      mode     = "0400";
+      owner    = "root";
+      group    = "root";
     };
     services.k3s = {
-      enable = true;
-      role = "server";
-      tokenFile = /etc/k3s/token;
+      enable      = true;
+      role        = "server";
       clusterInit = true;
+      tokenFile   = config.sops.secrets.k3s.path;
     };
   };
 }

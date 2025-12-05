@@ -43,17 +43,17 @@
   networking.firewall.allowedUDPPorts = [
     8472 # k3s, flannel: required if using multi-node for inter-node networking
   ];
-  
   sops.secrets.k3s = {
-    mode = "0400";
     sopsFile = ./secrets/k3s-token.yaml;
-    path = "/etc/k3s/token";
-    key = "token";
+    key      = "token";
+    mode     = "0400";
+    owner    = "root";
+    group    = "root";
   };
   services.k3s = {
     enable = true;
     role = "agent";
-    tokenFile = /etc/k3s/token;
+    tokenFile = config.sops.secrets.k3s.path;
     serverAddr = "https://100.111.111.111:6443";
   };
 
