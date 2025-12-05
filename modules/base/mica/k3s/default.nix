@@ -18,7 +18,7 @@
     ];
     
     sops.secrets.k3s = {
-      sopsFile = ./secrets/k3s-token.yaml;
+      sopsFile = ./secrets/k3s.yaml;
       key      = "token";
       mode     = "0400";
       owner    = "root";
