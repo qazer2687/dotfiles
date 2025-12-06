@@ -39,18 +39,23 @@
     kernelPackages = pkgs.linuxPackages_cachyos-server;
   };
 
-  # Mount the external HDD with noexec
+
+  # Mount external drive.
   fileSystems."/mnt/external" = {
     device = "/dev/sda1";
     fsType = "exfat";
-    options = ["umask=0000" "nofail" "noexec"];
+    options = ["umask=0000" "nofail"];
     noCheck = true; # This disables fsck.
   };
 
-  # Bind mount with noexec explicitly set
+  # Bind mounts.
   fileSystems."/home/alex/media" = {
     device = "/mnt/external/media";
-    options = ["bind" "noexec"];
+    options = ["bind"];
+  };
+  fileSystems."/home/alex/data" = {
+    device = "/mnt/external/data";
+    options = ["bind"];
   };
 
   # Spin down the external HDD after 60 minutes of inactivity.
@@ -63,7 +68,6 @@
       ExecStart = "${pkgs.hdparm}/bin/hdparm -S 242 /dev/sda";
     };
   };
-
   
   environment.etc."motd-logo".text = ''
 \033[38;2;230;0;0m
