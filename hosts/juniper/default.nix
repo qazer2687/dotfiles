@@ -44,7 +44,7 @@
     8472 # k3s, flannel: required if using multi-node for inter-node networking
   ];
   sops.secrets.k3s = {
-    sopsFile = ./secrets/k3s.yaml;
+    sopsFile = ../../secrets/k3s.yaml;
     key      = "token";
     mode     = "0400";
     owner    = "root";

@@ -32,47 +32,6 @@
       # https://wiki.cachyos.org/configuration/general_system_tweaks/#enable-rcu-lazy
       "rcutree.enable_rcu_lazy=1"
     ];
-    blacklistedKernelModules = [
-      # Wi-Fi
-      "iwlwifi"
-
-      # Bluetooth
-      "btusb"
-
-      # Suggested by Lynis.
-      "dccp"
-      "sctp"
-      "rds"
-      "tipc"
-
-      # Obscure network protocols.
-      "ax25"
-      "netrom"
-      "rose"
-
-      # Old, rare or insufficiently audited filesystems.
-      "adfs"
-      "affs"
-      "bfs"
-      "befs"
-      "cramfs"
-      "efs"
-      "erofs"
-      "exofs"
-      "freevxfs"
-      "f2fs"
-      "hfs"
-      "hpfs"
-      "jfs"
-      "minix"
-      "nilfs2"
-      "ntfs"
-      "omfs"
-      "qnx4"
-      "qnx6"
-      "sysv"
-      "ufs"
-    ];
     initrd.verbose = false;
     consoleLogLevel = 0;
     # Support for my external HDD.
@@ -108,13 +67,7 @@
   
   environment.etc."motd-logo".text = ''
 \033[38;2;230;0;0m
-          ███          
-        ███████        
-      ███████████      
-    ███    ████████    
-  ███        ████████  
-████████████   ████████
-Surveil. Serve. Satisfy.
+Welcome to Mica!
 \033[0m
   '';
 
@@ -134,6 +87,29 @@ Surveil. Serve. Satisfy.
     enable = true;
     settings.PasswordAuthentication = true;
     settings.PermitRootLogin = "yes";
+  };
+
+  networking.firewall.allowedTCPPorts = [
+    6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
+    2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
+    2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
+  ];
+  networking.firewall.allowedUDPPorts = [
+    8472 # k3s, flannel: required if using multi-node for inter-node networking
+  ];
+  
+  sops.secrets.k3s = {
+    sopsFile = ../../secrets/k3s.yaml;
+    key      = "token";
+    mode     = "0400";
+    owner    = "root";
+    group    = "root";
+  };
+  services.k3s = {
+    enable      = true;
+    role        = "server";
+    clusterInit = true;
+    tokenFile   = config.sops.secrets.k3s.path;
   };
 
   modules = {
