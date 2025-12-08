@@ -49,8 +49,8 @@
   };
 
   # Bind mounts.
-  fileSystems."/home/alex/media" = {
-    device = "/mnt/external/media";
+  fileSystems."/home/alex/data" = {
+    device = "/mnt/external/data";
     options = ["bind"];
   };
 
