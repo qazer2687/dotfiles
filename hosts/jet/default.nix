@@ -90,32 +90,23 @@
       "--nohostname"
     ];
   };
-
-  # Automatically launch UWSM after login.
-  #environment.loginShellInit = ''
-  #  [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
-  #'';
-
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.niri}/bin/niri-session";
+        command = "uwsm start default";
         user = "alex";
       };
     };
   };
 
-  #programs.niri.enable = true;
-
-  #programs.hyprland = {
-  #  enable = false;
-  #  withUWSM = true;tT
-  #};
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   environment = {
     sessionVariables = {
-      #WLR_DRM_DEVICES = "/dev/dri/card1 /dev/dri/card2";
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
