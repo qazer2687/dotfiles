@@ -225,8 +225,8 @@ in {
 
           # Hyprsunset (Capped at 6500K)
           # This is managed automatically by the hyprsunset module.
-          #"CTRL, XF86MonBrightnessUp, exec, temp=$(hyprctl hyprsunset temperature); [ $temp -le 6000 ] && hyprctl hyprsunset temperature $((temp + 500)); sleep 1; pkill -RTMIN+1 waybar"
-          #"CTRL, XF86MonBrightnessDown, exec, temp=$(hyprctl hyprsunset temperature); hyprctl hyprsunset temperature $((temp - 500)); sleep 1; pkill -RTMIN+1 waybar"
+          "CTRL, XF86MonBrightnessUp, exec, flock -n /tmp/hyprsunset.lock bash -c 'temp=$(hyprctl hyprsunset temperature); [ $temp -le 6000 ] && hyprctl hyprsunset temperature $((temp + 500))'"
+          "CTRL, XF86MonBrightnessDown, exec, flock -n /tmp/hyprsunset.lock bash -c 'temp=$(hyprctl hyprsunset temperature); hyprctl hyprsunset temperature $((temp - 500))'"
         ];
 
         bindl = [
