@@ -53,6 +53,15 @@
     systemPackages = [pkgs.flatpak pkgs.firefox];
   };
 
+  services.xserver = {
+    enable = true;
+    desktopManager = {
+      xterm.enable = false;
+      xfce.enable = true;
+    };
+  };
+  services.displayManager.defaultSession = "xfce";
+
   modules = {
     core.enable = true;
     dbus.enable = true;
@@ -61,15 +70,6 @@
     systemd-boot.enable = true;
     zram.enable = true;
     tailscale.enable = true;
-
-    services.xserver = {
-      enable = true;
-      desktopManager = {
-        xterm.enable = false;
-        xfce.enable = true;
-      };
-    };
-    services.displayManager.defaultSession = "xfce";
 
     pipewire.enable = true;
     flatpak.enable = true;
