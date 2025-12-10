@@ -50,7 +50,7 @@
       XKB_DEFAULT_VARIANT = "colemak";
     };
     # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
-    systemPackages = [pkgs.flatpak];
+    systemPackages = [pkgs.flatpak pkgs.firefox];
   };
 
   modules = {
@@ -71,7 +71,6 @@
     };
     services.displayManager.defaultSession = "xfce";
 
-    
     pipewire.enable = true;
     flatpak.enable = true;
     networkmanager.enable = true;
