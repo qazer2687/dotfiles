@@ -74,6 +74,7 @@
     pipewire.enable = true;
     flatpak.enable = true;
     networkmanager.enable = true;
+    xdg.enable = true;
 
     # Security
     firewall.enable = true;
