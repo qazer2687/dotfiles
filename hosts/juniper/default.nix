@@ -75,6 +75,7 @@
     flatpak.enable = true;
     networkmanager.enable = true;
     xdg.enable = true;
+    nvidia.enable = true;
 
     # Security
     firewall.enable = true;
