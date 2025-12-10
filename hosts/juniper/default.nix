@@ -34,32 +34,24 @@
     kernelPackages = pkgs.linuxPackages_cachyos-server;
   };
 
-
-  networking.firewall.allowedTCPPorts = [
-    6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
-    2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
-    2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
-  ];
-  networking.firewall.allowedUDPPorts = [
-    8472 # k3s, flannel: required if using multi-node for inter-node networking
-  ];
-  sops.secrets.k3s = {
-    sopsFile = ../../secrets/k3s.yaml;
-    key      = "token";
-    mode     = "0400";
-    owner    = "root";
-    group    = "root";
-  };
-  services.k3s = {
-    enable = true;
-    role = "agent";
-    tokenFile = config.sops.secrets.k3s.path;
-    serverAddr = "https://100.111.111.111:6443";
-  };
-
   # Support for vscode remote server.
   programs.nix-ld.enable = true;
 
+    environment = {
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      MOZ_ENABLE_WAYLAND = "1";
+      XDG_SESSION_TYPE = "wayland";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      AMD_VULKAN_ICD = "RADV";
+
+      # Picked up by gamescope session.
+      XKB_DEFAULT_LAYOUT = "us";
+      XKB_DEFAULT_VARIANT = "colemak";
+    };
+    # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
+    systemPackages = [pkgs.flatpak];
+  };
 
   modules = {
     core.enable = true;
@@ -69,6 +61,20 @@
     systemd-boot.enable = true;
     zram.enable = true;
     tailscale.enable = true;
+
+    services.xserver = {
+      enable = true;
+      desktopManager = {
+        xterm.enable = false;
+        xfce.enable = true;
+      };
+    };
+    services.displayManager.defaultSession = "xfce";
+
+    
+    pipewire.enable = true;
+    flatpak.enable = true;
+    networkmanager.enable = true;
 
     # Security
     firewall.enable = true;
