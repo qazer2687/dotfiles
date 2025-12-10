@@ -53,14 +53,8 @@
     systemPackages = [pkgs.flatpak pkgs.firefox];
   };
 
-  services.xserver = {
-    enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-    };
-  };
-  services.displayManager.defaultSession = "xfce";
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   modules = {
     core.enable = true;
