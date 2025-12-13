@@ -10,10 +10,11 @@
   config = lib.mkIf config.modules.flatpak.enable {
     services.flatpak = {
       enable = true;
-      packages = [
+      # let packages be stateful
+      /*packages = [
         "com.github.tchx84.Flatseal"
         "org.vinegarhq.Sober"
-      ];
+      ];*/
       overrides = {
         global = {
           # Force Wayland by default.
@@ -27,10 +28,6 @@
             GTK_THEME = "Adwaita:dark";
           };
         };
-      };
-      update.auto = {
-        enable = true;
-        onCalendar = "daily";
       };
     };
   };

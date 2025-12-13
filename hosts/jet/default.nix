@@ -112,6 +112,7 @@
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     };
+    systemPackages = [pkgs.flatpak];
   };
 
   modules = {
@@ -127,6 +128,7 @@
     tailscale.enable = true;
     platformio.enable = true;
     easyeffects.enable = true;
+    flatpak.enable = true;
   };
 
   # Did you read the comment?
