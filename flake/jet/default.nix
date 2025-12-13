@@ -16,6 +16,7 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.home-manager.nixosModules.home-manager
     inputs.asahi.nixosModules.apple-silicon-support
     inputs.nyx.nixosModules.default
+    inputs.flatpak.nixosModules.nix-flatpak
     {
       home-manager = {
         users.alex = ../../homes/jet;
