@@ -25,6 +25,7 @@
         { startGid = 1000; count = 1; }
         { startGid = 100001; count = 65535; }
       ];
+    };
 
     virtualisation.docker = {
       enable = true;
