@@ -15,8 +15,8 @@
         { startUid = 100001; count = 65535; }
       ];
       subGidRanges = [
-        { startUid = 1000; count = 1; }
-        { startUid = 100001; count = 65535; }
+        { startGid = 1000; count = 1; }
+        { startGid = 100001; count = 65535; }
       ];
     };
 
