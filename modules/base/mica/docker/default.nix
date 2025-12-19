@@ -15,6 +15,8 @@
     virtualisation.docker = {
       enable = true;
       daemon.settings = {
+        # very important, otherwise docker will ignore firewall rules
+        ip = "127.0.0.1";
         data-root = "/var/lib/docker";
         "hosts" = ["unix:///var/run/docker.sock"];
         # Fix for some services just not being able to communicate
