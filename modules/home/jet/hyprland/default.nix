@@ -29,6 +29,10 @@ in {
           "eDP-1,highrr,auto,2"
         ];
 
+        xwayland = {
+          force_zero_scaling = true;
+        };
+
         general = {
           # Master/Stack
           layout = "master";
