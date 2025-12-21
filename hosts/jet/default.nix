@@ -114,7 +114,7 @@
     };
     systemPackages = with pkgs; [
       flatpak
-      gnome.nautilus
+      nautilus
       ffmpegthumbnailer
       ffmpeg-headless
       gdk-pixbuf
