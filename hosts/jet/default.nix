@@ -112,8 +112,18 @@
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     };
-    systemPackages = [pkgs.flatpak];
+    systemPackages = with pkgs; [
+      flatpak
+      gnome.nautilus
+      ffmpegthumbnailer
+      ffmpeg-headless
+      gdk-pixbuf
+    ];
   };
+
+  environment.pathsToLink = [
+    "share/thumbnailers"
+  ];
 
   modules = {
     core.enable = true;
