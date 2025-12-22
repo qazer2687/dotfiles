@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "framer";
+  scheme = base16 "gruvbox-light-hard";
 in {
   options.modules.foot.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.foot.enable {

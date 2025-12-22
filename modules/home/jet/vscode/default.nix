@@ -5,7 +5,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "framer";
+  scheme = base16 "gruvbox-light-hard";
 in {
   options.modules.vscode.enable = lib.mkEnableOption "";
 

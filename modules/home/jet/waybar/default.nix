@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  scheme = base16 "framer";
+  scheme = base16 "gruvbox-light-hard";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
@@ -92,7 +92,6 @@ in {
               "8" = "8";
               "9" = "9";
               "10" = "10";
-              active = "[{icon}]";
             };
           };
 
