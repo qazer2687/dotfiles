@@ -24,16 +24,12 @@ in {
           margin = "0 0 0 0";
           modules-left = ["clock" "hyprland/workspaces"];
           modules-center = [];
-          modules-right = ["custom/pingServer" "network" "pulseaudio" "battery"];
+          modules-right = ["network" "pulseaudio" "battery"];
 
           pulseaudio = {
-            format = "{icon}";
-            format-alt = "{icon} {volume}%";
+            format = "{volume}";
             tooltip = false;
-            format-muted = "\\\\\\\\\\";
-            format-icons = {
-              default = ["/    " "//   " "///  " "//// " "/////" "/////" "/////" "/////" "/////" "/////"];
-            };
+            format-muted = "muted";
           };
 
           "custom/hyprsunset" = {
@@ -63,9 +59,7 @@ in {
 
           battery = {
             tooltip = false;
-            format = "{icon}";
-            format-alt = "{icon} {capacity}%";
-            format-muted = "<b>\\\\\\\\\\</b>";
+            format = "{capacity}";
             interval = 30;
             states = {
               sub50 = 50;
@@ -78,26 +72,25 @@ in {
 
           network = {
             tooltip = false;
-            format = "{icon}";
-            format-wifi = "{icon}";
-            format-muted = "\\\\\\\\\\";
+            format = "up";
+            format-wifi = "up";
+            format-disconnected = "down";
             interval = 30;
-            format-icons = ["/    " "//   " "///  " "//// " "/////"];
           };
 
           "hyprland/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "1" = "1";
-              "2" = "2";
-              "3" = "3";
-              "4" = "4";
-              "5" = "5";
-              "6" = "6";
-              "7" = "7";
-              "8" = "8";
-              "9" = "9";
-              "10" = "0";
+              "1" = "one";
+              "2" = "two";
+              "3" = "three";
+              "4" = "four";
+              "5" = "five";
+              "6" = "six";
+              "7" = "seven";
+              "8" = "eight";
+              "9" = "nine";
+              "10" = "ten";
             };
           };
 

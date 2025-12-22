@@ -40,14 +40,6 @@
 
       # Laptop
       jet = (import ./flake/jet) {inherit inputs self;};
-
-
-      # k3s
-
-      # Control Nodes
-      mica = (import ./flake/mica) {inherit inputs self;};
-      # Worker Nodes
-      juniper = (import ./flake/juniper) {inherit inputs self;};
     };
   };
 }
