@@ -72,25 +72,25 @@ in {
 
           network = {
             tooltip = false;
-            format = "up";
-            format-wifi = "up";
-            format-disconnected = "down";
+            format = "1";
+            format-wifi = "1";
+            format-disconnected = "0";
             interval = 30;
           };
 
           "hyprland/workspaces" = {
             format = "{icon}";
             format-icons = {
-              "1" = "one";
-              "2" = "two";
-              "3" = "three";
-              "4" = "four";
-              "5" = "five";
-              "6" = "six";
-              "7" = "seven";
-              "8" = "eight";
-              "9" = "nine";
-              "10" = "ten";
+              "1" = "1";
+              "2" = "2";
+              "3" = "3";
+              "4" = "4";
+              "5" = "5";
+              "6" = "6";
+              "7" = "7";
+              "8" = "8";
+              "9" = "9";
+              "10" = "10";
             };
           };
 
@@ -136,6 +136,10 @@ in {
           border-radius: 2px;
           background: transparent;
           color: #${scheme.base05};
+        }
+
+        #workspaces button.active {
+          color: #${scheme.base0B};
         }
         
        /* #custom-pingServer.up { color: #${scheme.base0B}; }
