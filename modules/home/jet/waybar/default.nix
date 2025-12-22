@@ -46,7 +46,7 @@ in {
           };
 
           clock = {
-            format = "{:%H:%M}";
+            format = "{:%H %M}";
             format-alt = "{:%A %d, %H:%M}";
             tooltip = false;
           };
