@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "gruvbox-light-hard";
+  scheme = base16 "framer";
 in {
   options.modules.tofi.enable = lib.mkEnableOption "";
 

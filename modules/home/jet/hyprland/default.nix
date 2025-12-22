@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "gruvbox-light-hard";
+  scheme = base16 "framer";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -42,7 +42,8 @@ in {
           border_size = 1;
 
           # base05 = text, base0E = mauve
-          "col.active_border" = "rgba(${scheme.base05}ff)";
+          # base0B = framer blue
+          "col.active_border" = "rgba(${scheme.base0B}ff)";
           "col.inactive_border" = "rgba(${scheme.base02}ff)";
 
           resize_on_border = true;
