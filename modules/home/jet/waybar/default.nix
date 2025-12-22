@@ -46,7 +46,7 @@ in {
           };
 
           clock = {
-            format = "{:%H %M}";
+            format = "{:%H:%M}";
             format-alt = "{:%A %d, %H:%M}";
             tooltip = false;
           };
@@ -80,6 +80,7 @@ in {
 
           "hyprland/workspaces" = {
             format = "{icon}";
+
             format-icons = {
               "1" = "1";
               "2" = "2";
@@ -91,6 +92,7 @@ in {
               "8" = "8";
               "9" = "9";
               "10" = "10";
+              active = "[{icon}]";
             };
           };
 
