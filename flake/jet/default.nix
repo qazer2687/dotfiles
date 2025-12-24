@@ -30,7 +30,6 @@ inputs.nixpkgs.lib.nixosSystem {
           inputs.sops-nix.homeManagerModules.sops
           inputs.niri.homeModules.niri
           inputs.textfox.homeManagerModules.default
-          inputs.vicinae.homeManagerModules.default
         ];
       };
     }

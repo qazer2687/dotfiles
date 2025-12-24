@@ -160,14 +160,12 @@ in {
           "blur, (?i).*waybar.*"
           "ignorealpha 0.001, (?i).*waybar.*" 
 
-          "blur, (?i).*vicinae.*"
         ];
 
         bind = [
           # Core
           "SUPER, Return, exec, foot"
           "SUPER, E, exec, tofi-run | sh"
-          #"SUPER, E, exec, vicinae open"
           "SUPER, Q, killactive"
           "SUPER, F, fullscreen"
 
