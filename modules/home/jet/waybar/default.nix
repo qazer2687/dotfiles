@@ -126,12 +126,12 @@ in {
 
         #workspaces {
             background: #${scheme.base01};
-            margin: 1px;
+            margin: 2px;
         }
 
         #workspaces button {
             padding: 0 6px;
-            margin: 0 2px;
+            margin: 1px;
             background-color: #${scheme.base03}; 
             color: transparent;
         }
