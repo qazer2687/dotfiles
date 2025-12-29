@@ -126,8 +126,7 @@ in {
 
         #workspaces {
             background: #${scheme.base01};
-            margin: 2px;
-            padding: 2px;
+            margin: 1px;
         }
 
         #workspaces button {
