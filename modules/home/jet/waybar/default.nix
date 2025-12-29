@@ -129,14 +129,15 @@ in {
         }
 
         #workspaces button {
-            padding: 0 4px;
-            margin: 1px;
-            background-color: #${scheme.base02}; 
-            color: transparent;
+          padding: 0 4px;
+          margin: 1px;
+          background-color: #${scheme.base02}; 
         }
 
         #workspaces button.active {
-            background-color: #${scheme.base0E};
+          padding: 0 4px;
+          margin: 1px;
+          background-color: #${scheme.base0E};
         }
         
        /* #custom-pingServer.up { color: #${scheme.base0E}; }
