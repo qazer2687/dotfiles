@@ -24,12 +24,12 @@ in {
           margin = "0 0 0 0";
           modules-left = ["hyprland/workspaces"];
           modules-center = [];
-          modules-right = ["network" "pulseaudio" "battery" "clock"];
+          modules-right = ["tray" "network" "pulseaudio" "battery" "clock"];
 
           pulseaudio = {
-            format = "{volume}";
+            format = "vol: {volume}%";
             tooltip = false;
-            format-muted = "muted";
+            format-muted = "vol: muted";
           };
 
           "custom/hyprsunset" = {
@@ -59,7 +59,7 @@ in {
 
           battery = {
             tooltip = false;
-            format = "{capacity}";
+            format = "bat: {capacity}%";
             interval = 30;
             states = {
               sub50 = 50;
@@ -72,9 +72,9 @@ in {
 
           network = {
             tooltip = false;
-            format = "1";
-            format-wifi = "1";
-            format-disconnected = "0";
+            format = "net: up";
+            format-wifi = "net: up";
+            format-disconnected = "net: down";
             interval = 30;
           };
 
