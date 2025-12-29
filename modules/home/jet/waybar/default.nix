@@ -126,7 +126,7 @@ in {
 
 
         #workspaces {
-          padding: 0 0px;
+          padding: 0 1px;
           margin: 2px;
           border-radius: 2px;
           background-color: #${scheme.base01}; 
