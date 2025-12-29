@@ -43,7 +43,7 @@ in {
 
           # base05 = text, base0E = mauve
           # base0B = catppuccin-mocha blue
-          "col.active_border" = "rgba(${scheme.base0B}ff)";
+          "col.active_border" = "rgba(${scheme.base0E}ff)";
           "col.inactive_border" = "rgba(${scheme.base02}ff)";
 
           resize_on_border = true;

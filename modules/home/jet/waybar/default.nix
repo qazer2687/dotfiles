@@ -136,13 +136,13 @@ in {
         }
 
         #workspaces button.active {
-            background-color: #${scheme.base0B};
+            background-color: #${scheme.base0E};
         }
         
-       /* #custom-pingServer.up { color: #${scheme.base0B}; }
+       /* #custom-pingServer.up { color: #${scheme.base0E}; }
         #custom-pingServer.down { color: #${scheme.base08}; }*/
 
-        #battery.charging { color: #${scheme.base0B}; }
+        #battery.charging { color: #${scheme.base0E}; }
         #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
         #battery.sub25:not(.charging) { color: #${scheme.base09}; }
         #battery.sub10:not(.charging) { color: #${scheme.base08}; }
