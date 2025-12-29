@@ -14,7 +14,7 @@ in {
       settings = {
         anchor = "bottom";
         width = "100%";
-        height = "20";
+        height = "18";
         scale = true;
         horizontal = true;
         font-size = "11";
