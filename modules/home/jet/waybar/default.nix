@@ -124,15 +124,25 @@ in {
           color: #${scheme.base05};
         }
 
+
+        #workspaces {
+          padding: 0 0px;
+          margin: 0 0;
+          border-radius: 0;
+          background-color: #${scheme.base01}; 
+        }
+
         #workspaces button {
           padding: 0 0px;
           margin: 2px 0;
+          border-radius: 2px;
           background-color: #${scheme.base01}; 
         }
 
         #workspaces button.active {
           padding: 0 0px;
           margin: 2px 0;
+          border-radius: 2px;
           background-color: #${scheme.base0E};
         }
         
