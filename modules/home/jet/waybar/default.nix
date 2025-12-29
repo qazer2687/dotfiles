@@ -124,26 +124,23 @@ in {
         }
 
         #workspaces {
-            background: transparent;
-            margin: 2px;
+          background: transparent;
+          margin: 4px;
         }
 
         #workspaces button {
           padding: 0 4px;
-          margin: 1px;
+          margin: 2px;
           background-color: #${scheme.base02}; 
         }
 
         #workspaces button.active {
           padding: 0 4px;
-          margin: 1px;
+          margin: 2px;
           background-color: #${scheme.base0E};
         }
         
-       /* #custom-pingServer.up { color: #${scheme.base0E}; }
-        #custom-pingServer.down { color: #${scheme.base08}; }*/
-
-        #battery.charging { color: #${scheme.base0E}; }
+        #battery.charging { color: #${scheme.base0B}; }
         #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
         #battery.sub25:not(.charging) { color: #${scheme.base09}; }
         #battery.sub10:not(.charging) { color: #${scheme.base08}; }
