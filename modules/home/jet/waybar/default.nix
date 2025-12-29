@@ -117,9 +117,8 @@ in {
         }
 
         #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
-          padding: 0;
+          padding: 0 8px;
           margin: 2px;
-          border-radius: 2px;
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
