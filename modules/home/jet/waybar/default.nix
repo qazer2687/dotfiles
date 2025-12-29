@@ -125,8 +125,10 @@ in {
         }
 
         #workspaces {
-          background: transparent;
-          margin: 4px;
+          padding: 0 8px;
+          margin: 2px;
+          border-radius: 2px;
+          background: #${scheme.base01};
         }
 
         #workspaces button {
