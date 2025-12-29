@@ -119,18 +119,20 @@ in {
         #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
           padding: 0 8px;
           margin: 2px;
+          border-radius: 2px;
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
 
         #workspaces button {
-          padding: 0 4px;
+          padding: 0 0px;
           margin: 2px;
+          border-radius: 2px;
           background-color: #${scheme.base01}; 
         }
 
         #workspaces button.active {
-          padding: 0 4px;
+          padding: 0 0px;
           margin: 2px;
           background-color: #${scheme.base0E};
         }
