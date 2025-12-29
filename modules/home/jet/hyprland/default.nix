@@ -37,8 +37,9 @@ in {
           # Master/Stack
           layout = "master";
 
-          gaps_in = 4;
-          gaps_out = 2;
+          # out = in*2
+          gaps_in = 2;
+          gaps_out = 4;
           border_size = 1;
 
           # base05 = text, base0E = mauve
