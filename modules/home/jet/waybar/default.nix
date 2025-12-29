@@ -22,9 +22,9 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["hyprland/workspaces"];
+          modules-left = ["clock" "hyprland/workspaces"];
           modules-center = [];
-          modules-right = ["tray" "network" "pulseaudio" "battery" "clock"];
+          modules-right = ["tray" "network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "vol: {volume}%";
@@ -60,6 +60,7 @@ in {
           battery = {
             tooltip = false;
             format = "bat: {capacity}%";
+            format-charging: "bat: {capacity}% (charging)";
             interval = 30;
             states = {
               sub50 = 50;
@@ -130,13 +131,13 @@ in {
 
         #workspaces button {
           padding: 0 4px;
-          margin: 2px;
+          margin: 1px;
           background-color: #${scheme.base02}; 
         }
 
         #workspaces button.active {
           padding: 0 4px;
-          margin: 2px;
+          margin: 1px;
           background-color: #${scheme.base0E};
         }
         
@@ -145,8 +146,8 @@ in {
         #battery.sub25:not(.charging) { color: #${scheme.base09}; }
         #battery.sub10:not(.charging) { color: #${scheme.base08}; }
 
-        #workspaces { margin-left: 20px; }
-        #clock { margin-right: 20px; }
+        #clock { margin-left: 20px; }
+        #battery { margin-right: 20px; }
       '';
     };
   };
