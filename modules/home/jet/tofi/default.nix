@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "framer";
+  scheme = base16 "catppuccin-mocha";
 in {
   options.modules.tofi.enable = lib.mkEnableOption "";
 
@@ -26,7 +26,7 @@ in {
         border-width = 0;
 
         input-color = "#${scheme.base05}";
-        selection-color = "#${scheme.base05}";
+        selection-color = "#${scheme.base0b}";
         text-color = "#${scheme.base05}";
         background-color = "#${scheme.base00}";
 

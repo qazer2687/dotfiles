@@ -5,7 +5,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "framer";
+  scheme = base16 "catppuccin-mocha";
 in {
   options.modules.mako.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.mako.enable {

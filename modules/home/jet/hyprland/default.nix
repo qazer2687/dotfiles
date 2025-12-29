@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "framer";
+  scheme = base16 "catppuccin-mocha";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -42,7 +42,7 @@ in {
           border_size = 1;
 
           # base05 = text, base0E = mauve
-          # base0B = framer blue
+          # base0B = catppuccin-mocha blue
           "col.active_border" = "rgba(${scheme.base0B}ff)";
           "col.inactive_border" = "rgba(${scheme.base02}ff)";
 

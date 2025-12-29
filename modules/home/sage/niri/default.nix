@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "framer";
+  scheme = base16 "catppuccin-mocha";
 in {
   options.modules.niri.enable = lib.mkEnableOption "";
 
