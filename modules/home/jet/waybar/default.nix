@@ -134,12 +134,14 @@ in {
         #workspaces button {
           padding: 0 4px;
           margin: 1px;
+          border-radius: 2px;
           background-color: #${scheme.base02}; 
         }
 
         #workspaces button.active {
           padding: 0 4px;
           margin: 1px;
+          border-radius: 2px;
           background-color: #${scheme.base0E};
         }
         
