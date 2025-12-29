@@ -124,7 +124,7 @@ in {
         }
 
         #workspaces {
-            background: #${scheme.base01};
+            background: transparent;
             margin: 2px;
         }
 
