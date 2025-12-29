@@ -14,16 +14,18 @@ in {
       settings = {
         anchor = "bottom";
         width = "100%";
-        height = "24";
+        height = "22";
         scale = true;
         horizontal = true;
-        font-size = "12";
-        prompt-text = "‌‌ > ‌‌ ‌ ";
+        font-size = "11";
+        prompt-text = "‌‌ run: ‌‌ ‌ ";
         prompt-padding = 0;
         font = "PragmataPro";
         outline-width = 0;
         hint-font = false;
         border-width = 0;
+
+        late-keyboard-init = true;
 
         input-color = "#${scheme.base05}";
 
@@ -36,7 +38,7 @@ in {
 
         min-input-width = 100;
         result-spacing = 15;
-        padding-top = 0;
+        padding-top = 1;
         padding-bottom = 0;
         padding-left = 0;
         padding-right = 0;
