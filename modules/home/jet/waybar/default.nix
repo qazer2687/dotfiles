@@ -79,8 +79,7 @@ in {
           };
 
           "hyprland/workspaces" = {
-            format = "{icon}";
-
+            format = "";
             format-icons = {
               "1" = "1";
               "2" = "2";
