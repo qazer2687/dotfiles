@@ -26,9 +26,12 @@ in {
         border-width = 0;
 
         input-color = "#${scheme.base05}";
+
         selection-color = "#${scheme.base00}";
         selection-background = "#${scheme.base0E}";
         selection-background-padding = 2;
+        selection-background-corner-radius = 2;
+
         text-color = "#${scheme.base05}";
         background-color = "#${scheme.base00}";
 
