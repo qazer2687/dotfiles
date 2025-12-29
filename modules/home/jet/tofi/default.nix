@@ -14,11 +14,11 @@ in {
       settings = {
         anchor = "bottom";
         width = "100%";
-        height = "18";
+        height = "24";
         scale = true;
         horizontal = true;
-        font-size = "11";
-        prompt-text = "‌‌ run:‌‌‌ ‌‌ ‌ ";
+        font-size = "12";
+        prompt-text = "‌‌ > ‌‌ ‌ ";
         prompt-padding = 0;
         font = "PragmataPro";
         outline-width = 0;
@@ -36,8 +36,8 @@ in {
 
         min-input-width = 100;
         result-spacing = 15;
-        padding-top = 2;
-        padding-bottom = 2;
+        padding-top = 0;
+        padding-bottom = 0;
         padding-left = 0;
         padding-right = 0;
       };
