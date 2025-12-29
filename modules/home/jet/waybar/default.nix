@@ -125,22 +125,22 @@ in {
         }
 
         #workspaces {
-          background: #${scheme.base01};
-          border-radius: 2px;
-          margin: 2px;
-          padding: 0px;
+            background: #${scheme.base01};
+            border-radius: 2px;
+            margin: 2px;
+            padding: 2px;
         }
 
         #workspaces button {
-          padding: 0 8px;
-          margin: 0 0px;
-          border-radius: 2px;
-          background: transparent;
-          color: #${scheme.base05};
+            padding: 0 10px;
+            margin: 0 2px;
+            border-radius: 2px;
+            background-color: #${scheme.base03}; 
+            color: transparent;
         }
 
         #workspaces button.active {
-          color: #${scheme.base0B};
+            background-color: #${scheme.base0B};
         }
         
        /* #custom-pingServer.up { color: #${scheme.base0B}; }
