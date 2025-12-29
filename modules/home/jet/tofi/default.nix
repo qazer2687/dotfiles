@@ -28,7 +28,7 @@ in {
         input-color = "#${scheme.base05}";
         selection-color = "#${scheme.base00}";
         selection-background = "#${scheme.base05}";
-        selection-background-padding = "6 2";
+        selection-background-padding = 2;
         text-color = "#${scheme.base05}";
         background-color = "#${scheme.base00}";
 
