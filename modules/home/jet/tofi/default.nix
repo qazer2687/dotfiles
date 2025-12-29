@@ -29,8 +29,7 @@ in {
 
         selection-color = "#${scheme.base00}";
         selection-background = "#${scheme.base0E}";
-        selection-background-padding = 2;
-        selection-background-corner-radius = 2;
+        selection-background-padding = 4;
 
         text-color = "#${scheme.base05}";
         background-color = "#${scheme.base00}";
