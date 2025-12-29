@@ -126,14 +126,13 @@ in {
 
         #workspaces button {
           padding: 0 0px;
-          margin: 2px;
-          border-radius: 2px;
+          margin: 2px 0;
           background-color: #${scheme.base01}; 
         }
 
         #workspaces button.active {
           padding: 0 0px;
-          margin: 2px;
+          margin: 2px 0;
           background-color: #${scheme.base0E};
         }
         
