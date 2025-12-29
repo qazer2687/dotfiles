@@ -127,21 +127,21 @@ in {
 
         #workspaces {
           padding: 0 0px;
-          margin: 4px 0;
+          margin: 2px 0;
           border-radius: 2px;
           background-color: #${scheme.base01}; 
         }
 
         #workspaces button {
           padding: 0 8px;
-          margin: 0px 0;
+          margin: 0px 2px;
           border-radius: 2px;
           background-color: #${scheme.base02}; 
         }
 
         #workspaces button.active {
           padding: 0 8px;
-          margin: 0px 0;
+          margin: 0px 2px;
           border-radius: 2px;
           background-color: #${scheme.base0E};
         }
