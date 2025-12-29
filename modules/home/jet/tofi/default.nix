@@ -38,7 +38,7 @@ in {
 
         min-input-width = 100;
         result-spacing = 15;
-        padding-top = 1;
+        padding-top = 2;
         padding-bottom = 0;
         padding-left = 0;
         padding-right = 0;
