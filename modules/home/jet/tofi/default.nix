@@ -26,7 +26,8 @@ in {
         border-width = 0;
 
         input-color = "#${scheme.base05}";
-        selection-color = "#${scheme.base0B}";
+        selection-color = "#${scheme.base00}";
+        selectinon-background-color = "#${scheme.base05}";
         text-color = "#${scheme.base05}";
         background-color = "#${scheme.base00}";
 
