@@ -14,7 +14,7 @@ in {
       settings = {
         anchor = "bottom";
         width = "100%";
-        height = "22";
+        height = "20";
         scale = true;
         horizontal = true;
         font-size = "11";
@@ -27,7 +27,7 @@ in {
 
         input-color = "#${scheme.base05}";
         selection-color = "#${scheme.base00}";
-        selection-background = "#${scheme.base05}";
+        selection-background = "#${scheme.base0E}";
         selection-background-padding = 2;
         text-color = "#${scheme.base05}";
         background-color = "#${scheme.base00}";
