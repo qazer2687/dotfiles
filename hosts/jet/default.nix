@@ -130,6 +130,8 @@
     platformio.enable = true;
     easyeffects.enable = true;
     flatpak.enable = true;
+
+    bluetooth.enable = true;
   };
 
   # Did you read the comment?
