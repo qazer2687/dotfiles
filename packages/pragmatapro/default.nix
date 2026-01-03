@@ -1,7 +1,7 @@
 { stdenv }:
 stdenv.mkDerivation rec {
   pname = "pragmatapro";
-  version = "0.820";
+  version = "1";
   
   src = ./.;
   

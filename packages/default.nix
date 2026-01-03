@@ -7,4 +7,5 @@ pkgs: {
   pragmatapro = pkgs.callPackage ./pragmatapro {};
   TX02 = pkgs.callPackage ./TX02 {};
   helium = pkgs.callPackage ./helium {};
+  fast-font = pkgs.callPackage ./fast-font {};
 }

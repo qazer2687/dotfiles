@@ -41,6 +41,7 @@
       # Custom
       TX02
       pragmatapro
+      fast-font
 
       # Nerd Fonts
       nerd-fonts.fira-code
