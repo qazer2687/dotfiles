@@ -42,6 +42,7 @@
       TX02
       pragmatapro
       fast-font
+      fraktion-sans
 
       # Nerd Fonts
       nerd-fonts.fira-code
