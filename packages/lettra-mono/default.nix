@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
   src = ./.;
   
   installPhase = ''
-    mkdir -p $out/share/fonts/truetype/lettra-mono
-    cp *.ttf $out/share/fonts/truetype/lettra-mono/
+    mkdir -p $out/share/fonts/opentype/lettra-mono
+    cp *.ttf $out/share/fonts/opentype/lettra-mono/
   '';
 }
