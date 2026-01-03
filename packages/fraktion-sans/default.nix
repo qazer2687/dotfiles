@@ -7,6 +7,6 @@ stdenv.mkDerivation rec {
   
   installPhase = ''
     mkdir -p $out/share/fonts/truetype/fraktion-sans
-    cp *.ttf $out/share/fonts/truetype/fraktion-sans/
+    cp *.otf $out/share/fonts/truetype/fraktion-sans/
   '';
 }
