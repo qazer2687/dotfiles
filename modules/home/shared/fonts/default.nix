@@ -43,6 +43,7 @@
       pragmatapro
       fast-font
       fraktion-sans
+      lettra-mono
 
       # Nerd Fonts
       nerd-fonts.fira-code
