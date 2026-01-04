@@ -44,6 +44,7 @@
       fast-font
       fraktion-sans
       lettra-mono
+      space-grotesk
 
       # Nerd Fonts
       nerd-fonts.fira-code
