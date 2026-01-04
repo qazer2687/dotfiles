@@ -9,7 +9,7 @@
       enable = true;
       settings = {
         user = {
-          name = "itsqazer";n
+          name = "itsqazer";
           email = "114782572+itsqazer@users.noreply.github.com";
         };
         url."git@github.com:" = {
