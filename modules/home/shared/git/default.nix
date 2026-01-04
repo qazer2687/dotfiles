@@ -9,8 +9,8 @@
       enable = true;
       settings = {
         user = {
-          name = "qazer2687";
-          email = "114782572+qazer2687@users.noreply.github.com";
+          name = "itsqazer";
+          email = "114782572+itsqazer@users.noreply.github.com";
         };
         url."git@github.com:" = {
           insteadOf = "https://github.com/";
