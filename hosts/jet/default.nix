@@ -44,7 +44,12 @@
       # Enables the pixels horizontal of the notch.
       "apple_dcp.show_notch=1"
 
+      # zswap
       "zswap.enabled=1"
+      "zswap.compressor=zstd"
+      "zswap.zpool=zsmalloc"
+      "zswap.max_pool_percent=50"
+      "zswap.shrinker_enabled=1"
 
       # Quiet boot.
       #"quiet"
@@ -54,8 +59,8 @@
       #"udev.log_level=3"
     ];
     kernel.sysctl = {
-      # Default is 60 but too swappy for my liking.
-      "vm.swappiness" = 100;
+      # Lower to stop thrashing.
+      "vm.swappiness" = 40;
     };
   };
   
