@@ -17,6 +17,7 @@
     neovim
     cryptsetup
     gajim
+    remmina
   ];
 
   modules = {
