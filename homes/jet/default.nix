@@ -18,6 +18,22 @@
     cryptsetup
     gajim
     remmina
+
+
+    (pkgs.tor-browser.overrideAttrs (
+      finalAttrs: previousAttrs: {
+        src = pkgs.fetchurl {
+          urls = [
+            "https://nightlies.tbb.torproject.org/nightly-builds/tor-browser-builds/tbb-nightly.2025.10.26/nightly-linux-aarch64/tor-browser-linux-aarch64-tbb-nightly.2025.10.26.tar.xz"
+          ];
+          hash = "sha256-iUu5cyfPdRpuMg+5adLwpbK4cYll6uaEs2FpGl/H5Qc=";
+        };
+        meta.platforms = [ "aarch64-linux" ];
+        buildPhase =
+          builtins.replaceStrings [ "fontconfig/fonts.conf" ] [ "fonts/fonts.conf" ]
+            previousAttrs.buildPhase;
+      }
+    ))
   ];
 
   modules = {
