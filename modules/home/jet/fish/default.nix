@@ -15,35 +15,38 @@
       functions = {
         fish_prompt = ''
           # Nix-shell info
-          set -l nix_shell_info (
-            if test -n "$IN_NIX_SHELL"
-              echo -n -s (set_color yellow) "<nix-shell> " (set_color normal)
-            end
-          )
-
-          # Get user and hostname
-          set -l current_user (whoami)
-          set -l host_name (hostname -s)
+          if set -q IN_NIX_SHELL
+            set_color yellow
+            echo -n "<nix-shell> "
+            set_color normal
+          end
 
           # Build main prompt
-          echo -n -s "$nix_shell_info" \
-            (set_color green) "$current_user" \
-            (set_color normal) "@" \
-            (set_color blue) "$host_name" \
-            (set_color normal) " " \
-            (set_color cyan) (prompt_pwd) \
-            (set_color normal) "> "
+          set_color green
+          echo -n "$USER"
+          set_color normal
+          echo -n "@"
+          set_color blue
+          echo -n "$hostname"
+          set_color normal
+          echo -n " "
+          set_color cyan
+          echo -n (prompt_pwd)
+          set_color normal
+          echo -n "> "
         '';
 
         fish_right_prompt = ''
-          # Show vi mode indicator on the right
-          if test $fish_key_bindings = "fish_vi_key_bindings"
-            if commandline -M | string match -q '*'
-              echo -n (set_color red) "NORMAL" (set_color normal)
-            else
-              echo -n (set_color green) "INSERT" (set_color normal)
-            end
+          # Show vi mode indicator
+          switch "$fish_bind_mode"
+            case default
+              set_color red
+              echo -n "NORMAL"
+            case '*'
+              set_color green
+              echo -n "INSERT"
           end
+          set_color normal
         '';
 
         nix-shell = ''
