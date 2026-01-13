@@ -27,6 +27,10 @@
   
   services.udev = {
     extraRules = ''
+      SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", ATTRS{id/bus}=="usb", ACTION=="add", \
+          RUN+="/bin/echo 1 > /sys/devices/platform/i8042/serio0/input/input*/inhibited"
+      SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", ATTRS{id/bus}=="usb", ACTION=="remove", \
+          RUN+="/bin/echo 0 > /sys/devices/platform/i8042/serio0/input/input*/inhibited"
       # Allow backlight control for non-root users.
       ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
     '';
@@ -124,7 +128,7 @@
 
 
   services.keyd = {
-    enable = true;
+    enable = true;                                                            
       keyboards = {
         default = {
         ids = [ "*" ]; # Apply to all keyboards

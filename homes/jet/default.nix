@@ -14,8 +14,7 @@
     btop
     #protonvpn-gui
     nautilus
-    #neovim
-    vim
+    neovim
     cryptsetup
     gajim
   ];
