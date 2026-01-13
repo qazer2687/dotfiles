@@ -24,13 +24,25 @@
       extractPeripheralFirmware = true;
     };
   };
+
+  environment.etc."udev-scripts/toggle-internal-keyboard.sh" = {
+    text = ''
+      #!/bin/sh
+      ACTION=$1
+      for dev in /sys/devices/platform/i8042/serio0/input/input*/inhibited; do
+        [ -e "$dev" ] && echo "$ACTION" > "$dev"
+      done
+    '';
+    mode = "0755";
+  };
   
   services.udev = {
     extraRules = ''
       SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", ATTRS{id/bustype}=="0003", ACTION=="add", \
-            RUN+="${pkgs.bash}/bin/bash -c 'for dev in /sys/devices/platform/i8042/serio0/input/input*/inhibited; do [ -e $dev ] && echo 1 > $dev; done'"
+        RUN+="/etc/udev-scripts/toggle-internal-keyboard.sh 1"
       SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", ATTRS{id/bustype}=="0003", ACTION=="remove", \
-          RUN+="${pkgs.bash}/bin/bash -c 'for dev in /sys/devices/platform/i8042/serio0/input/input*/inhibited; do [ -e $dev ] && echo 0 > $dev; done'"
+        RUN+="/etc/udev-scripts/toggle-internal-keyboard.sh 0"
+
       # Allow backlight control for non-root users.
       ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
     '';
