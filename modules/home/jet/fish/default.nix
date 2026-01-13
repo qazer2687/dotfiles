@@ -36,19 +36,7 @@
           echo -n "> "
         '';
 
-        fish_right_prompt = ''
-          # Show vi mode indicator
-          switch "$fish_bind_mode"
-            case default
-              set_color red
-              echo -n "NORMAL"
-            case '*'
-              set_color green
-              echo -n "INSERT"
-          end
-          set_color normal
-        '';
-
+        # Run fish inside nix-shell.
         nix-shell = ''
           command nix-shell --run fish $argv
         '';
