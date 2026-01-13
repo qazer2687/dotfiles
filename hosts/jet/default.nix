@@ -4,8 +4,19 @@ let
     ACTION=$1
     INHIBITED="/sys/devices/platform/soc/24eb14000.fifo/24eb30000.input/0019:05AC:0351.0003/input/input6/inhibited"
     
-    if [ -e "$INHIBITED" ]; then
-      echo "$ACTION" > "$INHIBITED"
+    if [ "$ACTION" = "add" ]; then
+      # Count USB keyboards (excluding the internal one)
+      USB_KB_COUNT=$(find /sys/devices -name "input*" -path "*/usb*" -type d 2>/dev/null | wc -l)
+      if [ "$USB_KB_COUNT" -gt 0 ]; then
+        echo 1 > "$INHIBITED"
+      fi
+    else
+      # On remove, check if any USB keyboards remain
+      sleep 0.5  # Brief delay to let device fully disconnect
+      USB_KB_COUNT=$(find /sys/devices -name "input*" -path "*/usb*" -type d 2>/dev/null | wc -l)
+      if [ "$USB_KB_COUNT" -eq 0 ]; then
+        echo 0 > "$INHIBITED"
+      fi
     fi
   '';
 in {
@@ -38,10 +49,10 @@ in {
   
   services.udev = {
     extraRules = ''
-      SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="       MonsGeek Keyboard", ACTION=="add", \
-        RUN+="${toggleKeyboard} 1"
-      SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="       MonsGeek Keyboard", ACTION=="remove", \
-        RUN+="${toggleKeyboard} 0"
+      SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", SUBSYSTEMS=="usb", ACTION=="add", \
+        RUN+="${toggleKeyboard} add"
+      SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", SUBSYSTEMS=="usb", ACTION=="remove", \
+        RUN+="${toggleKeyboard} remove"
 
       # Allow backlight control for non-root users.
       ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
