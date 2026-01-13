@@ -2,9 +2,11 @@
 let
   toggleKeyboard = pkgs.writeShellScript "toggle-internal-keyboard" ''
     ACTION=$1
-    for dev in /sys/devices/platform/i8042/serio0/input/input*/inhibited; do
-      [ -e "$dev" ] && echo "$ACTION" > "$dev"
-    done
+    INHIBITED="/sys/devices/platform/soc/24eb14000.fifo/24eb30000.input/0019:05AC:0351.0003/input/input6/inhibited"
+    
+    if [ -e "$INHIBITED" ]; then
+      echo "$ACTION" > "$INHIBITED"
+    fi
   '';
 in {
   imports = [
@@ -36,9 +38,9 @@ in {
   
   services.udev = {
     extraRules = ''
-      SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", ATTRS{id/bustype}=="0003", ACTION=="add", \
+      SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="       MonsGeek Keyboard", ACTION=="add", \
         RUN+="${toggleKeyboard} 1"
-      SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", ATTRS{id/bustype}=="0003", ACTION=="remove", \
+      SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="       MonsGeek Keyboard", ACTION=="remove", \
         RUN+="${toggleKeyboard} 0"
 
       # Allow backlight control for non-root users.
