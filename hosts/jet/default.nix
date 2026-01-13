@@ -42,6 +42,7 @@
   boot = {
     kernelParams = [
       # Enables the pixels horizontal of the notch.
+      # Note that in a future upgrade apple_dcp is renamed to appledrm.
       "apple_dcp.show_notch=1"
 
       # zswap
