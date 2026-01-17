@@ -26,7 +26,7 @@ in {
 
       settings = {
         monitor = [
-          "eDP-1,highrr,auto,2"
+          "eDP-1,highrr,auto,1"
         ];
 
         xwayland = {
