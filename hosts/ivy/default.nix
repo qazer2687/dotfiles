@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ../../hardware/jet
+    ../../hardware/ivy
   ];
 
-  networking.hostName = "jet";
+  networking.hostName = "ivy";
 
   users.users = {
     alex = {
@@ -16,16 +16,6 @@
 
   programs.fish.enable = true;
 
-  hardware = {
-    asahi = {
-      enable = true;
-      setupAsahiSound = true;
-      peripheralFirmwareDirectory = ../../hardware/jet/firmware;
-      extractPeripheralFirmware = true;
-    };
-  };
-
-  
   services.udev = {
     extraRules = ''
       # Allow backlight control for non-root users.
@@ -42,10 +32,6 @@
 
   boot = {
     kernelParams = [
-      # Enables the pixels horizontal of the notch.
-      # Note that in a future upgrade apple_dcp is renamed to appledrm.
-      "apple_dcp.show_notch=1"
-
       # zswap
       "zswap.enabled=1"
       "zswap.compressor=zstd"
@@ -122,22 +108,6 @@
   environment.pathsToLink = [
     "share/thumbnailers"
   ];
-
-
-  services.keyd = {
-    enable = true;                                                            
-      keyboards = {
-        default = {
-        ids = [ "*" ]; # Apply to all keyboards
-        settings = {
-          main = {
-            # Tap for Escape, hold for Control
-          capslock = "overload(control, esc)";
-          };
-        };
-      };
-    };
-  };
 
   # Add this to your configuration.nix, inside the main set of options
   environment.etc."libinput/local-overrides.quirks".text = ''

@@ -118,6 +118,7 @@
     networkmanager.enable = true;
     tailscale.enable = true;
     easyeffects.enable = true;
+    keyd.enable = true;
 
     # Gaming
     gamemode.enable = true;
