@@ -36,8 +36,11 @@
       # Desktop
       sage = (import ./flake/sage) {inherit inputs self;};
 
-      # Laptop
+      # Primary Laptop
       jet = (import ./flake/jet) {inherit inputs self;};
+
+      # Secondary Laptop
+      ivy = (import ./flake/ivy) {inherit inputs self;};
     };
   };
 }
