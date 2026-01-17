@@ -228,14 +228,8 @@ in {
           "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 1%-"
 
           # Hyprsunset (Capped at 6500K)
-          # This is managed automatically by the hyprsunset module.
           "CTRL, XF86MonBrightnessUp, exec, flock -n /tmp/hyprsunset.lock bash -c 'temp=$(hyprctl hyprsunset temperature); [ $temp -le 6000 ] && hyprctl hyprsunset temperature $((temp + 500))'"
           "CTRL, XF86MonBrightnessDown, exec, flock -n /tmp/hyprsunset.lock bash -c 'temp=$(hyprctl hyprsunset temperature); hyprctl hyprsunset temperature $((temp - 500))'"
-        ];
-
-        bindl = [
-          # Lock the screen with hyprlock when the lid is closed.
-          ",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
         ];
 
         bindm = [

@@ -109,14 +109,6 @@
     "share/thumbnailers"
   ];
 
-  # Add this to your configuration.nix, inside the main set of options
-  environment.etc."libinput/local-overrides.quirks".text = ''
-    [Serial Keyboards]
-    MatchUdevType=keyboard
-    MatchName=keyd virtual keyboard
-    AttrKeyboardIntegration=internal
-  '';
-
   modules = {
     core.enable = true;
     dbus.enable = true;
@@ -132,6 +124,7 @@
     easyeffects.enable = true;
     flatpak.enable = true;
     keyd.enable = true;
+    pipewire.enable = true;
 
     bluetooth.enable = true;
   };
