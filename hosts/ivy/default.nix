@@ -175,6 +175,7 @@
     pipewire.enable = true;
     gamemode.enable = true;
     tlp.enable = true;
+    easyeffects.enable = true;
   };
 
   # Did you read the comment?
