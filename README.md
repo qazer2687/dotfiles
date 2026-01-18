@@ -4,7 +4,7 @@
   
 ```
 name        os        machine         description        type        arch  
-sage        NixOS     custom          primary desktop pc desktop     x86_64-linux  
+sage        NixOS     custom          primary desktop    desktop     x86_64-linux  
 jet         NixOS     m2 macbook air  primary laptop     laptop      aarch64-linux  
 ivy         NixOS     thinkpad t480   secondary laptop   laptop      x86_64-linux  
 ```
@@ -18,3 +18,4 @@ a huge thank you to the individuals below as i wouldn't have been able to made i
 [@NotAShelf](https://github.com/NotAShelf) [@sioodmy](https://github.com/sioodmy)  
 
 [@eclairevoyant](https://github.com/eclairevoyant/) [@Misterio77](https://github.com/Misterio77)  
+
