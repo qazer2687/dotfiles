@@ -81,7 +81,7 @@
       "fs.inotify.max_user_watches" = 524288;
       
       # TCP congestion control algorithm (BBR provides better throughput and lower latency).
-      "net.ipv4.tcp_congestion_control" = "bbr"
+      "net.ipv4.tcp_congestion_control" = "bbr";
     };
   };
 
