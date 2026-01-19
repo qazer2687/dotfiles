@@ -19,7 +19,7 @@ in {
       enable = true;
       settings = {
         mainBar = {
-          layer = "top";
+          layer = "bottom";
           height = 28;
           margin = "0 0 0 0";
           modules-left = ["clock" "hyprland/workspaces"];
@@ -108,7 +108,7 @@ in {
           border: none;
           border-radius: 0;
           font-family: "DepartureMono";
-          font-size: 11px;
+          font-size: 22px;
           min-height: 0;
         }
 

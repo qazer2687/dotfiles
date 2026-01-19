@@ -37,7 +37,7 @@ in {
           hot-corners.enable = false;
         };
 
-        outputs."eDP-1".scale = 2.0;
+        outputs."eDP-1".scale = 1.0;
 
         window-rules = [
           {
@@ -45,10 +45,10 @@ in {
 
             open-maximized = false;
 
-            # The max width is 1280 as I use 2x scaling (2560 / 2).
+            # The max width is 1920.
             # This configuration leaves 20px on each side.
-            min-width = 1240;
-            max-width = 1240;
+            min-width = 1900;
+            max-width = 1900;
 
             # Rounded Corners
             /*
