@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  scheme = base16 "twilight";
+  scheme = base16 "vesper";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 

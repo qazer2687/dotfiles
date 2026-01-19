@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "twilight";
+  scheme = base16 "vesper";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -43,7 +43,7 @@ in {
           border_size = 1;
 
           # base05 = text, base0E = mauve
-          # base0B = twilight blue
+          # base0B = vesper blue
           "col.active_border" = "rgba(${scheme.base0E}ff)";
           "col.inactive_border" = "rgba(${scheme.base02}ff)";
 

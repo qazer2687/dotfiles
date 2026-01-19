@@ -5,7 +5,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "twilight";
+  scheme = base16 "vesper";
 in {
   options.modules.mako.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.mako.enable {
