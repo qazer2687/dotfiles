@@ -19,7 +19,8 @@ in {
       enable = true;
       settings = {
         mainBar = {
-          layer = "bottom";
+          layer = "top";
+          position = "bottom";
           height = 28;
           margin = "0 0 0 0";
           modules-left = ["clock" "niri/workspaces"];
@@ -107,8 +108,8 @@ in {
         * {
           border: none;
           border-radius: 0;
-          font-family: "DepartureMono";
-          font-size: 22px;
+          font-family: "PragmataPro";
+          font-size: 14px;
           min-height: 0;
         }
 
