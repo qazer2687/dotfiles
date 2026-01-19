@@ -125,7 +125,6 @@ in {
           color: #${scheme.base05};
         }
 
-
         #workspaces {
           padding: 0 1px;
           margin: 2px;
@@ -151,9 +150,6 @@ in {
         #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
         #battery.sub25:not(.charging) { color: #${scheme.base09}; }
         #battery.sub10:not(.charging) { color: #${scheme.base08}; }
-
-        #clock { margin-left: 20px; }
-        #battery { margin-right: 20px; }
       '';
     };
   };
