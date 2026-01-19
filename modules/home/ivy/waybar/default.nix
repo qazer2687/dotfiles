@@ -23,7 +23,7 @@ in {
           position = "bottom";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "niri/workspaces"];
+          modules-left = ["clock" "hyprland/workspaces"];
           modules-center = [];
           modules-right = ["tray" "network" "pulseaudio" "battery"];
 
@@ -80,7 +80,7 @@ in {
             interval = 30;
           };
 
-          "niri/workspaces" = {
+          "hyprland/workspaces" = {
             format = "";
             format-icons = {
               "1" = "1";
