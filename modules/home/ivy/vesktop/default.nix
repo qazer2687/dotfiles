@@ -18,7 +18,9 @@
       };
       vencord = {
         themes = {
-          mocha = builtins.readFile ./config/twilight.css;
+          # Can't use full theme names here as they are overwritten by
+          # find and replace when I set a custom base16 scheme.
+          mocha = builtins.readFile ./config/mocha.css;
           gruvbox-dark-hard = builtins.readFile ./config/gruvbox-dark-hard.css;
         };
         settings = {
@@ -26,7 +28,7 @@
           autoUpdateNotification = false;
           notifyAboutUpdates = false;
           useQuickCss = true;
-          enabledThemes = [ "twilight.css" ];
+          #enabledThemes = [ "twilight.css" ];
           plugins = {
             MessageLogger = {
               enabled = true;
