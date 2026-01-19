@@ -93,7 +93,7 @@ in {
           "Mod+Return".action = spawn "foot";
 
           # Launcher
-          "Mod+Space".action = spawn "bash" "-c" "tofi-run | xargs niri msg action spawn --";
+          "Mod+e".action = spawn "bash" "-c" "tofi-run | xargs niri msg action spawn --";
 
           # Window Management
           "Mod+q".action = close-window;
@@ -118,20 +118,20 @@ in {
           # H - LEFT
           "Mod+h".action = focus-column-left;
           # J - DOWN
-          "Mod+n".action = focus-workspace-down;
+          "Mod+j".action = focus-workspace-down;
           # K - UP
-          "Mod+e".action = focus-workspace-up;
+          "Mod+k".action = focus-workspace-up;
           # L - RIGHT
-          "Mod+i".action = focus-column-right;
+          "Mod+l".action = focus-column-right;
           
           # H - LEFT
           "Mod+Shift+h".action = move-column-left;
           # J - DOWN
-          "Mod+Shift+n".action = move-window-down;
+          "Mod+Shift+j".action = move-window-down;
           # K - UP
-          "Mod+Shift+e".action = move-window-up;
+          "Mod+Shift+k".action = move-window-up;
           # L - RIGHT
-          "Mod+Shift+i".action = move-column-right;
+          "Mod+Shift+l".action = move-column-right;
         };
 
         debug = {
