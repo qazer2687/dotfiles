@@ -11,6 +11,9 @@ in {
   options.modules.niri.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.niri.enable {
+    # Fix ca.desrt.dconf unknown unit error.
+    home.packages = [pkgs.dconf];
+    
     programs.niri = {
       enable = true;
       package = inputs.niri.packages.${pkgs.system}.niri-stable;
