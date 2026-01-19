@@ -13,6 +13,7 @@ user_pref("webgl.disabled", false);
 user_pref("media.hardware-video-decoding.force-enabled", true);
 */
 
+/* this gets rid of the dots and weird window corruption */
 user_pref("gfx.webrender.all", false);
 user_pref("gfx.webrender.enabled", false);
 user_pref("layers.acceleration.force-enabled", false);
@@ -22,3 +23,6 @@ user_pref("gfx.webrender.compositor.force-enabled", false);
 user_pref("gfx.webrender.software", true);
 user_pref("webgl.disabled", true);
 user_pref("media.hardware-video-decoding.force-enabled", false);
+
+/* Don't sync theme */
+user_pref("services.sync.addons.ignoreUserEnabledChanges", true);

@@ -18,7 +18,7 @@
       };
       vencord = {
         themes = {
-          mocha = builtins.readFile ./config/catppuccin-mocha.css;
+          mocha = builtins.readFile ./config/twilight.css;
           gruvbox-dark-hard = builtins.readFile ./config/gruvbox-dark-hard.css;
         };
         settings = {
@@ -26,7 +26,7 @@
           autoUpdateNotification = false;
           notifyAboutUpdates = false;
           useQuickCss = true;
-          enabledThemes = [ "catppuccin-mocha.css" ];
+          enabledThemes = [ "twilight.css" ];
           plugins = {
             MessageLogger = {
               enabled = true;

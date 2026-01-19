@@ -3,3 +3,6 @@ user_pref("layout.css.devPixelsPerPx", 1.6);
 
 /* RAM savings */
 user_pref("fission.autostart", false);
+
+/* Don't sync theme */
+user_pref("services.sync.addons.ignoreUserEnabledChanges", true);

@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "catppuccin-mocha";
+  scheme = base16 "twilight";
 in {
   options.modules.niri.enable = lib.mkEnableOption "";
 
