@@ -93,13 +93,11 @@
 
   services.throttled = {
     enable = true;
-    settings = {
-      AC = {
-        # PL1 and PL2 default to 44W automatically
-        Trip_Temp_C = 85;
-      };
-    };
-  };
+    extraConfig = ''
+      [AC]
+      Trip_Temp_C: 85
+    '';
+  };  
   hardware.cpu.x86.msr.enable = true;
 
   hardware = {
