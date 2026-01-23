@@ -93,11 +93,23 @@
   services.throttled = {
     enable = true;
     extraConfig = ''
+      [GENERAL]
+      Enabled: True
+
       [AC]
+      Update_Rate_s: 5
+      PL1_TDP_W: 44
+      PL2_TDP_W: 44
       Trip_Temp_C: 85
+
+      [BATTERY]
+      Update_Rate_s: 30
+      PL1_TDP_W: 29
+      PL2_TDP_W: 44
+      Trip_Temp_C: 80
     '';
   };
-  
+
   hardware.cpu.x86.msr.enable = true;
 
   hardware = {
