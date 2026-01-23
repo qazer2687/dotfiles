@@ -90,6 +90,18 @@
     scheduler = "scx_lavd";
   };
 
+
+  services.throttled = {
+    enable = true;
+    settings = {
+      AC = {
+        # PL1 and PL2 default to 44W automatically
+        Trip_Temp_C = 85;
+      };
+    };
+  };
+  hardware.cpu.x86.msr.enable = true;
+
   hardware = {
     enableAllFirmware = true;
     graphics = {
@@ -152,6 +164,8 @@
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      MESA_SHADER_CACHE_MAX_SIZE = "2G";
+      MESA_LOADER_DRIVER_OVERRIDE = "iris";
     };
     systemPackages = with pkgs; [
       flatpak

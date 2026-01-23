@@ -22,6 +22,11 @@
           # From play.nix flake.
           softrealtime = "auto";
         };
+        gpu = {
+          apply_gpu_optimisations = "accept-responsibility";
+          gpu_device = 0;
+          intel_gpu_boost = 1;
+        };
         custom = {
           start = "${pkgs.libnotify}/bin/notify-send 'GameMode' 'Activated'";
           end = "${pkgs.libnotify}/bin/notify-send 'GameMode' 'Deactivated'";
