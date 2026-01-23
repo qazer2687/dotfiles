@@ -90,14 +90,14 @@
     scheduler = "scx_lavd";
   };
 
-
   services.throttled = {
     enable = true;
     extraConfig = ''
       [AC]
       Trip_Temp_C: 85
     '';
-  };  
+  };
+  
   hardware.cpu.x86.msr.enable = true;
 
   hardware = {
