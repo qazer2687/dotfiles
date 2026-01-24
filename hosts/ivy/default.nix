@@ -38,6 +38,8 @@
       # Reduces boot time by 1-2s, no runtime impact
       "i915.fastboot=1"
       
+      "i915.enable_dc=0"
+      
       # Panel Self-Refresh causes 99th percentile frame time spikes
       # Disabling adds ~0.5W power draw on AC
       "i915.enable_psr=0"
@@ -73,8 +75,7 @@
 
   services.scx = {
     enable = true;
-    scheduler = "scx_lavd";
-    extraArgs = [ "--performance" ];
+    scheduler = "scx_rustland";
   };
 
   services.throttled = {
@@ -85,9 +86,9 @@
 
       [AC]
       Update_Rate_s: 5
-      PL1_TDP_W: 44
+      PL1_TDP_W: 25
       PL2_TDP_W: 44
-      Trip_Temp_C: 85
+      Trip_Temp_C: 90
 
       [BATTERY]
       Update_Rate_s: 30
