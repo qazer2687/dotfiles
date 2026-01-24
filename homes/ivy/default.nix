@@ -51,6 +51,7 @@
 
     # Games
     prismlauncher.enable = true;
+    mangohud.enable = true;
   };
 
   home.stateVersion = "24.11";
