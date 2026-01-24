@@ -9,14 +9,14 @@
   config = lib.mkIf config.modules.gamemode.enable {
     programs.gamemode = {
       enable = true;
-      enableRenice = true;
+      enableRenice = false;
       settings = {
         general = {
           # As my CPU cooling solution isn't the best, this theoretically
           # should perform a bit better than the 'performance' governor.
           desiredgov = "schedutil";
           defaultgov = "schedutil";
-          renice = 15;
+          renice = 0;
           ioprio = 0;
           inhibit_screensaver = 1;
           # From play.nix flake.

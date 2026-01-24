@@ -49,21 +49,7 @@
     ];
     
     kernel.sysctl = {
-      # Default 60: kernel swaps at 40% RAM free
-      # 10: only swap at 90% RAM usage, reduces swap I/O stalls
       "vm.swappiness" = 10;
-      
-      # Start synchronous flush at 10% dirty (default 20%)
-      # Prevents 500ms+ stalls from massive writeback bursts
-      "vm.dirty_ratio" = 10;
-      
-      # Background pdflush starts at 5% dirty (default 10%)
-      # Smooths I/O, prevents frame time variance during writes
-      "vm.dirty_background_ratio" = 5;
-      
-      # Disables swap prefetch (default 3 = read 8 pages ahead)
-      # With swappiness=10, don't waste I/O on swap readahead
-      "vm.page-cluster" = 0;
       
       # RX packet queue depth (default 1000)
       # Prevents packet drops during network bursts in online games
@@ -88,6 +74,7 @@
   services.scx = {
     enable = true;
     scheduler = "scx_lavd";
+    extraArgs = [ "--performance" ];
   };
 
   services.throttled = {
@@ -174,8 +161,6 @@
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      MESA_SHADER_CACHE_MAX_SIZE = "2G";
-      MESA_LOADER_DRIVER_OVERRIDE = "iris";
     };
     systemPackages = with pkgs; [
       flatpak
@@ -205,7 +190,7 @@
     keyd.enable = true;
     pipewire.enable = true;
     gamemode.enable = true;
-    tlp.enable = true;
+    tlp.enable = false;
     easyeffects.enable = true;
   };
 
