@@ -10,7 +10,7 @@
       enable = true;
       # Enabling this options sometimes results in mangohud appearing
       # on launchers or appearing twice on emulated programs.
-      enableSessionWide = true;
+      enableSessionWide = false;
       settings = {
         toggle_fps_limit = "F1";
         legacy_layout = false;
