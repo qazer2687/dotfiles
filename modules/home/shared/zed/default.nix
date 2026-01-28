@@ -11,7 +11,7 @@
     programs.zed-editor = {
       enable = true;
       package = pkgs.zed-editor-fhs;
-      installRemoteServer = (osConfig.networking.hostName == "mica");
+      installRemoteServer = osConfig.networking.hostName == "mica";
     };
 
     home.shellAliases = {

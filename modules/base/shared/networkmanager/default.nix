@@ -9,8 +9,8 @@
     sops.secrets = let
       mkNetworkSecrets = network: keys: sopsFile:
         lib.genAttrs
-          (map (key: "${network}/${key}") keys)
-          (_name: {inherit sopsFile;});
+        (map (key: "${network}/${key}") keys)
+        (_name: {inherit sopsFile;});
     in
       (mkNetworkSecrets "eduroam" ["id" "ssid" "identity" "anonymous-identity" "phase2-password"] ../../../../secrets/networks/eduroam.yaml)
       // (mkNetworkSecrets "wifinity" ["id" "ssid" "psk"] ../../../../secrets/networks/wifinity.yaml)

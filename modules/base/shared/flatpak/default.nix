@@ -11,10 +11,12 @@
     services.flatpak = {
       enable = true;
       # let packages be stateful
-      /*packages = [
+      /*
+        packages = [
         "com.github.tchx84.Flatseal"
         "org.vinegarhq.Sober"
-      ];*/
+      ];
+      */
       overrides = {
         global = {
           # Force Wayland by default.

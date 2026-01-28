@@ -137,7 +137,7 @@ in {
         workspace = [
           "w[tv1], gapsout:4, gapsin:0"
           "f[1], gapsout:4, gapsin:0"
-          
+
           "1, monitor:DP-1, default:true"
           "2, monitor:DP-1"
           "3, monitor:DP-1"
@@ -158,8 +158,7 @@ in {
           "noanim, (?i).*tofi.*"
 
           "blur, (?i).*waybar.*"
-          "ignorealpha 0.001, (?i).*waybar.*" 
-
+          "ignorealpha 0.001, (?i).*waybar.*"
         ];
 
         bind = [

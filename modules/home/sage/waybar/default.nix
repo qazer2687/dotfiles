@@ -20,7 +20,7 @@ in {
           height = 24;
           margin = "0 0 0 0";
           modules-left = ["custom/pingServer"];
-          modules-center = ["hyprland/workspaces" ];
+          modules-center = ["hyprland/workspaces"];
           modules-right = ["tray" "network" "pulseaudio" "clock"];
 
           pulseaudio = {

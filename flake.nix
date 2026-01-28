@@ -8,7 +8,7 @@
     };
 
     asahi.url = "github:nix-community/nixos-apple-silicon";
-    
+
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";

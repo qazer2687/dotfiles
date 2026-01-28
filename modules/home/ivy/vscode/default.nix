@@ -41,7 +41,7 @@ in {
 
           # File & Explorer
           "files.autoSave" = "afterDelay";
-  
+
           "explorer.confirmDelete" = false;
           "explorer.confirmDragAndDrop" = false;
           "explorer.compactFolders" = false;

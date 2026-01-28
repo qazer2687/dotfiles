@@ -26,7 +26,7 @@
           autoUpdateNotification = false;
           notifyAboutUpdates = false;
           useQuickCss = true;
-          enabledThemes = [ "catppuccin-mocha.css" ];
+          enabledThemes = ["catppuccin-mocha.css"];
           plugins = {
             MessageLogger = {
               enabled = true;

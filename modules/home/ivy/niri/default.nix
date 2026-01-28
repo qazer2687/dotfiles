@@ -76,7 +76,6 @@ in {
           center-focused-column = "always";
         };
 
-        
         workspaces."one" = {};
         workspaces."two" = {};
         workspaces."three" = {};
@@ -125,7 +124,7 @@ in {
           "Mod+k".action = focus-workspace-up;
           # L - RIGHT
           "Mod+l".action = focus-column-right;
-          
+
           # H - LEFT
           "Mod+Shift+h".action = move-column-left;
           # J - DOWN

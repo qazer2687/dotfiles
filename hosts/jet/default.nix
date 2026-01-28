@@ -25,7 +25,6 @@
     };
   };
 
-  
   services.udev = {
     extraRules = ''
       # Allow backlight control for non-root users.
@@ -65,7 +64,7 @@
       "vm.swappiness" = 40;
     };
   };
-  
+
   # Nautilus trash support.
   services.gvfs.enable = true;
 
@@ -123,16 +122,15 @@
     "share/thumbnailers"
   ];
 
-
   services.keyd = {
-    enable = true;                                                            
-      keyboards = {
-        default = {
-        ids = [ "*" ]; # Apply to all keyboards
+    enable = true;
+    keyboards = {
+      default = {
+        ids = ["*"]; # Apply to all keyboards
         settings = {
           main = {
             # Tap for Escape, hold for Control
-          capslock = "overload(control, esc)";
+            capslock = "overload(control, esc)";
           };
         };
       };

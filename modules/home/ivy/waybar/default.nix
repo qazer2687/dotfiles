@@ -12,8 +12,8 @@ in {
   config = lib.mkIf config.modules.waybar.enable {
     home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
     home.file.".config/waybar/scripts/pingServer.sh".executable = true;
-    
-    home.packages = [ pkgs.jq ];
+
+    home.packages = [pkgs.jq];
 
     programs.waybar = {
       enable = true;
@@ -65,7 +65,7 @@ in {
             interval = 30;
             states = {
               sub50 = 50;
-              sub25 = 25; 
+              sub25 = 25;
               sub10 = 10;
             };
             format-icons = ["/    " "//   " "///  " "//// " "/////"];
@@ -129,14 +129,14 @@ in {
           padding: 0 1px;
           margin: 2px;
           border-radius: 2px;
-          background-color: #${scheme.base01}; 
+          background-color: #${scheme.base01};
         }
 
         #workspaces button {
           padding: 0 8px;
           margin: 2px 1px;
           border-radius: 2px;
-          background-color: #${scheme.base02}; 
+          background-color: #${scheme.base02};
         }
 
         #workspaces button.active {
@@ -145,7 +145,7 @@ in {
           border-radius: 2px;
           background-color: #${scheme.base0E};
         }
-        
+
         #battery.charging { color: #${scheme.base0B}; }
         #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
         #battery.sub25:not(.charging) { color: #${scheme.base09}; }

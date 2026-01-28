@@ -9,16 +9,16 @@
 
   config = lib.mkIf config.modules.easyeffects.enable {
     environment.systemPackages = with pkgs; [
-        easyeffects
+      easyeffects
 
-        # Plugins
-        calf
-        libebur128
-        zam-plugins
-        zita-convolver
-        rnnoise
-        speexdsp
-        libbs2b
+      # Plugins
+      calf
+      libebur128
+      zam-plugins
+      zita-convolver
+      rnnoise
+      speexdsp
+      libbs2b
     ];
   };
 }

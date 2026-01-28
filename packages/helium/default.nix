@@ -5,8 +5,7 @@
   fetchurl,
   makeDesktopItem,
   copyDesktopItems,
-}:
-let
+}: let
   pname = "helium";
   version = "0.5.5.1";
 
@@ -21,24 +20,22 @@ let
     };
   };
 
-  src =
-    let
-      inherit (architectures.${stdenv.hostPlatform.system}) arch hash;
-    in
+  src = let
+    inherit (architectures.${stdenv.hostPlatform.system}) arch hash;
+  in
     fetchurl {
       url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-${arch}.AppImage";
       inherit hash;
     };
 in
-appimageTools.wrapType2 {
-  inherit pname version src;
-  nativeBuildInputs = [ copyDesktopItems ];
-  desktopItems = [
-    (makeDesktopItem {
-
-    })
-  ];
-  meta = {
-    platforms = lib.attrNames architectures;
-  };
-}
+  appimageTools.wrapType2 {
+    inherit pname version src;
+    nativeBuildInputs = [copyDesktopItems];
+    desktopItems = [
+      (makeDesktopItem {
+        })
+    ];
+    meta = {
+      platforms = lib.attrNames architectures;
+    };
+  }

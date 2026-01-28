@@ -159,8 +159,7 @@ in {
           "noanim, (?i).*tofi.*"
 
           "blur, (?i).*waybar.*"
-          "ignorealpha 0.001, (?i).*waybar.*" 
-
+          "ignorealpha 0.001, (?i).*waybar.*"
         ];
 
         bind = [
@@ -243,8 +242,6 @@ in {
           "waybar"
           "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
           # Unlock keyring on boot.
-          
-
         ];
       };
 

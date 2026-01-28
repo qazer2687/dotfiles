@@ -41,7 +41,7 @@
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
     kernelPackages = pkgs.linuxPackages_cachyos;
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = ["ntfs"];
   };
 
   #services.scx = {
@@ -51,8 +51,8 @@
 
   services.udev = {
     extraRules = ''
-    # ESP32-CYD2USB Support
-    SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
+      # ESP32-CYD2USB Support
+      SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
     '';
     packages = [
       pkgs.platformio-core
@@ -62,12 +62,14 @@
 
   # Enable esync compatibility.
   systemd.settings.Manager.DefaultLimitNOFILE = "524288";
-  security.pam.loginLimits = [{
-    domain = "alex";
-    type = "hard";
-    item = "nofile";
-    value = "524288";
-  }];
+  security.pam.loginLimits = [
+    {
+      domain = "alex";
+      type = "hard";
+      item = "nofile";
+      value = "524288";
+    }
+  ];
 
   # Autologin and hide getty messages.
   services.getty = {
