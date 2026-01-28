@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   imports = [
     ../../hardware/ivy
   ];
@@ -24,7 +24,7 @@
   };
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
     kernelParams = [
       # Disables Spectre/Meltdown/MDS/etc mitigations
       # i5-8350U (8th gen): 10-15% performance gain, 5-8% on 10th gen+

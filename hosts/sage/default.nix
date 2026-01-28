@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   imports = [
     ../../hardware/sage
   ];
@@ -40,7 +40,7 @@
       # TCP congestion control algorithm (BBR provides better throughput and lower latency).
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
     supportedFilesystems = ["ntfs"];
   };
 

@@ -14,7 +14,6 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../modules/base/sage
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
-    inputs.nyx.nixosModules.default
     inputs.flatpak.nixosModules.nix-flatpak
     {
       home-manager = {
