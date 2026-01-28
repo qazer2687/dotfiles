@@ -12,9 +12,5 @@
       # This option does not work, enabling will cause games to fail on launch.
       capSysNice = false;
     };
-
-    environment.systemPackages = [
-      pkgs.gamescope-wsi_git
-    ];
   };
 }
