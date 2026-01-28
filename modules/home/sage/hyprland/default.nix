@@ -106,11 +106,6 @@ in {
           enable_anr_dialog = false;
         };
 
-        windowrule = [
-          # Disable rounded corners on waybar.
-          "match:class:^(.waybar-wrapped)$, rounding 0"
-        ];
-
         bind = [
           # Core
           "SUPER, Return, exec, foot"
