@@ -10,6 +10,8 @@
   config = lib.mkIf config.modules.easyeffects.enable {
     environment.systemPackages = with pkgs; [
         easyeffects
+
+        # Plugins
         calf
         libebur128
         zam-plugins

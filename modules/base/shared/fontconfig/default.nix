@@ -17,6 +17,11 @@
         enable = true;
         style = "slight";
       };
+    }; // lib.optionalAttrs (config.networking.hostName == "jet") {
+    # Retina Display
+    subpixel = {
+      rgba = "bgr";
+      lcdfilter = "light";
     };
   };
 }

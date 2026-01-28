@@ -12,7 +12,7 @@
       flake = "/home/alex/Code/dotfiles";
     };
     programs.bash.shellAliases = {
-      "rebuild" = "nh os switch github:qazer2687/dotfiles -H $(hostname) -- --refresh --option eval-cache false";
+      "rebuild" = "nh os switch github:qazer2687/dotfiles -H $(hostname) --show-activation-hints -- --refresh --option eval-cache false";
     };
   };
 }
