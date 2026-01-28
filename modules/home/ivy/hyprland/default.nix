@@ -145,23 +145,6 @@ in {
           focus_on_activate = true;
         };
 
-        # Smart Gaps
-        #workspace = [
-        #  "w[tv1], gapsout:4, gapsin:0"
-        #  "f[1], gapsout:4, gapsin:0"
-        #];
-        windowrulev2 = [
-          # Disable rounded corners on waybar.
-          "rounding 0, class:^(.waybar-wrapped)$"
-        ];
-        layerrule = [
-          # Disable tofi animation.
-          "noanim, (?i).*tofi.*"
-
-          "blur, (?i).*waybar.*"
-          "ignorealpha 0.001, (?i).*waybar.*"
-        ];
-
         bind = [
           # Core
           "SUPER, Return, exec, foot"

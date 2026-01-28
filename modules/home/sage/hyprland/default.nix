@@ -108,7 +108,7 @@ in {
 
         windowrule = [
           # Disable rounded corners on waybar.
-          "rounding 0, class:^(.waybar-wrapped)$"
+          "match:class:^(.waybar-wrapped)$, rounding 0"
         ];
 
         bind = [
