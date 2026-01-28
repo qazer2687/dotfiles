@@ -53,33 +53,6 @@ in {
         master = {
           mfact = 0.65;
           orientation = "left";
-          inherit_fullscreen = true;
-        };
-
-        decoration = {
-          # Rounding
-          rounding = 0;
-
-          # Opacity
-          active_opacity = 1;
-          inactive_opacity = 1;
-
-          shadow = {
-            enabled = false;
-            range = 4;
-            render_power = 3;
-            ignore_window = true;
-            color = "rgba(20,20,20,0.5)";
-          };
-
-          # 2/3 - 6/2
-          blur = {
-            enabled = true;
-            size = 4;
-            passes = 4;
-            ignore_opacity = true;
-            new_optimizations = true;
-          };
         };
 
         animations = {
@@ -99,7 +72,7 @@ in {
             "zoomFactor, 0"
             #"monitorAdded, 0"
 
-            "workspaces, 1, 4, snap, slide"
+            "workspaces, 1, 2, snap, slide"
           ];
         };
 
@@ -133,32 +106,9 @@ in {
           enable_anr_dialog = false;
         };
 
-        # Smart Gaps
-        workspace = [
-          "w[tv1], gapsout:4, gapsin:0"
-          "f[1], gapsout:4, gapsin:0"
-
-          "1, monitor:DP-1, default:true"
-          "2, monitor:DP-1"
-          "3, monitor:DP-1"
-          "4, monitor:DP-1"
-          "5, monitor:DP-1"
-          "6, monitor:DP-3, default:true"
-          "7, monitor:DP-3"
-          "8, monitor:DP-3"
-          "9, monitor:DP-3"
-          "10, monitor:DP-3"
-        ];
-        windowrulev2 = [
+        windowrule = [
           # Disable rounded corners on waybar.
           "rounding 0, class:^(.waybar-wrapped)$"
-        ];
-        layerrule = [
-          # Disable tofi animation.
-          "noanim, (?i).*tofi.*"
-
-          "blur, (?i).*waybar.*"
-          "ignorealpha 0.001, (?i).*waybar.*"
         ];
 
         bind = [

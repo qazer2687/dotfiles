@@ -54,33 +54,6 @@ in {
         master = {
           mfact = 0.50;
           orientation = "left";
-          inherit_fullscreen = true;
-        };
-
-        decoration = {
-          # Rounding
-          rounding = 0;
-
-          # Opacity
-          active_opacity = 1;
-          inactive_opacity = 1;
-
-          shadow = {
-            enabled = false;
-            range = 4;
-            render_power = 3;
-            ignore_window = true;
-            color = "rgba(20,20,20,0.5)";
-          };
-
-          # 2/3 - 6/2
-          blur = {
-            enabled = false;
-            size = 4;
-            passes = 2;
-            ignore_opacity = true;
-            new_optimizations = true;
-          };
         };
 
         animations = {
@@ -145,19 +118,12 @@ in {
           focus_on_activate = true;
         };
 
-        # Smart Gaps
-        #workspace = [
-        #  "w[tv1], gapsout:4, gapsin:0"
-        #  "f[1], gapsout:4, gapsin:0"
-        #];
-        windowrulev2 = [
+        windowrule = [
           # Disable rounded corners on waybar.
           "rounding 0, class:^(.waybar-wrapped)$"
         ];
-        layerrule = [
-          # Disable tofi animation.
-          "noanim, (?i).*tofi.*"
 
+        layerrule = [
           "blur, (?i).*waybar.*"
           "ignorealpha 0.001, (?i).*waybar.*"
         ];
@@ -244,7 +210,7 @@ in {
 
         exec-once = [
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
-          "pamixer --set-volume 0 --mute"
+          #"pamixer --set-volume 0 --mute"
           "waybar"
           "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
           # Unlock keyring on boot.
