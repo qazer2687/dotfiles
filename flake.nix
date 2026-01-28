@@ -10,10 +10,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     hyprland.url = "github:hyprwm/Hyprland";
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     # Personal
