@@ -4,7 +4,6 @@
   ...
 }: {
   options.modules.fontconfig.enable = lib.mkEnableOption "";
-
   config = lib.mkIf config.modules.fontconfig.enable {
     fonts.fontconfig = {
       enable = true;
@@ -17,11 +16,12 @@
         enable = true;
         style = "slight";
       };
-    }; // lib.optionalAttrs (config.networking.hostName == "jet") {
-    # Retina Display
-    subpixel = {
-      rgba = "bgr";
-      lcdfilter = "light";
+    } // lib.optionalAttrs (config.networking.hostName == "jet") {
+      # Retina Display
+      subpixel = {
+        rgba = "bgr";
+        lcdfilter = "light";
+      };
     };
   };
 }
