@@ -17,6 +17,9 @@
     neovim
     cryptsetup
     gajim
+
+    # University
+    dia
   ];
 
   modules = {
