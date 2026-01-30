@@ -160,6 +160,7 @@
     easyeffects.enable = true;
     flatpak.enable = true;
     keyd.enable = true;
+    xampp.enable = true;
 
     bluetooth.enable = true;
   };
