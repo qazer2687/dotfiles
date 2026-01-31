@@ -83,11 +83,17 @@
       "--nohostname"
     ];
   };
+  
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "uwsm start default";
+        user = "alex";
+      };
+    };
+  };
 
-  # Automatically launch UWSM after login.
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && exec uwsm start default >/dev/null 2>&1
-  '';
   programs.hyprland = {
     enable = true;
     withUWSM = true;
