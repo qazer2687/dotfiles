@@ -113,11 +113,13 @@ in {
           kb_variant = "colemak";
           kb_options = "ctrl:nocaps";
 
+          accel_profile = "flat";
+          sensitivity = 1;
+
+
           # Touchpad
           touchpad = {
             tap-to-click = false;
-            accel_profile = "flat";
-            sensitivity = 1;
             scroll_factor = 1;
             natural_scroll = true;
             clickfinger_behavior = true;
@@ -231,8 +233,6 @@ in {
 
       extraConfig = ''
         # Add extra config here...
-        gesture = pinch, in, unset
-        gesture = pinch, out, unset
       '';
     };
   };
