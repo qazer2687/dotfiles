@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "mountain";
+  scheme = base16 "gruvbox-light";
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -26,7 +26,7 @@ in {
 
       settings = {
         monitor = [
-          "DP-1,2560x1440@180,auto,1.5"
+          "DP-1,2560x1440@180,auto,1"
           #"DP-3,2560x1080@75,0x0,2"
         ];
 
