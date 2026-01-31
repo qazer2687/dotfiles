@@ -14,10 +14,10 @@ in {
       settings = {
         anchor = "bottom";
         width = "100%";
-        height = "22";
+        height = "44";
         scale = true;
         horizontal = true;
-        font-size = "11";
+        font-size = "22";
         prompt-text = "‌‌ run: ‌‌ ‌ ";
         prompt-padding = 0;
         font = "PragmataPro";

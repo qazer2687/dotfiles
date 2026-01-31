@@ -19,7 +19,7 @@ in {
         border-radius = 0;
         border-size = 2;
         progress-color = "source #${scheme.base05}";
-        font = "PragmataPro 11";
+        font = "PragmataPro 22";
         width = 600;
         height = 400;
         margin = "8";
