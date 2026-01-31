@@ -22,6 +22,9 @@
     bottles
     lutris
 
+    lm-studio
+    obs-studio
+
     # Wine
     wineWowPackages.stable
     #wineWowPackages.waylandFull
