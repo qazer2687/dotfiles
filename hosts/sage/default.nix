@@ -100,6 +100,9 @@
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       AMD_VULKAN_ICD = "RADV";
+      
+      # Tell aquamarine to use the correct DRM device.
+      AQ_DRM_DEVICES = "/dev/dri/card1";
 
       # Picked up by gamescope session.
       XKB_DEFAULT_LAYOUT = "us";
