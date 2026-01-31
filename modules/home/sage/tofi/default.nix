@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "gruvbox-light";
+  scheme = base16 "kanagawa-dragon";
 in {
   options.modules.tofi.enable = lib.mkEnableOption "";
 

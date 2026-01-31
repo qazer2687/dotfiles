@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  scheme = base16 "gruvbox-light";
+  scheme = base16 "kanagawa-dragon";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
