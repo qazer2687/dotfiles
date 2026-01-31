@@ -116,7 +116,9 @@ in {
           # Touchpad
           touchpad = {
             tap-to-click = false;
-            scroll_factor = 0.5;
+            accel_profile = "flat";
+            sensitivity = 1;
+            scroll_factor = 1;
             natural_scroll = true;
             clickfinger_behavior = true;
             middle_button_emulation = true;
@@ -229,6 +231,8 @@ in {
 
       extraConfig = ''
         # Add extra config here...
+        gesture = pinch, in, unset
+        gesture = pinch, out, unset
       '';
     };
   };
