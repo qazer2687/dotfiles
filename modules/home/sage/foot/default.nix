@@ -13,10 +13,10 @@ in {
       server.enable = true;
       settings = {
         main = {
-          font = "TX02:size=22, FiraCode Nerd Font:size=14";
-          font-bold = "TX02:size=12:style=Bold, FiraCode Nerd Font:size=14";
-          line-height = "18px";
-          pad = "10x10";
+          font = "TX02:size=22, FiraCode Nerd Font:size=28";
+          font-bold = "TX02:size=24:style=Bold, FiraCode Nerd Font:size=28";
+          line-height = "36px";
+          pad = "20x20";
         };
         scrollback = {
           lines = "10000";

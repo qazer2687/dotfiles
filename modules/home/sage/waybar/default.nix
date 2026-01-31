@@ -52,8 +52,8 @@ in {
           };
 
           tray = {
-            icon-size = 14;
-            spacing = 12;
+            icon-size = 28;
+            spacing = 24;
             reverse-direction = true;
           };
 
@@ -68,7 +68,7 @@ in {
               sub10 = 10;
             };
             format-icons = ["/    " "//   " "///  " "//// " "/////"];
-            margin-left = 15;
+            margin-left = 30;
           };
 
           network = {
@@ -117,39 +117,34 @@ in {
         }
 
         #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
-          padding: 0 8px;
-          margin: 2px;
-          border-radius: 2px;
+          padding: 0 16px;
+          margin: 4px;
+          border-radius: 4px;
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
 
 
         #workspaces {
-          padding: 0 1px;
-          margin: 2px;
-          border-radius: 2px;
+          padding: 0 2px;
+          margin: 4px;
+          border-radius: 4px;
           background-color: #${scheme.base01};
         }
 
         #workspaces button {
-          padding: 0 8px;
-          margin: 2px 1px;
-          border-radius: 2px;
+          padding: 0 16px;
+          margin: 4px 2px;
+          border-radius: 4px;
           background-color: #${scheme.base02};
         }
 
         #workspaces button.active {
-          padding: 0 8px;
-          margin: 2px 1px;
-          border-radius: 2px;
+          padding: 0 16px;
+          margin: 4px 2px;
+          border-radius: 4px;
           background-color: #${scheme.base0E};
         }
-
-        #battery.charging { color: #${scheme.base0B}; }
-        #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
-        #battery.sub25:not(.charging) { color: #${scheme.base09}; }
-        #battery.sub10:not(.charging) { color: #${scheme.base08}; }
       '';
     };
   };
