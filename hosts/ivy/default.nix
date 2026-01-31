@@ -26,90 +26,13 @@
   boot = {
     kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
     kernelParams = [
-      # Disables Spectre/Meltdown/MDS/etc mitigations
-      # i5-8350U (8th gen): 10-15% performance gain, 5-8% on 10th gen+
       "mitigations=off"
-
-      # GuC firmware submission + HuC auth for UHD 620
-      # Offloads GPU scheduling to microcontroller
-      # 2-5% improvement in GPU-bound scenarios, mandatory for Gen 9.5
       "i915.enable_guc=3"
-
-      # Reduces boot time by 1-2s, no runtime impact
       "i915.fastboot=1"
-
       "i915.enable_dc=0"
-
-      # Panel Self-Refresh causes 99th percentile frame time spikes
-      # Disabling adds ~0.5W power draw on AC
       "i915.enable_psr=0"
-
-      # madvise allows apps to request 2MB pages vs 4KB
-      # Reduces TLB misses: 512 entries cover 1GB vs 2MB with hugepages
-      # 3-7% improvement in memory-intensive games
-      "transparent_hugepage=madvise"
+      "psmouse.synaptics_intertouch=1"
     ];
-
-    kernel.sysctl = {
-      "vm.swappiness" = 10;
-
-      # RX packet queue depth (default 1000)
-      # Prevents packet drops during network bursts in online games
-      "net.core.netdev_max_backlog" = 16384;
-
-      # Enable TCP Fast Open for client and server
-      # Eliminates 1 RTT on connection establishment
-      "net.ipv4.tcp_fastopen" = 3;
-
-      # CAKE qdisc: <5ms latency under load vs 200ms+ with default fq_codel
-      # Critical for bufferbloat control during uploads
-      "net.core.default_qdisc" = "cake";
-
-      # inotify watch limit for Steam client (requires ~200k watches)
-      "fs.inotify.max_user_watches" = 524288;
-
-      # TCP congestion control algorithm (BBR provides better throughput and lower latency).
-      "net.ipv4.tcp_congestion_control" = "bbr";
-    };
-  };
-
-  services.scx = {
-    enable = true;
-    scheduler = "scx_rustland";
-  };
-
-  services.throttled = {
-    enable = true;
-    extraConfig = ''
-      [GENERAL]
-      Enabled: True
-
-      [AC]
-      Update_Rate_s: 5
-      PL1_TDP_W: 25
-      PL2_TDP_W: 44
-      Trip_Temp_C: 90
-
-      [BATTERY]
-      Update_Rate_s: 30
-      PL1_TDP_W: 29
-      PL2_TDP_W: 44
-      Trip_Temp_C: 80
-    '';
-  };
-
-  hardware.cpu.x86.msr.enable = true;
-
-  hardware = {
-    enableAllFirmware = true;
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-      extraPackages = with pkgs; [
-        intel-media-driver
-        intel-vaapi-driver
-      ];
-    };
   };
 
   # Nautilus trash support.
@@ -118,7 +41,6 @@
   swapDevices = [
     {
       device = "/swapfile";
-      # Default on asahi fedora.
       size = 16 * 1024;
     }
   ];
@@ -134,6 +56,7 @@
       "--nohostname"
     ];
   };
+
   services.greetd = {
     enable = true;
     settings = {
@@ -190,8 +113,7 @@
     flatpak.enable = true;
     keyd.enable = true;
     pipewire.enable = true;
-    gamemode.enable = true;
-    tlp.enable = false;
+    tlp.enable = true;
     easyeffects.enable = true;
   };
 

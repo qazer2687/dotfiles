@@ -48,10 +48,6 @@
     vscode.enable = true;
     zed.enable = true;
     vesktop.enable = true;
-
-    # Games
-    prismlauncher.enable = true;
-    mangohud.enable = true;
   };
 
   home.stateVersion = "24.11";

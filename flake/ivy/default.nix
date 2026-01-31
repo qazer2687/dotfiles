@@ -12,6 +12,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../hosts/ivy
     ../../modules/base/shared
     ../../modules/base/ivy
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
     inputs.flatpak.nixosModules.nix-flatpak
