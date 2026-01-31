@@ -26,7 +26,7 @@ in {
 
       settings = {
         monitor = [
-          "DP-1,highrr,auto,2"
+          "DP-1,2560x1440@180,auto,2"
           #"DP-3,2560x1080@75,0x0,2"
         ];
 
