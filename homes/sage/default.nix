@@ -22,7 +22,7 @@
     bottles
     lutris
 
-    lm-studio
+    lmstudio
     obs-studio
 
     # Wine
