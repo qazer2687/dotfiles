@@ -10,9 +10,6 @@ in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.waybar.enable {
-    home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
-    home.file.".config/waybar/scripts/pingServer.sh".executable = true;
-
     home.packages = [pkgs.jq];
 
     programs.waybar = {
