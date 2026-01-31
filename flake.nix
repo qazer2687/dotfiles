@@ -12,7 +12,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
-    inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Personal
     nix-base16.url = "github:qazer2687/nix-base16";
