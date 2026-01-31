@@ -1,8 +1,11 @@
 {
   lib,
   config,
+  base16,
   ...
-}: {
+}: let
+  scheme = base16 "mountain";
+in {
   options.modules.tofi.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.tofi.enable {
@@ -15,22 +18,27 @@
         scale = true;
         horizontal = true;
         font-size = "11";
-        prompt-text = "‌‌ run:‌‌‌ ‌‌ ‌ ";
+        prompt-text = "‌‌ run: ‌‌ ‌ ";
         prompt-padding = 0;
-        font = "TX02";
+        font = "PragmataPro";
         outline-width = 0;
         hint-font = false;
         border-width = 0;
 
-        # Catppuccin Macchiato
-        input-color = "#c6d0f5";
-        selection-color = "#ca9ee6";
-        text-color = "#c6d0f5";
-        background-color = "#232634";
+        late-keyboard-init = true;
+
+        input-color = "#${scheme.base05}";
+
+        selection-color = "#${scheme.base00}";
+        selection-background = "#${scheme.base0E}";
+        selection-background-padding = 4;
+
+        text-color = "#${scheme.base05}";
+        background-color = "#${scheme.base00}";
 
         min-input-width = 100;
         result-spacing = 15;
-        padding-top = 0;
+        padding-top = 2;
         padding-bottom = 0;
         padding-left = 0;
         padding-right = 0;

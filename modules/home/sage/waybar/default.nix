@@ -124,7 +124,7 @@ in {
         }
 
         window#waybar {
-          background: rgba(17, 17, 27, 0.2);
+          background: #${scheme.base00};
         }
 
         #mpris, #clock, #language, #pulseaudio, #bluetooth, #network,
@@ -133,13 +133,13 @@ in {
           padding: 0 8px;
           margin: 2px 2px;
           border-radius: 2px;
-          background: rgba(24, 24, 37, 0.4);
+          background: #${scheme.base02};
           color: #${scheme.base05};
         }
 
         #workspaces {
           color: transparent;
-          background: rgba(24, 24, 37, 0.4);
+          background: #${scheme.base02};
           border-radius: 2px;
           margin: 2px 4px;
         }

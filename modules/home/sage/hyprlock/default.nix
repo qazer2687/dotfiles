@@ -1,8 +1,11 @@
 {
   lib,
   config,
+  base16,
   ...
-}: {
+}: let
+  scheme = base16 "mountain";
+in {
   options.modules.hyprlock.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprlock.enable {
@@ -11,41 +14,43 @@
       settings = {
         general = {
           immediate_render = true;
-          screencopy_mode = 0;
+          screencopy_mode = 1;
           hide_cursor = true;
+        };
+
+        authentication = {
+          pam.enable = true;
         };
 
         animations.enable = true;
         animation = [
           "fade, 0, 0, default"
-          "inputField, 1, 5, default"
+          "inputField, 0, 5, default"
         ];
 
         background = {
-          path = "";
-          color = "rgba(35, 38, 52, 1)"; # Frappe Crust
-          blur_passes = 0;
-          brightness = 0;
+          #path = "/home/alex/.config/wallpaper/wallpaper.png";
+          color = "rgba(${scheme.base00}ff)";
         };
 
         "input-field" = {
           size = "720, 72";
           outline_thickness = 0;
-          dots_size = 0.4;
-          font_family = "Departure Mono";
-          dots_text_format = "♦";
-          dots_spacing = 1;
+          dots_size = 0.6;
+          font_family = "PragmataPro";
+          dots_text_format = "×";
+          dots_spacing = 0.6;
           dots_center = true;
-          outer_color = "rgba(202, 158, 230, 1)"; # Frappe Mauve
-          inner_color = "rgba(48, 52, 70, 1)"; # Frappe Base
-          font_color = "rgba(202, 158, 230, 1)"; # Frappe Mauve
+          outer_color = "rgba(${scheme.base05}00)";
+          inner_color = "rgba(${scheme.base01}00)";
+          font_color = "rgba(${scheme.base05}ff)";
           fade_on_empty = false;
           placeholder_text = "";
           hide_input = false;
-          rounding = 12;
+          rounding = 6;
 
-          check_color = "rgba(48, 52, 70, 1)";
-          fail_color = "rgba(48, 52, 70, 1)";
+          check_color = "rgba(${scheme.base01}ff)";
+          fail_color = "rgba(${scheme.base01}ff)";
           fail_text = "";
 
           position = "0, 0";
