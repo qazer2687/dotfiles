@@ -9,7 +9,7 @@
 
   home.packages = with pkgs; [
     obsidian
-    vlc
+    mpv
     gdu
     btop
     #protonvpn-gui
