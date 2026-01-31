@@ -50,7 +50,7 @@
     vesktop.enable = true;
   };
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.11";
   home.homeDirectory = lib.mkForce "/home/alex";
 
   sops = {

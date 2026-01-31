@@ -54,7 +54,6 @@ in {
         master = {
           mfact = 0.50;
           orientation = "left";
-          inherit_fullscreen = true;
         };
 
         decoration = {
