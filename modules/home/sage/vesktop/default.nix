@@ -6,6 +6,8 @@
   options.modules.vesktop.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.vesktop.enable {
+    services.arrpc.enable = true;
+
     programs.vesktop = {
       enable = true;
       settings = {
