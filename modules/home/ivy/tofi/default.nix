@@ -30,7 +30,7 @@ in {
         input-color = "#${scheme.base05}";
 
         selection-color = "#${scheme.base00}";
-        selection-background = "#${scheme.base0E}";
+        selection-background = "#${scheme.base09}";
         selection-background-padding = 4;
 
         text-color = "#${scheme.base05}";

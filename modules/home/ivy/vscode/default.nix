@@ -122,7 +122,7 @@ in {
               }
               {
                 scope = "keyword";
-                settings.foreground = "#${scheme.base0E}";
+                settings.foreground = "#${scheme.base09}";
               }
               {
                 scope = "storage.type";

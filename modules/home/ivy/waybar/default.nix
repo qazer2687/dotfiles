@@ -140,7 +140,7 @@ in {
           padding: 0 8px;
           margin: 2px 1px;
           border-radius: 2px;
-          background-color: #${scheme.base0E};
+          background-color: #${scheme.base09};
         }
 
         #battery.charging { color: #${scheme.base0B}; }

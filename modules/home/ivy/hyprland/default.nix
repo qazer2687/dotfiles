@@ -42,9 +42,9 @@ in {
           gaps_out = 4;
           border_size = 1;
 
-          # base05 = text, base0E = mauve
+          # base05 = text, base09 = mauve
           # base0B = vesper blue
-          "col.active_border" = "rgba(${scheme.base0E}ff)";
+          "col.active_border" = "rgba(${scheme.base09}ff)";
           "col.inactive_border" = "rgba(${scheme.base02}ff)";
 
           resize_on_border = true;
