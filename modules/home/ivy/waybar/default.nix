@@ -25,22 +25,26 @@ in {
             format = "vol: {volume}%";
             tooltip = false;
             format-muted = "vol: muted";
+            rotate = 90;
           };
           "custom/hyprsunset" = {
             exec = ''printf "󰖨 %sK" "$(hyprctl hyprsunset temperature)"'';
             signal = 1;
             format = "{}";
             tooltip = false;
+            rotate = 90;
           };
           "custom/pingServer" = {
             exec = "$HOME/.config/waybar/scripts/pingServer.sh";
             interval = 20;
             return-type = "json";
+            rotate = 90;
           };
           clock = {
             format = "{:%H:%M}";
             format-alt = "{:%A %d, %H:%M}";
             tooltip = false;
+            rotate = 90;
           };
           tray = {
             icon-size = 14;
@@ -58,6 +62,7 @@ in {
               sub10 = 10;
             };
             format-icons = ["/    " "//   " "///  " "//// " "/////"];
+            rotate = 90;
           };
           network = {
             tooltip = false;
@@ -65,6 +70,7 @@ in {
             format-wifi = "net: up";
             format-disconnected = "net: down";
             interval = 30;
+            rotate = 90;
           };
           "hyprland/workspaces" = {
             format = "{icon}";
@@ -85,6 +91,7 @@ in {
             device = "apple-panel-bl";
             format = "BKL: {percent}%";
             tooltip = false;
+            rotate = 90;
           };
         };
       };
@@ -105,10 +112,6 @@ in {
           border-radius: 2px;
           background: #${scheme.base01};
           color: #${scheme.base05};
-        }
-        #clock, #network, #battery, #pulseaudio {
-          transform: rotate(-90deg);
-          min-width: 80px;
         }
         #workspaces {
           padding: 1px 0;
