@@ -12,7 +12,7 @@
     mpv
     gdu
     btop
-    #protonvpn-gui
+    protonvpn-gui
     nautilus
     neovim
     cryptsetup
