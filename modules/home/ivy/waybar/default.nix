@@ -106,6 +106,10 @@ in {
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
+        #clock, #network, #battery, #pulseaudio {
+          transform: rotate(-90deg);
+          min-width: 80px;
+        }
         #workspaces {
           padding: 1px 0;
           margin: 2px;
