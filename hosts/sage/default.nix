@@ -106,9 +106,9 @@
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       AMD_VULKAN_ICD = "RADV";
 
-      # Picked up by gamescope session.
+      # Use qwerty inside of gamescope sessions.
       XKB_DEFAULT_LAYOUT = "us";
-      XKB_DEFAULT_VARIANT = "colemak";
+      #XKB_DEFAULT_VARIANT = "colemak";
     };
     # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
     systemPackages = [pkgs.flatpak];
