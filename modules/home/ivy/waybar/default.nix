@@ -22,10 +22,9 @@ in {
           modules-center = ["hyprland/workspaces"];
           modules-right = ["tray" "network" "pulseaudio" "battery"];
           pulseaudio = {
-            format = "vol: {volume}%";
+            format = "vol\n{volume}%";
             tooltip = false;
-            format-muted = "vol: muted";
-            rotate = 90;
+            format-muted = "vol\nmute";
           };
           "custom/hyprsunset" = {
             exec = ''printf "󰖨 %sK" "$(hyprctl hyprsunset temperature)"'';
@@ -52,24 +51,21 @@ in {
           };
           battery = {
             tooltip = false;
-            format = "bat: {capacity}%";
-            format-charging = "bat: {capacity}% (charging)";
+            format = "bat\n{capacity}%";
+            format-charging = "bat\n{capacity}% (charging)";
             interval = 30;
             states = {
               sub50 = 50;
               sub25 = 25;
               sub10 = 10;
             };
-            format-icons = ["/    " "//   " "///  " "//// " "/////"];
-            rotate = 90;
           };
           network = {
             tooltip = false;
-            format = "net: up";
-            format-wifi = "net: up";
-            format-disconnected = "net: down";
+            format = "net\nup";
+            format-wifi = "net\nup";
+            format-disconnected = "net\ndown";
             interval = 30;
-            rotate = 90;
           };
           "hyprland/workspaces" = {
             format = "{icon}";
