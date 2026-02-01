@@ -16,7 +16,7 @@ in {
         mainBar = {
           layer = "top";
           position = "left";
-          width = 45;
+          width = 32;
           margin = "0 0 0 0";
           modules-left = ["clock"];
           modules-center = ["hyprland/workspaces"];
@@ -41,10 +41,9 @@ in {
             rotate = 90;
           };
           clock = {
-            format = "{:%H:%M}";
+            format = "{:%H\n%M}";
             format-alt = "{:%A %d, %H:%M}";
             tooltip = false;
-            rotate = 90;
           };
           tray = {
             icon-size = 14;
@@ -99,8 +98,8 @@ in {
         * {
           border: none;
           border-radius: 0;
-          font-family: "PragmataPro";
-          font-size: 14px;
+          font-family: "Departure Mono";
+          font-size: 11px;
           min-height: 0;
         }
         window#waybar {
