@@ -8,77 +8,69 @@
   scheme = base16 "gruvbox-dark-hard";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
-
   config = lib.mkIf config.modules.waybar.enable {
     home.packages = [pkgs.jq];
-
     programs.waybar = {
       enable = true;
       settings = {
         mainBar = {
           layer = "top";
           position = "left";
-          height = 28;
+          width = 40;
           margin = "0 0 0 0";
-          modules-left = ["clock" "hyprland/workspaces"];
-          modules-center = [];
+          modules-left = ["clock"];
+          modules-center = ["hyprland/workspaces"];
           modules-right = ["tray" "network" "pulseaudio" "battery"];
-
           pulseaudio = {
-            format = "vol: {volume}%";
-            tooltip = false;
-            format-muted = "vol: muted";
+            format = "{volume}%";
+            tooltip = true;
+            tooltip-format = "Volume: {volume}%";
+            format-muted = "M";
           };
-
           "custom/hyprsunset" = {
             exec = ''printf "󰖨 %sK" "$(hyprctl hyprsunset temperature)"'';
             signal = 1;
             format = "{}";
             tooltip = false;
           };
-
           "custom/pingServer" = {
             exec = "$HOME/.config/waybar/scripts/pingServer.sh";
             interval = 20;
             return-type = "json";
           };
-
           clock = {
-            format = "{:%H:%M}";
-            format-alt = "{:%A %d, %H:%M}";
-            tooltip = false;
+            format = "{:%H\n%M}";
+            format-alt = "{:%d\n%m}";
+            tooltip = true;
+            tooltip-format = "{:%A, %B %d, %Y - %H:%M}";
           };
-
           tray = {
-            icon-size = 14;
-            spacing = 12;
-            reverse-direction = true;
+            icon-size = 16;
+            spacing = 8;
+            reverse-direction = false;
           };
-
           battery = {
-            tooltip = false;
-            format = "bat: {capacity}%";
-            format-charging = "bat: {capacity}% (charging)";
+            tooltip = true;
+            tooltip-format = "Battery: {capacity}%";
+            format = "{capacity}%";
+            format-charging = "{capacity}%\n⚡";
             interval = 30;
             states = {
               sub50 = 50;
               sub25 = 25;
               sub10 = 10;
             };
-            format-icons = ["/    " "//   " "///  " "//// " "/////"];
-            margin-left = 15;
           };
-
           network = {
-            tooltip = false;
-            format = "net: up";
-            format-wifi = "net: up";
-            format-disconnected = "net: down";
+            tooltip = true;
+            tooltip-format = "Network: {essid}";
+            format = "󰈁";
+            format-wifi = "󰖨";
+            format-disconnected = "󰖪";
             interval = 30;
           };
-
           "hyprland/workspaces" = {
-            format = "";
+            format = "{icon}";
             format-icons = {
               "1" = "1";
               "2" = "2";
@@ -92,57 +84,50 @@ in {
               "10" = "10";
             };
           };
-
           backlight = {
             device = "apple-panel-bl";
-            format = "BKL: {percent}%";
-            tooltip = false;
+            format = "{percent}%";
+            tooltip = true;
+            tooltip-format = "Backlight: {percent}%";
           };
         };
       };
-
       style = ''
         * {
           border: none;
           border-radius: 0;
           font-family: "PragmataPro";
-          font-size: 14px;
+          font-size: 12px;
           min-height: 0;
         }
-
         window#waybar {
           background: #${scheme.base00};
         }
-
         #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
-          padding: 0 8px;
-          margin: 2px;
+          padding: 8px 4px;
+          margin: 4px 2px;
           border-radius: 2px;
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
-
         #workspaces {
-          padding: 0 1px;
-          margin: 2px;
+          padding: 2px 0;
+          margin: 4px 2px;
           border-radius: 2px;
           background-color: #${scheme.base01};
         }
-
         #workspaces button {
-          padding: 0 8px;
-          margin: 2px 1px;
+          padding: 6px 8px;
+          margin: 2px 0;
           border-radius: 2px;
           background-color: #${scheme.base02};
         }
-
         #workspaces button.active {
-          padding: 0 8px;
-          margin: 2px 1px;
+          padding: 6px 8px;
+          margin: 2px 0;
           border-radius: 2px;
           background-color: #${scheme.base09};
         }
-
         #battery.charging { color: #${scheme.base0B}; }
         #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
         #battery.sub25:not(.charging) { color: #${scheme.base09}; }
