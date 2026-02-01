@@ -16,16 +16,15 @@ in {
         mainBar = {
           layer = "top";
           position = "left";
-          width = 40;
+          width = 45;
           margin = "0 0 0 0";
           modules-left = ["clock"];
           modules-center = ["hyprland/workspaces"];
           modules-right = ["tray" "network" "pulseaudio" "battery"];
           pulseaudio = {
-            format = "{volume}%";
-            tooltip = true;
-            tooltip-format = "Volume: {volume}%";
-            format-muted = "M";
+            format = "vol: {volume}%";
+            tooltip = false;
+            format-muted = "vol: muted";
           };
           "custom/hyprsunset" = {
             exec = ''printf "󰖨 %sK" "$(hyprctl hyprsunset temperature)"'';
@@ -39,34 +38,32 @@ in {
             return-type = "json";
           };
           clock = {
-            format = "{:%H\n%M}";
-            format-alt = "{:%d\n%m}";
-            tooltip = true;
-            tooltip-format = "{:%A, %B %d, %Y - %H:%M}";
+            format = "{:%H:%M}";
+            format-alt = "{:%A %d, %H:%M}";
+            tooltip = false;
           };
           tray = {
-            icon-size = 16;
-            spacing = 8;
-            reverse-direction = false;
+            icon-size = 14;
+            spacing = 12;
+            reverse-direction = true;
           };
           battery = {
-            tooltip = true;
-            tooltip-format = "Battery: {capacity}%";
-            format = "{capacity}%";
-            format-charging = "{capacity}%\n⚡";
+            tooltip = false;
+            format = "bat: {capacity}%";
+            format-charging = "bat: {capacity}% (charging)";
             interval = 30;
             states = {
               sub50 = 50;
               sub25 = 25;
               sub10 = 10;
             };
+            format-icons = ["/    " "//   " "///  " "//// " "/////"];
           };
           network = {
-            tooltip = true;
-            tooltip-format = "Network: {essid}";
-            format = "󰈁";
-            format-wifi = "󰖨";
-            format-disconnected = "󰖪";
+            tooltip = false;
+            format = "net: up";
+            format-wifi = "net: up";
+            format-disconnected = "net: down";
             interval = 30;
           };
           "hyprland/workspaces" = {
@@ -86,9 +83,8 @@ in {
           };
           backlight = {
             device = "apple-panel-bl";
-            format = "{percent}%";
-            tooltip = true;
-            tooltip-format = "Backlight: {percent}%";
+            format = "BKL: {percent}%";
+            tooltip = false;
           };
         };
       };
@@ -97,7 +93,7 @@ in {
           border: none;
           border-radius: 0;
           font-family: "PragmataPro";
-          font-size: 12px;
+          font-size: 14px;
           min-height: 0;
         }
         window#waybar {
@@ -105,26 +101,26 @@ in {
         }
         #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
           padding: 8px 4px;
-          margin: 4px 2px;
+          margin: 2px;
           border-radius: 2px;
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
         #workspaces {
-          padding: 2px 0;
-          margin: 4px 2px;
+          padding: 1px 0;
+          margin: 2px;
           border-radius: 2px;
           background-color: #${scheme.base01};
         }
         #workspaces button {
-          padding: 6px 8px;
-          margin: 2px 0;
+          padding: 8px 4px;
+          margin: 1px 2px;
           border-radius: 2px;
           background-color: #${scheme.base02};
         }
         #workspaces button.active {
-          padding: 6px 8px;
-          margin: 2px 0;
+          padding: 8px 4px;
+          margin: 1px 2px;
           border-radius: 2px;
           background-color: #${scheme.base09};
         }
