@@ -15,6 +15,8 @@
   };
 
   programs.fish.enable = true;
+  
+  services.fwupd.enable = true;
 
   # Disable power button (short press) and sleep/suspend button.
   services.logind.settings.Login = {
@@ -31,7 +33,7 @@
       "i915.fastboot=1"
       "i915.enable_dc=0"
       "i915.enable_psr=0"
-      "psmouse.synaptics_intertouch=1"
+      "psmouse.synaptics_intertouch=0"
     ];
   };
 
