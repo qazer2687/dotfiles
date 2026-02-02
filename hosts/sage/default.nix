@@ -106,7 +106,7 @@
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       AMD_VULKAN_ICD = "RADV";
 
-      # Use qwerty inside of gamescope sessions.
+      # Use qwerty inside of gamescope sessions. Set via lutris environment variables to enable per-game.
       XKB_DEFAULT_LAYOUT = "us";
       #XKB_DEFAULT_VARIANT = "colemak";
     };
