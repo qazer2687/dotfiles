@@ -22,9 +22,9 @@ in {
           modules-center = ["hyprland/workspaces"];
           modules-right = ["tray" "backlight" "network" "pulseaudio" "battery"];
           pulseaudio = {
-            format = "vol\n{volume}%";
+            format = "vol: {volume}%";
             tooltip = false;
-            format-muted = "vol\nmute";
+            format-muted = "vol: muted";
             rotate = 90;
           };
           "custom/hyprsunset" = {
@@ -52,8 +52,8 @@ in {
           };
           battery = {
             tooltip = false;
-            format = "bat\n{capacity}%";
-            format-charging = "bat\n{capacity}% (charging)";
+            format = "bat: {capacity}%";
+            format-charging = "bat: {capacity}% (charging)";
             interval = 30;
             rotate = 90;
             states = {
@@ -64,9 +64,9 @@ in {
           };
           network = {
             tooltip = false;
-            format = "net\nup";
-            format-wifi = "net\nup";
-            format-disconnected = "net\ndown";
+            format = "net: connected";
+            format-wifi = "net: connected";
+            format-disconnected = "net: disconnected";
             interval = 30;
             rotate = 90;
           };
@@ -104,7 +104,7 @@ in {
         window#waybar {
           background: #${scheme.base00};
         }
-        #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
+        #mpris, #clock, #backlight, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
           padding: 8px 4px;
           margin: 2px;
           border-radius: 2px;
