@@ -20,11 +20,12 @@ in {
           margin = "0 0 0 0";
           modules-left = ["clock"];
           modules-center = ["hyprland/workspaces"];
-          modules-right = ["tray" "network" "pulseaudio" "battery"];
+          modules-right = ["tray" "backlight" "network" "pulseaudio" "battery"];
           pulseaudio = {
             format = "vol\n{volume}%";
             tooltip = false;
             format-muted = "vol\nmute";
+            rotate = 90;
           };
           "custom/hyprsunset" = {
             exec = ''printf "󰖨 %sK" "$(hyprctl hyprsunset temperature)"'';
@@ -54,6 +55,7 @@ in {
             format = "bat\n{capacity}%";
             format-charging = "bat\n{capacity}% (charging)";
             interval = 30;
+            rotate = 90;
             states = {
               sub50 = 50;
               sub25 = 25;
@@ -66,6 +68,7 @@ in {
             format-wifi = "net\nup";
             format-disconnected = "net\ndown";
             interval = 30;
+            rotate = 90;
           };
           "hyprland/workspaces" = {
             format = "{icon}";
@@ -83,7 +86,7 @@ in {
             };
           };
           backlight = {
-            device = "apple-panel-bl";
+            device = "intel_backlight";
             format = "BKL: {percent}%";
             tooltip = false;
             rotate = 90;
