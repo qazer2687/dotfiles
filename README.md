@@ -10,12 +10,13 @@ ivy         NixOS     thinkpad t480   secondary laptop   laptop      x86_64-linu
 ```
   
 -- credits --  
-a huge thank you to the individuals below as i wouldn't have been able to made it this far into my nixos journey without them  
+a huge thank you to the individuals below as i wouldn't have been able to make it this far into my nixos journey without them  
 
 
 [@NobbZ](https://github.com/NobbZ)  
 [@fufexan](https://github.com/fufexan) [@Gerg-L](https://github.com/Gerg-L)  
 [@NotAShelf](https://github.com/NotAShelf) [@sioodmy](https://github.com/sioodmy)  
 [@eclairevoyant](https://github.com/eclairevoyant/) [@Misterio77](https://github.com/Misterio77)  
+
 
 
