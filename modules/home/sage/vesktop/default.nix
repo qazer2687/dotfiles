@@ -51,6 +51,7 @@
             ShikiCodeblocks.enabled = true;
             SilentTyping.enabled = true;
             YoutubeAdblock.enabled = true;
+            DisableCallIdle.enabled = true;
           };
         };
       };
