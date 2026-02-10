@@ -161,11 +161,11 @@ in {
             "activityBarBadge.foreground" = "#${scheme.base00}";
             
             # Side Bar
-            "sideBar.background" = "#${scheme.base01}";
+            "sideBar.background" = "#${scheme.base00}";
             "sideBar.foreground" = "#${scheme.base05}";
             "sideBar.border" = "#${scheme.base02}";
             "sideBarTitle.foreground" = "#${scheme.base05}";
-            "sideBarSectionHeader.background" = "#${scheme.base01}";
+            "sideBarSectionHeader.background" = "#${scheme.base00}";
             "sideBarSectionHeader.foreground" = "#${scheme.base05}";
             "sideBarSectionHeader.border" = "#${scheme.base02}";
             
