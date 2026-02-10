@@ -9,21 +9,21 @@
 
   # Packages
   home.packages = with pkgs; [
+    # Programs
     obsidian
     vlc
     loupe
-    gdu
-    btop
     protonvpn-gui
     nautilus
-    killall
-
-    lunar-client
-    bottles
     lutris
-
     lmstudio
     obs-studio
+    boxflat
+
+    # Utilities
+    gdu
+    btop
+    killall
 
     # Wine
     wineWowPackages.stable
