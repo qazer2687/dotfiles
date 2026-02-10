@@ -39,7 +39,7 @@ in {
           regular2 = scheme.base0B;
           regular3 = scheme.base0A;
           regular4 = scheme.base0D;
-          regular5 = scheme.base09;
+          regular5 = scheme.base08;
           regular6 = scheme.base0C;
           regular7 = scheme.base04;
 
@@ -48,11 +48,11 @@ in {
           bright2 = scheme.base0B;
           bright3 = scheme.base0A;
           bright4 = scheme.base0D;
-          bright5 = scheme.base09;
+          bright5 = scheme.base08;
           bright6 = scheme.base0C;
           bright7 = scheme.base07;
 
-          "16" = scheme.base09;
+          "16" = scheme.base08;
           "17" = scheme.base06;
 
           selection-foreground = scheme.base05;
@@ -61,7 +61,7 @@ in {
           search-box-no-match = "${scheme.base00} ${scheme.base08}";
           search-box-match = "${scheme.base05} ${scheme.base01}";
 
-          jump-labels = "${scheme.base00} ${scheme.base09}";
+          jump-labels = "${scheme.base00} ${scheme.base08}";
           urls = scheme.base0D;
         };
         key-bindings = {

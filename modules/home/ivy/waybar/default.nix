@@ -127,11 +127,11 @@ in {
           padding: 8px 4px;
           margin: 1px 2px;
           border-radius: 2px;
-          background-color: #${scheme.base09};
+          background-color: #${scheme.base08};
         }
         #battery.charging { color: #${scheme.base0B}; }
         #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
-        #battery.sub25:not(.charging) { color: #${scheme.base09}; }
+        #battery.sub25:not(.charging) { color: #${scheme.base08}; }
         #battery.sub10:not(.charging) { color: #${scheme.base08}; }
       '';
     };

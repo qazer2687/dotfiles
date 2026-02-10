@@ -122,7 +122,7 @@ in {
               }
               {
                 scope = "keyword";
-                settings.foreground = "#${scheme.base09}";
+                settings.foreground = "#${scheme.base08}";
               }
               {
                 scope = "storage.type";
@@ -154,7 +154,7 @@ in {
               }
               {
                 scope = "constant.numeric";
-                settings.foreground = "#${scheme.base09}";
+                settings.foreground = "#${scheme.base08}";
               }
               {
                 scope = "support.constant";
