@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "kanagawa-dragon";
+  scheme = base16 "black-metal";
 in {
   options.modules.hyprlock.enable = lib.mkEnableOption "";
 

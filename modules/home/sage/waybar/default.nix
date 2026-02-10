@@ -5,16 +5,11 @@
   pkgs,
   ...
 }: let
-  scheme = base16 "kanagawa-dragon";
+  scheme = base16 "black-metal";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.waybar.enable {
-    home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
-    home.file.".config/waybar/scripts/pingServer.sh".executable = true;
-
-    home.packages = [pkgs.jq];
-
     programs.waybar = {
       enable = true;
       settings = {
@@ -40,12 +35,6 @@ in {
             tooltip = false;
           };
 
-          "custom/pingServer" = {
-            exec = "$HOME/.config/waybar/scripts/pingServer.sh";
-            interval = 20;
-            return-type = "json";
-          };
-
           clock = {
             format = "{:%H:%M}";
             format-alt = "{:%A %d, %H:%M}";
@@ -58,20 +47,6 @@ in {
             reverse-direction = true;
           };
 
-          battery = {
-            tooltip = false;
-            format = "bat: {capacity}%";
-            format-charging = "bat: {capacity}% (charging)";
-            interval = 30;
-            states = {
-              sub50 = 50;
-              sub25 = 25;
-              sub10 = 10;
-            };
-            format-icons = ["/    " "//   " "///  " "//// " "/////"];
-            margin-left = 30;
-          };
-
           network = {
             tooltip = false;
             format = "net: up";
@@ -81,7 +56,7 @@ in {
           };
 
           "hyprland/workspaces" = {
-            format = "";
+            format = "{icon}";
             format-icons = {
               "1" = "1";
               "2" = "2";
@@ -124,7 +99,6 @@ in {
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
-
 
         #workspaces {
           padding: 0 2px;

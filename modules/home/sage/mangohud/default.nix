@@ -31,7 +31,7 @@
         frame_timing = 0;
         frametime_color = "FFFFFF";
         media_player_color = "ffffff";
-        background_alpha = 0.5;
+        background_alpha = 0.3;
         font_size = 19;
 
         background_color = "000000";

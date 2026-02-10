@@ -5,7 +5,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "kanagawa-dragon";
+  scheme = base16 "black-metal";
 in {
   options.modules.mako.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.mako.enable {
@@ -22,11 +22,11 @@ in {
         font = "PragmataPro 22";
         width = 600;
         height = 400;
-        margin = "8";
-        padding = "4";
+        margin = "16";
+        padding = "8";
         default-timeout = 10000;
-        layer = "bottom";
-        anchor = "bottom-right";
+        layer = "top";
+        anchor = "top-right";
       };
     };
   };
