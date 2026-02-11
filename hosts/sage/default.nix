@@ -53,6 +53,8 @@
     extraRules = ''
       # ESP32-CYD2USB Support
       SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
+      # Boxflat Moza Support
+      SUBSYSTEM=="tty", KERNEL=="ttyACM*", ATTRS{idVendor}=="346e", ACTION=="add", MODE="0666", TAG+="uaccess"
     '';
     packages = [
       pkgs.platformio-core
