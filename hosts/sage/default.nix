@@ -25,10 +25,17 @@
       "systemd.show_status=false"
       "udev.log_level=3"
       "console=/dev/null"
+
+      # Disable both hardware and software watchdog.
+      "nmi_watchdog=0"
+      "nowatchdog"
+
+      # Prevents performance hits/stuttering.
+      "split_lock_detect=off"
     ];
     consoleLogLevel = 3;
     initrd.verbose = false;
-    # Kernel panic without this option enabled.
+    # Kernel panics without this option enabled.
     initrd.systemd.enable = true;
     kernel.sysctl = {
       # Quiet boot.
@@ -41,9 +48,9 @@
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
     kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
-    supportedFilesystems = ["ntfs"];
   };
 
+  # Use the "Latency-criticality Aware Virtual Deadline" scheduler for lower latency.
   services.scx = {
     enable = true;
     scheduler = "scx_lavd";
@@ -53,8 +60,11 @@
     extraRules = ''
       # ESP32-CYD2USB Support
       SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB0", MODE="0666", GROUP="dialout"
+
       # Boxflat Moza Support
-      SUBSYSTEM=="tty", KERNEL=="ttyACM*", ATTRS{idVendor}=="346e", ACTION=="add", MODE="0666", TAG+="uaccess"
+      # TAG+="uaccess" does not work in extraRules.
+      # https://github.com/NixOS/nixpkgs/issues/308681.
+      SUBSYSTEM=="tty", KERNEL=="ttyACM*", ATTRS{idVendor}=="346e", ACTION=="add", MODE="0666"
     '';
     packages = [
       pkgs.platformio-core
@@ -62,14 +72,21 @@
     ];
   };
 
-  # Enable esync compatibility.
   systemd.settings.Manager.DefaultLimitNOFILE = "524288";
   security.pam.loginLimits = [
+    # Esync compatibility.
     {
       domain = "alex";
       type = "hard";
       item = "nofile";
       value = "524288";
+    }
+    # Real-Time Priortiy
+    {
+    domain = "alex";
+    type = "-";
+    item = "rtprio";
+    value = "99";
     }
   ];
 
@@ -108,7 +125,7 @@
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       AMD_VULKAN_ICD = "RADV";
 
-      # Use qwerty inside of gamescope sessions. Set via lutris environment variables to enable per-game.
+      # Use qwerty inside of gamescope sessions. Set via lutris environment variables to enable per-game colemak.
       XKB_DEFAULT_LAYOUT = "us";
       #XKB_DEFAULT_VARIANT = "colemak";
     };
