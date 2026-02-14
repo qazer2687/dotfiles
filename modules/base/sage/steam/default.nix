@@ -31,6 +31,12 @@
             gamemode
             gamescope
 
+            freetype
+            fontconfig
+
+            vulkan-loader
+            vulkan-validation-layers
+
             # Proton
             proton-ge-bin
             protonup-qt
