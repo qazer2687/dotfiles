@@ -31,7 +31,7 @@ in {
         background = {
           path = "/home/alex/.config/wallpaper/wallpaper.png";
           blur_passes = 2;
-          brightness = 0.5;
+          brightness = 0.1;
 
           #color = "rgba(${scheme.base00}ff)";
         };
@@ -44,9 +44,9 @@ in {
           dots_text_format = "×";
           dots_spacing = 0.5;
           dots_center = true;
-          outer_color = "rgba(${scheme.base05}ff)";
-          inner_color = "rgba(${scheme.base01}ff)";
-          font_color = "rgba(${scheme.base05}ff)";
+          outer_color = "rgba(${scheme.base05}00)";
+          inner_color = "rgba(${scheme.base01}00)";
+          font_color = "rgba(ffffffff)";
           fade_on_empty = false;
           placeholder_text = "";
           hide_input = false;
