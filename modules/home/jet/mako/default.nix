@@ -25,7 +25,7 @@ in {
         margin = "8";
         padding = "4";
         default-timeout = 10000;
-        layer = "bottom";
+        layer = "top";
         anchor = "bottom-right";
       };
     };
