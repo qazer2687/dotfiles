@@ -91,7 +91,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "uwsm start default";
+        #command = "uwsm start default";
         user = "alex";
       };
     };
@@ -99,7 +99,7 @@
 
   programs.hyprland = {
     enable = true;
-    withUWSM = true;
+    withUWSM = false;
   };
 
   environment = {
