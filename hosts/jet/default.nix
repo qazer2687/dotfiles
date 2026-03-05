@@ -91,7 +91,7 @@
     enable = true;
     settings = {
       default_session = {
-        #command = "uwsm start default";
+        command = "start-hyprland";
         user = "alex";
       };
     };
