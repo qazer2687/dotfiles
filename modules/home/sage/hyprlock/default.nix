@@ -31,7 +31,7 @@ in {
         background = {
           path = "/home/alex/.config/wallpaper/wallpaper.png";
           blur_passes = 2;
-          brightness = 0.1;
+          brightness = 0.25;
 
           #color = "rgba(${scheme.base00}ff)";
         };

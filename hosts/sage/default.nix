@@ -19,12 +19,12 @@
   boot = {
     kernelParams = [
       # Quiet boot.
-      "quiet"
-      "splash"
-      "vt.global_cursor_default=0"
-      "systemd.show_status=false"
-      "udev.log_level=3"
-      "console=/dev/null"
+      #"quiet"
+      #"splash"
+      #"vt.global_cursor_default=0"
+      #"systemd.show_status=false"
+      #"udev.log_level=3"
+      #"console=/dev/null"
 
       # Disable both hardware and software watchdog.
       "nmi_watchdog=0"
@@ -33,13 +33,13 @@
       # Prevents performance hits/stuttering.
       "split_lock_detect=off"
     ];
-    consoleLogLevel = 3;
-    initrd.verbose = false;
+    #consoleLogLevel = 3;
+    #initrd.verbose = false;
     # Kernel panics without this option enabled.
     initrd.systemd.enable = true;
     kernel.sysctl = {
       # Quiet boot.
-      "kernel.printk" = "0 0 0 0";
+      #"kernel.printk" = "0 0 0 0";
 
       # Queue discipline algorithm for traffic control (CAKE reduces bufferbloat and latency).
       "net.core.default_qdisc" = "cake";
