@@ -7,7 +7,7 @@
   copyDesktopItems,
 }: let
   pname = "helium";
-  version = "0.5.5.1";
+  version = "0.10.5";
 
   architectures = {
     "x86_64-linux" = {
