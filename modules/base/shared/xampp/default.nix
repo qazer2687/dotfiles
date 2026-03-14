@@ -5,18 +5,18 @@
   ...
 }: {
   options.modules.xampp.enable = lib.mkEnableOption "XAMPP-like stack";
-  
+
   config = lib.mkIf config.modules.xampp.enable {
     # Firewall
-    networking.firewall.allowedTCPPorts = [ 80 443 3306 ];
-    
+    networking.firewall.allowedTCPPorts = [80 443 3306];
+
     # Apache with PHP
     services.httpd = {
       enable = true;
       adminAddr = "admin@website.org";
       enablePHP = true;
       phpPackage = pkgs.php;
-      
+
       virtualHosts."xampp.local" = {
         documentRoot = "/var/www/xampp.local";
         extraConfig = ''
@@ -27,18 +27,18 @@
           </Directory>
         '';
       };
-      
+
       # Optional: Add a default localhost vhost
       virtualHosts."localhost" = {
         documentRoot = "/var/www/xampp.local";
       };
     };
-    
+
     # MySQL/MariaDB
     services.mysql = {
       enable = true;
       package = pkgs.mariadb;
-      ensureDatabases = [ "testdb" ];
+      ensureDatabases = ["testdb"];
       ensureUsers = [
         {
           name = "root";
@@ -48,12 +48,12 @@
         }
       ];
     };
-    
+
     # Create the document root directory
     systemd.tmpfiles.rules = [
       "d /var/www/xampp.local 0755 wwwrun wwwrun -"
     ];
-    
+
     # Optional: phpMyAdmin
     services.phpfpm.pools.phpmyadmin = {
       user = "wwwrun";

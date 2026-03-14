@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: let
   fleet = {
@@ -26,9 +24,9 @@
   fleetUser = "alex";
   myName = config.networking.hostName;
   myMachine = fleet.${myName};
-  otherMachines = lib.filterAttrs (n: v: n != myName) fleet;
+  otherMachines = lib.filterAttrs (n: _v: n != myName) fleet;
 
-  buildMachines = lib.attrValues (lib.mapAttrs (n: v: {
+  buildMachines = lib.attrValues (lib.mapAttrs (_n: v: {
       inherit (v) hostName maxJobs speedFactor;
       sshUser = fleetUser;
       protocol = "ssh-ng";

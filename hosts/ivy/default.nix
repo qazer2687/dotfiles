@@ -1,4 +1,4 @@
-{pkgs, inputs, ...}: {
+{pkgs, ...}: {
   imports = [
     ../../hardware/ivy
   ];
@@ -15,7 +15,7 @@
   };
 
   programs.fish.enable = true;
-  
+
   services.fwupd.enable = true;
 
   # Disable power button (short press) and sleep/suspend button.

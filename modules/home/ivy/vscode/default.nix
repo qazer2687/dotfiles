@@ -2,11 +2,8 @@
   lib,
   config,
   pkgs,
-  base16,
   ...
-}: let
-  scheme = base16 "gruvbox-dark-hard";
-in {
+}: {
   options.modules.vscode.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.vscode.enable {

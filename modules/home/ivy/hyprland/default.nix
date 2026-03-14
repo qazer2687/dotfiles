@@ -116,7 +116,6 @@ in {
           accel_profile = "flat";
           sensitivity = 1;
 
-
           # Touchpad
           touchpad = {
             tap-to-click = false;

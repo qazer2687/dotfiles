@@ -2,7 +2,6 @@
   lib,
   config,
   base16,
-  pkgs,
   ...
 }: let
   scheme = base16 "black-metal";

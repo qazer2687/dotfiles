@@ -34,18 +34,16 @@
       };
     };
 
-    xdg.configFile =
-      let
-        themeDir = "${pkgs.magnetic-catppuccin-gtk}/share/themes/Catppuccin-GTK-Dark-hdpi/gtk-4.0";
-      in
-      {
-        "gtk-4.0/gtk.css".source = "${themeDir}/gtk.css";
-        "gtk-4.0/gtk-dark.css".source = "${themeDir}/gtk-dark.css";
-        "gtk-4.0/assets" = {
-          source = "${themeDir}/assets";
-          recursive = true;
-        };
+    xdg.configFile = let
+      themeDir = "${pkgs.magnetic-catppuccin-gtk}/share/themes/Catppuccin-GTK-Dark-hdpi/gtk-4.0";
+    in {
+      "gtk-4.0/gtk.css".source = "${themeDir}/gtk.css";
+      "gtk-4.0/gtk-dark.css".source = "${themeDir}/gtk-dark.css";
+      "gtk-4.0/assets" = {
+        source = "${themeDir}/assets";
+        recursive = true;
       };
+    };
 
     dconf.settings = {
       "org/gnome/desktop/interface" = {

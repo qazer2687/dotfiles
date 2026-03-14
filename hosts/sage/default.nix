@@ -1,4 +1,8 @@
-{pkgs, inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ../../hardware/sage
   ];
@@ -83,10 +87,10 @@
     }
     # Real-Time Priortiy
     {
-    domain = "alex";
-    type = "-";
-    item = "rtprio";
-    value = "99";
+      domain = "alex";
+      type = "-";
+      item = "rtprio";
+      value = "99";
     }
   ];
 
@@ -101,7 +105,7 @@
       "--nohostname"
     ];
   };
-  
+
   services.greetd = {
     enable = true;
     settings = {
