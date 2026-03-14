@@ -16,7 +16,7 @@
     };
     "aarch64-linux" = {
       arch = "arm64";
-      hash = "sha256-KfQlOT4mMKQ40B8hWl+GlmRNVhZnEln59ptfXN0XCLc=";
+      hash = "sha256-pLyTS69sPs8j7zALwc3yQ74/3ZHw1G9aebxGcjtBU/I=";
     };
   };
 
