@@ -7,17 +7,23 @@
   options.modules.xdg.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.xdg.enable {
+    xdg.autostart.enable = true;
     xdg.portal = {
       enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-hyprland
-        pkgs.xdg-desktop-portal-wlr
-        pkgs.xdg-desktop-portal-gtk
+      extraPortals = with pkgs; [
+        xdg-desktop-portal
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-gtk
       ];
-      xdgOpenUsePortal = true;
       config = {
         common = {
-          default = ["hyprland" "wlr" "gtk"];
+          default = [ "gtk" ];
+          "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+        };
+        hyprland = {
+          default = [ "hyprland" "gtk" ];
+          "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+          "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
         };
       };
     };
