@@ -12,7 +12,9 @@
     services.activitywatch = {
       enable = true;
       package = pkgs.aw-server-rust;
-      watchers = mkIf hasWayland { awatcher.package = pkgs.awatcher; };
+      watchers = {
+        awatcher.package = pkgs.awatcher;
+      };
     };
 
     systemd.user.services.activitywatch-watcher-awatcher = {
