@@ -19,10 +19,12 @@
 
     systemd.user.services.activitywatch-watcher-awatcher = {
       Unit = {
-        After = [ "graphical-session.target" ];
-        PartOf = [ "graphical-session.target" ];
+        After = [ "aw-server.service" ];
+        Wants = [ "aw-server.service" ];
       };
-      Install = { WantedBy = [ "graphical-session.target" ]; };
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
     };
   };
 }
