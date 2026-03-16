@@ -11,17 +11,17 @@
     home.packages = [ pkgs.aw-qt ];
     services.activitywatch = {
       enable = true;
-      package = pkgs.activitywatch;
+      package = pkgs.aw-server-rust;
       watchers = {
         aw-watcher-afk = {
-          package = pkgs.activitywatch;
+          package = pkgs.aw-watcher-afk;
           settings = {
             timeout = 180;
             poll_time = 2;
           };
         };
         aw-watcher-window = {
-          package = pkgs.activitywatch;
+          package = pkgs.aw-watcher-window-wayland;
           settings = {
             exclude_title = false;
             poll_time = 1;
