@@ -48,6 +48,7 @@
     mako.enable = true;
     tofi.enable = true;
     hyprsunset.enable = true;
+    activitywatch.enable = true;
 
     # Applications
     firefox.enable = true;

@@ -5,9 +5,11 @@
   inputs,
   base16,
   ...
-}: let
+}:
+let
   scheme = base16 "framer";
-in {
+in
+{
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprland.enable {
@@ -22,7 +24,8 @@ in {
       enable = true;
       xwayland.enable = false;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      portalPackage =
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
       settings = {
         monitor = [
@@ -52,7 +55,7 @@ in {
         };
 
         master = {
-          mfact = 0.50;
+          mfact = 0.70;
           orientation = "left";
         };
 
@@ -100,6 +103,7 @@ in {
 
         cursor = {
           no_warps = true;
+          hide_on_key_press = true;
         };
 
         render = {
@@ -155,6 +159,8 @@ in {
           "SUPER, up, cyclenext, prev"
           "SUPER, down, cyclenext"
           "SUPER, space, layoutmsg, swapwithmaster"
+          "SUPER, h, cyclenext, prev"
+          "SUPER, l, cyclenext"
 
           # Window Manipulation
           "SUPER SHIFT, left, layoutmsg, mfact -0.05"
