@@ -60,14 +60,14 @@ in
         };
 
         animations = {
-          enabled = false;
+          enabled = true;
 
-          bezier = [
+           bezier = [
             "snap, 0.2, 0, 0, 1"
           ];
 
           animation = [
-            # Disable top level animations which children inherit.
+            # Disable top level animations which children will inherit.
             "windows, 0"
             "layers, 0"
             "fade, 0"
@@ -76,7 +76,7 @@ in
             "zoomFactor, 0"
             #"monitorAdded, 0"
 
-            "workspaces, 0, 4, snap, slide"
+            "workspaces, 1, 2, snap, slide"
           ];
         };
 
@@ -209,7 +209,7 @@ in
           #"pamixer --set-volume 0 --mute"
           "waybar"
           "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
-          "hyprctl hyprsunset temperature 1500"
+          "hyprctl hyprsunset temperature 1000"
           # Unlock keyring on boot.
         ];
       };
