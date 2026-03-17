@@ -114,49 +114,36 @@ in {
 
         window#waybar {
           background: #${scheme.base00};
-          border-top: 1px solid #${scheme.base01};
         }
 
         #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
           padding: 0 8px;
           margin: 2px;
-          border-radius: 0;
+          border-radius: 2px;
           background: #${scheme.base01};
           color: #${scheme.base05};
-          border: 1px solid #${scheme.base02};
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
+
 
         #workspaces {
           padding: 0 1px;
           margin: 2px;
-          border-radius: 0;
+          border-radius: 2px;
           background-color: #${scheme.base01};
-          border: 1px solid #${scheme.base02};
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         #workspaces button {
           padding: 0 8px;
           margin: 2px 1px;
-          border-radius: 0;
+          border-radius: 2px;
           background-color: #${scheme.base02};
-          color: #${scheme.base04};
-          border: 1px solid transparent;
-          transition: all 0.1s ease-in-out;
         }
 
         #workspaces button.active {
+          padding: 0 8px;
+          margin: 2px 1px;
+          border-radius: 2px;
           background-color: #${scheme.base0E};
-          color: #${scheme.base00};
-          border: 1px solid #${scheme.base0F};
-          box-shadow: inset 0 0 0 1px #${scheme.base0D}, 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        #workspaces button:hover {
-          background-color: #${scheme.base03};
-          border: 1px solid #${scheme.base04};
-          box-shadow: inset 0 0 0 1px #${scheme.base04};
         }
 
         #battery.charging { color: #${scheme.base0B}; }
