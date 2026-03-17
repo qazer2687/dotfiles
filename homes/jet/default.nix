@@ -35,7 +35,6 @@
     fish.enable = true;
     foot.enable = true;
     fastfetch.enable = true;
-    yazi.enable = true;
 
     # Theming
     fonts.enable = true;
@@ -48,7 +47,6 @@
     mako.enable = true;
     tofi.enable = true;
     hyprsunset.enable = true;
-    activitywatch.enable = true;
 
     # Applications
     firefox.enable = true;
