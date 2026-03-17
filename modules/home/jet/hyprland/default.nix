@@ -55,7 +55,7 @@ in
         };
 
         master = {
-          mfact = 0.70;
+          mfact = 0.60;
           orientation = "left";
         };
 
@@ -93,7 +93,7 @@ in
           # Touchpad
           touchpad = {
             tap-to-click = false;
-            scroll_factor = 0.5;
+            scroll_factor = 1;
             natural_scroll = true;
             clickfinger_behavior = true;
             middle_button_emulation = true;
@@ -209,6 +209,7 @@ in
           #"pamixer --set-volume 0 --mute"
           "waybar"
           "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
+          "hyprctl hyprsunset temperature 1500"
           # Unlock keyring on boot.
         ];
       };
