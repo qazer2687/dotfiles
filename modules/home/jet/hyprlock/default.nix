@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "framer";
+  scheme = base16 "oxocarbon-dark";
 in {
   options.modules.hyprlock.enable = lib.mkEnableOption "";
 

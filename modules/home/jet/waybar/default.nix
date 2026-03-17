@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  scheme = base16 "framer";
+  scheme = base16 "oxocarbon-dark";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
