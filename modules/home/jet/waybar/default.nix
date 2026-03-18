@@ -136,6 +136,7 @@ in {
           padding: 0 8px;
           margin: 2px 1px;
           border-radius: 2px;
+          color: #${scheme.base05};
           background-color: #${scheme.base02};
         }
 
@@ -143,6 +144,7 @@ in {
           padding: 0 8px;
           margin: 2px 1px;
           border-radius: 2px;
+          color: #${scheme.base00};
           background-color: #${scheme.base0E};
         }
 
