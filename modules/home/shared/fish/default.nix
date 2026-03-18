@@ -50,9 +50,8 @@
       "rebuild" = "nh os switch github:qazer2687/dotfiles -H $(hostname) -- --refresh --option eval-cache false";
       "reboot" = ''printf "Are you sure you want to reboot? [N/y]\n"; read -n 1 confirm; test "$confirm" = y && sudo reboot'';
       "nvim" = "nix run github:qazer2687/neovim --refresh";
-      
-      "luks unlock" = "cd ~/luks && ./mount.sh && cd encrypted";
-      "luks lock" = "cd ~/luks && ./unmount.sh";
+      "luksunlock" = "cd ~/luks && ./mount.sh && cd encrypted";
+      "lukslock" = "cd ~/luks && ./unmount.sh";
     };
   };
 }
