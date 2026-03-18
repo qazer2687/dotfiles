@@ -18,6 +18,7 @@
     cryptsetup
     gajim
     helium
+    jellyfin-media-player
 
     # University
     dia
