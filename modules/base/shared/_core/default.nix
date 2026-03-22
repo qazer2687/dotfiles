@@ -93,7 +93,7 @@
     */
 
     # Block AI-related domains.
-    networking.extraHosts = ''
+    /*networking.extraHosts = ''
       127.0.0.1 chat.openai.com
       127.0.0.1 openai.com
       127.0.0.1 claude.ai
@@ -104,7 +104,7 @@
       127.0.0.1 perplexity.ai
       127.0.0.1 copilot.microsoft.com
       127.0.0.1 deepseek.com
-    '';
+    '';*/
 
     ########## KEYMAP ##########
 
