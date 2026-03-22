@@ -164,6 +164,7 @@
   };
 
   programs.nix-ld.enable = true;
+  virtualisation.docker.enable = true;
 
   # Did you read the comment?
   system.stateVersion = "25.05";
