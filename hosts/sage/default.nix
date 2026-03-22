@@ -163,6 +163,8 @@
     #ollama.enable = true;
   };
 
+  programs.nix-ld.enable = true;
+
   # Did you read the comment?
   system.stateVersion = "25.05";
 }
