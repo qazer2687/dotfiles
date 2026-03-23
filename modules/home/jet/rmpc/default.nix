@@ -42,7 +42,7 @@
       
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "chroma" "discogs" "musicbrainz" "lastgenre" ];
+        plugins = [ "chroma" "discogs" "lastgenre" ];
       
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
