@@ -48,6 +48,10 @@
           user_token_path = "~/.config/beets/discogs_token";
         };
 
+        match = {
+          strong_rec_thresh = 0.04;
+        };
+
         import = {
           write = true;
           move = true;
