@@ -37,11 +37,7 @@
 
     programs.beets = {
       enable = true;
-      package = (pkgs.beets.override {
-        pluginOverrides = {
-          chroma.enable = true;
-        };
-      });
+      package = (pkgs.beets.override { pluginOverrides = { chroma.enable = false; }; }) ;
       
       settings = {
         directory = "/home/alex/Music/library";
