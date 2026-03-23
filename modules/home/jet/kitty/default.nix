@@ -17,8 +17,9 @@ in {
         font_size = 11;
         bold_font = "PragmataPro";
 
-        # Layout
-        padding = "16 16";
+        # Padding
+        window_padding_width = 8;
+        window_padding_height = 8;
 
         # Scrollback
         scrollback_lines = 10000;
@@ -28,14 +29,14 @@ in {
         cursor_blink_interval = 0.5;
 
         # Mouse
-        hide_mouse_when_typing = false;
+        mouse_hide_when_typing = false;
 
         # Colors – with "#" prefix
         foreground = "#${scheme.base05}";
         background = "#${scheme.base00}";
 
         cursor = "#${scheme.base06}";
-        cursor_text_color = "#${scheme.base06}";
+        cursor_text_color = "#${scheme.base00}";
 
         selection_foreground = "#${scheme.base05}";
         selection_background = "#${scheme.base01}";
@@ -61,16 +62,14 @@ in {
         color14 = "#${scheme.base0C}";
         color15 = "#${scheme.base07}";
 
-        # Extended colors
+        # Extended Colours
         color16 = "#${scheme.base09}";
         color17 = "#${scheme.base06}";
       };
 
       keybindings = {
-        "ctrl+c"    = "copy_to_clipboard";
-        "ctrl+v"    = "paste_from_clipboard";
-        "XF86Copy"  = "copy_to_clipboard";
-        "XF86Paste" = "paste_from_clipboard";
+        "ctrl+c" = "copy_to_clipboard";
+        "ctrl+v" = "paste_from_clipboard";
       };
     };
   };
