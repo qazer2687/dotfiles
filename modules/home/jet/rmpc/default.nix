@@ -10,7 +10,7 @@
   config = lib.mkIf config.modules.rmpc.enable {
     services.mpd = {
       enable = true;
-      musicDirectory = "/home/alex/Music";
+      musicDirectory = "/home/alex/Music/library";
       extraConfig = ''
         audio_output {
           type            "pulse"
