@@ -44,6 +44,10 @@
         directory = "/home/alex/Music/library";
         plugins = [ "chroma" "discogs" "musicbrainz" "lastgenre"  "fromfilename" ];
       
+        discogs = {
+          user_token_path = "~/.config/beets/discogs_token";
+        };
+
         import = {
           write = true;
           move = true;
