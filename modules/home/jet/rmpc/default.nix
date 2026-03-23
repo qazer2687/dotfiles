@@ -42,7 +42,7 @@
       
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "chroma" "musicbrainz" ];
+        plugins = [ "chroma" "musicbrainz" "fromfilename" ];
       
         import = {
           write = true;
