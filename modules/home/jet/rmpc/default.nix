@@ -34,6 +34,27 @@
     programs.rmpc = {
       enable = true;
     };
+
+    programs.beets = {
+      enable = true;
+      package = pkgs.beets.override {
+        pluginOverrides = {
+          chroma.enable = true;
+        };
+      };
+      settings = {
+        directory = "~/Music/library";
+        library = "~/.config/beets/library.db";
+        plugins = [ "chroma" "from_filename" ];
+        import = {
+          write = true;
+          copy = false;
+          move = true;
+          singletons = true;
+          quiet_fallback = "skip";
+        };
+      };
+    };
   };
 }
 
