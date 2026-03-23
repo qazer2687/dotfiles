@@ -38,7 +38,7 @@
     home.packages = [ pkgs.chromaprint ];
     programs.beets = {
       enable = true;
-      package = (pkgs.python3Packages.beets.override { pluginOverrides = { chroma.enable = false; }; }) ;
+      package = (pkgs.python3Packages.beets.override { pluginOverrides = { chroma.enable = true; }; }) ;
       
       settings = {
         directory = "/home/alex/Music/library";
@@ -53,11 +53,7 @@
         };
 
         import = {
-          write = true;
-          move = true;
-          copy = false;
-          autotag = true;
-          singletons = true; 
+          copy = true;
         };
       };
     };
