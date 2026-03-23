@@ -35,6 +35,7 @@
       enable = true;
     };
 
+    home.packages = [ pkgs.chromaprint ];
     programs.beets = {
       enable = true;
       package = (pkgs.python3Packages.beets.override { pluginOverrides = { chroma.enable = false; }; }) ;
