@@ -19,6 +19,7 @@
     gajim
     helium
     jellyfin-media-player
+    discordo
 
     # University
     dia
@@ -37,6 +38,7 @@
     foot.enable = true;
     kitty.enable = true;
     fastfetch.enable = true;
+    rmpc.enable = true;
 
     # Theming
     fonts.enable = true;

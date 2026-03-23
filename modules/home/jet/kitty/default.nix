@@ -24,6 +24,8 @@ in {
         # Scrollback
         scrollback_lines = 10000;
 
+        confirm_os_window_close = 0;
+
         # Cursor
         cursor_shape = "beam";
         cursor_blink_interval = 0.5;
