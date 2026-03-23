@@ -42,16 +42,17 @@
           chroma.enable = true;
         };
       };
+      
       settings = {
-        directory = "~/Music/library";
-        library = "~/.config/beets/library.db";
+        directory = "/home/alex/Music/library";
         plugins = [ "chroma" "from_filename" ];
+      
         import = {
           write = true;
-          copy = false;
           move = true;
-          singletons = true;
-          quiet_fallback = "skip";
+          copy = false;
+          autotag = true;
+          singletons = true; 
         };
       };
     };
