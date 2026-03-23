@@ -18,7 +18,7 @@ in {
         bold_font = "PragmataPro";
 
         # Layout
-        padding = "8 8";
+        padding = "16 16";
 
         # Scrollback
         scrollback_lines = 10000;
@@ -34,7 +34,7 @@ in {
         foreground = "#${scheme.base05}";
         background = "#${scheme.base00}";
 
-        cursor = "#${scheme.base00}";
+        cursor = "#${scheme.base06}";
         cursor_text_color = "#${scheme.base06}";
 
         selection_foreground = "#${scheme.base05}";
