@@ -10,7 +10,7 @@
   config = lib.mkIf config.modules.rmpc.enable {
 
 
-    home.packages = [ pkgs.chromaprint pkgs.mpc pkgs.python313Packages.beetcamp];
+    home.packages = [ pkgs.chromaprint pkgs.mpc];
 
     services.mpd = {
       enable = true;
