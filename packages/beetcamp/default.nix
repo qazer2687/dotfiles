@@ -1,3 +1,4 @@
+# beetcamp.nix
 { lib, python3, fetchFromGitHub }:
 
 python3.pkgs.buildPythonPackage rec {
@@ -9,7 +10,7 @@ python3.pkgs.buildPythonPackage rec {
     owner = "snejus";
     repo = "beetcamp";
     rev = version;
-    hash = "sha256-8FEDpobEGZ0Lw1+JRoFIEe3AuiuX7dwsRab+P3hC3W0=";
+    hash = "";
   };
 
   build-system = [ python3.pkgs.poetry-core ];
@@ -25,7 +26,6 @@ python3.pkgs.buildPythonPackage rec {
   meta = {
     description = "Bandcamp autotagger source for beets";
     homepage = "https://github.com/snejus/beetcamp";
-    changelog = "https://github.com/snejus/beetcamp/blob/${version}/CHANGELOG.md";
     license = lib.licenses.gpl2Only;
   };
 }
