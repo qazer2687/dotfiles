@@ -56,7 +56,7 @@
         directory = "/home/alex/Music/library";
         plugins = [ "mpdupdate" "bandcamp" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
       
-        sources = [ "bandcamp" "discogs" "musicbrainz" ];
+        sources = [ "bandcamp" "musicbrainz" "discogs" ];
 
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
@@ -73,7 +73,7 @@
           strong_rec_thresh = 0.2;
           ignored_fields = [ "track" "index" ];
         };
-        
+
         import = {
           from_filename = true;
           copy = true;
