@@ -47,19 +47,30 @@
 
     programs.beets = {
       enable = true;
-      package = (pkgs.python3Packages.beets.override { pluginOverrides = { chroma.enable = true; }; }) ;
+      package = (pkgs.python3Packages.beets.override {
+        pluginOverrides = {
+          chroma.enable = true;
+          beetcamp.enable = true;
+          };
+        }
+      );
       
       settings = {
         directory = "/home/alex/Music/library";
         plugins = [ "chroma" "discogs" "lastgenre" "fromfilename"];
       
+        sources = [ "discogs" "bandcamp" "musicbrainz" ];
+        
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
         };
 
+        fromfilename = {
+          bin = true;
+        };
+
         match = {
-          # 75%
-          strong_rec_thresh = 0.35;
+          strong_rec_thresh = 0.2;
         };
 
         import = {
