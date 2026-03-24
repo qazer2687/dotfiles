@@ -5,7 +5,7 @@
   inputs,
   ...
 }: let
-  beetcamp = pkgs.callPackage ./beetcamp.nix { };
+  #beetcamp = pkgs.callPackage ./beetcamp.nix { };
   beetsWithBandcamp = pkgs.python3.withPackages (ps: [
     ps.beets           # the main beets package
     beetcamp           # your plugin
