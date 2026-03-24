@@ -51,7 +51,7 @@
         pluginOverrides = {
           bandcamp = {
             enable = true;
-            propagatedBuildInputs = [ beetcamp ];
+            propagatedBuildInputs = [ pkgs.python313Packages.beetcamp ];
           };
         };
       };
