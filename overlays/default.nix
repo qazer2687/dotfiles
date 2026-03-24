@@ -12,8 +12,17 @@ _: {
   in
     {
       beetsWithBandcamp = final.beets.override {
-        plugins = [ beetcamp ];
-        withPlugins = [ "fetchart" "fromfilename" "chroma" ];
+        pluginOverrides = {
+          bandcamp = {
+            enable = true;
+            propagatedBuildInputs = [ beetcamp ];
+          };
+          # If you want to be explicit about built‑in plugins (they are enabled by default)
+          # you can list them too, but it's optional:
+          # fetchart = { enable = true; };
+          # fromfilename = { enable = true; };
+          # chroma = { enable = true; };
+        };
       };
 
 

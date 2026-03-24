@@ -21,7 +21,6 @@ python3.pkgs.buildPythonPackage rec {
     pycountry
   ];
 
-  # Make sure the module is importable
   pythonImportsCheck = [ "beetsplug.bandcamp" ];
 
   meta = {
