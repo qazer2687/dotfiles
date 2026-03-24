@@ -69,12 +69,9 @@
           auto = true;
         };
 
-        fromfilename = {
-          bin = true;
-        };
-
         match = {
-          strong_rec_thresh = 0.35;
+          strong_rec_thresh = 0.4;
+          ignored_fields = [ "track" "index" ];
         };
 
         import = {
