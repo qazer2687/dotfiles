@@ -20,6 +20,7 @@
           mixer_control   "PCM"
           mixer_index     "0"
         }
+        filesystem_charset "UTF-8"
       '';
     };
 
