@@ -50,7 +50,7 @@
       package = (
           pkgs.python3Packages.beets.override {
             pluginOverrides = {
-              fromfilename.enable = true;
+              #fromfilename.enable = true;
               chroma.enable = true;
               #beetcamp.enable = true;
               fetchart.enable = true;
