@@ -47,19 +47,21 @@
 
     programs.beets = {
       enable = true;
-      package = (
-          pkgs.python3Packages.beets.override {
-            pluginOverrides = {
-              fromfilename.enable = true;
-              chroma.enable = true;
-              beetcamp = {
-                enable = true;
-                propagatedBuildInputs = [ pkgs.python3Packages.beetcamp ];
-              };
-              fetchart.enable = true;
-            };
-          }
-        );
+      package = (python3Packages.beets.override {
+        pluginOverrides = {
+          bandcamp = {
+            enable = true;
+            propagatedBuildInputs = [ beetcamp ];
+          };
+          alternatives = {
+            enable = true;
+            propagatedBuildInputs = [ python3Packages.beets-alternatives ];
+          };
+          fetchart.enable = true;
+          fromfilename.enable = true;
+          chroma.enable = true;
+        };
+      });
       
       settings = {
         directory = "/home/alex/Music/library";
