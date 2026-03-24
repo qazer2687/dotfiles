@@ -70,12 +70,11 @@
         };
 
         match = {
-          strong_rec_thresh = 0.4;
+          strong_rec_thresh = 0.2;
           ignored_fields = [ "track" "index" ];
         };
 
         import = {
-          timid = true;
           group_albums = true;
           singletons = true;
           from_filename = true;
