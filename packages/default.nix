@@ -11,5 +11,4 @@ pkgs: {
   fraktion-sans = pkgs.callPackage ./fraktion-sans {};
   lettra-mono = pkgs.callPackage ./lettra-mono {};
   space-grotesk = pkgs.callPackage ./space-grotesk {};
-  beetcamp = pkgs.callPackage ./beetcamp {};
 }

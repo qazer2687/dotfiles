@@ -8,15 +8,8 @@ _: {
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: let
     inherit (prev) lib stdenv;
-    beetcamp = final.callPackage ../packages/beetcamp.nix { };
-    pythonWithBeetsAndPlugin = final.python3.withPackages (ps: [
-      ps.beets
-      beetcamp
-    ]);
   in
     {
-      beetsWithBandcamp = pythonWithBeetsAndPlugin.beets;
-
 
       ffmpeg-full = prev.ffmpeg-full.override {
         withFullDeps = true;
