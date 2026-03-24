@@ -74,6 +74,11 @@
           ignored_fields = [ "track" "index" ];
         };
 
+        paths = {
+          default = "%upper{%left{$albumartist,1}}/$albumartist/$album/$track - $title";
+          singleton = "%upper{%left{$artist,1}}/$artist/$title";
+        };
+
         import = {
           group_albums = true;
           singletons = true;
