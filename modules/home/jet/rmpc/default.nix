@@ -49,14 +49,6 @@
       enable = true;
       package = (pkgs.python3Packages.beets.override {
         pluginOverrides = {
-          bandcamp = {
-            enable = true;
-            propagatedBuildInputs = [ pkgs.beetcamp ];
-          };
-          alternatives = {
-            enable = true;
-            propagatedBuildInputs = [ pkgs.python3Packages.beets-alternatives ];
-          };
           fetchart.enable = true;
           fromfilename.enable = true;
           chroma.enable = true;
@@ -65,9 +57,9 @@
       
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "mpdupdate" "chroma" "bandcamp" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
+        plugins = [ "mpdupdate" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
       
-        sources = [ "discogs" "bandcamp" "musicbrainz" ];
+        sources = [ "discogs" "musicbrainz" ];
 
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
