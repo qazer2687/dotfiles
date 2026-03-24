@@ -54,6 +54,7 @@
 
         import = {
           copy = true;
+          quiet_fallback = "skip";
         };
       };
     };
