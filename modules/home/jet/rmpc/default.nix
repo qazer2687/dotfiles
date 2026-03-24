@@ -8,7 +8,7 @@
   #beetcamp = pkgs.callPackage ./beetcamp.nix { };
   beetsWithBandcamp = pkgs.python3.withPackages (ps: [
     ps.beets           # the main beets package
-    beetcamp           # your plugin
+    pkgs.beetcamp           # your plugin
   ]);
 in {
   options.modules.rmpc.enable = lib.mkEnableOption "";
