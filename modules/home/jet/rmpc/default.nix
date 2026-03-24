@@ -49,7 +49,7 @@
       enable = true;
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "mpdupdate" "beetcamp" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
+        plugins = [ "mpdupdate" "bandcamp" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
       
         sources = [ "discogs" "musicbrainz" ];
 
