@@ -47,9 +47,8 @@
 
     programs.beets = {
       enable = true;
-      # https://github.com/arximboldi/dotfiles/blob/42f44ae499356120957b375146c1325b60703914/nix/os/common/desktop.nix#L103
       package = let
-        beetcamp = (pkgs.python3Packages.buildPythonApplication {
+        beetcamp = pkgs.python3Packages.buildPythonApplication {
           pname = "beets-beetcamp";
           version = "0.21.0";
           src = pkgs.fetchFromGitHub {
@@ -70,7 +69,6 @@
           ];
           checkInputs = with pkgs.python3Packages;
             [
-              # pytestCheckHook
               pytest-cov
               pytest-randomly
               pytest-lazy-fixture
@@ -86,18 +84,19 @@
             inherit (pkgs.beets.meta) platforms;
             maintainers = with pkgs.lib.maintainers; [ rrix ];
           };
-        });
-      in pkgs.python3.pkgs.beets.override {
-        pluginOverrides = {
-          beetcamp = {
-            enable = true;
-            propagatedBuildInputs = [ beetcamp ];
-          };
+        };
+      in pkgs.python3.pkgs.beets.overridePythonAttrs (old: {
+        # Add beetcamp to beets' environment
+        propagatedBuildInputs = (old.propagatedBuildInputs or []) ++ [ beetcamp ];
+        
+        # Only configure built-in plugins here
+        pluginOverrides = old.pluginOverrides // {
           fetchart.enable = true;
           fromfilename.enable = true;
           chroma.enable = true;
         };
-      };
+      });
+
 
       settings = {
         directory = "/home/alex/Music/library";
