@@ -77,7 +77,7 @@
         };
 
         match = {
-          strong_rec_thresh = 0.2;
+          strong_rec_thresh = 0.25;
         };
 
         import = {
