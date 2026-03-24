@@ -47,22 +47,33 @@
 
     programs.beets = {
       enable = true;
-      package = (pkgs.python3Packages.beets.override {
-        pluginOverrides = {
-          chroma.enable = true;
-          beetcamp.enable = true;
-          };
-        }
-      );
+      package = (
+          pkgs.python3Packages.beets.override {
+            pluginOverrides = {
+              fromfilename.enable = true;
+              chroma.enable = true;
+              #beetcamp.enable = true;
+              fetchart.enable = true;
+            };
+            extraPackages = [ pkgs.python3Packages.beetcamp ];
+          }
+        );
       
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "chroma" "discogs" "lastgenre" "fromfilename"];
+        plugins = [ "mpdupdate" "chroma" "bandcamp" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
       
         sources = [ "discogs" "bandcamp" "musicbrainz" ];
-        
+
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
+        };
+
+        fetchart = {
+          auto = true;
+        };
+        embedart = {
+          auto = true;
         };
 
         fromfilename = {
@@ -74,6 +85,9 @@
         };
 
         import = {
+          group_albums = true;
+          singletons = true;
+          from_filename = true;
           copy = true;
           quiet_fallback = "skip";
         };
