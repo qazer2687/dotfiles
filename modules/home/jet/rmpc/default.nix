@@ -54,13 +54,13 @@
 
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "mpdupdate" "bandcamp" "chroma" "lastgenre" "fromfilename" "fetchart" "embedart"];
+        plugins = [ "mpdupdate" "bandcamp" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart" "musicbrainz" ];
       
-        sources = [ "bandcamp" "musicbrainz" ];
+        sources = [ "bandcamp" "musicbrainz" "discogs" ];
 
-        #discogs = {
-        #  user_token_path = "~/.config/beets/discogs_token";
-        #};
+        discogs = {
+          user_token_path = "~/.config/beets/discogs_token";
+        };
 
         fetchart = {
           auto = true;
