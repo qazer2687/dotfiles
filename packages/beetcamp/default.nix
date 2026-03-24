@@ -1,11 +1,6 @@
-{
-  lib,
-  python3,
-  fetchFromGitHub,
-  pkgs,
-}:
+{ lib, python3, fetchFromGitHub }:
 
-python3.pkgs.buildPythonApplication rec {
+python3.pkgs.buildPythonPackage rec {
   pname = "beetcamp";
   version = "0.23.0";
   pyproject = true;
@@ -19,12 +14,6 @@ python3.pkgs.buildPythonApplication rec {
 
   build-system = [ python3.pkgs.poetry-core ];
 
-  preBuild = ''
-    HOME=$PWD
-  '';
-
-  nativeBuildInputs = [ pkgs.beets ];
-
   dependencies = with python3.pkgs; [
     httpx
     ordered-set
@@ -32,14 +21,14 @@ python3.pkgs.buildPythonApplication rec {
     pycountry
   ];
 
+  # Make sure the module is importable
   pythonImportsCheck = [ "beetsplug.bandcamp" ];
 
   meta = {
-    description = "Bandcamp autotagger source for beets (https://beets.io)";
+    description = "Bandcamp autotagger source for beets";
     homepage = "https://github.com/snejus/beetcamp";
-    changelog = "https://github.com/snejus/beetcamp/blob/${src.rev}/CHANGELOG.md";
+    changelog = "https://github.com/snejus/beetcamp/blob/${version}/CHANGELOG.md";
     license = lib.licenses.gpl2Only;
     maintainers = [ ];
-    mainProgram = "beetcamp";
   };
 }

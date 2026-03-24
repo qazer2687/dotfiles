@@ -14,6 +14,13 @@ _: {
       # ...
       # });
 
+      beetsWithBandcamp = pkgs.beets.override {
+        # List of plugins to add (both built‑in and external)
+        plugins = [ beetcamp ];
+        # If you also want built‑in plugins, list them here
+        withPlugins = [ "fetchart" "fromfilename" "chroma" ];
+      };
+
       ffmpeg-full = prev.ffmpeg-full.override {
         withFullDeps = true;
       };

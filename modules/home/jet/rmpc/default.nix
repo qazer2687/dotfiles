@@ -47,17 +47,7 @@
 
     programs.beets = {
       enable = true;
-      package = (pkgs.python3Packages.beets.override {
-        pluginOverrides = {
-          bandcamp = {
-            enable = true;
-            propagatedBuildInputs = [ pkgs.beetcamp ];
-          };
-          fetchart.enable = true;
-          fromfilename.enable = true;
-          chroma.enable = true;
-        };
-      });
+      package = pkgs.beetsWithBandcamp;
 
       settings = {
         directory = "/home/alex/Music/library";
