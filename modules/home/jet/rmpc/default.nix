@@ -4,7 +4,13 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  beetcamp = pkgs.callPackage ./packages/beetcamp.nix { };
+  pythonWithBeetsAndPlugin = pkgs.python3.withPackages (ps: [
+    ps.beets
+    beetcamp
+  ]);
+in {
   options.modules.rmpc.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.rmpc.enable {
@@ -47,7 +53,7 @@
 
     programs.beets = {
       enable = true;
-      package = pkgs.beetsWithBandcamp;
+      package = pythonWithBeetsAndPlugin.beets;
 
       settings = {
         directory = "/home/alex/Music/library";

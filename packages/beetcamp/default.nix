@@ -13,7 +13,6 @@ python3.pkgs.buildPythonPackage rec {
   };
 
   build-system = [ python3.pkgs.poetry-core ];
-
   dependencies = with python3.pkgs; [
     httpx
     ordered-set
@@ -28,6 +27,5 @@ python3.pkgs.buildPythonPackage rec {
     homepage = "https://github.com/snejus/beetcamp";
     changelog = "https://github.com/snejus/beetcamp/blob/${version}/CHANGELOG.md";
     license = lib.licenses.gpl2Only;
-    maintainers = [ ];
   };
 }

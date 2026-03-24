@@ -9,21 +9,13 @@ _: {
   modifications = final: prev: let
     inherit (prev) lib stdenv;
     beetcamp = final.callPackage ../packages/beetcamp.nix { };
+    pythonWithBeetsAndPlugin = final.python3.withPackages (ps: [
+      ps.beets
+      beetcamp
+    ]);
   in
     {
-      beetsWithBandcamp = final.beets.override {
-        pluginOverrides = {
-          bandcamp = {
-            enable = true;
-            propagatedBuildInputs = [ beetcamp ];
-          };
-          # If you want to be explicit about built‑in plugins (they are enabled by default)
-          # you can list them too, but it's optional:
-          # fetchart = { enable = true; };
-          # fromfilename = { enable = true; };
-          # chroma = { enable = true; };
-        };
-      };
+      beetsWithBandcamp = pythonWithBeetsAndPlugin.beets;
 
 
       ffmpeg-full = prev.ffmpeg-full.override {
