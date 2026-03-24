@@ -47,7 +47,7 @@
 
     programs.beets = {
       enable = true;
-      package = python3.pkgs.beets.override {
+      package = pkgs.python3.pkgs.beets.override {
         pluginOverrides = {
           bandcamp = {
             enable = true;
