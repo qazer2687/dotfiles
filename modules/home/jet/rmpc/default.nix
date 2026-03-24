@@ -56,7 +56,7 @@
         directory = "/home/alex/Music/library";
         plugins = [ "mpdupdate" "bandcamp" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
       
-        sources = [ "discogs" "musicbrainz" ];
+        sources = [ "bandcamp" "discogs" "musicbrainz" ];
 
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
