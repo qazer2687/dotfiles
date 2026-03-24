@@ -8,18 +8,14 @@ _: {
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: let
     inherit (prev) lib stdenv;
+    beetcamp = final.callPackage ../packages/beetcamp.nix { };
   in
     {
-      # example = prev.example.overrideAttrs (oldAttrs: rec {
-      # ...
-      # });
-
-      beetsWithBandcamp = pkgs.beets.override {
-        # List of plugins to add (both built‑in and external)
+      beetsWithBandcamp = final.beets.override {
         plugins = [ beetcamp ];
-        # If you also want built‑in plugins, list them here
         withPlugins = [ "fetchart" "fromfilename" "chroma" ];
       };
+
 
       ffmpeg-full = prev.ffmpeg-full.override {
         withFullDeps = true;
