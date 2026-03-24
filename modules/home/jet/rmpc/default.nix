@@ -50,12 +50,14 @@
       package = (
           pkgs.python3Packages.beets.override {
             pluginOverrides = {
-              #fromfilename.enable = true;
+              fromfilename.enable = true;
               chroma.enable = true;
-              #beetcamp.enable = true;
+              bandcamp = {
+                enable = true;
+                propagatedBuildInputs = [ pkgs.python3Packages.beetcamp ];
+              };
               fetchart.enable = true;
             };
-            extraPackages = [ pkgs.python3Packages.beetcamp ];
           }
         );
       
