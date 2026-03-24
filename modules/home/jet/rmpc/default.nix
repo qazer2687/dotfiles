@@ -52,12 +52,13 @@
             pluginOverrides = {
               fromfilename.enable = true;
               chroma.enable = true;
-              bandcamp = {
-                enable = true;
-                propagatedBuildInputs = [ pkgs.python3Packages.beetcamp ];
-              };
+              #bandcamp = {
+              #  enable = true;
+              #  propagatedBuildInputs = [ pkgs.python3Packages.beetcamp ];
+              #};
               fetchart.enable = true;
             };
+            extraPythonPackages = [ pkgs.python3Packages.beetcamp ];
           }
         );
       
