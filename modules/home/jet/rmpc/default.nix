@@ -65,7 +65,7 @@
       
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "mpdupdate" "chroma" "beetcamp" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
+        plugins = [ "mpdupdate" "chroma" "bandcamp" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
       
         sources = [ "discogs" "bandcamp" "musicbrainz" ];
 
