@@ -54,7 +54,7 @@
               chroma.enable = true;
               beetcamp = {
                 enable = true;
-                propagatedBuildInputs = [ unstable.python3Packages.beetcamp ];
+                propagatedBuildInputs = [ pkgs.python3Packages.beetcamp ];
               };
               fetchart.enable = true;
             };
