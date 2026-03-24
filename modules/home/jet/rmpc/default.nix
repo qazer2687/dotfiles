@@ -47,20 +47,19 @@
 
     programs.beets = {
       enable = true;
-      package = (
-          pkgs.python3Packages.beets.override {
-            pluginOverrides = {
-              fromfilename.enable = true;
-              chroma.enable = true;
-              #bandcamp = {
-              #  enable = true;
-              #  propagatedBuildInputs = [ pkgs.python3Packages.beetcamp ];
-              #};
-              fetchart.enable = true;
-            };
-            extraPythonPackages = [ pkgs.python3Packages.beetcamp ];
-          }
-        );
+      package = (pkgs.beets.override {
+        # 'pluginOverrides' is for built-in plugins that need extra system deps
+        pluginOverrides = {
+          chroma.enable = true;
+          fetchart.enable = true;
+          fromfilename.enable = true;
+        };
+      }).overrideAttrs (oldAttrs: {
+        # 'overrideAttrs' lets us add the beetcamp package to the Python path
+        propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ 
+          pkgs.python3Packages.beetcamp 
+        ];
+      });
       
       settings = {
         directory = "/home/alex/Music/library";
