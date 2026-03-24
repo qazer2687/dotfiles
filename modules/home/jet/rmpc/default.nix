@@ -75,6 +75,7 @@
         };
 
         import = {
+          timid = true;
           group_albums = true;
           singletons = true;
           from_filename = true;
