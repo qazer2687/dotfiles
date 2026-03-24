@@ -4,19 +4,13 @@
   pkgs,
   inputs,
   ...
-}: let
-  #beetcamp = pkgs.callPackage ./beetcamp.nix { };
-  beetsWithBandcamp = pkgs.python3.withPackages (ps: [
-    ps.beets           # the main beets package
-    pkgs.beetcamp           # your plugin
-  ]);
-in {
+}: {
   options.modules.rmpc.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.rmpc.enable {
 
 
-    home.packages = [ pkgs.chromaprint pkgs.mpc];
+    home.packages = [ pkgs.chromaprint pkgs.mpc pkgs.python313Packages.beetcamp];
 
     services.mpd = {
       enable = true;
@@ -53,13 +47,11 @@ in {
 
     programs.beets = {
       enable = true;
-      package = beetsWithBandcamp;
-
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "mpdupdate" "bandcamp" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
+        plugins = [ "mpdupdate" "beetcamp" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
       
-        sources = [ "bandcamp" "discogs" "musicbrainz" ];
+        sources = [ "discogs" "musicbrainz" ];
 
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
