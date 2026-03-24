@@ -51,11 +51,11 @@
         pluginOverrides = {
           bandcamp = {
             enable = true;
-            propagatedBuildInputs = [ beetcamp ];
+            propagatedBuildInputs = [ pkgs.beetcamp ];
           };
           alternatives = {
             enable = true;
-            propagatedBuildInputs = [ python3Packages.beets-alternatives ];
+            propagatedBuildInputs = [ pkgs.python3Packages.beets-alternatives ];
           };
           fetchart.enable = true;
           fromfilename.enable = true;
