@@ -33,7 +33,7 @@
       settings = {
         format = {
           small_image = "";
-        }
+        };
       };
     };
 
@@ -51,17 +51,10 @@
       
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
+        plugins = [ "chroma" "discogs" "lastgenre" "fromfilename"];
       
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
-        };
-
-        fetchart = {
-          auto = true;
-        };
-        embedart = {
-          auto = true;
         };
 
         match = {
