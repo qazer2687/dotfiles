@@ -8,6 +8,10 @@
   options.modules.rmpc.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.rmpc.enable {
+
+
+    home.packages = [ pkgs.chromaprint pkgs.mpc];
+
     services.mpd = {
       enable = true;
       musicDirectory = "/home/alex/Music/library";
@@ -26,6 +30,11 @@
 
     services.mpd-discord-rpc = {
       enable = true;
+      settings = {
+        format = {
+          small_image = "";
+        }
+      };
     };
 
     services.mpd-mpris = {
@@ -36,22 +45,28 @@
       enable = true;
     };
 
-    home.packages = [ pkgs.chromaprint ];
     programs.beets = {
       enable = true;
       package = (pkgs.python3Packages.beets.override { pluginOverrides = { chroma.enable = true; }; }) ;
       
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "chroma" "discogs" "lastgenre" ];
+        plugins = [ "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart"];
       
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
         };
 
+        fetchart = {
+          auto = true;
+        };
+        embedart = {
+          auto = true;
+        };
+
         match = {
           # 75%
-          strong_rec_thresh = 0.7;
+          strong_rec_thresh = 0.35;
         };
 
         import = {
