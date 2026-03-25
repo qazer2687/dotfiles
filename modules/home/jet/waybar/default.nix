@@ -140,7 +140,7 @@ in {
 
         #workspaces {
           padding: 0 0px;
-          margin: 0px;
+          margin: 2px;
           border-radius: 2px;
           background-color: #${scheme.base01};
         }
