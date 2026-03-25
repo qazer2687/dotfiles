@@ -138,20 +138,11 @@ in {
           color: #${scheme.base05};
         }
 
-        #mpris {
-          margin-left: -2px;
-        }
-
-        #clock {
-          margin-right: -2px;
-        }
-
-
         #workspaces {
-          padding: 0 4px;
+          padding: 0 0px;
           margin: 0px;
           border-radius: 2px;
-          background-color: #${scheme.base00};
+          background-color: #${scheme.base01};
         }
 
         #workspaces button {
