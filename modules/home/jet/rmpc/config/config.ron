@@ -27,7 +27,7 @@
     framerate: 60, // default 60
     autosens: true, // default true
     sensitivity: 100, // default 100
-    lower_cutoff_freq: 0, // not passed to cava if not provided
+    lower_cutoff_freq: 20, // not passed to cava if not provided
     higher_cutoff_freq: 20050, // not passed to cava if not provided
     input: (
         method: Fifo,
