@@ -112,7 +112,7 @@ layout: Split(
         rows: [
             (
                 left: [
-                    (kind: Property(Status(StateV2(playing_label: "⏸", paused_label: "▶", stopped_label: "⏹"))), style: (fg: "#a6adc8", modifiers: "Bold")),
+                    (kind: Property(Status(StateV2(playing_label: "Playing", paused_label: "Paused", stopped_label: "Stopped"))), style: (fg: "#a6adc8", modifiers: "Bold")),
                 ],
                 center: [
                     (kind: Property(Song(Title)), style: (modifiers: "Bold"),
