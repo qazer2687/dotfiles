@@ -35,7 +35,8 @@ in {
 
         # Colors – with "#" prefix
         foreground = "#${scheme.base05}";
-        background = "#${scheme.base00}";
+        #background = "#${scheme.base00}";
+        background = "#000000";
 
         cursor = "#${scheme.base06}";
         cursor_text_color = "#${scheme.base00}";
