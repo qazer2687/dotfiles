@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "oxocarbon-dark";
+  scheme = base16 "voidppuccin-mocha";
 in {
   options.modules.foot.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.foot.enable {

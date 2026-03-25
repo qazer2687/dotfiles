@@ -60,7 +60,7 @@
       })
     ),
     scrollbar: (
-        symbols: ["│", "█", "⊤", "⊥"],
+        symbols: ["│", "█", "│", "│"],
         track_style: (fg: "#b3b3b3"),
         ends_style: (fg: "#b3b3b3"),
         thumb_style: (fg: "#a6adc8"),

@@ -5,7 +5,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "oxocarbon-dark";
+  scheme = base16 "voidppuccin-mocha";
 in {
   options.modules.mako.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.mako.enable {
