@@ -98,7 +98,7 @@ in {
           mpris = {
             tooltip = false;
             format = "{player_icon} {artist} - {title}";
-            format-paused = "{status_icon} <s>{artist} - {title}</s>";
+            format-paused = "{status_icon} {artist} - {title}";
             artist-len = 25;
             title-len = 25;
             player-icons = {
