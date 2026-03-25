@@ -22,7 +22,7 @@ in {
           layer = "top";
           height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock" "hyprland/workspaces"];
+          modules-left = ["clock" "hyprland/workspaces" "mpris"];
           modules-center = [];
           modules-right = ["tray" "network" "pulseaudio" "battery"];
 
@@ -141,9 +141,9 @@ in {
 
         #workspaces {
           padding: 0 1px;
-          margin: 2px;
+          margin: 0px;
           border-radius: 2px;
-          background-color: #${scheme.base02};
+          background-color: #${scheme.base00};
         }
 
         #workspaces button {
