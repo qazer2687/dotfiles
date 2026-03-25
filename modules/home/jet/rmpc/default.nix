@@ -41,57 +41,14 @@
       enable = true;
     };
 
-    programs.rmpc = {
+    programs.cava = {
       enable = true;
-      config = ''
-        #![enable(implicit_some)]
-        #![enable(unwrap_newtypes)]
-        #![enable(unwrap_variant_newtypes)]
-        (
-            address: "insert your mpd address here",
-            theme: "custom",
-            cava: (
-                input: (
-                    method: Fifo,
-                    source: "/tmp/mpd.fifo",
-                    sample_rate: 44100,
-                    channels: 2,
-                    sample_bits: 16,
-                ),
-            ),
-            tabs: [
-                (
-                    name: "Queue",
-                    pane: Split(
-                        direction: Horizontal,
-                        panes: [
-                            (size: "60%", pane: Split(
-                                direction: Vertical,
-                                borders: "RIGHT",
-                                panes: [
-                                    (size: "50%", pane: Pane(Directories)),
-                                    (size: "50%", pane: Pane(Queue), borders: "TOP"),
-                                ],
-                            )),
-                            (size: "40%", pane: Split(
-                                direction: Vertical,
-                                panes: [
-                                    (size: "80%", pane: Pane(AlbumArt)),
-                                    (size: "20%", pane: Pane(Cava)),
-                                ],
-                            )),
-                        ],
-                    ),
-                ),
-                (name: "Playlists", pane: Pane(Playlists)),
-                (name: "Artists",   pane: Pane(Artists)),
-                (name: "Albums",    pane: Pane(Albums)),
-                (name: "Search",    pane: Pane(Search)),
-            ],
-        )
-      '';
     };
 
+    programs.rmpc = {
+      enable = true;
+    };
+    xdg.configFile."rmpc/config.ron".source = ./config/config.ron;
     xdg.configFile."rmpc/themes/custom.ron".source = ./config/theme.ron;
 
     programs.beets = {
