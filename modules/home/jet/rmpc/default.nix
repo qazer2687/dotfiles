@@ -43,6 +43,11 @@
       };
     };
 
+    # TODO: configure this
+    services.mpdscribble = {
+      enable = true;
+    };
+
     services.mpd-mpris = {
       enable = true;
     };

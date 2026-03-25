@@ -13,7 +13,7 @@ in {
     home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
     home.file.".config/waybar/scripts/pingServer.sh".executable = true;
 
-    home.packages = [pkgs.jq];
+    home.packages = [pkgs.jq pkgs.playerctl];
 
     programs.waybar = {
       enable = true;
@@ -95,6 +95,20 @@ in {
             };
           };
 
+          mpris = {
+            tooltip = false;
+            format = "{player_icon} {artist} - {title}";
+            format-paused = "{status_icon} <s>{artist} - {title}</s>";
+            artist-len = 25;
+            title-len = 25;
+            player-icons = {
+              default = "■";
+            };
+            status-icons = {
+              paused = "□";
+            };
+          };
+
           backlight = {
             device = "apple-panel-bl";
             format = "BKL: {percent}%";
@@ -129,19 +143,19 @@ in {
           padding: 0 1px;
           margin: 2px;
           border-radius: 2px;
-          background-color: #${scheme.base01};
-        }
-
-        #workspaces button {
-          padding: 0 8px;
-          margin: 2px 1px;
-          border-radius: 2px;
-          color: #${scheme.base05};
           background-color: #${scheme.base02};
         }
 
+        #workspaces button {
+          padding: 0 6px;
+          margin: 2px 1px;
+          border-radius: 2px;
+          color: #${scheme.base05};
+          background-color: #${scheme.base01};
+        }
+
         #workspaces button.active {
-          padding: 0 8px;
+          padding: 0 6px;
           margin: 2px 1px;
           border-radius: 2px;
           color: #${scheme.base00};
