@@ -41,7 +41,7 @@
         trace: (fg: "magenta", bg: "#181825"),
     ),
     progress_bar: (
-        symbols: ["", "█", "◣", "█", "█" ],
+        symbols: ["", "█", "█", "█", "█" ],
         track_style: (fg: "#1e2030"),
         elapsed_style: (fg: "#a6adc8"),
         thumb_style: (fg: "#a6adc8", bg: "#1e2030"),
