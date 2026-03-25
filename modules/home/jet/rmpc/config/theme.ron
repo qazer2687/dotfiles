@@ -47,7 +47,8 @@
         thumb_style: (fg: "#a6adc8", bg: "#1e2030"),
     ),
     cava: (
-    bar_symbols: ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
+    // ▁
+    bar_symbols: [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
     bar_width: 1,
     bar_spacing: 0,
     bar_color: Gradient({
