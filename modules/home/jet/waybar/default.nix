@@ -138,9 +138,17 @@ in {
           color: #${scheme.base05};
         }
 
+        #mpris {
+          margin-left: 0;
+        }
+
+        #clock {
+          margin-right: 0;
+        }
+
 
         #workspaces {
-          padding: 0 1px;
+          padding: 0 2px;
           margin: 0px;
           border-radius: 2px;
           background-color: #${scheme.base00};
