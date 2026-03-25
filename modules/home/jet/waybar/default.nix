@@ -139,16 +139,16 @@ in {
         }
 
         #mpris {
-          margin-left: 0;
+          margin-left: -2px;
         }
 
         #clock {
-          margin-right: 0;
+          margin-right: -2px;
         }
 
 
         #workspaces {
-          padding: 0 2px;
+          padding: 0 4px;
           margin: 0px;
           border-radius: 2px;
           background-color: #${scheme.base00};
