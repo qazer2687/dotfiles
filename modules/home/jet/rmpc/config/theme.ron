@@ -21,8 +21,8 @@
     ),
     highlighted_item_style: (fg: "#a6adc8", modifiers: "Bold"),
     current_item_style: (fg: "#181825", bg: "#adacb2", modifiers: "Bold"),
-    borders_style: (fg: "#414141ff"),
-    highlight_border_style: (fg: "#c9c9c9ff"),
+    borders_style: (fg: "#414141"),
+    highlight_border_style: (fg: "#c9c9c9"),
     symbols: (
         song: "S",
         dir: " ",
@@ -62,8 +62,8 @@
     ),
     scrollbar: (
         symbols: ["│", "█", "⊤", "⊥"],
-        track_style: (fg: "#b3b3b3ff"),
-        ends_style: (fg: "#b3b3b3ff"),
+        track_style: (fg: "#b3b3b3"),
+        ends_style: (fg: "#b3b3b3"),
         thumb_style: (fg: "#a6adc8"),
     ),
     song_table_format: [
