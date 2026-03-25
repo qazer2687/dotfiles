@@ -37,7 +37,7 @@
         sample_bits: 16,
     ),
     smoothing: (
-        noise_reduction: 77, // default 77
+        noise_reduction: 20, // default 77
         monstercat: false, // default false
         waves: false, // default false
     ),
