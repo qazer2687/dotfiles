@@ -2,10 +2,7 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    address: "insert your mpd adress here",
-    password: None,
     theme:"custom",
-    cache_dir: "~/.cache/rmpc",
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,
