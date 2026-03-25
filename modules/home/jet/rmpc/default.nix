@@ -24,6 +24,12 @@
           mixer_control   "PCM"
           mixer_index     "0"
         }
+        audio_output {
+          type "fifo"
+          name "FIFO"
+          path "/tmp/mpd.fifo"
+          format "44100:16:2"
+        }
         filesystem_charset "UTF-8"
       '';
     };
