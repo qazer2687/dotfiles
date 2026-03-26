@@ -60,6 +60,9 @@
     scheduler = "scx_lavd";
   };
 
+  # DPI Control
+  services.ratbagd.enable = true;
+
   services.udev = {
     extraRules = ''
       # ESP32-CYD2USB Support
