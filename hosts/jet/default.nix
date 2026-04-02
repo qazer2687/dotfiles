@@ -32,6 +32,8 @@
     '';
   };
 
+  hardware.keyboard.qmk.enable = true;
+
   # Disable power button (short press) and sleep/suspend button.
   services.logind.settings.Login = {
     HandlePowerKey = "ignore";
