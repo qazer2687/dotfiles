@@ -69,6 +69,10 @@
       # TAG+="uaccess" does not work in extraRules.
       # https://github.com/NixOS/nixpkgs/issues/308681.
       SUBSYSTEM=="tty", KERNEL=="ttyACM*", ATTRS{idVendor}=="346e", ACTION=="add", MODE="0666"
+
+
+      # Vial Support
+      KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
     '';
     packages = [
       pkgs.platformio-core
