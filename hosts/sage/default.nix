@@ -164,7 +164,7 @@
     gamescope.enable = true;
 
     # AI
-    #ollama.enable = true;
+    ollama.enable = true;
   };
 
   programs.nix-ld.enable = true;
