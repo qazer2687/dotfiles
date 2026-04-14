@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "voidppuccin-mocha";
+  scheme = base16 "catppuccin-mocha";
 in {
   options.modules.tofi.enable = lib.mkEnableOption "";
 
