@@ -37,7 +37,7 @@
   # Disable power button (short press) and sleep/suspend button.
   services.logind.settings.Login = {
     HandlePowerKey = "ignore";
-    HandleSuspendKey = "ignore";4
+    HandleSuspendKey = "ignore";
     HandleHibernateKey = "ignore";
   };
 
