@@ -77,8 +77,6 @@ in
             #"monitorAdded, 0"
 
             "workspaces, 1, 2, snap, slide"
-            "workspacesIn, 0"
-            "workspacesOut, 0"
           ];
         };
 
