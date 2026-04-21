@@ -115,7 +115,7 @@ in
         misc = {
           disable_splash_rendering = true;
           disable_hyprland_logo = true;
-          vfr = true;
+          #vfr = true;
           vrr = 0;
           # Focus programs that request to be focused, for example
           # pressing a link should switch to the workspace with a browser.
