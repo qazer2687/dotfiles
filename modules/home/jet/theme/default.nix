@@ -17,7 +17,7 @@
       enable = true;
 
       theme = {
-        name = "Catppuccin-GTK-Dark-hdpi";
+        name = "Catppuccin-GTK-Dark";
         package = pkgs.magnetic-catppuccin-gtk;
       };
 
@@ -28,6 +28,7 @@
       };
 
       gtk4 = {
+        theme = config.gtk.theme;
         extraConfig = {
           gtk-application-prefer-dark-theme = 1;
         };

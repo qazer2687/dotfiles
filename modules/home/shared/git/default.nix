@@ -7,6 +7,7 @@
   config = lib.mkIf config.modules.git.enable {
     programs.git = {
       enable = true;
+      signing.format = "openpgp";
       settings = {
         user = {
           name = "qazer2687";
