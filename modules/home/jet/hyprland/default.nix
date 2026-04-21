@@ -60,7 +60,7 @@ in
         };
 
         animations = {
-          enabled = true;
+          enabled = false;
 
            bezier = [
             "snap, 0.2, 0, 0, 1"
