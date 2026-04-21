@@ -6,10 +6,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    asahi.url = "github:nix-community/nixos-apple-silicon/749992a1cd11092ac9eea8a05fb953f591df59db";
+    asahi.url = "github:nix-community/nixos-apple-silicon";
+    #asahi.url = "github:nix-community/nixos-apple-silicon/749992a1cd11092ac9eea8a05fb953f591df59db";
     sops-nix.url = "github:Mic92/sops-nix";
     flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-    hyprland.url = "github:hyprwm/Hyprland/c8b5023bb0610be4d1d2987ef05168834b2661ba";
+    #hyprland.url = "github:hyprwm/Hyprland/c8b5023bb0610be4d1d2987ef05168834b2661ba";
+    hyprland.url = "github:hyprwm/Hyprland";
 
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";

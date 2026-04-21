@@ -48,11 +48,11 @@
       "appledrm.show_notch=1"
 
       # zswap
-      "zswap.enabled=1"
-      "zswap.compressor=zstd"
-      "zswap.zpool=zsmalloc"
-      "zswap.max_pool_percent=50"
-      "zswap.shrinker_enabled=1"
+      #"zswap.enabled=1"
+      #"zswap.compressor=zstd"
+      #"zswap.zpool=zsmalloc"
+      #"zswap.max_pool_percent=50"
+      #"zswap.shrinker_enabled=1"
 
       # Quiet boot.
       #"quiet"
@@ -63,7 +63,7 @@
     ];
     kernel.sysctl = {
       # Lower to stop thrashing.
-      "vm.swappiness" = 40;
+      #"vm.swappiness" = 40;
     };
   };
 
@@ -73,8 +73,7 @@
   swapDevices = [
     {
       device = "/swapfile";
-      # Default on asahi fedora.
-      size = 16 * 1024;
+      size = 8 * 1024;
     }
   ];
 
