@@ -1,11 +1,15 @@
+{ config, pkgs, lib, ... }:
+
 {
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
   options.modules.theme.enable = lib.mkEnableOption "";
+
   config = lib.mkIf config.modules.theme.enable {
+    xdg.portal = {
+      enable = true;
+      config.common.default = "gtk";
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
+
     home.pointerCursor = {
       gtk.enable = true;
       package = pkgs.bibata-cursors;
@@ -15,20 +19,18 @@
 
     gtk = {
       enable = true;
-
       theme = {
         name = "Catppuccin-GTK-Dark";
         package = pkgs.magnetic-catppuccin-gtk;
       };
-
-      gtk3 = {
-        extraConfig = {
-          gtk-application-prefer-dark-theme = 1;
-        };
+      iconTheme = {
+        name = "Papirus-Dark";  # catppuccin-papirus-folders
+        package = pkgs.papirus-icon-theme;
       };
-
+      gtk3.extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
       gtk4 = {
-        theme = config.gtk.theme;
         extraConfig = {
           gtk-application-prefer-dark-theme = 1;
         };
@@ -36,19 +38,27 @@
     };
 
     xdg.configFile = let
-      themeDir = "${pkgs.magnetic-catppuccin-gtk}/share/themes/Catppuccin-GTK-Dark-hdpi/gtk-4.0";
+      themePkg = pkgs.magnetic-catppuccin-gtk;
+      themeName = "Catppuccin-GTK-Dark";
+      themeDir = "${themePkg}/share/themes/${themeName}/gtk-4.0";
     in {
-      "gtk-4.0/gtk.css".source = "${themeDir}/gtk.css";
-      "gtk-4.0/gtk-dark.css".source = "${themeDir}/gtk-dark.css";
       "gtk-4.0/assets" = {
         source = "${themeDir}/assets";
         recursive = true;
+      };
+      "gtk-4.0/gtk.css" = {
+        source = "${themeDir}/gtk.css";
+      };
+      "gtk-4.0/gtk-dark.css" = {
+        source = "${themeDir}/gtk-dark.css";
       };
     };
 
     dconf.settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
+        gtk-theme = "Catppuccin-GTK-Dark";
+        icon-theme = "Papirus-Dark";
       };
     };
   };
