@@ -209,7 +209,7 @@ in
           #"pamixer --set-volume 0 --mute"
           "waybar"
           "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
-          "hyprctl hyprsunset temperature 1000"
+          "hyprctl hyprsunset temperature 3000"
           # Unlock keyring on boot.
         ];
       };
