@@ -12,8 +12,8 @@
 
     home.pointerCursor = {
       gtk.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+      package = pkgs.catppuccin-cursors.mochaDark;
+      name = "catppuccin-mocha-dark-cursors";
       size = 16;
     };
 
@@ -24,8 +24,11 @@
         package = pkgs.magnetic-catppuccin-gtk;
       };
       iconTheme = {
-        name = "catppuccin-papirus-folders";  # catppuccin-papirus-folders
-        package = pkgs.catppuccin-papirus-folders;
+        name = "Papirus-Dark";
+        package = pkgs.catppuccin-papirus-folders.override {
+          flavor = "mocha";
+          accent = "mauve";
+        };
       };
       gtk3.extraConfig = {
         gtk-application-prefer-dark-theme = 1;
