@@ -24,7 +24,7 @@
         package = pkgs.magnetic-catppuccin-gtk;
       };
       iconTheme = {
-        name = lib.mkForce "Papirus-Dark";
+        name = "Papirus-Dark";
         package = pkgs.catppuccin-papirus-folders.override {
           flavor = "mocha";
           accent = "mauve";
@@ -61,7 +61,7 @@
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
         gtk-theme = "Catppuccin-GTK-Dark";
-        icon-theme = "catppuccin-papirus-folders";
+        icon-theme = "Papirus-Dark";
       };
     };
   };
