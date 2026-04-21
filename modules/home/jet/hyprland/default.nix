@@ -76,7 +76,7 @@ in
             "zoomFactor, 0"
             #"monitorAdded, 0"
 
-            "workspaces, 1, 2, snap, slide"
+            "workspaces, 0, 2, snap, slide"
           ];
         };
 
