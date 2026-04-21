@@ -121,7 +121,7 @@ in {
         * {
           border: none;
           border-radius: 0;
-          font-family: "DepartureMono";
+          font-family: "PragmataPro";
           font-size: 11px;
           min-height: 0;
         }
