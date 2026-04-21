@@ -24,7 +24,7 @@
         package = pkgs.magnetic-catppuccin-gtk;
       };
       iconTheme = {
-        name = "Papirus-Dark";
+        name = lib.mkForce "Papirus-Dark";
         package = pkgs.catppuccin-papirus-folders.override {
           flavor = "mocha";
           accent = "mauve";
