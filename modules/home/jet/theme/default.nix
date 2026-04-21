@@ -24,8 +24,8 @@
         package = pkgs.magnetic-catppuccin-gtk;
       };
       iconTheme = {
-        name = "Papirus-Dark";  # catppuccin-papirus-folders
-        package = pkgs.papirus-icon-theme;
+        name = "catppuccin-papirus-folders";  # catppuccin-papirus-folders
+        package = pkgs.catppuccin-papirus-folders;
       };
       gtk3.extraConfig = {
         gtk-application-prefer-dark-theme = 1;
@@ -58,7 +58,7 @@
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
         gtk-theme = "Catppuccin-GTK-Dark";
-        icon-theme = "Papirus-Dark";
+        icon-theme = "catppuccin-papirus-folders";
       };
     };
   };
