@@ -14,6 +14,10 @@ _: {
       ffmpeg-full = prev.ffmpeg-full.override {
         withFullDeps = true;
       };
+
+      programs.hyprland.package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland.override {
+        libgbm = pkgs.mesa;
+      };
     }
     // lib.optionalAttrs (stdenv.isLinux && stdenv.isAarch64) {
       wrapFirefox = browser: opts: let

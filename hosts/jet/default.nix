@@ -59,11 +59,11 @@ in {
       "appledrm.show_notch=1"
 
       # zswap
-      #"zswap.enabled=1"
-      #"zswap.compressor=zstd"
-      #"zswap.zpool=zsmalloc"
-      #"zswap.max_pool_percent=50"
-      #"zswap.shrinker_enabled=1"
+      "zswap.enabled=1"
+      "zswap.compressor=zstd"
+      "zswap.zpool=zsmalloc"
+      "zswap.max_pool_percent=50"
+      "zswap.shrinker_enabled=1"
 
       # Quiet boot.
       #"quiet"
@@ -123,6 +123,9 @@ in {
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+
+      HYPRLAND_NO_RT = "1";
+      WLR_RENDERER = "vulkan";
     };
     systemPackages = with pkgs; [
       flatpak
