@@ -24,7 +24,7 @@ in
       enable = true;
       xwayland.enable = false;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland.override {
-        libgbm = pkgs.mesa;
+        libgbm = pkgs.mesa.gbm;
       };
       portalPackage =
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
