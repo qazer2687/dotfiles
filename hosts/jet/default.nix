@@ -124,8 +124,7 @@ in {
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
 
-      HYPRLAND_NO_RT = "1";
-      WLR_RENDERER = "vulkan";
+      AQ_DRM_DEVICES = "/dev/dri/card1";
     };
     systemPackages = with pkgs; [
       flatpak
