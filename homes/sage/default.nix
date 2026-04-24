@@ -41,7 +41,7 @@
     zoxide.enable = true;
     utilities.enable = true;
     fish.enable = true;
-    foot.enable = true;
+    kitty.enable = true;
     fastfetch.enable = true;
 
     # Theming

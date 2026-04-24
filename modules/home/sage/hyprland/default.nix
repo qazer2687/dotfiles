@@ -108,7 +108,7 @@ in {
 
         bind = [
           # Core
-          "SUPER, Return, exec, foot"
+          "SUPER, Return, exec, kitty"
           "SUPER, E, exec, tofi-run | sh"
           "SUPER, Q, killactive"
           "SUPER, F, fullscreen"

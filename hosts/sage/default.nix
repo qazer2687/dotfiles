@@ -37,6 +37,7 @@
       # Can help IRQ handling distribution and reduce latency under mixed load.
       "threadirqs"
 
+      # Full preempt is enabled by my current cachy kernel but should be a flag if the kernel is not using it by default.
 
       # Prevents performance hits/stuttering.
       "split_lock_detect=off"
