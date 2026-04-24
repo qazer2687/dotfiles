@@ -101,7 +101,7 @@ in {
         render = {
           # Direct scanout attempts to reduce lag when
           # there is only one fullscreen application on a screen.
-          #direct_scanout = 1;
+          direct_scanout = 1;
           new_render_scheduling = true;
         };
 
@@ -178,7 +178,7 @@ in {
 
       extraConfig = ''
         # Add extra config here...
-        env = WLR_DRM_NO_ATOMIC,1
+        #env = WLR_DRM_NO_ATOMIC,1
       '';
     };
   };
