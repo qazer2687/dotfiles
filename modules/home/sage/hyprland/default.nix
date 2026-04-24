@@ -106,7 +106,6 @@ in {
         misc = {
           disable_splash_rendering = true;
           disable_hyprland_logo = true;
-          vfr = true;
           vrr = 0;
           # Stop "application not responding" popup on minecraft.
           enable_anr_dialog = false;
