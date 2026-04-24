@@ -34,16 +34,25 @@
       "nmi_watchdog=0"
       "nowatchdog"
 
+      # Can help IRQ handling distribution and reduce latency under mixed load.
+      "threadirqs"
+
+
       # Prevents performance hits/stuttering.
       "split_lock_detect=off"
     ];
     #consoleLogLevel = 3;
     #initrd.verbose = false;
+
     # Kernel panics without this option enabled.
     initrd.systemd.enable = true;
+    
     kernel.sysctl = {
       # Quiet boot.
       #"kernel.printk" = "0 0 0 0";
+
+      # Low swappiness as I have enough ram to prioritise it aggressively.
+      vm.swappiness = "1";
 
       # Queue discipline algorithm for traffic control (CAKE reduces bufferbloat and latency).
       "net.core.default_qdisc" = "cake";
@@ -59,6 +68,11 @@
     enable = true;
     scheduler = "scx_lavd";
   };
+
+  # This host enables amd_pstate/EPP which means that schedutil is not exposed
+  # as a governor and the system defaults to powersave. I set the performance governer to
+  # bias EPP towards performance.
+  powerManagement.cpuFreqGovernor = "performance";
 
   services.udev = {
     extraRules = ''

@@ -12,10 +12,7 @@
       enableRenice = true;
       settings = {
         general = {
-          # As my CPU cooling solution isn't the best, this theoretically
-          # should perform a bit better than the 'performance' governor.
-          desiredgov = "schedutil";
-          defaultgov = "schedutil";
+          # Do not set a performance governor here as it is set globally.
           renice = 15;
           ioprio = 0;
           inhibit_screensaver = 1;
