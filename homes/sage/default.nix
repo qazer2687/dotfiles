@@ -19,6 +19,7 @@
     lmstudio
     obs-studio
     boxflat
+    vial
 
     # Utilities
     gdu

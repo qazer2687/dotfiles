@@ -91,10 +91,15 @@ in {
           no_warps = true;
         };
 
+        windowrulev2 = [
+          "immediate, class:.*"
+        ];
+
         render = {
           # Direct scanout attempts to reduce lag when
           # there is only one fullscreen application on a screen.
           direct_scanout = 1;
+          new_render_scheduling = true;
         };
 
         misc = {
@@ -152,32 +157,6 @@ in {
 
           # Quit
           "SUPER SHIFT, Q, exit"
-        ];
-
-        # Will repeat when held.
-        binde = [
-          # Volume
-          ",XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -i 2"
-          ",XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer -d 2"
-          ",XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer -t"
-          ",XF86AudioMicMute, exec, ${pkgs.pamixer}/bin/pamixer --default-source -t"
-
-          # Brightness
-          ",XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%+"
-          ",XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%-"
-
-          # Backlight
-          "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%+"
-          "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 5%-"
-
-          # Hyprsunset (Capped at 6500K)
-          "CTRL, XF86MonBrightnessUp, exec, temp=$(hyprctl hyprsunset temperature); [ $temp -le 6000 ] && hyprctl hyprsunset temperature $((temp + 500)); sleep 1; pkill -RTMIN+1 waybar"
-          "CTRL, XF86MonBrightnessDown, exec, temp=$(hyprctl hyprsunset temperature); hyprctl hyprsunset temperature $((temp - 500)); sleep 1; pkill -RTMIN+1 waybar"
-        ];
-
-        bindl = [
-          # Lock the screen with hyprlock when the lid is closed.
-          ",switch:on:Apple SMC power/lid events,exec,hyprlock --immediate"
         ];
 
         bindm = [

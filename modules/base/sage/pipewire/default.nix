@@ -9,14 +9,12 @@
   config = lib.mkIf config.modules.pipewire.enable {
     security.rtkit.enable = true;
     environment.systemPackages = with pkgs; [
-      pulseaudio
+      pulseaudio-utils
       pavucontrol
       pwvucontrol
       pamixer
     ];
 
-    # EXPERIMENTAL - Enable realtime priority
-    # to improve latency and reduce stuttering.
     security.pam.loginLimits = [
       {
         domain = "@audio";
@@ -50,17 +48,28 @@
       alsa.support32Bit = true;
       pulse.enable = true;
 
-      # I found that 32 and 64 quant resulted in choppy audio;
-      # 128 is the next option and results in a latency of 2.67ms.
-      # Quant should be in powers of two for efficiency
-      # with certain audio processing algorithms.
       extraConfig.pipewire."92-low-latency" = {
         "context.properties" = {
-          "default.clock.rate" = 48000;
-          "default.clock.quantum" = 128;
-          "default.clock.min-quantum" = 128;
-          "default.clock.max-quantum" = 128;
+          "default.clock.rate"          = 48000;
+          "default.clock.allowed-rates" = [ 48000 ];
+          "default.clock.force-rate"    = 48000;
+
+          # 32/48000 = 0.67 ms
+          "default.clock.quantum"       = 32;
+          "default.clock.min-quantum"   = 32;
+          "default.clock.max-quantum"   = 32;
         };
+        "context.modules" = [
+          {
+            name = "libpipewire-module-rt";
+            args = {
+              nice.level   = -11;
+              rt.prio      = 88;
+              rt.time.soft = 200000;
+              rt.time.hard = 200000;
+            };
+          }
+        ];
       };
     };
   };
