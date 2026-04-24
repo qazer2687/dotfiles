@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.pipewire.enable {
     security.rtkit.enable = true;
     environment.systemPackages = with pkgs; [
-      pulseaudio-utils
+      pulseaudio
       pavucontrol
       pwvucontrol
       pamixer
