@@ -147,7 +147,6 @@
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       AMD_VULKAN_ICD = "RADV";
-      WLR_DRM_NO_ATOMIC = "1";
 
       # Use qwerty inside of gamescope sessions. Set via lutris environment variables to enable per-game colemak.
       XKB_DEFAULT_LAYOUT = "us";
