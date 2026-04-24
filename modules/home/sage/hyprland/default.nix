@@ -94,6 +94,8 @@ in {
         # Required for enabling tearing.
         windowrule = [
           "match:class .*, immediate on"
+          # Gamescope windows cannot handle immediate mode, but you can use the --immediate flag in gamescope command.
+          "match:class ^(gamescope)$, immediate off"
         ];
 
         render = {
