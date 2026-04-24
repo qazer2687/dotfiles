@@ -91,8 +91,9 @@ in {
           no_warps = true;
         };
 
-        windowrulev2 = [
-          "immediate, class:.*"
+        # Required for enabling tearing.
+        windowrule = [
+          "class:.*, immediate on"
         ];
 
         render = {
