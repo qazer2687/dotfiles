@@ -93,7 +93,7 @@ in {
 
         # Required for enabling tearing.
         windowrule = [
-          "class:.*, immediate on"
+          "match:class .*, immediate on"
         ];
 
         render = {
