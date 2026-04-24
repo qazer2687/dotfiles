@@ -53,7 +53,7 @@
       #"kernel.printk" = "0 0 0 0";
 
       # Low swappiness as I have enough ram to prioritise it aggressively.
-      vm.swappiness = "1";
+      "vm.swappiness" = "1";
 
       # Queue discipline algorithm for traffic control (CAKE reduces bufferbloat and latency).
       "net.core.default_qdisc" = "cake";
