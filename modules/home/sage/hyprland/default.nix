@@ -95,13 +95,13 @@ in {
         windowrule = [
           "match:class .*, immediate on"
           # Gamescope windows cannot handle immediate mode, but you can use the --immediate flag in gamescope command.
-          "match:class ^(gamescope)$, immediate off"
+          #"match:class ^(gamescope)$, immediate off"
         ];
 
         render = {
           # Direct scanout attempts to reduce lag when
           # there is only one fullscreen application on a screen.
-          direct_scanout = 1;
+          #direct_scanout = 1;
           new_render_scheduling = true;
         };
 
