@@ -26,8 +26,6 @@
     environment.systemPackages = with pkgs; [
       vulkan-tools
       vulkan-loader
-      vulkan-validation-layers
-      vulkan-extension-layer
     ];
 
     services.xserver.videoDrivers = ["modesetting"];
@@ -44,8 +42,9 @@
     boot.kernelParams = [
       # Disable idle/low-power states.
       "amdgpu.gfxoff=0"
+      "amdgpu.dcdebugmask=0x10"
       # Disable PowerPlay performance scaling features.
-      "amdgpu.ppfeaturemask=0xfffd3fff"
+      #"amdgpu.ppfeaturemask=0xfffd3fff"
     ];
   };
 }
