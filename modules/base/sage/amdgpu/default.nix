@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  options.modules.amdgpu.enable = lib.mkEnableOption "";
+  options.modules.amdgpu.enable = lib.mkEnableOption "AMD GPU Support";
 
   config = lib.mkIf config.modules.amdgpu.enable {
     hardware.graphics = {
@@ -12,39 +12,34 @@
       enable32Bit = true;
       extraPackages = with pkgs; [
         rocmPackages.clr.icd
-        libva-vdpau-driver
-        libvdpau-va-gl
-        mesa
+        libva
+        libva-utils
+        amdgpu_top
       ];
-      extraPackages32 = with pkgs.driversi686Linux; [
-        libva-vdpau-driver
-        libvdpau-va-gl
-        mesa
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        libva
       ];
     };
 
     environment.systemPackages = with pkgs; [
       vulkan-tools
       vulkan-loader
+      nvtopPackages.amd
     ];
 
-    services.xserver.videoDrivers = ["modesetting"];
+    services.xserver.videoDrivers = ["amdgpu"];
 
     hardware.amdgpu = {
       initrd.enable = true;
       opencl.enable = true;
     };
 
-    # Control Panel
     services.lact.enable = true;
 
-    # Fix for black screen issues.
     boot.kernelParams = [
-      # Disable idle/low-power states.
-      "amdgpu.gfxoff=0"
       "amdgpu.dcdebugmask=0x10"
-      # Disable PowerPlay performance scaling features.
-      #"amdgpu.ppfeaturemask=0xfffd3fff"
+      "amdgpu.disp_priority=2"
+      "amdgpu.gpu_recovery=1"
     ];
   };
 }
