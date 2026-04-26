@@ -19,7 +19,7 @@ in {
         border-radius = 0;
         border-size = 1;
         progress-color = "source #${scheme.base05}";
-        font = "DepartureMono 22";
+        font = "DepartureMono 11";
         width = 500;
         height = 300;
         margin = "8";
