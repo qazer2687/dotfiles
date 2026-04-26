@@ -14,11 +14,11 @@ in {
       settings = {
         mainBar = {
           layer = "top";
-          position = "bottom";
+          position = "top";
           height = 48;
           margin = "0 0 0 0";
-          modules-left = ["clock" "hyprland/workspaces"];
-          modules-center = [];
+          modules-left = ["clock"];
+          modules-center = ["hyprland/workspaces"];
           modules-right = ["tray" "network" "pulseaudio" "battery"];
 
           pulseaudio = {
@@ -94,7 +94,8 @@ in {
         #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
           padding: 0 16px;
           margin: 4px;
-          border-radius: 4px;
+          border-radius: 0px;
+          border: 1px solid #${scheme.base0E};
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
@@ -102,22 +103,24 @@ in {
         #workspaces {
           padding: 0 2px;
           margin: 4px;
-          border-radius: 4px;
+          border-radius: 0px;
           background-color: #${scheme.base01};
         }
 
         #workspaces button {
           padding: 0 16px;
           margin: 4px 2px;
-          border-radius: 4px;
-          background-color: #${scheme.base02};
+          border-radius: 0px;
+          background-color: #${scheme.base01};
+          border: 1px solid #${scheme.base02};
         }
 
         #workspaces button.active {
           padding: 0 16px;
           margin: 4px 2px;
-          border-radius: 4px;
-          background-color: #${scheme.base0E};
+          border-radius: 0px;
+          border: 1px solid #${scheme.base0E};
+          background-color: #${scheme.base01};
         }
       '';
     };
