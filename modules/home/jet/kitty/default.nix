@@ -17,6 +17,8 @@ in {
         font_size = 11;
         bold_font = "PragmataPro";
 
+        allow_remote_control = "yes";
+
         # Padding
         window_padding_width = 4;
         window_padding_height = 4;
