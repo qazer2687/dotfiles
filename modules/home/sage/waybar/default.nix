@@ -95,7 +95,7 @@ in {
           padding: 0 16px;
           margin: 4px;
           border-radius: 0px;
-          border: 1px solid #${scheme.base0E};
+          border: 1px solid #${scheme.base02};
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
