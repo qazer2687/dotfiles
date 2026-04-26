@@ -13,7 +13,7 @@
     obsidian
     vlc
     loupe
-    protonvpn-gui
+    proton-vpn
     nautilus
     lutris
     lmstudio

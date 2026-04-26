@@ -14,10 +14,10 @@
         extraPkgs = pkgs':
           with pkgs'; [
             # X11 Libraries
-            xorg.libXcursor
-            xorg.libXi
-            xorg.libXinerama
-            xorg.libXScrnSaver
+            libxcursor
+            libxi
+            libxinerama
+            libxscrnsaver
 
             # System Libraries
             stdenv.cc.cc.lib

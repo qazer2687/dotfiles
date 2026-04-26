@@ -21,12 +21,8 @@
         };
         gpu = {
           apply_gpu_optimisations = "accept-responsibility";
-          gpu_device = 1;
-          # Prefer maximum performance.
-          nv_powermizer_mode = 1;
-          # Apply an overclock to the GPU.
-          #nv_core_clock_mhz_offset = 150;
-          #nv_mem_clock_mhz_offset = 1000;
+          gpu_device = 0;
+          amd_performance_level = "high";
         };
         custom = {
           start = "${pkgs.libnotify}/bin/notify-send 'GameMode' 'Activated'";
