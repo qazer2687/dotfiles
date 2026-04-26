@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "catppuccin-mocha";
+  scheme = base16 "mountain";
 in {
   options.modules.tofi.enable = lib.mkEnableOption "";
 

@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "catppuccin-mocha";
+  scheme = base16 "mountain";
 in {
   options.modules.kitty.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.kitty.enable {
