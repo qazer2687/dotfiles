@@ -115,6 +115,9 @@
     }
   ];
 
+  systemd.network.wait-online.enable = false;
+  networking.networkmanager.wait-online.enable = false;
+
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
