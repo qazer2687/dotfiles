@@ -18,6 +18,7 @@ in {
         bold_font = "PragmataPro";
 
         allow_remote_control = "yes";
+        dynamic_background_opacity = "yes";
 
         # Padding
         window_padding_width = 4;
