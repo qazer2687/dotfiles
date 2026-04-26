@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "black-metal";
+  scheme = base16 "embers";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
@@ -104,7 +104,7 @@ in {
           padding: 0 2px;
           margin: 4px;
           border-radius: 0px;
-          background-color: #${scheme.base01};
+          background-color: transparent;
         }
 
         #workspaces button {
