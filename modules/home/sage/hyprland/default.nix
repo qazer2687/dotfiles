@@ -178,7 +178,7 @@ in {
 
       extraConfig = ''
         # Add extra config here...
-        #env = WLR_DRM_NO_ATOMIC,1
+        env = AQ_NO_ATOMIC,1
       '';
     };
   };

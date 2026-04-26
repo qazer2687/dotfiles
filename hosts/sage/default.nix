@@ -52,6 +52,8 @@
       # Quiet boot.
       #"kernel.printk" = "0 0 0 0";
 
+      "vm.max_map_count" = 2147483642;
+
       # Low swappiness as I have enough ram to prioritise it aggressively.
       "vm.swappiness" = "1";
 
@@ -147,8 +149,6 @@
       XDG_SESSION_TYPE = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       AMD_VULKAN_ICD = "RADV";
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-      #WLR_DRM_NO_ATOMIC = "1";
 
       # Use qwerty inside of gamescope sessions. Set via lutris environment variables to enable per-game colemak.
       XKB_DEFAULT_LAYOUT = "us";
