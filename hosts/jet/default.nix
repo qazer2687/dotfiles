@@ -66,6 +66,7 @@
       "vm.swappiness" = 15;
       "vm.vfs_cache_pressure" = 50;
 
+      "vm.mmap_rnd_bits" = 32; 
     };
   };
 
