@@ -1,15 +1,4 @@
-{pkgs, ...}: let
-
-  mesa-stable = import (fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/70b3172dc581d6b0107453ed4d0b22a85ebb57c4.tar.gz";
-    sha256 = "1wsf7b89lnb0hcd4ccnjm39xv5f4g1bl4qm5zzfvmzcplvlmjyly";
-  }) { inherit (pkgs) system; config = {}; };
-  
-in {
-
-  hardware.graphics.package = mesa-stable.mesa;
-  hardware.graphics.package32 = mesa-stable.pkgsi686Linux.mesa;
-
+{pkgs, ...}: {
   imports = [
     ../../hardware/jet
   ];
