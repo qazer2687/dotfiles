@@ -14,6 +14,11 @@ _: {
       ffmpeg-full = prev.ffmpeg-full.override {
         withFullDeps = true;
       };
+
+      # https://github.com/nixos/nixpkgs/issues/514113
+      openldap = prev.openldap.overrideAttrs {
+        doCheck = !prev.stdenv.hostPlatform.isi686;
+      };
       
     }
     // lib.optionalAttrs (stdenv.isLinux && stdenv.isAarch64) {
