@@ -47,6 +47,8 @@
       # Note that apple_dcp has been renamed to appledrm.
       "appledrm.show_notch=1"
 
+      "lru_gen_enabled=7"
+
       # zswap
       "zswap.enabled=1"
       "zswap.compressor=zstd"
