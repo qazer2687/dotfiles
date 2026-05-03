@@ -216,6 +216,7 @@ in
 
       extraConfig = ''
         # Add extra config here...
+        AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card2
       '';
     };
   };
