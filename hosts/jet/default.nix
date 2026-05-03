@@ -50,11 +50,11 @@
       "lru_gen_enabled=7"
 
       # zswap
-      "zswap.enabled=1"
-      "zswap.compressor=zstd"
-      "zswap.zpool=zsmalloc"
-      "zswap.max_pool_percent=50"
-      "zswap.shrinker_enabled=1"
+      #"zswap.enabled=1"
+      #"zswap.compressor=zstd"
+      #"zswap.zpool=zsmalloc"
+      #"zswap.max_pool_percent=50"
+      #"zswap.shrinker_enabled=1"
 
       # Quiet boot.
       #"quiet"
@@ -65,8 +65,8 @@
     ];
     kernel.sysctl = {
       # Lower to stop thrashing.
-      "vm.swappiness" = 15;
-      "vm.vfs_cache_pressure" = 50;
+      #"vm.swappiness" = 15;
+      #"vm.vfs_cache_pressure" = 50;
 
       "vm.mmap_rnd_bits" = 24; 
     };
@@ -78,7 +78,7 @@
   swapDevices = [
     {
       device = "/swapfile";
-      size = 8 * 1024;
+      size = 4 * 1024;
     }
   ];
 
