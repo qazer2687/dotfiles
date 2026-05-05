@@ -97,16 +97,10 @@
     enable = true;
     settings = {
       default_session = {
-        command = "start-hyprland";
+        command = "niri-session";
         user = "alex";
       };
     };
-  };
-
-
-  programs.hyprland = {
-    enable = true;
-    withUWSM = false;
   };
 
   environment = {
@@ -144,7 +138,7 @@
     };
   };
 
-  # Add this to your configuration.nix, inside the main set of options
+  # I have no idea what this does.
   environment.etc."libinput/local-overrides.quirks".text = ''
     [Serial Keyboards]
     MatchUdevType=keyboard
