@@ -16,13 +16,10 @@
     nautilus
     neovim
     cryptsetup
-    gajim
-    helium
+    #gajim
+    #helium
     jellyfin-media-player
-    discordo
-
-    # University
-    dia
+    calibre
   ];
 
   modules = {
@@ -45,7 +42,8 @@
     theme.enable = true;
 
     # Desktop Environment
-    hyprland.enable = true;
+    #hyprland.enable = true;
+    niri.enable = true;
     hyprlock.enable = true;
     waybar.enable = true;
     mako.enable = true;

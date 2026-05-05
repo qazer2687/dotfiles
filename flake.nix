@@ -5,7 +5,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     asahi.url = "github:nix-community/nixos-apple-silicon";
     #asahi.url = "github:nix-community/nixos-apple-silicon/749992a1cd11092ac9eea8a05fb953f591df59db";
     sops-nix.url = "github:Mic92/sops-nix";
