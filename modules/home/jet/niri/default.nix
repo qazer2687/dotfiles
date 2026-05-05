@@ -63,7 +63,7 @@ in {
             focus-ring = {
               enable = true;
               width = 1;
-              active.color = "#${scheme.base05}";
+              active.color = "#${scheme.base0E}";
               inactive.color = "#${scheme.base02}";
             };
           }
@@ -89,10 +89,10 @@ in {
 
         binds = with config.lib.niri.actions; {
           # Terminal
-          "Mod+Return".action = spawn "foot";
+          "Mod+Return".action = spawn "kitty";
 
           # Launcher
-          "Mod+Space".action = spawn "bash" "-c" "tofi-run | xargs niri msg action spawn --";
+          "Mod+e".action = spawn "bash" "-c" "tofi-run | xargs niri msg action spawn --";
 
           # Window Management
           "Mod+q".action = close-window;
@@ -113,30 +113,17 @@ in {
           # Keyboard Backlight
           "Mod+XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%+";
           "Mod+XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%-";
-
-          # H - LEFT
+            
+          # Window Manipulation
           "Mod+h".action = focus-column-left;
-          # J - DOWN
-          "Mod+n".action = focus-workspace-down;
-          # K - UP
-          "Mod+e".action = focus-workspace-up;
-          # L - RIGHT
-          "Mod+i".action = focus-column-right;
+          "Mod+j".action = focus-workspace-down;
+          "Mod+k".action = focus-workspace-up;
+          "Mod+l".action = focus-column-right;
 
-          # H - LEFT
           "Mod+Shift+h".action = move-column-left;
-          # J - DOWN
-          "Mod+Shift+n".action = move-window-down;
-          # K - UP
-          "Mod+Shift+e".action = move-window-up;
-          # L - RIGHT
-          "Mod+Shift+i".action = move-column-right;
-        };
-
-        debug = {
-          # Fixes a black screen bug on Asahi.
-          # https://github.com/YaLTeR/niri/wiki/Getting-Started#asahi-arm-and-other-kmsro-devices
-          #render-drm-device = "/dev/dri/renderD128";
+          "Mod+Shift+j".action = move-window-down;
+          "Mod+Shift+k".action = move-window-up;
+          "Mod+Shift+l".action = move-column-right;
         };
         
         switch-events = {
