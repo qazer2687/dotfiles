@@ -10,5 +10,6 @@
       enable = true;
       implementation = "broker";
     };
+    programs.dconf.enable = true;
   };
 }
