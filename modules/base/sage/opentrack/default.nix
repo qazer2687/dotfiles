@@ -15,6 +15,7 @@
         wget
         v4l-utils
         python3
+        protontricks
       ];
       sessionVariables.PATH = [ "$HOME/.local/bin" ];
     };
