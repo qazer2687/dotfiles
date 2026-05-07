@@ -14,6 +14,7 @@
         p7zip
         wget
         v4l-utils
+        python3
       ];
       sessionVariables.PATH = [ "$HOME/.local/bin" ];
     };
