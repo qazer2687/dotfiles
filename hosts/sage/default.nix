@@ -182,6 +182,7 @@
     amdgpu.enable = true;
     flatpak.enable = true;
     gamescope.enable = true;
+    opentrack.enable = true;
 
     # AI
     ollama.enable = true;
