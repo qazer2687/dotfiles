@@ -40,6 +40,7 @@
       "amdgpu.dcdebugmask=0x10"
       "amdgpu.disp_priority=2"
       "amdgpu.gpu_recovery=1"
+      "amdgpu.runpm=0"
     ];
   };
 }
