@@ -42,6 +42,8 @@
       # Prevents performance hits/stuttering.
       "split_lock_detect=off"
     ];
+    # Disable WiFi driver.
+    blacklistedKernelModules = [ "mt7921e" ];
     #consoleLogLevel = 3;
     #initrd.verbose = false;
 
