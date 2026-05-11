@@ -89,6 +89,7 @@ in {
 
         cursor = {
           no_warps = true;
+          no_hardware_cursors = true;
         };
 
         # Required for enabling tearing.
