@@ -7,3 +7,5 @@ user_pref("dom.ipc.processCount", 4);
 user_pref("dom.ipc.processCount.webIsolated", 1);
 /* Discard background tabs under memory pressure */
 user_pref("browser.tabs.unloadOnLowMemory", true);
+/* Limit cache size to 128MB */
+user_pref("browser.cache.memory.capacity", 131072);
