@@ -47,11 +47,11 @@
       "check" = ''nix-shell -p alejandra -p deadnix -p statix --command "alejandra -q . && deadnix -e && statix fix"'';
       # Add --show-activation-hints in version 4.3.0+.
       # https://github.com/nix-community/nh/issues/500
-      "rebuild" = "nh os switch github:qazer2687/dotfiles -H $(hostname) -- --refresh --option eval-cache false";
+      "rebuild" = "nh os switch github:qazer2687/dotfiles --show-activation-logs -H $(hostname) -- --refresh --option eval-cache false";
       "reboot" = ''printf "Are you sure you want to reboot? [N/y]\n"; read -n 1 confirm; test "$confirm" = y && sudo reboot'';
       "nvim" = "nix run github:qazer2687/neovim --refresh";
-      "luksunlock" = "cd ~/luks && ./mount.sh && cd encrypted";
-      "lukslock" = "cd ~/luks && ./unmount.sh";
+      "unlockluks" = "cd ~/luks && ./mount.sh && cd encrypted";
+      "lockluks" = "cd ~/luks && ./unmount.sh";
     };
   };
 }
