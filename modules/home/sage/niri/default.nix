@@ -70,12 +70,6 @@ in {
           center-focused-column = "always";
         };
 
-        workspaces."one" = {};
-        workspaces."two" = {};
-        workspaces."three" = {};
-        workspaces."four" = {};
-        workspaces."five" = {};
-
         binds = with config.lib.niri.actions; {
           "Mod+Return".action = spawn "kitty";
 
