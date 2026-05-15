@@ -37,7 +37,7 @@ in {
         };
 
         outputs = {
-          "eDP-1" = {
+          "DP-1" = {
             mode = {
               width = 2560;
               height = 1440;
