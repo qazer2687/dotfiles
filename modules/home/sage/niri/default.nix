@@ -68,6 +68,7 @@ in {
         layout = {
           gaps = 4;
           center-focused-column = "always";
+          empty-workspace-above-first = true;
         };
 
         binds = with config.lib.niri.actions; {
