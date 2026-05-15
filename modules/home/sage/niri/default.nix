@@ -43,7 +43,7 @@ in {
               height = 1440;
               refresh = 180.00;
             };
-            scale = 2.0;
+            scale = 1.0;
           };
         };
 
