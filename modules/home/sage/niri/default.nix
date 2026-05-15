@@ -36,7 +36,16 @@ in {
           hot-corners.enable = false;
         };
 
-        outputs."eDP-1".scale = 2.0;
+        outputs = {
+          "eDP-1" = {
+            mode = {
+              width = 2560;
+              height = 1440;
+              refresh = 180;
+            };
+            scale = 2.0;
+          };
+        };
 
         window-rules = [
           {
@@ -44,8 +53,8 @@ in {
 
             open-maximized = false;
 
-            min-width = 1240;
-            max-width = 1240;
+            min-width = 2480;
+            max-width = 2480;
 
             focus-ring = {
               enable = true;

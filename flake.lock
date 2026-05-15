@@ -529,7 +529,9 @@
     "niri": {
       "inputs": {
         "niri-stable": "niri-stable",
-        "niri-unstable": "niri-unstable",
+        "niri-unstable": [
+          "niri-package"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -551,6 +553,27 @@
         "type": "github"
       }
     },
+    "niri-package": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1778590070,
+        "narHash": "sha256-uLtPAKWHrJkqaoAFj3YnlLTFV1J0RN0YwZSpIwLo+lw=",
+        "owner": "urayde",
+        "repo": "niri",
+        "rev": "43ce1227313161d282b706e1ec8ee1e9b8575f8b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "urayde",
+        "repo": "niri",
+        "type": "github"
+      }
+    },
     "niri-stable": {
       "flake": false,
       "locked": {
@@ -564,22 +587,6 @@
       "original": {
         "owner": "YaLTeR",
         "ref": "v25.08",
-        "repo": "niri",
-        "type": "github"
-      }
-    },
-    "niri-unstable": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1777733745,
-        "narHash": "sha256-1TlpdT0WYyBGtUS3PH4oXHUmdno2EUh2TfHadK2BmJo=",
-        "owner": "YaLTeR",
-        "repo": "niri",
-        "rev": "1f07cffa9f355298a31d7efe1b400ede93a97728",
-        "type": "github"
-      },
-      "original": {
-        "owner": "YaLTeR",
         "repo": "niri",
         "type": "github"
       }
@@ -779,11 +786,33 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "niri": "niri",
+        "niri-package": "niri-package",
         "nix-base16": "nix-base16",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_4",
         "sops-nix": "sops-nix"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "niri-package",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757989933,
+        "narHash": "sha256-9cpKYWWPCFhgwQTww8S94rTXgg8Q8ydFv9fXM6I8xQM=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "8249aa3442fb9b45e615a35f39eca2fe5510d7c3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "sops-nix": {
