@@ -41,7 +41,7 @@ in {
             mode = {
               width = 2560;
               height = 1440;
-              refresh = 180;
+              refresh = 180.00;
             };
             scale = 2.0;
           };
