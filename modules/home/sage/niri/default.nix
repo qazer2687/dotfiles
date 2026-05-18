@@ -13,7 +13,6 @@ in {
   config = lib.mkIf config.modules.niri.enable {
     programs.niri = {
       enable = true;
-      xwayland.enable = true;
       package = inputs.niri.packages.${pkgs.system}.niri-unstable;
       settings = {
         hotkey-overlay.skip-at-startup = true;
