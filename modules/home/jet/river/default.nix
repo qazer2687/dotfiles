@@ -8,8 +8,6 @@
 }:
 let
   scheme = base16 "catppuccin-mocha";
-  borderFocused = "0x${scheme.base0E}ff";
-  borderUnfocused = "0x${scheme.base02}ff";
 in
 {
   options.modules.river.enable = lib.mkEnableOption "";
@@ -26,19 +24,16 @@ in
       enable = true;
       xwayland.enable = false;
 
-      settings = ''
-        riverctl set-monitor eDP-1 preferred 2
+      extraConfig = ''
+        ${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --preferred --scale 2
 
-        rivertile &
-        riverctl send-layout-cmd rivertile 'main-ratio 0.60'
-        riverctl send-layout-cmd rivertile 'main-location left'
+        rivertile -view-padding 2 -outer-padding 4 -main-ratio 0.60 -main-location left &
 
         riverctl border-width 1
-        riverctl border-color-focused ${borderFocused}
-        riverctl border-color-unfocused ${borderUnfocused}
+        riverctl border-color-focused 0x${scheme.base0E}ff
+        riverctl border-color-unfocused 0x${scheme.base02}ff
 
-        riverctl set-option gaps_in 2
-        riverctl set-option gaps_out 4
+        riverctl allow-tearing disabled
 
         riverctl keyboard-layout gb colemak -options ctrl:nocaps
 
@@ -51,8 +46,6 @@ in
         riverctl input "type:touchpad" click-method clickfinger
         riverctl input "type:touchpad" middle-emulation enabled
         riverctl input "type:touchpad" disable-while-typing enabled
-
-        riverctl set-option tearing 0
 
         riverctl map normal Super Return spawn 'kitty'
         riverctl map normal Super E spawn 'tofi-run | sh'
@@ -94,7 +87,6 @@ in
         riverctl map normal Super+Shift Right send-layout-cmd rivertile 'main-ratio +0.05'
 
         riverctl map normal Super+Shift F toggle-float
-
         riverctl map normal Super+Shift Q exit
 
         riverctl map -repeat normal None XF86AudioRaiseVolume spawn '${pkgs.pamixer}/bin/pamixer -i 2'
@@ -110,9 +102,7 @@ in
 
         riverctl map-pointer normal Super BTN_RIGHT resize-view
         riverctl map-pointer normal Super BTN_MIDDLE move-view
-      '';
 
-      extraConfig = ''
         ${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png &
         waybar &
       '';
