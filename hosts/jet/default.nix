@@ -97,7 +97,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "niri-session";
+        command = "dbus-run-session river";
         user = "alex";
       };
     };
