@@ -142,6 +142,26 @@
     };
   };
 
+  hardware.graphics = {
+    enable = true;
+    package = (pkgs.mesa.overrideAttrs (old: {
+      patches = old.patches ++ [
+        (pkgs.fetchpatch {
+          url = "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/41680.patch";
+          sha256 = lib.fakeSha256;
+        })
+      ];
+    })).drivers;
+    package32 = (pkgs.pkgsi686Linux.mesa.overrideAttrs (old: {
+      patches = old.patches ++ [
+        (pkgs.fetchpatch {
+          url = "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/41680.patch";
+          sha256 = lib.fakeSha256;
+        })
+      ];
+    })).drivers;
+  };
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
