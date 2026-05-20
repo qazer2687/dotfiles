@@ -147,17 +147,17 @@
     enable = true;
     package = (pkgs.mesa.overrideAttrs (old: {
       patches = old.patches ++ [
-        (pkgs.fetchurl {
+        (pkgs.fetchpatch {
           url = "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/41680.patch";
-          sha256 = "0rpr76dsybs9xjmwx82pwzpkg4riidfzf0wpgr3az0cnp098a3j9";
+          sha256 = lib.fakeHash;
         })
       ];
     }));
     package32 = (pkgs.pkgsi686Linux.mesa.overrideAttrs (old: {
       patches = old.patches ++ [
-        (pkgs.fetchurl {
+        (pkgs.fetchpatch {
           url = "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/41680.patch";
-          sha256 = "0rpr76dsybs9xjmwx82pwzpkg4riidfzf0wpgr3az0cnp098a3j9";
+          sha256 = lib.fakeHash;
         })
       ];
     }));
