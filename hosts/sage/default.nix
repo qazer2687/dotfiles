@@ -149,7 +149,7 @@
       patches = old.patches ++ [
         (pkgs.fetchpatch {
           url = "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/41680.patch";
-          sha256 = lib.fakeSha256;
+          sha256 = lib.fakeHash;
         })
       ];
     }));
@@ -157,7 +157,7 @@
       patches = old.patches ++ [
         (pkgs.fetchpatch {
           url = "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/41680.patch";
-          sha256 = lib.fakeSha256;
+          sha256 = lib.fakeHash;
         })
       ];
     }));
