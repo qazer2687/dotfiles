@@ -32,6 +32,8 @@
     winetricks
   ];
 
+  programs.opencode.enable = true;
+
   modules = {
     # Development
     direnv.enable = true;
