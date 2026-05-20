@@ -151,7 +151,7 @@
         owner = "mesa";
         repo = "mesa";
         rev = "a6c444d0";
-        hash = lib.fakeHash;
+        hash = "sha256-LPoCSVuqcZ8hONJp2fujwWVOLID8TmqxuFpldUlMb/M=";
       };
       version = "26.2.0-git";
     }));
@@ -161,7 +161,7 @@
         owner = "mesa";
         repo = "mesa";
         rev = "a6c444d0";
-        hash = lib.fakeHash;
+        hash = "sha256-LPoCSVuqcZ8hONJp2fujwWVOLID8TmqxuFpldUlMb/M=";
       };
       version = "26.2.0-git";
     }));
