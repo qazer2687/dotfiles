@@ -143,6 +143,30 @@
     };
   };
 
+  hardware.graphics = {
+    enable = true;
+    package = (pkgs.mesa.overrideAttrs (old: {
+      src = pkgs.fetchFromGitLab {
+        domain = "gitlab.freedesktop.org";
+        owner = "mesa";
+        repo = "mesa";
+        rev = "a6c444d0";
+        hash = lib.fakeHash;
+      };
+      version = "26.2.0-git";
+    }));
+    package32 = (pkgs.pkgsi686Linux.mesa.overrideAttrs (old: {
+      src = pkgs.fetchFromGitLab {
+        domain = "gitlab.freedesktop.org";
+        owner = "mesa";
+        repo = "mesa";
+        rev = "a6c444d0";
+        hash = lib.fakeHash;
+      };
+      version = "26.2.0-git";
+    }));
+  };
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
