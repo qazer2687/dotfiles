@@ -152,7 +152,7 @@
           sha256 = lib.fakeSha256;
         })
       ];
-    })).drivers;
+    }));
     package32 = (pkgs.pkgsi686Linux.mesa.overrideAttrs (old: {
       patches = old.patches ++ [
         (pkgs.fetchpatch {
@@ -160,7 +160,7 @@
           sha256 = lib.fakeSha256;
         })
       ];
-    })).drivers;
+    }));
   };
 
   programs.hyprland = {
