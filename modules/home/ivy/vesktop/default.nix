@@ -21,7 +21,7 @@
           # Can't use full theme names here as they are overwritten by
           # find and replace when I set a custom base16 scheme.
           mocha = builtins.readFile ./config/mocha.css;
-          gruvbox-dark-hard = builtins.readFile ./config/gruvbox-dark-hard.css;
+          catppuccin-mocha = builtins.readFile ./config/catppuccin-mocha.css;
         };
         settings = {
           autoUpdate = true;

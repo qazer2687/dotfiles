@@ -5,71 +5,80 @@
   pkgs,
   ...
 }: let
-  scheme = base16 "gruvbox-dark-hard";
+  scheme = base16 "catppuccin-mocha";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
+
   config = lib.mkIf config.modules.waybar.enable {
-    home.packages = [pkgs.jq];
+    home.file.".config/waybar/scripts/pingServer.sh".text = builtins.readFile ./scripts/pingServer.sh;
+    home.file.".config/waybar/scripts/pingServer.sh".executable = true;
+
+    home.packages = [pkgs.jq pkgs.playerctl];
+
     programs.waybar = {
       enable = true;
       settings = {
         mainBar = {
           layer = "top";
-          position = "left";
-          width = 32;
+          height = 28;
           margin = "0 0 0 0";
-          modules-left = ["clock"];
-          modules-center = ["hyprland/workspaces"];
-          modules-right = ["tray" "backlight" "network" "pulseaudio" "battery"];
+          modules-left = ["clock" "hyprland/workspaces" "mpris"];
+          modules-center = [];
+          modules-right = ["tray" "network" "pulseaudio" "battery"];
+
           pulseaudio = {
             format = "vol: {volume}%";
             tooltip = false;
             format-muted = "vol: muted";
-            rotate = 90;
           };
+
           "custom/hyprsunset" = {
             exec = ''printf "󰖨 %sK" "$(hyprctl hyprsunset temperature)"'';
             signal = 1;
             format = "{}";
             tooltip = false;
-            rotate = 90;
           };
+
           "custom/pingServer" = {
             exec = "$HOME/.config/waybar/scripts/pingServer.sh";
             interval = 20;
             return-type = "json";
-            rotate = 90;
           };
+
           clock = {
-            format = "{:%H\n%M}";
+            format = "{:%H:%M}";
             format-alt = "{:%A %d, %H:%M}";
             tooltip = false;
           };
+
           tray = {
             icon-size = 14;
             spacing = 12;
             reverse-direction = true;
           };
+
           battery = {
             tooltip = false;
             format = "bat: {capacity}%";
             format-charging = "bat: {capacity}% (charging)";
             interval = 30;
-            rotate = 90;
             states = {
               sub50 = 50;
               sub25 = 25;
               sub10 = 10;
             };
+            format-icons = ["/    " "//   " "///  " "//// " "/////"];
+            margin-left = 15;
           };
+
           network = {
             tooltip = false;
-            format = "net: connected";
-            format-wifi = "net: connected";
-            format-disconnected = "net: disconnected";
+            format = "net: up";
+            format-wifi = "net: up";
+            format-disconnected = "net: down";
             interval = 30;
-            rotate = 90;
           };
+
           "hyprland/workspaces" = {
             format = "{icon}";
             format-icons = {
@@ -85,54 +94,80 @@ in {
               "10" = "10";
             };
           };
+
+          mpris = {
+            tooltip = false;
+            format = "{player_icon} {artist} - {title}";
+            format-paused = "{status_icon} {artist} - {title}";
+            artist-len = 25;
+            title-len = 25;
+            player-icons = {
+              default = "■";
+            };
+            status-icons = {
+              paused = "□";
+            };
+          };
+
           backlight = {
-            device = "intel_backlight";
+            device = "apple-panel-bl";
             format = "BKL: {percent}%";
             tooltip = false;
-            rotate = 90;
           };
         };
       };
+
       style = ''
         * {
           border: none;
           border-radius: 0;
-          font-family: "Departure Mono";
+          font-family: "PragmataPro";
           font-size: 11px;
           min-height: 0;
         }
+
         window#waybar {
           background: #${scheme.base00};
         }
-        #mpris, #clock, #backlight, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
-          padding: 8px 4px;
+
+        #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
+          padding: 0 8px;
           margin: 2px;
           border-radius: 2px;
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
+
         #workspaces {
-          padding: 1px 0;
+          padding: 0 0px;
           margin: 2px;
           border-radius: 2px;
           background-color: #${scheme.base01};
         }
+
         #workspaces button {
-          padding: 8px 4px;
-          margin: 1px 2px;
+          padding: 0 6px;
+          margin: 2px 1px;
           border-radius: 2px;
-          background-color: #${scheme.base02};
+          color: #${scheme.base05};
+          background-color: #${scheme.base01};
         }
+
         #workspaces button.active {
-          padding: 8px 4px;
-          margin: 1px 2px;
+          padding: 0 6px;
+          margin: 2px 1px;
           border-radius: 2px;
-          background-color: #${scheme.base08};
+          color: #${scheme.base00};
+          background-color: #${scheme.base0E};
         }
+
         #battery.charging { color: #${scheme.base0B}; }
         #battery.sub50:not(.charging) { color: #${scheme.base0A}; }
-        #battery.sub25:not(.charging) { color: #${scheme.base08}; }
+        #battery.sub25:not(.charging) { color: #${scheme.base09}; }
         #battery.sub10:not(.charging) { color: #${scheme.base08}; }
+
+        #clock { margin-left: 20px; }
+        #battery { margin-right: 20px; }
       '';
     };
   };

@@ -27,7 +27,7 @@
     zoxide.enable = true;
     utilities.enable = true;
     fish.enable = true;
-    foot.enable = true;
+    kitty.enable = true;
     fastfetch.enable = true;
     yazi.enable = true;
 
@@ -36,12 +36,10 @@
     theme.enable = true;
 
     # Desktop Environment
-    hyprland.enable = true;
-    hyprlock.enable = true;
+    niri.enable = true;
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
-    hyprsunset.enable = true;
 
     # Applications
     firefox.enable = true;
