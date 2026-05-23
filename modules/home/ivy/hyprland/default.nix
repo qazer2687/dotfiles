@@ -118,7 +118,7 @@ in {
 
           # Touchpad
           touchpad = {
-            tap-to-click = false;
+            tap-to-click = true;
             scroll_factor = 1;
             natural_scroll = true;
             clickfinger_behavior = true;
