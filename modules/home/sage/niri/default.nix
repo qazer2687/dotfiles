@@ -20,8 +20,8 @@ in {
 
         input = {
           keyboard.xkb = {
-            layout = "gb";
-            variant = "colemak";
+            layout = "gb,gb";
+            variant = "colemak,";
           };
           touchpad = {
             tap = false;
