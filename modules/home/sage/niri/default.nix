@@ -103,6 +103,9 @@ in {
           "Mod+Shift+l".action = move-column-right;
           "Mod+Shift+j".action = move-column-to-workspace-down;
           "Mod+Shift+k".action = move-column-to-workspace-up;
+
+          # Keyboard Layout
+          "Mod+L".action.switch-layout = "next";
         };
 
         switch-events = {
