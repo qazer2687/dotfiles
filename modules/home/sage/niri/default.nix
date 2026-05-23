@@ -105,7 +105,7 @@ in {
           "Mod+Shift+k".action = move-column-to-workspace-up;
 
           # Keyboard Layout
-          "Mod+'".action.switch-layout = "next";
+          "Mod+n".action.switch-layout = "next";
         };
 
         switch-events = {
