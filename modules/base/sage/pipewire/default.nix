@@ -57,9 +57,9 @@
           "default.clock.force-rate"    = 48000;
 
           # 32/48000 = 0.67 ms
-          "default.clock.quantum"       = 64;
-          "default.clock.min-quantum"   = 64;
-          "default.clock.max-quantum"   = 64;
+          "default.clock.quantum"       = 128;
+          "default.clock.min-quantum"   = 128;
+          "default.clock.max-quantum"   = 120;
         };
         "context.modules" = [
           {
