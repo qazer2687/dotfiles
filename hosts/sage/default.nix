@@ -186,6 +186,7 @@
     flatpak.enable = true;
     gamescope.enable = true;
     opentrack.enable = true;
+    beammp.enable = true;
 
     # AI
     ollama.enable = true;
