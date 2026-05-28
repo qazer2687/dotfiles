@@ -10,13 +10,13 @@
   config = lib.mkIf config.modules.beammp.enable {
     environment.systemPackages = 
     let
-      beammpIcon = pkgs-unstable.fetchurl {
+      beammpIcon = pkgs.fetchurl {
         url = "https://beammp.com/assets/BeamMP_blk-BycyukAv.png";
         sha256 = "sha256-7osWdvH3vG6Jf2I9U0/OPPVSL8wDlTIenwytng5xOyM=";
       };
 
 
-      launcher = pkgs-unstable.buildFHSEnv {
+      launcher = pkgs.buildFHSEnv {
         name = "BeamMP-Launcher";
         targetPkgs = pkgs: with pkgs; [
           nspr
@@ -50,11 +50,11 @@
           libvdpau
           libva
         ];
-        runScript = "${pkgs-unstable.beammp-launcher}/bin/BeamMP-Launcher";
+        runScript = "${pkgs.beammp-launcher}/bin/BeamMP-Launcher";
       };
 
 
-      desktopItem = pkgs-unstable.makeDesktopItem {
+      desktopItem = pkgs.makeDesktopItem {
         name = "BeamMP-Launcher";
         desktopName = "BeamMP";
         comment = "BeamNG.drive Multiplayer";
