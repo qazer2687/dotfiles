@@ -10,7 +10,7 @@
 in {
   options.modules.niri.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.niri.enable {
-    environment.systemPackages = [ pkgs.xwayland-satellite ];
+    home.packages = [ pkgs.xwayland-satellite ];
 
     programs.niri = {
       enable = true;
@@ -72,7 +72,7 @@ in {
           "Mod+Shift+f".action = toggle-window-floating;
           "Mod+f".action = fullscreen-window;
           "Mod+o".action = toggle-overview;
-          
+
           # Navigate
           "Mod+h".action = focus-column-left;
           "Mod+l".action = focus-column-right;
