@@ -87,6 +87,7 @@ in {
         };
 
         spawn-at-startup = [
+          { command = [ "fish" "-c" "'waybar'" ]; }
           { command = [ "${pkgs.sunsetr}/bin/sunsetr" ]; }
           { command = [ "${pkgs.wbg}/bin/wbg" "-s" "/home/alex/.config/wallpaper/wallpaper.png" ]; }
         ];
