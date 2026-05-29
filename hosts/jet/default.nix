@@ -47,14 +47,11 @@
       # Note that apple_dcp has been renamed to appledrm.
       "appledrm.show_notch=1"
 
-      "lru_gen_enabled=7"
-
       # zswap
-      #"zswap.enabled=1"
-      #"zswap.compressor=zstd"
-      #"zswap.zpool=zsmalloc"
-      #"zswap.max_pool_percent=50"
-      #"zswap.shrinker_enabled=1"
+      "zswap.enabled=1"
+      "zswap.compressor=zstd"     
+      "zswap.zpool=zsmalloc"
+      "zswap.max_pool_percent=50"
 
       # Quiet boot.
       #"quiet"
@@ -97,7 +94,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "dbus-run-session river";
+        command = "dbus-run-session niri-session";
         user = "alex";
       };
     };
@@ -145,6 +142,8 @@
     MatchName=keyd virtual keyboard
     AttrKeyboardIntegration=internal
   '';
+
+  services.earlyoom.enable = true;
 
   modules = {
     core.enable = true;

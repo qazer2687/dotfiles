@@ -2,9 +2,12 @@
   lib,
   config,
   pkgs,
+  base16,
   ...
 }: let
   modifier = "Mod4";
+
+  scheme = base16 "catppuccin-mocha";
 
   screenshot = pkgs.writeShellApplication {
     name = "screenshot";
@@ -21,34 +24,15 @@ in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.sway.enable {
-    home.packages = with pkgs; [
-      # This is a dependency of Mako.
-      libnotify
-      screenshot
-    ];
 
     wayland.windowManager.sway = {
       enable = true;
-      #package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
-      # Not sure what the performance impact is with swayfx, I will just use sway for now.
-      # The only "effect" I use is rounded corners but these aren't so important to me and
-      # end up cutting off tabs in firefox which looks like shit.
       package = pkgs.swayfx.overrideAttrs (_old: {passthru.providedSessions = ["sway"];});
       checkConfig = false;
       config = {
         inherit modifier;
 
-        gaps = {
-          inner = 6;
-          outer = 0;
-        };
-
         input = {
-          "TPPS/2 IBM TrackPoint" = {
-            pointer_accel = "0.8";
-            accel_profile = "flat";
-            tap = "enabled";
-          };
           "type:touchpad" = {
             tap = "disabled";
           };
@@ -65,9 +49,9 @@ in {
         output = {
           "*".bg = "~/.config/wallpaper/wallpaper.png fill";
           # Settings for my external Asus monitor.
-          "DP-1".mode = "2560x1440@143.972000Hz";
+          #"DP-1".mode = "2560x1440@143.972000Hz";
           # Settings for the internal display on Jet.
-          "eDP-1".mode = "2560x1664@60Hz scale 2";
+          #"eDP-1".mode = "2560x1664@60Hz scale 2";
         };
 
         # Decorations
@@ -80,7 +64,14 @@ in {
         colors = {
           focused = {
             background = "#ffffff";
-            border = "#ffffff";
+            border = "#${scheme.base0E}";   # active / focused border
+            childBorder = "#ffffff";
+            indicator = "#ffffff";
+            text = "#ffffff";
+          };
+          unfocused = {
+            background = "#ffffff";
+            border = "#${scheme.base02}";   # inactive / unfocused border
             childBorder = "#ffffff";
             indicator = "#ffffff";
             text = "#ffffff";
@@ -89,7 +80,7 @@ in {
 
         keybindings = lib.mkOptionDefault rec {
           # Open Terminal
-          "${modifier}+Return" = "exec foot";
+          "${modifier}+Return" = "exec kitty";
 
           # Close Window
           "${modifier}+q" = "kill";
@@ -98,23 +89,24 @@ in {
           "${modifier}+Shift+r" = "reload";
 
           # Search
-          "${modifier}+e" = "exec wofi --show drun";
+          "${modifier}+e" = "exec tofi-run | sh";
 
           # Floating
           "${modifier}+space" = "floating toggle";
+          
 
           # Screenshot
           "Print" = "exec ${lib.getExe screenshot}";
 
           # Volume Controls
-          XF86AudioRaiseVolume = "exec ${pkgs.pamixer}/bin/pamixer -i 5";
-          XF86AudioLowerVolume = " exec ${pkgs.pamixer}/bin/pamixer -d 5";
+          XF86AudioRaiseVolume = "exec ${pkgs.pamixer}/bin/pamixer -i 2";
+          XF86AudioLowerVolume = " exec ${pkgs.pamixer}/bin/pamixer -d 2";
           XF86AudioMute = "exec ${pkgs.pamixer}/bin/pamixer -t";
           XF86AudioMicMute = "exec ${pkgs.pamixer}/bin/pamixer --default-source -t";
 
           # Brightness Controls
-          XF86MonBrightnessUp = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%+";
-          XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%-";
+          XF86MonBrightnessUp = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 2%+";
+          XF86MonBrightnessDown = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 2%-";
 
           # Backlight Controls
           "${modifier}+XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl  --class leds --device kbd_backlight set 10%+";
@@ -157,16 +149,9 @@ in {
       };
 
       extraConfig = ''
-        # Corner Radius
-        # Make sure to turn off borders while using this, as the borders do not conform to this setting.
-        #corner_radius 6
-
-        # Smart Gaps
-        #smart_gaps on
 
         # Eye Comfort
-        # Gammastep currently doesn't work on Asahi Linux.
-        # exec gammastep -xO 3000
+        #${pkgs.sunsetr}/bin/sunsetr
 
         # Waybar
         bar {

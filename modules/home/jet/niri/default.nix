@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "catppuccin-mocha";
+  scheme = base16 "gruvbox-dark";
 in {
   options.modules.niri.enable = lib.mkEnableOption "";
 
@@ -70,22 +70,10 @@ in {
         ];
 
         layout = {
-          gaps = 4;
+          gaps = 0;
           center-focused-column = "always";
+          empty-workspace-above-first = true;
         };
-
-        workspaces."one" = {};
-        workspaces."two" = {};
-        workspaces."three" = {};
-        workspaces."four" = {};
-        workspaces."five" = {};
-        /*
-        workspaces."six" = {};
-        workspaces."seven" = {};
-        workspaces."eight" = {};
-        workspaces."nine" = {};
-        workspaces."ten" = {};
-        */
 
         binds = with config.lib.niri.actions; {
           # Terminal
@@ -114,16 +102,17 @@ in {
           "Mod+XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%+";
           "Mod+XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%-";
             
-          # Window Manipulation
+          # Navigate
           "Mod+h".action = focus-column-left;
+          "Mod+l".action = focus-column-right;
           "Mod+j".action = focus-workspace-down;
           "Mod+k".action = focus-workspace-up;
-          "Mod+l".action = focus-column-right;
 
+          # Move
           "Mod+Shift+h".action = move-column-left;
-          "Mod+Shift+j".action = move-window-down;
-          "Mod+Shift+k".action = move-window-up;
           "Mod+Shift+l".action = move-column-right;
+          "Mod+Shift+j".action = move-column-to-workspace-down;
+          "Mod+Shift+k".action = move-column-to-workspace-up;
         };
         
         switch-events = {

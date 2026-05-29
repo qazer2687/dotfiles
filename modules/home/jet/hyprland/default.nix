@@ -7,7 +7,7 @@
   ...
 }:
 let
-  scheme = base16 "catppuccin-mocha";
+  scheme = base16 "gruvbox-dark";
 in
 {
   options.modules.hyprland.enable = lib.mkEnableOption "";

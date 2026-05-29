@@ -32,10 +32,10 @@
     zoxide.enable = true;
     utilities.enable = true;
     fish.enable = true;
-    foot.enable = true;
+    #foot.enable = true;
     kitty.enable = true;
     fastfetch.enable = true;
-    rmpc.enable = true;
+    #rmpc.enable = true;
 
     # Theming
     fonts.enable = true;
@@ -44,7 +44,7 @@
     # Desktop Environment
     #hyprland.enable = true;
     #niri.enable = true;
-    river.enable = true;
+    #river.enable = true;
     #hyprlock.enable = true;
     waybar.enable = true;
     mako.enable = true;
@@ -53,12 +53,12 @@
 
     # Applications
     firefox.enable = true;
-    vscode.enable = true;
+    #vscode.enable = true;
     zed.enable = true;
     vesktop.enable = true;
 
     # Games
-    prismlauncher.enable = true;
+    #prismlauncher.enable = true;
     mangohud.enable = true;
   };
 
