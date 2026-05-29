@@ -61,7 +61,7 @@ in {
             */
 
             focus-ring = {
-              enable = true;
+              enable = false;
               width = 1;
               active.color = "#${scheme.base0E}";
               inactive.color = "#${scheme.base02}";
@@ -70,7 +70,7 @@ in {
         ];
 
         layout = {
-          gaps = 0;
+          gaps = 4;
           center-focused-column = "always";
           empty-workspace-above-first = true;
         };
