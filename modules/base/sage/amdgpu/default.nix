@@ -37,10 +37,20 @@
     services.lact.enable = true;
 
     boot.kernelParams = [
+      # EVIL flags
+      /*
       "amdgpu.dcdebugmask=0x10"
       "amdgpu.disp_priority=2"
       "amdgpu.gpu_recovery=1"
       "amdgpu.runpm=0"
+      */
+
+      # Working flags for preventing black screening.
+      "amdgpu.gfxoff=0"
+      "amdgpu.gpu_recovery=1"
+      "noretry=0"
+      "split_lock_detect=off"
+      "amdgpu.ppfeaturemask=0xfffd3fff"
     ];
   };
 }
