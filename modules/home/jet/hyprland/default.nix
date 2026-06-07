@@ -20,9 +20,6 @@ in
       wlr-randr
     ];
 
-    # Unlock keyring on login.
-    services.gnome.gnome-keyring.enable = true;
-    security.pam.services.login.enableGnomeKeyring = true;
 
     wayland.windowManager.hyprland = {
       enable = true;
