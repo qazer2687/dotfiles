@@ -42,7 +42,7 @@
     theme.enable = true;
 
     # Desktop Environment
-    #hyprland.enable = true;
+    hyprland.enable = true;
     #niri.enable = true;
     #river.enable = true;
     hyprlock.enable = true;
