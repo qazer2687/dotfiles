@@ -53,7 +53,7 @@
 
     # Desktop Environment
     hyprland.enable = true;
-    niri.enable = true;
+    #niri.enable = true;
     hyprlock.enable = true;
     hyprsunset.enable = true;
     waybar.enable = true;

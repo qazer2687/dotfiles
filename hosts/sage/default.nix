@@ -137,7 +137,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "niri-session";
+        command = "uwsm start default";
         user = "alex";
       };
     };
