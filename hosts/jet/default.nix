@@ -94,10 +94,15 @@
     enable = true;
     settings = {
       default_session = {
-        command = "dbus-run-session niri-session";
+        command = "uwsm start default";
         user = "alex";
       };
     };
+  };
+
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
   };
 
   environment = {
@@ -143,7 +148,11 @@
     AttrKeyboardIntegration=internal
   '';
 
-  services.earlyoom.enable = true;
+  services.earlyoom = {
+    enable = true;
+    freeMemThreshold = 2;
+    freeSwapThreshold = 2;
+  };
 
   modules = {
     core.enable = true;
@@ -158,9 +167,9 @@
     tailscale.enable = true;
     platformio.enable = true;
     easyeffects.enable = true;
-    flatpak.enable = true;
+    #flatpak.enable = true;
     keyd.enable = true;
-    xampp.enable = true;
+    #xampp.enable = true;
 
     bluetooth.enable = true;
   };

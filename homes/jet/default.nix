@@ -42,14 +42,14 @@
     theme.enable = true;
 
     # Desktop Environment
-    #hyprland.enable = true;
-    niri.enable = true;
+    hyprland.enable = true;
+    #niri.enable = true;
     #river.enable = true;
-    #hyprlock.enable = true;
+    hyprlock.enable = true;
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
-    #hyprsunset.enable = true;
+    hyprsunset.enable = true;
 
     # Applications
     firefox.enable = true;

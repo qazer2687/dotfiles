@@ -7,7 +7,7 @@
   ...
 }:
 let
-  scheme = base16 "gruvbox-dark";
+  scheme = base16 "catppuccin-mocha";
 in
 {
   options.modules.hyprland.enable = lib.mkEnableOption "";
@@ -19,6 +19,10 @@ in
       pamixer
       wlr-randr
     ];
+
+    # Unlock keyring on login.
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.login.enableGnomeKeyring = true;
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -188,8 +192,7 @@ in
           "SUPER, XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 1%+"
           "SUPER, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl --class leds --device kbd_backlight set 1%-"
 
-          # Hyprsunset (Capped at 6500K)
-          # This is managed automatically by the hyprsunset module.
+          # Hyprsunset
           "CTRL, XF86MonBrightnessUp, exec, flock -n /tmp/hyprsunset.lock bash -c 'temp=$(hyprctl hyprsunset temperature); [ $temp -le 6000 ] && hyprctl hyprsunset temperature $((temp + 500))'"
           "CTRL, XF86MonBrightnessDown, exec, flock -n /tmp/hyprsunset.lock bash -c 'temp=$(hyprctl hyprsunset temperature); hyprctl hyprsunset temperature $((temp - 500))'"
         ];
@@ -205,12 +208,11 @@ in
         ];
 
         exec-once = [
+          "pamixer --set-volume 0 --mute"
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
-          #"pamixer --set-volume 0 --mute"
           "waybar"
           "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
           "hyprctl hyprsunset temperature 3000"
-          # Unlock keyring on boot.
         ];
       };
 

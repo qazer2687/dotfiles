@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "gruvbox-dark";
+  scheme = base16 "catppuccin-mocha";
 in {
   options.modules.hyprlock.enable = lib.mkEnableOption "";
 
