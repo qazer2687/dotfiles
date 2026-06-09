@@ -26,8 +26,7 @@ in {
 
       settings = {
         monitor = [
-          "DP-3,2560x1440@239.90,auto,1"
-          #"DP-3,2560x1080@75,0x0,2"
+          "DP-3,highres,auto,1"
         ];
 
         xwayland = {
