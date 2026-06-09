@@ -16,9 +16,8 @@ in {
       brightnessctl
       pamixer
       wlr-randr
+      mpvpaper
     ];
-
-    services.awww.enable = true;
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -179,7 +178,7 @@ in {
           "pamixer --set-volume 50"
           "waybar"
           #"${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
-          "awww img /home/alex/.config/wallpaper/wallpaper.mkv"
+          ''mpvpaper -o "--loop-file=inf" DP-3 /home/alex/.config/wallpaper/wallpaper.mkv''
           #"${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
           "vesktop --start-minimized"
         ];
