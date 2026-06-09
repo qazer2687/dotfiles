@@ -13,6 +13,7 @@ in {
       enable = true;
       settings = {
         mainBar = {
+          start_hidden = true;
           layer = "top";
           position = "top";
           height = 48;

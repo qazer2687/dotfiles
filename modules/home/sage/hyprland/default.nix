@@ -159,6 +159,12 @@ in {
 
           # Quit
           "SUPER SHIFT, Q, exit"
+
+          ", SUPER_L, exec, pkill -SIGUSR1 waybar"
+        ];
+
+        bindrt = [
+          "SUPER, SUPER_L, exec, pkill -SIGUSR1 waybar"
         ];
 
         bindm = [
