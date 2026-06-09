@@ -40,11 +40,11 @@ in {
 
           gaps_in = 1;
           gaps_out = 2;
-          border_size = 1;
+          border_size = 0;
 
           # base05 = text, base0E = mauve
           "col.active_border" = "rgba(${scheme.base00}ff)";
-          "col.inactive_border" = "rgba(${scheme.base00}00)";
+          "col.inactive_border" = "rgba(${scheme.base00}ff)";
 
           resize_on_border = true;
           allow_tearing = true;
