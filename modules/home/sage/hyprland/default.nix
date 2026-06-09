@@ -90,6 +90,8 @@ in {
         cursor = {
           no_warps = true;
           no_hardware_cursors = true;
+          inactive_timeout = 5;
+          hide_on_key_press = true;
         };
 
         # Required for enabling tearing.
