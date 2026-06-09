@@ -18,6 +18,8 @@ in {
       wlr-randr
     ];
 
+    services.awww.enable = true;
+
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -176,7 +178,8 @@ in {
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
           "pamixer --set-volume 50"
           "waybar"
-          "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
+          #"${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
+          "awww img /home/alex/.config/wallpaper/wallpaper.mkv"
           #"${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
           "vesktop --start-minimized"
         ];
