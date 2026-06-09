@@ -26,7 +26,7 @@ in {
 
       settings = {
         monitor = [
-          "DP-3,highres,auto,1"
+          "DP-3, highres, auto, 1"
         ];
 
         xwayland = {
