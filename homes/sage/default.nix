@@ -30,6 +30,8 @@
     wineWowPackages.stable
     #wineWowPackages.waylandFull
     winetricks
+
+    go
   ];
 
   programs.opencode.enable = true;
