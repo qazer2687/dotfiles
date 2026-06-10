@@ -12,7 +12,7 @@
     #  package = pkgs.zed-editor-fhs;
     #};
 
-    home.systemPackages = [
+    home.packages = [
       (pkgs.zed-editor.fhsWithPackages (pkgs: [ pkgs.zlib ]))
     ];
 
