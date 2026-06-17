@@ -165,7 +165,7 @@ in {
           "SUPER SHIFT, Q, exit"
           
           # OBS Replay
-          "$mod, BACKSPACE, exec, obs-cmd --websocket obsws://localhost:4455 replay save"
+          "SUPER, BACKSPACE, exec, obs-cmd --websocket obsws://localhost:4455 replay save"
 
           ", SUPER_L, exec, pkill -SIGUSR1 waybar"
         ];
