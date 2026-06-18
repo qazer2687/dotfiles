@@ -51,7 +51,7 @@ in {
           {
             clip-to-geometry = true;
 
-            open-maximized = false;
+            open-maximized = true;
 
             min-width = 1880;
             max-width = 1880;
@@ -89,9 +89,6 @@ in {
           "XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "s" "1%+";
           "XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "s" "1%-";
 
-          "Mod+XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%+";
-          "Mod+XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%-";
-
           # Navigate
           "Mod+h".action = focus-column-left;
           "Mod+l".action = focus-column-right;
@@ -110,6 +107,7 @@ in {
         };
 
         spawn-at-startup = [
+          {command = [ "${pkgs.sunsetr}/bin/sunsetr" ];}
           {command = ["hyprlock" "-q" "||" "loginctl" "terminate-session" "$XDG_SESSION_ID"];}
           {command = ["fish" "-c" "'waybar'"];}
           {command = ["${pkgs.wbg}/bin/wbg" "-s" "/home/alex/.config/wallpaper/wallpaper.png"];}
