@@ -6,15 +6,12 @@
   options.modules.vesktop.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.vesktop.enable {
-    services.arrpc.enable = true;
-
     programs.vesktop = {
       enable = true;
       settings = {
         arRPC = true;
         disableMinSize = true;
-        tray = false;
-        autoStartMinimized = false;
+        tray = true;
         minimizeToTray = true;
         hardwareAcceleration = true;
         discordBranch = "stable";
