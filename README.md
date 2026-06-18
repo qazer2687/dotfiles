@@ -1,6 +1,12 @@
--- qazer's nixos flake v9 --  
-  
--- hosts --  
+<p align="left">
+  <img src="./assets/dotfiles.svg" width="60" alt="logo">
+</p>
+<h2 align="left">dotfiles</h2>   
+v9
+
+---
+
+## hosts
   
 ```
 name        os        machine         description        type        arch  
@@ -9,14 +15,17 @@ jet         NixOS     m2 macbook air  primary laptop     laptop      aarch64-lin
 ivy         NixOS     thinkpad t480   secondary laptop   laptop      x86_64-linux  
 ```
   
--- credits --  
+## credits
+
 a huge thank you to the individuals below as i wouldn't have been able to make it this far into my nixos journey without them  
 
-
-[@NobbZ](https://github.com/NobbZ)  
-[@fufexan](https://github.com/fufexan) [@Gerg-L](https://github.com/Gerg-L)  
-[@NotAShelf](https://github.com/NotAShelf) [@sioodmy](https://github.com/sioodmy)  
-[@eclairevoyant](https://github.com/eclairevoyant/) [@Misterio77](https://github.com/Misterio77)  
+[@NobbZ](https://github.com/NobbZ)&nbsp;
+[@fufexan](https://github.com/fufexan)&nbsp;
+[@Gerg-L](https://github.com/Gerg-L)&nbsp;
+[@NotAShelf](https://github.com/NotAShelf)&nbsp;
+[@sioodmy](https://github.com/sioodmy)&nbsp;
+[@eclairevoyant](https://github.com/eclairevoyant/)&nbsp;
+[@Misterio77](https://github.com/Misterio77)&nbsp;
 
 
 
