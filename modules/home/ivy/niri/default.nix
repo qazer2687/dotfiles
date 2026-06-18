@@ -51,7 +51,7 @@ in {
               height = 1080;
               refresh = 60.00;
             };
-            scale = 1.0;
+            scale = 1.25;
           };
         };
 
@@ -61,8 +61,8 @@ in {
 
             open-maximized = true;
 
-            min-width = 1880;
-            max-width = 1880;
+            min-width = 1504;
+            max-width = 1504;
 
             focus-ring = {
               enable = true;
