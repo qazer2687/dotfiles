@@ -37,11 +37,19 @@ in {
         };
 
         outputs = {
-          "DP-1" = {
+          "DP-3" = {
             mode = {
               width = 2560;
               height = 1440;
-              refresh = 180.00;
+              refresh = 240.00;
+            };
+            scale = 1.0;
+          };
+          "eDP-1" = {
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 60.00;
             };
             scale = 1.0;
           };
