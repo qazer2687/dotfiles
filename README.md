@@ -2,7 +2,7 @@
   <img src="./assets/dotfiles.svg" width="60" alt="logo">
 </p>
 <h2 align="left">dotfiles</h2>   
-v9
+my personal multi-host nixos flake v9
 
 ---
 
