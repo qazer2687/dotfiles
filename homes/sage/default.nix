@@ -11,7 +11,7 @@
   home.packages = with pkgs; [
     # Programs
     obsidian
-    vlc
+    mpv
     loupe
     proton-vpn
     nautilus
