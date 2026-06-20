@@ -58,15 +58,19 @@
       "--nohostname"
     ];
   };
-
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "niri-session";
+        command = "uwsm start default";
         user = "alex";
       };
     };
+  };
+
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
   };
 
   services.udev = {
