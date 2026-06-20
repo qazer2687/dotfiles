@@ -14,7 +14,7 @@ in {
       settings = {
         # Font
         font_family = "PragmataPro";
-        font_size = 22;
+        font_size = 14;
         bold_font = "PragmataPro";
 
         # Padding
@@ -69,10 +69,11 @@ in {
         color17 = "#${scheme.base06}";
       };
 
-      keybindings = {
-        "ctrl+c" = "copy_to_clipboard";
-        "ctrl+v" = "paste_from_clipboard";
-      };
+      extraConfig = ''
+        map ctrl+c copy_to_clipboard
+        map ctrl+v paste_from_clipboard
+        map ctrl+shift+c send_text all \x03
+      '';
     };
   };
 }
