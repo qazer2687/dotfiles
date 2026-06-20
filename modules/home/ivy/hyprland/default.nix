@@ -133,7 +133,7 @@ in {
         render = {
           # Direct scanout attempts to reduce lag when
           # there is only one fullscreen application on a screen.
-          direct_scanout = 1;
+          #direct_scanout = 1;
         };
 
         misc = {
