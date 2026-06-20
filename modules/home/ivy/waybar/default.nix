@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  scheme = base16 "catppuccin-mocha";
+  scheme = base16 "isotope";
 in {
   options.modules.waybar.enable = lib.mkEnableOption "";
 
