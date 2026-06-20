@@ -68,7 +68,6 @@ in {
             enabled = false;
             range = 4;
             render_power = 3;
-            ignore_window = true;
             color = "rgba(20,20,20,0.5)";
           };
 
@@ -140,7 +139,6 @@ in {
         misc = {
           disable_splash_rendering = true;
           disable_hyprland_logo = true;
-          vfr = true;
           vrr = 0;
           # Focus programs that request to be focused, for example
           # pressing a link should switch to the workspace with a browser.
@@ -149,8 +147,8 @@ in {
 
         bind = [
           # Core
-          "SUPER, Return, exec, foot"
-          "SUPER, E, exec, tofi-run | sh"
+          "SUPER, Return, exec, kitty"
+          "SUPER, E, exec, tofi-run | bash"
           "SUPER, Q, killactive"
           "SUPER, F, fullscreen"
 
