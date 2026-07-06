@@ -69,6 +69,20 @@
     kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
   };
 
+  boot.supportedFilesystems = [ "nfs" ];
+  
+  fileSystems."/mnt/backups" = {
+    device = "/dev/disk/by-uuid/36cbbcf7-9398-43c8-ba34-f3655a7f7e2c";
+    fsType = "ext4";
+    options = [ "defaults" "noatime" ];
+  };
+  
+  fileSystems."/mnt/storage" = {
+    device = "fern:/mnt/storage";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "soft" "intr" ];
+  };
+
   # Use the "Latency-criticality Aware Virtual Deadline" scheduler for lower latency.
   services.scx = {
     enable = true;
@@ -161,7 +175,7 @@
       #XKB_DEFAULT_VARIANT = "colemak";
     };
     # Required for nix-flatpak to work. Not in home-manager because of gmodena/nix-flatpak#33.
-    systemPackages = [pkgs.flatpak];
+    systemPackages = [pkgs.flatpak pkgs.nfs-utils];
   };
 
   modules = {
