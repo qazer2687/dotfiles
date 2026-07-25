@@ -80,7 +80,7 @@
   fileSystems."/mnt/storage" = {
     device = "fern:/mnt/storage";
     fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "soft" "intr" ];
+    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=5min" "soft" ];
   };
 
   # Use the "Latency-criticality Aware Virtual Deadline" scheduler for lower latency.
