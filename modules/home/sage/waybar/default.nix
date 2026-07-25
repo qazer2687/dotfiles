@@ -14,6 +14,8 @@ in {
       settings = {
         mainBar = {
           start_hidden = true;
+          on-sigusr1 = "show";
+          on-sigusr2 = "hide";
           layer = "top";
           position = "top";
           height = 48;

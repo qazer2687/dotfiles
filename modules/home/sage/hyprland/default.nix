@@ -171,7 +171,7 @@ in {
         ];
 
         bindrt = [
-          "SUPER, SUPER_L, exec, pkill -SIGUSR1 waybar"
+          "SUPER, SUPER_L, exec, pkill -SIGUSR2 waybar"
         ];
 
         bindm = [
@@ -183,10 +183,11 @@ in {
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
           "pamixer --set-volume 50"
           "waybar"
-          #"${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
-          ''mpvpaper -o "--loop-file=inf" DP-3 /home/alex/.config/wallpaper/wallpaper.mkv''
+          "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
+          #''mpvpaper -o "--loop-file=inf" DP-3 /home/alex/.config/wallpaper/wallpaper.mkv''
           #"${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
-          "vesktop --start-minimized"
+          #"vesktop --start-minimized"
+          "obs --minimize-to-tray --startreplaybuffer"
         ];
       };
 
