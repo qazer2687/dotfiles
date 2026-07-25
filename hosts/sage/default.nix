@@ -147,6 +147,9 @@
     ];
   };
 
+  # Nautilus trash support.
+  services.gvfs.enable = true;
+
   services.greetd = {
     enable = true;
     settings = {
