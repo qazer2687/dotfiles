@@ -57,6 +57,7 @@
     hyprland.enable = true;
     #niri.enable = true;
     hyprlock.enable = true;
+    hypridle.enable = true;
     hyprsunset.enable = true;
     waybar.enable = true;
     mako.enable = true;
