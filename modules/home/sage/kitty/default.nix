@@ -14,7 +14,7 @@ in {
       settings = {
         # Font
         font_family = "PragmataPro";
-        font_size = 22;
+        font_size = 18;
         bold_font = "PragmataPro";
 
         # Padding
