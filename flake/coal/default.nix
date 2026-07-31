@@ -2,12 +2,7 @@
   inputs,
   self,
   ...
-}: let
-  shared = ../../modules/base/shared;
-  exclude = ["flatpak"];
-  modules = builtins.filter (n: n != "default.nix" && !builtins.elem n exclude)
-    (builtins.attrNames (builtins.readDir shared));
-in
+}: 
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     inherit inputs self;
@@ -15,12 +10,11 @@ inputs.nixpkgs.lib.nixosSystem {
   };
   modules = [
     ../../hosts/coal
-    {
-      imports = map (n: "${shared}/${n}") modules;
-    }
+    ../../modules/base/shared
     ../../modules/base/coal
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
     inputs.sops-nix.nixosModules.sops
+    inputs.flatpak.nixosModules.nix-flatpak
     inputs.home-manager.nixosModules.home-manager
     {
       home-manager = {
