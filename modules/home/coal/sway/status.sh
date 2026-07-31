@@ -68,17 +68,25 @@ while true; do
     mem=$(free -m | awk '/Mem:/ {printf "%.0f", 100*$3/$2}')
 
     # Temperature
-    temp_raw=$(cat /sys/class/thermal/thermal_zone*/temp 2>/dev/null | head -1)
-    [ -n "$temp_raw" ] && temp=$((temp_raw / 1000)) || temp="N/A"
+    temp="N/A"
+    for f in /sys/class/thermal/thermal_zone*/temp; do
+        [ -r "$f" ] || continue
+        read -r temp_raw < "$f"
+        temp=$((temp_raw / 1000))
+        break
+    done
 
     # Brightness
-    bl=$(cat /sys/class/backlight/*/brightness 2>/dev/null | head -1)
-    blmax=$(cat /sys/class/backlight/*/max_brightness 2>/dev/null | head -1)
-    if [ -n "$bl" ] && [ -n "$blmax" ] && [ "$blmax" -ne 0 ]; then
-        brightness=$((100 * bl / blmax))
-    else
-        brightness="N/A"
-    fi
+    brightness="N/A"
+    for f in /sys/class/backlight/*/brightness; do
+        [ -r "$f" ] || continue
+        read -r bl < "$f"
+        read -r blmax < "${f%/*}/max_brightness"
+        if [ "$blmax" -ne 0 ]; then
+            brightness=$((100 * bl / blmax))
+        fi
+        break
+    done
 
     date=$(date '+%a %d %b %H:%M')
 
