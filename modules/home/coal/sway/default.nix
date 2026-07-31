@@ -17,6 +17,15 @@
     ];
     text = builtins.readFile ./status.sh;
   };
+
+  battery-notify = pkgs.writeShellApplication {
+    name = "battery-notify";
+    runtimeInputs = with pkgs; [
+      coreutils
+      libnotify
+    ];
+    text = builtins.readFile ./battery-notify.sh;
+  };
 in {
   options.modules.sway.enable = lib.mkEnableOption "";
 
@@ -54,6 +63,10 @@ in {
           }
           {
             command = "${pkgs.wbg}/bin/wbg ~/.config/wallpaper/wallpaper.png";
+            always = true;
+          }
+          {
+            command = "${battery-notify}/bin/battery-notify";
             always = true;
           }
         ];

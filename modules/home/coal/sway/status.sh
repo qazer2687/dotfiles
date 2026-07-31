@@ -81,6 +81,6 @@ while true; do
 
     date=$(date '+%a %d %b %H:%M')
 
-    echo "CPU: ${avg}% | MEM: ${mem}% | VOL: ${vol}% | ${net} | TEMP: ${temp}° | BACK: ${brightness}% | BAT: ${bat}% (${sym}) | ${date}"
+    echo "CPU: ${avg}% | MEM: ${mem}% | VOL: ${vol}% | ${net} | TEMP: ${temp}° | BACK: ${brightness}% | BAT: ${bat}% [${sym}] | ${date}"
     sleep 1
 done

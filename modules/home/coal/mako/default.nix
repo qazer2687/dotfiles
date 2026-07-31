@@ -10,7 +10,7 @@
       enable = true;
       settings = {
         font = "Terminus Bold 14";
-        format = "<b>%a </b> %s\n%b";
+        format = "%s\n%b";
         sort = "-time";
         layer = "top";
         anchor = "top-right";
@@ -25,6 +25,10 @@
         icons = false;
         default-timeout = 5000;
         ignore-timeout = true;
+
+        "urgency=critical" = {
+          border-color = "#ff0000";
+        };
       };
     };
   };
