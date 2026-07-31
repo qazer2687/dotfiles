@@ -6,7 +6,7 @@
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     inherit inputs self;
-    inherit (inputs.nix-.outputs) base16;
+    inherit (inputs.nix-base16.outputs) base16;
   };
   modules = [
     ../../hosts/jet

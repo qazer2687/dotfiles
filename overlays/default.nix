@@ -19,7 +19,8 @@ _: {
       openldap = prev.openldap.overrideAttrs {
         doCheck = !prev.stdenv.hostPlatform.isi686;
       };
-      
+
+
     }
     // lib.optionalAttrs (stdenv.isLinux && stdenv.isAarch64) {
       wrapFirefox = browser: opts: let

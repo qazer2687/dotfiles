@@ -1,0 +1,11 @@
+--- a/src/evdev-mt-touchpad-gestures.c
++++ b/src/evdev-mt-touchpad-gestures.c
+@@ -2229,7 +2229,7 @@ tp_gesture_stop_twofinger_scroll(struct tp_dispatch *tp, uint64_t time)
+ static bool
+ tp_gesture_are_gestures_enabled(struct tp_dispatch *tp)
+ {
+-	return (!tp->semi_mt && tp->num_slots > 1);
++	return false;
+ }
+ 
+ static enum libinput_config_status
