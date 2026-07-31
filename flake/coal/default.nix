@@ -2,23 +2,29 @@
   inputs,
   self,
   ...
-}:
+}: let
+  shared = ../../modules/base/shared;
+  exclude = ["flatpak"];
+  modules = builtins.filter (n: n != "default.nix" && !builtins.elem n exclude)
+    (builtins.attrNames (builtins.readDir shared));
+in
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     inherit inputs self;
     inherit (inputs.nix-base16.outputs) base16;
   };
   modules = [
-    ../../hosts/ivy
-    ../../modules/base/shared
-    ../../modules/base/ivy
+    ../../hosts/coal
+    {
+      imports = map (n: "${shared}/${n}") modules;
+    }
+    ../../modules/base/coal
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
-    inputs.flatpak.nixosModules.nix-flatpak
     {
       home-manager = {
-        users.alex = ../../homes/ivy;
+        users.alex = ../../homes/coal;
         extraSpecialArgs = {
           inherit inputs self;
           inherit (inputs.nix-base16.outputs) base16;
@@ -26,7 +32,6 @@ inputs.nixpkgs.lib.nixosSystem {
         useGlobalPkgs = true;
         useUserPackages = true;
         sharedModules = [
-          inputs.niri.homeModules.niri
           inputs.sops-nix.homeManagerModules.sops
         ];
       };

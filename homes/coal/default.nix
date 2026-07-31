@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -15,6 +16,7 @@
     nautilus
     neovim
     cryptsetup
+    inputs.helium.packages.${pkgs.system}.default
   ];
 
   modules = {
@@ -27,24 +29,20 @@
     zoxide.enable = true;
     utilities.enable = true;
     fish.enable = true;
-    kitty.enable = true;
     fastfetch.enable = true;
-    yazi.enable = true;
 
     # Theming
     fonts.enable = true;
     theme.enable = true;
 
     # Desktop Environment
-    hyprland.enable = true;
+    sway.enable = true;
     hyprlock.enable = true;
-    waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
+    foot.enable = true;
 
     # Applications
-    firefox.enable = true;
-    vscode.enable = true;
     zed.enable = true;
     vesktop.enable = true;
   };

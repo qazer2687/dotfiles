@@ -12,7 +12,7 @@ my personal multi-host nixos flake v9
 name        os        machine         description        type        arch  
 sage        NixOS     custom          primary desktop    desktop     x86_64-linux  
 jet         NixOS     m2 macbook air  primary laptop     laptop      aarch64-linux  
-ivy         NixOS     thinkpad t480   secondary laptop   laptop      x86_64-linux  
+coal        NixOS     thinkpad t480   secondary laptop   laptop      x86_64-linux  
 ```
   
 ## credits

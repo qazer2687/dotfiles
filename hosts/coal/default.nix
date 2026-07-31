@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ../../hardware/ivy
+    ../../hardware/coal
   ];
 
-  networking.hostName = "ivy";
+  networking.hostName = "coal";
 
   users.users = {
     alex = {
@@ -62,22 +62,14 @@
     enable = true;
     settings = {
       default_session = {
-        command = "uwsm start default";
+        command = "exec sway";
         user = "alex";
       };
     };
   };
 
-  programs.hyprland = {
+  programs.sway = {
     enable = true;
-    withUWSM = true;
-  };
-
-  services.udev = {
-    extraRules = ''
-      # Allow backlight control for non-root users.
-      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="apple-panel-bl", RUN+="${pkgs.coreutils}/bin/chmod 0664 /sys/class/backlight/apple-panel-bl/brightness"
-    '';
   };
 
   environment = {
@@ -88,7 +80,6 @@
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     };
     systemPackages = with pkgs; [
-      flatpak
       nautilus
       ffmpegthumbnailer
       ffmpeg-headless
@@ -111,11 +102,11 @@
     xdg.enable = true;
     networkmanager.enable = true;
     tailscale.enable = true;
-    flatpak.enable = true;
     keyd.enable = true;
     pipewire.enable = true;
     tlp.enable = true;
     easyeffects.enable = true;
+    libinput.enable = true;
   };
 
   # Did you read the comment?

@@ -21,19 +21,21 @@
             set_color normal
           end
 
-          # Build main prompt
-          set_color green
-          echo -n "$USER"
+          # user@host in bold green
+          set_color -o green
+          echo -n "$USER@$hostname"
           set_color normal
-          echo -n "@"
-          set_color blue
-          echo -n "$hostname"
-          set_color normal
+
+          # cwd in bold blue, ~ for home
+          set_color -o blue
           echo -n " "
-          set_color cyan
-          echo -n (prompt_pwd)
+          if test "$PWD" = "$HOME"
+            echo -n "~"
+          else
+            echo -n "$PWD"
+          end
           set_color normal
-          echo -n "> "
+          echo -n ' $ '
         '';
 
         # Run fish inside nix-shell.

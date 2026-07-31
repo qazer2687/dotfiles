@@ -6,7 +6,7 @@ pkgs: {
   arnis = pkgs.callPackage ./arnis {};
   pragmatapro = pkgs.callPackage ./pragmatapro {};
   TX02 = pkgs.callPackage ./TX02 {};
-  helium = pkgs.callPackage ./helium {};
+
   fast-font = pkgs.callPackage ./fast-font {};
   fraktion-sans = pkgs.callPackage ./fraktion-sans {};
   lettra-mono = pkgs.callPackage ./lettra-mono {};

@@ -28,6 +28,10 @@
 
     # Personal
     nix-base16.url = "github:qazer2687/nix-base16";
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -43,7 +47,7 @@
         jet = (import ./flake/jet) { inherit inputs self; };
 
         # Secondary Laptop
-        ivy = (import ./flake/ivy) { inherit inputs self; };
+        coal = (import ./flake/coal) { inherit inputs self; };
       };
     };
 }

@@ -4,7 +4,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "isotope";
+  scheme = base16 "mountain";
 in {
   options.modules.hyprlock.enable = lib.mkEnableOption "";
 
@@ -14,7 +14,6 @@ in {
       settings = {
         general = {
           immediate_render = true;
-          # Doesn't work with GPU accel.
           screencopy_mode = 1;
           hide_cursor = true;
         };
@@ -30,25 +29,28 @@ in {
         ];
 
         background = {
-          #path = "/home/alex/.config/wallpaper/wallpaper.png";
-          color = "rgba(${scheme.base00}ff)";
+          path = "/home/alex/.config/wallpaper/wallpaper.png";
+          blur_passes = 2;
+          brightness = 0.25;
+
+          #color = "rgba(${scheme.base00}ff)";
         };
 
         "input-field" = {
           size = "720, 72";
           outline_thickness = 0;
-          dots_size = 0.6;
+          dots_size = 0.4;
           font_family = "PragmataPro";
           dots_text_format = "×";
-          dots_spacing = 0.6;
+          dots_spacing = 0.5;
           dots_center = true;
           outer_color = "rgba(${scheme.base05}00)";
           inner_color = "rgba(${scheme.base01}00)";
-          font_color = "rgba(${scheme.base05}ff)";
+          font_color = "rgba(ffffffff)";
           fade_on_empty = false;
           placeholder_text = "";
           hide_input = false;
-          rounding = 6;
+          rounding = 4;
 
           check_color = "rgba(${scheme.base01}ff)";
           fail_color = "rgba(${scheme.base01}ff)";
