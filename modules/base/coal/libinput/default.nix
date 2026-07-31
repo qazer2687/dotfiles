@@ -15,7 +15,7 @@
             owner = "libinput";
             repo = "libinput";
             rev = "1.31.1";
-            hash = "sha256-4BCwICG4/p8+aWpKIFnAJD8MkPL51Lz0yI0vlhPFKws=";
+            hash = "sha256-9Ko97vJyo4a9NUF7omqHTwzVV02sJ2EqpDIh+nPeLwk=";
           };
           patches = (old.patches or []) ++ [
             ./../../../../patches/libinput/disable-pinch.patch

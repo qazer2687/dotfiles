@@ -2,7 +2,7 @@
 
 # Seed CPU baseline
 read -r cpu_line < /proc/stat
-cpu_fields=($cpu_line)
+read -ra cpu_fields <<< "$cpu_line"
 idle=${cpu_fields[4]}
 iowait=${cpu_fields[5]}
 prev_idle=$((idle + iowait))
@@ -37,7 +37,7 @@ while true; do
 
     # CPU usage this second
     read -r cpu_line < /proc/stat
-    cpu_fields=($cpu_line)
+    read -ra cpu_fields <<< "$cpu_line"
     idle=${cpu_fields[4]}
     iowait=${cpu_fields[5]}
     total=0
@@ -56,6 +56,7 @@ while true; do
 
     # Circular buffer over 15 seconds
     eval "old=\$v$idx"
+    # shellcheck disable=SC2154 # old is assigned via eval above
     sum=$((sum - old + cpu_usage))
     eval "v$idx=$cpu_usage"
     idx=$(((idx + 1) % max))
