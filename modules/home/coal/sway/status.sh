@@ -20,6 +20,9 @@ for i in {0..14}; do
     eval "v$i=0"
 done
 
+net="NET: disconnected"
+last_net_update=0
+
 while true; do
     bat=$(cat /sys/class/power_supply/BAT1/capacity)
     status=$(cat /sys/class/power_supply/BAT1/status)
@@ -32,8 +35,12 @@ while true; do
 
     vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null | awk '{print int($2*100)}')
 
-    ssid=$(nmcli -t -f ACTIVE,SSID dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2)
-    [ -n "$ssid" ] && net="NET: ${ssid}" || net="NET: disconnected"
+    now=$(date +%s)
+    if [ $((now - last_net_update)) -ge 10 ]; then
+        ssid=$(nmcli -t -f ACTIVE,SSID dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2)
+        [ -n "$ssid" ] && net="NET: ${ssid}" || net="NET: disconnected"
+        last_net_update=$now
+    fi
 
     # CPU usage this second
     read -r cpu_line < /proc/stat
@@ -91,5 +98,5 @@ while true; do
     date=$(date '+%a %d %b %H:%M')
 
     echo "CPU: ${avg}% | MEM: ${mem}% | VOL: ${vol}% | ${net} | TEMP: ${temp}° | BACK: ${brightness}% | BAT: ${bat}% [${sym}] | ${date}"
-    sleep 1
+    sleep 0.5
 done

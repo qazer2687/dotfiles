@@ -62,7 +62,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "exec sway";
+        command = "uwsm start default";
         user = "alex";
       };
     };
