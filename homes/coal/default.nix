@@ -10,12 +10,9 @@
 
   home.packages = with pkgs; [
     obsidian
-    (mpv.override {
-          mpv-unwrapped = pkgs.mpv-unwrapped.override {
-            ffmpeg = ffmpeg-full;
-          };
-        })
+    mpv
     gdu
+    loupe
     btop
     nautilus
     neovim
