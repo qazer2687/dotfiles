@@ -10,7 +10,11 @@
 
   home.packages = with pkgs; [
     obsidian
-    mpv
+    (mpv.override {
+          mpv-unwrapped = pkgs.mpv-unwrapped.override {
+            ffmpeg = ffmpeg-full;
+          };
+        })
     gdu
     btop
     nautilus
