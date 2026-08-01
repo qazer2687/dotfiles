@@ -33,11 +33,11 @@ while true; do
         *) sym="?" ;;
     esac
 
-    vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null | awk '{print int($2*100)}')
+    vol=$(timeout 2 wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null | awk '{print int($2*100)}')
 
     now=$(date +%s)
     if [ $((now - last_net_update)) -ge 10 ]; then
-        ssid=$(nmcli -t -f ACTIVE,SSID dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2)
+        ssid=$(timeout 5 nmcli -t -f ACTIVE,SSID dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2)
         [ -n "$ssid" ] && net="NET: ${ssid}" || net="NET: disconnected"
         last_net_update=$now
     fi

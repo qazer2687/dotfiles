@@ -55,7 +55,7 @@ in {
         startup = [
           {
             command = "${pkgs.hyprlock}/bin/hyprlock -q || loginctl terminate-session $XDG_SESSION_ID";
-            always = true;
+            always = false;
           }
           {
             command = "${pkgs.wlsunset}/bin/wlsunset -t 3000 -T 4000 -l 51.509865 -L -0.118092";
@@ -195,6 +195,7 @@ in {
 
       extraConfig = ''
         for_window [class="obsidian"] focus_on_window_activation focus
+        bindswitch --locked lid:on exec ${pkgs.hyprlock}/bin/hyprlock --immediate
         include /etc/sway/config.d/*
       '';
 
