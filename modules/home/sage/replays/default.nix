@@ -27,8 +27,9 @@
         exit 1
       fi
 
-      export IMMICH_INSTANCE_URL="$(cat '${config.sops.secrets.immich-server-url.path}')"
-      export IMMICH_API_KEY="$(cat '${config.sops.secrets.immich-api-key.path}')"
+      IMMICH_INSTANCE_URL="$(cat '${config.sops.secrets.immich-server-url.path}')"
+      IMMICH_API_KEY="$(cat '${config.sops.secrets.immich-api-key.path}')"
+      export IMMICH_INSTANCE_URL IMMICH_API_KEY
 
       OUT="$(mktemp)"
       ERR="$(mktemp)"
@@ -104,7 +105,7 @@ in {
         OnBootSec = "2min";
         OnUnitActiveSec = "30min";
         Persistent = true;
-      };
+      
       Install.WantedBy = [ "timers.target" ];
     };
   };
