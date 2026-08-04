@@ -22,7 +22,9 @@ in {
           margin = "0 0 0 0";
           modules-left = ["clock"];
           modules-center = ["hyprland/workspaces"];
-          modules-right = ["tray" "network" "pulseaudio" "battery"];
+          modules-right =
+            lib.optionals config.modules.replays.enable ["custom/replays"]
+            ++ ["tray" "network" "pulseaudio" "battery"];
 
           pulseaudio = {
             format = "vol: {volume}%";
@@ -55,6 +57,13 @@ in {
             format-wifi = "net: up";
             format-disconnected = "net: down";
             interval = 30;
+          };
+
+          "custom/replays" = lib.mkIf config.modules.replays.enable {
+            exec = "${./scripts/replays.sh}";
+            return-type = "json";
+            interval = 30;
+            tooltip = true;
           };
 
           "hyprland/workspaces" = {
@@ -94,7 +103,7 @@ in {
           background: #${scheme.base00};
         }
 
-        #mpris, #clock, #language, #bluetooth, #custom-pingServer, #tray, #network, #battery, #pulseaudio {
+        #mpris, #clock, #language, #bluetooth, #custom-pingServer, #custom-replays, #tray, #network, #battery, #pulseaudio {
           padding: 0 16px;
           margin: 4px;
           border-radius: 0px;
@@ -102,6 +111,16 @@ in {
           background: #${scheme.base01};
           color: #${scheme.base05};
         }
+
+        ${lib.optionalString config.modules.replays.enable ''
+          #custom-replays.ok {
+            color: #${scheme.base0B};
+          }
+
+          #custom-replays.error {
+            color: #${scheme.base08};
+          }
+        ''}
 
         #workspaces {
           padding: 0 2px;

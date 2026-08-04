@@ -72,6 +72,8 @@
     # Gaming
     mangohud.enable = true;
     prismlauncher.enable = true;
+
+    replays.enable = true;
   };
 
   home.stateVersion = "25.05";

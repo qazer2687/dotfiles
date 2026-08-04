@@ -11,4 +11,6 @@ pkgs: {
   fraktion-sans = pkgs.callPackage ./fraktion-sans {};
   lettra-mono = pkgs.callPackage ./lettra-mono {};
   space-grotesk = pkgs.callPackage ./space-grotesk {};
+
+  immich-cli = pkgs.callPackage ./immich-cli {};
 }
