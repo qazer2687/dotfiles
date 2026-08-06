@@ -6,16 +6,13 @@
 }: let
   modifier = "Mod4";
 
-  status = pkgs.writeShellApplication {
-    name = "sway-status";
+  resize = pkgs.writeShellApplication {
+    name = "sway-resize";
     runtimeInputs = with pkgs; [
-      wireplumber
-      networkmanager
-      procps
-      coreutils
-      gawk
+      sway
+      jq
     ];
-    text = builtins.readFile ./status.sh;
+    text = builtins.readFile ./resize.sh;
   };
 
   battery-notify = pkgs.writeShellApplication {
@@ -42,6 +39,59 @@ in {
       wtype
     ];
 
+    programs.i3status-rust = {
+      enable = true;
+      bars.default = {
+        icons = "none";
+        blocks = [
+          {
+            block = "cpu";
+            interval = 2;
+            format = "CPU: $utilization | ";
+          }
+          {
+            block = "memory";
+            interval = 5;
+            format = "MEM: $mem_used_percents | ";
+          }
+          {
+            block = "sound";
+            format = "VOL: $volume | ";
+            show_volume_when_muted = true;
+          }
+          {
+            block = "net";
+            interval = 10;
+            format = "NET: {$ssid|disconnected} | ";
+          }
+          {
+            block = "temperature";
+            interval = 10;
+            format = "TEMP: $average | ";
+            chip = "pch_skylake-*";
+          }
+          {
+            block = "backlight";
+            format = "BACK: $brightness | ";
+          }
+          {
+            block = "battery";
+            interval = 10;
+            device = "BAT1";
+            format = "BAT: $percentage [-] | ";
+            charging_format = "BAT: $percentage [+] | ";
+            full_format = "BAT: $percentage [?] | ";
+            not_charging_format = "BAT: $percentage [-] | ";
+          }
+          {
+            block = "time";
+            interval = 30;
+            format = " $timestamp.datetime(f:'%a %d %b %H:%M')";
+          }
+        ];
+      };
+    };
+
     wayland.windowManager.sway = {
       enable = true;
       package = pkgs.sway;
@@ -51,6 +101,8 @@ in {
 
         menu = "tofi-run | xargs swaymsg exec --";
         terminal = "foot";
+
+        modes = { };
 
         startup = [
           {
@@ -139,11 +191,11 @@ in {
                 text = "#000000";
               };
             };
-            statusCommand = "${lib.getExe status}";
+            statusCommand = "i3status-rs ~/.config/i3status-rust/config-default.toml";
           }
         ];
 
-        keybindings = lib.mkOptionDefault {
+        keybindings = {
           "${modifier}+Return" = "exec foot";
           "${modifier}+q" = "kill";
           "${modifier}+e" = "exec tofi-run | xargs swaymsg exec --";
@@ -159,6 +211,11 @@ in {
           "${modifier}+Shift+j" = "move down";
           "${modifier}+Shift+k" = "move up";
           "${modifier}+Shift+l" = "move right";
+
+          "Mod1+h" = "exec ${resize}/bin/sway-resize h";
+          "Mod1+j" = "exec ${resize}/bin/sway-resize j";
+          "Mod1+k" = "exec ${resize}/bin/sway-resize k";
+          "Mod1+l" = "exec ${resize}/bin/sway-resize l";
 
           "${modifier}+1" = "workspace number 1";
           "${modifier}+2" = "workspace number 2";
