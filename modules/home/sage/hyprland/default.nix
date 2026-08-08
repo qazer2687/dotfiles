@@ -193,7 +193,6 @@ in {
 
       extraConfig = ''
         # Add extra config here...
-        env = AQ_NO_ATOMIC,1
       '';
     };
   };
