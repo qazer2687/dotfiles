@@ -187,7 +187,7 @@ in {
           #''mpvpaper -o "--loop-file=inf" DP-3 /home/alex/.config/wallpaper/wallpaper.mkv''
           #"${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
           #"vesktop --start-minimized"
-          "obs --minimize-to-tray --startreplaybuffer"
+          "${pkgs.bash}/bin/bash -c '${pkgs.coreutils}/bin/rm -rf $HOME/.config/obs-studio/.sentinel; exec obs --minimize-to-tray --startreplaybuffer'"
         ];
       };
 
