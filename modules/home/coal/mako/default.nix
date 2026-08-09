@@ -10,7 +10,7 @@
       enable = true;
       settings = {
         font = "Terminus Bold 14";
-        format = "%s\n%b";
+        format = "%s\\n%b";
         sort = "-time";
         layer = "top";
         anchor = "top-right";

@@ -6,19 +6,6 @@
 }: let
   modifier = "Mod4";
 
-  inverted = {
-    idle_bg = "#aaaaaa";
-    idle_fg = "#000000";
-    info_bg = "#aaaaaa";
-    info_fg = "#000000";
-    good_bg = "#aaaaaa";
-    good_fg = "#000000";
-    warning_bg = "#aaaaaa";
-    warning_fg = "#000000";
-    critical_bg = "#aaaaaa";
-    critical_fg = "#000000";
-  };
-
   resize = pkgs.writeShellApplication {
     name = "sway-resize";
     runtimeInputs = with pkgs; [
@@ -26,15 +13,6 @@
       jq
     ];
     text = builtins.readFile ./resize.sh;
-  };
-
-  battery-notify = pkgs.writeShellApplication {
-    name = "battery-notify";
-    runtimeInputs = with pkgs; [
-      coreutils
-      libnotify
-    ];
-    text = builtins.readFile ./battery-notify.sh;
   };
 in {
   options.modules.sway.enable = lib.mkEnableOption "";
@@ -60,7 +38,7 @@ in {
           theme = {
             theme = "plain";
             overrides = {
-              separator = "";
+              separator = "|";
               idle_bg = "#000000";
               idle_fg = "#aaaaaa";
               info_bg = "#000000";
@@ -79,7 +57,6 @@ in {
             block = "cpu";
             interval = 2;
             format = " CPU: $utilization ";
-            theme_overrides = inverted;
           }
           {
             block = "memory";
@@ -90,7 +67,6 @@ in {
             block = "sound";
             format = " VOL: $volume ";
             show_volume_when_muted = true;
-            theme_overrides = inverted;
           }
           {
             block = "net";
@@ -102,7 +78,6 @@ in {
             interval = 10;
             format = " TEMP: $average ";
             chip = "pch_skylake-*";
-            theme_overrides = inverted;
           }
           {
             block = "backlight";
@@ -112,11 +87,26 @@ in {
             block = "battery";
             interval = 10;
             device = "BAT1";
-            format = " BAT: $percentage [-] ";
-            charging_format = " BAT: $percentage [+] ";
-            full_format = " BAT: $percentage [?] ";
-            not_charging_format = " BAT: $percentage [-] ";
-            theme_overrides = inverted;
+            format = " BAT: $percentage ";
+            charging_format = " BAT: $percentage ";
+            full_format = " BAT: $percentage ";
+            not_charging_format = " BAT: $percentage ";
+            good = 100;
+            warning = 25;
+            theme_overrides = {
+              good = {
+                bg = "#00ff00";
+                fg = "#000000";
+              };
+              warning = {
+                bg = "#ff0000";
+                fg = "#000000";
+              };
+              critical = {
+                bg = "#ff0000";
+                fg = "#000000";
+              };
+            };
           }
           {
             block = "time";
@@ -150,10 +140,6 @@ in {
           }
           {
             command = "${pkgs.wbg}/bin/wbg ~/.config/wallpaper/wallpaper.png";
-            always = true;
-          }
-          {
-            command = "${battery-notify}/bin/battery-notify";
             always = true;
           }
         ];
@@ -202,6 +188,7 @@ in {
         bars = [
           {
             position = "bottom";
+            trayOutput = "none";
             fonts = {
               names = ["Terminus"];
               style = "Bold";
