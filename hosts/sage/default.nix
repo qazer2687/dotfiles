@@ -31,10 +31,6 @@
       #"udev.log_level=3"
       #"console=/dev/null"
 
-      # Disable both hardware and software watchdog.
-      "nmi_watchdog=0"
-      "nowatchdog"
-
       # Can help IRQ handling distribution and reduce latency under mixed load.
       "threadirqs"
 
@@ -65,6 +61,14 @@
 
       # TCP congestion control algorithm (BBR provides better throughput and lower latency).
       "net.ipv4.tcp_congestion_control" = "bbr";
+
+      # Lockup detection: log the exact stuck function and reboot instead of requiring a forced poweroff.
+      # A detected hang panics the kernel, and kernel.panic=10 reboots 10s later.
+      "kernel.hardlockup_panic" = "1";
+      "kernel.softlockup_panic" = "1";
+      "kernel.hung_task_panic" = "1";
+      "kernel.hung_task_timeout_secs" = "60";
+      "kernel.panic" = "10";
     };
     kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
   };
