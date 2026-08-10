@@ -15,9 +15,9 @@
         # AMF is unsupported on RDNA4/Linux, VAAPI via radeonsi is the working path.
         encoder = "vaapi";
         adapter_name = "/dev/dri/renderD128";
-        # WLR capture renders the virtual STREAM output, decoupled from the OLED.
+        # WLR capture streams the desktop directly.
         capture = "wlr";
-        output_name = "STREAM";
+        output_name = "DP-3";
         # Caps the bitrate excursions on static content (LizardByte/Sunshine#3817).
         max_bitrate = 40000;
       };

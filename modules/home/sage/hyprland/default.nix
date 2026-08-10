@@ -183,7 +183,6 @@ in {
         ];
 
         exec-once = [
-          "hyprctl output create headless STREAM && hyprctl keyword monitor STREAM, 2560x1440@60, 0x0, 1 && hyprctl keyword workspace 1-10, monitor:DP-3, persistent:true"
           "hyprlock -q || loginctl terminate-session $XDG_SESSION_ID"
           "pamixer --set-volume 50"
           "waybar"
