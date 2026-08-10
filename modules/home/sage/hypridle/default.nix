@@ -11,9 +11,8 @@
       settings = {
         listener = [
           {
-            timeout = 150;
+            timeout = 240;
             on-timeout = "hyprctl dispatch dpms off";
-            on-resume = "hyprctl dispatch dpms on";
           }
         ];
       };
