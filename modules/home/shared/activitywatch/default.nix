@@ -2,13 +2,12 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: {
   options.modules.activitywatch.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.activitywatch.enable {
-    home.packages = [ pkgs.aw-qt ];
+    home.packages = [pkgs.aw-qt];
     services.activitywatch = {
       enable = true;
       package = pkgs.aw-server-rust;
@@ -19,11 +18,11 @@
 
     systemd.user.services.activitywatch-watcher-awatcher = {
       Unit = {
-        After = [ "aw-server.service" ];
-        Wants = [ "aw-server.service" ];
+        After = ["aw-server.service"];
+        Wants = ["aw-server.service"];
       };
       Install = {
-        WantedBy = [ "graphical-session.target" ];
+        WantedBy = ["graphical-session.target"];
       };
     };
   };

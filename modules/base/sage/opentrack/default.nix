@@ -17,7 +17,7 @@
         python3
         protontricks
       ];
-      sessionVariables.PATH = [ "$HOME/.local/bin" ];
+      sessionVariables.PATH = ["$HOME/.local/bin"];
     };
     services.udev.extraRules = ''
       SUBSYSTEM=="video4linux", ATTRS{idVendor}=="1415", ATTRS{idProduct}=="2000", RUN+="${pkgs.v4l-utils}/bin/v4l2-ctl -d $env{DEVNAME} --set-parm=60"

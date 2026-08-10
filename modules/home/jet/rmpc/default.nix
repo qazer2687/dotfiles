@@ -2,15 +2,12 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: {
   options.modules.rmpc.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.rmpc.enable {
-
-
-    home.packages = [ pkgs.chromaprint pkgs.mpc];
+    home.packages = [pkgs.chromaprint pkgs.mpc];
 
     services.mpd = {
       enable = true;
@@ -71,9 +68,9 @@
 
       settings = {
         directory = "/home/alex/Music/library";
-        plugins = [ "mpdupdate" "bandcamp" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart" "musicbrainz" ];
-      
-        sources = [ "bandcamp" "musicbrainz" "discogs" ];
+        plugins = ["mpdupdate" "bandcamp" "chroma" "discogs" "lastgenre" "fromfilename" "fetchart" "embedart" "musicbrainz"];
+
+        sources = ["bandcamp" "musicbrainz" "discogs"];
 
         discogs = {
           user_token_path = "~/.config/beets/discogs_token";
@@ -88,7 +85,7 @@
 
         match = {
           strong_rec_thresh = 0.2;
-          ignored_fields = [ "track" "index" ];
+          ignored_fields = ["track" "index"];
         };
 
         import = {
@@ -100,6 +97,3 @@
     };
   };
 }
-
-
-

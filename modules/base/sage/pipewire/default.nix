@@ -48,25 +48,24 @@
       alsa.support32Bit = true;
       pulse.enable = true;
 
-
       # Sage has handled 32 in the past but its not reliable, also I had no reason to tune for low latency anyway I was just bored.
       extraConfig.pipewire."92-low-latency" = {
         "context.properties" = {
-          "default.clock.rate"          = 48000;
-          "default.clock.allowed-rates" = [ 48000 ];
-          "default.clock.force-rate"    = 48000;
+          "default.clock.rate" = 48000;
+          "default.clock.allowed-rates" = [48000];
+          "default.clock.force-rate" = 48000;
 
           # 32/48000 = 0.67 ms
-          "default.clock.quantum"       = 128;
-          "default.clock.min-quantum"   = 128;
-          "default.clock.max-quantum"   = 120;
+          "default.clock.quantum" = 128;
+          "default.clock.min-quantum" = 128;
+          "default.clock.max-quantum" = 120;
         };
         "context.modules" = [
           {
             name = "libpipewire-module-rt";
             args = {
-              nice.level   = -11;
-              rt.prio      = 88;
+              nice.level = -11;
+              rt.prio = 88;
               rt.time.soft = 200000;
               rt.time.hard = 200000;
             };

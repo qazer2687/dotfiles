@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  lib,
   ...
 }: {
   imports = [
@@ -40,13 +39,13 @@
       "split_lock_detect=off"
     ];
     # Disable WiFi driver.
-    blacklistedKernelModules = [ "mt7921e" ];
+    blacklistedKernelModules = ["mt7921e"];
     #consoleLogLevel = 3;
     #initrd.verbose = false;
 
     # Kernel panics without this option enabled.
     initrd.systemd.enable = true;
-    
+
     kernel.sysctl = {
       # Quiet boot.
       #"kernel.printk" = "0 0 0 0";
@@ -73,14 +72,14 @@
     kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
   };
 
-  boot.supportedFilesystems = [ "nfs" ];
-  
+  boot.supportedFilesystems = ["nfs"];
+
   fileSystems."/mnt/backups" = {
     device = "/dev/disk/by-uuid/36cbbcf7-9398-43c8-ba34-f3655a7f7e2c";
     fsType = "ext4";
-    options = [ "defaults" "noatime" ];
+    options = ["defaults" "noatime"];
   };
-  
+
   fileSystems."/mnt/storage" = {
     device = "fern:/mnt/storage";
     fsType = "nfs";
@@ -94,7 +93,7 @@
       "nofail"
     ];
   };
-  
+
   # Use the "Latency-criticality Aware Virtual Deadline" scheduler for lower latency.
   services.scx = {
     enable = true;

@@ -163,7 +163,7 @@ in {
 
           # Quit
           "SUPER SHIFT, Q, exit"
-          
+
           # OBS Replay
           "SUPER, BACKSPACE, exec, obs-cmd --websocket obsws://localhost:4455 replay save"
 

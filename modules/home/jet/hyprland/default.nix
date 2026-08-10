@@ -5,11 +5,9 @@
   inputs,
   base16,
   ...
-}:
-let
+}: let
   scheme = base16 "catppuccin-mocha";
-in
-{
+in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hyprland.enable {
@@ -19,7 +17,6 @@ in
       pamixer
       wlr-randr
     ];
-
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -63,7 +60,7 @@ in
         animations = {
           enabled = false;
 
-           bezier = [
+          bezier = [
             "snap, 0.2, 0, 0, 1"
           ];
 

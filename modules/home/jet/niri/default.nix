@@ -101,7 +101,7 @@ in {
           # Keyboard Backlight
           "Mod+XF86MonBrightnessUp".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%+";
           "Mod+XF86MonBrightnessDown".action = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "--class" "leds" "--device" "kbd_backlight" "set" "10%-";
-            
+
           # Navigate
           "Mod+h".action = focus-column-left;
           "Mod+l".action = focus-column-right;
@@ -114,7 +114,7 @@ in {
           "Mod+Shift+j".action = move-column-to-workspace-down;
           "Mod+Shift+k".action = move-column-to-workspace-up;
         };
-        
+
         switch-events = {
           lid-close.action.spawn = ["hyprlock" "--immediate"];
         };

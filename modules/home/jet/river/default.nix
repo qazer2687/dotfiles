@@ -2,14 +2,11 @@
   lib,
   config,
   pkgs,
-  inputs,
   base16,
   ...
-}:
-let
+}: let
   scheme = base16 "catppuccin-mocha";
-in
-{
+in {
   options.modules.river.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.river.enable {

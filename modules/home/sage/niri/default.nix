@@ -10,7 +10,7 @@
 in {
   options.modules.niri.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.niri.enable {
-    home.packages = [ pkgs.xwayland-satellite ];
+    home.packages = [pkgs.xwayland-satellite];
 
     programs.niri = {
       enable = true;
@@ -87,9 +87,9 @@ in {
         };
 
         spawn-at-startup = [
-          { command = [ "fish" "-c" "'waybar'" ]; }
-          { command = [ "${pkgs.sunsetr}/bin/sunsetr" ]; }
-          { command = [ "${pkgs.wbg}/bin/wbg" "-s" "/home/alex/.config/wallpaper/wallpaper.png" ]; }
+          {command = ["fish" "-c" "'waybar'"];}
+          {command = ["${pkgs.sunsetr}/bin/sunsetr"];}
+          {command = ["${pkgs.wbg}/bin/wbg" "-s" "/home/alex/.config/wallpaper/wallpaper.png"];}
         ];
       };
     };
