@@ -17,7 +17,6 @@
     nautilus
     neovim
     cryptsetup
-    moonlight-qt
     inputs.helium.packages.${pkgs.system}.default
   ];
 

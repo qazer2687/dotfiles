@@ -167,9 +167,6 @@ in {
           # OBS Replay
           "SUPER, BACKSPACE, exec, obs-cmd --websocket obsws://localhost:4455 replay save"
 
-          # Wake Display
-          "SUPER, CTRL, exec, hyprctl dispatch dpms on"
-
           ", SUPER_L, exec, pkill -SIGUSR1 waybar"
         ];
 

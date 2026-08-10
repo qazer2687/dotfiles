@@ -215,7 +215,6 @@
     gamescope.enable = true;
     opentrack.enable = true;
     beammp.enable = true;
-    sunshine.enable = true;
 
     # AI
     ollama.enable = true;
