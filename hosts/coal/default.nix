@@ -43,9 +43,11 @@
   swapDevices = [
     {
       device = "/swapfile";
-      size = 16 * 1024;
+      size = 24 * 1024;
     }
   ];
+
+  boot.resumeDevice = "/swapfile";
 
   # Autologin and hide getty messages.
   services.getty = {
@@ -57,15 +59,6 @@
       "--noclear"
       "--nohostname"
     ];
-  };
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "uwsm start default";
-        user = "alex";
-      };
-    };
   };
 
   programs.sway = {
@@ -105,6 +98,7 @@
     keyd.enable = true;
     pipewire.enable = true;
     tlp.enable = true;
+    upower.enable = true;
     easyeffects.enable = true;
     libinput.enable = true;
   };
