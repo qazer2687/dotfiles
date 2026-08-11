@@ -49,7 +49,7 @@
 
       # zswap
       "zswap.enabled=1"
-      "zswap.compressor=zstd"     
+      "zswap.compressor=zstd"
       "zswap.zpool=zsmalloc"
       "zswap.max_pool_percent=50"
 
@@ -65,7 +65,7 @@
       #"vm.swappiness" = 15;
       #"vm.vfs_cache_pressure" = 50;
 
-      "vm.mmap_rnd_bits" = 24; 
+      "vm.mmap_rnd_bits" = 24;
     };
   };
 

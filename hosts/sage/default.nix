@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  lib,
   ...
 }: {
   imports = [
@@ -31,10 +30,6 @@
       #"udev.log_level=3"
       #"console=/dev/null"
 
-      # Disable both hardware and software watchdog.
-      "nmi_watchdog=0"
-      "nowatchdog"
-
       # Can help IRQ handling distribution and reduce latency under mixed load.
       "threadirqs"
 
@@ -44,13 +39,13 @@
       "split_lock_detect=off"
     ];
     # Disable WiFi driver.
-    blacklistedKernelModules = [ "mt7921e" ];
+    blacklistedKernelModules = ["mt7921e"];
     #consoleLogLevel = 3;
     #initrd.verbose = false;
 
     # Kernel panics without this option enabled.
     initrd.systemd.enable = true;
-    
+
     kernel.sysctl = {
       # Quiet boot.
       #"kernel.printk" = "0 0 0 0";
@@ -65,18 +60,26 @@
 
       # TCP congestion control algorithm (BBR provides better throughput and lower latency).
       "net.ipv4.tcp_congestion_control" = "bbr";
+
+      # Lockup detection: log the exact stuck function and reboot instead of requiring a forced poweroff.
+      # A detected hang panics the kernel, and kernel.panic=10 reboots 10s later.
+      "kernel.hardlockup_panic" = "1";
+      "kernel.softlockup_panic" = "1";
+      "kernel.hung_task_panic" = "1";
+      "kernel.hung_task_timeout_secs" = "60";
+      "kernel.panic" = "10";
     };
     kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
   };
 
-  boot.supportedFilesystems = [ "nfs" ];
-  
+  boot.supportedFilesystems = ["nfs"];
+
   fileSystems."/mnt/backups" = {
     device = "/dev/disk/by-uuid/36cbbcf7-9398-43c8-ba34-f3655a7f7e2c";
     fsType = "ext4";
-    options = [ "defaults" "noatime" ];
+    options = ["defaults" "noatime"];
   };
-  
+
   fileSystems."/mnt/storage" = {
     device = "fern:/mnt/storage";
     fsType = "nfs";
@@ -90,7 +93,7 @@
       "nofail"
     ];
   };
-  
+
   # Use the "Latency-criticality Aware Virtual Deadline" scheduler for lower latency.
   services.scx = {
     enable = true;

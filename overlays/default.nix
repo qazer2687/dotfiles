@@ -10,9 +10,6 @@ _: {
     inherit (prev) lib stdenv;
   in
     {
-
-      
-
       ffmpeg-full = prev.ffmpeg-full.override {
         withFullDeps = true;
       };
@@ -21,8 +18,6 @@ _: {
       openldap = prev.openldap.overrideAttrs {
         doCheck = !prev.stdenv.hostPlatform.isi686;
       };
-
-
     }
     // lib.optionalAttrs (stdenv.isLinux && stdenv.isAarch64) {
       wrapFirefox = browser: opts: let

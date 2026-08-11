@@ -163,7 +163,7 @@ in {
 
           # Quit
           "SUPER SHIFT, Q, exit"
-          
+
           # OBS Replay
           "SUPER, BACKSPACE, exec, obs-cmd --websocket obsws://localhost:4455 replay save"
 
@@ -185,9 +185,9 @@ in {
           "waybar"
           "${pkgs.wbg}/bin/wbg -s /home/alex/.config/wallpaper/wallpaper.png"
           #''mpvpaper -o "--loop-file=inf" DP-3 /home/alex/.config/wallpaper/wallpaper.mkv''
-          #"${pkgs.hyprsunset}/bin/hyprsunset -t 3000"
+          "${pkgs.sunsetr}/bin/sunsetr"
           #"vesktop --start-minimized"
-          "obs --minimize-to-tray --startreplaybuffer"
+          "${pkgs.bash}/bin/bash -c '${pkgs.coreutils}/bin/rm -rf $HOME/.config/obs-studio/.sentinel; exec obs --minimize-to-tray --startreplaybuffer'"
         ];
       };
 

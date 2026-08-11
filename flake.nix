@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri-package = {
-      url = "github:urayde/niri"; 
+      url = "github:urayde/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
@@ -21,7 +21,6 @@
     #hyprland.url = "github:hyprwm/Hyprland/c8b5023bb0610be4d1d2987ef05168834b2661ba";
     hyprland.url = "github:hyprwm/Hyprland";
 
-
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -34,20 +33,18 @@
     };
   };
 
-  outputs =
-    { self, ... }@inputs:
-    {
-      overlays = import ./overlays { inherit inputs; };
+  outputs = {self, ...} @ inputs: {
+    overlays = import ./overlays {inherit inputs;};
 
-      nixosConfigurations = {
-        # Desktop
-        sage = (import ./flake/sage) { inherit inputs self; };
+    nixosConfigurations = {
+      # Desktop
+      sage = (import ./flake/sage) {inherit inputs self;};
 
-        # Primary Laptop
-        jet = (import ./flake/jet) { inherit inputs self; };
+      # Primary Laptop
+      jet = (import ./flake/jet) {inherit inputs self;};
 
-        # Secondary Laptop
-        coal = (import ./flake/coal) { inherit inputs self; };
-      };
+      # Secondary Laptop
+      coal = (import ./flake/coal) {inherit inputs self;};
     };
+  };
 }

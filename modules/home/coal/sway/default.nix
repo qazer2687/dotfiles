@@ -139,7 +139,7 @@ in {
         menu = "tofi-run | xargs swaymsg exec --";
         terminal = "foot";
 
-        modes = { };
+        modes = {};
 
         startup = [
           {

@@ -49,17 +49,17 @@ in {
         url_color = "#${scheme.base0D}";
 
         # Standard 16 ANSI colors
-        color0  = "#${scheme.base03}";
-        color1  = "#${scheme.base08}";
-        color2  = "#${scheme.base0B}";
-        color3  = "#${scheme.base0A}";
-        color4  = "#${scheme.base0D}";
-        color5  = "#${scheme.base0E}";
-        color6  = "#${scheme.base0C}";
-        color7  = "#${scheme.base04}";
+        color0 = "#${scheme.base03}";
+        color1 = "#${scheme.base08}";
+        color2 = "#${scheme.base0B}";
+        color3 = "#${scheme.base0A}";
+        color4 = "#${scheme.base0D}";
+        color5 = "#${scheme.base0E}";
+        color6 = "#${scheme.base0C}";
+        color7 = "#${scheme.base04}";
 
-        color8  = "#${scheme.base02}";
-        color9  = "#${scheme.base08}";
+        color8 = "#${scheme.base02}";
+        color9 = "#${scheme.base08}";
         color10 = "#${scheme.base0B}";
         color11 = "#${scheme.base0A}";
         color12 = "#${scheme.base0D}";

@@ -1,13 +1,16 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   options.modules.theme.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.theme.enable {
     xdg.portal = {
       enable = true;
       config.common.default = "gtk";
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      extraPortals = [pkgs.xdg-desktop-portal-gtk];
     };
 
     home.pointerCursor = {

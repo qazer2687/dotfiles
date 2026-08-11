@@ -58,10 +58,10 @@
     #niri.enable = true;
     hyprlock.enable = true;
     hypridle.enable = true;
-    hyprsunset.enable = true;
     waybar.enable = true;
     mako.enable = true;
     tofi.enable = true;
+    clipboard.enable = true;
 
     # Applications
     firefox.enable = true;

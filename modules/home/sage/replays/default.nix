@@ -88,8 +88,8 @@ in {
     systemd.user.services.replays = {
       Unit = {
         Description = "Sync replay captures to Immich";
-        After = [ "sops-nix.service" ];
-        Wants = [ "sops-nix.service" ];
+        After = ["sops-nix.service"];
+        Wants = ["sops-nix.service"];
       };
       Service = {
         Type = "oneshot";
@@ -107,7 +107,7 @@ in {
         Persistent = true;
       };
       Install = {
-        WantedBy = [ "timers.target" ];
+        WantedBy = ["timers.target"];
       };
     };
   };

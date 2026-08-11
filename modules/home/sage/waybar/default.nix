@@ -23,20 +23,33 @@ in {
           modules-left = ["clock"];
           modules-center = ["hyprland/workspaces"];
           modules-right =
-            lib.optionals config.modules.replays.enable ["custom/replays"]
-            ++ ["tray" "network" "pulseaudio" "battery"];
+            ["cpu" "memory" "temperature"]
+            ++ lib.optionals config.modules.replays.enable ["custom/replays"]
+            ++ ["tray" "network" "pulseaudio"];
+
+          cpu = {
+            interval = 2;
+            format = "cpu: {usage}%";
+            tooltip = false;
+          };
+
+          memory = {
+            interval = 5;
+            format = "mem: {percentage}%";
+            tooltip = false;
+          };
+
+          temperature = {
+            interval = 5;
+            hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input";
+            format = "temp: {temperatureC}°C";
+            tooltip = false;
+          };
 
           pulseaudio = {
             format = "vol: {volume}%";
             tooltip = false;
             format-muted = "vol: muted";
-          };
-
-          "custom/hyprsunset" = {
-            exec = ''printf "󰖨 %sK" "$(hyprctl hyprsunset temperature)"'';
-            signal = 1;
-            format = "{}";
-            tooltip = false;
           };
 
           clock = {
@@ -81,12 +94,6 @@ in {
               "10" = "10";
             };
           };
-
-          backlight = {
-            device = "apple-panel-bl";
-            format = "BKL: {percent}%";
-            tooltip = false;
-          };
         };
       };
 
@@ -103,7 +110,7 @@ in {
           background: #${scheme.base00};
         }
 
-        #mpris, #clock, #language, #bluetooth, #custom-pingServer, #custom-replays, #tray, #network, #battery, #pulseaudio {
+        #mpris, #clock, #language, #bluetooth, #custom-pingServer, #custom-replays, #tray, #network, #pulseaudio, #cpu, #memory, #temperature {
           padding: 0 16px;
           margin: 4px;
           border-radius: 0px;
