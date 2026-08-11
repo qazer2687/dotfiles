@@ -10,6 +10,7 @@
     programs.firefox = {
       enable = true;
       package = pkgs.firefox;
+      configPath = ".mozilla/firefox";
 
       profiles."default" = {
         name = "default";

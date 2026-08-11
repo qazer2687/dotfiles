@@ -22,7 +22,6 @@ in {
       grim
       slurp
       wl-clipboard
-      wlsunset
       wbg
       tofi
       brightnessctl
@@ -147,7 +146,7 @@ in {
             always = false;
           }
           {
-            command = "${pkgs.wlsunset}/bin/wlsunset -t 3000 -T 4000 -l 51.509865 -L -0.118092";
+            command = "${pkgs.sunsetr}/bin/sunsetr";
             always = true;
           }
           {

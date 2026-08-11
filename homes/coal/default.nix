@@ -17,7 +17,7 @@
     nautilus
     neovim
     cryptsetup
-    inputs.helium.packages.${pkgs.system}.default
+    inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   modules = {

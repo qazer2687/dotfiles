@@ -10,7 +10,7 @@ in {
   options.modules.vscode.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.vscode.enable {
-    programs.vscode = {
+    programs.vscodium = {
       enable = true;
       package = pkgs.vscodium-fhs;
 

@@ -28,7 +28,7 @@ in {
         mouse = {
           hide-when-typing = "no";
         };
-        colors = {
+        colors-dark = {
           alpha = "1";
           cursor = "${scheme.base00} ${scheme.base06}";
           foreground = scheme.base05;

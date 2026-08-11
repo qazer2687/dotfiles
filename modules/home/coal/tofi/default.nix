@@ -15,7 +15,7 @@
         clip-to-padding = false;
         horizontal = true;
         font-size = 14;
-        prompt-text = " run: ";
+        prompt-text = " run:  ";
         font = "Terminus Bold";
         outline-width = 0;
         border-width = 0;

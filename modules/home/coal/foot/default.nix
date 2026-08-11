@@ -13,7 +13,7 @@
           font = "Terminus:weight=bold:size=16";
           dpi-aware = "no";
         };
-        colors = {
+        colors-dark = {
           background = "000000";
         };
         key-bindings = {

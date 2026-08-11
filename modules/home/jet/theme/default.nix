@@ -14,6 +14,7 @@
     };
 
     home.pointerCursor = {
+      enable = true;
       gtk.enable = true;
       package = pkgs.catppuccin-cursors.mochaDark;
       name = "catppuccin-mocha-dark-cursors";
@@ -37,6 +38,7 @@
         gtk-application-prefer-dark-theme = 1;
       };
       gtk4 = {
+        theme = config.gtk.theme;
         extraConfig = {
           gtk-application-prefer-dark-theme = 1;
         };

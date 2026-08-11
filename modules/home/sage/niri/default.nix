@@ -14,7 +14,7 @@ in {
 
     programs.niri = {
       enable = true;
-      package = inputs.niri.packages.${pkgs.system}.niri-unstable;
+      package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
       settings = {
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;

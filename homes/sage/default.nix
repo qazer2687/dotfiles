@@ -27,7 +27,7 @@
     killall
 
     # Wine
-    wineWowPackages.stable
+    wineWow64Packages.stable
     #wineWowPackages.waylandFull
     winetricks
 
