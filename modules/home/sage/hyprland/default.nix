@@ -173,11 +173,11 @@ in {
           ", SUPER_L, exec, pkill -SIGUSR1 waybar"
 
           # Whisper
-          ",code:183,exec, pkill --signal SIGUSR1 -f dictate.py"
+          ",code:191,exec, pkill --signal SIGUSR1 -f dictate.py"
         ];
 
         bindr = [
-          ",code:183,exec, pkill --signal SIGUSR2 -f dictate.py"
+          ",code:191,exec, pkill --signal SIGUSR2 -f dictate.py"
         ];
 
         bindrt = [
