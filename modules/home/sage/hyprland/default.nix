@@ -170,6 +170,13 @@ in {
           "SUPER, BACKSPACE, exec, obs-cmd --websocket obsws://localhost:4455 replay save"
 
           ", SUPER_L, exec, pkill -SIGUSR1 waybar"
+
+          # Whisper
+          ",code:199,exec, pkill --signal SIGUSR1 -f dictate.py"
+        ];
+
+        bindr = [
+          ",code:199,exec, pkill --signal SIGUSR2 -f dictate.py"
         ];
 
         bindrt = [
@@ -190,6 +197,7 @@ in {
           "${pkgs.sunsetr}/bin/sunsetr"
           #"vesktop --start-minimized"
           "${pkgs.bash}/bin/bash -c '${pkgs.coreutils}/bin/rm -rf $HOME/.config/obs-studio/.sentinel; exec obs --minimize-to-tray --startreplaybuffer'"
+          "cd /home/alex/Projects/whisper && /home/alex/Projects/whisper/.venv/bin/python3 dictate.py"
         ];
       };
 
