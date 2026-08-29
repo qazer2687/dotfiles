@@ -87,6 +87,7 @@ in {
           kb_layout = "gb";
           kb_variant = "colemak";
           kb_options = "ctrl:nocaps";
+          kb_model = "pc105";
         };
 
         cursor = {
