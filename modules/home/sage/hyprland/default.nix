@@ -19,6 +19,7 @@ in {
       mpvpaper
       obs-cmd
       wtype
+      wl-clipboard
     ];
 
     wayland.windowManager.hyprland = {
