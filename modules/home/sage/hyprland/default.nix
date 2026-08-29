@@ -18,6 +18,7 @@ in {
       wlr-randr
       mpvpaper
       obs-cmd
+      wtype
     ];
 
     wayland.windowManager.hyprland = {
