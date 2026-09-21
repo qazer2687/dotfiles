@@ -1,0 +1,93 @@
+/* Minimal Firefox userChrome.css - Tab inset borders only */
+:root {
+  --base: #2d2d2d;
+  --lightest: #999999;
+  --darkest: #0d0d0d;
+  --font-family: "Departure Mono", "FiraCode Mono Nerd Font", monospace;
+  --raised-border: var(--lightest) var(--darkest) var(--darkest) var(--lightest);
+  --pressed-border: var(--darkest) var(--lightest) var(--lightest) var(--darkest);
+  --raised-shadow: inset 2px 2px 0 rgba(255,255,255,.1), inset -2px -2px 0 rgba(0,0,0,.3);
+  --pressed-shadow: inset -2px -2px 0 rgba(255,255,255,.1), inset 2px 2px 0 rgba(0,0,0,.3);
+}
+
+/* Remove all hover highlighting */
+* {
+  --toolbarbutton-hover-background: transparent !important;
+  --toolbarbutton-active-background: transparent !important;
+}
+
+/* Hide UI elements */
+#back-button,
+#forward-button,
+#fxa-toolbar-menu-button,
+#tracking-protection-icon-container,
+#identity-permission-box,
+#identity-icon,
+#identity-box,
+#star-button-box,
+.tab-icon-image,
+#alltabs-button {
+  display: none !important;
+}
+
+/* Remove tab rounding and apply inset border styling */
+.tabbrowser-tab .tab-background {
+  border: 2px solid !important;
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
+  border-radius: 0 !important;
+}
+
+/* Selected tab inset border */
+.tabbrowser-tab[selected] .tab-background {
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
+}
+
+/* Tab text font */
+.tabbrowser-tab .tab-label {
+  font: 13px var(--font-family) !important;
+}
+
+/* Search bar inset border styling */
+#urlbar {
+  border: 2px solid !important;
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
+  border-radius: 0 !important;
+  font: 13px var(--font-family) !important;
+}
+
+/* Search bar when focused */
+#urlbar[focused="true"] {
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
+}
+
+/* Toolbar buttons inset border styling */
+#nav-bar toolbarbutton {
+  border: 2px solid !important;
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
+  border-radius: 0 !important;
+  font: 13px var(--font-family) !important;
+}
+
+/* Toolbar buttons when pressed/active */
+#nav-bar toolbarbutton:hover:active {
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
+}
+
+/* Menu button and other toolbar items */
+#PanelUI-menu-button {
+  border: 2px solid !important;
+  border-color: var(--raised-border) !important;
+  box-shadow: var(--raised-shadow) !important;
+  border-radius: 0 !important;
+}
+
+#PanelUI-menu-button:hover:active {
+  border-color: var(--pressed-border) !important;
+  box-shadow: var(--pressed-shadow) !important;
+}

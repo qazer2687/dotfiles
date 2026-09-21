@@ -46,6 +46,7 @@
     # Applications
     zed.enable = true;
     vesktop.enable = true;
+    firefox.enable = true;
   };
 
   home.stateVersion = "26.05";
