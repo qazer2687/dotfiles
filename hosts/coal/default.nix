@@ -101,6 +101,7 @@
     upower.enable = true;
     easyeffects.enable = true;
     libinput.enable = true;
+    flatpak.enable = true;
   };
 
   # Did you read the comment?
