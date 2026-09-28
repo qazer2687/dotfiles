@@ -40,7 +40,7 @@
         ];
         flake-registry = "";
         # https://github.com/NixOS/nix/issues/9574
-        nix-path = config.nix.nixPath;
+        nix-path = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
         keep-derivations = true;
         keep-outputs = true;
         auto-optimise-store = true;
