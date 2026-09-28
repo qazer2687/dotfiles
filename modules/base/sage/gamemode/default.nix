@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  options.gamemode.enable = lib.mkEnableOption "";
+  options.modules.gamemode.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.gamemode.enable {
     programs.gamemode = {
