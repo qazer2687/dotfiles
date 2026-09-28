@@ -50,7 +50,6 @@
       };
       channel.enable = false;
       registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
     ########## NIXPKGS ##########
