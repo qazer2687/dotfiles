@@ -44,7 +44,7 @@
     foot.enable = true;
 
     # Applications
-    zed.enable = true;
+    gram.enable = true;
     vesktop.enable = true;
     firefox.enable = true;
   };

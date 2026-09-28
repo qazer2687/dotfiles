@@ -67,7 +67,7 @@
     firefox.enable = true;
     vesktop.enable = true;
     vscode.enable = true;
-    zed.enable = true;
+    gram.enable = true;
 
     # Gaming
     mangohud.enable = true;
