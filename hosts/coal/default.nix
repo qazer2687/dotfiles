@@ -42,12 +42,12 @@
 
   swapDevices = [
     {
-      device = "/swapfile";
+      device = "/var/lib/swapfile";
       size = 24 * 1024;
     }
   ];
 
-  boot.resumeDevice = "/swapfile";
+  boot.resumeDevice = "/var/lib/swapfile";
 
   # Autologin and hide getty messages.
   services.getty = {
