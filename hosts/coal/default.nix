@@ -47,8 +47,6 @@
     }
   ];
 
-  boot.resumeDevice = "/var/lib/swapfile";
-
   # Autologin and hide getty messages.
   services.getty = {
     autologinUser = "alex";
