@@ -93,20 +93,63 @@
     */
 
     # Block AI-related domains.
-    /*
-      networking.extraHosts = ''
-      127.0.0.1 chat.openai.com
-      127.0.0.1 openai.com
-      127.0.0.1 claude.ai
-      127.0.0.1 poe.com
-      127.0.0.1 bard.google.com
-      127.0.0.1 gemini.google.com
-      127.0.0.1 chatgpt.com
-      127.0.0.1 perplexity.ai
-      127.0.0.1 copilot.microsoft.com
-      127.0.0.1 deepseek.com
-    '';
-    */
+    services.dnsmasq = {
+      enable = true;
+      settings = {
+        no-resolv = true;
+        server = [
+          "/ts.net/100.100.100.100"
+          "//100.100.100.100"
+          "1.1.1.1"
+          "9.9.9.9"
+        ];
+        address = map (d: "/${d}/0.0.0.0") [
+          # chat
+          "openai.com" "chatgpt.com" "sora.com"
+          "claude.ai" "claude.com" "anthropic.com"
+          "gemini.google.com" "bard.google.com" "aistudio.google.com"
+          "notebooklm.google.com" "labs.google" "deepmind.google"
+          "copilot.microsoft.com" "perplexity.ai" "grok.com" "x.ai"
+          "meta.ai" "poe.com" "pi.ai" "inflection.ai" "you.com"
+          "phind.com" "duck.ai" "genspark.ai" "felo.ai" "andisearch.com"
+          "mistral.ai" "cohere.com" "ai21.com" "01.ai"
+          "character.ai" "chai-research.com" "janitorai.com" "replika.com"
+          "aidungeon.com" "novelai.net"
+          "deepseek.com" "kimi.com" "kimi.ai" "moonshot.ai" "moonshot.cn"
+          "z.ai" "zhipuai.cn" "bigmodel.cn" "chatglm.cn"
+          "qwen.ai" "qwenlm.ai" "tongyi.aliyun.com" "doubao.com"
+          "yuanbao.tencent.com" "yiyan.baidu.com"
+          "minimax.io" "minimaxi.com" "hailuoai.com"
+          "stepfun.com" "baichuan-ai.com" "manus.im"
+    
+          # platforms
+          "huggingface.co" "hf.co" "groq.com" "together.ai" "openrouter.ai"
+          "replicate.com" "fireworks.ai" "fal.ai" "lmarena.ai"
+    
+          # coding
+          "cursor.com" "cursor.sh" "windsurf.com" "codeium.com"
+          "lovable.dev" "bolt.new" "v0.dev" "v0.app" "tabnine.com"
+          "githubcopilot.com" "kiro.dev" "cognition.ai" "devin.ai"
+    
+          # media
+          "midjourney.com" "stability.ai" "runwayml.com" "pika.art"
+          "lumalabs.ai" "klingai.com" "kling.ai" "leonardo.ai"
+          "ideogram.ai" "civitai.com" "playground.com" "krea.ai"
+          "higgsfield.ai" "heygen.com" "synthesia.io" "invideo.io"
+          "openart.ai" "nightcafe.studio" "craiyon.com" "tensor.art"
+          "seaart.ai" "firefly.adobe.com"
+    
+          # audio
+          "suno.com" "udio.com" "elevenlabs.io" "murf.ai"
+    
+          # writing
+          "jasper.ai" "copy.ai" "writesonic.com" "quillbot.com"
+          "grammarly.com" "rytr.me" "sudowrite.com" "deepai.org"
+          "gamma.app" "tome.app" "beautiful.ai" "otter.ai"
+          "fireflies.ai" "elicit.com" "consensus.app"
+        ];
+      };
+    };
 
     ########## KEYMAP ##########
 
