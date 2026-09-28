@@ -71,7 +71,7 @@
       "kernel.hung_task_timeout_secs" = "60";
       "kernel.panic" = "10";
     };
-    #kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
+    kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
   };
 
   boot.supportedFilesystems = ["nfs"];
