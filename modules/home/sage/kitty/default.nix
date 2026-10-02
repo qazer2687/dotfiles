@@ -12,6 +12,10 @@ in {
       enable = true;
 
       settings = {
+        remember_window_size = false;
+        initial_window_width = "1c";
+        initial_window_height = "1c";
+        
         # Font
         font_family = "PragmataPro";
         font_size = 18;
@@ -29,9 +33,6 @@ in {
         # Cursor
         cursor_shape = "beam";
         cursor_blink_interval = 0.5;
-
-        # Mouse
-        mouse_hide_when_typing = false;
 
         # Colors – with "#" prefix
         foreground = "#${scheme.base05}";

@@ -211,7 +211,7 @@ in {
           --hl.exec_cmd('mpvpaper -o "--loop-file=inf" DP-3 /home/alex/.config/wallpaper/wallpaper.mkv')
           hl.exec_cmd("${pkgs.sunsetr}/bin/sunsetr")
           --hl.exec_cmd("vesktop --start-minimized")
-          hl.exec_cmd("${pkgs.bash}/bin/bash -c 'rm -rf $HOME/.config/obs-studio/.sentinel; exec obs --minimize-to-tray --startreplaybuffer'")
+          hl.exec_cmd("${pkgs.bash}/bin/bash -c 'rm -rf $HOME/.config/obs-studio/.sentinel; until s=$(${pkgs.pulseaudio}/bin/pactl get-default-sink) && m=$(${pkgs.pulseaudio}/bin/pactl get-default-source) && [[ -n $s && $s != auto_null && -n $m && $m != auto_null.monitor ]]; do sleep 0.5; done; exec obs --minimize-to-tray --startreplaybuffer'")
           hl.exec_cmd("cd /home/alex/Projects/whisper && /home/alex/Projects/whisper/.venv/bin/python3 dictate.py")
         end)
       '';
