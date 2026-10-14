@@ -62,7 +62,8 @@
     mako.enable = true;
     tofi.enable = true;
     clipboard.enable = true;
-    pet.enable = true;
+    pet.enable = false;
+    assistant.enable = true;
 
     # Applications
     firefox.enable = true;
