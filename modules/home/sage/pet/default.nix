@@ -6,8 +6,6 @@
 }: let
   petImage = ../../../../assets/nozomi.png;
 
-  # The venv python is launched directly (not via nix-shell), so the pip torch
-  # wheel and torchcodec need libstdc++/zlib/openssl and FFmpeg on the loader path.
   venvLibraryPath = lib.makeLibraryPath [
     pkgs.stdenv.cc.cc.lib
     pkgs.zlib
@@ -17,9 +15,16 @@
   ttsUrl = "http://127.0.0.1:9880";
   translateUrl = "http://127.0.0.1:9881";
   ttsTextLang = "ja";
-  ttsRefAudio = "/home/alex/Projects/pet/ref/nozomi.wav";
-  ttsPromptText = "面白そうなのいっぱいあるじゃん！もっと早く来ればよかった～";
+  ttsRefAudio = "/home/alex/Projects/pet/ref/ref_Lobby_5.wav";
+  ttsPromptText = "えー、つまんないことはやりたくないよー？";
   ttsPromptLang = "ja";
+
+  ttsFlourishes = [
+    "ふふふっ！"
+    "ふふっ！"
+    "えへへっ！"
+  ];
+  flourishesLiteral = lib.concatMapStringsSep " " (s: "\"${s}\"") ttsFlourishes;
 
   petSpeak = pkgs.writeShellApplication {
     name = "pet-speak";
@@ -34,13 +39,18 @@
     text = ''
       text="$1"
 
-      # Speak her native Japanese: translate the notification first, falling
-      # back to the original text if the translator is unavailable.
       translated="$(curl -fsS --max-time 20 -G "${translateUrl}/translate" \
         --data-urlencode "text=$text" 2>/dev/null | jq -r '.translation // empty' 2>/dev/null || true)"
       if [ -n "$translated" ]; then
         text="$translated"
       fi
+
+      flourishes=(${flourishesLiteral})
+      flourish="''${flourishes[$((RANDOM % ''${#flourishes[@]}))]}"
+      case "$text" in
+        *[。！？!?]) text="''${text}''${flourish}" ;;
+        *) text="''${text}。''${flourish}" ;;
+      esac
 
       out="$(mktemp --suffix=.wav)"
       trap 'rm -f "$out"' EXIT
@@ -49,8 +59,6 @@
         sleep 4
       }
 
-      # Synthesize, then play. cut0 keeps the whole line as one continuous
-      # generation (no per-segment stitching) which sounds far smoother.
       if curl -fsS --max-time 30 -G "${ttsUrl}/tts" \
         --data-urlencode "text=$text" \
         --data-urlencode "text_lang=${ttsTextLang}" \
