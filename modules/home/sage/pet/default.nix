@@ -15,6 +15,7 @@
   ];
 
   ttsUrl = "http://127.0.0.1:9880";
+  translateUrl = "http://127.0.0.1:9881";
   ttsTextLang = "ja";
   ttsRefAudio = "/home/alex/Projects/pet/ref/nozomi.wav";
   ttsPromptText = "面白そうなのいっぱいあるじゃん！もっと早く来ればよかった～";
@@ -30,11 +31,20 @@
       pkgs.curl
       pkgs.coreutils
       pkgs.eww
+      pkgs.jq
       pkgs.pipewire
     ];
 
     text = ''
       text="$1"
+
+      # Speak her native Japanese: translate the notification first, falling
+      # back to the original text if the translator is unavailable.
+      translated="$(curl -fsS --max-time 20 -G "${translateUrl}/translate" \
+        --data-urlencode "text=$text" 2>/dev/null | jq -r '.translation // empty' 2>/dev/null || true)"
+      if [ -n "$translated" ]; then
+        text="$translated"
+      fi
 
       out="$(mktemp --suffix=.wav)"
       trap 'rm -f "$out"' EXIT
@@ -50,6 +60,8 @@
         --data-urlencode "ref_audio_path=${ttsRefAudio}" \
         --data-urlencode "prompt_text=${ttsPromptText}" \
         --data-urlencode "prompt_lang=${ttsPromptLang}" \
+        --data-urlencode "text_split_method=cut0" \
+        --data-urlencode "fragment_interval=0" \
         --data-urlencode "media_type=wav" \
         --data-urlencode "streaming_mode=false" \
         -o "$out" &
@@ -164,6 +176,28 @@ in {
           "LD_LIBRARY_PATH=${venvLibraryPath}:${pkgs.ffmpeg.lib}/lib"
         ];
         ExecStart = "%h/Projects/pet/.venv/bin/python api_v2.py -a 127.0.0.1 -p 9880";
+        Restart = "on-failure";
+        RestartSec = 5;
+      };
+      Install = {
+        WantedBy = ["default.target"];
+      };
+    };
+
+    systemd.user.services.pet-translate = {
+      Unit = {
+        Description = "Local English->Japanese translation server (NLLB)";
+        ConditionPathExists = "%h/Projects/pet/translate_server.py";
+        After = ["network.target"];
+      };
+      Service = {
+        Type = "simple";
+        WorkingDirectory = "%h/Projects/pet";
+        Environment = [
+          "LD_LIBRARY_PATH=${venvLibraryPath}"
+          "HF_HOME=%h/.cache/huggingface"
+        ];
+        ExecStart = "%h/Projects/pet/.venv/bin/python translate_server.py";
         Restart = "on-failure";
         RestartSec = 5;
       };
