@@ -6,10 +6,18 @@
 }: let
   petImage = ../../../../assets/nozomi.png;
 
+  # The venv python is launched directly (not via nix-shell), so the pip torch
+  # wheel and torchcodec need libstdc++/zlib/openssl and FFmpeg on the loader path.
+  venvLibraryPath = lib.makeLibraryPath [
+    pkgs.stdenv.cc.cc.lib
+    pkgs.zlib
+    pkgs.openssl
+  ];
+
   ttsUrl = "http://127.0.0.1:9880";
   ttsTextLang = "en";
   ttsRefAudio = "/home/alex/Projects/pet/ref/nozomi.wav";
-  ttsPromptText = "";
+  ttsPromptText = "面白そうなのいっぱいあるじゃん！もっと早く来ればよかった～";
   ttsPromptLang = "ja";
 
   petSpeak = pkgs.writeShellApplication {
@@ -132,6 +140,9 @@ in {
       Service = {
         Type = "simple";
         WorkingDirectory = "%h/Projects/pet/GPT-SoVITS";
+        Environment = [
+          "LD_LIBRARY_PATH=${venvLibraryPath}:${pkgs.ffmpeg.lib}/lib"
+        ];
         ExecStart = "%h/Projects/pet/.venv/bin/python api_v2.py -a 127.0.0.1 -p 9880";
         Restart = "on-failure";
         RestartSec = 5;
