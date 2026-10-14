@@ -15,10 +15,20 @@
   ];
 
   ttsUrl = "http://127.0.0.1:9880";
-  ttsTextLang = "en";
+  ttsTextLang = "ja";
   ttsRefAudio = "/home/alex/Projects/pet/ref/nozomi.wav";
   ttsPromptText = "面白そうなのいっぱいあるじゃん！もっと早く来ればよかった～";
   ttsPromptLang = "ja";
+
+  # Her signature vocal tics, in katakana so the Japanese frontend speaks them
+  # natively (keeps her accent, laugh and "Pahyahya!"). One is prepended at random.
+  ttsInterjections = [
+    "パヒャヒャッ！"
+    "あははっ！"
+    "パヒャッ、"
+    "あははっ！パヒャヒャッ！"
+  ];
+  interjectionsLiteral = lib.concatMapStringsSep " " (s: "\"${s}\"") ttsInterjections;
 
   petSpeak = pkgs.writeShellApplication {
     name = "pet-speak";
@@ -31,6 +41,10 @@
 
     text = ''
       text="$1"
+
+      # Prepend one of her signature interjections (laugh / "Pahyahya!") at random.
+      interjections=(${interjectionsLiteral})
+      text="''${interjections[$((RANDOM % ''${#interjections[@]}))]} $text"
 
       out="$(mktemp --suffix=.wav)"
       trap 'rm -f "$out"' EXIT
