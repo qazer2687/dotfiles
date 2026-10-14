@@ -20,15 +20,9 @@
   ttsPromptText = "面白そうなのいっぱいあるじゃん！もっと早く来ればよかった～";
   ttsPromptLang = "ja";
 
-  # Her signature vocal tics, in katakana so the Japanese frontend speaks them
-  # natively (keeps her accent, laugh and "Pahyahya!"). One is prepended at random.
-  ttsInterjections = [
-    "パヒャヒャッ！"
-    "あははっ！"
-    "パヒャッ、"
-    "あははっ！パヒャヒャッ！"
-  ];
-  interjectionsLiteral = lib.concatMapStringsSep " " (s: "\"${s}\"") ttsInterjections;
+  # Her real recorded vocal tics (laugh / "Pahyahya!"), cut from the game audio.
+  # One is played at random before each synthesized line.
+  ttsInterjectionDir = "/home/alex/Projects/pet/ref/vo/interjections";
 
   petSpeak = pkgs.writeShellApplication {
     name = "pet-speak";
@@ -42,10 +36,6 @@
     text = ''
       text="$1"
 
-      # Prepend one of her signature interjections (laugh / "Pahyahya!") at random.
-      interjections=(${interjectionsLiteral})
-      text="''${interjections[$((RANDOM % ''${#interjections[@]}))]} $text"
-
       out="$(mktemp --suffix=.wav)"
       trap 'rm -f "$out"' EXIT
 
@@ -53,7 +43,8 @@
         sleep 4
       }
 
-      if curl -fsS --max-time 30 -G "${ttsUrl}/tts" \
+      # Kick off synthesis in the background so her vocal tic can play right away.
+      curl -fsS --max-time 30 -G "${ttsUrl}/tts" \
         --data-urlencode "text=$text" \
         --data-urlencode "text_lang=${ttsTextLang}" \
         --data-urlencode "ref_audio_path=${ttsRefAudio}" \
@@ -61,7 +52,22 @@
         --data-urlencode "prompt_lang=${ttsPromptLang}" \
         --data-urlencode "media_type=wav" \
         --data-urlencode "streaming_mode=false" \
-        -o "$out"; then
+        -o "$out" &
+      curl_pid=$!
+
+      # Play one of her real recorded interjections (laugh / "Pahyahya!") first.
+      clip=""
+      if [ -d "${ttsInterjectionDir}" ]; then
+        clips=("${ttsInterjectionDir}"/*.wav)
+        if [ -e "''${clips[0]}" ]; then
+          clip="''${clips[$((RANDOM % ''${#clips[@]}))]}"
+        fi
+      fi
+      if [ -n "$clip" ]; then
+        pw-play "$clip" >/dev/null 2>&1 || true
+      fi
+
+      if wait "$curl_pid"; then
         if [ -s "$out" ]; then
           pw-play "$out" || linger
         else
