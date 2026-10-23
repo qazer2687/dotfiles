@@ -1,0 +1,47 @@
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
+  options.modules.steam.enable = lib.mkEnableOption "";
+
+  config = lib.mkIf config.modules.steam.enable {
+    programs.steam = {
+      enable = true;
+      extest.enable = true;
+      package = pkgs.steam.override {
+        extraPkgs = pkgs':
+          with pkgs'; [
+            # X11 Libraries
+            libxcursor
+            libxi
+            libxinerama
+            libxscrnsaver
+
+            # System Libraries
+            stdenv.cc.cc.lib
+            gperftools
+            keyutils
+            libkrb5
+            libpng
+            libpulseaudio
+            libvorbis
+            mangohud
+            gamemode
+            gamescope
+
+            freetype
+            fontconfig
+
+            vulkan-loader
+            vulkan-validation-layers
+
+            # Proton
+            proton-ge-bin
+            protonup-qt
+          ];
+      };
+    };
+  };
+}

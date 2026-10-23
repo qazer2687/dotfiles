@@ -100,6 +100,8 @@
     easyeffects.enable = true;
     libinput.enable = true;
     flatpak.enable = true;
+    steam.enable = true;
+    gamemode.enable = true;
   };
 
   # Did you read the comment?
