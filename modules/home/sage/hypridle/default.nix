@@ -17,7 +17,7 @@
 
       void main() {
         vec4 c = texture(tex, v_texcoord);
-        fragColor = vec4(pow(c.rgb, vec3(2.0)) * 0.7, c.a);
+        fragColor = vec4(c.rgb * 0.35, c.a);
       }
     '';
 
