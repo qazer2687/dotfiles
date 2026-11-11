@@ -17,15 +17,14 @@ in {
           on-sigusr1 = "show";
           on-sigusr2 = "hide";
           layer = "top";
-          position = "top";
+          position = "bottom";
           height = 48;
           margin = "0 0 0 0";
-          modules-left = ["clock"];
+          modules-left = 
+            ["clock"]
+            ++ lib.optionals config.modules.replays.enable ["custom/replays"];
           modules-center = ["hyprland/workspaces"];
-          modules-right =
-            ["cpu" "memory" "temperature"]
-            ++ lib.optionals config.modules.replays.enable ["custom/replays"]
-            ++ ["tray" "network" "pulseaudio"];
+          modules-right = ["cpu" "memory" "temperature" "tray" "network" "pulseaudio"];
 
           cpu = {
             interval = 2;

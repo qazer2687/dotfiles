@@ -8,3 +8,4 @@ user_pref("services.sync.addons.ignoreUserEnabledChanges", true);
 user_pref("gfx.webrender.enabled", true);
 user_pref("gfx.webrender.software", false);
 user_pref("gfx.canvas.azure.accelerated", true);
+
