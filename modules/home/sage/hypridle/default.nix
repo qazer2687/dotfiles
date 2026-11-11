@@ -7,14 +7,17 @@
 
   config = lib.mkIf config.modules.hypridle.enable {
     xdg.configFile."hypr/shaders/dim.frag".text = ''
+      #version 300 es
+
       precision mediump float;
 
-      varying mediump vec2 v_texcoord;
+      in vec2 v_texcoord;
+      layout(location = 0) out vec4 fragColor;
       uniform sampler2D tex;
 
       void main() {
-        vec4 c = texture2D(tex, v_texcoord);
-        gl_FragColor = vec4(pow(c.rgb, vec3(2.0)) * 0.7, c.a);
+        vec4 c = texture(tex, v_texcoord);
+        fragColor = vec4(pow(c.rgb, vec3(2.0)) * 0.7, c.a);
       }
     '';
 
@@ -24,8 +27,8 @@
         listener = [
           {
             timeout = 240;
-            on-timeout = ''hyprctl keyword decoration:screen_shader $HOME/.config/hypr/shaders/dim.frag'';
-            on-resume = ''hyprctl keyword decoration:screen_shader ""'';
+            on-timeout = ''hyprctl eval ''hl.config({ decoration = { screen_shader = "/home/alex/.config/hypr/shaders/dim.frag" } })'';'';
+            on-resume = ''hyprctl eval ''hl.config({ decoration = { screen_shader = "" } })'';'';
           }
           {
             timeout = 480;
