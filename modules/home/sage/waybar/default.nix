@@ -13,7 +13,7 @@ in {
       enable = true;
       settings = {
         mainBar = {
-          start_hidden = true;
+          start_hidden = false;
           on-sigusr1 = "show";
           on-sigusr2 = "hide";
           layer = "top";
