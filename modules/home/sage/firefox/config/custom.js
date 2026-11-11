@@ -9,3 +9,4 @@ user_pref("gfx.webrender.enabled", true);
 user_pref("gfx.webrender.software", false);
 user_pref("gfx.canvas.azure.accelerated", true);
 
+user_pref("widget.wayland.use-move-to-rect", false);

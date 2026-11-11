@@ -1,19 +1,24 @@
+/* Font */
 * {
   font-family: "Space Grotesk", sans-serif !important;
 }
 
+/* Toolbar at the bottom */
 body {
   display: flex !important;
   flex-direction: column !important;
 }
+
 #browser {
   order: 1 !important;
   flex: 1 !important;
 }
+
 #navigator-toolbox {
   order: 2 !important;
 }
 
+/* No rounded corners */
 :root {
   --tab-border-radius: 0 !important;
   --border-radius-medium: 0 !important;
@@ -26,4 +31,46 @@ body {
 .tabbrowser-tab,
 #tabbrowser-tabs .tab-stack {
   border-radius: 0 !important;
+}
+
+/* URL bar results open upward */
+#urlbar[breakout][breakout-extend] {
+  top: auto !important;
+  bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  display: flex !important;
+  flex-direction: column-reverse !important;
+}
+
+#urlbar[breakout][breakout-extend] > .urlbar-input-container {
+  order: 2 !important;
+  height: var(--urlbar-height) !important;
+}
+
+#urlbar[breakout][breakout-extend] > .urlbarView {
+  order: 1 !important;
+  position: static !important;
+}
+
+/* Hide search engine picker */
+#urlbar-searchmode-switcher,
+.urlbar-searchmode-switcher,
+#urlbar .searchmode-switcher {
+  display: none !important;
+}
+
+/* Hide one-off search engines row */
+.urlbarView-body-inner ~ .search-one-offs,
+#urlbar .search-one-offs {
+  display: none !important;
+}
+
+/* 2px space above first tab */
+#tabbrowser-tabs[orient="vertical"] {
+  padding-top: 2px !important;
+}
+
+/* Thin white line above the bottom bar */
+#navigator-toolbox {
+  border-top: 1px solid white !important;
+  border-bottom: none !important;
 }
