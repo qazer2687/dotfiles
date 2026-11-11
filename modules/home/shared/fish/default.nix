@@ -54,6 +54,7 @@
       "nvim" = "nix run github:qazer2687/neovim --refresh";
       "unlockluks" = "cd ~/luks && ./mount.sh && cd encrypted";
       "lockluks" = "cd ~/luks && ./unmount.sh";
+      "txon" = "sudo dfu-util -a 0 -s 0x08000000:leave";
     };
   };
 }

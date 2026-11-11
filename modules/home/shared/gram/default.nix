@@ -10,9 +10,5 @@
     programs.gram = {
       enable = true;
     };
-
-    home.shellAliases = {
-      "zed" = "gram";
-    };
   };
 }

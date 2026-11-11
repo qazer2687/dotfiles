@@ -25,6 +25,7 @@
     gdu
     btop
     killall
+    dfu-util
 
     # Wine
     wineWow64Packages.stable
@@ -67,7 +68,7 @@
     firefox.enable = true;
     vesktop.enable = true;
     vscode.enable = true;
-    gram.enable = true;
+    zed.enable = true;
 
     # Gaming
     mangohud.enable = true;
