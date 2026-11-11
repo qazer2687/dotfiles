@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "mountain";
+  scheme = base16 "berlin";
 in {
   options.modules.niri.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.niri.enable {

@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "mountain";
+  scheme = base16 "berlin";
 
   raw = lib.generators.mkLuaInline;
 
