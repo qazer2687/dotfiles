@@ -12,8 +12,8 @@
         listener = [
           {
             timeout = 240;
-            on-timeout = "hyprctl dispatch dpms off";
-            on-resume = "hyprctl dispatch dpms on";
+            on-timeout = ''hyprctl eval "hl.dsp.dpms('off')"'';
+            on-resume = ''hyprctl eval "hl.dsp.dpms('on')"'';
           }
         ];
       };
