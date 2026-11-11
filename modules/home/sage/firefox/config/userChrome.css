@@ -42,11 +42,16 @@ body {
 #urlbar {
   --urlbar-background-border: 1px solid #808080 !important;
   --urlbar-background-border-breakout: 1px solid #808080 !important;
+  --urlbar-background-border-open: 1px solid #808080 !important;
   --urlbar-background-border-focused: 1px solid #808080 !important;
   --urlbar-background-border-radius: 0 !important;
   --urlbar-background-border-top-radius-breakout-compact: 0 !important;
+  --urlbar-background-border-top-radius-open: 0 !important;
   --urlbar-background-inset-breakout: 0px !important;
   --urlbar-background-inset-breakout-compact: 0px !important;
+  --urlbar-background-overhang-open: 0px !important;
+  --urlbar-input-growth-open-inline: 0px !important;
+  --urlbar-input-growth-open-block: 0px !important;
   --urlbarview-border-radius: 0 !important;
   border-radius: 0 !important;
 }
@@ -65,11 +70,15 @@ body {
   border-radius: 0 !important;
 }
 
+#urlbar[breakout],
+#urlbar[breakout][breakout-extend] {
+  width: var(--urlbar-width) !important;
+  margin-inline: 0 !important;
+}
+
 #urlbar[breakout][breakout-extend] {
   top: auto !important;
   bottom: calc((var(--urlbar-container-height, var(--urlbar-toolbar-height)) - var(--urlbar-height)) / 2) !important;
-  left: 0 !important;
-  width: 100% !important;
   display: flex !important;
   flex-direction: column-reverse !important;
 }
