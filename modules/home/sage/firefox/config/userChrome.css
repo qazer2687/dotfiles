@@ -45,6 +45,8 @@ body {
   --urlbar-background-border-focused: 1px solid #808080 !important;
   --urlbar-background-border-radius: 0 !important;
   --urlbar-background-border-top-radius-breakout-compact: 0 !important;
+  --urlbar-background-inset-breakout: 0px !important;
+  --urlbar-background-inset-breakout-compact: 0px !important;
   --urlbarview-border-radius: 0 !important;
   border-radius: 0 !important;
 }
@@ -55,6 +57,7 @@ body {
   border-radius: 0 !important;
   box-shadow: none !important;
   outline: none !important;
+  animation: none !important;
 }
 
 #urlbar .urlbar-input-container,
@@ -65,6 +68,8 @@ body {
 #urlbar[breakout][breakout-extend] {
   top: auto !important;
   bottom: calc((var(--urlbar-container-height, var(--urlbar-toolbar-height)) - var(--urlbar-height)) / 2) !important;
+  left: 0 !important;
+  width: 100% !important;
   display: flex !important;
   flex-direction: column-reverse !important;
 }
@@ -78,28 +83,6 @@ body {
   z-index: 1 !important;
   opacity: 1 !important;
   visibility: visible !important;
-}
-
-#urlbar[breakout][breakout-extend] > :is(.urlbar-background, #urlbar-background) {
-  background-color: #1c1b22 !important;
-}
-
-#urlbar[breakout][breakout-extend] .urlbarView-body-outer,
-#urlbar[breakout][breakout-extend] .urlbarView-body-inner,
-#urlbar[breakout][breakout-extend] #urlbar-results {
-  background: transparent !important;
-}
-
-#urlbar[breakout][breakout-extend] .urlbarView-title,
-#urlbar[breakout][breakout-extend] .urlbarView-url,
-#urlbar[breakout][breakout-extend] .urlbarView-action,
-#urlbar[breakout][breakout-extend] .urlbarView-secondary,
-#urlbar[breakout][breakout-extend] .urlbarView-title-separator {
-  color: #fbfbfe !important;
-}
-
-#urlbar[breakout][breakout-extend] .urlbarView-row[selected] {
-  background-color: #42414d !important;
 }
 
 #urlbar-searchmode-switcher,
