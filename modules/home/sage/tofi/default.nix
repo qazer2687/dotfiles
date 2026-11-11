@@ -12,7 +12,7 @@ in {
     programs.tofi = {
       enable = true;
       settings = {
-        anchor = "bottom";
+        anchor = "top";
         width = "100%";
         height = "44";
         scale = true;
