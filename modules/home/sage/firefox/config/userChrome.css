@@ -1,9 +1,7 @@
-/* Font */
 * {
   font-family: "Space Grotesk", sans-serif !important;
 }
 
-/* Toolbar at the bottom */
 body {
   display: flex !important;
   flex-direction: column !important;
@@ -16,9 +14,14 @@ body {
 
 #navigator-toolbox {
   order: 2 !important;
+  border-top: 1px solid white !important;
+  border-bottom: none !important;
 }
 
-/* No rounded corners */
+#tabbrowser-tabs[orient="vertical"] {
+  padding-top: 6px !important;
+}
+
 :root {
   --tab-border-radius: 0 !important;
   --border-radius-medium: 0 !important;
@@ -33,10 +36,9 @@ body {
   border-radius: 0 !important;
 }
 
-/* URL bar results open upward */
 #urlbar[breakout][breakout-extend] {
   top: auto !important;
-  bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  bottom: calc((var(--urlbar-container-height, var(--urlbar-toolbar-height)) - var(--urlbar-height)) / 2) !important;
   display: flex !important;
   flex-direction: column-reverse !important;
 }
@@ -51,19 +53,18 @@ body {
   position: static !important;
 }
 
-/* Hide search engine picker */
 #urlbar-searchmode-switcher,
 .urlbar-searchmode-switcher,
 #urlbar .searchmode-switcher {
   display: none !important;
 }
 
-/* Hide one-off search engines row */
 .urlbarView-body-inner ~ .search-one-offs,
 #urlbar .search-one-offs {
   display: none !important;
 }
 
-#tabbrowser-tabs[orient="vertical"] {
-  padding-top: 6px !important;
+#sidebar-splitter,
+#sidebar-main {
+  border: none !important;
 }
