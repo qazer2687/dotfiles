@@ -11,20 +11,20 @@
   raw = lib.generators.mkLuaInline;
 
   dsp = {
-    exec  = cmd: raw ''hl.dsp.exec_cmd("${cmd}")'';
+    exec = cmd: raw ''hl.dsp.exec_cmd("${cmd}")'';
     close = raw "hl.dsp.window.close()";
     float = raw ''hl.dsp.window.float({ action = "toggle" })'';
     fullscreen = n: raw "hl.dsp.window.fullscreen(${toString n})";
-    layout     = msg: raw ''hl.dsp.layout("${msg}")'';
-    focusWorkspace  = ws: raw ''hl.dsp.focus({ workspace = "${toString ws}" })'';
+    layout = msg: raw ''hl.dsp.layout("${msg}")'';
+    focusWorkspace = ws: raw ''hl.dsp.focus({ workspace = "${toString ws}" })'';
     moveToWorkspace = ws: raw ''hl.dsp.window.move({ workspace = "${toString ws}" })'';
-    drag   = raw "hl.dsp.window.drag()";
+    drag = raw "hl.dsp.window.drag()";
     resize = raw "hl.dsp.window.resize()";
-    raw    = cmd: raw ''hl.dsp.exec_raw("${cmd}")'';
+    raw = cmd: raw ''hl.dsp.exec_raw("${cmd}")'';
   };
 
-  bind'     = keys: dsp: { _args = [ keys dsp ]; };
-  bindOpts' = keys: dsp: opts: { _args = [ keys dsp opts ]; };
+  bind' = keys: dsp: {_args = [keys dsp];};
+  bindOpts' = keys: dsp: opts: {_args = [keys dsp opts];};
 in {
   options.modules.hyprland.enable = lib.mkEnableOption "";
 
@@ -49,7 +49,12 @@ in {
 
       settings = {
         monitor = [
-          { output = "DP-3"; mode = "highres"; position = "auto"; scale = 1; }
+          {
+            output = "DP-3";
+            mode = "highres";
+            position = "auto";
+            scale = 1;
+          }
         ];
 
         config = {
@@ -114,25 +119,60 @@ in {
         };
 
         curve = [
-          { _args = [ "snap" { type = "bezier"; points = [ [0.2 0] [0 1] ]; } ]; }
+          {
+            _args = [
+              "snap"
+              {
+                type = "bezier";
+                points = [[0.2 0] [0 1]];
+              }
+            ];
+          }
         ];
 
         animation = [
           # Disable top level animations which children will inherit.
-          { leaf = "windows"; enabled = false; }
-          { leaf = "layers"; enabled = false; }
-          { leaf = "fade"; enabled = false; }
-          { leaf = "border"; enabled = false; }
-          { leaf = "borderangle"; enabled = false; }
-          { leaf = "zoomFactor"; enabled = false; }
+          {
+            leaf = "windows";
+            enabled = false;
+          }
+          {
+            leaf = "layers";
+            enabled = false;
+          }
+          {
+            leaf = "fade";
+            enabled = false;
+          }
+          {
+            leaf = "border";
+            enabled = false;
+          }
+          {
+            leaf = "borderangle";
+            enabled = false;
+          }
+          {
+            leaf = "zoomFactor";
+            enabled = false;
+          }
           #{ leaf = "monitorAdded"; enabled = false; }
 
-          { leaf = "workspaces"; enabled = true; speed = 2; bezier = "snap"; style = "slide"; }
+          {
+            leaf = "workspaces";
+            enabled = true;
+            speed = 2;
+            bezier = "snap";
+            style = "slide";
+          }
         ];
 
         # Required for enabling tearing.
         window_rule = [
-          { match = { class = ".*"; }; immediate = true; }
+          {
+            match = {class = ".*";};
+            immediate = true;
+          }
           # Gamescope windows cannot handle immediate mode, but you can use the --immediate flag in gamescope command.
           #{ match = { class = "^(gamescope)$"; }; immediate = false; }
         ];
@@ -192,12 +232,15 @@ in {
           # Whisper
           (bind' "code:191" (dsp.exec "pkill --signal SIGUSR1 -f dictate.py"))
 
-          (bindOpts' "code:191" (dsp.exec "pkill --signal SIGUSR2 -f dictate.py") { released = true; })
+          (bindOpts' "code:191" (dsp.exec "pkill --signal SIGUSR2 -f dictate.py") {released = true;})
 
-          (bindOpts' "SUPER + SUPER_L" (dsp.exec "pkill -SIGUSR2 waybar") { released = true; transparent = true; })
+          (bindOpts' "SUPER + SUPER_L" (dsp.exec "pkill -SIGUSR2 waybar") {
+            released = true;
+            transparent = true;
+          })
 
-          (bindOpts' "SUPER + mouse:273" dsp.resize { mouse = true; })
-          (bindOpts' "SUPER + mouse:272" dsp.drag { mouse = true; })
+          (bindOpts' "SUPER + mouse:273" dsp.resize {mouse = true;})
+          (bindOpts' "SUPER + mouse:272" dsp.drag {mouse = true;})
         ];
       };
 

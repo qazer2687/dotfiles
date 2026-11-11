@@ -18,7 +18,7 @@
     neovim
     cryptsetup
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
-    
+
     # Misc
     bluej
   ];

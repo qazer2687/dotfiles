@@ -15,7 +15,7 @@ in {
         remember_window_size = false;
         initial_window_width = "1c";
         initial_window_height = "1c";
-        
+
         # Font
         font_family = "PragmataPro";
         font_size = 18;
