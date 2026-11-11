@@ -227,17 +227,17 @@ in {
           # OBS Replay
           (bind' "SUPER + BACKSPACE" (dsp.exec "obs-cmd --websocket obsws://localhost:4455 replay save"))
 
-          (bind' "SUPER_L" (dsp.exec "pkill -SIGUSR1 waybar"))
+          # (bind' "SUPER_L" (dsp.exec "pkill -SIGUSR1 waybar"))
 
           # Whisper
           (bind' "code:191" (dsp.exec "pkill --signal SIGUSR1 -f dictate.py"))
 
           (bindOpts' "code:191" (dsp.exec "pkill --signal SIGUSR2 -f dictate.py") {released = true;})
 
-          (bindOpts' "SUPER + SUPER_L" (dsp.exec "pkill -SIGUSR2 waybar") {
-            released = true;
-            transparent = true;
-          })
+          # (bindOpts' "SUPER + SUPER_L" (dsp.exec "pkill -SIGUSR2 waybar") {
+          #   released = true;
+          #   transparent = true;
+          # })
 
           (bindOpts' "SUPER + mouse:273" dsp.resize {mouse = true;})
           (bindOpts' "SUPER + mouse:272" dsp.drag {mouse = true;})
