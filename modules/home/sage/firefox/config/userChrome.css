@@ -39,17 +39,27 @@ body {
   border-radius: 0 !important;
 }
 
-#urlbar,
-#urlbar-input-container {
+#urlbar {
+  --urlbar-background-border: 1px solid #808080 !important;
+  --urlbar-background-border-breakout: 1px solid #808080 !important;
+  --urlbar-background-border-focused: 1px solid #808080 !important;
+  --urlbar-background-border-radius: 0 !important;
+  --urlbar-background-border-top-radius-breakout-compact: 0 !important;
+  --urlbarview-border-radius: 0 !important;
   border-radius: 0 !important;
 }
 
-#urlbar > #urlbar-background,
-#urlbar[breakout][breakout-extend] > #urlbar-background {
+#urlbar .urlbar-background,
+#urlbar #urlbar-background {
   border: 1px solid #808080 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   outline: none !important;
+}
+
+#urlbar .urlbar-input-container,
+#urlbar #urlbar-input-container {
+  border-radius: 0 !important;
 }
 
 #urlbar[breakout][breakout-extend] {
@@ -59,7 +69,7 @@ body {
   flex-direction: column-reverse !important;
 }
 
-#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+#urlbar[breakout][breakout-extend] > :is(.urlbar-input-container, #urlbar-input-container) {
   height: var(--urlbar-height) !important;
 }
 
@@ -70,7 +80,7 @@ body {
   visibility: visible !important;
 }
 
-#urlbar[breakout][breakout-extend] > #urlbar-background {
+#urlbar[breakout][breakout-extend] > :is(.urlbar-background, #urlbar-background) {
   background-color: #1c1b22 !important;
 }
 
@@ -94,7 +104,11 @@ body {
 
 #urlbar-searchmode-switcher,
 .urlbar-searchmode-switcher,
-#urlbar .searchmode-switcher {
+.searchmode-switcher,
+moz-button.searchmode-switcher,
+.searchmode-switcher-panel,
+.searchmode-switcher-panel-list,
+panel.searchmode-switcher-panel {
   display: none !important;
 }
 
@@ -103,8 +117,7 @@ body {
   display: none !important;
 }
 
-#sidebar-launcher-splitter,
-#sidebar-tools-and-extensions-splitter {
+#sidebar-launcher-splitter {
   display: none !important;
 }
 
@@ -121,20 +134,12 @@ body {
   box-shadow: none !important;
 }
 
-#sidebar-main {
-  position: relative !important;
-  overflow: hidden !important;
+sidebar-main {
+  visibility: hidden !important;
 }
 
-#sidebar-main::after {
-  content: "" !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  height: 56px !important;
-  background: var(--sidebar-background-color, var(--toolbar-bgcolor, #1c1b22)) !important;
-  z-index: 100 !important;
+#vertical-tabs {
+  visibility: visible !important;
 }
 
 #navigator-toolbox::after {
