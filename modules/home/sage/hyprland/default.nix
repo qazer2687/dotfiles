@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "berlin";
+  scheme = base16 "cyberpunk";
 
   raw = lib.generators.mkLuaInline;
 
