@@ -64,13 +64,6 @@ body {
   display: none !important;
 }
 
-/* 2px space above first tab */
 #tabbrowser-tabs[orient="vertical"] {
-  padding-top: 2px !important;
-}
-
-/* Thin white line above the bottom bar */
-#navigator-toolbox {
-  border-top: 1px solid white !important;
-  border-bottom: none !important;
+  padding-top: 6px !important;
 }
