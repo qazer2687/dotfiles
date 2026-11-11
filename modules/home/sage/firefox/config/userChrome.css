@@ -14,7 +14,7 @@ body {
 
 #navigator-toolbox {
   order: 2 !important;
-  border-top: 1px solid white !important;
+  border-top: none !important;
   border-bottom: none !important;
 }
 
@@ -25,6 +25,9 @@ body {
 :root {
   --tab-border-radius: 0 !important;
   --border-radius-medium: 0 !important;
+  --sidebar-border-color: transparent !important;
+  --chrome-content-separator-color: transparent !important;
+  --toolbox-border-bottom-color: transparent !important;
 }
 
 .tab-background,
@@ -51,6 +54,14 @@ body {
 #urlbar[breakout][breakout-extend] > .urlbarView {
   order: 1 !important;
   position: static !important;
+  background: var(--toolbar-field-focus-background-color, #2b2a33) !important;
+  color: var(--toolbar-field-focus-color, white) !important;
+}
+
+#urlbar[breakout][breakout-extend] .urlbarView-row,
+#urlbar[breakout][breakout-extend] .urlbarView-title,
+#urlbar[breakout][breakout-extend] .urlbarView-url {
+  color: inherit !important;
 }
 
 #urlbar-searchmode-switcher,
@@ -65,6 +76,12 @@ body {
 }
 
 #sidebar-splitter,
-#sidebar-main {
+#sidebar-main,
+#sidebar-box,
+#tabbrowser-tabs {
   border: none !important;
+}
+
+#navigator-toolbox::after {
+  display: none !important;
 }
