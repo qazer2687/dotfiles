@@ -1,27 +1,20 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options.modules.hypridle.enable = lib.mkEnableOption "";
 
   config = lib.mkIf config.modules.hypridle.enable {
-    # Dim overlay used by hypridle: a bare hyprlock with only a translucent
-    # black background (no widgets). Dismissed by killing the process.
-    xdg.configFile."hypr/hyprlock-dim.conf".text = ''
-      general {
-        immediate_render = true
-        hide_cursor = true
-      }
+    xdg.configFile."hypr/shaders/dim.frag".text = ''
+      precision mediump float;
 
-      animations {
-        enabled = false
-      }
+      varying mediump vec2 v_texcoord;
+      uniform sampler2D tex;
 
-      background {
-        # alpha cc = 80% black overlay; tweak for dim strength
-        color = rgba(000000cc)
+      void main() {
+        vec4 c = texture2D(tex, v_texcoord);
+        gl_FragColor = vec4(pow(c.rgb, vec3(2.0)) * 0.7, c.a);
       }
     '';
 
@@ -31,8 +24,8 @@
         listener = [
           {
             timeout = 240;
-            on-timeout = ''${pkgs.hyprlock}/bin/hyprlock --config $HOME/.config/hypr/hyprlock-dim.conf'';
-            on-resume = ''pkill -f hyprlock-dim.conf'';
+            on-timeout = ''hyprctl keyword decoration:screen_shader $HOME/.config/hypr/shaders/dim.frag'';
+            on-resume = ''hyprctl keyword decoration:screen_shader ""'';
           }
           {
             timeout = 480;
