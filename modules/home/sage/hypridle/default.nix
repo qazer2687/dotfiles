@@ -27,8 +27,8 @@
         listener = [
           {
             timeout = 240;
-            on-timeout = ''hyprctl eval ''hl.config({ decoration = { screen_shader = "/home/alex/.config/hypr/shaders/dim.frag" } })'';'';
-            on-resume = ''hyprctl eval ''hl.config({ decoration = { screen_shader = "" } })'';'';
+            on-timeout = "hyprctl eval 'hl.config({ decoration = { screen_shader = \"/home/alex/.config/hypr/shaders/dim.frag\" } })'";
+            on-resume = "hyprctl eval 'hl.config({ decoration = { screen_shader = \"\" } })'";
           }
           {
             timeout = 480;
