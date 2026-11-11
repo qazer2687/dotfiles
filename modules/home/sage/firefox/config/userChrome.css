@@ -46,42 +46,68 @@ body {
   flex-direction: column-reverse !important;
 }
 
-#urlbar[breakout][breakout-extend] > .urlbar-input-container {
-  order: 2 !important;
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
   height: var(--urlbar-height) !important;
 }
 
 #urlbar[breakout][breakout-extend] > .urlbarView {
-  order: 1 !important;
-  position: static !important;
-  background: var(--toolbar-field-focus-background-color, #2b2a33) !important;
-  color: var(--toolbar-field-focus-color, white) !important;
+  position: relative !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-#urlbar[breakout][breakout-extend] .urlbarView-row,
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  background-color: #1c1b22 !important;
+}
+
+#urlbar[breakout][breakout-extend] .urlbarView-body-outer,
+#urlbar[breakout][breakout-extend] .urlbarView-body-inner,
+#urlbar[breakout][breakout-extend] #urlbar-results {
+  background: transparent !important;
+}
+
 #urlbar[breakout][breakout-extend] .urlbarView-title,
-#urlbar[breakout][breakout-extend] .urlbarView-url {
-  color: inherit !important;
+#urlbar[breakout][breakout-extend] .urlbarView-url,
+#urlbar[breakout][breakout-extend] .urlbarView-action,
+#urlbar[breakout][breakout-extend] .urlbarView-secondary,
+#urlbar[breakout][breakout-extend] .urlbarView-title-separator {
+  color: #fbfbfe !important;
+}
+
+#urlbar[breakout][breakout-extend] .urlbarView-row[selected] {
+  background-color: #42414d !important;
 }
 
 #urlbar-searchmode-switcher,
-.urlbar-searchmode-switcher,
-#urlbar .searchmode-switcher {
-  display: none !important;
-}
-
 .urlbarView-body-inner ~ .search-one-offs,
 #urlbar .search-one-offs {
   display: none !important;
 }
 
-#sidebar-splitter,
-#sidebar-main,
-#sidebar-box,
-#tabbrowser-tabs {
+sidebar-main,
+#sidebar-launcher-splitter,
+#sidebar-tools-and-extensions-splitter {
+  display: none !important;
+}
+
+#sidebar-splitter {
+  width: 0 !important;
   border: none !important;
 }
 
+#sidebar-main,
+#sidebar-box,
+#vertical-tabs,
+#tabbrowser-tabs {
+  border: none !important;
+  box-shadow: none !important;
+}
+
 #navigator-toolbox::after {
+  display: none !important;
+}
+
+#sidebar-button {
   display: none !important;
 }
