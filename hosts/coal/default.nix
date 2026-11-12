@@ -107,6 +107,7 @@
   # Did you read the comment?
   system.stateVersion = "26.05";
 
+/*
   networking.hosts."0.0.0.0" = builtins.concatMap (d: [d "www.${d}"]) [
     # chat
     "openai.com"
@@ -239,5 +240,5 @@
     "fireflies.ai"
     "elicit.com"
     "consensus.app"
-  ];
+  ];*/
 }
