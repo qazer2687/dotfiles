@@ -142,10 +142,12 @@ sidebar-main {
   display: none !important;
 }
 
+/* Panels that flip above the bottom toolbar: pull them back on-screen */
+#notification-popup[side="top"],          /* extension install / site prompts */
+#customizationui-widget-panel[side="top"] /* extension toolbar-button popups */ {
+  margin-top: calc(-2 * var(--panel-padding-block) - 40px - 32px - 8.5em) !important;
+}
 
-
-#widget-overflow-view, 
-#unified-extensions-view,
-panelview {
-  margin-top: -30px !important;
+#permission-popup[side="top"] {
+  margin-top: calc(-2 * var(--panel-padding-block) - 2.5em) !important;
 }
