@@ -141,3 +141,11 @@ sidebar-main {
 #sidebar-button {
   display: none !important;
 }
+
+
+
+#widget-overflow-view, 
+#unified-extensions-view,
+panelview {
+  margin-top: -30px !important;
+}
