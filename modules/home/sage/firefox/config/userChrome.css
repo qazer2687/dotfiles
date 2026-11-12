@@ -145,7 +145,7 @@ sidebar-main {
 /* Panels that flip above the bottom toolbar: pull them back on-screen */
 #notification-popup[side="top"],          /* extension install / site prompts */
 #customizationui-widget-panel[side="top"] /* extension toolbar-button popups */ {
-  margin-top: calc(-2 * var(--panel-padding-block) - 80px - 32px - 8.5em) !important;
+  margin-top: calc(-2 * var(--panel-padding-block) - 200px - 32px - 8.5em) !important;
 }
 
 #permission-popup[side="top"] {
