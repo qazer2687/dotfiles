@@ -8,6 +8,50 @@
 }: let
   scheme = base16 "catppuccin-mocha";
 
+  obsSink = "alsa_output.usb-3142_fifine_Microphone-00.analog-stereo";
+  obsSource = "alsa_input.usb-3142_fifine_Microphone-00.iec958-stereo";
+
+  obsSessionStart = pkgs.writeShellApplication {
+    name = "obs-session-start";
+    runtimeInputs = with pkgs; [bash pulseaudio gnugrep procps];
+    text = ''
+      rm -rf "$HOME/.config/obs-studio/.sentinel"
+      if pgrep -f 'obs --minimize-to-tray' >/dev/null; then
+        exit 0
+      fi
+
+      deadline=$((SECONDS + 30))
+      until ${pkgs.pulseaudio}/bin/pactl list short sinks | ${pkgs.gnugrep}/bin/grep -Fq -- '${obsSink}' \
+        && ${pkgs.pulseaudio}/bin/pactl list short sources | ${pkgs.gnugrep}/bin/grep -Fq -- '${obsSource}'; do
+        (( SECONDS < deadline )) || break
+        sleep 0.5
+      done
+
+      ${pkgs.pulseaudio}/bin/pactl set-sink-mute '${obsSink}' 0 || true
+      ${pkgs.pulseaudio}/bin/pactl set-source-mute '${obsSource}' 0 || true
+      ${pkgs.pulseaudio}/bin/pactl set-sink-volume '${obsSink}' 50% || true
+      exec ${pkgs.obs-studio}/bin/obs --minimize-to-tray --startreplaybuffer
+    '';
+  };
+
+  obsSceneDefaults = pkgs.writeShellApplication {
+    name = "obs-scene-defaults";
+    runtimeInputs = with pkgs; [python3];
+    text = ''
+      export OBS_SCENE="$HOME/.config/obs-studio/basic/scenes/Untitled.json"
+      export OBS_SINK_MONITOR='${obsSink}.monitor'
+      export OBS_SOURCE='${obsSource}'
+      exec ${pkgs.python3}/bin/python3 ${./scripts/obs-scene-defaults.py}
+    '';
+  };
+
+  obsPickerOnce = pkgs.writeShellApplication {
+    name = "obs-screen-picker-dp3";
+    text = ''
+      printf '[SELECTION]r/screen:DP-3\n'
+    '';
+  };
+
   raw = lib.generators.mkLuaInline;
 
   dsp = {
@@ -38,7 +82,18 @@ in {
       obs-cmd
       wtype
       wl-clipboard
+      obsSessionStart
+      obsSceneDefaults
+      obsPickerOnce
     ];
+
+    xdg.configFile."hypr/xdph.conf".text = ''
+      screencopy:custom_picker_binary = ${obsPickerOnce}/bin/obs-screen-picker-dp3
+    '';
+
+    home.activation.obsSceneDefaults = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      ${obsSceneDefaults}/bin/obs-scene-defaults
+    '';
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -46,6 +101,11 @@ in {
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       configType = "lua";
+      plugins = [
+        (pkgs.callPackage ../../../../packages/peek {
+          hyprland = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+        })
+      ];
 
       settings = {
         monitor = [
@@ -183,6 +243,8 @@ in {
           (bind' "SUPER + E" (dsp.exec "tofi-run | sh"))
           (bind' "SUPER + Q" dsp.close)
           (bind' "SUPER + F" (dsp.fullscreen 0))
+          (bindOpts' "SUPER_L" (dsp.raw "peek:open") {})
+          (bindOpts' "SUPER_L" (dsp.raw "peek:close") {released = true;})
 
           # Workspace Navigation
           (bind' "SUPER + 1" (dsp.focusWorkspace 1))
@@ -254,7 +316,7 @@ in {
           --hl.exec_cmd('mpvpaper -o "--loop-file=inf" DP-3 /home/alex/.config/wallpaper/wallpaper.mkv')
           hl.exec_cmd("${pkgs.sunsetr}/bin/sunsetr")
           --hl.exec_cmd("vesktop --start-minimized")
-          hl.exec_cmd("${pkgs.bash}/bin/bash -c 'rm -rf $HOME/.config/obs-studio/.sentinel; until s=$(${pkgs.pulseaudio}/bin/pactl get-default-sink) && m=$(${pkgs.pulseaudio}/bin/pactl get-default-source) && [[ -n $s && $s != auto_null && -n $m && $m != auto_null.monitor ]]; do sleep 0.5; done; exec obs --minimize-to-tray --startreplaybuffer'")
+          hl.exec_cmd("${obsSessionStart}/bin/obs-session-start")
           --hl.exec_cmd("cd /home/alex/Projects/whisper && /home/alex/Projects/whisper/.venv/bin/python3 dictate.py")
         end)
       '';
