@@ -31,6 +31,7 @@ using namespace Desktop::View;
 namespace {
 constexpr double BORDER_WIDTH = 2.0;
 constexpr double LABEL_FONT_SIZE = 100.0;
+constexpr double MAX_THUMB_HEIGHT = 400.0;
 constexpr float OVERLAY_ALPHA = 0.85F;
 
 HANDLE pHandle = nullptr;
@@ -71,7 +72,7 @@ void renderWindowStub(PHLWINDOW pWindow, PHLMONITOR pMonitor, CBox rectOverride,
   renderdata.w = std::max(size.x, 5.0);
   renderdata.h = std::max(size.y, 5.0);
   renderdata.fadeAlpha = 1.F;
-  renderdata.alpha = OVERLAY_ALPHA;
+  renderdata.alpha = 1.F;
   renderdata.decorate = false;
   renderdata.rounding = 0;
   renderdata.roundingPower = 2.0F;
@@ -120,7 +121,7 @@ void renderLayerStub(PHLLS pLayer, PHLMONITOR pMonitor, CBox rectOverride, CBox 
 
   CSurfacePassElement::SRenderData renderdata = {pMonitor, time, realPosition};
   renderdata.fadeAlpha = 1.F;
-  renderdata.alpha = OVERLAY_ALPHA;
+  renderdata.alpha = 1.F;
   renderdata.blur = false;
   renderdata.surface = pLayer->wlSurface()->resource();
   renderdata.decorate = false;
@@ -247,8 +248,8 @@ void draw() {
   const double monitorHeight = monitor->m_size.y;
   const double aspect = monitorWidth / std::max(monitorHeight, 1.0);
   const double count = static_cast<double>(workspaces.size());
-  const double thumbWidth = monitorWidth / count;
-  const double thumbHeight = thumbWidth / aspect;
+  const double thumbHeight = std::min(monitorHeight / count, MAX_THUMB_HEIGHT);
+  const double thumbWidth = thumbHeight * aspect;
   double startX = 0.0;
   const double startY = 0.0;
   const double factor = thumbHeight / monitorHeight;
