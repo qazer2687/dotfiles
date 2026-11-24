@@ -6,7 +6,7 @@
   base16,
   ...
 }: let
-  scheme = base16 "cyberpunk";
+  scheme = base16 "catppuccin-mocha";
 
   raw = lib.generators.mkLuaInline;
 

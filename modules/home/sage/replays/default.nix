@@ -41,6 +41,7 @@
         --recursive \
         --no-progress \
         --json-output \
+        --concurrency 1 \
         "${replaysDir}" > "$OUT" 2> "$ERR"; then
         JSON="$(awk '
           /^{$/ { in_json = 1 }
@@ -93,6 +94,9 @@ in {
       };
       Service = {
         Type = "oneshot";
+        IOSchedulingClass = "idle";
+        CPUSchedulingPolicy = "idle";
+        Nice = 19;
         ExecStart = "${replays}/bin/replays";
       };
     };
@@ -102,9 +106,9 @@ in {
         Description = "Periodic replay sync to Immich";
       };
       Timer = {
-        OnBootSec = "2min";
-        OnUnitActiveSec = "30min";
-        Persistent = true;
+        OnBootSec = "15min";
+        OnUnitActiveSec = "1h";
+        Persistent = false;
       };
       Install = {
         WantedBy = ["timers.target"];
