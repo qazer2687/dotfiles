@@ -31,7 +31,7 @@ using namespace Desktop::View;
 namespace {
 constexpr double BORDER_WIDTH = 2.0;
 constexpr double LABEL_FONT_SIZE = 100.0;
-constexpr double MAX_THUMB_HEIGHT = 400.0;
+constexpr double MAX_THUMB_HEIGHT = 250.0;
 constexpr float OVERLAY_ALPHA = 0.85F;
 
 HANDLE pHandle = nullptr;
@@ -250,7 +250,7 @@ void draw() {
   const double count = static_cast<double>(workspaces.size());
   const double thumbHeight = std::min(monitorHeight / count, MAX_THUMB_HEIGHT);
   const double thumbWidth = thumbHeight * aspect;
-  double startX = 0.0;
+  double startX = (monitorWidth - count * thumbWidth) / 2.0;
   const double startY = 0.0;
   const double factor = thumbHeight / monitorHeight;
   const auto time = Time::steadyNow();
