@@ -16,7 +16,7 @@ stdenv.mkDerivation {
 
   installPhase = ''
     runHook preInstall
-    install -Dm755 peek.so $out/lib/peek.so
+    install -Dm755 peek.so $out/lib/libpeek.so
     runHook postInstall
   '';
 
