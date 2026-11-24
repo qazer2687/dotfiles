@@ -30,7 +30,7 @@ using namespace Desktop::View;
 
 namespace {
 constexpr double BORDER_WIDTH = 2.0;
-constexpr double LABEL_FONT_SIZE = 20.0;
+constexpr double LABEL_FONT_SIZE = 100.0;
 constexpr float OVERLAY_ALPHA = 0.85F;
 
 HANDLE pHandle = nullptr;
