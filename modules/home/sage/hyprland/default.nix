@@ -53,6 +53,7 @@
   };
 
   raw = lib.generators.mkLuaInline;
+  luaFn = body: raw ''function() ${body} end'';
 
   dsp = {
     exec = cmd: raw ''hl.dsp.exec_cmd("${cmd}")'';
@@ -243,8 +244,8 @@ in {
           (bind' "SUPER + E" (dsp.exec "tofi-run | sh"))
           (bind' "SUPER + Q" dsp.close)
           (bind' "SUPER + F" (dsp.fullscreen 0))
-          (bindOpts' "SUPER_L" (dsp.raw "peek:open") {})
-          (bindOpts' "SUPER_L" (dsp.raw "peek:close") {released = true;})
+          (bindOpts' "SUPER_L" (luaFn "hl.plugin.peek.open()") {})
+          (bindOpts' "SUPER_L" (luaFn "hl.plugin.peek.close()") {release = true;})
 
           # Workspace Navigation
           (bind' "SUPER + 1" (dsp.focusWorkspace 1))

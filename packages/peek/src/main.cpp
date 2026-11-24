@@ -2,32 +2,40 @@
 #include <hyprland/src/plugins/PluginSystem.hpp>
 #include <hyprland/src/Compositor.hpp>
 #include <hyprland/src/render/Renderer.hpp>
+#include <hyprland/src/render/pass/RectPassElement.hpp>
 #include <hyprland/src/render/pass/SurfacePassElement.hpp>
+#include <hyprland/src/render/pass/TexPassElement.hpp>
 #include <hyprland/src/render/pass/RendererHintsPassElement.hpp>
 #include <hyprland/src/render/types.hpp>
+#include <hyprland/src/helpers/Color.hpp>
 #include <hyprland/src/state/WorkspaceState.hpp>
 #include <hyprland/src/state/MonitorState.hpp>
 #include <hyprland/src/desktop/state/WindowState.hpp>
 #include <hyprland/src/managers/input/InputManager.hpp>
+#include <hyprland/src/managers/SeatManager.hpp>
+#include <hyprland/src/devices/IKeyboard.hpp>
 #include <hyprland/src/event/EventBus.hpp>
 #include <hyprland/src/helpers/time/Time.hpp>
 #include <hyprutils/memory/SharedPtr.hpp>
 #include <hyprutils/utils/ScopeGuard.hpp>
+#include <xkbcommon/xkbcommon.h>
 #include <algorithm>
 #include <any>
 #include <cmath>
+#include <string>
 #include <tuple>
 #include <vector>
 
 using namespace Desktop::View;
 
 namespace {
-constexpr double THUMB_HEIGHT = 180.0;
-constexpr double THUMB_GAP = 12.0;
-constexpr double EDGE_PADDING = 32.0;
+constexpr double BORDER_WIDTH = 2.0;
+constexpr double LABEL_FONT_SIZE = 20.0;
+constexpr float OVERLAY_ALPHA = 0.85F;
 
 HANDLE pHandle = nullptr;
 CHyprSignalListener renderHook;
+CHyprSignalListener keyHook;
 uint64_t ownerID = 0;
 bool active = false;
 
@@ -63,7 +71,7 @@ void renderWindowStub(PHLWINDOW pWindow, PHLMONITOR pMonitor, CBox rectOverride,
   renderdata.w = std::max(size.x, 5.0);
   renderdata.h = std::max(size.y, 5.0);
   renderdata.fadeAlpha = 1.F;
-  renderdata.alpha = 0.999F;
+  renderdata.alpha = OVERLAY_ALPHA;
   renderdata.decorate = false;
   renderdata.rounding = 0;
   renderdata.roundingPower = 2.0F;
@@ -112,7 +120,7 @@ void renderLayerStub(PHLLS pLayer, PHLMONITOR pMonitor, CBox rectOverride, CBox 
 
   CSurfacePassElement::SRenderData renderdata = {pMonitor, time, realPosition};
   renderdata.fadeAlpha = 1.F;
-  renderdata.alpha = 0.999F;
+  renderdata.alpha = OVERLAY_ALPHA;
   renderdata.blur = false;
   renderdata.surface = pLayer->wlSurface()->resource();
   renderdata.decorate = false;
@@ -136,6 +144,40 @@ void renderLayerStub(PHLLS pLayer, PHLMONITOR pMonitor, CBox rectOverride, CBox 
         renderdata.surfaceCounter++;
       },
       &renderdata);
+}
+
+void renderBorder(CBox box, const CHyprColor& color, double thickness, CBox clipBox) {
+  const auto addRect = [&](double x, double y, double width, double height) {
+    g_pHyprRenderer->m_renderPass.add(makeUnique<CRectPassElement>(CRectPassElement::SRectData{
+        .box     = {x, y, width, height},
+        .color   = color,
+        .round   = 0,
+        .clipBox = clipBox,
+    }));
+  };
+
+  addRect(box.x, box.y, box.w, thickness);
+  addRect(box.x, box.y + box.h - thickness, box.w, thickness);
+  addRect(box.x, box.y + thickness, thickness, box.h - 2.0 * thickness);
+  addRect(box.x + box.w - thickness, box.y + thickness, thickness, box.h - 2.0 * thickness);
+}
+
+void renderWorkspaceLabel(int id, CBox box, double scale, CBox clipBox) {
+  const auto tex = g_pHyprRenderer->renderText(std::to_string(id), CHyprColor(1.F, 1.F, 1.F, 1.F),
+                                               static_cast<int>(std::lround(LABEL_FONT_SIZE * scale)));
+  if (!tex || tex->m_size.x < 1 || tex->m_size.y < 1)
+    return;
+
+  const Vector2D pos = {
+      box.x + (box.w - tex->m_size.x) / 2.0,
+      box.y + (box.h - tex->m_size.y) / 2.0,
+  };
+  g_pHyprRenderer->m_renderPass.add(makeUnique<CTexPassElement>(CTexPassElement::SRenderData{
+      .tex     = tex,
+      .box     = {pos, tex->m_size},
+      .a       = OVERLAY_ALPHA,
+      .clipBox = clipBox,
+  }));
 }
 
 bool hasWindow(PHLWORKSPACE workspace) {
@@ -185,8 +227,9 @@ void draw() {
     if (!workspace || workspace->m_monitor != monitor || workspace->m_id < 1 || workspace->m_isSpecialWorkspace)
       continue;
     const auto locked = workspace.lock();
-    if (hasWindow(locked))
-      workspaces.push_back(locked);
+    if (!hasWindow(locked) && locked->m_id != monitor->activeWorkspaceID())
+      continue;
+    workspaces.push_back(locked);
   }
 
   if (workspaces.empty())
@@ -203,16 +246,11 @@ void draw() {
   const double monitorWidth = monitor->m_size.x;
   const double monitorHeight = monitor->m_size.y;
   const double aspect = monitorWidth / std::max(monitorHeight, 1.0);
-  const double gap = THUMB_GAP;
-  const double padding = EDGE_PADDING;
   const double count = static_cast<double>(workspaces.size());
-  const double availableWidth = std::max(monitorWidth - 2.0 * padding, 1.0);
-  const double fittedHeight = (availableWidth - gap * (count - 1.0)) / (count * aspect);
-  const double thumbHeight = std::min(THUMB_HEIGHT, fittedHeight);
-  const double thumbWidth = thumbHeight * aspect;
-  const double groupWidth = count * thumbWidth + gap * (count - 1.0);
-  double startX = (monitorWidth - groupWidth) / 2.0;
-  const double startY = (monitorHeight - thumbHeight) / 2.0;
+  const double thumbWidth = monitorWidth / count;
+  const double thumbHeight = thumbWidth / aspect;
+  double startX = 0.0;
+  const double startY = 0.0;
   const double factor = thumbHeight / monitorHeight;
   const auto time = Time::steadyNow();
 
@@ -234,7 +272,25 @@ void draw() {
     }
 
     renderWindows(workspace, monitor, box, factor, time);
-    startX += thumbWidth + gap;
+    for (int layer = 0; layer < 4; layer++) {
+      for (const auto& surface : monitor->m_layerSurfaceLayers[layer]) {
+        const auto waybar = surface.lock();
+        if (!waybar || waybar->m_namespace.find("waybar") == std::string::npos)
+          continue;
+        const auto position = waybar->position(Desktop::View::IGeometric::GEOMETRIC_CURRENT);
+        const auto size = waybar->size(Desktop::View::IGeometric::GEOMETRIC_CURRENT);
+        const CBox waybarBox = {
+          box.pos() + Vector2D((position.x - monitor->m_position.x) * factor, (position.y - monitor->m_position.y) * factor),
+          size * factor,
+        };
+        renderLayerStub(waybar, monitor, waybarBox, box, time);
+      }
+    }
+    const bool isActiveWorkspace = workspace->m_id == monitor->activeWorkspaceID();
+    const CHyprColor borderColor = isActiveWorkspace ? CHyprColor(1.F, 1.F, 1.F, OVERLAY_ALPHA) : CHyprColor(0.F, 0.F, 0.F, OVERLAY_ALPHA);
+    renderBorder(box, borderColor, BORDER_WIDTH * scale, monitorClip);
+    renderWorkspaceLabel(workspace->m_id, box, scale, monitorClip);
+    startX += thumbWidth;
   }
 
   g_pHyprRenderer->m_renderData.clipBox = monitorClip;
@@ -266,6 +322,27 @@ SDispatchResult peekClose(std::string) {
   return {};
 }
 
+int peekOpenLua(lua_State*) {
+  peekOpen("");
+  return 0;
+}
+
+int peekCloseLua(lua_State*) {
+  peekClose("");
+  return 0;
+}
+
+void onKeyEvent(const IKeyboard::SKeyEvent& event, Event::SCallbackInfo&) {
+  if (event.state != WL_KEYBOARD_KEY_STATE_RELEASED)
+    return;
+  const auto keyboard = g_pSeatManager->m_keyboard.lock();
+  if (!keyboard || !keyboard->m_xkbSymState)
+    return;
+  const auto keysym = xkb_state_key_get_one_sym(keyboard->m_xkbSymState, event.keycode + 8);
+  if (keysym == XKB_KEY_Super_L)
+    peekClose("");
+}
+
 void onRender(eRenderStage stage) {
   if (!active || stage != eRenderStage::RENDER_LAST_MOMENT)
     return;
@@ -283,14 +360,20 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
   pHandle = handle;
   HyprlandAPI::addDispatcherV2(pHandle, "peek:open", peekOpen);
   HyprlandAPI::addDispatcherV2(pHandle, "peek:close", peekClose);
+  HyprlandAPI::addLuaFunction(pHandle, "peek", "open", peekOpenLua);
+  HyprlandAPI::addLuaFunction(pHandle, "peek", "close", peekCloseLua);
   renderHook = Event::bus()->m_events.render.stage.listen([](eRenderStage stage) {
     onRender(stage);
+  });
+  keyHook = Event::bus()->m_events.input.keyboard.key.listen([](const IKeyboard::SKeyEvent& event, Event::SCallbackInfo& info) {
+    onKeyEvent(event, info);
   });
   return {"peek", "Hold-to-show workspace thumbnails", "local", "0.1"};
 }
 
 APICALL EXPORT void PLUGIN_EXIT() {
   renderHook.reset();
+  keyHook.reset();
   active = false;
   pHandle = nullptr;
 }
