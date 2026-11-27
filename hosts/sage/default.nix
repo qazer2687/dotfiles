@@ -39,6 +39,10 @@
 
       # Prevents performance hits/stuttering.
       "split_lock_detect=off"
+
+      # THP "always" made Linux compact GPU-mapped pages during Strata's
+      # conversation-cache parks, causing 34-45 s AMD KFD queue evictions.
+      "transparent_hugepage=madvise"
     ];
     # Disable WiFi driver.
     blacklistedKernelModules = ["mt7921e"];
