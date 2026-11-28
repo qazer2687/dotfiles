@@ -86,6 +86,7 @@
     options = ["defaults" "noatime"];
   };
 
+  /*
   fileSystems."/mnt/storage" = {
     device = "fern:/mnt/storage";
     fsType = "nfs";
@@ -99,6 +100,7 @@
       "nofail"
     ];
   };
+  */
 
   # Use the "Latency-criticality Aware Virtual Deadline" scheduler for lower latency.
   services.scx = {
