@@ -27,8 +27,13 @@
         listener = [
           {
             timeout = 240;
-            on-timeout = "hyprctl eval 'hl.config({ decoration = { screen_shader = \"/home/alex/.config/hypr/shaders/dim.frag\" } })'";
-            on-resume = "hyprctl eval 'hl.config({ decoration = { screen_shader = \"\" } })'";
+            # Screen shaders are applied only to the damaged parts of a frame.
+            # With fine-grained damage tracking, tiles that repaint get shaded
+            # on their own (flashing) and tiles that weren't repainted stay dark
+            # after the shader is removed. Force full-screen redraws while the
+            # shader is active, then restore normal damage tracking on resume.
+            on-timeout = "hyprctl eval 'hl.config({ debug = { damage_tracking = 0 }, decoration = { screen_shader = \"/home/alex/.config/hypr/shaders/dim.frag\" } })'";
+            on-resume = "hyprctl eval 'hl.config({ decoration = { screen_shader = \"\" }, debug = { damage_tracking = 2 } })'";
           }
           {
             timeout = 480;

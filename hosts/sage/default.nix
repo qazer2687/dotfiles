@@ -190,6 +190,8 @@
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       AMD_VULKAN_ICD = "RADV";
       OPENCODE_ENABLE_EXA = "1";
+      # Opt out of CLI telemetry, including the skills/caveman CLIs.
+      DO_NOT_TRACK = "1";
 
       # Use qwerty inside of gamescope sessions. Set via lutris environment variables to enable per-game colemak.
       XKB_DEFAULT_LAYOUT = "us";
